@@ -337,6 +337,7 @@ module.exports = grammar({
         $.if_statement,
         $.for_statement,
         $.emit_statement,
+        $.while_statement,
       ),
 
     /**
@@ -439,6 +440,15 @@ module.exports = grammar({
      * e.g., `emit MyEvent(arg1, arg2);`
      */
     emit_statement: ($) => seq("emit", $.call_expression, ";"),
+
+    while_statement: ($) =>
+      seq(
+        "while",
+        "(",
+        field("condition", $._expression),
+        ")",
+        field("body", $._statement),
+      ),
 
     //************************************************************//
     //                      Expression Rules                      //
