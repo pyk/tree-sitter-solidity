@@ -1840,8 +1840,17 @@
             "type": "FIELD",
             "name": "operator",
             "content": {
-              "type": "SYMBOL",
-              "name": "assignment_operator"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "simple_assignment_operator"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "compound_assignment_operator"
+                }
+              ]
             }
           },
           {
@@ -2199,12 +2208,52 @@
         }
       ]
     },
-    "assignment_operator": {
+    "simple_assignment_operator": {
+      "type": "STRING",
+      "value": "="
+    },
+    "compound_assignment_operator": {
       "type": "CHOICE",
       "members": [
         {
           "type": "STRING",
-          "value": "="
+          "value": "|="
+        },
+        {
+          "type": "STRING",
+          "value": "^="
+        },
+        {
+          "type": "STRING",
+          "value": "&="
+        },
+        {
+          "type": "STRING",
+          "value": "<<="
+        },
+        {
+          "type": "STRING",
+          "value": ">>="
+        },
+        {
+          "type": "STRING",
+          "value": "+="
+        },
+        {
+          "type": "STRING",
+          "value": "-="
+        },
+        {
+          "type": "STRING",
+          "value": "*="
+        },
+        {
+          "type": "STRING",
+          "value": "/="
+        },
+        {
+          "type": "STRING",
+          "value": "%="
         }
       ]
     },

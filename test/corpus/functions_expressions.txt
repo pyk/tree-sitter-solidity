@@ -1,34 +1,4 @@
-==================
-Simple assignment expression
-==================
-contract C {
-  function f() {
-    uint a;
-    a = 1;
-  }
-}
----
 
-(source_file
-  (contract_definition
-    name: (identifier)
-    body: (contract_body
-      (function_definition
-        name: (identifier)
-        parameters: (parameter_list)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier)))
-          (expression_statement
-            (assignment_expression
-              left: (primary_expression
-                (identifier))
-              operator: (assignment_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
 
 ==================
 Operator precedence

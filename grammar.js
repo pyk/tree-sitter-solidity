@@ -753,7 +753,13 @@ module.exports = grammar({
         PREC.ASSIGN,
         seq(
           field("left", $._expression),
-          field("operator", $.assignment_operator),
+          field(
+            "operator",
+            choice(
+              $.simple_assignment_operator,
+              $.compound_assignment_operator,
+            ),
+          ),
           field("right", $._expression),
         ),
       ),
@@ -855,7 +861,19 @@ module.exports = grammar({
     additive_operator: ($) => choice("+", "-"),
     multiplicative_operator: ($) => choice("*", "/", "%"),
     shift_operator: ($) => choice("<<", ">>", ">>>"),
-    assignment_operator: ($) => choice("="),
+
+    /**
+     * The simple assignment operator.
+     */
+    simple_assignment_operator: ($) => "=",
+
+    /**
+     * A compound assignment operator.
+     * e.g., `+=`, `*=`
+     */
+    compound_assignment_operator: ($) =>
+      choice("|=", "^=", "&=", "<<=", ">>=", "+=", "-=", "*=", "/=", "%="),
+
     comparison_operator: ($) => choice("<", ">", "<=", ">="),
     equality_operator: ($) => choice("==", "!="),
 

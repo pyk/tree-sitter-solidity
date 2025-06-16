@@ -497,7 +497,11 @@
         "required": true,
         "types": [
           {
-            "type": "assignment_operator",
+            "type": "compound_assignment_operator",
+            "named": true
+          },
+          {
+            "type": "simple_assignment_operator",
             "named": true
           }
         ]
@@ -605,11 +609,6 @@
         ]
       }
     }
-  },
-  {
-    "type": "assignment_operator",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "bitwise_and_expression",
@@ -1775,6 +1774,11 @@
   },
   {
     "type": "comparison_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "compound_assignment_operator",
     "named": true,
     "fields": {}
   },
@@ -4994,6 +4998,11 @@
     "fields": {}
   },
   {
+    "type": "simple_assignment_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -5816,11 +5825,19 @@
     "named": false
   },
   {
+    "type": "%=",
+    "named": false
+  },
+  {
     "type": "&",
     "named": false
   },
   {
     "type": "&&",
+    "named": false
+  },
+  {
+    "type": "&=",
     "named": false
   },
   {
@@ -5840,11 +5857,19 @@
     "named": false
   },
   {
+    "type": "*=",
+    "named": false
+  },
+  {
     "type": "+",
     "named": false
   },
   {
     "type": "++",
+    "named": false
+  },
+  {
+    "type": "+=",
     "named": false
   },
   {
@@ -5860,11 +5885,19 @@
     "named": false
   },
   {
+    "type": "-=",
+    "named": false
+  },
+  {
     "type": ".",
     "named": false
   },
   {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": "/=",
     "named": false
   },
   {
@@ -5881,6 +5914,10 @@
   },
   {
     "type": "<<",
+    "named": false
+  },
+  {
+    "type": "<<=",
     "named": false
   },
   {
@@ -5908,6 +5945,10 @@
     "named": false
   },
   {
+    "type": ">>=",
+    "named": false
+  },
+  {
     "type": ">>>",
     "named": false
   },
@@ -5925,6 +5966,10 @@
   },
   {
     "type": "^",
+    "named": false
+  },
+  {
+    "type": "^=",
     "named": false
   },
   {
@@ -6149,6 +6194,10 @@
   },
   {
     "type": "|",
+    "named": false
+  },
+  {
+    "type": "|=",
     "named": false
   },
   {
