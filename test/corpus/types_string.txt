@@ -1,0 +1,67 @@
+==================
+State variable of type string
+==================
+
+contract C {
+  string myVar;
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (string_type)
+        name: (identifier)))))
+
+==================
+String type as a function parameter
+==================
+
+contract C {
+  function process(string memory name) public {}
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (string_type)
+            (data_location)
+            name: (identifier)))
+        (visibility)
+        body: (block)))))
+
+==================
+String type as a local variable
+==================
+
+contract C {
+  function create() public {
+    string memory greeting = "Hello, World!";
+  }
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        (visibility)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (string_type)
+              (data_location)
+              name: (identifier))
+            value: (primary_expression
+              (literal (string_literal)))))))))

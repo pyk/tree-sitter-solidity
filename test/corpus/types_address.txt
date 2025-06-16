@@ -1,0 +1,189 @@
+==================
+State variable of type address
+==================
+
+contract C {
+  address owner;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (address_type)
+        name: (identifier)))))
+
+==================
+State variable of type address payable
+==================
+
+contract C {
+  address payable recipient;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (address_type)
+        name: (identifier)))))
+
+==================
+Address types as function parameters
+==================
+
+contract C {
+  function sendTo(address from, address payable to) public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (address_type)
+            name: (identifier))
+          (parameter_declaration
+            type: (address_type)
+            name: (identifier)))
+        (visibility)
+        body: (block)))))
+
+==================
+Address payable as a return value
+==================
+
+contract C {
+  function getRecipient() public returns (address payable) {
+    // ...
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        (visibility)
+        (returns_clause
+          returns: (parameter_list
+            (parameter_declaration
+              type: (address_type))))
+        body: (block
+          (comment))))))
+
+==================
+Address type as a local variable
+==================
+
+contract C {
+  function check() public {
+    address localAddress = msg.sender;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        (visibility)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (address_type)
+              name: (identifier))
+            value: (member_access_expression
+              object: (primary_expression
+                (identifier))
+              member: (identifier))))))))
+
+==================
+Payable conversion expression
+==================
+
+contract C {
+  function f(address someAddress) public {
+    address payable p = payable(someAddress);
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (address_type)
+            name: (identifier)))
+        (visibility)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (address_type)
+              name: (identifier))
+            value: (payable_conversion_expression
+              arguments: (call_argument_list
+                (primary_expression
+                  (identifier))))))))))
+
+==================
+Payable conversion with member access
+==================
+
+contract C {
+  function f() public payable {
+    payable(msg.sender).transfer(1 ether);
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        (visibility)
+        (state_mutability)
+        body: (block
+          (expression_statement
+            (call_expression
+              function: (member_access_expression
+                object: (payable_conversion_expression
+                  arguments: (call_argument_list
+                    (member_access_expression
+                      object: (primary_expression
+                        (identifier))
+                      member: (identifier))))
+                member: (identifier))
+              arguments: (call_argument_list
+                (primary_expression
+                  (literal_with_subdenomination
+                    (number_literal)
+                    (subdenomination)))))))))))

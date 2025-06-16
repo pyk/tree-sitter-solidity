@@ -1,0 +1,112 @@
+==================
+Dynamic array of an elementary type
+==================
+
+contract C {
+  uint[] myVar;
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (array_type
+          base: (uint_type))
+        name: (identifier)))))
+
+==================
+Fixed-size array of an elementary type
+==================
+
+contract C {
+  address[5] myAddresses;
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (array_type
+          base: (address_type)
+          (primary_expression (literal (number_literal))))
+        name: (identifier)))))
+
+==================
+Multi-dimensional array (dynamic array of fixed-size arrays)
+==================
+
+contract C {
+  bool[2][] pairsOfFlags;
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (array_type
+          base: (array_type
+            base: (bool_type)
+            (primary_expression (literal (number_literal)))))
+        name: (identifier)))))
+
+==================
+Array of a struct type
+==================
+
+contract C {
+  struct Voter {
+    uint weight;
+  }
+  Voter[] voters;
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (struct_definition
+        name: (identifier)
+        (struct_member
+          type: (uint_type)
+          name: (identifier)))
+      (state_variable_declaration
+        type: (array_type
+          base: (identifier_path (identifier)))
+        name: (identifier)))))
+
+==================
+Arrays as function parameters
+==================
+
+contract C {
+  function process(uint[] memory data, bool[3] memory fixedData) public {}
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (array_type
+              base: (uint_type))
+            (data_location)
+            name: (identifier))
+          (parameter_declaration
+            type: (array_type
+              base: (bool_type)
+              (primary_expression (literal (number_literal))))
+            (data_location)
+            name: (identifier)))
+        (visibility)
+        body: (block)))))
