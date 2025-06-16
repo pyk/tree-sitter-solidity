@@ -23,15 +23,13 @@ contract C {
                 (elementary_type_name))
               name: (identifier)))
           (expression_statement
-            (expression
-              (assignment_expression
-                left: (expression
-                  (primary_expression
-                    (identifier)))
-                right: (expression
-                  (primary_expression
-                    (literal
-                      (number_literal))))))))))))
+            (assignment_expression
+              left: (primary_expression
+                (identifier))
+              operator: (assignment_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
 
 ==================
 Operator precedence
@@ -56,19 +54,16 @@ contract C {
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
-            value: (expression
-              (binary_expression
-                left: (expression
-                  (primary_expression
-                    (literal
-                      (number_literal))))
-                right: (expression
-                  (binary_expression
-                    left: (expression
-                      (primary_expression
-                        (literal
-                          (number_literal))))
-                    right: (expression
-                      (primary_expression
-                        (literal
-                          (number_literal))))))))))))))
+            value: (additive_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
+              operator: (additive_operator)
+              right: (multiplicative_expression
+                left: (primary_expression
+                  (literal
+                    (number_literal)))
+                operator: (multiplicative_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal)))))))))))

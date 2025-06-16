@@ -6,12 +6,14 @@ contract C {
   uint256 myVar;
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (type_name (elementary_type_name))
+        type: (type_name
+          (elementary_type_name))
         name: (identifier)))))
 
 ==================
@@ -22,27 +24,20 @@ contract C {
   string public constant GREETING = "Hello";
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (type_name (elementary_type_name))
+        type: (type_name
+          (elementary_type_name))
         (visibility)
         (mutability)
         name: (identifier)
-        value:
-          (expression
-            (primary_expression
-               (literal
-                 (string_literal)
-              )
-            )
-        )
-      )
-    )
-  )
-)
+        value: (primary_expression
+          (literal
+            (string_literal)))))))
 
 ==================
 State variable with custom type
@@ -52,12 +47,15 @@ contract C {
   MyStruct myStruct;
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (type_name (identifier_path (identifier)))
+        type: (type_name
+          (identifier_path
+            (identifier)))
         name: (identifier)))))
 
 ==================
@@ -68,15 +66,19 @@ contract C {
   bool public active = true;
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (type_name (elementary_type_name))
+        type: (type_name
+          (elementary_type_name))
         (visibility)
         name: (identifier)
-        value: (expression (primary_expression (literal (boolean_literal))))))))
+        value: (primary_expression
+          (literal
+            (boolean_literal)))))))
 
 ==================
 State variable with address literal
@@ -86,12 +88,16 @@ contract C {
   address public owner = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (type_name (elementary_type_name))
+        type: (type_name
+          (elementary_type_name))
         (visibility)
         name: (identifier)
-        value: (expression (primary_expression (literal (hex_literal))))))))
+        value: (primary_expression
+          (literal
+            (hex_literal)))))))

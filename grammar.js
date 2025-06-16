@@ -169,21 +169,20 @@ module.exports = grammar({
     //************************************************************//
 
     // contract_definition
-    // ├─── "abstract" (optional keyword)
-    // ├─── "contract" (required keyword)
-    // ├─── name: identifier
-    // ├─── inheritance_specifier_list (optional)
-    // │    └─── "is" (keyword)
-    // │    └─── repeats 1 or more times...
-    // │         └─── inheritance_specifier
-    // │              └─── identifier_path (e.g., Ownable or MyLib.Parent)
-    // └─── body: contract_body
-    //      └─── "{"
-    //      │    └─── repeats 0 or more times...
-    //      │         └─── _contract_body_element
-    //      │              ├─── state_variable_declaration
-    //      │              └─── function_definition
-    //      └─── "}"
+    // ├── "abstract" (optional)
+    // ├── "contract" (keyword)
+    // ├── name: identifier
+    // ├── inheritance_specifier_list (optional)
+    // │   ├── "is" (keyword)
+    // │   └── inheritance_specifier (repeated, comma-separated)
+    // │       └── identifier_path (e.g. `Ownable`, `Context.sol`)
+    // │
+    // └── body: contract_body
+    //     ├── "{"
+    //     ├── _contract_body_element (repeated)
+    //     │   ├── state_variable_declaration
+    //     │   └── function_definition
+    //     └── "}"
 
     /**
      * The definition of a contract.
@@ -263,7 +262,7 @@ module.exports = grammar({
         field("type", $.type_name),
         repeat($._state_variable_attribute),
         field("name", $.identifier),
-        optional(seq("=", field("value", $.expression))),
+        optional(seq("=", field("value", $._expression))),
         ";",
       ),
 
@@ -321,36 +320,31 @@ module.exports = grammar({
     // Matches '0x' followed by 40 hex characters (a standard address)
     hex_literal: ($) => /0x[0-9a-fA-F]{40}/,
 
-    /**
-     * A tuple expression.
-     * e.g., `(1, true)` or `(a, b)`
-     */
-    tuple_expression: ($) => seq("(", optional(commaSep($.expression)), ")"),
-
     //************************************************************//
     //                    Function Definition                     //
     //************************************************************//
 
     // function_definition
-    // ├─── "function" (keyword)
-    // ├─── name: identifier
-    // ├─── parameters: parameter_list
-    // │    └─── "("
-    // │    │    └─── parameter_declaration (repeats, comma-separated)
-    // │    │         ├─── type: type_name
-    // │    │         ├─── data_location (optional: "memory", "storage", etc.)
-    // │    │         └─── name: identifier (optional)
-    // │    └─── ")"
-    // ├─── _function_attribute (repeats 0 or more times)
-    // │    ├─── visibility ("public", "external", etc.)
-    // │    ├─── state_mutability ("view", "pure", "payable")
-    // │    └─── "virtual"
-    // ├─── returns_clause (optional)
-    // │    └─── "returns" (keyword)
-    // │    └─── returns: parameter_list
-    // └─── body
-    //      ├─── block (i.e., { ... })
-    //      └─── empty_body (i.e., ;)
+    // ├── "function" (keyword)
+    // ├── name: identifier
+    // ├── parameters: parameter_list
+    // │   └── (
+    // │       └── parameter_declaration (repeated)
+    // │           ├── type: type_name
+    // │           ├── data_location (optional)
+    // │           └── name: identifier (optional)
+    // │
+    // ├── _function_attribute (repeated)
+    // │   ├── visibility
+    // │   ├── state_mutability
+    // │   └── "virtual"
+    // │
+    // ├── returns_clause (optional)
+    // │   └── returns: parameter_list
+    // │
+    // └── body:
+    //     ├── block (e.g. { ... })
+    //     └── empty_body (e.g. ;)
 
     /**
      * The definition of a function.
@@ -431,7 +425,7 @@ module.exports = grammar({
      * An expression statement, which is an expression followed by a semicolon.
      * e.g., `x = 1;` or `foo();`
      */
-    expression_statement: ($) => seq($.expression, ";"),
+    expression_statement: ($) => seq($._expression, ";"),
 
     //************************************************************//
     //              Variable Declaration Statement                //
@@ -447,10 +441,10 @@ module.exports = grammar({
           // e.g. `uint256 myVar = 1`
           seq(
             $.variable_declaration,
-            optional(seq("=", field("value", $.expression))),
+            optional(seq("=", field("value", $._expression))),
           ),
           // e.g. `(uint a, uint b) = (1, 2)`
-          seq($.variable_declaration_tuple, "=", field("value", $.expression)),
+          seq($.variable_declaration_tuple, "=", field("value", $._expression)),
         ),
         ";",
       ),
@@ -478,84 +472,95 @@ module.exports = grammar({
     //                      Expression Rules                      //
     //************************************************************//
 
-    // expression
-    // ├─── primary_expression
-    // │    ├─── identifier (e.g., myVar)
-    // │    ├─── literal
-    // │    │    ├─── number_literal (e.g., 123)
-    // │    │    ├─── string_literal (e.g., "hello")
-    // │    │    ├─── boolean_literal (e.g., true)
-    // │    │    └─── hex_literal (e.g., 0x...abc)
-    // │    └─── tuple_expression (e.g., (1, true))
-    // │
-    // └─── binary_expression (This is where recursion happens)
-    //      ├─── left: expression (can be a primary_expression or another binary_expression)
-    //      ├─── operator: "+", "*", "=", etc.
-    //      └─── right: expression (can be a primary_expression or another binary_expression)
+    // _expression
+    // ├── primary_expression
+    // │   ├── literal
+    // │   │   ├── number_literal
+    // │   │   ├── string_literal
+    // │   │   ├── boolean_literal
+    // │   │   └── hex_literal
+    // │   └── identifier
+    // ├── additive_expression
+    // │   ├── left: _expression
+    // │   ├── operator: additive_operator
+    // │   └── right: _expression
+    // ├── multiplicative_expression
+    // │   ├── left: _expression
+    // │   ├── operator: multiplicative_operator
+    // │   └── right: _expression
+    // ├── assignment_expression
+    // │   ├── left: _expression
+    // │   ├── operator: assignment_operator
+    // │   └── right: _expression
+    // └── tuple_expression
+    //     └── _expression (repeated)
 
     /**
-     * The main expression rule.
-     * It's a choice among all concrete expression types. This structure
-     * avoids creating extra wrapper nodes in the syntax tree, leading to a
-     * cleaner and more queryable structure.
+     * The main, hidden expression rule.
+     * As a hidden rule, it doesn't appear in the AST. Instead, its chosen
+     * child (e.g., additive_expression) is hoisted into its place.
      */
-    expression: ($) =>
+    _expression: ($) =>
       choice(
         $.primary_expression,
-        $.binary_expression,
+        $.additive_expression,
+        $.multiplicative_expression,
         $.assignment_expression,
         $.tuple_expression,
       ),
 
     /**
-     * Primary expressions are the leaf nodes of the expression tree,
-     * representing basic constructs like literals and identifiers.
+     * Primary expressions are the leaf nodes of the expression tree.
      */
-    primary_expression: ($) =>
-      choice(
-        $.literal,
-        // Identifiers are given a higher precedence to resolve ambiguity
-        // with other rules.
-        prec(1, $.identifier),
-      ),
+    primary_expression: ($) => choice($.literal, prec(1, $.identifier)),
 
     /**
-     * A binary expression, handling arithmetic and similar operations.
-     * Precedence and associativity are defined for each operator group.
+     * Specific expression types for different operator precedence levels.
+     * This makes the AST much more descriptive.
      */
-    binary_expression: ($) =>
-      choice(
-        prec.left(
-          2,
-          seq(
-            field("left", $.expression),
-            field("operator", choice("*", "/", "%")),
-            field("right", $.expression),
-          ),
-        ),
-        prec.left(
-          1,
-          seq(
-            field("left", $.expression),
-            field("operator", choice("+", "-")),
-            field("right", $.expression),
-          ),
+    additive_expression: ($) =>
+      prec.left(
+        1,
+        seq(
+          field("left", $._expression),
+          field("operator", $.additive_operator),
+          field("right", $._expression),
         ),
       ),
 
-    /**
-     * A specific node for assignment expressions.
-     * It has right-associativity and the lowest precedence.
-     */
+    multiplicative_expression: ($) =>
+      prec.left(
+        2,
+        seq(
+          field("left", $._expression),
+          field("operator", $.multiplicative_operator),
+          field("right", $._expression),
+        ),
+      ),
+
     assignment_expression: ($) =>
       prec.right(
         0,
         seq(
-          field("left", $.expression),
-          field("operator", "="),
-          field("right", $.expression),
+          field("left", $._expression),
+          field("operator", $.assignment_operator),
+          field("right", $._expression),
         ),
       ),
+
+    /**
+     * Named operator rules. Because these are named, they will appear
+     * in the final syntax tree.
+     */
+    additive_operator: ($) => choice("+", "-"),
+    multiplicative_operator: ($) => choice("*", "/", "%"),
+    assignment_operator: ($) => choice("="),
+
+    /**
+     * A tuple expression.
+     * e.g., `(1, true)` or `(a, b)`
+     */
+    tuple_expression: ($) => seq("(", optional(commaSep($._expression)), ")"),
 
     //************************************************************//
     //                       Common Rules                         //

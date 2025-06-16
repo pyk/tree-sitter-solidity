@@ -46,10 +46,9 @@ contract C {
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
-            value: (expression
-              (primary_expression
-                (literal
-                  (number_literal))))))))))
+            value: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Tuple declaration
@@ -79,17 +78,13 @@ contract C {
                 type: (type_name
                   (elementary_type_name))
                 name: (identifier)))
-            value: (expression
-              (tuple_expression
-                (expression
-                  (primary_expression
-                    (literal
-                      (number_literal))))
-                (expression
-                  (primary_expression
-                    (literal
-                      (boolean_literal))))
-                (expression
-                  (primary_expression
-                    (literal
-                      (number_literal))))))))))))
+            value: (tuple_expression
+              (primary_expression
+                (literal
+                  (number_literal)))
+              (primary_expression
+                (literal
+                  (boolean_literal)))
+              (primary_expression
+                (literal
+                  (number_literal))))))))))
