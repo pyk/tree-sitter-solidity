@@ -2187,6 +2187,10 @@
           "named": true
         },
         {
+          "type": "fallback_function_definition",
+          "named": true
+        },
+        {
           "type": "function_definition",
           "named": true
         },
@@ -2964,6 +2968,76 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "fallback_function_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "empty_body",
+            "named": true
+          }
+        ]
+      },
+      "modifier": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "modifier_invocation",
+            "named": true
+          }
+        ]
+      },
+      "mutability": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "state_mutability",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parameter_list",
+            "named": true
+          }
+        ]
+      },
+      "returns": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "parameter_list",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "visibility",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -7244,6 +7318,10 @@
   },
   {
     "type": "external",
+    "named": false
+  },
+  {
+    "type": "fallback",
     "named": false
   },
   {

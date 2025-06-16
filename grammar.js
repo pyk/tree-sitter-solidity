@@ -906,6 +906,7 @@ module.exports = grammar({
         $.event_definition,
         $.struct_definition,
         $.error_definition,
+        $.fallback_function_definition,
         $.receive_function_definition,
         $.using_directive,
       ),
@@ -1101,6 +1102,16 @@ module.exports = grammar({
         "(",
         ")",
         repeat($._function_like_attribute),
+        field("body", choice($.block, $.empty_body)),
+      ),
+
+    // The fallback function definition
+    fallback_function_definition: ($) =>
+      seq(
+        "fallback",
+        field("parameters", $.parameter_list),
+        repeat($._function_like_attribute),
+        optional(seq("returns", field("returns", $.parameter_list))),
         field("body", choice($.block, $.empty_body)),
       ),
 
