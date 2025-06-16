@@ -15,10 +15,10 @@
       },
       "value": {
         "multiple": true,
-        "required": false,
+        "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "version_constraint",
             "named": true
           }
         ]
@@ -62,7 +62,55 @@
     }
   },
   {
+    "type": "version_constraint",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "version_literal",
+          "named": true
+        },
+        {
+          "type": "version_operator",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "version_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": "^",
     "named": false
   },
   {
@@ -75,6 +123,14 @@
   },
   {
     "type": "pragma",
+    "named": false
+  },
+  {
+    "type": "version_literal",
+    "named": true
+  },
+  {
+    "type": "~",
     "named": false
   }
 ]

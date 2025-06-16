@@ -62,11 +62,8 @@
           "type": "FIELD",
           "name": "value",
           "content": {
-            "type": "REPEAT",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_pragma_token"
-            }
+            "type": "SYMBOL",
+            "name": "_pragma_expression"
           }
         },
         {
@@ -75,22 +72,70 @@
         }
       ]
     },
-    "_pragma_token": {
+    "_pragma_expression": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "version_constraint"
+      }
+    },
+    "version_constraint": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "version_operator"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "version_literal"
+        }
+      ]
+    },
+    "version_operator": {
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "identifier"
+          "type": "STRING",
+          "value": "^"
         },
         {
-          "type": "PATTERN",
-          "value": "(\\d|\\.)+"
+          "type": "STRING",
+          "value": "~"
         },
         {
-          "type": "PATTERN",
-          "value": "[><=^~]+"
+          "type": "STRING",
+          "value": ">="
+        },
+        {
+          "type": "STRING",
+          "value": "<="
+        },
+        {
+          "type": "STRING",
+          "value": ">"
+        },
+        {
+          "type": "STRING",
+          "value": "<"
+        },
+        {
+          "type": "STRING",
+          "value": "="
         }
       ]
+    },
+    "version_literal": {
+      "type": "PATTERN",
+      "value": "\\d+(\\.\\d+){0,2}"
     },
     "identifier": {
       "type": "PATTERN",

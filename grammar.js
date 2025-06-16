@@ -65,21 +65,33 @@ module.exports = grammar({
     /**
      * A pragma directive, used to enable certain compiler features or checks.
      * e.g., `pragma solidity ^0.8.0;`
+     * e.g., `pragma solidity >=0.8.0 <0.9.0;`
      */
     pragma_directive: ($) =>
       seq(
         "pragma",
         field("name", $.identifier),
-        field("value", repeat($._pragma_token)), // Using repeat for simplicity, allows zero or more tokens after name
+        field("value", $._pragma_expression),
         ";",
       ),
 
-    _pragma_token: ($) =>
-      choice(
-        $.identifier,
-        /(\d|\.)+/, // Matches version numbers like 0.8.0
-        /[><=^~]+/, // Matches version operators like >= or ^
-      ),
+    // A pragma expression consists of one or more version constraints.
+    _pragma_expression: ($) =>
+      repeat1($.version_constraint),
+
+    /**
+     * A version constraint, such as `^0.8.0` or `>=0.8.0 <0.9.0`.
+     * This is now a visible node in the syntax tree.
+     */
+    version_constraint: ($) =>
+      seq(optional($.version_operator), $.version_literal),
+
+    // An operator used for version constraints (hidden helper rule).
+    version_operator: ($) =>
+      choice("^", "~", ">=", "<=", ">", "<", "="),
+
+    // A semantic version number (visible node).
+    version_literal: ($) => /\d+(\.\d+){0,2}/,
 
     identifier: ($) => /[a-zA-Z_]\w*/,
   },
