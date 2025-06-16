@@ -6,21 +6,8 @@
     "source_file": {
       "type": "REPEAT",
       "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_top_level_element"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "comment"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "natspec_comment"
-          }
-        ]
+        "type": "SYMBOL",
+        "name": "_top_level_element"
       }
     },
     "_top_level_element": {
@@ -2598,29 +2585,8 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_contract_body_element"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "comment"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "natspec_comment"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "enum_definition"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "event_definition"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "_contract_body_element"
           }
         },
         {
@@ -2634,11 +2600,27 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "constructor_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "state_variable_declaration"
         },
         {
           "type": "SYMBOL",
           "name": "function_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "struct_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum_definition"
         },
         {
           "type": "SYMBOL",
@@ -2909,21 +2891,8 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_statement"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "comment"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "natspec_comment"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "_statement"
           }
         },
         {
@@ -3295,6 +3264,146 @@
         }
       ]
     },
+    "modifier_invocation": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier_path"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "arguments",
+              "content": {
+                "type": "SYMBOL",
+                "name": "call_argument_list"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_constructor_attribute": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "visibility",
+          "content": {
+            "type": "SYMBOL",
+            "name": "visibility"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "mutability",
+          "content": {
+            "type": "SYMBOL",
+            "name": "state_mutability"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "invocation",
+          "content": {
+            "type": "SYMBOL",
+            "name": "modifier_invocation"
+          }
+        }
+      ]
+    },
+    "constructor_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "constructor"
+        },
+        {
+          "type": "FIELD",
+          "name": "parameters",
+          "content": {
+            "type": "SYMBOL",
+            "name": "parameter_list"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_constructor_attribute"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "block"
+          }
+        }
+      ]
+    },
+    "modifier_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "modifier"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "parameters",
+              "content": {
+                "type": "SYMBOL",
+                "name": "parameter_list"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "block"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "empty_body"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "uint_type": {
       "type": "TOKEN",
       "content": {
@@ -3640,6 +3749,14 @@
     {
       "type": "PATTERN",
       "value": "\\s"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "natspec_comment"
     }
   ],
   "conflicts": [],

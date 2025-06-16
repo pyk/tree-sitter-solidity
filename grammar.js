@@ -51,8 +51,7 @@ module.exports = grammar({
   // keywords like "import" and the general identifier rule.
   word: ($) => $.identifier,
 
-  // Whitespace is an extra, but comments are not, so they become visible nodes.
-  extras: ($) => [/\s/],
+  extras: ($) => [/\s/, $.comment, $.natspec_comment],
 
   //
   conflicts: ($) => [],
@@ -72,8 +71,7 @@ module.exports = grammar({
      * It consists of a sequence of top-level declarations and directives.
      *
      */
-    source_file: ($) =>
-      repeat(choice($._top_level_element, $.comment, $.natspec_comment)),
+    source_file: ($) => repeat($._top_level_element),
 
     /**
      * A choice between any of the valid top-level elements in a Solidity file.
@@ -884,20 +882,7 @@ module.exports = grammar({
     /**
      * The body of a contract, enclosed in curly braces.
      */
-    contract_body: ($) =>
-      seq(
-        "{",
-        repeat(
-          choice(
-            $._contract_body_element,
-            $.comment,
-            $.natspec_comment,
-            $.enum_definition,
-            $.event_definition,
-          ),
-        ),
-        "}",
-      ),
+    contract_body: ($) => seq("{", repeat($._contract_body_element), "}"),
 
     /**
      * A choice between all valid elements within a contract body.
@@ -905,8 +890,12 @@ module.exports = grammar({
      */
     _contract_body_element: ($) =>
       choice(
+        $.constructor_definition,
+        $.modifier_definition,
         $.state_variable_declaration,
         $.function_definition,
+        $.struct_definition,
+        $.enum_definition,
         $.struct_definition,
         $.error_definition,
         $.using_directive,
@@ -986,8 +975,7 @@ module.exports = grammar({
     /**
      * A block of statements enclosed in curly braces.
      */
-    block: ($) =>
-      seq("{", repeat(choice($._statement, $.comment, $.natspec_comment)), "}"),
+    block: ($) => seq("{", repeat($._statement), "}"),
 
     /**
      * A new named rule for a function body that is just a semicolon.
@@ -1056,6 +1044,37 @@ module.exports = grammar({
     error_parameter: ($) =>
       seq(field("type", $._type_name), optional(field("name", $.identifier))),
 
+    modifier_invocation: ($) =>
+      seq(
+        field("name", $.identifier_path),
+        optional(field("arguments", $.call_argument_list)),
+      ),
+
+    _constructor_attribute: ($) =>
+      choice(
+        field("visibility", $.visibility),
+        field("mutability", $.state_mutability),
+        // Use a different field name here to allow for multiple
+        field("invocation", $.modifier_invocation),
+      ),
+
+    constructor_definition: ($) =>
+      seq(
+        "constructor",
+        field("parameters", $.parameter_list),
+        repeat($._constructor_attribute),
+        field("body", $.block),
+      ),
+
+    // Add this rule near function_definition and constructor_definition
+    modifier_definition: ($) =>
+      seq(
+        "modifier",
+        field("name", $.identifier),
+        optional(field("parameters", $.parameter_list)),
+        // We'll add virtual/override later
+        field("body", choice($.block, $.empty_body)),
+      ),
     //************************************************************//
     //                           Types                            //
     //************************************************************//

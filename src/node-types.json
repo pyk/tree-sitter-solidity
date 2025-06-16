@@ -1283,10 +1283,6 @@
           "named": true
         },
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "expression_statement",
           "named": true
         },
@@ -1296,10 +1292,6 @@
         },
         {
           "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "natspec_comment",
           "named": true
         },
         {
@@ -2111,6 +2103,62 @@
     }
   },
   {
+    "type": "constructor_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "invocation": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "modifier_invocation",
+            "named": true
+          }
+        ]
+      },
+      "mutability": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "state_mutability",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parameter_list",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "visibility",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "contract_body",
     "named": true,
     "fields": {},
@@ -2119,7 +2167,7 @@
       "required": false,
       "types": [
         {
-          "type": "comment",
+          "type": "constructor_definition",
           "named": true
         },
         {
@@ -2131,15 +2179,11 @@
           "named": true
         },
         {
-          "type": "event_definition",
-          "named": true
-        },
-        {
           "type": "function_definition",
           "named": true
         },
         {
-          "type": "natspec_comment",
+          "type": "modifier_definition",
           "named": true
         },
         {
@@ -4899,6 +4943,72 @@
     }
   },
   {
+    "type": "modifier_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "empty_body",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "parameter_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "modifier_invocation",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "call_argument_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_path",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "multiplicative_expression",
     "named": true,
     "fields": {
@@ -5798,10 +5908,6 @@
       "required": false,
       "types": [
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "contract_definition",
           "named": true
         },
@@ -5827,10 +5933,6 @@
         },
         {
           "type": "library_definition",
-          "named": true
-        },
-        {
-          "type": "natspec_comment",
           "named": true
         },
         {
@@ -7004,10 +7106,15 @@
   },
   {
     "type": "comment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "constant",
+    "named": false
+  },
+  {
+    "type": "constructor",
     "named": false
   },
   {
@@ -7135,8 +7242,13 @@
     "named": false
   },
   {
+    "type": "modifier",
+    "named": false
+  },
+  {
     "type": "natspec_comment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "new",

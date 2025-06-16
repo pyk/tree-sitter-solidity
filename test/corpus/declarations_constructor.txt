@@ -1,0 +1,178 @@
+==================
+Simple constructor
+==================
+
+contract C {
+  constructor() {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (constructor_definition
+        parameters: (parameter_list)
+        body: (block)))))
+
+==================
+Constructor with parameters
+==================
+
+contract C {
+  constructor(uint _a, string memory _b) {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (constructor_definition
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (uint_type)
+            name: (identifier))
+          (parameter_declaration
+            type: (string_type)
+            location: (data_location)
+            name: (identifier)))
+        body: (block)))))
+
+==================
+Payable constructor
+==================
+
+contract C {
+  constructor() payable {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (constructor_definition
+        parameters: (parameter_list)
+        mutability: (state_mutability)
+        body: (block)))))
+
+==================
+Internal constructor (for abstract contracts)
+==================
+
+abstract contract C {
+  constructor() internal {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (constructor_definition
+        parameters: (parameter_list)
+        visibility: (visibility)
+        body: (block)))))
+
+==================
+Constructor with parameters and attributes
+==================
+
+contract C {
+  constructor(uint _x) internal payable {
+    // ...
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (constructor_definition
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (uint_type)
+            name: (identifier)))
+        visibility: (visibility)
+        mutability: (state_mutability)
+        body: (block
+          (comment))))))
+
+==================
+Constructor with a modifier
+==================
+
+contract C {
+  modifier myMod() {
+    _;
+  }
+  constructor() myMod {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (modifier_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (expression_statement
+            (primary_expression
+              (identifier)))))
+      (constructor_definition
+        parameters: (parameter_list)
+        invocation: (modifier_invocation
+          name: (identifier_path
+            (identifier)))
+        body: (block)))))
+
+==================
+Constructor with base constructor invocation
+==================
+
+contract MyToken is ERC20 {
+    constructor(string memory name, string memory symbol) ERC20(name, symbol) {
+        // ...
+    }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    (inheritance_specifier_list
+      (inheritance_specifier
+        name: (identifier_path
+          (identifier))))
+    body: (contract_body
+      (constructor_definition
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (string_type)
+            location: (data_location)
+            name: (identifier))
+          (parameter_declaration
+            type: (string_type)
+            location: (data_location)
+            name: (identifier)))
+        invocation: (modifier_invocation
+          name: (identifier_path
+            (identifier))
+          arguments: (call_argument_list
+            (primary_expression
+              (identifier))
+            (primary_expression
+              (identifier))))
+        body: (block
+          (comment))))))
