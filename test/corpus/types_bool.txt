@@ -1,0 +1,100 @@
+==================
+State variable of type bool
+==================
+
+contract C {
+  bool myVar;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (bool_type)
+        name: (identifier)))))
+
+==================
+Bool type as a function parameter
+==================
+
+contract C {
+  function process(bool flag) public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (bool_type)
+            name: (identifier)))
+        (visibility)
+        body: (block)))))
+
+==================
+Bool type as a return value
+==================
+
+contract C {
+  function isReady() public returns (bool) {
+    return true;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        (visibility)
+        (returns_clause
+          returns: (parameter_list
+            (parameter_declaration
+              type: (bool_type))))
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (identifier_path
+                (identifier))
+              name: (identifier))))))))
+
+==================
+Bool type as a local variable
+==================
+
+contract C {
+  function check() public {
+    bool localFlag = false;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        (visibility)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (bool_type)
+              name: (identifier))
+            value: (primary_expression
+              (literal
+                (boolean_literal)))))))))
