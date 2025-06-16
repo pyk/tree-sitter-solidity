@@ -1797,12 +1797,7 @@
       "value": "\\s"
     }
   ],
-  "conflicts": [
-    [
-      "type_name",
-      "_expression"
-    ]
-  ],
+  "conflicts": [],
   "precedences": [],
   "externals": [],
   "inline": [],

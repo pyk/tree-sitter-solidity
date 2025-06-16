@@ -52,11 +52,7 @@ module.exports = grammar({
   word: ($) => $.identifier,
 
   //
-  conflicts: ($) => [
-    // This resolves the ambiguity where a construct (like `A.B` or just `A`)
-    // could be interpreted as either a type or a value/expression.
-    [$.type_name, $._expression],
-  ],
+  conflicts: ($) => [],
 
   rules: {
     // source_file
