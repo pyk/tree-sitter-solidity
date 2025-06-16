@@ -1,0 +1,75 @@
+==================
+Simple free function
+==================
+
+function helper() {}
+
+---
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameter_list)
+    body: (block)))
+
+==================
+Free function with parameters and returns
+==================
+
+function add(uint x, uint y) pure returns (uint) {
+  return x + y;
+}
+
+---
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter_declaration
+        type: (uint_type)
+        name: (identifier))
+      (parameter_declaration
+        type: (uint_type)
+        name: (identifier)))
+    (state_mutability)
+    (returns_clause
+      returns: (parameter_list
+        (parameter_declaration
+          type: (uint_type))))
+    body: (block
+      (return_statement
+        value: (additive_expression
+          left: (primary_expression (identifier))
+          operator: (additive_operator)
+          right: (primary_expression (identifier)))))))
+
+==================
+Internal free function (explicit)
+==================
+
+function mul(uint x, uint y) internal pure returns (uint) {
+  return x * y;
+}
+
+---
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter_declaration
+        type: (uint_type)
+        name: (identifier))
+      (parameter_declaration
+        type: (uint_type)
+        name: (identifier)))
+    (visibility)
+    (state_mutability)
+    (returns_clause
+      returns: (parameter_list
+        (parameter_declaration
+          type: (uint_type))))
+    body: (block
+      (return_statement
+        value: (multiplicative_expression
+          left: (primary_expression (identifier))
+          operator: (multiplicative_operator)
+          right: (primary_expression (identifier)))))))

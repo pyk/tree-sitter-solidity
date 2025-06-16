@@ -60,6 +60,10 @@
         {
           "type": "SYMBOL",
           "name": "library_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "function_definition"
         }
       ]
     },

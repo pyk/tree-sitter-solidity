@@ -93,7 +93,7 @@ module.exports = grammar({
         $.event_definition,
         $.error_definition,
         $.library_definition,
-        // $.function_definition,
+        $.function_definition,
         // $.constant_variable_declaration,
         // $.user_defined_value_type_definition,
         // $.error_definition,
