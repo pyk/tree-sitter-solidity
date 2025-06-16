@@ -92,6 +92,7 @@ module.exports = grammar({
         $.struct_definition,
         $.enum_definition,
         $.event_definition,
+        $.error_definition,
         // $.using_directive,
         // $.library_definition,
         // $.function_definition,
@@ -279,8 +280,8 @@ module.exports = grammar({
         $.state_variable_declaration,
         $.function_definition,
         $.struct_definition,
+        $.error_definition,
       ),
-    // TODO: Add function_definition, state_variable_declaration, etc.
 
     /**
      * The list of parent contracts in an inheritance clause.
@@ -1041,8 +1042,21 @@ module.exports = grammar({
         ";",
       ),
 
-    // And add this simple rule for the `anonymous` keyword
+    // Rule for the `anonymous` keyword
     anonymous: ($) => "anonymous",
+
+    error_definition: ($) =>
+      seq(
+        "error",
+        field("name", $.identifier),
+        "(",
+        optional(commaSep($.error_parameter)),
+        ")",
+        ";",
+      ),
+
+    error_parameter: ($) =>
+      seq(field("type", $._type_name), optional(field("name", $.identifier))),
 
     //************************************************************//
     //                           Types                            //
