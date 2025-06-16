@@ -1,0 +1,64 @@
+==================
+Simple contract definition
+==================
+
+contract MyContract {}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body)))
+
+==================
+Abstract contract
+==================
+
+abstract contract MyAbstractContract {}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body)))
+
+==================
+Contract with inheritance
+==================
+
+contract MyContract is Ownable, ReentrancyGuard {
+
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    (inheritance_specifier_list
+      (inheritance_specifier
+        (identifier_path (identifier)))
+      (inheritance_specifier
+        (identifier_path (identifier))))
+    body: (contract_body)))
+
+==================
+Contract with namespaced inheritance
+==================
+
+import "./Parent.sol";
+
+contract Child is Parent.DeepParent {
+
+}
+
+---
+(source_file
+  (import_directive
+    path: (string_literal))
+  (contract_definition
+    name: (identifier)
+    (inheritance_specifier_list
+      (inheritance_specifier
+        (identifier_path (identifier) (identifier))))
+    body: (contract_body)))

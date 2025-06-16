@@ -7,8 +7,21 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+// Helper function for comma-separated lists
+function commaSep(rule) {
+  return seq(rule, repeat(seq(",", rule)))
+}
+
 module.exports = grammar({
   name: "solidity",
+
+  // Add the `word` property here. This resolves conflicts between
+  // keywords like "import" and the general identifier rule.
+  word: ($) => $.identifier,
+
+  // Add a conflicts section to resolve the ambiguity
+  // that can occur after a pragma directive.
+  conflicts: ($) => [],
 
   rules: {
     /**
@@ -27,9 +40,9 @@ module.exports = grammar({
       choice(
         $.spdx_license_identifier,
         $.pragma_directive,
-        // $.import_directive,
+        $.import_directive,
+        $.contract_definition,
         // $.using_directive,
-        // $.contract_definition,
         // $.interface_definition,
         // $.library_definition,
         // $.function_definition,
@@ -56,6 +69,7 @@ module.exports = grammar({
         field("license", $.license_identifier),
       ),
 
+    // Re-add the license_identifier rule so it can be inlined
     license_identifier: ($) => /[\w\.-]+/,
 
     //************************************************************//
@@ -76,8 +90,7 @@ module.exports = grammar({
       ),
 
     // A pragma expression consists of one or more version constraints.
-    _pragma_expression: ($) =>
-      repeat1($.version_constraint),
+    _pragma_expression: ($) => repeat1($.version_constraint),
 
     /**
      * A version constraint, such as `^0.8.0` or `>=0.8.0 <0.9.0`.
@@ -87,12 +100,176 @@ module.exports = grammar({
       seq(optional($.version_operator), $.version_literal),
 
     // An operator used for version constraints (hidden helper rule).
-    version_operator: ($) =>
-      choice("^", "~", ">=", "<=", ">", "<", "="),
+    version_operator: ($) => choice("^", "~", ">=", "<=", ">", "<", "="),
 
     // A semantic version number (visible node).
     version_literal: ($) => /\d+(\.\d+){0,2}/,
 
+    //************************************************************//
+    //                      Import Directive                      //
+    //************************************************************//
+
+    /**
+     * An import directive, used to import symbols from another file.
+     */
+    import_directive: ($) =>
+      seq(
+        "import",
+        choice(
+          // e.g., import "path/to/file.sol";
+          // e.g., import "path/to/file.sol" as MyContract;
+          seq(
+            field("path", $.string_literal),
+            optional(seq("as", field("alias", $.identifier))),
+          ),
+          // e.g., import {symbol1 as alias, symbol2} from "path/to/file.sol";
+          seq(
+            field("symbols", $.symbol_aliases),
+            "from",
+            field("path", $.string_literal),
+          ),
+          // e.g., import * as MyLib from "path/to/file.sol";
+          seq(
+            "*",
+            "as",
+            field("alias", $.identifier),
+            "from",
+            field("path", $.string_literal),
+          ),
+        ),
+        ";",
+      ),
+
+    /**
+     * A set of symbol aliases in an import statement.
+     * e.g., `{symbol1 as alias, symbol2}`
+     */
+    symbol_aliases: ($) => seq("{", commaSep($.import_alias), "}"),
+
+    /**
+     * A single symbol alias in an import statement.
+     * e.g., `MySymbol as MyAlias` or just `MySymbol`
+     */
+    import_alias: ($) =>
+      seq(
+        field("symbol", $.identifier),
+        optional(seq("as", field("alias", $.identifier))),
+      ),
+
+    //************************************************************//
+    //                    Contract Definition                     //
+    //************************************************************//
+
+    /**
+     * The definition of a contract.
+     * e.g., `contract MyContract is Ownable { ... }`
+     */
+    contract_definition: ($) =>
+      seq(
+        optional("abstract"),
+        "contract",
+        field("name", $.identifier),
+        optional($.inheritance_specifier_list),
+        field("body", $.contract_body),
+      ),
+
+    /**
+     * The body of a contract, enclosed in curly braces.
+     */
+    contract_body: ($) => seq("{", repeat($._contract_body_element), "}"),
+
+    /**
+     * A choice between all valid elements within a contract body.
+     * (Currently empty, to be filled in later).
+     */
+    _contract_body_element: ($) => choice($.state_variable_declaration),
+    // TODO: Add function_definition, state_variable_declaration, etc.
+
+    /**
+     * The list of parent contracts in an inheritance clause.
+     * e.g., `is Ownable, ReentrancyGuard`
+     */
+    inheritance_specifier_list: ($) =>
+      seq("is", commaSep($.inheritance_specifier)),
+    /**
+     * A single parent contract in an inheritance list.
+     * e.g., `Ownable` or `ERC20("MyToken", "MTK")`
+     */
+    inheritance_specifier: ($) =>
+      seq(
+        $.identifier_path,
+        // We will need to define call_argument_list later
+        // optional($.call_argument_list)
+      ),
+
+    /**
+     * A dot-separated identifier path.
+     * e.g., `MyLib.MyStruct`
+     */
+    identifier_path: ($) => seq($.identifier, repeat(seq(".", $.identifier))),
+
+    //************************************************************//
+    //                 State Variable Declaration                 //
+    //************************************************************//
+
+    /**
+     * A state variable declaration within a contract.
+     * e.g., `uint256 public myVar = 1;`
+     */
+    state_variable_declaration: ($) =>
+      seq(
+        field("type", $.type_name),
+        repeat($._state_variable_attribute),
+        field("name", $.identifier),
+        optional(seq("=", field("value", $.expression))),
+        ";",
+      ),
+
+    /**
+     * An attribute of a state variable, such as visibility or mutability.
+     */
+    _state_variable_attribute: ($) =>
+      choice(
+        $.visibility,
+        $.mutability,
+        // $.override_specifier, // To be added later
+        "transient",
+      ),
+
+    /**
+     * A type name for a variable, parameter, or return value.
+     */
+    type_name: ($) => choice($.elementary_type_name, $.identifier_path),
+
+    /**
+     * An elementary type name like `uint256` or `address`.
+     */
+    elementary_type_name: ($) =>
+      choice(
+        "address",
+        "bool",
+        "string",
+        "bytes",
+        /u?int[0-9]*/, // e.g., int, uint, uint256
+        /bytes[0-9]+/, // e.g., bytes1, bytes32
+      ),
+
+    visibility: ($) => choice("public", "private", "internal"),
+
+    mutability: ($) => choice("constant", "immutable"),
+
+    /**
+     * A placeholder for expressions. We will fill this out later.
+     * For now, it recognizes identifiers and numbers.
+     */
+    expression: ($) => choice($.identifier, $.number_literal),
+
+    //************************************************************//
+    //                       Common Rules                         //
+    //************************************************************//
+
+    number_literal: ($) => /\d+/,
+    string_literal: ($) => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
     identifier: ($) => /[a-zA-Z_]\w*/,
   },
 })

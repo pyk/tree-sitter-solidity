@@ -1,0 +1,50 @@
+==================
+Simple state variable
+==================
+
+contract C {
+  uint256 myVar;
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (type_name (elementary_type_name))
+        name: (identifier)))))
+
+==================
+State variable with attributes and initializer
+==================
+
+contract C {
+  string public constant GREETING = "Hello";
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (type_name (elementary_type_name))
+        (visibility)
+        (mutability)
+        name: (identifier)
+        value: (expression (identifier))))))
+
+==================
+State variable with custom type
+==================
+
+contract C {
+  MyStruct myStruct;
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (type_name (identifier_path (identifier)))
+        name: (identifier)))))
