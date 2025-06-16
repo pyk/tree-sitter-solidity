@@ -537,6 +537,8 @@ module.exports = grammar({
         $.bitwise_or_expression,
         $.comparison_expression,
         $.equality_expression,
+        $.logical_and_expression,
+        $.logical_or_expression,
       ),
 
     /**
@@ -783,6 +785,26 @@ module.exports = grammar({
         seq(
           field("left", $._expression),
           field("operator", $.equality_operator),
+          field("right", $._expression),
+        ),
+      ),
+
+    logical_and_expression: ($) =>
+      prec.left(
+        PREC.AND,
+        seq(
+          field("left", $._expression),
+          field("operator", "&&"),
+          field("right", $._expression),
+        ),
+      ),
+
+    logical_or_expression: ($) =>
+      prec.left(
+        PREC.OR,
+        seq(
+          field("left", $._expression),
+          field("operator", "||"),
           field("right", $._expression),
         ),
       ),

@@ -1,0 +1,162 @@
+==================
+Simple logical AND
+==================
+
+contract C {
+  function f() {
+    bool a = true && false;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (logical_and_expression
+              left: (primary_expression
+                (literal
+                  (boolean_literal)))
+              right: (primary_expression
+                (literal
+                  (boolean_literal))))))))))
+
+==================
+Simple logical OR
+==================
+
+contract C {
+  function f() {
+    bool a = true || false;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (logical_or_expression
+              left: (primary_expression
+                (literal
+                  (boolean_literal)))
+              right: (primary_expression
+                (literal
+                  (boolean_literal))))))))))
+
+==================
+Precedence of AND vs OR
+==================
+// Should parse as `(a && b) || c`
+contract C {
+  function f(bool a, bool b, bool c) {
+    bool r = a && b || c;
+  }
+}
+
+---
+
+(source_file
+  (comment)
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name
+              (elementary_type_name))
+            name: (identifier))
+          (parameter_declaration
+            type: (type_name
+              (elementary_type_name))
+            name: (identifier))
+          (parameter_declaration
+            type: (type_name
+              (elementary_type_name))
+            name: (identifier)))
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (logical_or_expression
+              left: (logical_and_expression
+                left: (primary_expression
+                  (identifier))
+                right: (primary_expression
+                  (identifier)))
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Interaction with equality operators
+==================
+// Equality has higher precedence than logical AND
+contract C {
+  function f(uint a, uint b) {
+    bool r = a == 1 && b == 2;
+  }
+}
+
+---
+
+(source_file
+  (comment)
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name
+              (elementary_type_name))
+            name: (identifier))
+          (parameter_declaration
+            type: (type_name
+              (elementary_type_name))
+            name: (identifier)))
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (logical_and_expression
+              left: (equality_expression
+                left: (primary_expression
+                  (identifier))
+                operator: (equality_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal))))
+              right: (equality_expression
+                left: (primary_expression
+                  (identifier))
+                operator: (equality_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal)))))))))))
