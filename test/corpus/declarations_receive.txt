@@ -1,0 +1,78 @@
+==================
+Simple receive function
+==================
+
+contract C {
+  receive() external payable {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (receive_function_definition
+        visibility: (visibility)
+        mutability: (state_mutability)
+        body: (block)))))
+
+==================
+Receive function with a body
+==================
+
+contract C {
+  event Received(address, uint);
+  receive() external payable {
+    emit Received(msg.sender, msg.value);
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (event_definition
+        name: (identifier)
+        (unindexed_event_parameter
+          type: (address_type))
+        (unindexed_event_parameter
+          type: (uint_type)))
+      (receive_function_definition
+        visibility: (visibility)
+        mutability: (state_mutability)
+        body: (block
+          (emit_statement
+            (call_expression
+              function: (primary_expression
+                (identifier))
+              arguments: (call_argument_list
+                (member_access_expression
+                  object: (primary_expression
+                    (identifier))
+                  member: (identifier))
+                (member_access_expression
+                  object: (primary_expression
+                    (identifier))
+                  member: (identifier))))))))))
+
+==================
+Abstract receive function
+==================
+
+abstract contract C {
+    receive() external payable virtual;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (receive_function_definition
+        visibility: (visibility)
+        mutability: (state_mutability)
+        body: (empty_body)))))

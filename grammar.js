@@ -337,6 +337,7 @@ module.exports = grammar({
         $.return_statement,
         $.if_statement,
         $.for_statement,
+        $.emit_statement,
       ),
 
     /**
@@ -433,6 +434,12 @@ module.exports = grammar({
         ")",
         field("body", $._statement),
       ),
+
+    /**
+     * An emit statement.
+     * e.g., `emit MyEvent(arg1, arg2);`
+     */
+    emit_statement: ($) => seq("emit", $.call_expression, ";"),
 
     //************************************************************//
     //                      Expression Rules                      //
@@ -896,8 +903,10 @@ module.exports = grammar({
         $.function_definition,
         $.struct_definition,
         $.enum_definition,
+        $.event_definition,
         $.struct_definition,
         $.error_definition,
+        $.receive_function_definition,
         $.using_directive,
       ),
 
@@ -1066,7 +1075,6 @@ module.exports = grammar({
         field("body", $.block),
       ),
 
-    // Add this rule near function_definition and constructor_definition
     modifier_definition: ($) =>
       seq(
         "modifier",
@@ -1075,6 +1083,27 @@ module.exports = grammar({
         // We'll add virtual/override later
         field("body", choice($.block, $.empty_body)),
       ),
+
+    // Add a helper rule for receive/fallback attributes
+    _function_like_attribute: ($) =>
+      choice(
+        field("visibility", $.visibility),
+        field("mutability", $.state_mutability),
+        field("modifier", $.modifier_invocation),
+        "virtual",
+        // TODO: add override_specifier here later
+      ),
+
+    // The receive function definition
+    receive_function_definition: ($) =>
+      seq(
+        "receive",
+        "(",
+        ")",
+        repeat($._function_like_attribute),
+        field("body", choice($.block, $.empty_body)),
+      ),
+
     //************************************************************//
     //                           Types                            //
     //************************************************************//

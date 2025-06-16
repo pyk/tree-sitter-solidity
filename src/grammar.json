@@ -911,6 +911,10 @@
         {
           "type": "SYMBOL",
           "name": "for_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "emit_statement"
         }
       ]
     },
@@ -1199,6 +1203,23 @@
             "type": "SYMBOL",
             "name": "_statement"
           }
+        }
+      ]
+    },
+    "emit_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "emit"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "call_expression"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     },
@@ -2624,11 +2645,19 @@
         },
         {
           "type": "SYMBOL",
+          "name": "event_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "struct_definition"
         },
         {
           "type": "SYMBOL",
           "name": "error_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "receive_function_definition"
         },
         {
           "type": "SYMBOL",
@@ -3384,6 +3413,80 @@
               "type": "BLANK"
             }
           ]
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "block"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "empty_body"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "_function_like_attribute": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "visibility",
+          "content": {
+            "type": "SYMBOL",
+            "name": "visibility"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "mutability",
+          "content": {
+            "type": "SYMBOL",
+            "name": "state_mutability"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "modifier",
+          "content": {
+            "type": "SYMBOL",
+            "name": "modifier_invocation"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "virtual"
+        }
+      ]
+    },
+    "receive_function_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "receive"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_function_like_attribute"
+          }
         },
         {
           "type": "FIELD",
