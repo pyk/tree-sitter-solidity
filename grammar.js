@@ -526,6 +526,7 @@ module.exports = grammar({
         $.primary_expression,
         $.unary_expression,
         $.conditional_expression,
+        $.payable_conversion_expression,
         $.call_expression,
         $.member_access_expression,
         $.index_access_expression,
@@ -549,7 +550,14 @@ module.exports = grammar({
     /**
      * Primary expressions are the leaf nodes of the expression tree.
      */
-    primary_expression: ($) => choice($.literal, prec(1, $.identifier)),
+    primary_expression: ($) =>
+      choice($.literal, $.literal_with_subdenomination, prec(1, $.identifier)),
+
+    literal_with_subdenomination: ($) =>
+      seq($.number_literal, $.subdenomination),
+
+    subdenomination: ($) =>
+      choice("wei", "gwei", "ether", "seconds", "minutes", "hours", "days"),
 
     /**
      * A unary expression, handling both prefix and suffix operators.
@@ -855,6 +863,16 @@ module.exports = grammar({
      */
     tuple_expression: ($) => seq("(", optional(commaSep($._expression)), ")"),
 
+    /**
+     * A `payable` conversion expression.
+     * e.g., `payable(myAddress)`
+     */
+    payable_conversion_expression: ($) =>
+      prec(
+        PREC.MEMBER,
+        seq("payable", field("arguments", $.call_argument_list)),
+      ),
+
     //************************************************************//
     //                     Struct Definition                      //
     //************************************************************//
@@ -880,7 +898,12 @@ module.exports = grammar({
      * This is now a recursive rule to handle array types.
      */
     type_name: ($) =>
-      choice($.elementary_type_name, $.identifier_path, $.array_type),
+      choice(
+        $.address_type,
+        $.elementary_type_name,
+        $.identifier_path,
+        $.array_type,
+      ),
 
     // This tells the parser: "When you are building an identifier_path and you have a choice
     // between finishing the rule (reducing) or consuming another token to make it longer
@@ -902,11 +925,16 @@ module.exports = grammar({
       ),
 
     /**
+     * An address type, which can be payable.
+     */
+    address_type: ($) =>
+      seq("address", optional(field("mutability", "payable"))),
+
+    /**
      * An elementary type name like `uint256` or `address`.
      */
     elementary_type_name: ($) =>
       choice(
-        "address",
         "bool",
         "string",
         "bytes",

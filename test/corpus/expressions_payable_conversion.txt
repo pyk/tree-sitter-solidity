@@ -1,0 +1,70 @@
+==================
+Payable conversion
+==================
+
+contract C {
+  function f(address addr) {
+    address payable p = payable(addr);
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name
+              (address_type))
+            name: (identifier)))
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (address_type))
+              name: (identifier))
+            value: (payable_conversion_expression
+              arguments: (call_argument_list
+                (primary_expression
+                  (identifier))))))))))
+
+==================
+Payable conversion with member access
+==================
+
+contract C {
+  function f(address addr) {
+    payable(addr).transfer(1 ether);
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name
+              (address_type))
+            name: (identifier)))
+        body: (block
+          (expression_statement
+            (call_expression
+              function: (member_access_expression
+                object: (payable_conversion_expression
+                  arguments: (call_argument_list
+                    (primary_expression
+                      (identifier))))
+                member: (identifier))
+              arguments: (call_argument_list
+                (primary_expression
+                  (literal_with_subdenomination
+                    (number_literal)
+                    (subdenomination)))))))))))

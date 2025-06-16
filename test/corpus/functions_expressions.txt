@@ -242,7 +242,7 @@ contract C {
           (variable_declaration_statement
             declaration: (variable_declaration
               type: (type_name
-                (elementary_type_name))
+                (address_type))
               name: (identifier))
             value: (member_access_expression
               object: (primary_expression
@@ -262,7 +262,7 @@ contract C {
           (variable_declaration_statement
             declaration: (variable_declaration
               type: (type_name
-                (elementary_type_name))
+                (address_type))
               name: (identifier))
             value: (member_access_expression
               object: (call_expression
@@ -273,7 +273,7 @@ contract C {
           (variable_declaration_statement
             declaration: (variable_declaration
               type: (type_name
-                (elementary_type_name))
+                (address_type))
               name: (identifier))
             value: (member_access_expression
               object: (primary_expression

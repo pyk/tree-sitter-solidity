@@ -1155,6 +1155,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "payable_conversion_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "call_expression"
         },
         {
@@ -1235,12 +1239,62 @@
           "name": "literal"
         },
         {
+          "type": "SYMBOL",
+          "name": "literal_with_subdenomination"
+        },
+        {
           "type": "PREC",
           "value": 1,
           "content": {
             "type": "SYMBOL",
             "name": "identifier"
           }
+        }
+      ]
+    },
+    "literal_with_subdenomination": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "number_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "subdenomination"
+        }
+      ]
+    },
+    "subdenomination": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "wei"
+        },
+        {
+          "type": "STRING",
+          "value": "gwei"
+        },
+        {
+          "type": "STRING",
+          "value": "ether"
+        },
+        {
+          "type": "STRING",
+          "value": "seconds"
+        },
+        {
+          "type": "STRING",
+          "value": "minutes"
+        },
+        {
+          "type": "STRING",
+          "value": "hours"
+        },
+        {
+          "type": "STRING",
+          "value": "days"
         }
       ]
     },
@@ -2226,6 +2280,27 @@
         }
       ]
     },
+    "payable_conversion_expression": {
+      "type": "PREC",
+      "value": 15,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "payable"
+          },
+          {
+            "type": "FIELD",
+            "name": "arguments",
+            "content": {
+              "type": "SYMBOL",
+              "name": "call_argument_list"
+            }
+          }
+        ]
+      }
+    },
     "struct_definition": {
       "type": "SEQ",
       "members": [
@@ -2286,6 +2361,10 @@
     "type_name": {
       "type": "CHOICE",
       "members": [
+        {
+          "type": "SYMBOL",
+          "name": "address_type"
+        },
         {
           "type": "SYMBOL",
           "name": "elementary_type_name"
@@ -2362,13 +2441,34 @@
         }
       ]
     },
-    "elementary_type_name": {
-      "type": "CHOICE",
+    "address_type": {
+      "type": "SEQ",
       "members": [
         {
           "type": "STRING",
           "value": "address"
         },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "mutability",
+              "content": {
+                "type": "STRING",
+                "value": "payable"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "elementary_type_name": {
+      "type": "CHOICE",
+      "members": [
         {
           "type": "STRING",
           "value": "bool"

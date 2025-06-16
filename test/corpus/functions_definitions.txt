@@ -5,6 +5,7 @@ contract C {
   function myFunc() {}
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -21,6 +22,7 @@ contract C {
   function getValue(uint256 id) public view virtual returns (bool success) {}
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -29,14 +31,16 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (type_name (elementary_type_name))
+            type: (type_name
+              (elementary_type_name))
             name: (identifier)))
         (visibility)
         (state_mutability)
         (returns_clause
           returns: (parameter_list
             (parameter_declaration
-              type: (type_name (elementary_type_name))
+              type: (type_name
+                (elementary_type_name))
               name: (identifier))))
         body: (block)))))
 
@@ -47,6 +51,7 @@ interface IMyContract {
   function getSomething() external returns (address);
 }
 ---
+
 (source_file
   (interface_definition
     name: (identifier)
@@ -58,5 +63,6 @@ interface IMyContract {
         (returns_clause
           returns: (parameter_list
             (parameter_declaration
-              type: (type_name (elementary_type_name)))))
+              type: (type_name
+                (address_type)))))
         body: (empty_body)))))
