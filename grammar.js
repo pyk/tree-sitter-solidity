@@ -91,13 +91,13 @@ module.exports = grammar({
         $.state_variable_declaration,
         $.struct_definition,
         $.enum_definition,
+        $.event_definition,
         // $.using_directive,
         // $.library_definition,
         // $.function_definition,
         // $.constant_variable_declaration,
         // $.user_defined_value_type_definition,
         // $.error_definition,
-        // $.event_definition,
       ),
 
     //************************************************************//
@@ -264,6 +264,7 @@ module.exports = grammar({
             $.comment,
             $.natspec_comment,
             $.enum_definition,
+            $.event_definition,
           ),
         ),
         "}",
@@ -1015,6 +1016,33 @@ module.exports = grammar({
         commaSep(field("value", $.identifier)),
         "}",
       ),
+
+    _event_parameter: ($) =>
+      choice($.indexed_event_parameter, $.unindexed_event_parameter),
+
+    indexed_event_parameter: ($) =>
+      seq(
+        field("type", $._type_name),
+        "indexed",
+        optional(field("name", $.identifier)),
+      ),
+
+    unindexed_event_parameter: ($) =>
+      seq(field("type", $._type_name), optional(field("name", $.identifier))),
+
+    event_definition: ($) =>
+      seq(
+        "event",
+        field("name", $.identifier),
+        "(",
+        optional(commaSep($._event_parameter)),
+        ")",
+        optional($.anonymous),
+        ";",
+      ),
+
+    // And add this simple rule for the `anonymous` keyword
+    anonymous: ($) => "anonymous",
 
     //************************************************************//
     //                           Types                            //

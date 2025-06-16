@@ -2127,6 +2127,10 @@
           "named": true
         },
         {
+          "type": "event_definition",
+          "named": true
+        },
+        {
           "type": "function_definition",
           "named": true
         },
@@ -2441,6 +2445,40 @@
     "type": "equality_operator",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "event_definition",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "anonymous",
+          "named": true
+        },
+        {
+          "type": "indexed_event_parameter",
+          "named": true
+        },
+        {
+          "type": "unindexed_event_parameter",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "exponentiation_expression",
@@ -3846,6 +3884,60 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "indexed_event_parameter",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "user_defined_type",
             "named": true
           }
         ]
@@ -5604,6 +5696,10 @@
           "named": true
         },
         {
+          "type": "event_definition",
+          "named": true
+        },
+        {
           "type": "import_directive",
           "named": true
         },
@@ -6171,6 +6267,60 @@
     }
   },
   {
+    "type": "unindexed_event_parameter",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "user_defined_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "user_defined_type",
     "named": true,
     "fields": {},
@@ -6584,6 +6734,10 @@
     "named": false
   },
   {
+    "type": "anonymous",
+    "named": true
+  },
+  {
     "type": "as",
     "named": false
   },
@@ -6629,6 +6783,10 @@
   },
   {
     "type": "ether",
+    "named": false
+  },
+  {
+    "type": "event",
     "named": false
   },
   {
@@ -6681,6 +6839,10 @@
   },
   {
     "type": "import",
+    "named": false
+  },
+  {
+    "type": "indexed",
     "named": false
   },
   {
