@@ -24,6 +24,10 @@
             "named": true
           },
           {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -81,6 +85,10 @@
           },
           {
             "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
             "named": true
           },
           {
@@ -156,6 +164,10 @@
           "named": true
         },
         {
+          "type": "exponentiation_expression",
+          "named": true
+        },
+        {
           "type": "index_access_expression",
           "named": true
         },
@@ -208,6 +220,10 @@
           },
           {
             "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
             "named": true
           },
           {
@@ -268,6 +284,10 @@
           },
           {
             "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
             "named": true
           },
           {
@@ -356,6 +376,10 @@
           "named": true
         },
         {
+          "type": "exponentiation_expression",
+          "named": true
+        },
+        {
           "type": "index_access_expression",
           "named": true
         },
@@ -421,6 +445,10 @@
             "named": true
           },
           {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -477,6 +505,10 @@
             "named": true
           },
           {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -527,6 +559,10 @@
             "named": true
           },
           {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -574,6 +610,10 @@
           },
           {
             "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
             "named": true
           },
           {
@@ -679,6 +719,130 @@
     "fields": {}
   },
   {
+    "type": "exponentiation_expression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "additive_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "multiplicative_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "**",
+            "named": false
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "additive_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "multiplicative_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "expression_statement",
     "named": true,
     "fields": {},
@@ -700,6 +864,10 @@
         },
         {
           "type": "conditional_expression",
+          "named": true
+        },
+        {
+          "type": "exponentiation_expression",
           "named": true
         },
         {
@@ -893,6 +1061,10 @@
             "named": true
           },
           {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -940,6 +1112,10 @@
           },
           {
             "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
             "named": true
           },
           {
@@ -1113,6 +1289,10 @@
             "named": true
           },
           {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1166,6 +1346,10 @@
           },
           {
             "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
             "named": true
           },
           {
@@ -1226,6 +1410,10 @@
           },
           {
             "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
             "named": true
           },
           {
@@ -1426,6 +1614,10 @@
         {
           "type": "spdx_license_identifier",
           "named": true
+        },
+        {
+          "type": "state_variable_declaration",
+          "named": true
         }
       ]
     }
@@ -1493,6 +1685,10 @@
           },
           {
             "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
             "named": true
           },
           {
@@ -1581,6 +1777,10 @@
           "named": true
         },
         {
+          "type": "exponentiation_expression",
+          "named": true
+        },
+        {
           "type": "index_access_expression",
           "named": true
         },
@@ -1656,6 +1856,10 @@
           },
           {
             "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
             "named": true
           },
           {
@@ -1760,6 +1964,20 @@
     "type": "variable_declaration_statement",
     "named": true,
     "fields": {
+      "declaration": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "variable_declaration_tuple",
+            "named": true
+          }
+        ]
+      },
       "value": {
         "multiple": false,
         "required": false,
@@ -1778,6 +1996,10 @@
           },
           {
             "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
             "named": true
           },
           {
@@ -1810,20 +2032,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "variable_declaration",
-          "named": true
-        },
-        {
-          "type": "variable_declaration_tuple",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -1888,6 +2096,10 @@
   },
   {
     "type": "*",
+    "named": false
+  },
+  {
+    "type": "**",
     "named": false
   },
   {

@@ -84,6 +84,7 @@ module.exports = grammar({
         $.import_directive,
         $.contract_definition,
         $.interface_definition,
+        $.state_variable_declaration,
         // $.using_directive,
         // $.library_definition,
         // $.function_definition,
@@ -485,13 +486,19 @@ module.exports = grammar({
     variable_declaration_statement: ($) =>
       seq(
         choice(
-          // e.g. `uint256 myVar = 1`
+          // For single variable declarations, e.g., `uint myVar = 1;`
           seq(
-            $.variable_declaration,
+            // We are adding the `field()` wrapper here
+            field("declaration", $.variable_declaration),
             optional(seq("=", field("value", $._expression))),
           ),
-          // e.g. `(uint a, uint b) = (1, 2)`
-          seq($.variable_declaration_tuple, "=", field("value", $._expression)),
+          // For tuple declarations, e.g., `(uint a, bool b) = (1, true);`
+          seq(
+            // We also add the `field()` wrapper here for consistency
+            field("declaration", $.variable_declaration_tuple),
+            "=",
+            field("value", $._expression),
+          ),
         ),
         ";",
       ),
@@ -559,6 +566,7 @@ module.exports = grammar({
         $.assignment_expression,
         $.additive_expression,
         $.multiplicative_expression,
+        $.exponentiation_expression,
         $.tuple_expression,
       ),
 
@@ -736,6 +744,16 @@ module.exports = grammar({
         seq(
           field("left", $._expression),
           field("operator", $.assignment_operator),
+          field("right", $._expression),
+        ),
+      ),
+
+    exponentiation_expression: ($) =>
+      prec.right(
+        PREC.EXP,
+        seq(
+          field("left", $._expression),
+          field("operator", "**"),
           field("right", $._expression),
         ),
       ),

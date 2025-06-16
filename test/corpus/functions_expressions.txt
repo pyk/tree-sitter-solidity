@@ -18,7 +18,7 @@ contract C {
         parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier)))
@@ -50,7 +50,7 @@ contract C {
         parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -97,7 +97,7 @@ contract C {
             name: (identifier)))
         body: (block
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -106,7 +106,7 @@ contract C {
                 (literal
                   (boolean_literal)))))
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -114,7 +114,7 @@ contract C {
               argument: (primary_expression
                 (identifier))))
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -122,7 +122,7 @@ contract C {
               argument: (primary_expression
                 (identifier))))
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -157,7 +157,7 @@ contract C {
             name: (identifier)))
         body: (block
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -198,7 +198,7 @@ contract C {
             name: (identifier)))
         body: (block
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -270,7 +270,7 @@ contract C {
         parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -279,7 +279,7 @@ contract C {
                 (identifier))
               member: (identifier)))
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -290,7 +290,7 @@ contract C {
                 member: (identifier))
               member: (identifier)))
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -301,7 +301,7 @@ contract C {
                 arguments: (call_argument_list))
               member: (identifier)))
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -336,7 +336,7 @@ contract C {
             name: (identifier)))
         body: (block
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -366,7 +366,7 @@ contract C {
         parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (identifier_path
                   (identifier)))

@@ -1,0 +1,240 @@
+==================
+Simple exponentiation
+==================
+
+contract C {
+  function f() {
+    uint a = 2 ** 3;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (exponentiation_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Right-associativity of exponentiation
+==================
+
+contract C {
+  function f() {
+    uint a = 2 ** 3 ** 2;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (exponentiation_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
+              right: (exponentiation_expression
+                left: (primary_expression
+                  (literal
+                    (number_literal)))
+                right: (primary_expression
+                  (literal
+                    (number_literal)))))))))))
+
+==================
+Precedence over multiplication
+==================
+
+contract C {
+  function f() {
+    uint a = 4 * 2 ** 3;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (multiplicative_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
+              operator: (multiplicative_operator)
+              right: (exponentiation_expression
+                left: (primary_expression
+                  (literal
+                    (number_literal)))
+                right: (primary_expression
+                  (literal
+                    (number_literal)))))))))))
+
+==================
+Precedence over addition
+==================
+
+contract C {
+  function f() {
+    uint a = 1 + 2 ** 3;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (additive_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
+              operator: (additive_operator)
+              right: (exponentiation_expression
+                left: (primary_expression
+                  (literal
+                    (number_literal)))
+                right: (primary_expression
+                  (literal
+                    (number_literal)))))))))))
+
+==================
+Interaction with unary minus
+==================
+
+contract C {
+  function f() {
+    int a = -2 ** 4;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (exponentiation_expression
+              left: (unary_expression
+                argument: (primary_expression
+                  (literal
+                    (number_literal))))
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Parentheses overriding precedence
+==================
+
+contract C {
+  function f() {
+    uint a = (2 + 3) ** 4;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (exponentiation_expression
+              left: (tuple_expression
+                (additive_expression
+                  left: (primary_expression
+                    (literal
+                      (number_literal)))
+                  operator: (additive_operator)
+                  right: (primary_expression
+                    (literal
+                      (number_literal)))))
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Top-level constant with exponentiation
+==================
+
+uint256 constant MY_EXP = 2 ** 8;
+
+---
+
+(source_file
+  (state_variable_declaration
+    type: (type_name
+      (elementary_type_name))
+    (mutability)
+    name: (identifier)
+    value: (exponentiation_expression
+      left: (primary_expression
+        (literal
+          (number_literal)))
+      right: (primary_expression
+        (literal
+          (number_literal))))))

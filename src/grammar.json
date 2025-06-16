@@ -32,6 +32,10 @@
         {
           "type": "SYMBOL",
           "name": "interface_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "state_variable_declaration"
         }
       ]
     },
@@ -1060,8 +1064,12 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "variable_declaration"
+                  "type": "FIELD",
+                  "name": "declaration",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "variable_declaration"
+                  }
                 },
                 {
                   "type": "CHOICE",
@@ -1094,8 +1102,12 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "variable_declaration_tuple"
+                  "type": "FIELD",
+                  "name": "declaration",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "variable_declaration_tuple"
+                  }
                 },
                 {
                   "type": "STRING",
@@ -1260,6 +1272,10 @@
         {
           "type": "SYMBOL",
           "name": "multiplicative_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "exponentiation_expression"
         },
         {
           "type": "SYMBOL",
@@ -1680,6 +1696,39 @@
             "content": {
               "type": "SYMBOL",
               "name": "assignment_operator"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "exponentiation_expression": {
+      "type": "PREC_RIGHT",
+      "value": 12,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "STRING",
+              "value": "**"
             }
           },
           {

@@ -18,7 +18,7 @@ contract C {
         parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))))))))
@@ -42,7 +42,7 @@ contract C {
         parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
-            (variable_declaration
+            declaration: (variable_declaration
               type: (type_name
                 (elementary_type_name))
               name: (identifier))
@@ -69,7 +69,7 @@ contract C {
         parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
-            (variable_declaration_tuple
+            declaration: (variable_declaration_tuple
               (variable_declaration
                 type: (type_name
                   (elementary_type_name))
