@@ -34,7 +34,8 @@ const PREC = {
   MULTIPLY: 11,
   EXP: 12,
   UNARY: 13,
-  POSTFIX: 14,
+  CALL: 14,
+  POSTFIX: 15,
 }
 
 // Helper function for comma-separated lists
@@ -535,9 +536,10 @@ module.exports = grammar({
         $.primary_expression,
         $.unary_expression,
         $.conditional_expression,
+        $.call_expression,
+        $.assignment_expression,
         $.additive_expression,
         $.multiplicative_expression,
-        $.assignment_expression,
         $.tuple_expression,
       ),
 
@@ -604,6 +606,28 @@ module.exports = grammar({
           field("consequence", $._expression),
           ":",
           field("alternative", $._expression),
+        ),
+      ),
+
+    /**
+     * An argument list for a function call.
+     * e.g., `(arg1, arg2)`
+     */
+    call_argument_list: ($) => seq("(", commaSep($._expression), ")"),
+
+    /**
+     * A function call expression.
+     * e.g., `myFunction(arg1, arg2)`
+     *
+     * It has a high precedence to ensure that member access on a call's
+     * result (e.g., `myFunc().property`) is parsed correctly.
+     */
+    call_expression: ($) =>
+      prec(
+        PREC.CALL,
+        seq(
+          field("function", $._expression),
+          field("arguments", $.call_argument_list),
         ),
       ),
 

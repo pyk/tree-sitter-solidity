@@ -197,3 +197,27 @@ contract C {
                 condition: (primary_expression (identifier))
                 consequence: (primary_expression (literal (number_literal)))
                 alternative: (primary_expression (literal (number_literal)))))))))))
+
+==================
+Function call expression
+==================
+contract C {
+  function f() {
+    doSomething(1, true);
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (expression_statement
+            (call_expression
+              function: (primary_expression (identifier))
+              arguments: (call_argument_list
+                (primary_expression (literal (number_literal)))
+                (primary_expression (literal (boolean_literal)))))))))))
