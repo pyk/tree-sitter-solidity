@@ -1,0 +1,134 @@
+==================
+Empty inline array
+==================
+
+contract C {
+  function f() {
+    uint[] memory empty = [];
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (array_type
+                base: (uint_type))
+              (data_location)
+              name: (identifier))
+            value: (inline_array_expression)))))))
+
+==================
+Inline array with a single element
+==================
+
+contract C {
+  function f() {
+    uint[] memory x = [1];
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (array_type
+                base: (uint_type))
+              (data_location)
+              name: (identifier))
+            value: (inline_array_expression
+              (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Inline array with multiple elements
+==================
+
+contract C {
+  function f() {
+    bytes32[] memory data = ["one", "two", "three"];
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (array_type
+                base: (bytes_type))
+              (data_location)
+              name: (identifier))
+            value: (inline_array_expression
+              (primary_expression
+                (literal
+                  (string_literal)))
+              (primary_expression
+                (literal
+                  (string_literal)))
+              (primary_expression
+                (literal
+                  (string_literal))))))))))
+
+==================
+Nested inline array
+==================
+
+contract C {
+  function f() {
+    uint[][] memory matrix = [[1, 2], [3, 4]];
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (array_type
+                base: (array_type
+                  base: (uint_type)))
+              (data_location)
+              name: (identifier))
+            value: (inline_array_expression
+              (inline_array_expression
+                (primary_expression
+                  (literal
+                    (number_literal)))
+                (primary_expression
+                  (literal
+                    (number_literal))))
+              (inline_array_expression
+                (primary_expression
+                  (literal
+                    (number_literal)))
+                (primary_expression
+                  (literal
+                    (number_literal)))))))))))

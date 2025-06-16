@@ -546,6 +546,7 @@ module.exports = grammar({
         $.equality_expression,
         $.logical_and_expression,
         $.logical_or_expression,
+        $.inline_array_expression,
       ),
 
     /**
@@ -881,6 +882,13 @@ module.exports = grammar({
     meta_type_expression: ($) =>
       prec(PREC.MEMBER, seq("type", "(", field("type", $._type_name), ")")),
 
+    /**
+     * An inline array expression.
+     * e.g., `[1, 2, 3]` or `[]`
+     */
+    inline_array_expression: ($) =>
+      seq("[", optional(commaSep($._expression)), "]"),
+
     //************************************************************//
     //                     Struct Definition                      //
     //************************************************************//
@@ -944,8 +952,7 @@ module.exports = grammar({
       seq(
         field("base", $._type_name),
         "[",
-        // Allow an optional expression for fixed-size arrays (e.g., uint[3]).
-        optional($._expression),
+        optional(field("size", $._expression)), // <-- Add field("size", ...)
         "]",
       ),
 

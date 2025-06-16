@@ -32,7 +32,7 @@ contract C {
       (state_variable_declaration
         type: (array_type
           base: (address_type)
-          (primary_expression (literal (number_literal))))
+          size: (primary_expression (literal (number_literal))))
         name: (identifier)))))
 
 ==================
@@ -52,7 +52,7 @@ contract C {
         type: (array_type
           base: (array_type
             base: (bool_type)
-            (primary_expression (literal (number_literal)))))
+            size: (primary_expression (literal (number_literal)))))
         name: (identifier)))))
 
 ==================
@@ -105,7 +105,7 @@ contract C {
           (parameter_declaration
             type: (array_type
               base: (bool_type)
-              (primary_expression (literal (number_literal))))
+              size: (primary_expression (literal (number_literal))))
             (data_location)
             name: (identifier)))
         (visibility)
