@@ -1,0 +1,151 @@
+==================
+Simple equality expression
+==================
+
+contract C {
+  function f() {
+    bool a = 1 == 2;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (equality_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
+              operator: (equality_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Simple comparison expression
+==================
+
+contract C {
+  function f() {
+    bool a = 1 < 2;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (comparison_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
+              operator: (comparison_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Precedence of comparison vs equality
+==================
+// Should parse as `(a > b) == c`
+contract C {
+  function f() {
+    bool r = 1 > 2 == true;
+  }
+}
+
+---
+
+(source_file
+  (comment)
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (equality_expression
+              left: (comparison_expression
+                left: (primary_expression
+                  (literal
+                    (number_literal)))
+                operator: (comparison_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal))))
+              operator: (equality_operator)
+              right: (primary_expression
+                (literal
+                  (boolean_literal))))))))))
+
+==================
+Interaction with bitwise operators
+==================
+// Comparison has higher precedence than bitwise OR
+contract C {
+  function f() {
+    bool r = 1 > 0 | 2 > 1;
+  }
+}
+
+---
+
+(source_file
+  (comment)
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (bitwise_or_expression
+              left: (comparison_expression
+                left: (primary_expression
+                  (literal
+                    (number_literal)))
+                operator: (comparison_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal))))
+              right: (comparison_expression
+                left: (primary_expression
+                  (literal
+                    (number_literal)))
+                operator: (comparison_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal)))))))))))

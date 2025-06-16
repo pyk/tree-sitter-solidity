@@ -535,6 +535,8 @@ module.exports = grammar({
         $.bitwise_and_expression,
         $.bitwise_xor_expression,
         $.bitwise_or_expression,
+        $.comparison_expression,
+        $.equality_expression,
       ),
 
     /**
@@ -765,6 +767,26 @@ module.exports = grammar({
         ),
       ),
 
+    comparison_expression: ($) =>
+      prec.left(
+        PREC.COMPARE,
+        seq(
+          field("left", $._expression),
+          field("operator", $.comparison_operator),
+          field("right", $._expression),
+        ),
+      ),
+
+    equality_expression: ($) =>
+      prec.left(
+        PREC.EQUALITY,
+        seq(
+          field("left", $._expression),
+          field("operator", $.equality_operator),
+          field("right", $._expression),
+        ),
+      ),
+
     /**
      * Named operator rules. Because these are named, they will appear
      * in the final syntax tree.
@@ -773,6 +795,8 @@ module.exports = grammar({
     multiplicative_operator: ($) => choice("*", "/", "%"),
     shift_operator: ($) => choice("<<", ">>", ">>>"),
     assignment_operator: ($) => choice("="),
+    comparison_operator: ($) => choice("<", ">", "<=", ">="),
+    equality_operator: ($) => choice("==", "!="),
 
     /**
      * A tuple expression.
