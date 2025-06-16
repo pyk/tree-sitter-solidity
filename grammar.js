@@ -35,7 +35,8 @@ const PREC = {
   EXP: 12,
   UNARY: 13,
   CALL: 14,
-  POSTFIX: 15,
+  NEW: 15,
+  POSTFIX: 16,
 }
 
 // Helper function for comma-separated lists
@@ -50,7 +51,12 @@ module.exports = grammar({
   // keywords like "import" and the general identifier rule.
   word: ($) => $.identifier,
 
-  conflicts: ($) => [],
+  //
+  conflicts: ($) => [
+    // This resolves the ambiguity where a construct (like `A.B` or just `A`)
+    // could be interpreted as either a type or a value/expression.
+    [$.type_name, $._expression],
+  ],
 
   rules: {
     // source_file
@@ -200,20 +206,16 @@ module.exports = grammar({
     //************************************************************//
 
     // contract_definition
-    // ├── "abstract" (optional)
-    // ├── "contract" (keyword)
-    // ├── name: identifier
-    // ├── inheritance_specifier_list (optional)
-    // │   ├── "is" (keyword)
-    // │   └── inheritance_specifier (repeated, comma-separated)
-    // │       └── identifier_path (e.g. `Ownable`, `Context.sol`)
-    // │
-    // └── body: contract_body
-    //     ├── "{"
-    //     ├── _contract_body_element (repeated)
-    //     │   ├── state_variable_declaration
-    //     │   └── function_definition
-    //     └── "}"
+    // ├─ "abstract" (optional keyword)
+    // ├─ "contract" (keyword)
+    // ├─ name: identifier (e.g., MyContract)
+    // └─ inheritance_specifier_list (optional)
+    //    ├─ "is" (keyword)
+    //    └─ inheritance_specifier (repeated, comma-separated)
+    //       ├─ name: (This is the crucial part)
+    //       │  ├─ choice 1: identifier. Matches simple names like `Ownable`.
+    //       │  └─ choice 2: member_access_expression. Matches dotted paths like `Parent.DeepParent`.
+    //       └─ arguments: call_argument_list. Matches constructor args like `("MyToken", "MTK")`
 
     /**
      * The definition of a contract.
@@ -247,22 +249,25 @@ module.exports = grammar({
      */
     inheritance_specifier_list: ($) =>
       seq("is", commaSep($.inheritance_specifier)),
+
     /**
      * A single parent contract in an inheritance list.
      * e.g., `Ownable` or `ERC20("MyToken", "MTK")`
      */
     inheritance_specifier: ($) =>
-      seq(
-        $.identifier_path,
-        // We will need to define call_argument_list later
-        // optional($.call_argument_list)
+      prec(
+        2, // <-- Give this rule a higher precedence
+        seq(
+          field("name", choice($.identifier, $.member_access_expression)),
+          optional(field("arguments", $.call_argument_list)),
+        ),
       ),
 
     /**
      * A dot-separated identifier path.
      * e.g., `MyLib.MyStruct`
      */
-    identifier_path: ($) => seq($.identifier, repeat(seq(".", $.identifier))),
+    // identifier_path: ($) => seq($.identifier, repeat(seq(".", $.identifier))),
 
     //************************************************************//
     //                   Interface Definition                     //
@@ -307,18 +312,31 @@ module.exports = grammar({
         // $.override_specifier, // To be added later
         "transient",
       ),
+
     /**
      * A type name for a variable, parameter, or return value.
      * This is now a recursive rule to handle array types.
      */
     type_name: ($) =>
-      choice($.elementary_type_name, $.identifier_path, $.array_type),
+      choice(
+        $.elementary_type_name,
+        $.identifier, // For simple names like `MyStruct`
+        $.member_access_expression, // For qualified names like `MyLib.MyStruct`
+        $.array_type,
+      ),
 
     /**
      * An array type.
      * e.g., `uint[]`, `MyStruct[][]`
      */
-    array_type: ($) => seq(field("base", $.type_name), "[", "]"),
+    array_type: ($) =>
+      seq(
+        field("base", $.type_name),
+        "[",
+        // Allow an optional expression for fixed-size arrays (e.g., uint[3]).
+        optional($._expression),
+        "]",
+      ),
 
     /**
      * An elementary type name like `uint256` or `address`.
@@ -546,6 +564,7 @@ module.exports = grammar({
         $.call_expression,
         $.member_access_expression,
         $.index_access_expression,
+        $.new_expression,
         $.assignment_expression,
         $.additive_expression,
         $.multiplicative_expression,
@@ -683,6 +702,18 @@ module.exports = grammar({
           "]",
         ),
       ),
+
+    /**
+     * A `new` expression for contract creation.
+     * e.g., `new MyContract()` or `new MyLib.MyContract()`
+     *
+     * This rule is given a very high, right-associative precedence (`PREC.NEW`)
+     * to resolve the ambiguity with member access. This ensures that
+     * `new MyLib.MyContract` is parsed as one unit before the parser
+     * attempts to find a member access.
+     */
+    new_expression: ($) =>
+      prec.right(PREC.NEW, seq("new", field("type", $.type_name))),
 
     /**
      * Specific expression types for different operator precedence levels.

@@ -54,8 +54,7 @@ contract C {
     body: (contract_body
       (state_variable_declaration
         type: (type_name
-          (identifier_path
-            (identifier)))
+          (identifier))
         name: (identifier)))))
 
 ==================

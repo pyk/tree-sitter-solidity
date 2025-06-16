@@ -346,3 +346,34 @@ contract C {
               index: (primary_expression
                 (literal
                   (number_literal))))))))))
+
+==================
+New expression
+==================
+contract C {
+  function f() {
+    OtherContract o = new OtherContract();
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (identifier_path
+                  (identifier)))
+              name: (identifier))
+            value: (call_expression
+              function: (new_expression
+                type: (type_name
+                  (identifier_path
+                    (identifier))))
+              arguments: (call_argument_list))))))))

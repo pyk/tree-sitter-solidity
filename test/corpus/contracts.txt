@@ -23,7 +23,7 @@ abstract contract MyAbstractContract {}
     body: (contract_body)))
 
 ==================
-Contract with inheritance
+Contract with simple inheritance
 ==================
 
 contract MyContract is Ownable, ReentrancyGuard {
@@ -31,15 +31,14 @@ contract MyContract is Ownable, ReentrancyGuard {
 }
 
 ---
-
 (source_file
   (contract_definition
     name: (identifier)
     (inheritance_specifier_list
       (inheritance_specifier
-        (identifier_path (identifier)))
+        name: (identifier))
       (inheritance_specifier
-        (identifier_path (identifier))))
+        name: (identifier)))
     body: (contract_body)))
 
 ==================
@@ -60,5 +59,84 @@ contract Child is Parent.DeepParent {
     name: (identifier)
     (inheritance_specifier_list
       (inheritance_specifier
-        (identifier_path (identifier) (identifier))))
+        name: (member_access_expression
+          object: (primary_expression
+            (identifier))
+          member: (identifier))))
+    body: (contract_body)))
+
+==================
+Contract with constructor arguments
+==================
+
+contract MyToken is ERC20("My Token", "MTK") {
+
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    (inheritance_specifier_list
+      (inheritance_specifier
+        name: (identifier)
+        arguments: (call_argument_list
+          (primary_expression
+            (literal
+              (string_literal)))
+          (primary_expression
+            (literal
+              (string_literal))))))
+    body: (contract_body)))
+
+==================
+Contract with empty constructor arguments
+==================
+
+contract MyContract is ReentrancyGuard() {
+
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    (inheritance_specifier_list
+      (inheritance_specifier
+        name: (identifier)
+        arguments: (call_argument_list)))
+    body: (contract_body)))
+
+==================
+Contract with mixed inheritance styles
+==================
+
+contract MegaContract is Ownable, Parent.DeepParent, ERC20("Mega", "MGA"), Lockable() {
+
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    (inheritance_specifier_list
+      (inheritance_specifier
+        name: (identifier))
+      (inheritance_specifier
+        name: (member_access_expression
+          object: (primary_expression
+            (identifier))
+          member: (identifier)))
+      (inheritance_specifier
+        name: (identifier)
+        arguments: (call_argument_list
+          (primary_expression
+            (literal
+              (string_literal)))
+          (primary_expression
+            (literal
+              (string_literal)))))
+      (inheritance_specifier
+        name: (identifier)
+        arguments: (call_argument_list)))
     body: (contract_body)))
