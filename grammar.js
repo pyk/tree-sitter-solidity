@@ -429,7 +429,11 @@ module.exports = grammar({
      * A placeholder for any statement.
      */
     _statement: ($) =>
-      choice($.variable_declaration_statement, $.expression_statement),
+      choice(
+        $.variable_declaration_statement,
+        $.expression_statement,
+        $.return_statement,
+      ),
     // TODO: Add statements like if, for, require, etc.
 
     //************************************************************//
@@ -443,7 +447,7 @@ module.exports = grammar({
     expression_statement: ($) => seq($._expression, ";"),
 
     //************************************************************//
-    //              Variable Declaration Statement                //
+    //                         Statements                         //
     //************************************************************//
 
     /**
@@ -488,6 +492,13 @@ module.exports = grammar({
     variable_declaration_tuple: ($) =>
       // Give this rule a higher precedence than tuple_expression to resolve ambiguity.
       prec(1, seq("(", commaSep(optional($.variable_declaration)), ")")),
+
+    /**
+     * A return statement.
+     * e.g., `return;` or `return myValue;`
+     */
+    return_statement: ($) =>
+      seq("return", optional(field("value", $._expression)), ";"),
 
     //************************************************************//
     //                      Expression Rules                      //

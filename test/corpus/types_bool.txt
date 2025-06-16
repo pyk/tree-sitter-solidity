@@ -64,11 +64,10 @@ contract C {
             (parameter_declaration
               type: (bool_type))))
         body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (identifier_path
-                (identifier))
-              name: (identifier))))))))
+          (return_statement
+            value: (primary_expression
+              (literal
+                (boolean_literal)))))))))
 
 ==================
 Bool type as a local variable

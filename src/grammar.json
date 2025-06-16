@@ -946,6 +946,10 @@
         {
           "type": "SYMBOL",
           "name": "expression_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "return_statement"
         }
       ]
     },
@@ -1137,6 +1141,35 @@
           }
         ]
       }
+    },
+    "return_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "return"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "value",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_expression"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
     },
     "_expression": {
       "type": "CHOICE",
