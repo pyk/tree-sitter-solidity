@@ -31,7 +31,7 @@ contract C {
         (visibility)
         (mutability)
         name: (identifier)
-        value: (expression (identifier))))))
+        value: (expression (literal (string_literal)))))))
 
 ==================
 State variable with custom type
@@ -48,3 +48,39 @@ contract C {
       (state_variable_declaration
         type: (type_name (identifier_path (identifier)))
         name: (identifier)))))
+
+==================
+State variable with boolean literal
+==================
+
+contract C {
+  bool public active = true;
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (type_name (elementary_type_name))
+        (visibility)
+        name: (identifier)
+        value: (expression (literal (boolean_literal)))))))
+
+==================
+State variable with address literal
+==================
+
+contract C {
+  address public owner = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (type_name (elementary_type_name))
+        (visibility)
+        name: (identifier)
+        value: (expression (literal (hex_literal)))))))

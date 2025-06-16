@@ -1,5 +1,15 @@
 [
   {
+    "type": "block",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "boolean_literal",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "contract_body",
     "named": true,
     "fields": {},
@@ -7,6 +17,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "function_definition",
+          "named": true
+        },
         {
           "type": "state_variable_declaration",
           "named": true
@@ -51,7 +65,17 @@
     }
   },
   {
+    "type": "data_location",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "elementary_type_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "empty_body",
     "named": true,
     "fields": {}
   },
@@ -68,7 +92,65 @@
           "named": true
         },
         {
-          "type": "number_literal",
+          "type": "literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "function_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "empty_body",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parameter_list",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "returns_clause",
+          "named": true
+        },
+        {
+          "type": "state_mutability",
+          "named": true
+        },
+        {
+          "type": "visibility",
           "named": true
         }
       ]
@@ -182,9 +264,123 @@
     }
   },
   {
+    "type": "interface_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "contract_body",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "inheritance_specifier_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean_literal",
+          "named": true
+        },
+        {
+          "type": "hex_literal",
+          "named": true
+        },
+        {
+          "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "mutability",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "parameter_declaration",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_name",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "data_location",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "parameter_declaration",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "pragma_directive",
@@ -213,6 +409,22 @@
     }
   },
   {
+    "type": "returns_clause",
+    "named": true,
+    "fields": {
+      "returns": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parameter_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -227,6 +439,10 @@
         },
         {
           "type": "import_directive",
+          "named": true
+        },
+        {
+          "type": "interface_definition",
           "named": true
         },
         {
@@ -255,6 +471,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "state_mutability",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "state_variable_declaration",
@@ -370,6 +591,14 @@
     "fields": {}
   },
   {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
     "type": "*",
     "named": false
   },
@@ -430,6 +659,10 @@
     "named": false
   },
   {
+    "type": "calldata",
+    "named": false
+  },
+  {
     "type": "constant",
     "named": false
   },
@@ -438,8 +671,24 @@
     "named": false
   },
   {
+    "type": "external",
+    "named": false
+  },
+  {
+    "type": "false",
+    "named": false
+  },
+  {
     "type": "from",
     "named": false
+  },
+  {
+    "type": "function",
+    "named": false
+  },
+  {
+    "type": "hex_literal",
+    "named": true
   },
   {
     "type": "identifier",
@@ -451,6 +700,10 @@
   },
   {
     "type": "import",
+    "named": false
+  },
+  {
+    "type": "interface",
     "named": false
   },
   {
@@ -466,8 +719,20 @@
     "named": true
   },
   {
+    "type": "memory",
+    "named": false
+  },
+  {
+    "type": "nonpayable",
+    "named": false
+  },
+  {
     "type": "number_literal",
     "named": true
+  },
+  {
+    "type": "payable",
+    "named": false
   },
   {
     "type": "pragma",
@@ -479,6 +744,18 @@
   },
   {
     "type": "public",
+    "named": false
+  },
+  {
+    "type": "pure",
+    "named": false
+  },
+  {
+    "type": "returns",
+    "named": false
+  },
+  {
+    "type": "storage",
     "named": false
   },
   {
@@ -494,8 +771,20 @@
     "named": false
   },
   {
+    "type": "true",
+    "named": false
+  },
+  {
     "type": "version_literal",
     "named": true
+  },
+  {
+    "type": "view",
+    "named": false
+  },
+  {
+    "type": "virtual",
+    "named": false
   },
   {
     "type": "{",

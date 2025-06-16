@@ -42,8 +42,8 @@ module.exports = grammar({
         $.pragma_directive,
         $.import_directive,
         $.contract_definition,
+        $.interface_definition,
         // $.using_directive,
-        // $.interface_definition,
         // $.library_definition,
         // $.function_definition,
         // $.constant_variable_declaration,
@@ -182,7 +182,8 @@ module.exports = grammar({
      * A choice between all valid elements within a contract body.
      * (Currently empty, to be filled in later).
      */
-    _contract_body_element: ($) => choice($.state_variable_declaration),
+    _contract_body_element: ($) =>
+      choice($.state_variable_declaration, $.function_definition),
     // TODO: Add function_definition, state_variable_declaration, etc.
 
     /**
@@ -207,6 +208,22 @@ module.exports = grammar({
      * e.g., `MyLib.MyStruct`
      */
     identifier_path: ($) => seq($.identifier, repeat(seq(".", $.identifier))),
+
+    //************************************************************//
+    //                   Interface Definition                     //
+    //************************************************************//
+
+    /**
+     * The definition of an interface.
+     * e.g., `interface IMyContract { ... }`
+     */
+    interface_definition: ($) =>
+      seq(
+        "interface",
+        field("name", $.identifier),
+        optional($.inheritance_specifier_list),
+        field("body", $.contract_body),
+      ),
 
     //************************************************************//
     //                 State Variable Declaration                 //
@@ -254,7 +271,7 @@ module.exports = grammar({
         /bytes[0-9]+/, // e.g., bytes1, bytes32
       ),
 
-    visibility: ($) => choice("public", "private", "internal"),
+    visibility: ($) => choice("public", "private", "internal", "external"),
 
     mutability: ($) => choice("constant", "immutable"),
 
@@ -262,7 +279,137 @@ module.exports = grammar({
      * A placeholder for expressions. We will fill this out later.
      * For now, it recognizes identifiers and numbers.
      */
-    expression: ($) => choice($.identifier, $.number_literal),
+    expression: ($) => choice($.identifier, $.literal),
+
+    /**
+     * A literal value, such as a number, string, boolean, or address.
+     */
+    literal: ($) =>
+      choice(
+        $.number_literal,
+        $.string_literal,
+        $.boolean_literal,
+        $.hex_literal,
+      ),
+
+    boolean_literal: ($) => choice("true", "false"),
+
+    // Matches '0x' followed by 40 hex characters (a standard address)
+    hex_literal: ($) => /0x[0-9a-fA-F]{40}/,
+
+    //************************************************************//
+    //                    Function Definition                     //
+    //************************************************************//
+
+    /**
+     * The definition of a function.
+     * e.g., `function myFunc(uint256 _a) public pure returns (bool) { ... }`
+     */
+    function_definition: ($) =>
+      seq(
+        "function",
+        field("name", $.identifier),
+        field("parameters", $.parameter_list),
+        repeat($._function_attribute),
+        optional($.returns_clause),
+        field("body", choice($.block, $.empty_body)),
+      ),
+
+    /**
+     * An attribute of a function, such as visibility or state mutability.
+     */
+    _function_attribute: ($) =>
+      choice(
+        $.visibility,
+        $.state_mutability,
+        "virtual",
+        // $.override_specifier, // To be added later
+        // $.modifier_invocation // To be added later
+      ),
+
+    /**
+     * The `returns` clause of a function.
+     * e.g., `returns (bool)`
+     */
+    returns_clause: ($) => seq("returns", field("returns", $.parameter_list)),
+
+    /**
+     * A list of parameters, used for function arguments and return values.
+     * e.g., `(uint256 _a, bool _b)`
+     */
+    parameter_list: ($) =>
+      seq("(", optional(commaSep($.parameter_declaration)), ")"),
+
+    /**
+     * A single parameter declaration.
+     * e.g., `uint256 _myVar` or `string memory _name`
+     */
+    parameter_declaration: ($) =>
+      seq(
+        field("type", $.type_name),
+        optional($.data_location),
+        optional(field("name", $.identifier)),
+      ),
+
+    /**
+     * A block of statements enclosed in curly braces.
+     */
+    block: ($) => seq("{", repeat($._statement), "}"),
+
+    /**
+     * A new named rule for a function body that is just a semicolon.
+     */
+    empty_body: ($) => ";",
+
+    /**
+     * A placeholder for any statement.
+     */
+    _statement: ($) => choice($.variable_declaration_statement),
+    // TODO: Add statements like if, for, require, etc.
+
+    state_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
+
+    data_location: ($) => choice("memory", "storage", "calldata"),
+
+    //************************************************************//
+    //              Variable Declaration Statement                //
+    //************************************************************//
+
+    /**
+     * A local variable declaration statement.
+     * e.g., `uint i = 0;` or `(a,b) = (1,2);`
+     */
+    variable_declaration_statement: ($) =>
+      seq(
+        choice(
+          // e.g. `uint256 myVar = 1`
+          seq(
+            $.variable_declaration,
+            optional(seq("=", field("value", $.expression))),
+          ),
+          // e.g. `(uint a, uint b) = (1, 2)`
+          seq($.variable_declaration_tuple, "=", field("value", $.expression)),
+        ),
+        ";",
+      ),
+
+    /**
+     * A single variable declaration, used in statements and tuples.
+     * e.g., `uint256 myVar` or `string memory name`
+     */
+    variable_declaration: ($) =>
+      seq(
+        field("type", $.type_name),
+        optional($.data_location),
+        optional(field("name", $.identifier)),
+      ),
+
+    /**
+     * A tuple of variable declarations. Can contain empty slots.
+     * e.g., `(uint a, , uint c)`
+     */
+    variable_declaration_tuple: ($) =>
+      seq("(", commaSep(optional($.variable_declaration)), ")"),
 
     //************************************************************//
     //                       Common Rules                         //
