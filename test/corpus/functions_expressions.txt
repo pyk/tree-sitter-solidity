@@ -1,0 +1,74 @@
+==================
+Simple assignment expression
+==================
+contract C {
+  function f() {
+    uint a;
+    a = 1;
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier)))
+          (expression_statement
+            (expression
+              (assignment_expression
+                left: (expression
+                  (primary_expression
+                    (identifier)))
+                right: (expression
+                  (primary_expression
+                    (literal
+                      (number_literal))))))))))))
+
+==================
+Operator precedence
+==================
+contract C {
+  function f() {
+    uint a = 1 + 2 * 3;
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (expression
+              (binary_expression
+                left: (expression
+                  (primary_expression
+                    (literal
+                      (number_literal))))
+                right: (expression
+                  (binary_expression
+                    left: (expression
+                      (primary_expression
+                        (literal
+                          (number_literal))))
+                    right: (expression
+                      (primary_expression
+                        (literal
+                          (number_literal))))))))))))))

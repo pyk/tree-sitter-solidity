@@ -31,7 +31,18 @@ contract C {
         (visibility)
         (mutability)
         name: (identifier)
-        value: (expression (literal (string_literal)))))))
+        value:
+          (expression
+            (primary_expression
+               (literal
+                 (string_literal)
+              )
+            )
+        )
+      )
+    )
+  )
+)
 
 ==================
 State variable with custom type
@@ -65,7 +76,7 @@ contract C {
         type: (type_name (elementary_type_name))
         (visibility)
         name: (identifier)
-        value: (expression (literal (boolean_literal)))))))
+        value: (expression (primary_expression (literal (boolean_literal))))))))
 
 ==================
 State variable with address literal
@@ -83,4 +94,4 @@ contract C {
         type: (type_name (elementary_type_name))
         (visibility)
         name: (identifier)
-        value: (expression (literal (hex_literal)))))))
+        value: (expression (primary_expression (literal (hex_literal))))))))

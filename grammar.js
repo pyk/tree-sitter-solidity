@@ -19,14 +19,22 @@ module.exports = grammar({
   // keywords like "import" and the general identifier rule.
   word: ($) => $.identifier,
 
-  // Add a conflicts section to resolve the ambiguity
-  // that can occur after a pragma directive.
   conflicts: ($) => [],
 
   rules: {
+    // source_file
+    // └─── repeats 0 or more times...
+    //      └─── _top_level_element
+    //           ├─── spdx_license_identifier  (e.g., // SPDX-License-Identifier: MIT)
+    //           ├─── pragma_directive         (e.g., pragma solidity ^0.8.0;)
+    //           ├─── import_directive         (e.g., import "./MyFile.sol";)
+    //           ├─── contract_definition      (e.g., contract C { ... })
+    //           └─── interface_definition     (e.g., interface I { ... })
+
     /**
      * The top-level rule, representing a complete Solidity source file.
      * It consists of a sequence of top-level declarations and directives.
+     *
      */
     source_file: ($) => repeat($._top_level_element),
 
@@ -160,6 +168,23 @@ module.exports = grammar({
     //                    Contract Definition                     //
     //************************************************************//
 
+    // contract_definition
+    // ├─── "abstract" (optional keyword)
+    // ├─── "contract" (required keyword)
+    // ├─── name: identifier
+    // ├─── inheritance_specifier_list (optional)
+    // │    └─── "is" (keyword)
+    // │    └─── repeats 1 or more times...
+    // │         └─── inheritance_specifier
+    // │              └─── identifier_path (e.g., Ownable or MyLib.Parent)
+    // └─── body: contract_body
+    //      └─── "{"
+    //      │    └─── repeats 0 or more times...
+    //      │         └─── _contract_body_element
+    //      │              ├─── state_variable_declaration
+    //      │              └─── function_definition
+    //      └─── "}"
+
     /**
      * The definition of a contract.
      * e.g., `contract MyContract is Ownable { ... }`
@@ -276,10 +301,9 @@ module.exports = grammar({
     mutability: ($) => choice("constant", "immutable"),
 
     /**
-     * A placeholder for expressions. We will fill this out later.
-     * For now, it recognizes identifiers and numbers.
+     * An expression. This is a key rule that will be expanded significantly.
      */
-    expression: ($) => choice($.identifier, $.literal),
+    // expression: ($) => choice($.identifier, $.literal, $.tuple_expression),
 
     /**
      * A literal value, such as a number, string, boolean, or address.
@@ -297,9 +321,36 @@ module.exports = grammar({
     // Matches '0x' followed by 40 hex characters (a standard address)
     hex_literal: ($) => /0x[0-9a-fA-F]{40}/,
 
+    /**
+     * A tuple expression.
+     * e.g., `(1, true)` or `(a, b)`
+     */
+    tuple_expression: ($) => seq("(", optional(commaSep($.expression)), ")"),
+
     //************************************************************//
     //                    Function Definition                     //
     //************************************************************//
+
+    // function_definition
+    // ├─── "function" (keyword)
+    // ├─── name: identifier
+    // ├─── parameters: parameter_list
+    // │    └─── "("
+    // │    │    └─── parameter_declaration (repeats, comma-separated)
+    // │    │         ├─── type: type_name
+    // │    │         ├─── data_location (optional: "memory", "storage", etc.)
+    // │    │         └─── name: identifier (optional)
+    // │    └─── ")"
+    // ├─── _function_attribute (repeats 0 or more times)
+    // │    ├─── visibility ("public", "external", etc.)
+    // │    ├─── state_mutability ("view", "pure", "payable")
+    // │    └─── "virtual"
+    // ├─── returns_clause (optional)
+    // │    └─── "returns" (keyword)
+    // │    └─── returns: parameter_list
+    // └─── body
+    //      ├─── block (i.e., { ... })
+    //      └─── empty_body (i.e., ;)
 
     /**
      * The definition of a function.
@@ -364,12 +415,23 @@ module.exports = grammar({
     /**
      * A placeholder for any statement.
      */
-    _statement: ($) => choice($.variable_declaration_statement),
+    _statement: ($) =>
+      choice($.variable_declaration_statement, $.expression_statement),
     // TODO: Add statements like if, for, require, etc.
 
     state_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
 
     data_location: ($) => choice("memory", "storage", "calldata"),
+
+    //************************************************************//
+    //                      Statement Rules                       //
+    //************************************************************//
+
+    /**
+     * An expression statement, which is an expression followed by a semicolon.
+     * e.g., `x = 1;` or `foo();`
+     */
+    expression_statement: ($) => seq($.expression, ";"),
 
     //************************************************************//
     //              Variable Declaration Statement                //
@@ -409,7 +471,91 @@ module.exports = grammar({
      * e.g., `(uint a, , uint c)`
      */
     variable_declaration_tuple: ($) =>
-      seq("(", commaSep(optional($.variable_declaration)), ")"),
+      // Give this rule a higher precedence than tuple_expression to resolve ambiguity.
+      prec(1, seq("(", commaSep(optional($.variable_declaration)), ")")),
+
+    //************************************************************//
+    //                      Expression Rules                      //
+    //************************************************************//
+
+    // expression
+    // ├─── primary_expression
+    // │    ├─── identifier (e.g., myVar)
+    // │    ├─── literal
+    // │    │    ├─── number_literal (e.g., 123)
+    // │    │    ├─── string_literal (e.g., "hello")
+    // │    │    ├─── boolean_literal (e.g., true)
+    // │    │    └─── hex_literal (e.g., 0x...abc)
+    // │    └─── tuple_expression (e.g., (1, true))
+    // │
+    // └─── binary_expression (This is where recursion happens)
+    //      ├─── left: expression (can be a primary_expression or another binary_expression)
+    //      ├─── operator: "+", "*", "=", etc.
+    //      └─── right: expression (can be a primary_expression or another binary_expression)
+
+    /**
+     * The main expression rule.
+     * It's a choice among all concrete expression types. This structure
+     * avoids creating extra wrapper nodes in the syntax tree, leading to a
+     * cleaner and more queryable structure.
+     */
+    expression: ($) =>
+      choice(
+        $.primary_expression,
+        $.binary_expression,
+        $.assignment_expression,
+        $.tuple_expression,
+      ),
+
+    /**
+     * Primary expressions are the leaf nodes of the expression tree,
+     * representing basic constructs like literals and identifiers.
+     */
+    primary_expression: ($) =>
+      choice(
+        $.literal,
+        // Identifiers are given a higher precedence to resolve ambiguity
+        // with other rules.
+        prec(1, $.identifier),
+      ),
+
+    /**
+     * A binary expression, handling arithmetic and similar operations.
+     * Precedence and associativity are defined for each operator group.
+     */
+    binary_expression: ($) =>
+      choice(
+        prec.left(
+          2,
+          seq(
+            field("left", $.expression),
+            field("operator", choice("*", "/", "%")),
+            field("right", $.expression),
+          ),
+        ),
+        prec.left(
+          1,
+          seq(
+            field("left", $.expression),
+            field("operator", choice("+", "-")),
+            field("right", $.expression),
+          ),
+        ),
+      ),
+
+    /**
+     * A specific node for assignment expressions.
+     * It has right-associativity and the lowest precedence.
+     */
+    assignment_expression: ($) =>
+      prec.right(
+        0,
+        seq(
+          field("left", $.expression),
+          field("operator", "="),
+          field("right", $.expression),
+        ),
+      ),
 
     //************************************************************//
     //                       Common Rules                         //

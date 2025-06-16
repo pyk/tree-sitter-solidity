@@ -1,0 +1,95 @@
+==================
+Simple local variable declaration
+==================
+
+contract C {
+  function f() {
+    uint256 myVar;
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))))))))
+
+==================
+Local variable with initializer
+==================
+contract C {
+  function f() {
+    uint256 i = 0;
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (expression
+              (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Tuple declaration
+==================
+contract C {
+  function f() {
+    (uint a, , bool c) = (1, true, 2);
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration_tuple
+              (variable_declaration
+                type: (type_name
+                  (elementary_type_name))
+                name: (identifier))
+              (variable_declaration
+                type: (type_name
+                  (elementary_type_name))
+                name: (identifier)))
+            value: (expression
+              (tuple_expression
+                (expression
+                  (primary_expression
+                    (literal
+                      (number_literal))))
+                (expression
+                  (primary_expression
+                    (literal
+                      (boolean_literal))))
+                (expression
+                  (primary_expression
+                    (literal
+                      (number_literal))))))))))))
