@@ -225,179 +225,6 @@ module.exports = grammar({
       ),
 
     //************************************************************//
-    //                    Contract Definition                     //
-    //************************************************************//
-
-    // contract_definition
-    // ├─ "abstract" (optional keyword)
-    // ├─ "contract" (keyword)
-    // ├─ name: identifier (e.g., MyContract)
-    // └─ inheritance_specifier_list (optional)
-    //    ├─ "is" (keyword)
-    //    └─ inheritance_specifier (repeated, comma-separated)
-    //       ├─ name: (This is the crucial part)
-    //       │  ├─ choice 1: identifier. Matches simple names like `Ownable`.
-    //       │  └─ choice 2: member_access_expression. Matches dotted paths like `Parent.DeepParent`.
-    //       └─ arguments: call_argument_list. Matches constructor args like `("MyToken", "MTK")`
-
-    /**
-     * The definition of a contract.
-     * e.g., `contract MyContract is Ownable { ... }`
-     */
-    contract_definition: ($) =>
-      seq(
-        optional("abstract"),
-        "contract",
-        field("name", $.identifier),
-        optional($.inheritance_specifier_list),
-        field("body", $.contract_body),
-      ),
-
-    /**
-     * The body of a contract, enclosed in curly braces.
-     */
-    contract_body: ($) =>
-      seq(
-        "{",
-        repeat(
-          choice(
-            $._contract_body_element,
-            $.comment,
-            $.natspec_comment,
-            $.enum_definition,
-            $.event_definition,
-          ),
-        ),
-        "}",
-      ),
-
-    /**
-     * A choice between all valid elements within a contract body.
-     * (Currently empty, to be filled in later).
-     */
-    _contract_body_element: ($) =>
-      choice(
-        $.state_variable_declaration,
-        $.function_definition,
-        $.struct_definition,
-        $.error_definition,
-      ),
-
-    /**
-     * The list of parent contracts in an inheritance clause.
-     * e.g., `is Ownable, ReentrancyGuard`
-     */
-    inheritance_specifier_list: ($) =>
-      seq("is", commaSep($.inheritance_specifier)),
-
-    /**
-     * A single parent contract in an inheritance list.
-     * e.g., `Ownable` or `ERC20("MyToken", "MTK")`
-     */
-    inheritance_specifier: ($) =>
-      prec(
-        2, // <-- Give this rule a higher precedence
-        seq(
-          field("name", $.identifier_path),
-          optional(field("arguments", $.call_argument_list)),
-        ),
-      ),
-
-    //************************************************************//
-    //                   Interface Definition                     //
-    //************************************************************//
-
-    /**
-     * The definition of an interface.
-     * e.g., `interface IMyContract { ... }`
-     */
-    interface_definition: ($) =>
-      seq(
-        "interface",
-        field("name", $.identifier),
-        optional($.inheritance_specifier_list),
-        field("body", $.contract_body),
-      ),
-
-    //************************************************************//
-    //                    Function Definition                     //
-    //************************************************************//
-
-    // function_definition
-    // ├── "function" (keyword)
-    // ├── name: identifier
-    // ├── parameters: parameter_list
-    // │   └── (
-    // │       └── parameter_declaration (repeated)
-    // │           ├── type: type_name
-    // │           ├── data_location (optional)
-    // │           └── name: identifier (optional)
-    // │
-    // ├── _function_attribute (repeated)
-    // │   ├── visibility
-    // │   ├── state_mutability
-    // │   └── "virtual"
-    // │
-    // ├── returns_clause (optional)
-    // │   └── returns: parameter_list
-    // │
-    // └── body:
-    //     ├── block (e.g. { ... })
-    //     └── empty_body (e.g. ;)
-
-    /**
-     * The definition of a function.
-     * e.g., `function myFunc(uint256 _a) public pure returns (bool) { ... }`
-     */
-    function_definition: ($) =>
-      seq(
-        "function",
-        field("name", $.identifier),
-        field("parameters", $.parameter_list),
-        repeat($._function_attribute),
-        optional($.returns_clause),
-        field("body", choice($.block, $.empty_body)),
-      ),
-
-    /**
-     * An attribute of a function, such as visibility or state mutability.
-     */
-    _function_attribute: ($) =>
-      choice(
-        $.visibility,
-        $.state_mutability,
-        "virtual",
-        // $.override_specifier, // To be added later
-        // $.modifier_invocation // To be added later
-      ),
-
-    /**
-     * The `returns` clause of a function.
-     * e.g., `returns (bool)`
-     */
-    returns_clause: ($) => seq("returns", field("returns", $.parameter_list)),
-
-    /**
-     * A list of parameters, used for function arguments and return values.
-     * e.g., `(uint256 _a, bool _b)`
-     */
-    parameter_list: ($) =>
-      seq("(", optional(commaSep($.parameter_declaration)), ")"),
-
-    /**
-     * A block of statements enclosed in curly braces.
-     */
-    block: ($) =>
-      seq("{", repeat(choice($._statement, $.comment, $.natspec_comment)), "}"),
-
-    /**
-     * A new named rule for a function body that is just a semicolon.
-     */
-    empty_body: ($) => ";",
-
-    // TODO: Add statements like if, for, require, etc.
-
-    //************************************************************//
     //                      Statement Rules                       //
     //************************************************************//
 
@@ -995,6 +822,131 @@ module.exports = grammar({
     //************************************************************//
     //                        Definitions                         //
     //************************************************************//
+
+    /**
+     * The definition of a contract.
+     * e.g., `contract MyContract is Ownable { ... }`
+     */
+    contract_definition: ($) =>
+      seq(
+        optional("abstract"),
+        "contract",
+        field("name", $.identifier),
+        optional($.inheritance_specifier_list),
+        field("body", $.contract_body),
+      ),
+
+    /**
+     * The body of a contract, enclosed in curly braces.
+     */
+    contract_body: ($) =>
+      seq(
+        "{",
+        repeat(
+          choice(
+            $._contract_body_element,
+            $.comment,
+            $.natspec_comment,
+            $.enum_definition,
+            $.event_definition,
+          ),
+        ),
+        "}",
+      ),
+
+    /**
+     * A choice between all valid elements within a contract body.
+     * (Currently empty, to be filled in later).
+     */
+    _contract_body_element: ($) =>
+      choice(
+        $.state_variable_declaration,
+        $.function_definition,
+        $.struct_definition,
+        $.error_definition,
+      ),
+
+    /**
+     * The list of parent contracts in an inheritance clause.
+     * e.g., `is Ownable, ReentrancyGuard`
+     */
+    inheritance_specifier_list: ($) =>
+      seq("is", commaSep($.inheritance_specifier)),
+
+    /**
+     * A single parent contract in an inheritance list.
+     * e.g., `Ownable` or `ERC20("MyToken", "MTK")`
+     */
+    inheritance_specifier: ($) =>
+      prec(
+        2, // <-- Give this rule a higher precedence
+        seq(
+          field("name", $.identifier_path),
+          optional(field("arguments", $.call_argument_list)),
+        ),
+      ),
+
+    /**
+     * The definition of an interface.
+     * e.g., `interface IMyContract { ... }`
+     */
+    interface_definition: ($) =>
+      seq(
+        "interface",
+        field("name", $.identifier),
+        optional($.inheritance_specifier_list),
+        field("body", $.contract_body),
+      ),
+
+    /**
+     * The definition of a function.
+     * e.g., `function myFunc(uint256 _a) public pure returns (bool) { ... }`
+     */
+    function_definition: ($) =>
+      seq(
+        "function",
+        field("name", $.identifier),
+        field("parameters", $.parameter_list),
+        repeat($._function_attribute),
+        optional($.returns_clause),
+        field("body", choice($.block, $.empty_body)),
+      ),
+
+    /**
+     * An attribute of a function, such as visibility or state mutability.
+     */
+    _function_attribute: ($) =>
+      choice(
+        $.visibility,
+        $.state_mutability,
+        "virtual",
+        // $.override_specifier, // To be added later
+        // $.modifier_invocation // To be added later
+      ),
+
+    /**
+     * The `returns` clause of a function.
+     * e.g., `returns (bool)`
+     */
+    returns_clause: ($) => seq("returns", field("returns", $.parameter_list)),
+
+    /**
+     * A list of parameters, used for function arguments and return values.
+     * e.g., `(uint256 _a, bool _b)`
+     */
+    parameter_list: ($) =>
+      seq("(", optional(commaSep($.parameter_declaration)), ")"),
+
+    /**
+     * A block of statements enclosed in curly braces.
+     */
+    block: ($) =>
+      seq("{", repeat(choice($._statement, $.comment, $.natspec_comment)), "}"),
+
+    /**
+     * A new named rule for a function body that is just a semicolon.
+     */
+    empty_body: ($) => ";",
 
     struct_definition: ($) =>
       seq(
