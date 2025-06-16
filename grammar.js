@@ -626,17 +626,28 @@ module.exports = grammar({
       ),
 
     /**
-     * A function call expression.
-     * e.g., `myFunction(arg1, arg2)`
-     *
-     * It has a high precedence to ensure that member access on a call's
-     * result (e.g., `myFunc().property`) is parsed correctly.
+     * The options block for a function call.
+     * e.g., `{value: 1, gas: 10000}`
+     */
+    call_options_block: ($) => seq("{", commaSep($.named_argument), "}"),
+
+    /**
+     * An argument in a function call options block.
+     * e.g., `value: 1 ether` or `gas: 10000`
+     */
+    named_argument: ($) =>
+      seq(field("name", $.identifier), ":", field("value", $._expression)),
+
+    /**
+     * A function call expression, with optional call options.
+     * e.g., `myFunction(arg1, arg2)` or `myFunc{value: 1 ether}()`
      */
     call_expression: ($) =>
       prec(
         PREC.MEMBER,
         seq(
           field("function", $._expression),
+          optional(field("options", $.call_options_block)),
           field("arguments", $.call_argument_list),
         ),
       ),

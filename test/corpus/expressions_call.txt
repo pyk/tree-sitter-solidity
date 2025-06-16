@@ -1,0 +1,168 @@
+==================
+Simple function call
+==================
+
+contract C {
+  function f() {
+    doSomething(1, true);
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (expression_statement
+            (call_expression
+              function: (primary_expression (identifier))
+              arguments: (call_argument_list
+                (primary_expression
+                  (literal
+                    (number_literal)))
+                (primary_expression
+                  (literal
+                    (boolean_literal)))))))))))
+
+==================
+Function call with value option
+==================
+
+contract C {
+  function f() {
+    doSomething{value: 1}();
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (expression_statement
+            (call_expression
+              function: (primary_expression (identifier))
+              options: (call_options_block
+                (named_argument
+                  name: (identifier)
+                  value: (primary_expression (literal (number_literal)))))
+              arguments: (call_argument_list))))))))
+
+==================
+Function call with gas option
+==================
+
+contract C {
+  function f() {
+    doSomething{gas: 10000}();
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (expression_statement
+            (call_expression
+              function: (primary_expression (identifier))
+              options: (call_options_block
+                (named_argument
+                  name: (identifier)
+                  value: (primary_expression (literal (number_literal)))))
+              arguments: (call_argument_list))))))))
+
+==================
+Function call with both value and gas options
+==================
+
+contract C {
+  function f() {
+    doSomething{value: 1, gas: 10000}();
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (expression_statement
+            (call_expression
+              function: (primary_expression (identifier))
+              options: (call_options_block
+                (named_argument
+                  name: (identifier)
+                  value: (primary_expression (literal (number_literal))))
+                (named_argument
+                  name: (identifier)
+                  value: (primary_expression (literal (number_literal)))))
+              arguments: (call_argument_list))))))))
+
+==================
+Function call options with arguments
+==================
+
+contract C {
+  function f() {
+    doSomething{value: 1}(true);
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (expression_statement
+            (call_expression
+              function: (primary_expression (identifier))
+              options: (call_options_block
+                (named_argument
+                  name: (identifier)
+                  value: (primary_expression (literal (number_literal)))))
+              arguments: (call_argument_list
+                (primary_expression (literal (boolean_literal)))))))))))
+
+==================
+Function call options on a member access
+==================
+contract C {
+  function f() {
+    myContract.doSomething{value: 1}();
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (expression_statement
+            (call_expression
+              function: (member_access_expression
+                object: (primary_expression (identifier))
+                member: (identifier))
+              options: (call_options_block
+                (named_argument
+                  name: (identifier)
+                  value: (primary_expression (literal (number_literal)))))
+              arguments: (call_argument_list))))))))
