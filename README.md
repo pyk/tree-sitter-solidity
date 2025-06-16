@@ -30,6 +30,12 @@ Run the following command to run the test:
 tree-sitter test
 ```
 
+To update the test:
+
+```shell
+tree-sitter generate && tree-sitter test --update --show-fields
+```
+
 ## References
 
 - [Solidity - Language Grammar](https://docs.soliditylang.org/en/stable/grammar.html)
