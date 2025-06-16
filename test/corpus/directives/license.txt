@@ -1,0 +1,11 @@
+==================
+SPDX License Identifier
+==================
+
+// SPDX-License-Identifier: MIT
+
+---
+
+(source_file
+  (spdx_license_identifier
+    license: (license_identifier)))
