@@ -1,0 +1,101 @@
+==================
+State variable of type uint (alias)
+==================
+
+contract C {
+  uint myVar;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (uint_type)
+        name: (identifier)))))
+
+==================
+State variable of type uint256
+==================
+
+contract C {
+  uint256 myVar;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (uint_type)
+        name: (identifier)))))
+
+==================
+State variable of type uint8
+==================
+
+contract C {
+  uint8 myVar;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (uint_type)
+        name: (identifier)))))
+
+==================
+Uint types in a function definition
+==================
+
+contract C {
+  function add(uint256 a, uint8 b) public returns (uint) {
+    uint result = a + b;
+    return result;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (uint_type)
+            name: (identifier))
+          (parameter_declaration
+            type: (uint_type)
+            name: (identifier)))
+        (visibility)
+        (returns_clause
+          returns: (parameter_list
+            (parameter_declaration
+              type: (uint_type))))
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (uint_type)
+              name: (identifier))
+            value: (additive_expression
+              left: (primary_expression
+                (identifier))
+              operator: (additive_operator)
+              right: (primary_expression
+                (identifier))))
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (identifier_path
+                (identifier))
+              name: (identifier))))))))

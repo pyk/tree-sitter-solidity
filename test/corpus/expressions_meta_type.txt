@@ -29,8 +29,7 @@ contract C {
                 (identifier))))
           (expression_statement
             (meta_type_expression
-              type: (identifier_path
-                (identifier))))
+              type: (uint_type)))
           (expression_statement
             (meta_type_expression
               type: (identifier_path
@@ -87,11 +86,9 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (identifier_path
-                (identifier))
+              type: (uint_type)
               name: (identifier))
             value: (member_access_expression
               object: (meta_type_expression
-                type: (identifier_path
-                  (identifier)))
+                type: (uint_type))
               member: (identifier))))))))

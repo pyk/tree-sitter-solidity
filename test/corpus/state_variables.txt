@@ -12,8 +12,7 @@ contract C {
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (identifier_path
-          (identifier))
+        type: (uint_type)
         name: (identifier)))))
 
 ==================

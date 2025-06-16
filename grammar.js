@@ -903,32 +903,27 @@ module.exports = grammar({
 
     /**
      * An unsigned integer type.
-     * e.g., `uint`, `uint256`, `uint8`
+     * Uses a token to ensure 'uint256' is not mistaken for an identifier.
      */
     uint_type: ($) =>
-      seq(
-        "uint",
-        optional(field("size", $.bit_size)), // Capture the size
+      token(
+        /uint(8|16|24|32|40|48|56|64|72|80|88|96|104|112|120|128|136|144|152|160|168|176|184|192|200|208|216|224|232|240|248|256)?/,
       ),
 
     /**
      * A signed integer type.
-     * e.g., `int`, `int128`
      */
     int_type: ($) =>
-      seq(
-        "int",
-        optional(field("size", $.bit_size)), // Capture the size
+      token(
+        /int(8|16|24|32|40|48|56|64|72|80|88|96|104|112|120|128|136|144|152|160|168|176|184|192|200|208|216|224|232|240|248|256)?/,
       ),
 
     /**
      * A fixed-size bytes type.
-     * e.g., `bytes1`, `bytes32`
      */
     bytes_type: ($) =>
-      seq(
-        "bytes",
-        field("size", $.bit_size), // Capture the size
+      token(
+        /bytes(1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32)/,
       ),
 
     /**
@@ -945,12 +940,6 @@ module.exports = grammar({
      * A dynamic bytes type.
      */
     dynamic_bytes_type: ($) => "bytes",
-
-    /**
-     * Helper rule for bit sizes.
-     * e.g., `256` in `uint256`
-     */
-    bit_size: ($) => /\d+/,
 
     /**
      * An array type.

@@ -596,11 +596,6 @@
     "fields": {}
   },
   {
-    "type": "bit_size",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "bitwise_and_expression",
     "named": true,
     "fields": {
@@ -1267,22 +1262,6 @@
     "type": "boolean_literal",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "bytes_type",
-    "named": true,
-    "fields": {
-      "size": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "bit_size",
-            "named": true
-          }
-        ]
-      }
-    }
   },
   {
     "type": "call_argument_list",
@@ -2112,11 +2091,6 @@
   },
   {
     "type": "data_location",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "dynamic_bytes_type",
     "named": true,
     "fields": {}
   },
@@ -3336,22 +3310,6 @@
     }
   },
   {
-    "type": "int_type",
-    "named": true,
-    "fields": {
-      "size": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "bit_size",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "interface_definition",
     "named": true,
     "fields": {
@@ -4412,11 +4370,6 @@
     }
   },
   {
-    "type": "number_literal",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "parameter_declaration",
     "named": true,
     "fields": {
@@ -5240,22 +5193,6 @@
     }
   },
   {
-    "type": "uint_type",
-    "named": true,
-    "fields": {
-      "size": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "bit_size",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "unary_expression",
     "named": true,
     "fields": {
@@ -5760,8 +5697,8 @@
     "named": true
   },
   {
-    "type": "bytes",
-    "named": false
+    "type": "bytes_type",
+    "named": true
   },
   {
     "type": "calldata",
@@ -5786,6 +5723,10 @@
   {
     "type": "delete",
     "named": false
+  },
+  {
+    "type": "dynamic_bytes_type",
+    "named": true
   },
   {
     "type": "ether",
@@ -5836,8 +5777,8 @@
     "named": false
   },
   {
-    "type": "int",
-    "named": false
+    "type": "int_type",
+    "named": true
   },
   {
     "type": "interface",
@@ -5874,6 +5815,10 @@
   {
     "type": "nonpayable",
     "named": false
+  },
+  {
+    "type": "number_literal",
+    "named": true
   },
   {
     "type": "payable",
@@ -5932,8 +5877,8 @@
     "named": false
   },
   {
-    "type": "uint",
-    "named": false
+    "type": "uint_type",
+    "named": true
   },
   {
     "type": "unicode_string_literal",

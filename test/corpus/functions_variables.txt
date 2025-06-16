@@ -19,8 +19,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (identifier_path
-                (identifier))
+              type: (uint_type)
               name: (identifier))))))))
 
 ==================
@@ -43,8 +42,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (identifier_path
-                (identifier))
+              type: (uint_type)
               name: (identifier))
             value: (primary_expression
               (literal
