@@ -2149,6 +2149,10 @@
         {
           "type": "struct_definition",
           "named": true
+        },
+        {
+          "type": "using_directive",
+          "named": true
         }
       ]
     }
@@ -5814,6 +5818,10 @@
         {
           "type": "struct_definition",
           "named": true
+        },
+        {
+          "type": "using_directive",
+          "named": true
         }
       ]
     }
@@ -6409,6 +6417,11 @@
     }
   },
   {
+    "type": "user_definable_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "user_defined_type",
     "named": true,
     "fields": {},
@@ -6418,6 +6431,119 @@
       "types": [
         {
           "type": "identifier_path",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "using_alias",
+    "named": true,
+    "fields": {
+      "operator": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "user_definable_operator",
+            "named": true
+          }
+        ]
+      },
+      "path": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_path",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "using_aliases",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "using_alias",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "using_directive",
+    "named": true,
+    "fields": {
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_path",
+            "named": true
+          },
+          {
+            "type": "using_aliases",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "user_defined_type",
+            "named": true
+          },
+          {
+            "type": "wildcard_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "global_using",
           "named": true
         }
       ]
@@ -6650,6 +6776,11 @@
   },
   {
     "type": "visibility",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "wildcard_type",
     "named": true,
     "fields": {}
   },
@@ -6902,6 +7033,10 @@
     "named": false
   },
   {
+    "type": "global_using",
+    "named": true
+  },
+  {
     "type": "gwei",
     "named": false
   },
@@ -7048,6 +7183,10 @@
   {
     "type": "unicode_string_literal",
     "named": true
+  },
+  {
+    "type": "using",
+    "named": false
   },
   {
     "type": "version_literal",

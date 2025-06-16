@@ -1,0 +1,105 @@
+==================
+Using directive for a specific type
+==================
+
+using SafeMath for uint256;
+
+---
+
+(source_file
+  (using_directive
+    source: (identifier_path
+      (identifier))
+    target: (uint_type)))
+
+==================
+Using directive for all types (wildcard)
+==================
+
+using SafeMath for *;
+
+---
+(source_file
+  (using_directive
+    source: (identifier_path (identifier))
+    target: (wildcard_type)))
+
+==================
+Using directive with destructuring
+==================
+
+using {add, sub} for uint256;
+
+---
+
+(source_file
+  (using_directive
+    source: (using_aliases
+      (using_alias
+        path: (identifier_path
+          (identifier)))
+      (using_alias
+        path: (identifier_path
+          (identifier))))
+    target: (uint_type)))
+
+==================
+Using directive with operator aliasing
+==================
+
+using {add as +, sub as -} for uint256;
+
+---
+
+(source_file
+  (using_directive
+    source: (using_aliases
+      (using_alias
+        path: (identifier_path
+          (identifier))
+        operator: (user_definable_operator))
+      (using_alias
+        path: (identifier_path
+          (identifier))
+        operator: (user_definable_operator)))
+    target: (uint_type)))
+
+==================
+Using directive with global keyword
+==================
+
+using SafeMath for uint256 global;
+
+---
+
+(source_file
+  (using_directive
+    source: (identifier_path
+      (identifier))
+    target: (uint_type)
+    (global_using)))
+
+==================
+Complex using directive
+==================
+
+using {MyLib.add, MyLib.sub as -} for MyStruct global;
+
+---
+
+(source_file
+  (using_directive
+    source: (using_aliases
+      (using_alias
+        path: (identifier_path
+          (identifier)
+          (identifier)))
+      (using_alias
+        path: (identifier_path
+          (identifier)
+          (identifier))
+        operator: (user_definable_operator)))
+    target: (user_defined_type
+      (identifier_path
+        (identifier)))
+    (global_using)))

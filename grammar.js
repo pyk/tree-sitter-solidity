@@ -86,6 +86,7 @@ module.exports = grammar({
         $.spdx_license_identifier,
         $.pragma_directive,
         $.import_directive,
+        $.using_directive,
         $.contract_definition,
         $.interface_definition,
         $.state_variable_declaration,
@@ -141,7 +142,7 @@ module.exports = grammar({
     license_identifier: ($) => /[\w\.-]+/,
 
     //************************************************************//
-    //                      Pragma Directive                      //
+    //                         Directives                         //
     //************************************************************//
 
     /**
@@ -172,10 +173,6 @@ module.exports = grammar({
 
     // A semantic version number (visible node).
     version_literal: ($) => /\d+(\.\d+){0,2}/,
-
-    //************************************************************//
-    //                      Import Directive                      //
-    //************************************************************//
 
     /**
      * An import directive, used to import symbols from another file.
@@ -222,6 +219,52 @@ module.exports = grammar({
       seq(
         field("symbol", $.identifier),
         optional(seq("as", field("alias", $.identifier))),
+      ),
+
+    user_definable_operator: ($) =>
+      choice(
+        "&",
+        "~",
+        "|",
+        "^",
+        "+",
+        "/",
+        "%",
+        "*",
+        "-",
+        "==",
+        ">",
+        ">=",
+        "<",
+        "<=",
+        "!=",
+      ),
+
+    // This rule is for aliasing, e.g., `SafeMath.add as +`
+    using_alias: ($) =>
+      seq(
+        field("path", $.identifier_path),
+        optional(seq("as", field("operator", $.user_definable_operator))),
+      ),
+
+    // This is for the `{...}` block
+    using_aliases: ($) => seq("{", commaSep($.using_alias), "}"),
+
+    // A named node for the `global` keyword
+    global_using: ($) => "global",
+
+    wildcard_type: ($) => "*",
+
+    // The main directive rule
+    using_directive: ($) =>
+      seq(
+        "using",
+        field("source", choice($.identifier_path, $.using_aliases)),
+        "for",
+        // The '*' is now captured by a named node.
+        field("target", choice($.wildcard_type, $._type_name)),
+        optional($.global_using),
+        ";",
       ),
 
     //************************************************************//
@@ -864,6 +907,7 @@ module.exports = grammar({
         $.function_definition,
         $.struct_definition,
         $.error_definition,
+        $.using_directive,
       ),
 
     /**
