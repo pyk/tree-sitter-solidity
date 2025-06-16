@@ -133,3 +133,67 @@ contract C {
             (unary_expression
               argument: (primary_expression
                 (identifier)))))))))
+
+==================
+Conditional expression
+==================
+contract C {
+  function f(bool a) {
+    uint b = a ? 1 : 2;
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name (elementary_type_name))
+            name: (identifier)))
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name (elementary_type_name))
+              name: (identifier))
+            value: (conditional_expression
+              condition: (primary_expression (identifier))
+              consequence: (primary_expression (literal (number_literal)))
+              alternative: (primary_expression (literal (number_literal))))))))))
+
+==================
+Nested conditional expression
+==================
+contract C {
+  function f(bool a, bool c) {
+    uint b = a ? 1 : c ? 2 : 3;
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name (elementary_type_name))
+            name: (identifier))
+          (parameter_declaration
+            type: (type_name (elementary_type_name))
+            name: (identifier)))
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name (elementary_type_name))
+              name: (identifier))
+            value: (conditional_expression
+              condition: (primary_expression (identifier))
+              consequence: (primary_expression (literal (number_literal)))
+              alternative: (conditional_expression
+                condition: (primary_expression (identifier))
+                consequence: (primary_expression (literal (number_literal)))
+                alternative: (primary_expression (literal (number_literal)))))))))))

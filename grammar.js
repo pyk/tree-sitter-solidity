@@ -534,6 +534,7 @@ module.exports = grammar({
       choice(
         $.primary_expression,
         $.unary_expression,
+        $.conditional_expression,
         $.additive_expression,
         $.multiplicative_expression,
         $.assignment_expression,
@@ -577,6 +578,32 @@ module.exports = grammar({
             field("argument", $._expression),
             field("operator", choice("++", "--")),
           ),
+        ),
+      ),
+
+    /**
+     * A conditional (ternary) expression. e.g., `a ? b : c`
+     *
+     * This rule is defined with right-associativity to handle nested
+     * conditionals correctly. For example, `a ? b : c ? d : e` is parsed
+     * as `a ? b : (c ? d : e)`. This is a standard behavior for ternary
+     * operators in C-like languages.
+     *
+     * We assign it a low precedence (`CONDITIONAL`) to ensure that it doesn't
+     * incorrectly bind with higher-precedence binary operators.
+     *
+     * The `field()` function is used to label the parts of the expression,
+     * making the resulting syntax tree easy to query and analyze.
+     */
+    conditional_expression: ($) =>
+      prec.right(
+        PREC.CONDITIONAL,
+        seq(
+          field("condition", $._expression),
+          "?",
+          field("consequence", $._expression),
+          ":",
+          field("alternative", $._expression),
         ),
       ),
 

@@ -16,6 +16,10 @@
             "named": true
           },
           {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
             "type": "multiplicative_expression",
             "named": true
           },
@@ -53,6 +57,10 @@
           },
           {
             "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -97,6 +105,10 @@
             "named": true
           },
           {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
             "type": "multiplicative_expression",
             "named": true
           },
@@ -134,6 +146,10 @@
           },
           {
             "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -184,6 +200,114 @@
     "type": "boolean_literal",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "conditional_expression",
+    "named": true,
+    "fields": {
+      "alternative": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "additive_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "multiplicative_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "additive_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "multiplicative_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "consequence": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "additive_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "multiplicative_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "contract_body",
@@ -269,6 +393,10 @@
         },
         {
           "type": "assignment_expression",
+          "named": true
+        },
+        {
+          "type": "conditional_expression",
           "named": true
         },
         {
@@ -535,6 +663,10 @@
             "named": true
           },
           {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
             "type": "multiplicative_expression",
             "named": true
           },
@@ -572,6 +704,10 @@
           },
           {
             "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -806,6 +942,10 @@
             "named": true
           },
           {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
             "type": "multiplicative_expression",
             "named": true
           },
@@ -871,6 +1011,10 @@
           "named": true
         },
         {
+          "type": "conditional_expression",
+          "named": true
+        },
+        {
           "type": "multiplicative_expression",
           "named": true
         },
@@ -922,6 +1066,10 @@
           },
           {
             "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -1024,6 +1172,10 @@
           },
           {
             "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -1153,6 +1305,10 @@
     "named": false
   },
   {
+    "type": ":",
+    "named": false
+  },
+  {
     "type": ";",
     "named": false
   },
@@ -1174,6 +1330,10 @@
   },
   {
     "type": ">=",
+    "named": false
+  },
+  {
+    "type": "?",
     "named": false
   },
   {
