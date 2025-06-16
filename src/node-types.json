@@ -1283,6 +1283,10 @@
           "named": true
         },
         {
+          "type": "do_while_statement",
+          "named": true
+        },
+        {
           "type": "emit_statement",
           "named": true
         },
@@ -2267,6 +2271,156 @@
     "fields": {}
   },
   {
+    "type": "do_while_statement",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "do_while_statement",
+            "named": true
+          },
+          {
+            "type": "emit_statement",
+            "named": true
+          },
+          {
+            "type": "expression_statement",
+            "named": true
+          },
+          {
+            "type": "for_statement",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "variable_declaration_statement",
+            "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "additive_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_and_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_or_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_xor_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "comparison_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "logical_and_expression",
+            "named": true
+          },
+          {
+            "type": "logical_or_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "multiplicative_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "emit_statement",
     "named": true,
     "fields": {},
@@ -3061,6 +3215,10 @@
             "named": true
           },
           {
+            "type": "do_while_statement",
+            "named": true
+          },
+          {
             "type": "emit_statement",
             "named": true
           },
@@ -3400,6 +3558,10 @@
             "named": true
           },
           {
+            "type": "do_while_statement",
+            "named": true
+          },
+          {
             "type": "emit_statement",
             "named": true
           },
@@ -3537,6 +3699,10 @@
         "types": [
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "do_while_statement",
             "named": true
           },
           {
@@ -7157,6 +7323,10 @@
             "named": true
           },
           {
+            "type": "do_while_statement",
+            "named": true
+          },
+          {
             "type": "emit_statement",
             "named": true
           },
@@ -7506,6 +7676,10 @@
   },
   {
     "type": "delete",
+    "named": false
+  },
+  {
+    "type": "do",
     "named": false
   },
   {

@@ -338,6 +338,7 @@ module.exports = grammar({
         $.for_statement,
         $.emit_statement,
         $.while_statement,
+        $.do_while_statement,
       ),
 
     /**
@@ -448,6 +449,17 @@ module.exports = grammar({
         field("condition", $._expression),
         ")",
         field("body", $._statement),
+      ),
+
+    do_while_statement: ($) =>
+      seq(
+        "do",
+        field("body", $._statement),
+        "while",
+        "(",
+        field("condition", $._expression),
+        ")",
+        ";",
       ),
 
     //************************************************************//
