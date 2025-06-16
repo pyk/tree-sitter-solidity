@@ -143,6 +143,7 @@ contract C {
   }
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -151,17 +152,24 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (type_name (elementary_type_name))
+            type: (type_name
+              (elementary_type_name))
             name: (identifier)))
         body: (block
           (variable_declaration_statement
             (variable_declaration
-              type: (type_name (elementary_type_name))
+              type: (type_name
+                (elementary_type_name))
               name: (identifier))
             value: (conditional_expression
-              condition: (primary_expression (identifier))
-              consequence: (primary_expression (literal (number_literal)))
-              alternative: (primary_expression (literal (number_literal))))))))))
+              condition: (primary_expression
+                (identifier))
+              consequence: (primary_expression
+                (literal
+                  (number_literal)))
+              alternative: (primary_expression
+                (literal
+                  (number_literal))))))))))
 
 ==================
 Nested conditional expression
@@ -172,6 +180,7 @@ contract C {
   }
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -180,23 +189,34 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (type_name (elementary_type_name))
+            type: (type_name
+              (elementary_type_name))
             name: (identifier))
           (parameter_declaration
-            type: (type_name (elementary_type_name))
+            type: (type_name
+              (elementary_type_name))
             name: (identifier)))
         body: (block
           (variable_declaration_statement
             (variable_declaration
-              type: (type_name (elementary_type_name))
+              type: (type_name
+                (elementary_type_name))
               name: (identifier))
             value: (conditional_expression
-              condition: (primary_expression (identifier))
-              consequence: (primary_expression (literal (number_literal)))
+              condition: (primary_expression
+                (identifier))
+              consequence: (primary_expression
+                (literal
+                  (number_literal)))
               alternative: (conditional_expression
-                condition: (primary_expression (identifier))
-                consequence: (primary_expression (literal (number_literal)))
-                alternative: (primary_expression (literal (number_literal)))))))))))
+                condition: (primary_expression
+                  (identifier))
+                consequence: (primary_expression
+                  (literal
+                    (number_literal)))
+                alternative: (primary_expression
+                  (literal
+                    (number_literal)))))))))))
 
 ==================
 Function call expression
@@ -207,6 +227,7 @@ contract C {
   }
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -217,7 +238,74 @@ contract C {
         body: (block
           (expression_statement
             (call_expression
-              function: (primary_expression (identifier))
+              function: (primary_expression
+                (identifier))
               arguments: (call_argument_list
-                (primary_expression (literal (number_literal)))
-                (primary_expression (literal (boolean_literal)))))))))))
+                (primary_expression
+                  (literal
+                    (number_literal)))
+                (primary_expression
+                  (literal
+                    (boolean_literal)))))))))))
+
+==================
+Comprehensive member access expressions
+==================
+contract C {
+  function f() {
+    address sender = msg.sender;
+    uint chain = block.chainid.something;
+    address owner = getContract().owner;
+    address addr = myPayable.address;
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (member_access_expression
+              object: (primary_expression
+                (identifier))
+              member: (identifier)))
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (member_access_expression
+              object: (member_access_expression
+                object: (primary_expression
+                  (identifier))
+                member: (identifier))
+              member: (identifier)))
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (member_access_expression
+              object: (call_expression
+                function: (primary_expression
+                  (identifier))
+                arguments: (call_argument_list))
+              member: (identifier)))
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (member_access_expression
+              object: (primary_expression
+                (identifier))
+              member: (identifier))))))))

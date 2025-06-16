@@ -537,6 +537,7 @@ module.exports = grammar({
         $.unary_expression,
         $.conditional_expression,
         $.call_expression,
+        $.member_access_expression,
         $.assignment_expression,
         $.additive_expression,
         $.multiplicative_expression,
@@ -611,9 +612,16 @@ module.exports = grammar({
 
     /**
      * An argument list for a function call.
-     * e.g., `(arg1, arg2)`
+     * e.g., `(arg1, arg2)` or `()`
      */
-    call_argument_list: ($) => seq("(", commaSep($._expression), ")"),
+    call_argument_list: ($) =>
+      seq(
+        "(",
+        // Make the comma-separated list of expressions optional
+        // to correctly handle calls with no arguments.
+        optional(commaSep($._expression)),
+        ")",
+      ),
 
     /**
      * A function call expression.
@@ -629,6 +637,24 @@ module.exports = grammar({
           field("function", $._expression),
           field("arguments", $.call_argument_list),
         ),
+      ),
+
+    /**
+     * A member access expression.
+     * e.g., `myVariable.property`
+     *
+     * This rule is made left-associative using `prec.left` to ensure that
+     * chained member access is parsed correctly. For example, an expression
+     * like `a.b.c` is grouped from left to right as `(a.b).c`.
+     *
+     * It shares the same high precedence level as `call_expression` (`PREC.CALL`)
+     * to correctly handle interactions between them, such as accessing a property
+     * on the result of a function call: `myFunc().property`.
+     */
+    member_access_expression: ($) =>
+      prec.left(
+        PREC.CALL,
+        seq(field("object", $._expression), ".", field("member", $.identifier)),
       ),
 
     /**
