@@ -311,34 +311,6 @@ module.exports = grammar({
       ),
 
     //************************************************************//
-    //                 State Variable Declaration                 //
-    //************************************************************//
-
-    /**
-     * A state variable declaration within a contract.
-     * e.g., `uint256 public myVar = 1;`
-     */
-    state_variable_declaration: ($) =>
-      seq(
-        field("type", $._type_name),
-        repeat($._state_variable_attribute),
-        field("name", $.identifier),
-        optional(seq("=", field("value", $._expression))),
-        ";",
-      ),
-
-    /**
-     * An attribute of a state variable, such as visibility or mutability.
-     */
-    _state_variable_attribute: ($) =>
-      choice(
-        $.visibility,
-        $.mutability,
-        // $.override_specifier, // To be added later
-        "transient",
-      ),
-
-    //************************************************************//
     //                    Function Definition                     //
     //************************************************************//
 
@@ -431,6 +403,49 @@ module.exports = grammar({
     //************************************************************//
 
     /**
+     * A state variable declaration within a contract.
+     * e.g., `uint256 public myVar = 1;`
+     */
+    state_variable_declaration: ($) =>
+      seq(
+        field("type", $._type_name),
+        repeat($._state_variable_attribute),
+        field("name", $.identifier),
+        optional(seq("=", field("value", $._expression))),
+        ";",
+      ),
+
+    /**
+     * An attribute of a state variable, such as visibility or mutability.
+     */
+    _state_variable_attribute: ($) =>
+      choice(
+        $.visibility,
+        $.mutability,
+        // $.override_specifier, // To be added later
+        "transient",
+      ),
+
+    /**
+     * A single variable declaration, used in statements and tuples.
+     * e.g., `uint256 myVar` or `string memory name`
+     */
+    variable_declaration: ($) =>
+      seq(
+        field("type", $._type_name),
+        optional(field("location", $.data_location)),
+        optional(field("name", $.identifier)),
+      ),
+
+    /**
+     * A tuple of variable declarations. Can contain empty slots.
+     * e.g., `(uint a, , uint c)`
+     */
+    variable_declaration_tuple: ($) =>
+      // Give this rule a higher precedence than tuple_expression to resolve ambiguity.
+      prec(1, seq("(", commaSep(optional($.variable_declaration)), ")")),
+
+    /**
      * A single parameter declaration.
      * e.g., `uint256 _myVar` or `string memory _name`
      */
@@ -481,25 +496,6 @@ module.exports = grammar({
         ),
         ";",
       ),
-
-    /**
-     * A single variable declaration, used in statements and tuples.
-     * e.g., `uint256 myVar` or `string memory name`
-     */
-    variable_declaration: ($) =>
-      seq(
-        field("type", $._type_name),
-        optional(field("location", $.data_location)),
-        optional(field("name", $.identifier)),
-      ),
-
-    /**
-     * A tuple of variable declarations. Can contain empty slots.
-     * e.g., `(uint a, , uint c)`
-     */
-    variable_declaration_tuple: ($) =>
-      // Give this rule a higher precedence than tuple_expression to resolve ambiguity.
-      prec(1, seq("(", commaSep(optional($.variable_declaration)), ")")),
 
     /**
      * A return statement.
