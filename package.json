@@ -1,0 +1,54 @@
+{
+  "name": "tree-sitter-solidity",
+  "version": "0.1.0",
+  "description": "Solidity grammar for tree-sitter",
+  "repository": "http://github.com/pyk/tree-sitter-solidity",
+  "license": "MIT",
+  "author": {
+    "name": "pyk",
+    "email": "gm@pyk.sh",
+    "url": "https://pyk.sh/"
+  },
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "solidity"
+  ],
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "dependencies": {
+    "node-addon-api": "^8.2.1",
+    "node-gyp-build": "^4.8.2"
+  },
+  "devDependencies": {
+    "prebuildify": "^6.0.1",
+    "tree-sitter-cli": "^0.25.6",
+    "prettier": "3.5.3"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.1"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "install": "node-gyp-build",
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "node --test bindings/node/*_test.js"
+  },
+  "packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
+}
