@@ -19,21 +19,24 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (identifier_path
-              (identifier))
+            type: (user_defined_type
+              (identifier_path
+                (identifier)))
             name: (identifier)))
         body: (block
           (expression_statement
             (meta_type_expression
-              type: (identifier_path
-                (identifier))))
+              type: (user_defined_type
+                (identifier_path
+                  (identifier)))))
           (expression_statement
             (meta_type_expression
               type: (uint_type)))
           (expression_statement
             (meta_type_expression
-              type: (identifier_path
-                (identifier)))))))))
+              type: (user_defined_type
+                (identifier_path
+                  (identifier))))))))))
 
 ==================
 Meta type with member access on a contract
@@ -61,8 +64,9 @@ contract C {
               name: (identifier))
             value: (member_access_expression
               object: (meta_type_expression
-                type: (identifier_path
-                  (identifier)))
+                type: (user_defined_type
+                  (identifier_path
+                    (identifier))))
               member: (identifier))))))))
 
 ==================

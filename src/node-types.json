@@ -265,10 +265,6 @@
             "named": true
           },
           {
-            "type": "identifier_path",
-            "named": true
-          },
-          {
             "type": "int_type",
             "named": true
           },
@@ -278,6 +274,10 @@
           },
           {
             "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "user_defined_type",
             "named": true
           }
         ]
@@ -4673,10 +4673,6 @@
             "named": true
           },
           {
-            "type": "identifier_path",
-            "named": true
-          },
-          {
             "type": "int_type",
             "named": true
           },
@@ -4686,6 +4682,10 @@
           },
           {
             "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "user_defined_type",
             "named": true
           }
         ]
@@ -5065,10 +5065,6 @@
             "named": true
           },
           {
-            "type": "identifier_path",
-            "named": true
-          },
-          {
             "type": "int_type",
             "named": true
           },
@@ -5078,6 +5074,10 @@
           },
           {
             "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "user_defined_type",
             "named": true
           }
         ]
@@ -5129,10 +5129,6 @@
             "named": true
           },
           {
-            "type": "identifier_path",
-            "named": true
-          },
-          {
             "type": "int_type",
             "named": true
           },
@@ -5142,6 +5138,10 @@
           },
           {
             "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "user_defined_type",
             "named": true
           }
         ]
@@ -5690,10 +5690,6 @@
             "named": true
           },
           {
-            "type": "identifier_path",
-            "named": true
-          },
-          {
             "type": "int_type",
             "named": true
           },
@@ -5703,6 +5699,10 @@
           },
           {
             "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "user_defined_type",
             "named": true
           }
         ]
@@ -5886,10 +5886,6 @@
             "named": true
           },
           {
-            "type": "identifier_path",
-            "named": true
-          },
-          {
             "type": "int_type",
             "named": true
           },
@@ -5899,6 +5895,10 @@
           },
           {
             "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "user_defined_type",
             "named": true
           }
         ]
@@ -6171,6 +6171,21 @@
     }
   },
   {
+    "type": "user_defined_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier_path",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "variable_declaration",
     "named": true,
     "fields": {
@@ -6215,10 +6230,6 @@
             "named": true
           },
           {
-            "type": "identifier_path",
-            "named": true
-          },
-          {
             "type": "int_type",
             "named": true
           },
@@ -6228,6 +6239,10 @@
           },
           {
             "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "user_defined_type",
             "named": true
           }
         ]

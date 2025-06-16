@@ -1076,6 +1076,8 @@ module.exports = grammar({
         seq("address", optional(field("mutability", "payable"))),
       ),
 
+    user_defined_type: ($) => $.identifier_path,
+
     /**
      * A hidden rule for all elementary types.
      */
@@ -1089,7 +1091,7 @@ module.exports = grammar({
       choice(
         $.address_type,
         $._elementary_type_name,
-        prec(-1, $.identifier_path),
+        prec(-1, $.user_defined_type),
         $.array_type,
       ),
 

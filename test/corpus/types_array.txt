@@ -86,8 +86,9 @@ contract C {
           name: (identifier)))
       (state_variable_declaration
         type: (array_type
-          base: (identifier_path
-            (identifier)))
+          base: (user_defined_type
+            (identifier_path
+              (identifier))))
         name: (identifier)))))
 
 ==================

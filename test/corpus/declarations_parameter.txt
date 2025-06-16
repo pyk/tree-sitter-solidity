@@ -168,8 +168,9 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (identifier_path
-              (identifier))
+            type: (user_defined_type
+              (identifier_path
+                (identifier)))
             location: (data_location)
             name: (identifier)))
         (visibility)
