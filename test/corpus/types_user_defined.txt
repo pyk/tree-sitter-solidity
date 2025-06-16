@@ -1,0 +1,122 @@
+==================
+User-defined type as a state variable (Struct)
+==================
+
+contract C {
+  struct MyStruct {}
+  MyStruct myVar;
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (struct_definition
+        name: (identifier))
+      (state_variable_declaration
+        type: (user_defined_type (identifier_path (identifier)))
+        name: (identifier)))))
+
+==================
+User-defined type as a function parameter (Enum)
+==================
+
+contract C {
+  enum MyEnum { A, B }
+  function process(MyEnum status) public {}
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (enum_definition
+        name: (identifier)
+        value: (identifier)
+        value: (identifier))
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (user_defined_type (identifier_path (identifier)))
+            name: (identifier)))
+        (visibility)
+        body: (block)))))
+
+==================
+User-defined type as a return value (Contract)
+==================
+
+contract OtherContract {}
+contract C {
+  function getContract() public returns (OtherContract) {}
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body))
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        (visibility)
+        (returns_clause
+          returns: (parameter_list
+            (parameter_declaration
+              type: (user_defined_type (identifier_path (identifier))))))
+        body: (block)))))
+
+==================
+User-defined type in an array
+==================
+
+contract C {
+  struct Point {}
+  Point[] myPoints;
+}
+
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (struct_definition
+        name: (identifier))
+      (state_variable_declaration
+        type: (array_type
+          base: (user_defined_type (identifier_path (identifier))))
+        name: (identifier)))))
+
+==================
+Namespaced user-defined type
+==================
+import "./Parent.sol";
+
+contract C {
+  function f(Parent.NestedStruct s) public {}
+}
+
+---
+(source_file
+  (import_directive
+    path: (string_literal))
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (user_defined_type
+              (identifier_path
+                (identifier)
+                (identifier)))
+            name: (identifier)))
+        (visibility)
+        body: (block)))))
