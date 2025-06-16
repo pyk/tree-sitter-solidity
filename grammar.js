@@ -89,12 +89,12 @@ module.exports = grammar({
         $.contract_definition,
         $.interface_definition,
         $.state_variable_declaration,
+        $.struct_definition,
+        $.enum_definition,
         // $.using_directive,
         // $.library_definition,
         // $.function_definition,
         // $.constant_variable_declaration,
-        // $.struct_definition,
-        // $.enum_definition,
         // $.user_defined_value_type_definition,
         // $.error_definition,
         // $.event_definition,
@@ -258,7 +258,14 @@ module.exports = grammar({
     contract_body: ($) =>
       seq(
         "{",
-        repeat(choice($._contract_body_element, $.comment, $.natspec_comment)),
+        repeat(
+          choice(
+            $._contract_body_element,
+            $.comment,
+            $.natspec_comment,
+            $.enum_definition,
+          ),
+        ),
         "}",
       ),
 
@@ -998,6 +1005,16 @@ module.exports = grammar({
 
     struct_member: ($) =>
       seq(field("type", $._type_name), field("name", $.identifier), ";"),
+
+    enum_definition: ($) =>
+      seq(
+        "enum",
+        field("name", $.identifier),
+        "{",
+        // The commaSep helper handles one or more comma-separated values
+        commaSep(field("value", $.identifier)),
+        "}",
+      ),
 
     //************************************************************//
     //                           Types                            //

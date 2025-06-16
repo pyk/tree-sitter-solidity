@@ -2123,6 +2123,10 @@
           "named": true
         },
         {
+          "type": "enum_definition",
+          "named": true
+        },
+        {
           "type": "function_definition",
           "named": true
         },
@@ -2186,6 +2190,32 @@
     "type": "empty_body",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "enum_definition",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "equality_expression",
@@ -5570,6 +5600,10 @@
           "named": true
         },
         {
+          "type": "enum_definition",
+          "named": true
+        },
+        {
           "type": "import_directive",
           "named": true
         },
@@ -5591,6 +5625,10 @@
         },
         {
           "type": "state_variable_declaration",
+          "named": true
+        },
+        {
+          "type": "struct_definition",
           "named": true
         }
       ]
@@ -6568,6 +6606,10 @@
   },
   {
     "type": "else",
+    "named": false
+  },
+  {
+    "type": "enum",
     "named": false
   },
   {
