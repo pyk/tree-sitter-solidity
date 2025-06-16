@@ -307,11 +307,18 @@ module.exports = grammar({
         // $.override_specifier, // To be added later
         "transient",
       ),
-
     /**
      * A type name for a variable, parameter, or return value.
+     * This is now a recursive rule to handle array types.
      */
-    type_name: ($) => choice($.elementary_type_name, $.identifier_path),
+    type_name: ($) =>
+      choice($.elementary_type_name, $.identifier_path, $.array_type),
+
+    /**
+     * An array type.
+     * e.g., `uint[]`, `MyStruct[][]`
+     */
+    array_type: ($) => seq(field("base", $.type_name), "[", "]"),
 
     /**
      * An elementary type name like `uint256` or `address`.
@@ -538,6 +545,7 @@ module.exports = grammar({
         $.conditional_expression,
         $.call_expression,
         $.member_access_expression,
+        $.index_access_expression,
         $.assignment_expression,
         $.additive_expression,
         $.multiplicative_expression,
@@ -655,6 +663,25 @@ module.exports = grammar({
       prec.left(
         PREC.CALL,
         seq(field("object", $._expression), ".", field("member", $.identifier)),
+      ),
+
+    /**
+     * An index access expression.
+     * e.g., `myArray[i]`
+     *
+     * This rule is left-associative and shares the same high precedence as
+     * member access and function calls to allow for correct chaining,
+     * such as `myArray[i][j]` or `myFunc()[i]`.
+     */
+    index_access_expression: ($) =>
+      prec.left(
+        PREC.CALL,
+        seq(
+          field("base", $._expression),
+          "[",
+          field("index", $._expression),
+          "]",
+        ),
       ),
 
     /**

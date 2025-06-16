@@ -309,3 +309,40 @@ contract C {
               object: (primary_expression
                 (identifier))
               member: (identifier))))))))
+
+==================
+Index access expression
+==================
+contract C {
+  function f(uint[] memory arr) {
+    uint val = arr[0];
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name
+              (array_type
+                base: (type_name
+                  (elementary_type_name))))
+            (data_location)
+            name: (identifier)))
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (index_access_expression
+              base: (primary_expression
+                (identifier))
+              index: (primary_expression
+                (literal
+                  (number_literal))))))))))
