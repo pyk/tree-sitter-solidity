@@ -94,9 +94,8 @@ module.exports = grammar({
         $.error_definition,
         $.library_definition,
         $.function_definition,
+        $.user_defined_value_type_definition,
         // $.constant_variable_declaration,
-        // $.user_defined_value_type_definition,
-        // $.error_definition,
       ),
 
     //************************************************************//
@@ -908,6 +907,7 @@ module.exports = grammar({
         $.error_definition,
         $.fallback_function_definition,
         $.receive_function_definition,
+        $.user_defined_value_type_definition,
         $.using_directive,
       ),
 
@@ -1115,6 +1115,15 @@ module.exports = grammar({
         field("body", choice($.block, $.empty_body)),
       ),
 
+    user_defined_value_type_definition: ($) =>
+      seq(
+        "type",
+        field("name", $.identifier),
+        "is",
+        field("underlying_type", $._elementary_type_name),
+        ";",
+      ),
+
     //************************************************************//
     //                           Types                            //
     //************************************************************//
@@ -1181,14 +1190,20 @@ module.exports = grammar({
      * A hidden rule for all elementary types.
      */
     _elementary_type_name: ($) =>
-      choice($.uint_type, $.int_type, $.bytes_type, $.bool_type, $.string_type),
+      choice(
+        $.address_type,
+        $.uint_type,
+        $.int_type,
+        $.bytes_type,
+        $.bool_type,
+      ),
 
     /**
      * A hidden rule for any type name.
      */
     _type_name: ($) =>
       choice(
-        $.address_type,
+        $.string_type,
         $._elementary_type_name,
         prec(-1, $.user_defined_type),
         $.array_type,

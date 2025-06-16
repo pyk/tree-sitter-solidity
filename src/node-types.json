@@ -2211,6 +2211,10 @@
           "named": true
         },
         {
+          "type": "user_defined_value_type_definition",
+          "named": true
+        },
+        {
           "type": "using_directive",
           "named": true
         }
@@ -6119,6 +6123,10 @@
           "named": true
         },
         {
+          "type": "user_defined_value_type_definition",
+          "named": true
+        },
+        {
           "type": "using_directive",
           "named": true
         }
@@ -6733,6 +6741,48 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "user_defined_value_type_definition",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "underlying_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
