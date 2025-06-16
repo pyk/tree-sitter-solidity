@@ -1,0 +1,110 @@
+==================
+Regular single-line comment
+==================
+
+contract C {
+    // This is a regular comment.
+    uint a;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (comment)
+      (state_variable_declaration
+        type: (type_name
+          (elementary_type_name))
+        name: (identifier)))))
+
+==================
+Regular block comment
+==================
+
+contract C {
+    /* This is a
+     * regular block
+     * comment. */
+    uint a;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (comment)
+      (state_variable_declaration
+        type: (type_name
+          (elementary_type_name))
+        name: (identifier)))))
+
+==================
+NatSpec single-line comment
+==================
+
+contract C {
+    /// @notice This is a natspec comment.
+    function f() public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (comment)
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        (visibility)
+        body: (block)))))
+
+==================
+NatSpec block comment
+==================
+
+contract C {
+    /**
+     * @title A Natspec block comment
+     * @dev More details here.
+     */
+    function f() public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (comment)
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        (visibility)
+        body: (block)))))
+
+==================
+Mixed comments
+==================
+/// Natspec 1
+// Regular 1
+/** Natspec 2 */
+/* Regular 2 */
+contract C {}
+
+---
+
+(source_file
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  (contract_definition
+    name: (identifier)
+    body: (contract_body)))

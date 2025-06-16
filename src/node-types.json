@@ -884,7 +884,15 @@
       "required": false,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "expression_statement",
+          "named": true
+        },
+        {
+          "type": "natspec_comment",
           "named": true
         },
         {
@@ -1285,7 +1293,15 @@
       "required": false,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "natspec_comment",
           "named": true
         },
         {
@@ -2521,6 +2537,10 @@
       "required": false,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "contract_definition",
           "named": true
         },
@@ -2530,6 +2550,10 @@
         },
         {
           "type": "interface_definition",
+          "named": true
+        },
+        {
+          "type": "natspec_comment",
           "named": true
         },
         {
@@ -3204,6 +3228,10 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
     "type": "constant",
     "named": false
   },
@@ -3270,6 +3298,10 @@
   {
     "type": "memory",
     "named": false
+  },
+  {
+    "type": "natspec_comment",
+    "named": true
   },
   {
     "type": "new",

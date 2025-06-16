@@ -51,6 +51,9 @@ module.exports = grammar({
   // keywords like "import" and the general identifier rule.
   word: ($) => $.identifier,
 
+  // Whitespace is an extra, but comments are not, so they become visible nodes.
+  extras: ($) => [/\s/],
+
   //
   conflicts: ($) => [],
 
@@ -69,7 +72,8 @@ module.exports = grammar({
      * It consists of a sequence of top-level declarations and directives.
      *
      */
-    source_file: ($) => repeat($._top_level_element),
+    source_file: ($) =>
+      repeat(choice($._top_level_element, $.comment, $.natspec_comment)),
 
     /**
      * A choice between any of the valid top-level elements in a Solidity file.
@@ -97,6 +101,25 @@ module.exports = grammar({
       ),
 
     //************************************************************//
+    //                          Comments                          //
+    //************************************************************//
+
+    // A regular, non-documentation comment
+    comment: ($) =>
+      token(
+        choice(
+          seq("//", /[^\r\n]*/),
+          seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
+        ),
+      ),
+
+    // A NatSpec documentation comment
+    natspec_comment: ($) =>
+      token(
+        choice(seq("///", /[^\r\n]*/), seq("/**", /([^*]|\*+[^/])*/, "*/")),
+      ),
+
+    //************************************************************//
     //                       SPDX License                         //
     //************************************************************//
 
@@ -107,7 +130,9 @@ module.exports = grammar({
      */
     spdx_license_identifier: ($) =>
       seq(
-        /\/\/\s*SPDX-License-Identifier:/,
+        // By wrapping the regex in `token(prec(1, ...))` we tell the lexer:
+        // "This specific pattern has higher priority than a generic comment."
+        token(prec(1, /\/\/\s*SPDX-License-Identifier:/)),
         field("license", $.license_identifier),
       ),
 
@@ -230,7 +255,12 @@ module.exports = grammar({
     /**
      * The body of a contract, enclosed in curly braces.
      */
-    contract_body: ($) => seq("{", repeat($._contract_body_element), "}"),
+    contract_body: ($) =>
+      seq(
+        "{",
+        repeat(choice($._contract_body_element, $.comment, $.natspec_comment)),
+        "}",
+      ),
 
     /**
      * A choice between all valid elements within a contract body.
@@ -303,76 +333,6 @@ module.exports = grammar({
         // $.override_specifier, // To be added later
         "transient",
       ),
-
-    /**
-     * A type name for a variable, parameter, or return value.
-     * This is now a recursive rule to handle array types.
-     */
-    type_name: ($) =>
-      choice($.elementary_type_name, $.identifier_path, $.array_type),
-
-    // This tells the parser: "When you are building an identifier_path and you have a choice
-    // between finishing the rule (reducing) or consuming another token to make it longer
-    // (shifting), always choose to shift.
-    identifier_path: ($) =>
-      prec.right(-1, seq($.identifier, repeat(seq(".", $.identifier)))),
-
-    /**
-     * An array type.
-     * e.g., `uint[]`, `MyStruct[][]`
-     */
-    array_type: ($) =>
-      seq(
-        field("base", $.type_name),
-        "[",
-        // Allow an optional expression for fixed-size arrays (e.g., uint[3]).
-        optional($._expression),
-        "]",
-      ),
-
-    /**
-     * An elementary type name like `uint256` or `address`.
-     */
-    elementary_type_name: ($) =>
-      choice(
-        "address",
-        "bool",
-        "string",
-        "bytes",
-        /u?int[0-9]*/, // e.g., int, uint, uint256
-        /bytes[0-9]+/, // e.g., bytes1, bytes32
-      ),
-
-    visibility: ($) => choice("public", "private", "internal", "external"),
-
-    mutability: ($) => choice("constant", "immutable"),
-
-    /**
-     * An expression. This is a key rule that will be expanded significantly.
-     */
-    // expression: ($) => choice($.identifier, $.literal, $.tuple_expression),
-
-    /**
-     * A literal value, such as a number, string, boolean, or address.
-     */
-    literal: ($) =>
-      choice(
-        $.number_literal,
-        $.string_literal,
-        $.boolean_literal,
-        $.hex_literal,
-        $.hex_string_literal,
-        $.unicode_string_literal,
-      ),
-
-    boolean_literal: ($) => choice("true", "false"),
-
-    hex_literal: ($) => /0x[0-9a-fA-F]+/,
-
-    hex_string_literal: ($) =>
-      token(seq("hex", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
-    unicode_string_literal: ($) =>
-      token(seq("unicode", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
 
     //************************************************************//
     //                    Function Definition                     //
@@ -453,7 +413,8 @@ module.exports = grammar({
     /**
      * A block of statements enclosed in curly braces.
      */
-    block: ($) => seq("{", repeat($._statement), "}"),
+    block: ($) =>
+      seq("{", repeat(choice($._statement, $.comment, $.natspec_comment)), "}"),
 
     /**
      * A new named rule for a function body that is just a semicolon.
@@ -466,10 +427,6 @@ module.exports = grammar({
     _statement: ($) =>
       choice($.variable_declaration_statement, $.expression_statement),
     // TODO: Add statements like if, for, require, etc.
-
-    state_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
-
-    data_location: ($) => choice("memory", "storage", "calldata"),
 
     //************************************************************//
     //                      Statement Rules                       //
@@ -827,6 +784,69 @@ module.exports = grammar({
     //                       Common Rules                         //
     //************************************************************//
 
+    /**
+     * A type name for a variable, parameter, or return value.
+     * This is now a recursive rule to handle array types.
+     */
+    type_name: ($) =>
+      choice($.elementary_type_name, $.identifier_path, $.array_type),
+
+    // This tells the parser: "When you are building an identifier_path and you have a choice
+    // between finishing the rule (reducing) or consuming another token to make it longer
+    // (shifting), always choose to shift.
+    identifier_path: ($) =>
+      prec.right(-1, seq($.identifier, repeat(seq(".", $.identifier)))),
+
+    /**
+     * An array type.
+     * e.g., `uint[]`, `MyStruct[][]`
+     */
+    array_type: ($) =>
+      seq(
+        field("base", $.type_name),
+        "[",
+        // Allow an optional expression for fixed-size arrays (e.g., uint[3]).
+        optional($._expression),
+        "]",
+      ),
+
+    /**
+     * An elementary type name like `uint256` or `address`.
+     */
+    elementary_type_name: ($) =>
+      choice(
+        "address",
+        "bool",
+        "string",
+        "bytes",
+        /u?int[0-9]*/, // e.g., int, uint, uint256
+        /bytes[0-9]+/, // e.g., bytes1, bytes32
+      ),
+
+    visibility: ($) => choice("public", "private", "internal", "external"),
+    mutability: ($) => choice("constant", "immutable"),
+    state_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
+    data_location: ($) => choice("memory", "storage", "calldata"),
+
+    /**
+     * A literal value, such as a number, string, boolean, or address.
+     */
+    literal: ($) =>
+      choice(
+        $.number_literal,
+        $.string_literal,
+        $.boolean_literal,
+        $.hex_literal,
+        $.hex_string_literal,
+        $.unicode_string_literal,
+      ),
+
+    boolean_literal: ($) => choice("true", "false"),
+    hex_literal: ($) => /0x[0-9a-fA-F]+/,
+    hex_string_literal: ($) =>
+      token(seq("hex", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
+    unicode_string_literal: ($) =>
+      token(seq("unicode", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
     number_literal: ($) => /\d+/,
     string_literal: ($) => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
     identifier: ($) => /[a-zA-Z_]\w*/,

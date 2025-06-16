@@ -46,6 +46,9 @@ contract C {
 ---
 
 (source_file
+  (comment)
+  (comment)
+  (comment)
   (contract_definition
     name: (identifier)
     body: (contract_body
@@ -62,18 +65,17 @@ contract C {
               left: (primary_expression
                 (literal
                   (hex_literal)))
-              operator: 
-                right: (bitwise_xor_expression
+              right: (bitwise_xor_expression
+                left: (primary_expression
+                  (literal
+                    (hex_literal)))
+                right: (bitwise_and_expression
                   left: (primary_expression
                     (literal
                       (hex_literal)))
-                  right: (bitwise_and_expression
-                    left: (primary_expression
-                      (literal
-                        (hex_literal)))
-                    right: (primary_expression
-                      (literal
-                        (hex_literal)))))))))))))
+                  right: (primary_expression
+                    (literal
+                      (hex_literal))))))))))))
 
 ==================
 Left-associativity of bitwise operators
@@ -125,6 +127,7 @@ contract C {
 ---
 
 (source_file
+  (comment)
   (contract_definition
     name: (identifier)
     body: (contract_body
@@ -146,7 +149,6 @@ contract C {
                 right: (primary_expression
                   (literal
                     (number_literal))))
-              operator: 
-                right: (primary_expression
-                  (literal
-                    (number_literal)))))))))))
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
