@@ -1,0 +1,166 @@
+==================
+Simple if statement
+==================
+
+contract C {
+  function f(uint a) {
+    if (a > 0) {
+      a = 1;
+    }
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (uint_type)
+            name: (identifier)))
+        body: (block
+          (if_statement
+            condition: (comparison_expression
+              left: (primary_expression
+                (identifier))
+              operator: (comparison_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))
+            consequence: (block
+              (expression_statement
+                (assignment_expression
+                  left: (primary_expression
+                    (identifier))
+                  operator: (simple_assignment_operator)
+                  right: (primary_expression
+                    (literal
+                      (number_literal))))))))))))
+
+==================
+If-else statement
+==================
+
+contract C {
+  function f(uint a) {
+    if (a > 0) {
+      a = 1;
+    } else {
+      a = 2;
+    }
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (uint_type)
+            name: (identifier)))
+        body: (block
+          (if_statement
+            condition: (comparison_expression
+              left: (primary_expression
+                (identifier))
+              operator: (comparison_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))
+            consequence: (block
+              (expression_statement
+                (assignment_expression
+                  left: (primary_expression
+                    (identifier))
+                  operator: (simple_assignment_operator)
+                  right: (primary_expression
+                    (literal
+                      (number_literal))))))
+            alternative: (block
+              (expression_statement
+                (assignment_expression
+                  left: (primary_expression
+                    (identifier))
+                  operator: (simple_assignment_operator)
+                  right: (primary_expression
+                    (literal
+                      (number_literal))))))))))))
+
+==================
+If-else if-else statement chain
+==================
+
+contract C {
+  function f(uint a) {
+    if (a == 1) {
+      a = 10;
+    } else if (a == 2) {
+      a = 20;
+    } else {
+      a = 30;
+    }
+  }
+}
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (uint_type)
+            name: (identifier)))
+        body: (block
+          (if_statement
+            condition: (equality_expression
+              left: (primary_expression
+                (identifier))
+              operator: (equality_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))
+            consequence: (block
+              (expression_statement
+                (assignment_expression
+                  left: (primary_expression
+                    (identifier))
+                  operator: (simple_assignment_operator)
+                  right: (primary_expression
+                    (literal
+                      (number_literal))))))
+            alternative: (if_statement
+              condition: (equality_expression
+                left: (primary_expression
+                  (identifier))
+                operator: (equality_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal))))
+              consequence: (block
+                (expression_statement
+                  (assignment_expression
+                    left: (primary_expression
+                      (identifier))
+                    operator: (simple_assignment_operator)
+                    right: (primary_expression
+                      (literal
+                        (number_literal))))))
+              alternative: (block
+                (expression_statement
+                  (assignment_expression
+                    left: (primary_expression
+                      (identifier))
+                    operator: (simple_assignment_operator)
+                    right: (primary_expression
+                      (literal
+                        (number_literal)))))))))))))

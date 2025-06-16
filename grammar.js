@@ -425,15 +425,6 @@ module.exports = grammar({
      */
     empty_body: ($) => ";",
 
-    /**
-     * A placeholder for any statement.
-     */
-    _statement: ($) =>
-      choice(
-        $.variable_declaration_statement,
-        $.expression_statement,
-        $.return_statement,
-      ),
     // TODO: Add statements like if, for, require, etc.
 
     //************************************************************//
@@ -449,6 +440,18 @@ module.exports = grammar({
     //************************************************************//
     //                         Statements                         //
     //************************************************************//
+
+    /**
+     * A placeholder for any statement.
+     */
+    _statement: ($) =>
+      choice(
+        $.block,
+        $.variable_declaration_statement,
+        $.expression_statement,
+        $.return_statement,
+        $.if_statement,
+      ),
 
     /**
      * A local variable declaration statement.
@@ -500,6 +503,33 @@ module.exports = grammar({
     return_statement: ($) =>
       seq("return", optional(field("value", $._expression)), ";"),
 
+    /**
+     * An if statement, with an optional else branch.
+     * e.g., `if (condition) { ... } else { ... }`
+     */
+    if_statement: ($) =>
+      prec.right(
+        choice(
+          // if-else statement
+          seq(
+            "if",
+            "(",
+            field("condition", $._expression),
+            ")",
+            field("consequence", $._statement),
+            "else",
+            field("alternative", $._statement),
+          ),
+          // if statement without else
+          seq(
+            "if",
+            "(",
+            field("condition", $._expression),
+            ")",
+            field("consequence", $._statement),
+          ),
+        ),
+      ),
     //************************************************************//
     //                      Expression Rules                      //
     //************************************************************//
