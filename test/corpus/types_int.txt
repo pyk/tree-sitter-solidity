@@ -1,0 +1,101 @@
+==================
+State variable of type int (alias)
+==================
+
+contract C {
+  int myVar;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (int_type)
+        name: (identifier)))))
+
+==================
+State variable of type int256
+==================
+
+contract C {
+  int256 myVar;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (int_type)
+        name: (identifier)))))
+
+==================
+State variable of type int8
+==================
+
+contract C {
+  int8 myVar;
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (state_variable_declaration
+        type: (int_type)
+        name: (identifier)))))
+
+==================
+Int types in a function definition
+==================
+
+contract C {
+  function sub(int256 a, int8 b) public returns (int) {
+    int result = a - b;
+    return result;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (int_type)
+            name: (identifier))
+          (parameter_declaration
+            type: (int_type)
+            name: (identifier)))
+        (visibility)
+        (returns_clause
+          returns: (parameter_list
+            (parameter_declaration
+              type: (int_type))))
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (int_type)
+              name: (identifier))
+            value: (additive_expression
+              left: (primary_expression
+                (identifier))
+              operator: (additive_operator)
+              right: (primary_expression
+                (identifier))))
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (identifier_path
+                (identifier))
+              name: (identifier))))))))
