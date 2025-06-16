@@ -7,6 +7,36 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+/**
+ * A constant object to define and manage operator precedence levels.
+ *
+ * This is a best practice for writing maintainable Tree-sitter grammars.
+ * Instead of using "magic numbers" for precedence, we assign them to named
+ * constants. This makes the grammar easier to read and modify. The values
+ * determine the order of operations, with higher numbers binding more tightly.
+ * For example, `UNARY` (13) has a higher precedence than `MULTIPLY` (11).
+ *
+ * This approach is used to resolve ambiguity in flat `choice` rules, a technique
+ * recommended by the Tree-sitter documentation.
+ */
+const PREC = {
+  ASSIGN: 0,
+  CONDITIONAL: 1,
+  OR: 2,
+  AND: 3,
+  BIT_OR: 4,
+  BIT_XOR: 5,
+  BIT_AND: 6,
+  EQUALITY: 7,
+  COMPARE: 8,
+  SHIFT: 9,
+  ADD: 10,
+  MULTIPLY: 11,
+  EXP: 12,
+  UNARY: 13,
+  POSTFIX: 14,
+}
+
 // Helper function for comma-separated lists
 function commaSep(rule) {
   return seq(rule, repeat(seq(",", rule)))
@@ -503,6 +533,7 @@ module.exports = grammar({
     _expression: ($) =>
       choice(
         $.primary_expression,
+        $.unary_expression,
         $.additive_expression,
         $.multiplicative_expression,
         $.assignment_expression,
@@ -515,12 +546,47 @@ module.exports = grammar({
     primary_expression: ($) => choice($.literal, prec(1, $.identifier)),
 
     /**
+     * A unary expression, handling both prefix and suffix operators.
+     * The `prec.right` and `prec.left` functions assign both a precedence
+     * level and an associativity (left or right).
+     *
+     * We give these a high precedence to ensure they bind correctly. For
+     * example, `-a * b` should be parsed as `(-a) * b`, not `-(a * b)`.
+     */
+    unary_expression: ($) =>
+      choice(
+        // Prefix operators (e.g., `!a`, `-a`, `++a`) are right-associative.
+        prec.right(
+          PREC.UNARY,
+          seq(
+            field("operator", choice("!", "~", "-", "delete")),
+            field("argument", $._expression),
+          ),
+        ),
+        prec.right(
+          PREC.UNARY,
+          seq(
+            field("operator", choice("++", "--")),
+            field("argument", $._expression),
+          ),
+        ),
+        // Suffix operators (e.g., `a++`) are left-associative.
+        prec.left(
+          PREC.POSTFIX,
+          seq(
+            field("argument", $._expression),
+            field("operator", choice("++", "--")),
+          ),
+        ),
+      ),
+
+    /**
      * Specific expression types for different operator precedence levels.
      * This makes the AST much more descriptive.
      */
     additive_expression: ($) =>
       prec.left(
-        1,
+        PREC.ADD,
         seq(
           field("left", $._expression),
           field("operator", $.additive_operator),
@@ -530,7 +596,7 @@ module.exports = grammar({
 
     multiplicative_expression: ($) =>
       prec.left(
-        2,
+        PREC.MULTIPLY,
         seq(
           field("left", $._expression),
           field("operator", $.multiplicative_operator),
@@ -540,7 +606,7 @@ module.exports = grammar({
 
     assignment_expression: ($) =>
       prec.right(
-        0,
+        PREC.ASSIGN,
         seq(
           field("left", $._expression),
           field("operator", $.assignment_operator),

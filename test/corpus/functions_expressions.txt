@@ -67,3 +67,69 @@ contract C {
                 right: (primary_expression
                   (literal
                     (number_literal)))))))))))
+
+==================
+Unary expressions
+==================
+
+contract C {
+  function f(uint a) {
+    bool b = !true;
+    uint c = -a;
+    uint d = ++a;
+    uint e = a--;
+    delete a;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name
+              (elementary_type_name))
+            name: (identifier)))
+        body: (block
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (unary_expression
+              argument: (primary_expression
+                (literal
+                  (boolean_literal)))))
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (unary_expression
+              argument: (primary_expression
+                (identifier))))
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (unary_expression
+              argument: (primary_expression
+                (identifier))))
+          (variable_declaration_statement
+            (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (unary_expression
+              argument: (primary_expression
+                (identifier))))
+          (expression_statement
+            (unary_expression
+              argument: (primary_expression
+                (identifier)))))))))
