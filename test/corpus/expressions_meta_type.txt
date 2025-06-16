@@ -1,0 +1,87 @@
+==================
+Simple meta type expression
+==================
+
+contract C {
+  function f(IMyInterface i) {
+    type(C);
+    type(uint256);
+    type(IMyInterface);
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name (identifier_path (identifier)))
+            name: (identifier)))
+        body: (block
+          (expression_statement
+            (meta_type_expression
+              type: (type_name (identifier_path (identifier)))))
+          (expression_statement
+            (meta_type_expression
+              type: (type_name (elementary_type_name))))
+          (expression_statement
+            (meta_type_expression
+              type: (type_name (identifier_path (identifier))))))))))
+
+==================
+Meta type with member access on a contract
+==================
+
+contract C {
+  function f() {
+    string memory s = type(C).name;
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name (elementary_type_name))
+              (data_location)
+              name: (identifier))
+            value: (member_access_expression
+              object: (meta_type_expression
+                type: (type_name (identifier_path (identifier))))
+              member: (identifier))))))))
+
+==================
+Meta type with member access on an elementary type
+==================
+
+contract C {
+  function f() {
+    uint256 max = type(uint256).max;
+  }
+}
+---
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name (elementary_type_name))
+              name: (identifier))
+            value: (member_access_expression
+              object: (meta_type_expression
+                type: (type_name (elementary_type_name)))
+              member: (identifier))))))))

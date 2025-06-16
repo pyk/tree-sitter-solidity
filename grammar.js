@@ -527,6 +527,7 @@ module.exports = grammar({
         $.unary_expression,
         $.conditional_expression,
         $.payable_conversion_expression,
+        $.meta_type_expression,
         $.call_expression,
         $.member_access_expression,
         $.index_access_expression,
@@ -872,6 +873,13 @@ module.exports = grammar({
         PREC.MEMBER,
         seq("payable", field("arguments", $.call_argument_list)),
       ),
+
+    /**
+     * A `type` expression for retrieving type information.
+     * e.g., `type(MyContract)`
+     */
+    meta_type_expression: ($) =>
+      prec(PREC.MEMBER, seq("type", "(", field("type", $.type_name), ")")),
 
     //************************************************************//
     //                     Struct Definition                      //
