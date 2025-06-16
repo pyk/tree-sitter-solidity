@@ -339,6 +339,7 @@ module.exports = grammar({
         $.emit_statement,
         $.while_statement,
         $.do_while_statement,
+        $.continue_statement,
       ),
 
     /**
@@ -461,6 +462,7 @@ module.exports = grammar({
         ")",
         ";",
       ),
+    continue_statement: ($) => seq("continue", ";"),
 
     //************************************************************//
     //                      Expression Rules                      //

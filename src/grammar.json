@@ -931,6 +931,10 @@
         {
           "type": "SYMBOL",
           "name": "do_while_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "continue_statement"
         }
       ]
     },
@@ -1306,6 +1310,19 @@
         {
           "type": "STRING",
           "value": ")"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "continue_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "continue"
         },
         {
           "type": "STRING",

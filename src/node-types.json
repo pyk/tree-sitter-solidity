@@ -1283,6 +1283,10 @@
           "named": true
         },
         {
+          "type": "continue_statement",
+          "named": true
+        },
+        {
           "type": "do_while_statement",
           "named": true
         },
@@ -2171,6 +2175,11 @@
     }
   },
   {
+    "type": "continue_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "contract_body",
     "named": true,
     "fields": {},
@@ -2280,6 +2289,10 @@
         "types": [
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "continue_statement",
             "named": true
           },
           {
@@ -3215,6 +3228,10 @@
             "named": true
           },
           {
+            "type": "continue_statement",
+            "named": true
+          },
+          {
             "type": "do_while_statement",
             "named": true
           },
@@ -3558,6 +3575,10 @@
             "named": true
           },
           {
+            "type": "continue_statement",
+            "named": true
+          },
+          {
             "type": "do_while_statement",
             "named": true
           },
@@ -3699,6 +3720,10 @@
         "types": [
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "continue_statement",
             "named": true
           },
           {
@@ -7323,6 +7348,10 @@
             "named": true
           },
           {
+            "type": "continue_statement",
+            "named": true
+          },
+          {
             "type": "do_while_statement",
             "named": true
           },
@@ -7664,6 +7693,10 @@
   },
   {
     "type": "constructor",
+    "named": false
+  },
+  {
+    "type": "continue",
     "named": false
   },
   {
