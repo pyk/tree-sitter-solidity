@@ -94,8 +94,7 @@ module.exports = grammar({
         $.enum_definition,
         $.event_definition,
         $.error_definition,
-        // $.using_directive,
-        // $.library_definition,
+        $.library_definition,
         // $.function_definition,
         // $.constant_variable_declaration,
         // $.user_defined_value_type_definition,
@@ -268,16 +267,6 @@ module.exports = grammar({
       ),
 
     //************************************************************//
-    //                      Statement Rules                       //
-    //************************************************************//
-
-    /**
-     * An expression statement, which is an expression followed by a semicolon.
-     * e.g., `x = 1;` or `foo();`
-     */
-    expression_statement: ($) => seq($._expression, ";"),
-
-    //************************************************************//
     //                        Declarations                        //
     //************************************************************//
 
@@ -351,6 +340,12 @@ module.exports = grammar({
         $.if_statement,
         $.for_statement,
       ),
+
+    /**
+     * An expression statement, which is an expression followed by a semicolon.
+     * e.g., `x = 1;` or `foo();`
+     */
+    expression_statement: ($) => seq($._expression, ";"),
 
     /**
      * A local variable declaration statement.
@@ -876,6 +871,13 @@ module.exports = grammar({
         "contract",
         field("name", $.identifier),
         optional($.inheritance_specifier_list),
+        field("body", $.contract_body),
+      ),
+
+    library_definition: ($) =>
+      seq(
+        "library",
+        field("name", $.identifier),
         field("body", $.contract_body),
       ),
 

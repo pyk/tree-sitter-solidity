@@ -4217,6 +4217,32 @@
     }
   },
   {
+    "type": "library_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "contract_body",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "literal",
     "named": true,
     "fields": {},
@@ -5800,6 +5826,10 @@
           "named": true
         },
         {
+          "type": "library_definition",
+          "named": true
+        },
+        {
           "type": "natspec_comment",
           "named": true
         },
@@ -7086,6 +7116,10 @@
   },
   {
     "type": "is",
+    "named": false
+  },
+  {
+    "type": "library",
     "named": false
   },
   {
