@@ -18,15 +18,13 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (type_name
-              (elementary_type_name))
+            type: (dynamic_bytes_type)
             (data_location)
             name: (identifier)))
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (dynamic_bytes_type)
               (data_location)
               name: (identifier))
             value: (index_range_access_expression
@@ -59,15 +57,13 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (type_name
-              (elementary_type_name))
+            type: (dynamic_bytes_type)
             (data_location)
             name: (identifier)))
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (dynamic_bytes_type)
               (data_location)
               name: (identifier))
             value: (index_range_access_expression
@@ -97,15 +93,13 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (type_name
-              (elementary_type_name))
+            type: (dynamic_bytes_type)
             (data_location)
             name: (identifier)))
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (dynamic_bytes_type)
               (data_location)
               name: (identifier))
             value: (index_range_access_expression
@@ -135,24 +129,21 @@ contract C {
       (struct_definition
         name: (identifier)
         (struct_member
-          type: (type_name
-            (elementary_type_name))
+          type: (dynamic_bytes_type)
           name: (identifier)))
       (function_definition
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (type_name
-              (identifier_path
-                (identifier)))
+            type: (identifier_path
+              (identifier))
             (data_location)
             name: (identifier)))
         (visibility)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (dynamic_bytes_type)
               (data_location)
               name: (identifier))
             value: (index_range_access_expression

@@ -20,8 +20,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (shift_expression
               left: (primary_expression
@@ -54,8 +53,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (shift_expression
               left: (shift_expression
@@ -93,8 +91,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (shift_expression
               left: (additive_expression

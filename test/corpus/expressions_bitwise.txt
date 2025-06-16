@@ -20,8 +20,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (bitwise_and_expression
               left: (primary_expression
@@ -58,8 +57,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (bitwise_or_expression
               left: (primary_expression
@@ -99,8 +97,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (bitwise_and_expression
               left: (bitwise_and_expression
@@ -137,8 +134,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (bitwise_and_expression
               left: (shift_expression

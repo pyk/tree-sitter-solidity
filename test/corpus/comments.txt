@@ -15,8 +15,7 @@ contract C {
     body: (contract_body
       (comment)
       (state_variable_declaration
-        type: (type_name
-          (elementary_type_name))
+        type: (uint_type)
         name: (identifier)))))
 
 ==================
@@ -38,8 +37,7 @@ contract C {
     body: (contract_body
       (comment)
       (state_variable_declaration
-        type: (type_name
-          (elementary_type_name))
+        type: (uint_type)
         name: (identifier)))))
 
 ==================

@@ -320,7 +320,7 @@ module.exports = grammar({
      */
     state_variable_declaration: ($) =>
       seq(
-        field("type", $.type_name),
+        field("type", $._type_name),
         repeat($._state_variable_attribute),
         field("name", $.identifier),
         optional(seq("=", field("value", $._expression))),
@@ -409,7 +409,7 @@ module.exports = grammar({
      */
     parameter_declaration: ($) =>
       seq(
-        field("type", $.type_name),
+        field("type", $._type_name),
         optional($.data_location),
         optional(field("name", $.identifier)),
       ),
@@ -476,7 +476,7 @@ module.exports = grammar({
      */
     variable_declaration: ($) =>
       seq(
-        field("type", $.type_name),
+        field("type", $._type_name),
         optional($.data_location),
         optional(field("name", $.identifier)),
       ),
@@ -721,7 +721,7 @@ module.exports = grammar({
      * attempts to find a member access.
      */
     new_expression: ($) =>
-      prec.right(PREC.NEW, seq("new", field("type", $.type_name))),
+      prec.right(PREC.NEW, seq("new", field("type", $._type_name))),
 
     /**
      * Specific expression types for different operator precedence levels.
@@ -879,7 +879,7 @@ module.exports = grammar({
      * e.g., `type(MyContract)`
      */
     meta_type_expression: ($) =>
-      prec(PREC.MEMBER, seq("type", "(", field("type", $.type_name), ")")),
+      prec(PREC.MEMBER, seq("type", "(", field("type", $._type_name), ")")),
 
     //************************************************************//
     //                     Struct Definition                      //
@@ -895,29 +895,62 @@ module.exports = grammar({
       ),
 
     struct_member: ($) =>
-      seq(field("type", $.type_name), field("name", $.identifier), ";"),
+      seq(field("type", $._type_name), field("name", $.identifier), ";"),
 
     //************************************************************//
-    //                       Common Rules                         //
+    //                       Solidity Types                       //
     //************************************************************//
 
     /**
-     * A type name for a variable, parameter, or return value.
-     * This is now a recursive rule to handle array types.
+     * An unsigned integer type.
+     * e.g., `uint`, `uint256`, `uint8`
      */
-    type_name: ($) =>
-      choice(
-        $.address_type,
-        $.elementary_type_name,
-        $.identifier_path,
-        $.array_type,
+    uint_type: ($) =>
+      seq(
+        "uint",
+        optional(field("size", $.bit_size)), // Capture the size
       ),
 
-    // This tells the parser: "When you are building an identifier_path and you have a choice
-    // between finishing the rule (reducing) or consuming another token to make it longer
-    // (shifting), always choose to shift.
-    identifier_path: ($) =>
-      prec.right(-1, seq($.identifier, repeat(seq(".", $.identifier)))),
+    /**
+     * A signed integer type.
+     * e.g., `int`, `int128`
+     */
+    int_type: ($) =>
+      seq(
+        "int",
+        optional(field("size", $.bit_size)), // Capture the size
+      ),
+
+    /**
+     * A fixed-size bytes type.
+     * e.g., `bytes1`, `bytes32`
+     */
+    bytes_type: ($) =>
+      seq(
+        "bytes",
+        field("size", $.bit_size), // Capture the size
+      ),
+
+    /**
+     * A boolean type.
+     */
+    bool_type: ($) => "bool",
+
+    /**
+     * A string type.
+     */
+    string_type: ($) => "string",
+
+    /**
+     * A dynamic bytes type.
+     */
+    dynamic_bytes_type: ($) => "bytes",
+
+    /**
+     * Helper rule for bit sizes.
+     * e.g., `256` in `uint256`
+     */
+    bit_size: ($) => /\d+/,
 
     /**
      * An array type.
@@ -925,7 +958,7 @@ module.exports = grammar({
      */
     array_type: ($) =>
       seq(
-        field("base", $.type_name),
+        field("base", $._type_name),
         "[",
         // Allow an optional expression for fixed-size arrays (e.g., uint[3]).
         optional($._expression),
@@ -939,16 +972,38 @@ module.exports = grammar({
       seq("address", optional(field("mutability", "payable"))),
 
     /**
-     * An elementary type name like `uint256` or `address`.
+     * A hidden rule for all elementary types.
      */
-    elementary_type_name: ($) =>
+    _elementary_type_name: ($) =>
       choice(
-        "bool",
-        "string",
-        "bytes",
-        /u?int[0-9]*/, // e.g., int, uint, uint256
-        /bytes[0-9]+/, // e.g., bytes1, bytes32
+        $.uint_type,
+        $.int_type,
+        $.bytes_type,
+        $.bool_type,
+        $.string_type,
+        $.dynamic_bytes_type,
       ),
+
+    /**
+     * A hidden rule for any type name.
+     */
+    _type_name: ($) =>
+      choice(
+        $.address_type,
+        $._elementary_type_name,
+        $.identifier_path,
+        $.array_type,
+      ),
+
+    //************************************************************//
+    //                       Common Rules                         //
+    //************************************************************//
+
+    // This tells the parser: "When you are building an identifier_path and you have a choice
+    // between finishing the rule (reducing) or consuming another token to make it longer
+    // (shifting), always choose to shift.
+    identifier_path: ($) =>
+      prec.right(-1, seq($.identifier, repeat(seq(".", $.identifier)))),
 
     visibility: ($) => choice("public", "private", "internal", "external"),
     mutability: ($) => choice("constant", "immutable"),

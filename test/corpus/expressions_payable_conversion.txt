@@ -18,14 +18,12 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (type_name
-              (address_type))
+            type: (address_type)
             name: (identifier)))
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (address_type))
+              type: (address_type)
               name: (identifier))
             value: (payable_conversion_expression
               arguments: (call_argument_list
@@ -51,8 +49,7 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (type_name
-              (address_type))
+            type: (address_type)
             name: (identifier)))
         body: (block
           (expression_statement

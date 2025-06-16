@@ -12,8 +12,8 @@ contract C {
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (type_name
-          (elementary_type_name))
+        type: (identifier_path
+          (identifier))
         name: (identifier)))))
 
 ==================
@@ -30,8 +30,7 @@ contract C {
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (type_name
-          (elementary_type_name))
+        type: (string_type)
         (visibility)
         (mutability)
         name: (identifier)
@@ -53,9 +52,8 @@ contract C {
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (type_name
-          (identifier_path
-            (identifier)))
+        type: (identifier_path
+          (identifier))
         name: (identifier)))))
 
 ==================
@@ -72,8 +70,7 @@ contract C {
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (type_name
-          (elementary_type_name))
+        type: (bool_type)
         (visibility)
         name: (identifier)
         value: (primary_expression
@@ -94,8 +91,7 @@ contract C {
     name: (identifier)
     body: (contract_body
       (state_variable_declaration
-        type: (type_name
-          (address_type))
+        type: (address_type)
         (visibility)
         name: (identifier)
         value: (primary_expression

@@ -241,7 +241,39 @@
         "required": true,
         "types": [
           {
-            "type": "type_name",
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "dynamic_bytes_type",
+            "named": true
+          },
+          {
+            "type": "identifier_path",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -560,6 +592,11 @@
   },
   {
     "type": "assignment_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bit_size",
     "named": true,
     "fields": {}
   },
@@ -1230,6 +1267,22 @@
     "type": "boolean_literal",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "bytes_type",
+    "named": true,
+    "fields": {
+      "size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bit_size",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "call_argument_list",
@@ -2063,7 +2116,7 @@
     "fields": {}
   },
   {
-    "type": "elementary_type_name",
+    "type": "dynamic_bytes_type",
     "named": true,
     "fields": {}
   },
@@ -3283,6 +3336,22 @@
     }
   },
   {
+    "type": "int_type",
+    "named": true,
+    "fields": {
+      "size": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bit_size",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "interface_definition",
     "named": true,
     "fields": {
@@ -3919,7 +3988,39 @@
         "required": true,
         "types": [
           {
-            "type": "type_name",
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "dynamic_bytes_type",
+            "named": true
+          },
+          {
+            "type": "identifier_path",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -4271,12 +4372,49 @@
         "required": true,
         "types": [
           {
-            "type": "type_name",
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "dynamic_bytes_type",
+            "named": true
+          },
+          {
+            "type": "identifier_path",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
       }
     }
+  },
+  {
+    "type": "number_literal",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "parameter_declaration",
@@ -4297,7 +4435,39 @@
         "required": true,
         "types": [
           {
-            "type": "type_name",
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "dynamic_bytes_type",
+            "named": true
+          },
+          {
+            "type": "identifier_path",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -4711,7 +4881,39 @@
         "required": true,
         "types": [
           {
-            "type": "type_name",
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "dynamic_bytes_type",
+            "named": true
+          },
+          {
+            "type": "identifier_path",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -4875,7 +5077,39 @@
         "required": true,
         "types": [
           {
-            "type": "type_name",
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "dynamic_bytes_type",
+            "named": true
+          },
+          {
+            "type": "identifier_path",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -5006,30 +5240,19 @@
     }
   },
   {
-    "type": "type_name",
+    "type": "uint_type",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "address_type",
-          "named": true
-        },
-        {
-          "type": "array_type",
-          "named": true
-        },
-        {
-          "type": "elementary_type_name",
-          "named": true
-        },
-        {
-          "type": "identifier_path",
-          "named": true
-        }
-      ]
+    "fields": {
+      "size": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bit_size",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -5185,7 +5408,39 @@
         "required": true,
         "types": [
           {
-            "type": "type_name",
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "dynamic_bytes_type",
+            "named": true
+          },
+          {
+            "type": "identifier_path",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -5501,8 +5756,8 @@
     "named": false
   },
   {
-    "type": "bool",
-    "named": false
+    "type": "bool_type",
+    "named": true
   },
   {
     "type": "bytes",
@@ -5581,6 +5836,10 @@
     "named": false
   },
   {
+    "type": "int",
+    "named": false
+  },
+  {
     "type": "interface",
     "named": false
   },
@@ -5617,10 +5876,6 @@
     "named": false
   },
   {
-    "type": "number_literal",
-    "named": true
-  },
-  {
     "type": "payable",
     "named": false
   },
@@ -5653,11 +5908,11 @@
     "named": false
   },
   {
-    "type": "string",
-    "named": false
+    "type": "string_literal",
+    "named": true
   },
   {
-    "type": "string_literal",
+    "type": "string_type",
     "named": true
   },
   {
@@ -5674,6 +5929,10 @@
   },
   {
     "type": "type",
+    "named": false
+  },
+  {
+    "type": "uint",
     "named": false
   },
   {

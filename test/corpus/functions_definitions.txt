@@ -31,16 +31,15 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (type_name
-              (elementary_type_name))
+            type: (identifier_path
+              (identifier))
             name: (identifier)))
         (visibility)
         (state_mutability)
         (returns_clause
           returns: (parameter_list
             (parameter_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (bool_type)
               name: (identifier))))
         body: (block)))))
 
@@ -63,6 +62,5 @@ interface IMyContract {
         (returns_clause
           returns: (parameter_list
             (parameter_declaration
-              type: (type_name
-                (address_type)))))
+              type: (address_type))))
         body: (empty_body)))))

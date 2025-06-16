@@ -19,8 +19,8 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (identifier_path
+                (identifier))
               name: (identifier))))))))
 
 ==================
@@ -43,8 +43,8 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (identifier_path
+                (identifier))
               name: (identifier))
             value: (primary_expression
               (literal
@@ -71,12 +71,10 @@ contract C {
           (variable_declaration_statement
             declaration: (variable_declaration_tuple
               (variable_declaration
-                type: (type_name
-                  (elementary_type_name))
+                type: (uint_type)
                 name: (identifier))
               (variable_declaration
-                type: (type_name
-                  (elementary_type_name))
+                type: (bool_type)
                 name: (identifier)))
             value: (tuple_expression
               (primary_expression

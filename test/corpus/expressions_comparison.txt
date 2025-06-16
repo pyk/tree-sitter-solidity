@@ -20,8 +20,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (bool_type)
               name: (identifier))
             value: (equality_expression
               left: (primary_expression
@@ -54,8 +53,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (bool_type)
               name: (identifier))
             value: (comparison_expression
               left: (primary_expression
@@ -89,8 +87,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (bool_type)
               name: (identifier))
             value: (equality_expression
               left: (comparison_expression
@@ -129,8 +126,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (bool_type)
               name: (identifier))
             value: (bitwise_or_expression
               left: (comparison_expression

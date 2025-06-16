@@ -20,8 +20,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (exponentiation_expression
               left: (primary_expression
@@ -53,8 +52,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (exponentiation_expression
               left: (primary_expression
@@ -90,8 +88,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (multiplicative_expression
               left: (primary_expression
@@ -128,8 +125,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (additive_expression
               left: (primary_expression
@@ -166,8 +162,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (int_type)
               name: (identifier))
             value: (exponentiation_expression
               left: (unary_expression
@@ -200,8 +195,7 @@ contract C {
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
-              type: (type_name
-                (elementary_type_name))
+              type: (uint_type)
               name: (identifier))
             value: (exponentiation_expression
               left: (tuple_expression
@@ -227,8 +221,8 @@ uint256 constant MY_EXP = 2 ** 8;
 
 (source_file
   (state_variable_declaration
-    type: (type_name
-      (elementary_type_name))
+    type: (identifier_path
+      (identifier))
     (mutability)
     name: (identifier)
     value: (exponentiation_expression
