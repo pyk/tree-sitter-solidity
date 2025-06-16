@@ -451,6 +451,7 @@ module.exports = grammar({
         $.expression_statement,
         $.return_statement,
         $.if_statement,
+        $.for_statement,
       ),
 
     /**
@@ -530,6 +531,37 @@ module.exports = grammar({
           ),
         ),
       ),
+
+    /**
+     * A for loop.
+     * e.g., `for (uint i = 0; i < 10; i++) { ... }`
+     */
+    /**
+     * A for loop.
+     * e.g., `for (uint i = 0; i < 10; i++) { ... }`
+     */
+    for_statement: ($) =>
+      seq(
+        "for",
+        "(",
+        // This part correctly handles the three cases for the initializer
+        // and consumes the first semicolon.
+        field(
+          "initializer",
+          choice($.variable_declaration_statement, $.expression_statement, ";"),
+        ),
+
+        // The condition is an optional expression, followed by a mandatory semicolon.
+        field("condition", optional($._expression)),
+        ";",
+
+        // The update is an optional expression.
+        field("update", optional($._expression)),
+
+        ")",
+        field("body", $._statement),
+      ),
+
     //************************************************************//
     //                      Expression Rules                      //
     //************************************************************//
@@ -668,12 +700,15 @@ module.exports = grammar({
      * e.g., `(arg1, arg2)` or `()`
      */
     call_argument_list: ($) =>
-      seq(
-        "(",
-        // Make the comma-separated list of expressions optional
-        // to correctly handle calls with no arguments.
-        optional(commaSep($._expression)),
-        ")",
+      prec(
+        1, // Add precedence here to resolve ambiguity
+        seq(
+          "(",
+          // Make the comma-separated list of expressions optional
+          // to correctly handle calls with no arguments.
+          optional(commaSep($._expression)),
+          ")",
+        ),
       ),
 
     /**
@@ -930,7 +965,7 @@ module.exports = grammar({
      */
     payable_conversion_expression: ($) =>
       prec(
-        PREC.MEMBER,
+        1, // Give it a lower precedence than address_type
         seq("payable", field("arguments", $.call_argument_list)),
       ),
 
@@ -1019,7 +1054,10 @@ module.exports = grammar({
      * An address type, which can be payable.
      */
     address_type: ($) =>
-      seq("address", optional(field("mutability", "payable"))),
+      prec.right(
+        2, // Give it a precedence level of 2
+        seq("address", optional(field("mutability", "payable"))),
+      ),
 
     /**
      * A hidden rule for all elementary types.
