@@ -19,13 +19,13 @@ contract C {
         parameters: (parameter_list
           (parameter_declaration
             type: (bytes_type)
-            (data_location)
+            location: (data_location)
             name: (identifier)))
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
               type: (bytes_type)
-              (data_location)
+              location: (data_location)
               name: (identifier))
             value: (index_range_access_expression
               base: (primary_expression
@@ -58,13 +58,13 @@ contract C {
         parameters: (parameter_list
           (parameter_declaration
             type: (bytes_type)
-            (data_location)
+            location: (data_location)
             name: (identifier)))
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
               type: (bytes_type)
-              (data_location)
+              location: (data_location)
               name: (identifier))
             value: (index_range_access_expression
               base: (primary_expression
@@ -94,13 +94,13 @@ contract C {
         parameters: (parameter_list
           (parameter_declaration
             type: (bytes_type)
-            (data_location)
+            location: (data_location)
             name: (identifier)))
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
               type: (bytes_type)
-              (data_location)
+              location: (data_location)
               name: (identifier))
             value: (index_range_access_expression
               base: (primary_expression
@@ -137,14 +137,14 @@ contract C {
           (parameter_declaration
             type: (identifier_path
               (identifier))
-            (data_location)
+            location: (data_location)
             name: (identifier)))
         (visibility)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
               type: (bytes_type)
-              (data_location)
+              location: (data_location)
               name: (identifier))
             value: (index_range_access_expression
               base: (member_access_expression

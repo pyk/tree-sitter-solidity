@@ -57,7 +57,7 @@ contract C {
           (variable_declaration_statement
             declaration: (variable_declaration
               type: (string_type)
-              (data_location)
+              location: (data_location)
               name: (identifier))
             value: (member_access_expression
               object: (meta_type_expression

@@ -404,17 +404,6 @@ module.exports = grammar({
       seq("(", optional(commaSep($.parameter_declaration)), ")"),
 
     /**
-     * A single parameter declaration.
-     * e.g., `uint256 _myVar` or `string memory _name`
-     */
-    parameter_declaration: ($) =>
-      seq(
-        field("type", $._type_name),
-        optional($.data_location),
-        optional(field("name", $.identifier)),
-      ),
-
-    /**
      * A block of statements enclosed in curly braces.
      */
     block: ($) =>
@@ -436,6 +425,21 @@ module.exports = grammar({
      * e.g., `x = 1;` or `foo();`
      */
     expression_statement: ($) => seq($._expression, ";"),
+
+    //************************************************************//
+    //                        Declarations                        //
+    //************************************************************//
+
+    /**
+     * A single parameter declaration.
+     * e.g., `uint256 _myVar` or `string memory _name`
+     */
+    parameter_declaration: ($) =>
+      seq(
+        field("type", $._type_name),
+        optional(field("location", $.data_location)),
+        optional(field("name", $.identifier)),
+      ),
 
     //************************************************************//
     //                         Statements                         //
@@ -485,7 +489,7 @@ module.exports = grammar({
     variable_declaration: ($) =>
       seq(
         field("type", $._type_name),
-        optional($.data_location),
+        optional(field("location", $.data_location)),
         optional(field("name", $.identifier)),
       ),
 
@@ -984,7 +988,7 @@ module.exports = grammar({
       seq("[", optional(commaSep($._expression)), "]"),
 
     //************************************************************//
-    //                     Struct Definition                      //
+    //                        Definitions                         //
     //************************************************************//
 
     struct_definition: ($) =>
@@ -992,7 +996,7 @@ module.exports = grammar({
         "struct",
         field("name", $.identifier),
         "{",
-        repeat1($.struct_member),
+        repeat($.struct_member),
         "}",
       ),
 
@@ -1000,7 +1004,7 @@ module.exports = grammar({
       seq(field("type", $._type_name), field("name", $.identifier), ";"),
 
     //************************************************************//
-    //                       Solidity Types                       //
+    //                           Types                            //
     //************************************************************//
 
     /**
@@ -1072,7 +1076,7 @@ module.exports = grammar({
       choice(
         $.address_type,
         $._elementary_type_name,
-        $.identifier_path,
+        prec(-1, $.identifier_path),
         $.array_type,
       ),
 

@@ -7,6 +7,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -25,6 +26,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -32,7 +34,9 @@ contract C {
       (state_variable_declaration
         type: (array_type
           base: (address_type)
-          size: (primary_expression (literal (number_literal))))
+          size: (primary_expression
+            (literal
+              (number_literal))))
         name: (identifier)))))
 
 ==================
@@ -44,6 +48,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -52,7 +57,9 @@ contract C {
         type: (array_type
           base: (array_type
             base: (bool_type)
-            size: (primary_expression (literal (number_literal)))))
+            size: (primary_expression
+              (literal
+                (number_literal)))))
         name: (identifier)))))
 
 ==================
@@ -67,6 +74,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -78,7 +86,8 @@ contract C {
           name: (identifier)))
       (state_variable_declaration
         type: (array_type
-          base: (identifier_path (identifier)))
+          base: (identifier_path
+            (identifier)))
         name: (identifier)))))
 
 ==================
@@ -90,6 +99,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -100,13 +110,15 @@ contract C {
           (parameter_declaration
             type: (array_type
               base: (uint_type))
-            (data_location)
+            location: (data_location)
             name: (identifier))
           (parameter_declaration
             type: (array_type
               base: (bool_type)
-              size: (primary_expression (literal (number_literal))))
-            (data_location)
+              size: (primary_expression
+                (literal
+                  (number_literal))))
+            location: (data_location)
             name: (identifier)))
         (visibility)
         body: (block)))))

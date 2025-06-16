@@ -1,0 +1,176 @@
+==================
+Simple named parameter
+==================
+
+contract C {
+  function f(uint count) public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (uint_type)
+            name: (identifier)))
+        (visibility)
+        body: (block)))))
+
+==================
+Parameter with data location
+==================
+
+contract C {
+  function f(string memory name) public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (string_type)
+            location: (data_location)
+            name: (identifier)))
+        (visibility)
+        body: (block)))))
+
+==================
+Unnamed parameter
+==================
+
+contract C {
+  function f(uint) public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (uint_type)))
+        (visibility)
+        body: (block)))))
+
+==================
+Unnamed parameter with data location
+==================
+
+contract C {
+  function f(bytes calldata) public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (bytes_type)
+            location: (data_location)))
+        (visibility)
+        body: (block)))))
+
+==================
+Multiple parameters with mixed styles
+==================
+
+contract C {
+  function f(uint a, bool, string memory c, address payable d) public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (uint_type)
+            name: (identifier))
+          (parameter_declaration
+            type: (bool_type))
+          (parameter_declaration
+            type: (string_type)
+            location: (data_location)
+            name: (identifier))
+          (parameter_declaration
+            type: (address_type)
+            name: (identifier)))
+        (visibility)
+        body: (block)))))
+
+==================
+Array parameter
+==================
+
+contract C {
+  function f(uint[] memory values) public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (array_type
+              base: (uint_type))
+            location: (data_location)
+            name: (identifier)))
+        (visibility)
+        body: (block)))))
+
+==================
+Struct parameter
+==================
+
+contract C {
+  struct S {}
+  function f(S memory s) public {}
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (struct_definition
+        name: (identifier))
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (identifier_path
+              (identifier))
+            location: (data_location)
+            name: (identifier)))
+        (visibility)
+        body: (block)))))

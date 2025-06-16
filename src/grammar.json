@@ -873,8 +873,12 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "data_location"
+              "type": "FIELD",
+              "name": "location",
+              "content": {
+                "type": "SYMBOL",
+                "name": "data_location"
+              }
             },
             {
               "type": "BLANK"
@@ -1070,8 +1074,12 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "data_location"
+              "type": "FIELD",
+              "name": "location",
+              "content": {
+                "type": "SYMBOL",
+                "name": "data_location"
+              }
             },
             {
               "type": "BLANK"
@@ -2671,7 +2679,7 @@
           "value": "{"
         },
         {
-          "type": "REPEAT1",
+          "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
             "name": "struct_member"
@@ -2840,8 +2848,12 @@
           "name": "_elementary_type_name"
         },
         {
-          "type": "SYMBOL",
-          "name": "identifier_path"
+          "type": "PREC",
+          "value": -1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier_path"
+          }
         },
         {
           "type": "SYMBOL",

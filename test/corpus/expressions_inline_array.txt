@@ -21,7 +21,7 @@ contract C {
             declaration: (variable_declaration
               type: (array_type
                 base: (uint_type))
-              (data_location)
+              location: (data_location)
               name: (identifier))
             value: (inline_array_expression)))))))
 
@@ -48,7 +48,7 @@ contract C {
             declaration: (variable_declaration
               type: (array_type
                 base: (uint_type))
-              (data_location)
+              location: (data_location)
               name: (identifier))
             value: (inline_array_expression
               (primary_expression
@@ -78,7 +78,7 @@ contract C {
             declaration: (variable_declaration
               type: (array_type
                 base: (bytes_type))
-              (data_location)
+              location: (data_location)
               name: (identifier))
             value: (inline_array_expression
               (primary_expression
@@ -115,7 +115,7 @@ contract C {
               type: (array_type
                 base: (array_type
                   base: (uint_type)))
-              (data_location)
+              location: (data_location)
               name: (identifier))
             value: (inline_array_expression
               (inline_array_expression

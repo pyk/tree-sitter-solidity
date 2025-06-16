@@ -5058,6 +5058,16 @@
     "type": "parameter_declaration",
     "named": true,
     "fields": {
+      "location": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "data_location",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": false,
@@ -5106,16 +5116,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "data_location",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -5804,7 +5804,7 @@
     },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "struct_member",
@@ -6136,6 +6136,16 @@
     "type": "variable_declaration",
     "named": true,
     "fields": {
+      "location": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "data_location",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": false,
@@ -6184,16 +6194,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "data_location",
-          "named": true
-        }
-      ]
     }
   },
   {
