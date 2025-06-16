@@ -361,12 +361,18 @@ module.exports = grammar({
         $.string_literal,
         $.boolean_literal,
         $.hex_literal,
+        $.hex_string_literal,
+        $.unicode_string_literal,
       ),
 
     boolean_literal: ($) => choice("true", "false"),
 
-    // Matches '0x' followed by 40 hex characters (a standard address)
-    hex_literal: ($) => /0x[0-9a-fA-F]{40}/,
+    hex_literal: ($) => /0x[0-9a-fA-F]+/,
+
+    hex_string_literal: ($) =>
+      token(seq("hex", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
+    unicode_string_literal: ($) =>
+      token(seq("unicode", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
 
     //************************************************************//
     //                    Function Definition                     //
@@ -569,6 +575,9 @@ module.exports = grammar({
         $.exponentiation_expression,
         $.shift_expression,
         $.tuple_expression,
+        $.bitwise_and_expression,
+        $.bitwise_xor_expression,
+        $.bitwise_or_expression,
       ),
 
     /**
@@ -765,6 +774,36 @@ module.exports = grammar({
         seq(
           field("left", $._expression),
           field("operator", $.shift_operator),
+          field("right", $._expression),
+        ),
+      ),
+
+    bitwise_and_expression: ($) =>
+      prec.left(
+        PREC.BIT_AND,
+        seq(
+          field("left", $._expression),
+          field("operator", "&"),
+          field("right", $._expression),
+        ),
+      ),
+
+    bitwise_xor_expression: ($) =>
+      prec.left(
+        PREC.BIT_XOR,
+        seq(
+          field("left", $._expression),
+          field("operator", "^"),
+          field("right", $._expression),
+        ),
+      ),
+
+    bitwise_or_expression: ($) =>
+      prec.left(
+        PREC.BIT_OR,
+        seq(
+          field("left", $._expression),
+          field("operator", "|"),
           field("right", $._expression),
         ),
       ),
