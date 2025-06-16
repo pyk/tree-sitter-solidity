@@ -258,16 +258,10 @@ module.exports = grammar({
       prec(
         2, // <-- Give this rule a higher precedence
         seq(
-          field("name", choice($.identifier, $.member_access_expression)),
+          field("name", $.identifier_path),
           optional(field("arguments", $.call_argument_list)),
         ),
       ),
-
-    /**
-     * A dot-separated identifier path.
-     * e.g., `MyLib.MyStruct`
-     */
-    // identifier_path: ($) => seq($.identifier, repeat(seq(".", $.identifier))),
 
     //************************************************************//
     //                   Interface Definition                     //
@@ -318,12 +312,13 @@ module.exports = grammar({
      * This is now a recursive rule to handle array types.
      */
     type_name: ($) =>
-      choice(
-        $.elementary_type_name,
-        $.identifier, // For simple names like `MyStruct`
-        $.member_access_expression, // For qualified names like `MyLib.MyStruct`
-        $.array_type,
-      ),
+      choice($.elementary_type_name, $.identifier_path, $.array_type),
+
+    // This tells the parser: "When you are building an identifier_path and you have a choice
+    // between finishing the rule (reducing) or consuming another token to make it longer
+    // (shifting), always choose to shift.
+    identifier_path: ($) =>
+      prec.right(-1, seq($.identifier, repeat(seq(".", $.identifier)))),
 
     /**
      * An array type.

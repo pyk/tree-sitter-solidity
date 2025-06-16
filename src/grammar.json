@@ -466,17 +466,8 @@
             "type": "FIELD",
             "name": "name",
             "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "identifier"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "member_access_expression"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "identifier_path"
             }
           },
           {
@@ -618,17 +609,42 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "member_access_expression"
+          "name": "identifier_path"
         },
         {
           "type": "SYMBOL",
           "name": "array_type"
         }
       ]
+    },
+    "identifier_path": {
+      "type": "PREC_RIGHT",
+      "value": -1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "."
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                }
+              ]
+            }
+          }
+        ]
+      }
     },
     "array_type": {
       "type": "SEQ",

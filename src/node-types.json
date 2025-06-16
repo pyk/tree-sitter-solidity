@@ -792,6 +792,21 @@
     }
   },
   {
+    "type": "identifier_path",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "import_alias",
     "named": true,
     "fields": {
@@ -978,11 +993,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "member_access_expression",
+            "type": "identifier_path",
             "named": true
           }
         ]
@@ -1617,11 +1628,7 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "member_access_expression",
+          "type": "identifier_path",
           "named": true
         }
       ]
