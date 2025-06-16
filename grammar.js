@@ -567,6 +567,7 @@ module.exports = grammar({
         $.additive_expression,
         $.multiplicative_expression,
         $.exponentiation_expression,
+        $.shift_expression,
         $.tuple_expression,
       ),
 
@@ -758,12 +759,23 @@ module.exports = grammar({
         ),
       ),
 
+    shift_expression: ($) =>
+      prec.left(
+        PREC.SHIFT,
+        seq(
+          field("left", $._expression),
+          field("operator", $.shift_operator),
+          field("right", $._expression),
+        ),
+      ),
+
     /**
      * Named operator rules. Because these are named, they will appear
      * in the final syntax tree.
      */
     additive_operator: ($) => choice("+", "-"),
     multiplicative_operator: ($) => choice("*", "/", "%"),
+    shift_operator: ($) => choice("<<", ">>", ">>>"),
     assignment_operator: ($) => choice("="),
 
     /**

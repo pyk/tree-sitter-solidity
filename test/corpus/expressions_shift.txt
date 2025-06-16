@@ -1,0 +1,111 @@
+==================
+Simple left shift
+==================
+
+contract C {
+  function f() {
+    uint a = 4 << 2;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (shift_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
+              operator: (shift_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Left-associativity of shift operators
+==================
+
+contract C {
+  function f() {
+    uint a = 16 >> 2 >> 1;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (shift_expression
+              left: (shift_expression
+                left: (primary_expression
+                  (literal
+                    (number_literal)))
+                operator: (shift_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal))))
+              operator: (shift_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Precedence below addition
+==================
+
+contract C {
+  function f() {
+    uint a = 1 + 2 << 3;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              name: (identifier))
+            value: (shift_expression
+              left: (additive_expression
+                left: (primary_expression
+                  (literal
+                    (number_literal)))
+                operator: (additive_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal))))
+              operator: (shift_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
