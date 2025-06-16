@@ -52,6 +52,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -145,6 +149,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -256,6 +264,10 @@
           "named": true
         },
         {
+          "type": "index_range_access_expression",
+          "named": true
+        },
+        {
           "type": "logical_and_expression",
           "named": true
         },
@@ -344,6 +356,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -440,6 +456,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -540,6 +560,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -636,6 +660,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -725,6 +753,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -824,6 +856,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -913,6 +949,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -1009,6 +1049,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -1136,6 +1180,10 @@
           "named": true
         },
         {
+          "type": "index_range_access_expression",
+          "named": true
+        },
+        {
           "type": "logical_and_expression",
           "named": true
         },
@@ -1237,6 +1285,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -1326,6 +1378,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -1422,6 +1478,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -1522,6 +1582,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -1605,6 +1669,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -1694,6 +1762,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -1755,6 +1827,10 @@
         },
         {
           "type": "state_variable_declaration",
+          "named": true
+        },
+        {
+          "type": "struct_definition",
           "named": true
         }
       ]
@@ -1864,6 +1940,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -1957,6 +2037,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -2057,6 +2141,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -2153,6 +2241,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -2242,6 +2334,10 @@
         },
         {
           "type": "index_access_expression",
+          "named": true
+        },
+        {
+          "type": "index_range_access_expression",
           "named": true
         },
         {
@@ -2471,6 +2567,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -2554,6 +2654,286 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "logical_and_expression",
+            "named": true
+          },
+          {
+            "type": "logical_or_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "multiplicative_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "index_range_access_expression",
+    "named": true,
+    "fields": {
+      "base": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "additive_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_and_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_or_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_xor_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "comparison_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "logical_and_expression",
+            "named": true
+          },
+          {
+            "type": "logical_or_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "multiplicative_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "end": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "additive_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_and_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_or_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_xor_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "comparison_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "logical_and_expression",
+            "named": true
+          },
+          {
+            "type": "logical_or_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "multiplicative_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "additive_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_and_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_or_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_xor_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "comparison_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "exponentiation_expression",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -2761,6 +3141,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -2857,6 +3241,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -2946,6 +3334,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -3042,6 +3434,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -3147,6 +3543,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -3236,6 +3636,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -3332,6 +3736,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -3565,6 +3973,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -3658,6 +4070,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -3843,6 +4259,10 @@
             "named": true
           },
           {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
             "type": "logical_and_expression",
             "named": true
           },
@@ -3894,6 +4314,58 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "struct_definition",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "struct_member",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "struct_member",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_name",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -3961,6 +4433,10 @@
         },
         {
           "type": "index_access_expression",
+          "named": true
+        },
+        {
+          "type": "index_range_access_expression",
           "named": true
         },
         {
@@ -4075,6 +4551,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -4247,6 +4727,10 @@
           },
           {
             "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
             "named": true
           },
           {
@@ -4604,6 +5088,10 @@
   {
     "type": "string_literal",
     "named": true
+  },
+  {
+    "type": "struct",
+    "named": false
   },
   {
     "type": "transient",

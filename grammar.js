@@ -34,9 +34,9 @@ const PREC = {
   MULTIPLY: 11,
   EXP: 12,
   UNARY: 13,
-  CALL: 14,
-  NEW: 15,
-  POSTFIX: 16,
+  POSTFIX: 14,
+  MEMBER: 15,
+  NEW: 16,
 }
 
 // Helper function for comma-separated lists
@@ -267,7 +267,11 @@ module.exports = grammar({
      * (Currently empty, to be filled in later).
      */
     _contract_body_element: ($) =>
-      choice($.state_variable_declaration, $.function_definition),
+      choice(
+        $.state_variable_declaration,
+        $.function_definition,
+        $.struct_definition,
+      ),
     // TODO: Add function_definition, state_variable_declaration, etc.
 
     /**
@@ -525,6 +529,7 @@ module.exports = grammar({
         $.call_expression,
         $.member_access_expression,
         $.index_access_expression,
+        $.index_range_access_expression,
         $.new_expression,
         $.assignment_expression,
         $.additive_expression,
@@ -629,7 +634,7 @@ module.exports = grammar({
      */
     call_expression: ($) =>
       prec(
-        PREC.CALL,
+        PREC.MEMBER,
         seq(
           field("function", $._expression),
           field("arguments", $.call_argument_list),
@@ -644,13 +649,13 @@ module.exports = grammar({
      * chained member access is parsed correctly. For example, an expression
      * like `a.b.c` is grouped from left to right as `(a.b).c`.
      *
-     * It shares the same high precedence level as `call_expression` (`PREC.CALL`)
+     * It shares the same high precedence level as `call_expression` (`PREC.MEMBER`)
      * to correctly handle interactions between them, such as accessing a property
      * on the result of a function call: `myFunc().property`.
      */
     member_access_expression: ($) =>
       prec.left(
-        PREC.CALL,
+        PREC.MEMBER,
         seq(field("object", $._expression), ".", field("member", $.identifier)),
       ),
 
@@ -664,11 +669,24 @@ module.exports = grammar({
      */
     index_access_expression: ($) =>
       prec.left(
-        PREC.CALL,
+        PREC.MEMBER,
         seq(
           field("base", $._expression),
           "[",
           field("index", $._expression),
+          "]",
+        ),
+      ),
+
+    index_range_access_expression: ($) =>
+      prec.left(
+        PREC.MEMBER,
+        seq(
+          field("base", $._expression),
+          "[",
+          optional(field("start", $._expression)),
+          ":",
+          optional(field("end", $._expression)),
           "]",
         ),
       ),
@@ -825,6 +843,22 @@ module.exports = grammar({
      * e.g., `(1, true)` or `(a, b)`
      */
     tuple_expression: ($) => seq("(", optional(commaSep($._expression)), ")"),
+
+    //************************************************************//
+    //                     Struct Definition                      //
+    //************************************************************//
+
+    struct_definition: ($) =>
+      seq(
+        "struct",
+        field("name", $.identifier),
+        "{",
+        repeat1($.struct_member),
+        "}",
+      ),
+
+    struct_member: ($) =>
+      seq(field("type", $.type_name), field("name", $.identifier), ";"),
 
     //************************************************************//
     //                       Common Rules                         //

@@ -1,0 +1,168 @@
+==================
+Simple slice with start and end
+==================
+
+contract C {
+  function f(bytes memory b) {
+    bytes memory a = b[1:5];
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name
+              (elementary_type_name))
+            (data_location)
+            name: (identifier)))
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              (data_location)
+              name: (identifier))
+            value: (index_range_access_expression
+              base: (primary_expression
+                (identifier))
+              start: (primary_expression
+                (literal
+                  (number_literal)))
+              end: (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Slice with only end
+==================
+
+contract C {
+  function f(bytes memory b) {
+    bytes memory a = b[:5];
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name
+              (elementary_type_name))
+            (data_location)
+            name: (identifier)))
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              (data_location)
+              name: (identifier))
+            value: (index_range_access_expression
+              base: (primary_expression
+                (identifier))
+              end: (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Slice with only start
+==================
+
+contract C {
+  function f(bytes memory b) {
+    bytes memory a = b[1:];
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name
+              (elementary_type_name))
+            (data_location)
+            name: (identifier)))
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              (data_location)
+              name: (identifier))
+            value: (index_range_access_expression
+              base: (primary_expression
+                (identifier))
+              start: (primary_expression
+                (literal
+                  (number_literal))))))))))
+
+==================
+Interaction with member access
+==================
+
+contract C {
+  struct S { bytes data; }
+  function f(S memory myStruct) public {
+    bytes memory a = myStruct.data[1:5];
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (struct_definition
+        name: (identifier)
+        (struct_member
+          type: (type_name
+            (elementary_type_name))
+          name: (identifier)))
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (type_name
+              (identifier_path
+                (identifier)))
+            (data_location)
+            name: (identifier)))
+        (visibility)
+        body: (block
+          (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (type_name
+                (elementary_type_name))
+              (data_location)
+              name: (identifier))
+            value: (index_range_access_expression
+              base: (member_access_expression
+                object: (primary_expression
+                  (identifier))
+                member: (identifier))
+              start: (primary_expression
+                (literal
+                  (number_literal)))
+              end: (primary_expression
+                (literal
+                  (number_literal))))))))))
