@@ -923,7 +923,7 @@ module.exports = grammar({
      */
     bytes_type: ($) =>
       token(
-        /bytes(1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32)/,
+        /bytes(1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32)?/,
       ),
 
     /**
@@ -935,11 +935,6 @@ module.exports = grammar({
      * A string type.
      */
     string_type: ($) => "string",
-
-    /**
-     * A dynamic bytes type.
-     */
-    dynamic_bytes_type: ($) => "bytes",
 
     /**
      * An array type.
@@ -964,14 +959,7 @@ module.exports = grammar({
      * A hidden rule for all elementary types.
      */
     _elementary_type_name: ($) =>
-      choice(
-        $.uint_type,
-        $.int_type,
-        $.bytes_type,
-        $.bool_type,
-        $.string_type,
-        $.dynamic_bytes_type,
-      ),
+      choice($.uint_type, $.int_type, $.bytes_type, $.bool_type, $.string_type),
 
     /**
      * A hidden rule for any type name.
