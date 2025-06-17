@@ -9,7 +9,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       constructor: (constructor_definition
@@ -26,7 +26,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       constructor: (constructor_definition
@@ -51,7 +51,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       constructor: (constructor_definition
@@ -69,7 +69,7 @@ abstract contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       constructor: (constructor_definition
@@ -89,7 +89,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       constructor: (constructor_definition
@@ -116,7 +116,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       modifier: (modifier_definition
@@ -142,7 +142,7 @@ contract MyToken is ERC20 {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     parents: (parent_list
       (base_contract

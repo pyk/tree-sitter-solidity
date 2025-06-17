@@ -57,7 +57,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       error: (error_definition

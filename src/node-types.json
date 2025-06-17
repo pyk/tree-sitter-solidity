@@ -2223,6 +2223,42 @@
     "fields": {}
   },
   {
+    "type": "contract",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "contract_body",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parents": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "parent_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "contract_body",
     "named": true,
     "fields": {
@@ -2342,42 +2378,6 @@
         "types": [
           {
             "type": "using_directive",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "contract_definition",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "contract_body",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "parents": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "parent_list",
             "named": true
           }
         ]
@@ -6664,7 +6664,7 @@
       "required": false,
       "types": [
         {
-          "type": "contract_definition",
+          "type": "contract",
           "named": true
         },
         {

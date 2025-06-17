@@ -22,7 +22,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       user_defined_value_type: (user_defined_value_type_definition
@@ -45,7 +45,7 @@ contract C {
   (user_defined_value_type_definition
     name: (identifier)
     underlying_type: (address_type))
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       state_variable: (state_variable_declaration

@@ -63,7 +63,7 @@ module.exports = grammar({
     //           ├─── spdx_license_identifier  (e.g., // SPDX-License-Identifier: MIT)
     //           ├─── pragma_directive         (e.g., pragma solidity ^0.8.0;)
     //           ├─── import_directive         (e.g., import "./MyFile.sol";)
-    //           ├─── contract_definition      (e.g., contract C { ... })
+    //           ├─── contract      (e.g., contract C { ... })
     //           └─── interface_definition     (e.g., interface I { ... })
 
     /**
@@ -85,7 +85,7 @@ module.exports = grammar({
         $.pragma_directive,
         $.import_directive,
         $.using_directive,
-        $.contract_definition,
+        $.contract,
         $.interface_definition,
         $.state_variable_declaration,
         $.struct_definition,
@@ -912,7 +912,7 @@ module.exports = grammar({
      * The definition of a contract.
      * e.g., `contract MyContract is Ownable { ... }`
      */
-    contract_definition: ($) =>
+    contract: ($) =>
       seq(
         optional("abstract"),
         "contract",

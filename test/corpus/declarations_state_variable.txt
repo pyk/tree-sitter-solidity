@@ -8,7 +8,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       state_variable: (state_variable_declaration
@@ -25,7 +25,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       state_variable: (state_variable_declaration
@@ -47,7 +47,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       state_variable: (state_variable_declaration
@@ -80,7 +80,7 @@ contract C is I {
           (parameter_declaration
             type: (string_type)
             location: (data_location))))))
-  (contract_definition
+  (contract
     name: (identifier)
     parents: (parent_list
       (base_contract

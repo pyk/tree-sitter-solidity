@@ -31,7 +31,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "contract_definition"
+          "name": "contract"
         },
         {
           "type": "SYMBOL",
@@ -2724,7 +2724,7 @@
         }
       ]
     },
-    "contract_definition": {
+    "contract": {
       "type": "SEQ",
       "members": [
         {

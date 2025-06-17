@@ -10,7 +10,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       (comment)
@@ -32,7 +32,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       (comment)
@@ -52,7 +52,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       (comment)
@@ -76,7 +76,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       (comment)
@@ -101,6 +101,6 @@ contract C {}
   (comment)
   (comment)
   (comment)
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body)))

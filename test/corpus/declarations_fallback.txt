@@ -9,7 +9,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       fallback: (fallback_function_definition
@@ -27,7 +27,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       fallback: (fallback_function_definition
@@ -48,7 +48,7 @@ contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       fallback: (fallback_function_definition
@@ -79,7 +79,7 @@ abstract contract C {
 ---
 
 (source_file
-  (contract_definition
+  (contract
     name: (identifier)
     body: (contract_body
       fallback: (fallback_function_definition
