@@ -33,7 +33,7 @@ import {symbol1, symbol2 as alias2} from "./MyFile.sol";
 
 (source_file
   directive: (import
-    symbols: (symbol_aliases
+    symbols: (symbol_list
       (import_alias
         symbol: (identifier))
       (import_alias
@@ -55,7 +55,7 @@ import * as Utils from "./Utils.sol";
   directive: (import
     path: (string_literal))
   directive: (import
-    symbols: (symbol_aliases
+    symbols: (symbol_list
       (import_alias
         symbol: (identifier))
       (import_alias

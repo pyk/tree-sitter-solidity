@@ -179,7 +179,7 @@ module.exports = grammar({
           ),
           // e.g., import {symbol1 as alias, symbol2} from "path/to/file.sol";
           seq(
-            field("symbols", $.symbol_aliases),
+            field("symbols", $.symbol_list),
             "from",
             field("path", $.string_literal),
           ),
@@ -195,34 +195,11 @@ module.exports = grammar({
         ";",
       ),
 
-    //************************************************************//
-    //                          Comments                          //
-    //************************************************************//
-
-    // A regular, non-documentation comment
-    comment: ($) =>
-      token(
-        choice(
-          seq("//", /[^\r\n]*/),
-          seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
-        ),
-      ),
-
-    // A NatSpec documentation comment
-    natspec_comment: ($) =>
-      token(
-        choice(seq("///", /[^\r\n]*/), seq("/**", /([^*]|\*+[^/])*/, "*/")),
-      ),
-
-    //************************************************************//
-    //                         Directives                         //
-    //************************************************************//
-
     /**
      * A set of symbol aliases in an import statement.
      * e.g., `{symbol1 as alias, symbol2}`
      */
-    symbol_aliases: ($) => seq("{", commaSep($.import_alias), "}"),
+    symbol_list: ($) => seq("{", commaSep($.import_alias), "}"),
 
     /**
      * A single symbol alias in an import statement.
@@ -267,6 +244,29 @@ module.exports = grammar({
     global_using: ($) => "global",
 
     wildcard_type: ($) => "*",
+
+    //************************************************************//
+    //                          Comments                          //
+    //************************************************************//
+
+    // A regular, non-documentation comment
+    comment: ($) =>
+      token(
+        choice(
+          seq("//", /[^\r\n]*/),
+          seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
+        ),
+      ),
+
+    // A NatSpec documentation comment
+    natspec_comment: ($) =>
+      token(
+        choice(seq("///", /[^\r\n]*/), seq("/**", /([^*]|\*+[^/])*/, "*/")),
+      ),
+
+    //************************************************************//
+    //                         Directives                         //
+    //************************************************************//
 
     // The main directive rule
     using: ($) =>

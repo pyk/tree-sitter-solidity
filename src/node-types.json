@@ -3972,7 +3972,7 @@
         "required": false,
         "types": [
           {
-            "type": "symbol_aliases",
+            "type": "symbol_list",
             "named": true
           }
         ]
@@ -6990,7 +6990,7 @@
     "fields": {}
   },
   {
-    "type": "symbol_aliases",
+    "type": "symbol_list",
     "named": true,
     "fields": {},
     "children": {
