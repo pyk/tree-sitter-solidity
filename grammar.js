@@ -396,7 +396,13 @@ module.exports = grammar({
 
     parent_constructor: ($) =>
       seq(
-        field("name", $.identifier_path),
+        field(
+          "name",
+          choice(
+            prec(1, $.identifier), // Prefer simple identifier
+            $.identifier_path, // Fallback for qualified names
+          ),
+        ),
         field("arguments", $.call_argument_list),
       ),
 
