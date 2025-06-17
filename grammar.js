@@ -977,7 +977,7 @@ module.exports = grammar({
         field("name", $.identifier),
         field("parameters", $.parameter_list),
         repeat($._function_attribute),
-        optional(field("returns", $.returns_clause)),
+        optional(seq("returns", field("returns", $.parameter_list))),
         field("body", choice($.block, $.empty_body)),
       ),
 
@@ -992,12 +992,6 @@ module.exports = grammar({
         field("virtual", $.virtual),
         field("override", $.override_specifier), // <-- Added field name
       ),
-
-    /**
-     * The `returns` clause of a function.
-     * e.g., `returns (bool)`
-     */
-    returns_clause: ($) => seq("returns", field("returns", $.parameter_list)),
 
     /**
      * A list of parameters, used for function arguments and return values.

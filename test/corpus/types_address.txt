@@ -80,10 +80,9 @@ contract C {
         name: (identifier)
         parameters: (parameter_list)
         visibility: (visibility)
-        returns: (returns_clause
-          returns: (parameter_list
-            (parameter_declaration
-              type: (address_type))))
+        returns: (parameter_list
+          (parameter_declaration
+            type: (address_type)))
         body: (block
           (comment))))))
 

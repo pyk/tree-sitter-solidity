@@ -79,10 +79,9 @@ contract C {
             type: (int_type)
             name: (identifier)))
         visibility: (visibility)
-        returns: (returns_clause
-          returns: (parameter_list
-            (parameter_declaration
-              type: (int_type))))
+        returns: (parameter_list
+          (parameter_declaration
+            type: (int_type)))
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration

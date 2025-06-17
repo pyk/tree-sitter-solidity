@@ -44,9 +44,8 @@ library Search {
             name: (identifier)))
         visibility: (visibility)
         mutability: (state_mutability)
-        returns: (returns_clause
-          returns: (parameter_list
-            (parameter_declaration
-              type: (uint_type))))
+        returns: (parameter_list
+          (parameter_declaration
+            type: (uint_type)))
         body: (block
           (comment))))))

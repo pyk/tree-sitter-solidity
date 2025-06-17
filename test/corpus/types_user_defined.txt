@@ -73,12 +73,11 @@ contract C {
         name: (identifier)
         parameters: (parameter_list)
         visibility: (visibility)
-        returns: (returns_clause
-          returns: (parameter_list
-            (parameter_declaration
-              type: (user_defined_type
-                (identifier_path
-                  (identifier))))))
+        returns: (parameter_list
+          (parameter_declaration
+            type: (user_defined_type
+              (identifier_path
+                (identifier)))))
         body: (block)))))
 
 ==================

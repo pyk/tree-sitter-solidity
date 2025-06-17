@@ -3562,7 +3562,7 @@
         "required": false,
         "types": [
           {
-            "type": "returns_clause",
+            "type": "parameter_list",
             "named": true
           }
         ]
@@ -6078,22 +6078,6 @@
           },
           {
             "type": "unary_expression",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "returns_clause",
-    "named": true,
-    "fields": {
-      "returns": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "parameter_list",
             "named": true
           }
         ]

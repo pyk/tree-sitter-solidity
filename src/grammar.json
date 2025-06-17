@@ -2918,12 +2918,21 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "FIELD",
-              "name": "returns",
-              "content": {
-                "type": "SYMBOL",
-                "name": "returns_clause"
-              }
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "returns"
+                },
+                {
+                  "type": "FIELD",
+                  "name": "returns",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "parameter_list"
+                  }
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -2990,23 +2999,6 @@
           "content": {
             "type": "SYMBOL",
             "name": "override_specifier"
-          }
-        }
-      ]
-    },
-    "returns_clause": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "returns"
-        },
-        {
-          "type": "FIELD",
-          "name": "returns",
-          "content": {
-            "type": "SYMBOL",
-            "name": "parameter_list"
           }
         }
       ]

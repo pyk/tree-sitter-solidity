@@ -41,10 +41,9 @@ contract C {
         name: (identifier)
         parameters: (parameter_list)
         visibility: (visibility)
-        returns: (returns_clause
-          returns: (parameter_list
-            (parameter_declaration
-              type: (uint_type))))
+        returns: (parameter_list
+          (parameter_declaration
+            type: (uint_type)))
         body: (block
           (return_statement
             value: (primary_expression
@@ -71,12 +70,11 @@ contract C {
         name: (identifier)
         parameters: (parameter_list)
         visibility: (visibility)
-        returns: (returns_clause
-          returns: (parameter_list
-            (parameter_declaration
-              type: (bool_type))
-            (parameter_declaration
-              type: (uint_type))))
+        returns: (parameter_list
+          (parameter_declaration
+            type: (bool_type))
+          (parameter_declaration
+            type: (uint_type)))
         body: (block
           (return_statement
             value: (tuple_expression

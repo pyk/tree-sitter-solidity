@@ -59,10 +59,9 @@ contract C {
         name: (identifier)
         parameters: (parameter_list)
         visibility: (visibility)
-        returns: (returns_clause
-          returns: (parameter_list
-            (parameter_declaration
-              type: (bool_type))))
+        returns: (parameter_list
+          (parameter_declaration
+            type: (bool_type)))
         body: (block
           (return_statement
             value: (primary_expression
