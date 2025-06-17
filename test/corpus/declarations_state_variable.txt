@@ -68,15 +68,14 @@ contract C is I {
 (source_file
   (interface
     name: (identifier)
-    body: (interface_body
-      function: (function_definition
-        name: (identifier)
-        visibility: (visibility)
-        mutability: (state_mutability)
-        returns: (parameter_list
-          (parameter_declaration
-            type: (string_type)
-            location: (data_location))))))
+    function: (function_definition
+      name: (identifier)
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        (parameter_declaration
+          type: (string_type)
+          location: (data_location)))))
   (contract
     name: (identifier)
     parents: (parent_list

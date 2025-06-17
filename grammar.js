@@ -87,12 +87,12 @@ module.exports = grammar({
         $.using_directive,
         $.contract,
         $.interface,
+        $.library,
         $.state_variable_declaration,
         $.struct_definition,
         $.enum_definition,
         $.event_definition,
         $.error_definition,
-        $.library,
         $.function_definition,
         $.user_defined_value_type_definition,
         // $.constant_variable_declaration,
@@ -296,40 +296,15 @@ module.exports = grammar({
         "}", // The body ends here
       ),
 
-    //************************************************************//
-    //                        Definitions                         //
-    //************************************************************//
+    //##########################################################//
+    //                        Interface                         //
+    //##########################################################//
 
-    /**
-     * The definition of a contract.
-     * e.g., `contract MyContract is Ownable { ... }`
-     */
-
-    /**
-     * The definition of an interface.
-     * e.g., `interface IMyContract { ... }`
-     */
     interface: ($) =>
       seq(
         "interface",
         field("name", $.identifier),
         optional(field("parents", $.parent_list)),
-        field("body", $.interface_body),
-      ),
-
-    library: ($) =>
-      seq(
-        "library",
-        field("name", $.identifier),
-        field("body", $.library_body),
-      ),
-
-    /**
-     * The body of a contract, enclosed in curly braces.
-     */
-
-    interface_body: ($) =>
-      seq(
         "{",
         repeat(
           choice(
@@ -348,8 +323,14 @@ module.exports = grammar({
         "}",
       ),
 
-    library_body: ($) =>
+    //##########################################################//
+    //                         Library                          //
+    //##########################################################//
+
+    library: ($) =>
       seq(
+        "library",
+        field("name", $.identifier),
         "{",
         repeat(
           choice(
@@ -365,6 +346,11 @@ module.exports = grammar({
         ),
         "}",
       ),
+
+    //##########################################################//
+    //                          Others                          //
+    //##########################################################//
+
     /**
      * A single parent contract in an inheritance list.
      * e.g., `Ownable` or `ERC20("MyToken", "MTK")`

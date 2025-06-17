@@ -4718,42 +4718,6 @@
     "type": "interface",
     "named": true,
     "fields": {
-      "body": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "interface_body",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "parents": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "parent_list",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "interface_body",
-    "named": true,
-    "fields": {
       "enum": {
         "multiple": true,
         "required": false,
@@ -4790,6 +4754,26 @@
         "types": [
           {
             "type": "function_definition",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parents": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "parent_list",
             "named": true
           }
         ]
@@ -4820,32 +4804,6 @@
     "type": "library",
     "named": true,
     "fields": {
-      "body": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "library_body",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "library_body",
-    "named": true,
-    "fields": {
       "enum": {
         "multiple": true,
         "required": false,
@@ -4882,6 +4840,16 @@
         "types": [
           {
             "type": "function_definition",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
             "named": true
           }
         ]
