@@ -6164,7 +6164,7 @@
     "fields": {}
   },
   {
-    "type": "pragma_directive",
+    "type": "pragma",
     "named": true,
     "fields": {
       "name": {
@@ -6177,7 +6177,7 @@
           }
         ]
       },
-      "value": {
+      "version": {
         "multiple": true,
         "required": true,
         "types": [
@@ -6675,7 +6675,7 @@
           "named": true
         },
         {
-          "type": "pragma_directive",
+          "type": "pragma",
           "named": true
         },
         {
@@ -7676,20 +7676,27 @@
   {
     "type": "version_constraint",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "version_literal",
-          "named": true
-        },
-        {
-          "type": "version_operator",
-          "named": true
-        }
-      ]
+    "fields": {
+      "number": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "version_literal",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "version_operator",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {

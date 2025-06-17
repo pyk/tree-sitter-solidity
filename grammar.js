@@ -57,9 +57,9 @@ module.exports = grammar({
   conflicts: ($) => [],
 
   rules: {
-    //##########################################################//
-    //                         Keywords                         //
-    //##########################################################//
+    //############################################################//
+    //                          Keywords                          //
+    //############################################################//
 
     // Declaration: A declaration introduces a name and a type into a scope.
     // It tells the compiler, "This thing exists, and this is what it's
@@ -75,9 +75,9 @@ module.exports = grammar({
     // included, or what compiler features are enabled. They don't typically
     // define runtime behavior or data structures that exist on the blockchain.
 
-    //##########################################################//
-    //                       Source File                        //
-    //##########################################################//
+    //############################################################//
+    //                        Source File                         //
+    //############################################################//
 
     /**
      * The top-level rule, representing a complete Solidity source file.
@@ -88,8 +88,7 @@ module.exports = grammar({
         repeat(choice($._top_level_directives, $._top_level_definitions)),
       ),
 
-    _top_level_directives: ($) =>
-      choice($.pragma_directive, $.import_directive, $.using),
+    _top_level_directives: ($) => choice($.pragma, $.import_directive, $.using),
 
     _top_level_definitions: ($) =>
       choice(
@@ -106,9 +105,9 @@ module.exports = grammar({
         // $.constant_variable_declaration,
       ),
 
-    //##########################################################//
-    //                         License                          //
-    //##########################################################//
+    //############################################################//
+    //                          License                           //
+    //############################################################//
 
     /**
      * The SPDX license identifier, which should appear at the top of a source file.
@@ -124,6 +123,40 @@ module.exports = grammar({
       ),
 
     license_identifier: ($) => /[\w\.-]+/,
+
+    //############################################################//
+    //                           Pragma                           //
+    //############################################################//
+
+    /**
+     * A pragma directive, used to enable certain compiler features or checks.
+     * e.g., `pragma solidity 0.8.0;`
+     * e.g., `pragma solidity ^0.8.0;`
+     * e.g., `pragma solidity >=0.8.0 <0.9.0;`
+     */
+    pragma: ($) =>
+      seq(
+        "pragma",
+        field("name", $.identifier),
+        // Use `version` for the field name. Since it's a `repeat1`,
+        // it will correctly capture one or more constraints.
+        field("version", repeat1($.version_constraint)),
+        ";",
+      ),
+
+    // Remove the hidden `_pragma_expression` rule as it's no longer needed.
+    // The `repeat1` is now directly inside the `pragma` rule.
+
+    version_constraint: ($) =>
+      seq(
+        // Add fields for operator and literal
+        optional(field("operator", $.version_operator)),
+        field("number", $.version_literal), // Using 'number' is a good, specific choice
+      ),
+
+    version_operator: ($) => choice("^", "~", ">=", "<=", ">", "<", "="),
+
+    version_literal: ($) => /\d+(\.\d+){0,2}/,
 
     //************************************************************//
     //                          Comments                          //
@@ -147,35 +180,6 @@ module.exports = grammar({
     //************************************************************//
     //                         Directives                         //
     //************************************************************//
-
-    /**
-     * A pragma directive, used to enable certain compiler features or checks.
-     * e.g., `pragma solidity ^0.8.0;`
-     * e.g., `pragma solidity >=0.8.0 <0.9.0;`
-     */
-    pragma_directive: ($) =>
-      seq(
-        "pragma",
-        field("name", $.identifier),
-        field("value", $._pragma_expression),
-        ";",
-      ),
-
-    // A pragma expression consists of one or more version constraints.
-    _pragma_expression: ($) => repeat1($.version_constraint),
-
-    /**
-     * A version constraint, such as `^0.8.0` or `>=0.8.0 <0.9.0`.
-     * This is now a visible node in the syntax tree.
-     */
-    version_constraint: ($) =>
-      seq(optional($.version_operator), $.version_literal),
-
-    // An operator used for version constraints (hidden helper rule).
-    version_operator: ($) => choice("^", "~", ">=", "<=", ">", "<", "="),
-
-    // A semantic version number (visible node).
-    version_literal: ($) => /\d+(\.\d+){0,2}/,
 
     /**
      * An import directive, used to import symbols from another file.

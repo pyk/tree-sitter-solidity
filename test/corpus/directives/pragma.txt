@@ -1,0 +1,46 @@
+==================
+Simple Pragma
+==================
+
+pragma solidity ^0.8.0;
+
+---
+
+(source_file
+  (pragma
+    name: (identifier)
+    version: (version_constraint
+      operator: (version_operator)
+      number: (version_literal))))
+
+==================
+Pragma with multiple constraints
+==================
+
+pragma solidity >=0.8.0 <0.9.0;
+
+---
+
+(source_file
+  (pragma
+    name: (identifier)
+    version: (version_constraint
+      operator: (version_operator)
+      number: (version_literal))
+    version: (version_constraint
+      operator: (version_operator)
+      number: (version_literal))))
+
+==================
+Pragma with exact version (no operator)
+==================
+
+pragma solidity 0.8.4;
+
+---
+
+(source_file
+  (pragma
+    name: (identifier)
+    version: (version_constraint
+      number: (version_literal))))
