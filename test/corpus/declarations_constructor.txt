@@ -122,7 +122,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (modifier_definition
+      modifier: (modifier_definition
         name: (identifier)
         parameters: (parameter_list)
         body: (block

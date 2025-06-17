@@ -13,9 +13,9 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (struct_definition
+      struct: (struct_definition
         name: (identifier))
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (user_defined_type
           (identifier_path
             (identifier)))
@@ -36,11 +36,11 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (enum_definition
+      enum: (enum_definition
         name: (identifier)
         value: (identifier)
         value: (identifier))
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
@@ -69,7 +69,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         visibility: (visibility)
@@ -95,9 +95,9 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (struct_definition
+      struct: (struct_definition
         name: (identifier))
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (array_type
           base: (user_defined_type
             (identifier_path
@@ -121,7 +121,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration

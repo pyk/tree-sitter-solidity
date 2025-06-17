@@ -11,7 +11,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (uint_type)
         name: (identifier)))))
 
@@ -28,7 +28,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (string_type)
         visibility: (visibility)
         mutability: (mutability)
@@ -50,7 +50,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (address_type)
         visibility: (visibility)
         mutability: (mutability)
@@ -72,7 +72,7 @@ contract C is I {
   (interface_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         visibility: (visibility)
@@ -80,8 +80,7 @@ contract C is I {
         returns: (parameter_list
           (parameter_declaration
             type: (string_type)
-            location: (data_location)))
-        body: (empty_body))))
+            location: (data_location))))))
   (contract_definition
     name: (identifier)
     parents: (parent_list
@@ -89,7 +88,7 @@ contract C is I {
         name: (identifier_path
           (identifier))))
     body: (contract_body
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (string_type)
         visibility: (visibility)
         override: (override_specifier)

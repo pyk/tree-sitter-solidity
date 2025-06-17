@@ -5,6 +5,7 @@ Simple error definition
 error Unauthorized();
 
 ---
+
 (source_file
   (error_definition
     name: (identifier)))
@@ -16,6 +17,7 @@ Error with named parameters
 error InsufficientBalance(uint requested, uint available);
 
 ---
+
 (source_file
   (error_definition
     name: (identifier)
@@ -33,6 +35,7 @@ Error with unnamed parameters
 error InvalidInput(address, uint256);
 
 ---
+
 (source_file
   (error_definition
     name: (identifier)
@@ -50,11 +53,12 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (error_definition
+      error: (error_definition
         name: (identifier)
         (error_parameter
           type: (string_type)

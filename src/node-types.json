@@ -2222,57 +2222,117 @@
             "named": true
           }
         ]
+      },
+      "enum": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "enum_definition",
+            "named": true
+          }
+        ]
+      },
+      "error": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "error_definition",
+            "named": true
+          }
+        ]
+      },
+      "event": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "event_definition",
+            "named": true
+          }
+        ]
+      },
+      "fallback": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "fallback_function_definition",
+            "named": true
+          }
+        ]
+      },
+      "function": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "function_definition",
+            "named": true
+          }
+        ]
+      },
+      "modifier": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "modifier_definition",
+            "named": true
+          }
+        ]
+      },
+      "receive": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "receive_function_definition",
+            "named": true
+          }
+        ]
+      },
+      "state_variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "state_variable_declaration",
+            "named": true
+          }
+        ]
+      },
+      "struct": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "struct_definition",
+            "named": true
+          }
+        ]
+      },
+      "user_defined_value_type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "user_defined_value_type_definition",
+            "named": true
+          }
+        ]
+      },
+      "using": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "using_directive",
+            "named": true
+          }
+        ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "enum_definition",
-          "named": true
-        },
-        {
-          "type": "error_definition",
-          "named": true
-        },
-        {
-          "type": "event_definition",
-          "named": true
-        },
-        {
-          "type": "fallback_function_definition",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "modifier_definition",
-          "named": true
-        },
-        {
-          "type": "receive_function_definition",
-          "named": true
-        },
-        {
-          "type": "state_variable_declaration",
-          "named": true
-        },
-        {
-          "type": "struct_definition",
-          "named": true
-        },
-        {
-          "type": "user_defined_value_type_definition",
-          "named": true
-        },
-        {
-          "type": "using_directive",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -2488,11 +2548,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "empty_body",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "enum_definition",
@@ -3192,14 +3247,10 @@
     "fields": {
       "body": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "empty_body",
             "named": true
           }
         ]
@@ -3540,14 +3591,10 @@
     "fields": {
       "body": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "empty_body",
             "named": true
           }
         ]
@@ -5326,14 +5373,10 @@
     "fields": {
       "body": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "empty_body",
             "named": true
           }
         ]
@@ -5984,14 +6027,10 @@
     "fields": {
       "body": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "block",
-            "named": true
-          },
-          {
-            "type": "empty_body",
             "named": true
           }
         ]

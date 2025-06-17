@@ -915,27 +915,29 @@ module.exports = grammar({
     /**
      * The body of a contract, enclosed in curly braces.
      */
-    contract_body: ($) => seq("{", repeat($._contract_body_element), "}"),
-
-    /**
-     * A choice between all valid elements within a contract body.
-     * (Currently empty, to be filled in later).
-     */
-    _contract_body_element: ($) =>
-      choice(
-        field("constructor", $.constructor_definition),
-        $.modifier_definition,
-        $.state_variable_declaration,
-        $.function_definition,
-        $.struct_definition,
-        $.enum_definition,
-        $.event_definition,
-        $.struct_definition,
-        $.error_definition,
-        $.fallback_function_definition,
-        $.receive_function_definition,
-        $.user_defined_value_type_definition,
-        $.using_directive,
+    contract_body: ($) =>
+      seq(
+        "{",
+        repeat(
+          choice(
+            field("state_variable", $.state_variable_declaration),
+            field("function", $.function_definition),
+            field("modifier", $.modifier_definition),
+            field("struct", $.struct_definition),
+            field("enum", $.enum_definition),
+            field("event", $.event_definition),
+            field("error", $.error_definition),
+            field("using", $.using_directive),
+            field(
+              "user_defined_value_type",
+              $.user_defined_value_type_definition,
+            ),
+            field("constructor", $.constructor_definition),
+            field("fallback", $.fallback_function_definition),
+            field("receive", $.receive_function_definition),
+          ),
+        ),
+        "}",
       ),
 
     /**
@@ -978,7 +980,7 @@ module.exports = grammar({
         field("parameters", $.parameter_list),
         repeat($._function_attribute),
         optional(seq("returns", field("returns", $.parameter_list))),
-        field("body", choice($.block, $.empty_body)),
+        choice(field("body", $.block), ";"),
       ),
 
     /**
@@ -1004,11 +1006,6 @@ module.exports = grammar({
      * A block of statements enclosed in curly braces.
      */
     block: ($) => seq("{", repeat($._statement), "}"),
-
-    /**
-     * A new named rule for a function body that is just a semicolon.
-     */
-    empty_body: ($) => ";",
 
     struct_definition: ($) =>
       seq(
@@ -1106,7 +1103,7 @@ module.exports = grammar({
         field("name", $.identifier),
         optional(field("parameters", $.parameter_list)),
         repeat($._modifier_attribute),
-        field("body", choice($.block, $.empty_body)),
+        choice(field("body", $.block), ";"),
       ),
 
     // Add a helper rule for receive/fallback attributes
@@ -1132,7 +1129,7 @@ module.exports = grammar({
         "(",
         ")",
         repeat($._function_like_attribute),
-        field("body", choice($.block, $.empty_body)),
+        choice(field("body", $.block), ";"),
       ),
 
     // The fallback function definition
@@ -1142,7 +1139,7 @@ module.exports = grammar({
         field("parameters", $.parameter_list),
         repeat($._function_like_attribute),
         optional(seq("returns", field("returns", $.parameter_list))),
-        field("body", choice($.block, $.empty_body)),
+        choice(field("body", $.block), ";"),
       ),
 
     user_defined_value_type_definition: ($) =>

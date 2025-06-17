@@ -15,7 +15,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         body: (block
@@ -57,7 +57,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         body: (block
@@ -85,7 +85,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         body: (block

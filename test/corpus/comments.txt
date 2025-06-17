@@ -14,7 +14,7 @@ contract C {
     name: (identifier)
     body: (contract_body
       (comment)
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (uint_type)
         name: (identifier)))))
 
@@ -36,7 +36,7 @@ contract C {
     name: (identifier)
     body: (contract_body
       (comment)
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (uint_type)
         name: (identifier)))))
 
@@ -56,7 +56,7 @@ contract C {
     name: (identifier)
     body: (contract_body
       (comment)
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         visibility: (visibility)
@@ -81,7 +81,7 @@ contract C {
     name: (identifier)
     body: (contract_body
       (comment)
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         visibility: (visibility)

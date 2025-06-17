@@ -14,7 +14,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
@@ -53,7 +53,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
@@ -89,7 +89,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
@@ -126,12 +126,12 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (struct_definition
+      struct: (struct_definition
         name: (identifier)
         (struct_member
           type: (bytes_type)
           name: (identifier)))
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration

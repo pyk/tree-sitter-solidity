@@ -12,7 +12,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (int_type)
         name: (identifier)))))
 
@@ -30,7 +30,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (int_type)
         name: (identifier)))))
 
@@ -48,7 +48,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (state_variable_declaration
+      state_variable: (state_variable_declaration
         type: (int_type)
         name: (identifier)))))
 
@@ -69,7 +69,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration

@@ -8,17 +8,19 @@ contract C {
   }
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         body: (block
           (expression_statement
             (call_expression
-              function: (primary_expression (identifier))
+              function: (primary_expression
+                (identifier))
               arguments: (call_argument_list
                 (primary_expression
                   (literal
@@ -37,21 +39,25 @@ contract C {
   }
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         body: (block
           (expression_statement
             (call_expression
-              function: (primary_expression (identifier))
+              function: (primary_expression
+                (identifier))
               options: (call_options_block
                 (named_argument
                   name: (identifier)
-                  value: (primary_expression (literal (number_literal)))))
+                  value: (primary_expression
+                    (literal
+                      (number_literal)))))
               arguments: (call_argument_list))))))))
 
 ==================
@@ -64,21 +70,25 @@ contract C {
   }
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         body: (block
           (expression_statement
             (call_expression
-              function: (primary_expression (identifier))
+              function: (primary_expression
+                (identifier))
               options: (call_options_block
                 (named_argument
                   name: (identifier)
-                  value: (primary_expression (literal (number_literal)))))
+                  value: (primary_expression
+                    (literal
+                      (number_literal)))))
               arguments: (call_argument_list))))))))
 
 ==================
@@ -91,24 +101,30 @@ contract C {
   }
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         body: (block
           (expression_statement
             (call_expression
-              function: (primary_expression (identifier))
+              function: (primary_expression
+                (identifier))
               options: (call_options_block
                 (named_argument
                   name: (identifier)
-                  value: (primary_expression (literal (number_literal))))
+                  value: (primary_expression
+                    (literal
+                      (number_literal))))
                 (named_argument
                   name: (identifier)
-                  value: (primary_expression (literal (number_literal)))))
+                  value: (primary_expression
+                    (literal
+                      (number_literal)))))
               arguments: (call_argument_list))))))))
 
 ==================
@@ -121,23 +137,29 @@ contract C {
   }
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         body: (block
           (expression_statement
             (call_expression
-              function: (primary_expression (identifier))
+              function: (primary_expression
+                (identifier))
               options: (call_options_block
                 (named_argument
                   name: (identifier)
-                  value: (primary_expression (literal (number_literal)))))
+                  value: (primary_expression
+                    (literal
+                      (number_literal)))))
               arguments: (call_argument_list
-                (primary_expression (literal (boolean_literal)))))))))))
+                (primary_expression
+                  (literal
+                    (boolean_literal)))))))))))
 
 ==================
 Function call options on a member access
@@ -148,21 +170,25 @@ contract C {
   }
 }
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (function_definition
+      function: (function_definition
         name: (identifier)
         parameters: (parameter_list)
         body: (block
           (expression_statement
             (call_expression
               function: (member_access_expression
-                object: (primary_expression (identifier))
+                object: (primary_expression
+                  (identifier))
                 member: (identifier))
               options: (call_options_block
                 (named_argument
                   name: (identifier)
-                  value: (primary_expression (literal (number_literal)))))
+                  value: (primary_expression
+                    (literal
+                      (number_literal)))))
               arguments: (call_argument_list))))))))

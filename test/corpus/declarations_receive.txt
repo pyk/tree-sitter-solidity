@@ -12,7 +12,7 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (receive_function_definition
+      receive: (receive_function_definition
         visibility: (visibility)
         mutability: (state_mutability)
         body: (block)))))
@@ -34,13 +34,13 @@ contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (event_definition
+      event: (event_definition
         name: (identifier)
         (unindexed_event_parameter
           type: (address_type))
         (unindexed_event_parameter
           type: (uint_type)))
-      (receive_function_definition
+      receive: (receive_function_definition
         visibility: (visibility)
         mutability: (state_mutability)
         body: (block
@@ -72,7 +72,6 @@ abstract contract C {
   (contract_definition
     name: (identifier)
     body: (contract_body
-      (receive_function_definition
+      receive: (receive_function_definition
         visibility: (visibility)
-        mutability: (state_mutability)
-        body: (empty_body)))))
+        mutability: (state_mutability)))))
