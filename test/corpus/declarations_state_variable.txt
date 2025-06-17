@@ -69,7 +69,7 @@ contract C is I {
 ---
 
 (source_file
-  (interface_definition
+  (interface
     name: (identifier)
     body: (interface_body
       function: (function_definition

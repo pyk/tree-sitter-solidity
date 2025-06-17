@@ -64,7 +64,7 @@ module.exports = grammar({
     //           ├─── pragma_directive         (e.g., pragma solidity ^0.8.0;)
     //           ├─── import_directive         (e.g., import "./MyFile.sol";)
     //           ├─── contract      (e.g., contract C { ... })
-    //           └─── interface_definition     (e.g., interface I { ... })
+    //           └─── interface     (e.g., interface I { ... })
 
     /**
      * The top-level rule, representing a complete Solidity source file.
@@ -86,7 +86,7 @@ module.exports = grammar({
         $.import_directive,
         $.using_directive,
         $.contract,
-        $.interface_definition,
+        $.interface,
         $.state_variable_declaration,
         $.struct_definition,
         $.enum_definition,
@@ -260,6 +260,332 @@ module.exports = grammar({
         // The '*' is now captured by a named node.
         field("target", choice($.wildcard_type, $._type_name)),
         optional($.global_using),
+        ";",
+      ),
+
+    //************************************************************//
+    //                        Definitions                         //
+    //************************************************************//
+
+    /**
+     * The definition of a contract.
+     * e.g., `contract MyContract is Ownable { ... }`
+     */
+    contract: ($) =>
+      seq(
+        optional("abstract"),
+        "contract",
+        field("name", $.identifier),
+        optional(field("parents", $.parent_list)),
+        field("body", $.contract_body),
+      ),
+
+    /**
+     * The definition of an interface.
+     * e.g., `interface IMyContract { ... }`
+     */
+    interface: ($) =>
+      seq(
+        "interface",
+        field("name", $.identifier),
+        optional(field("parents", $.parent_list)),
+        field("body", $.interface_body),
+      ),
+
+    library_definition: ($) =>
+      seq(
+        "library",
+        field("name", $.identifier),
+        field("body", $.library_body),
+      ),
+
+    /**
+     * The body of a contract, enclosed in curly braces.
+     */
+    contract_body: ($) =>
+      seq(
+        "{",
+        repeat(
+          choice(
+            field("state_variable", $.state_variable_declaration),
+            field("function", $.function_definition),
+            field("modifier", $.modifier_definition),
+            field("struct", $.struct_definition),
+            field("enum", $.enum_definition),
+            field("event", $.event_definition),
+            field("error", $.error_definition),
+            field("using", $.using_directive),
+            field(
+              "user_defined_value_type",
+              $.user_defined_value_type_definition,
+            ),
+            field("constructor", $.constructor_definition),
+            field("fallback", $.fallback_function_definition),
+            field("receive", $.receive_function_definition),
+          ),
+        ),
+        "}",
+      ),
+
+    interface_body: ($) =>
+      seq(
+        "{",
+        repeat(
+          choice(
+            // Interfaces can contain: functions (unimplemented), structs, enums, events, errors
+            field("function", $.function_definition),
+            field("struct", $.struct_definition),
+            field("enum", $.enum_definition),
+            field("event", $.event_definition),
+            field("error", $.error_definition),
+            field(
+              "user_defined_value_type",
+              $.user_defined_value_type_definition,
+            ),
+          ),
+        ),
+        "}",
+      ),
+
+    library_body: ($) =>
+      seq(
+        "{",
+        repeat(
+          choice(
+            // Libraries can contain: functions, structs, enums, events, errors, using directives, state variables (constants only)
+            field("function", $.function_definition),
+            field("struct", $.struct_definition),
+            field("enum", $.enum_definition),
+            field("event", $.event_definition),
+            field("error", $.error_definition),
+            field("using", $.using_directive),
+            field("state_variable", $.state_variable_declaration), // The parser doesn't enforce constant here; that's a job for a semantic checker or linter.
+          ),
+        ),
+        "}",
+      ),
+    /**
+     * A single parent contract in an inheritance list.
+     * e.g., `Ownable` or `ERC20("MyToken", "MTK")`
+     */
+    inheritance_specifier: ($) =>
+      seq(
+        field("name", $.identifier_path),
+        optional(field("arguments", $.call_argument_list)),
+      ),
+    parent_list: ($) => seq("is", commaSep($.base_contract)),
+    base_contract: ($) =>
+      seq(
+        field("name", $.identifier_path),
+        optional(field("arguments", $.call_argument_list)),
+      ),
+
+    /**
+     * The definition of a function.
+     * e.g., `function myFunc(uint256 _a) public pure returns (bool) { ... }`
+     */
+    function_definition: ($) =>
+      seq(
+        "function",
+        field("name", $.identifier),
+        "(",
+        optional(field("parameters", $.parameter_list)),
+        ")",
+        repeat($._function_attribute),
+        optional(
+          seq(
+            "returns",
+            "(",
+            optional(field("returns", $.parameter_list)),
+            ")",
+          ),
+        ),
+        choice(field("body", $.block), ";"),
+      ),
+    /**
+     * An attribute of a function, such as visibility or state mutability.
+     */
+    _function_attribute: ($) =>
+      choice(
+        field("visibility", $.visibility),
+        field("mutability", $.state_mutability),
+        field("modifier", $.modifier_invocation),
+        field("virtual", $.virtual),
+        field("override", $.override_specifier), // <-- Added field name
+      ),
+
+    /**
+     * A list of parameters, used for function arguments and return values.
+     */
+    parameter_list: ($) => commaSep($.parameter_declaration),
+
+    /**
+     * A block of statements enclosed in curly braces.
+     */
+    block: ($) => seq("{", repeat($._statement), "}"),
+
+    struct_definition: ($) =>
+      seq(
+        "struct",
+        field("name", $.identifier),
+        "{",
+        repeat($.struct_member),
+        "}",
+      ),
+
+    struct_member: ($) =>
+      seq(field("type", $._type_name), field("name", $.identifier), ";"),
+
+    enum_definition: ($) =>
+      seq(
+        "enum",
+        field("name", $.identifier),
+        "{",
+        // The commaSep helper handles one or more comma-separated values
+        commaSep(field("value", $.identifier)),
+        "}",
+      ),
+
+    _event_parameter: ($) =>
+      choice($.indexed_event_parameter, $.unindexed_event_parameter),
+
+    indexed_event_parameter: ($) =>
+      seq(
+        field("type", $._type_name),
+        "indexed",
+        optional(field("name", $.identifier)),
+      ),
+
+    unindexed_event_parameter: ($) =>
+      seq(field("type", $._type_name), optional(field("name", $.identifier))),
+
+    // New helper rules for event/error parameters
+    event_parameter_list: ($) => commaSep($._event_parameter),
+    error_parameter_list: ($) => commaSep($.error_parameter),
+
+    // Updated event/error definitions
+    event_definition: ($) =>
+      seq(
+        "event",
+        field("name", $.identifier),
+        "(",
+        optional(field("parameters", $.event_parameter_list)),
+        ")",
+        optional($.anonymous),
+        ";",
+      ),
+
+    error_definition: ($) =>
+      seq(
+        "error",
+        field("name", $.identifier),
+        "(",
+        optional(field("parameters", $.error_parameter_list)),
+        ")",
+        ";",
+      ),
+
+    // Rule for the `anonymous` keyword
+    anonymous: ($) => "anonymous",
+
+    error_parameter: ($) =>
+      seq(field("type", $._type_name), optional(field("name", $.identifier))),
+
+    modifier_invocation: ($) =>
+      seq(
+        field("name", $.identifier_path),
+        optional(field("arguments", $.call_argument_list)),
+      ),
+
+    _constructor_attribute: ($) =>
+      choice(
+        field("visibility", $.visibility),
+        field("mutability", $.state_mutability),
+        // Use a different field name here to allow for multiple
+        field("invocation", $.modifier_invocation),
+      ),
+
+    constructor_definition: ($) =>
+      seq(
+        "constructor",
+        "(",
+        optional(field("parameters", $.parameter_list)),
+        ")",
+        repeat($._constructor_attribute),
+        field("body", $.block),
+      ),
+
+    _modifier_attribute: ($) =>
+      choice(
+        field("virtual", $.virtual),
+        field("override", $.override_specifier),
+      ),
+
+    modifier_definition: ($) =>
+      prec(
+        1,
+        seq(
+          "modifier",
+          field("name", $.identifier),
+          "(",
+          optional(field("parameters", $.parameter_list)),
+          ")",
+          repeat($._modifier_attribute),
+          choice(field("body", $.block), ";"),
+        ),
+      ),
+
+    // Add a helper rule for receive/fallback attributes
+    _function_like_attribute: ($) =>
+      choice(
+        field("visibility", $.visibility),
+        field("mutability", $.state_mutability),
+        field("modifier", $.modifier_invocation),
+        "virtual",
+        // TODO: add override_specifier here later
+      ),
+
+    override_specifier: ($) =>
+      seq(
+        "override",
+        optional(seq("(", commaSep(field("from", $.identifier_path)), ")")),
+      ),
+
+    // The receive function definition
+    receive_function_definition: ($) =>
+      seq(
+        "receive",
+        "(",
+        ")",
+        repeat($._function_like_attribute),
+        choice(field("body", $.block), ";"),
+      ),
+
+    // The fallback function definition
+    fallback_function_definition: ($) =>
+      seq(
+        "fallback",
+        "(",
+        optional(field("parameters", $.parameter_list)),
+        ")",
+        repeat($._function_like_attribute),
+        optional(
+          seq(
+            "returns",
+            "(",
+            optional(field("returns", $.parameter_list)),
+            ")",
+          ),
+        ),
+        choice(field("body", $.block), ";"),
+      ),
+
+    user_defined_value_type_definition: ($) =>
+      seq(
+        "type",
+        field("name", $.identifier),
+        "is",
+        field("underlying_type", $._elementary_type_name),
         ";",
       ),
 
@@ -903,332 +1229,6 @@ module.exports = grammar({
      */
     inline_array_expression: ($) =>
       seq("[", optional(commaSep($._expression)), "]"),
-
-    //************************************************************//
-    //                        Definitions                         //
-    //************************************************************//
-
-    /**
-     * The definition of a contract.
-     * e.g., `contract MyContract is Ownable { ... }`
-     */
-    contract: ($) =>
-      seq(
-        optional("abstract"),
-        "contract",
-        field("name", $.identifier),
-        optional(field("parents", $.parent_list)),
-        field("body", $.contract_body),
-      ),
-
-    /**
-     * The definition of an interface.
-     * e.g., `interface IMyContract { ... }`
-     */
-    interface_definition: ($) =>
-      seq(
-        "interface",
-        field("name", $.identifier),
-        optional(field("parents", $.parent_list)),
-        field("body", $.interface_body),
-      ),
-
-    library_definition: ($) =>
-      seq(
-        "library",
-        field("name", $.identifier),
-        field("body", $.library_body),
-      ),
-
-    /**
-     * The body of a contract, enclosed in curly braces.
-     */
-    contract_body: ($) =>
-      seq(
-        "{",
-        repeat(
-          choice(
-            field("state_variable", $.state_variable_declaration),
-            field("function", $.function_definition),
-            field("modifier", $.modifier_definition),
-            field("struct", $.struct_definition),
-            field("enum", $.enum_definition),
-            field("event", $.event_definition),
-            field("error", $.error_definition),
-            field("using", $.using_directive),
-            field(
-              "user_defined_value_type",
-              $.user_defined_value_type_definition,
-            ),
-            field("constructor", $.constructor_definition),
-            field("fallback", $.fallback_function_definition),
-            field("receive", $.receive_function_definition),
-          ),
-        ),
-        "}",
-      ),
-
-    interface_body: ($) =>
-      seq(
-        "{",
-        repeat(
-          choice(
-            // Interfaces can contain: functions (unimplemented), structs, enums, events, errors
-            field("function", $.function_definition),
-            field("struct", $.struct_definition),
-            field("enum", $.enum_definition),
-            field("event", $.event_definition),
-            field("error", $.error_definition),
-            field(
-              "user_defined_value_type",
-              $.user_defined_value_type_definition,
-            ),
-          ),
-        ),
-        "}",
-      ),
-
-    library_body: ($) =>
-      seq(
-        "{",
-        repeat(
-          choice(
-            // Libraries can contain: functions, structs, enums, events, errors, using directives, state variables (constants only)
-            field("function", $.function_definition),
-            field("struct", $.struct_definition),
-            field("enum", $.enum_definition),
-            field("event", $.event_definition),
-            field("error", $.error_definition),
-            field("using", $.using_directive),
-            field("state_variable", $.state_variable_declaration), // The parser doesn't enforce constant here; that's a job for a semantic checker or linter.
-          ),
-        ),
-        "}",
-      ),
-    /**
-     * A single parent contract in an inheritance list.
-     * e.g., `Ownable` or `ERC20("MyToken", "MTK")`
-     */
-    inheritance_specifier: ($) =>
-      seq(
-        field("name", $.identifier_path),
-        optional(field("arguments", $.call_argument_list)),
-      ),
-    parent_list: ($) => seq("is", commaSep($.base_contract)),
-    base_contract: ($) =>
-      seq(
-        field("name", $.identifier_path),
-        optional(field("arguments", $.call_argument_list)),
-      ),
-
-    /**
-     * The definition of a function.
-     * e.g., `function myFunc(uint256 _a) public pure returns (bool) { ... }`
-     */
-    function_definition: ($) =>
-      seq(
-        "function",
-        field("name", $.identifier),
-        "(",
-        optional(field("parameters", $.parameter_list)),
-        ")",
-        repeat($._function_attribute),
-        optional(
-          seq(
-            "returns",
-            "(",
-            optional(field("returns", $.parameter_list)),
-            ")",
-          ),
-        ),
-        choice(field("body", $.block), ";"),
-      ),
-    /**
-     * An attribute of a function, such as visibility or state mutability.
-     */
-    _function_attribute: ($) =>
-      choice(
-        field("visibility", $.visibility),
-        field("mutability", $.state_mutability),
-        field("modifier", $.modifier_invocation),
-        field("virtual", $.virtual),
-        field("override", $.override_specifier), // <-- Added field name
-      ),
-
-    /**
-     * A list of parameters, used for function arguments and return values.
-     */
-    parameter_list: ($) => commaSep($.parameter_declaration),
-
-    /**
-     * A block of statements enclosed in curly braces.
-     */
-    block: ($) => seq("{", repeat($._statement), "}"),
-
-    struct_definition: ($) =>
-      seq(
-        "struct",
-        field("name", $.identifier),
-        "{",
-        repeat($.struct_member),
-        "}",
-      ),
-
-    struct_member: ($) =>
-      seq(field("type", $._type_name), field("name", $.identifier), ";"),
-
-    enum_definition: ($) =>
-      seq(
-        "enum",
-        field("name", $.identifier),
-        "{",
-        // The commaSep helper handles one or more comma-separated values
-        commaSep(field("value", $.identifier)),
-        "}",
-      ),
-
-    _event_parameter: ($) =>
-      choice($.indexed_event_parameter, $.unindexed_event_parameter),
-
-    indexed_event_parameter: ($) =>
-      seq(
-        field("type", $._type_name),
-        "indexed",
-        optional(field("name", $.identifier)),
-      ),
-
-    unindexed_event_parameter: ($) =>
-      seq(field("type", $._type_name), optional(field("name", $.identifier))),
-
-    // New helper rules for event/error parameters
-    event_parameter_list: ($) => commaSep($._event_parameter),
-    error_parameter_list: ($) => commaSep($.error_parameter),
-
-    // Updated event/error definitions
-    event_definition: ($) =>
-      seq(
-        "event",
-        field("name", $.identifier),
-        "(",
-        optional(field("parameters", $.event_parameter_list)),
-        ")",
-        optional($.anonymous),
-        ";",
-      ),
-
-    error_definition: ($) =>
-      seq(
-        "error",
-        field("name", $.identifier),
-        "(",
-        optional(field("parameters", $.error_parameter_list)),
-        ")",
-        ";",
-      ),
-
-    // Rule for the `anonymous` keyword
-    anonymous: ($) => "anonymous",
-
-    error_parameter: ($) =>
-      seq(field("type", $._type_name), optional(field("name", $.identifier))),
-
-    modifier_invocation: ($) =>
-      seq(
-        field("name", $.identifier_path),
-        optional(field("arguments", $.call_argument_list)),
-      ),
-
-    _constructor_attribute: ($) =>
-      choice(
-        field("visibility", $.visibility),
-        field("mutability", $.state_mutability),
-        // Use a different field name here to allow for multiple
-        field("invocation", $.modifier_invocation),
-      ),
-
-    constructor_definition: ($) =>
-      seq(
-        "constructor",
-        "(",
-        optional(field("parameters", $.parameter_list)),
-        ")",
-        repeat($._constructor_attribute),
-        field("body", $.block),
-      ),
-
-    _modifier_attribute: ($) =>
-      choice(
-        field("virtual", $.virtual),
-        field("override", $.override_specifier),
-      ),
-
-    modifier_definition: ($) =>
-      prec(
-        1,
-        seq(
-          "modifier",
-          field("name", $.identifier),
-          "(",
-          optional(field("parameters", $.parameter_list)),
-          ")",
-          repeat($._modifier_attribute),
-          choice(field("body", $.block), ";"),
-        ),
-      ),
-
-    // Add a helper rule for receive/fallback attributes
-    _function_like_attribute: ($) =>
-      choice(
-        field("visibility", $.visibility),
-        field("mutability", $.state_mutability),
-        field("modifier", $.modifier_invocation),
-        "virtual",
-        // TODO: add override_specifier here later
-      ),
-
-    override_specifier: ($) =>
-      seq(
-        "override",
-        optional(seq("(", commaSep(field("from", $.identifier_path)), ")")),
-      ),
-
-    // The receive function definition
-    receive_function_definition: ($) =>
-      seq(
-        "receive",
-        "(",
-        ")",
-        repeat($._function_like_attribute),
-        choice(field("body", $.block), ";"),
-      ),
-
-    // The fallback function definition
-    fallback_function_definition: ($) =>
-      seq(
-        "fallback",
-        "(",
-        optional(field("parameters", $.parameter_list)),
-        ")",
-        repeat($._function_like_attribute),
-        optional(
-          seq(
-            "returns",
-            "(",
-            optional(field("returns", $.parameter_list)),
-            ")",
-          ),
-        ),
-        choice(field("body", $.block), ";"),
-      ),
-
-    user_defined_value_type_definition: ($) =>
-      seq(
-        "type",
-        field("name", $.identifier),
-        "is",
-        field("underlying_type", $._elementary_type_name),
-        ";",
-      ),
 
     //************************************************************//
     //                           Types                            //
