@@ -7397,17 +7397,7 @@
     "fields": {
       "declaration": {
         "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "using_declaration",
-            "named": true
-          }
-        ]
-      },
-      "library": {
-        "multiple": false,
-        "required": false,
+        "required": true,
         "types": [
           {
             "type": "identifier",
@@ -7415,6 +7405,10 @@
           },
           {
             "type": "identifier_path",
+            "named": true
+          },
+          {
+            "type": "using_declaration",
             "named": true
           }
         ]

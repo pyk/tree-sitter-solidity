@@ -208,13 +208,10 @@ module.exports = grammar({
       seq(
         "using",
         choice(
-          // Here's the change: We now have a choice.
-          // `prec(1, $.identifier)` has higher precedence, so it will be
-          // chosen for single identifiers like `SafeMath`.
-          // `$.identifier_path` will be chosen for qualified names like `MyLib.utils`.
-          field("library", choice($.identifier_path, prec(1, $.identifier))),
-
-          // This part for destructuring `using { ... }` remains the same.
+          field(
+            "declaration",
+            choice($.identifier_path, prec(1, $.identifier)),
+          ),
           seq("{", commaSep(field("declaration", $.using_declaration)), "}"),
         ),
         "for",

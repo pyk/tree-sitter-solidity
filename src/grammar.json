@@ -438,7 +438,7 @@
           "members": [
             {
               "type": "FIELD",
-              "name": "library",
+              "name": "declaration",
               "content": {
                 "type": "CHOICE",
                 "members": [

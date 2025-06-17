@@ -8,7 +8,7 @@ using SafeMath for uint256;
 
 (source_file
   directive: (using
-    library: (identifier)
+    declaration: (identifier)
     target: (uint_type)))
 
 ==================
@@ -21,7 +21,7 @@ using SafeMath for *;
 
 (source_file
   directive: (using
-    library: (identifier)
+    declaration: (identifier)
     target: (wildcard_type)))
 
 ==================
@@ -68,7 +68,7 @@ using SafeMath for uint256 global;
 
 (source_file
   directive: (using
-    library: (identifier)
+    declaration: (identifier)
     target: (uint_type)
     (global_using)))
 
