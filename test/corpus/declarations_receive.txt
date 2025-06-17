@@ -11,11 +11,10 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      receive: (receive_function_definition
-        visibility: (visibility)
-        mutability: (state_mutability)
-        body: (block)))))
+    receive: (receive_function_definition
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block))))
 
 ==================
 Receive function with a body
@@ -33,31 +32,30 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      event: (event_definition
-        name: (identifier)
-        parameters: (event_parameter_list
-          (unindexed_event_parameter
-            type: (address_type))
-          (unindexed_event_parameter
-            type: (uint_type))))
-      receive: (receive_function_definition
-        visibility: (visibility)
-        mutability: (state_mutability)
-        body: (block
-          (emit_statement
-            (call_expression
-              function: (primary_expression
-                (identifier))
-              arguments: (call_argument_list
-                (member_access_expression
-                  object: (primary_expression
-                    (identifier))
-                  member: (identifier))
-                (member_access_expression
-                  object: (primary_expression
-                    (identifier))
-                  member: (identifier))))))))))
+    event: (event_definition
+      name: (identifier)
+      parameters: (event_parameter_list
+        (unindexed_event_parameter
+          type: (address_type))
+        (unindexed_event_parameter
+          type: (uint_type))))
+    receive: (receive_function_definition
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (emit_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (call_argument_list
+              (member_access_expression
+                object: (primary_expression
+                  (identifier))
+                member: (identifier))
+              (member_access_expression
+                object: (primary_expression
+                  (identifier))
+                member: (identifier)))))))))
 
 ==================
 Abstract receive function
@@ -72,7 +70,6 @@ abstract contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      receive: (receive_function_definition
-        visibility: (visibility)
-        mutability: (state_mutability)))))
+    receive: (receive_function_definition
+      visibility: (visibility)
+      mutability: (state_mutability))))

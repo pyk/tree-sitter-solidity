@@ -263,6 +263,39 @@ module.exports = grammar({
         ";",
       ),
 
+    //##########################################################//
+    //                         Contract                         //
+    //##########################################################//
+
+    contract: ($) =>
+      seq(
+        optional("abstract"),
+        "contract",
+        field("name", $.identifier),
+        optional(field("parents", $.parent_list)),
+        "{", // The body starts here
+        repeat(
+          choice(
+            field("state_variable", $.state_variable_declaration),
+            field("function", $.function_definition),
+            field("modifier", $.modifier_definition),
+            field("struct", $.struct_definition),
+            field("enum", $.enum_definition),
+            field("event", $.event_definition),
+            field("error", $.error_definition),
+            field("using", $.using_directive),
+            field(
+              "user_defined_value_type",
+              $.user_defined_value_type_definition,
+            ),
+            field("constructor", $.constructor_definition),
+            field("fallback", $.fallback_function_definition),
+            field("receive", $.receive_function_definition),
+          ),
+        ),
+        "}", // The body ends here
+      ),
+
     //************************************************************//
     //                        Definitions                         //
     //************************************************************//
@@ -271,14 +304,6 @@ module.exports = grammar({
      * The definition of a contract.
      * e.g., `contract MyContract is Ownable { ... }`
      */
-    contract: ($) =>
-      seq(
-        optional("abstract"),
-        "contract",
-        field("name", $.identifier),
-        optional(field("parents", $.parent_list)),
-        field("body", $.contract_body),
-      ),
 
     /**
      * The definition of an interface.
@@ -302,30 +327,6 @@ module.exports = grammar({
     /**
      * The body of a contract, enclosed in curly braces.
      */
-    contract_body: ($) =>
-      seq(
-        "{",
-        repeat(
-          choice(
-            field("state_variable", $.state_variable_declaration),
-            field("function", $.function_definition),
-            field("modifier", $.modifier_definition),
-            field("struct", $.struct_definition),
-            field("enum", $.enum_definition),
-            field("event", $.event_definition),
-            field("error", $.error_definition),
-            field("using", $.using_directive),
-            field(
-              "user_defined_value_type",
-              $.user_defined_value_type_definition,
-            ),
-            field("constructor", $.constructor_definition),
-            field("fallback", $.fallback_function_definition),
-            field("receive", $.receive_function_definition),
-          ),
-        ),
-        "}",
-      ),
 
     interface_body: ($) =>
       seq(

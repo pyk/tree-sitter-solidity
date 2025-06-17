@@ -8,8 +8,7 @@ contract MyContract {}
 
 (source_file
   (contract
-    name: (identifier)
-    body: (contract_body)))
+    name: (identifier)))
 
 ==================
 Abstract contract
@@ -21,8 +20,7 @@ abstract contract MyAbstractContract {}
 
 (source_file
   (contract
-    name: (identifier)
-    body: (contract_body)))
+    name: (identifier)))
 
 ==================
 Contract with simple inheritance
@@ -41,8 +39,7 @@ contract MyContract is Ownable, ReentrancyGuard {}
           (identifier)))
       (base_contract
         name: (identifier_path
-          (identifier))))
-    body: (contract_body)))
+          (identifier))))))
 
 ==================
 Contract with namespaced inheritance
@@ -63,8 +60,7 @@ contract Child is Parent.DeepParent {}
       (base_contract
         name: (identifier_path
           (identifier)
-          (identifier))))
-    body: (contract_body)))
+          (identifier))))))
 
 ==================
 Contract with constructor arguments
@@ -87,8 +83,7 @@ contract MyToken is ERC20("My Token", "MTK") {}
               (string_literal)))
           (primary_expression
             (literal
-              (string_literal))))))
-    body: (contract_body)))
+              (string_literal))))))))
 
 ==================
 Contract with empty constructor arguments
@@ -105,8 +100,7 @@ contract MyContract is ReentrancyGuard() {}
       (base_contract
         name: (identifier_path
           (identifier))
-        arguments: (call_argument_list)))
-    body: (contract_body)))
+        arguments: (call_argument_list)))))
 
 ==================
 Contract with mixed inheritance styles
@@ -140,5 +134,4 @@ contract MegaContract is Ownable, Parent.DeepParent, ERC20("Mega", "MGA"), Locka
       (base_contract
         name: (identifier_path
           (identifier))
-        arguments: (call_argument_list)))
-    body: (contract_body)))
+        arguments: (call_argument_list)))))

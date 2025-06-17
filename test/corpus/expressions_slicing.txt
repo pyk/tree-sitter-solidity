@@ -13,29 +13,28 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (bytes_type)
+          location: (data_location)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
             type: (bytes_type)
             location: (data_location)
-            name: (identifier)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (bytes_type)
-              location: (data_location)
-              name: (identifier))
-            value: (index_range_access_expression
-              base: (primary_expression
-                (identifier))
-              start: (primary_expression
-                (literal
-                  (number_literal)))
-              end: (primary_expression
-                (literal
-                  (number_literal))))))))))
+            name: (identifier))
+          value: (index_range_access_expression
+            base: (primary_expression
+              (identifier))
+            start: (primary_expression
+              (literal
+                (number_literal)))
+            end: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Slice with only end
@@ -52,26 +51,25 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (bytes_type)
+          location: (data_location)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
             type: (bytes_type)
             location: (data_location)
-            name: (identifier)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (bytes_type)
-              location: (data_location)
-              name: (identifier))
-            value: (index_range_access_expression
-              base: (primary_expression
-                (identifier))
-              end: (primary_expression
-                (literal
-                  (number_literal))))))))))
+            name: (identifier))
+          value: (index_range_access_expression
+            base: (primary_expression
+              (identifier))
+            end: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Slice with only start
@@ -88,26 +86,25 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (bytes_type)
+          location: (data_location)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
             type: (bytes_type)
             location: (data_location)
-            name: (identifier)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (bytes_type)
-              location: (data_location)
-              name: (identifier))
-            value: (index_range_access_expression
-              base: (primary_expression
-                (identifier))
-              start: (primary_expression
-                (literal
-                  (number_literal))))))))))
+            name: (identifier))
+          value: (index_range_access_expression
+            base: (primary_expression
+              (identifier))
+            start: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Interaction with member access
@@ -125,36 +122,35 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      struct: (struct_definition
-        name: (identifier)
-        (struct_member
-          type: (bytes_type)
+    struct: (struct_definition
+      name: (identifier)
+      (struct_member
+        type: (bytes_type)
+        name: (identifier)))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (user_defined_type
+            (identifier_path
+              (identifier)))
+          location: (data_location)
           name: (identifier)))
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (user_defined_type
-              (identifier_path
-                (identifier)))
+      visibility: (visibility)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bytes_type)
             location: (data_location)
-            name: (identifier)))
-        visibility: (visibility)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (bytes_type)
-              location: (data_location)
-              name: (identifier))
-            value: (index_range_access_expression
-              base: (member_access_expression
-                object: (primary_expression
-                  (identifier))
-                member: (identifier))
-              start: (primary_expression
-                (literal
-                  (number_literal)))
-              end: (primary_expression
-                (literal
-                  (number_literal))))))))))
+            name: (identifier))
+          value: (index_range_access_expression
+            base: (member_access_expression
+              object: (primary_expression
+                (identifier))
+              member: (identifier))
+            start: (primary_expression
+              (literal
+                (number_literal)))
+            end: (primary_expression
+              (literal
+                (number_literal)))))))))

@@ -13,21 +13,20 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (bool_type)
-              name: (identifier))
-            value: (logical_and_expression
-              left: (primary_expression
-                (literal
-                  (boolean_literal)))
-              right: (primary_expression
-                (literal
-                  (boolean_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bool_type)
+            name: (identifier))
+          value: (logical_and_expression
+            left: (primary_expression
+              (literal
+                (boolean_literal)))
+            right: (primary_expression
+              (literal
+                (boolean_literal)))))))))
 
 ==================
 Simple logical OR
@@ -44,21 +43,20 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (bool_type)
-              name: (identifier))
-            value: (logical_or_expression
-              left: (primary_expression
-                (literal
-                  (boolean_literal)))
-              right: (primary_expression
-                (literal
-                  (boolean_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bool_type)
+            name: (identifier))
+          value: (logical_or_expression
+            left: (primary_expression
+              (literal
+                (boolean_literal)))
+            right: (primary_expression
+              (literal
+                (boolean_literal)))))))))
 
 ==================
 Precedence of AND vs OR
@@ -76,32 +74,31 @@ contract C {
   (comment)
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (bool_type)
+          name: (identifier))
+        (parameter_declaration
+          type: (bool_type)
+          name: (identifier))
+        (parameter_declaration
+          type: (bool_type)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
             type: (bool_type)
             name: (identifier))
-          (parameter_declaration
-            type: (bool_type)
-            name: (identifier))
-          (parameter_declaration
-            type: (bool_type)
-            name: (identifier)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (bool_type)
-              name: (identifier))
-            value: (logical_or_expression
-              left: (logical_and_expression
-                left: (primary_expression
-                  (identifier))
-                right: (primary_expression
-                  (identifier)))
+          value: (logical_or_expression
+            left: (logical_and_expression
+              left: (primary_expression
+                (identifier))
               right: (primary_expression
-                (identifier)))))))))
+                (identifier)))
+            right: (primary_expression
+              (identifier))))))))
 
 ==================
 Interaction with equality operators
@@ -119,33 +116,32 @@ contract C {
   (comment)
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (uint_type)
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier))
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bool_type)
             name: (identifier))
-          (parameter_declaration
-            type: (uint_type)
-            name: (identifier)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (bool_type)
-              name: (identifier))
-            value: (logical_and_expression
-              left: (equality_expression
-                left: (primary_expression
-                  (identifier))
-                operator: (equality_operator)
-                right: (primary_expression
-                  (literal
-                    (number_literal))))
-              right: (equality_expression
-                left: (primary_expression
-                  (identifier))
-                operator: (equality_operator)
-                right: (primary_expression
-                  (literal
-                    (number_literal)))))))))))
+          value: (logical_and_expression
+            left: (equality_expression
+              left: (primary_expression
+                (identifier))
+              operator: (equality_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))
+            right: (equality_expression
+              left: (primary_expression
+                (identifier))
+              operator: (equality_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))

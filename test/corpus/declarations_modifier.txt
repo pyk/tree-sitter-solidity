@@ -13,11 +13,10 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      modifier: (modifier_definition
-        name: (identifier)
-        body: (block
-          (placeholder_statement))))))
+    modifier: (modifier_definition
+      name: (identifier)
+      body: (block
+        (placeholder_statement)))))
 
 ==================
 Modifier with parameters
@@ -34,15 +33,14 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      modifier: (modifier_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (uint_type)
-            name: (identifier)))
-        body: (block
-          (placeholder_statement))))))
+    modifier: (modifier_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier)))
+      body: (block
+        (placeholder_statement)))))
 
 ==================
 Abstract modifier
@@ -57,9 +55,8 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      modifier: (modifier_definition
-        name: (identifier)))))
+    modifier: (modifier_definition
+      name: (identifier))))
 
 ==================
 Virtual modifier
@@ -76,12 +73,11 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      modifier: (modifier_definition
-        name: (identifier)
-        virtual: (virtual)
-        body: (block
-          (placeholder_statement))))))
+    modifier: (modifier_definition
+      name: (identifier)
+      virtual: (virtual)
+      body: (block
+        (placeholder_statement)))))
 
 ==================
 Modifier with simple override
@@ -98,12 +94,11 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      modifier: (modifier_definition
-        name: (identifier)
-        override: (override_specifier)
-        body: (block
-          (placeholder_statement))))))
+    modifier: (modifier_definition
+      name: (identifier)
+      override: (override_specifier)
+      body: (block
+        (placeholder_statement)))))
 
 ==================
 Modifier with override and bases
@@ -120,13 +115,12 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      modifier: (modifier_definition
-        name: (identifier)
-        override: (override_specifier
-          from: (identifier_path
-            (identifier))
-          from: (identifier_path
-            (identifier)))
-        body: (block
-          (placeholder_statement))))))
+    modifier: (modifier_definition
+      name: (identifier)
+      override: (override_specifier
+        from: (identifier_path
+          (identifier))
+        from: (identifier_path
+          (identifier)))
+      body: (block
+        (placeholder_statement)))))

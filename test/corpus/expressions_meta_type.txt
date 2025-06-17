@@ -14,29 +14,28 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (user_defined_type
+            (identifier_path
+              (identifier)))
+          name: (identifier)))
+      body: (block
+        (expression_statement
+          (meta_type_expression
             type: (user_defined_type
               (identifier_path
-                (identifier)))
-            name: (identifier)))
-        body: (block
-          (expression_statement
-            (meta_type_expression
-              type: (user_defined_type
-                (identifier_path
-                  (identifier)))))
-          (expression_statement
-            (meta_type_expression
-              type: (uint_type)))
-          (expression_statement
-            (meta_type_expression
-              type: (user_defined_type
-                (identifier_path
-                  (identifier))))))))))
+                (identifier)))))
+        (expression_statement
+          (meta_type_expression
+            type: (uint_type)))
+        (expression_statement
+          (meta_type_expression
+            type: (user_defined_type
+              (identifier_path
+                (identifier)))))))))
 
 ==================
 Meta type with member access on a contract
@@ -52,21 +51,20 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (string_type)
-              location: (data_location)
-              name: (identifier))
-            value: (member_access_expression
-              object: (meta_type_expression
-                type: (user_defined_type
-                  (identifier_path
-                    (identifier))))
-              member: (identifier))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (string_type)
+            location: (data_location)
+            name: (identifier))
+          value: (member_access_expression
+            object: (meta_type_expression
+              type: (user_defined_type
+                (identifier_path
+                  (identifier))))
+            member: (identifier)))))))
 
 ==================
 Meta type with member access on an elementary type
@@ -82,15 +80,14 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (member_access_expression
-              object: (meta_type_expression
-                type: (uint_type))
-              member: (identifier))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (member_access_expression
+            object: (meta_type_expression
+              type: (uint_type))
+            member: (identifier)))))))

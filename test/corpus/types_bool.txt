@@ -11,10 +11,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (bool_type)
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (bool_type)
+      name: (identifier))))
 
 ==================
 Bool type as a function parameter
@@ -29,15 +28,14 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (bool_type)
-            name: (identifier)))
-        visibility: (visibility)
-        body: (block)))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (bool_type)
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block))))
 
 ==================
 Bool type as a return value
@@ -54,18 +52,17 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        visibility: (visibility)
-        returns: (parameter_list
-          (parameter_declaration
-            type: (bool_type)))
-        body: (block
-          (return_statement
-            value: (primary_expression
-              (literal
-                (boolean_literal)))))))))
+    function: (function_definition
+      name: (identifier)
+      visibility: (visibility)
+      returns: (parameter_list
+        (parameter_declaration
+          type: (bool_type)))
+      body: (block
+        (return_statement
+          value: (primary_expression
+            (literal
+              (boolean_literal))))))))
 
 ==================
 Bool type as a local variable
@@ -82,15 +79,14 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        visibility: (visibility)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (bool_type)
-              name: (identifier))
-            value: (primary_expression
-              (literal
-                (boolean_literal)))))))))
+    function: (function_definition
+      name: (identifier)
+      visibility: (visibility)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bool_type)
+            name: (identifier))
+          value: (primary_expression
+            (literal
+              (boolean_literal))))))))

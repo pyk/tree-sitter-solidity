@@ -11,10 +11,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (address_type)
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (address_type)
+      name: (identifier))))
 
 ==================
 State variable of type address payable
@@ -29,10 +28,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (address_type)
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (address_type)
+      name: (identifier))))
 
 ==================
 Address types as function parameters
@@ -47,18 +45,17 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (address_type)
-            name: (identifier))
-          (parameter_declaration
-            type: (address_type)
-            name: (identifier)))
-        visibility: (visibility)
-        body: (block)))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (address_type)
+          name: (identifier))
+        (parameter_declaration
+          type: (address_type)
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block))))
 
 ==================
 Address payable as a return value
@@ -75,15 +72,14 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        visibility: (visibility)
-        returns: (parameter_list
-          (parameter_declaration
-            type: (address_type)))
-        body: (block
-          (comment))))))
+    function: (function_definition
+      name: (identifier)
+      visibility: (visibility)
+      returns: (parameter_list
+        (parameter_declaration
+          type: (address_type)))
+      body: (block
+        (comment)))))
 
 ==================
 Address type as a local variable
@@ -100,19 +96,18 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        visibility: (visibility)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (address_type)
-              name: (identifier))
-            value: (member_access_expression
-              object: (primary_expression
-                (identifier))
-              member: (identifier))))))))
+    function: (function_definition
+      name: (identifier)
+      visibility: (visibility)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (address_type)
+            name: (identifier))
+          value: (member_access_expression
+            object: (primary_expression
+              (identifier))
+            member: (identifier)))))))
 
 ==================
 Payable conversion expression
@@ -129,23 +124,22 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (address_type)
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
             type: (address_type)
-            name: (identifier)))
-        visibility: (visibility)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (address_type)
-              name: (identifier))
-            value: (payable_conversion_expression
-              arguments: (call_argument_list
-                (primary_expression
-                  (identifier))))))))))
+            name: (identifier))
+          value: (payable_conversion_expression
+            arguments: (call_argument_list
+              (primary_expression
+                (identifier)))))))))
 
 ==================
 Payable conversion with member access
@@ -162,24 +156,23 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        visibility: (visibility)
-        mutability: (state_mutability)
-        body: (block
-          (expression_statement
-            (call_expression
-              function: (member_access_expression
-                object: (payable_conversion_expression
-                  arguments: (call_argument_list
-                    (member_access_expression
-                      object: (primary_expression
-                        (identifier))
-                      member: (identifier))))
-                member: (identifier))
-              arguments: (call_argument_list
-                (primary_expression
-                  (literal_with_subdenomination
-                    (number_literal)
-                    (subdenomination)))))))))))
+    function: (function_definition
+      name: (identifier)
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (member_access_expression
+              object: (payable_conversion_expression
+                arguments: (call_argument_list
+                  (member_access_expression
+                    object: (primary_expression
+                      (identifier))
+                    member: (identifier))))
+              member: (identifier))
+            arguments: (call_argument_list
+              (primary_expression
+                (literal_with_subdenomination
+                  (number_literal)
+                  (subdenomination))))))))))

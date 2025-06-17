@@ -11,11 +11,10 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (array_type
-          base: (uint_type))
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (array_type
+        base: (uint_type))
+      name: (identifier))))
 
 ==================
 Fixed-size array of an elementary type
@@ -30,14 +29,13 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (array_type
-          base: (address_type)
-          size: (primary_expression
-            (literal
-              (number_literal))))
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (array_type
+        base: (address_type)
+        size: (primary_expression
+          (literal
+            (number_literal))))
+      name: (identifier))))
 
 ==================
 Multi-dimensional array (dynamic array of fixed-size arrays)
@@ -52,15 +50,14 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (array_type
-          base: (array_type
-            base: (bool_type)
-            size: (primary_expression
-              (literal
-                (number_literal)))))
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (array_type
+        base: (array_type
+          base: (bool_type)
+          size: (primary_expression
+            (literal
+              (number_literal)))))
+      name: (identifier))))
 
 ==================
 Array of a struct type
@@ -78,18 +75,17 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      struct: (struct_definition
-        name: (identifier)
-        (struct_member
-          type: (uint_type)
-          name: (identifier)))
-      state_variable: (state_variable_declaration
-        type: (array_type
-          base: (user_defined_type
-            (identifier_path
-              (identifier))))
-        name: (identifier)))))
+    struct: (struct_definition
+      name: (identifier)
+      (struct_member
+        type: (uint_type)
+        name: (identifier)))
+    state_variable: (state_variable_declaration
+      type: (array_type
+        base: (user_defined_type
+          (identifier_path
+            (identifier))))
+      name: (identifier))))
 
 ==================
 Arrays as function parameters
@@ -104,22 +100,21 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (array_type
-              base: (uint_type))
-            location: (data_location)
-            name: (identifier))
-          (parameter_declaration
-            type: (array_type
-              base: (bool_type)
-              size: (primary_expression
-                (literal
-                  (number_literal))))
-            location: (data_location)
-            name: (identifier)))
-        visibility: (visibility)
-        body: (block)))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (array_type
+            base: (uint_type))
+          location: (data_location)
+          name: (identifier))
+        (parameter_declaration
+          type: (array_type
+            base: (bool_type)
+            size: (primary_expression
+              (literal
+                (number_literal))))
+          location: (data_location)
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block))))

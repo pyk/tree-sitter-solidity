@@ -12,11 +12,10 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      (comment)
-      state_variable: (state_variable_declaration
-        type: (uint_type)
-        name: (identifier)))))
+    (comment)
+    state_variable: (state_variable_declaration
+      type: (uint_type)
+      name: (identifier))))
 
 ==================
 Regular block comment
@@ -34,11 +33,10 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      (comment)
-      state_variable: (state_variable_declaration
-        type: (uint_type)
-        name: (identifier)))))
+    (comment)
+    state_variable: (state_variable_declaration
+      type: (uint_type)
+      name: (identifier))))
 
 ==================
 NatSpec single-line comment
@@ -54,12 +52,11 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      (comment)
-      function: (function_definition
-        name: (identifier)
-        visibility: (visibility)
-        body: (block)))))
+    (comment)
+    function: (function_definition
+      name: (identifier)
+      visibility: (visibility)
+      body: (block))))
 
 ==================
 NatSpec block comment
@@ -78,12 +75,11 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      (comment)
-      function: (function_definition
-        name: (identifier)
-        visibility: (visibility)
-        body: (block)))))
+    (comment)
+    function: (function_definition
+      name: (identifier)
+      visibility: (visibility)
+      body: (block))))
 
 ==================
 Mixed comments
@@ -102,5 +98,4 @@ contract C {}
   (comment)
   (comment)
   (contract
-    name: (identifier)
-    body: (contract_body)))
+    name: (identifier)))

@@ -11,27 +11,26 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (additive_expression
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (additive_expression
+            left: (primary_expression
+              (literal
+                (number_literal)))
+            operator: (additive_operator)
+            right: (multiplicative_expression
               left: (primary_expression
                 (literal
                   (number_literal)))
-              operator: (additive_operator)
-              right: (multiplicative_expression
-                left: (primary_expression
-                  (literal
-                    (number_literal)))
-                operator: (multiplicative_operator)
-                right: (primary_expression
-                  (literal
-                    (number_literal)))))))))))
+              operator: (multiplicative_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
 
 ==================
 Unary expressions
@@ -52,47 +51,46 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bool_type)
+            name: (identifier))
+          value: (unary_expression
+            argument: (primary_expression
+              (literal
+                (boolean_literal)))))
+        (variable_declaration_statement
+          declaration: (variable_declaration
             type: (uint_type)
-            name: (identifier)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (bool_type)
-              name: (identifier))
-            value: (unary_expression
-              argument: (primary_expression
-                (literal
-                  (boolean_literal)))))
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (unary_expression
-              argument: (primary_expression
-                (identifier))))
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (unary_expression
-              argument: (primary_expression
-                (identifier))))
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (unary_expression
-              argument: (primary_expression
-                (identifier))))
-          (expression_statement
-            (unary_expression
-              argument: (primary_expression
-                (identifier)))))))))
+            name: (identifier))
+          value: (unary_expression
+            argument: (primary_expression
+              (identifier))))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (unary_expression
+            argument: (primary_expression
+              (identifier))))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (unary_expression
+            argument: (primary_expression
+              (identifier))))
+        (expression_statement
+          (unary_expression
+            argument: (primary_expression
+              (identifier))))))))
 
 ==================
 Conditional expression
@@ -107,27 +105,26 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (bool_type)
-            name: (identifier)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (conditional_expression
-              condition: (primary_expression
-                (identifier))
-              consequence: (primary_expression
-                (literal
-                  (number_literal)))
-              alternative: (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (bool_type)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (conditional_expression
+            condition: (primary_expression
+              (identifier))
+            consequence: (primary_expression
+              (literal
+                (number_literal)))
+            alternative: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Nested conditional expression
@@ -142,36 +139,35 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (bool_type)
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (bool_type)
+          name: (identifier))
+        (parameter_declaration
+          type: (bool_type)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
             name: (identifier))
-          (parameter_declaration
-            type: (bool_type)
-            name: (identifier)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (conditional_expression
+          value: (conditional_expression
+            condition: (primary_expression
+              (identifier))
+            consequence: (primary_expression
+              (literal
+                (number_literal)))
+            alternative: (conditional_expression
               condition: (primary_expression
                 (identifier))
               consequence: (primary_expression
                 (literal
                   (number_literal)))
-              alternative: (conditional_expression
-                condition: (primary_expression
-                  (identifier))
-                consequence: (primary_expression
-                  (literal
-                    (number_literal)))
-                alternative: (primary_expression
-                  (literal
-                    (number_literal)))))))))))
+              alternative: (primary_expression
+                (literal
+                  (number_literal))))))))))
 
 ==================
 Comprehensive member access expressions
@@ -189,46 +185,45 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (address_type)
-              name: (identifier))
-            value: (member_access_expression
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (address_type)
+            name: (identifier))
+          value: (member_access_expression
+            object: (primary_expression
+              (identifier))
+            member: (identifier)))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (member_access_expression
+            object: (member_access_expression
               object: (primary_expression
                 (identifier))
-              member: (identifier)))
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (member_access_expression
-              object: (member_access_expression
-                object: (primary_expression
-                  (identifier))
-                member: (identifier))
-              member: (identifier)))
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (address_type)
-              name: (identifier))
-            value: (member_access_expression
-              object: (call_expression
-                function: (primary_expression
-                  (identifier))
-                arguments: (call_argument_list))
-              member: (identifier)))
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (address_type)
-              name: (identifier))
-            value: (member_access_expression
-              object: (primary_expression
+              member: (identifier))
+            member: (identifier)))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (address_type)
+            name: (identifier))
+          value: (member_access_expression
+            object: (call_expression
+              function: (primary_expression
                 (identifier))
-              member: (identifier))))))))
+              arguments: (call_argument_list))
+            member: (identifier)))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (address_type)
+            name: (identifier))
+          value: (member_access_expression
+            object: (primary_expression
+              (identifier))
+            member: (identifier)))))))
 
 ==================
 Index access expression
@@ -243,26 +238,25 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (array_type
-              base: (uint_type))
-            location: (data_location)
-            name: (identifier)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (index_access_expression
-              base: (primary_expression
-                (identifier))
-              index: (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (array_type
+            base: (uint_type))
+          location: (data_location)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (index_access_expression
+            base: (primary_expression
+              (identifier))
+            index: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 New expression
@@ -277,19 +271,18 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              (identifier_path
+                (identifier)))
+            name: (identifier))
+          value: (call_expression
+            function: (new_expression
               type: (user_defined_type
                 (identifier_path
-                  (identifier)))
-              name: (identifier))
-            value: (call_expression
-              function: (new_expression
-                type: (user_defined_type
-                  (identifier_path
-                    (identifier))))
-              arguments: (call_argument_list))))))))
+                  (identifier))))
+            arguments: (call_argument_list)))))))

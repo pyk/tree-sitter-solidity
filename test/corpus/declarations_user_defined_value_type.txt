@@ -24,10 +24,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      user_defined_value_type: (user_defined_value_type_definition
-        name: (identifier)
-        underlying_type: (bool_type)))))
+    user_defined_value_type: (user_defined_value_type_definition
+      name: (identifier)
+      underlying_type: (bool_type))))
 
 ==================
 Usage of a user-defined value type
@@ -47,13 +46,12 @@ contract C {
     underlying_type: (address_type))
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (user_defined_type
-          (identifier_path
-            (identifier)))
-        visibility: (visibility)
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (user_defined_type
+        (identifier_path
+          (identifier)))
+      visibility: (visibility)
+      name: (identifier))))
 
 ==================
 User-defined value type based on bytes

@@ -12,21 +12,20 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (expression_statement
-            (call_expression
-              function: (primary_expression
-                (identifier))
-              arguments: (call_argument_list
-                (primary_expression
-                  (literal
-                    (number_literal)))
-                (primary_expression
-                  (literal
-                    (boolean_literal)))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (call_argument_list
+              (primary_expression
+                (literal
+                  (number_literal)))
+              (primary_expression
+                (literal
+                  (boolean_literal))))))))))
 
 ==================
 Function call with value option
@@ -42,21 +41,20 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (expression_statement
-            (call_expression
-              function: (primary_expression
-                (identifier))
-              options: (call_options_block
-                (named_argument
-                  name: (identifier)
-                  value: (primary_expression
-                    (literal
-                      (number_literal)))))
-              arguments: (call_argument_list))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            options: (call_options_block
+              (named_argument
+                name: (identifier)
+                value: (primary_expression
+                  (literal
+                    (number_literal)))))
+            arguments: (call_argument_list)))))))
 
 ==================
 Function call with gas option
@@ -72,21 +70,20 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (expression_statement
-            (call_expression
-              function: (primary_expression
-                (identifier))
-              options: (call_options_block
-                (named_argument
-                  name: (identifier)
-                  value: (primary_expression
-                    (literal
-                      (number_literal)))))
-              arguments: (call_argument_list))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            options: (call_options_block
+              (named_argument
+                name: (identifier)
+                value: (primary_expression
+                  (literal
+                    (number_literal)))))
+            arguments: (call_argument_list)))))))
 
 ==================
 Function call with both value and gas options
@@ -102,26 +99,25 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (expression_statement
-            (call_expression
-              function: (primary_expression
-                (identifier))
-              options: (call_options_block
-                (named_argument
-                  name: (identifier)
-                  value: (primary_expression
-                    (literal
-                      (number_literal))))
-                (named_argument
-                  name: (identifier)
-                  value: (primary_expression
-                    (literal
-                      (number_literal)))))
-              arguments: (call_argument_list))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            options: (call_options_block
+              (named_argument
+                name: (identifier)
+                value: (primary_expression
+                  (literal
+                    (number_literal))))
+              (named_argument
+                name: (identifier)
+                value: (primary_expression
+                  (literal
+                    (number_literal)))))
+            arguments: (call_argument_list)))))))
 
 ==================
 Function call options with arguments
@@ -137,24 +133,23 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (expression_statement
-            (call_expression
-              function: (primary_expression
-                (identifier))
-              options: (call_options_block
-                (named_argument
-                  name: (identifier)
-                  value: (primary_expression
-                    (literal
-                      (number_literal)))))
-              arguments: (call_argument_list
-                (primary_expression
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            options: (call_options_block
+              (named_argument
+                name: (identifier)
+                value: (primary_expression
                   (literal
-                    (boolean_literal)))))))))))
+                    (number_literal)))))
+            arguments: (call_argument_list
+              (primary_expression
+                (literal
+                  (boolean_literal))))))))))
 
 ==================
 Function call options on a member access
@@ -169,20 +164,19 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (expression_statement
-            (call_expression
-              function: (member_access_expression
-                object: (primary_expression
-                  (identifier))
-                member: (identifier))
-              options: (call_options_block
-                (named_argument
-                  name: (identifier)
-                  value: (primary_expression
-                    (literal
-                      (number_literal)))))
-              arguments: (call_argument_list))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (member_access_expression
+              object: (primary_expression
+                (identifier))
+              member: (identifier))
+            options: (call_options_block
+              (named_argument
+                name: (identifier)
+                value: (primary_expression
+                  (literal
+                    (number_literal)))))
+            arguments: (call_argument_list)))))))

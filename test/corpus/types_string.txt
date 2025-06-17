@@ -11,10 +11,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (string_type)
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (string_type)
+      name: (identifier))))
 
 ==================
 String type as a function parameter
@@ -29,16 +28,15 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (string_type)
-            location: (data_location)
-            name: (identifier)))
-        visibility: (visibility)
-        body: (block)))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (string_type)
+          location: (data_location)
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block))))
 
 ==================
 String type as a local variable
@@ -55,16 +53,15 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        visibility: (visibility)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (string_type)
-              location: (data_location)
-              name: (identifier))
-            value: (primary_expression
-              (literal
-                (string_literal)))))))))
+    function: (function_definition
+      name: (identifier)
+      visibility: (visibility)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (string_type)
+            location: (data_location)
+            name: (identifier))
+          value: (primary_expression
+            (literal
+              (string_literal))))))))

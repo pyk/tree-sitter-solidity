@@ -11,9 +11,8 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      constructor: (constructor_definition
-        body: (block)))))
+    constructor: (constructor_definition
+      body: (block))))
 
 ==================
 Constructor with parameters
@@ -28,17 +27,16 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      constructor: (constructor_definition
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (uint_type)
-            name: (identifier))
-          (parameter_declaration
-            type: (string_type)
-            location: (data_location)
-            name: (identifier)))
-        body: (block)))))
+    constructor: (constructor_definition
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier))
+        (parameter_declaration
+          type: (string_type)
+          location: (data_location)
+          name: (identifier)))
+      body: (block))))
 
 ==================
 Payable constructor
@@ -53,10 +51,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      constructor: (constructor_definition
-        mutability: (state_mutability)
-        body: (block)))))
+    constructor: (constructor_definition
+      mutability: (state_mutability)
+      body: (block))))
 
 ==================
 Internal constructor (for abstract contracts)
@@ -71,10 +68,9 @@ abstract contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      constructor: (constructor_definition
-        visibility: (visibility)
-        body: (block)))))
+    constructor: (constructor_definition
+      visibility: (visibility)
+      body: (block))))
 
 ==================
 Constructor with parameters and attributes
@@ -91,16 +87,15 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      constructor: (constructor_definition
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (uint_type)
-            name: (identifier)))
-        visibility: (visibility)
-        mutability: (state_mutability)
-        body: (block
-          (comment))))))
+    constructor: (constructor_definition
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (comment)))))
 
 ==================
 Constructor with a modifier
@@ -118,16 +113,15 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      modifier: (modifier_definition
-        name: (identifier)
-        body: (block
-          (placeholder_statement)))
-      constructor: (constructor_definition
-        invocation: (modifier_invocation
-          name: (identifier_path
-            (identifier)))
-        body: (block)))))
+    modifier: (modifier_definition
+      name: (identifier)
+      body: (block
+        (placeholder_statement)))
+    constructor: (constructor_definition
+      invocation: (modifier_invocation
+        name: (identifier_path
+          (identifier)))
+      body: (block))))
 
 ==================
 Constructor with base constructor invocation
@@ -148,24 +142,23 @@ contract MyToken is ERC20 {
       (base_contract
         name: (identifier_path
           (identifier))))
-    body: (contract_body
-      constructor: (constructor_definition
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (string_type)
-            location: (data_location)
-            name: (identifier))
-          (parameter_declaration
-            type: (string_type)
-            location: (data_location)
-            name: (identifier)))
-        invocation: (modifier_invocation
-          name: (identifier_path
+    constructor: (constructor_definition
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (string_type)
+          location: (data_location)
+          name: (identifier))
+        (parameter_declaration
+          type: (string_type)
+          location: (data_location)
+          name: (identifier)))
+      invocation: (modifier_invocation
+        name: (identifier_path
+          (identifier))
+        arguments: (call_argument_list
+          (primary_expression
             (identifier))
-          arguments: (call_argument_list
-            (primary_expression
-              (identifier))
-            (primary_expression
-              (identifier))))
-        body: (block
-          (comment))))))
+          (primary_expression
+            (identifier))))
+      body: (block
+        (comment)))))

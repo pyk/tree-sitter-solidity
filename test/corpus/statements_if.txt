@@ -14,31 +14,30 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (uint_type)
-            name: (identifier)))
-        body: (block
-          (if_statement
-            condition: (comparison_expression
-              left: (primary_expression
-                (identifier))
-              operator: (comparison_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
-            consequence: (block
-              (expression_statement
-                (assignment_expression
-                  left: (primary_expression
-                    (identifier))
-                  operator: (simple_assignment_operator)
-                  right: (primary_expression
-                    (literal
-                      (number_literal))))))))))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier)))
+      body: (block
+        (if_statement
+          condition: (comparison_expression
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_operator)
+            right: (primary_expression
+              (literal
+                (number_literal))))
+          consequence: (block
+            (expression_statement
+              (assignment_expression
+                left: (primary_expression
+                  (identifier))
+                operator: (simple_assignment_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal)))))))))))
 
 ==================
 If-else statement
@@ -58,40 +57,39 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (uint_type)
-            name: (identifier)))
-        body: (block
-          (if_statement
-            condition: (comparison_expression
-              left: (primary_expression
-                (identifier))
-              operator: (comparison_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
-            consequence: (block
-              (expression_statement
-                (assignment_expression
-                  left: (primary_expression
-                    (identifier))
-                  operator: (simple_assignment_operator)
-                  right: (primary_expression
-                    (literal
-                      (number_literal))))))
-            alternative: (block
-              (expression_statement
-                (assignment_expression
-                  left: (primary_expression
-                    (identifier))
-                  operator: (simple_assignment_operator)
-                  right: (primary_expression
-                    (literal
-                      (number_literal))))))))))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier)))
+      body: (block
+        (if_statement
+          condition: (comparison_expression
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_operator)
+            right: (primary_expression
+              (literal
+                (number_literal))))
+          consequence: (block
+            (expression_statement
+              (assignment_expression
+                left: (primary_expression
+                  (identifier))
+                operator: (simple_assignment_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal))))))
+          alternative: (block
+            (expression_statement
+              (assignment_expression
+                left: (primary_expression
+                  (identifier))
+                operator: (simple_assignment_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal)))))))))))
 
 ==================
 If-else if-else statement chain
@@ -113,15 +111,31 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (uint_type)
-            name: (identifier)))
-        body: (block
-          (if_statement
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier)))
+      body: (block
+        (if_statement
+          condition: (equality_expression
+            left: (primary_expression
+              (identifier))
+            operator: (equality_operator)
+            right: (primary_expression
+              (literal
+                (number_literal))))
+          consequence: (block
+            (expression_statement
+              (assignment_expression
+                left: (primary_expression
+                  (identifier))
+                operator: (simple_assignment_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal))))))
+          alternative: (if_statement
             condition: (equality_expression
               left: (primary_expression
                 (identifier))
@@ -138,29 +152,12 @@ contract C {
                   right: (primary_expression
                     (literal
                       (number_literal))))))
-            alternative: (if_statement
-              condition: (equality_expression
-                left: (primary_expression
-                  (identifier))
-                operator: (equality_operator)
-                right: (primary_expression
-                  (literal
-                    (number_literal))))
-              consequence: (block
-                (expression_statement
-                  (assignment_expression
-                    left: (primary_expression
-                      (identifier))
-                    operator: (simple_assignment_operator)
-                    right: (primary_expression
-                      (literal
-                        (number_literal))))))
-              alternative: (block
-                (expression_statement
-                  (assignment_expression
-                    left: (primary_expression
-                      (identifier))
-                    operator: (simple_assignment_operator)
-                    right: (primary_expression
-                      (literal
-                        (number_literal)))))))))))))
+            alternative: (block
+              (expression_statement
+                (assignment_expression
+                  left: (primary_expression
+                    (identifier))
+                  operator: (simple_assignment_operator)
+                  right: (primary_expression
+                    (literal
+                      (number_literal))))))))))))

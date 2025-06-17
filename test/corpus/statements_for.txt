@@ -14,30 +14,29 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (for_statement
-            initializer: (variable_declaration_statement
-              declaration: (variable_declaration
-                type: (uint_type)
-                name: (identifier))
-              value: (primary_expression
-                (literal
-                  (number_literal))))
-            condition: (comparison_expression
-              left: (primary_expression
-                (identifier))
-              operator: (comparison_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
-            update: (unary_expression
-              argument: (primary_expression
-                (identifier)))
-            body: (block
-              (comment))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (for_statement
+          initializer: (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (uint_type)
+              name: (identifier))
+            value: (primary_expression
+              (literal
+                (number_literal))))
+          condition: (comparison_expression
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_operator)
+            right: (primary_expression
+              (literal
+                (number_literal))))
+          update: (unary_expression
+            argument: (primary_expression
+              (identifier)))
+          body: (block
+            (comment)))))))
 
 ==================
 Infinite for loop
@@ -55,13 +54,12 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (for_statement
-            body: (block
-              (break_statement))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (for_statement
+          body: (block
+            (break_statement)))))))
 
 ==================
 For loop with only a condition (while loop)
@@ -80,24 +78,23 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier)))
-          (for_statement
-            condition: (comparison_expression
-              left: (primary_expression
-                (identifier))
-              operator: (comparison_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
-            body: (block
-              (expression_statement
-                (unary_expression
-                  argument: (primary_expression
-                    (identifier)))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier)))
+        (for_statement
+          condition: (comparison_expression
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_operator)
+            right: (primary_expression
+              (literal
+                (number_literal))))
+          body: (block
+            (expression_statement
+              (unary_expression
+                argument: (primary_expression
+                  (identifier))))))))))

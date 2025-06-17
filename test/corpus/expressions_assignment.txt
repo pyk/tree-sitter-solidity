@@ -13,22 +13,21 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier)))
-          (expression_statement
-            (assignment_expression
-              left: (primary_expression
-                (identifier))
-              operator: (simple_assignment_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier)))
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (simple_assignment_operator)
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Compound additive assignment
@@ -45,22 +44,21 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier)))
-          (expression_statement
-            (assignment_expression
-              left: (primary_expression
-                (identifier))
-              operator: (compound_assignment_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier)))
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (compound_assignment_operator)
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Compound multiplicative assignment
@@ -77,22 +75,21 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier)))
-          (expression_statement
-            (assignment_expression
-              left: (primary_expression
-                (identifier))
-              operator: (compound_assignment_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier)))
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (compound_assignment_operator)
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Compound bitwise assignment
@@ -109,22 +106,21 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier)))
-          (expression_statement
-            (assignment_expression
-              left: (primary_expression
-                (identifier))
-              operator: (compound_assignment_operator)
-              right: (primary_expression
-                (literal
-                  (hex_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier)))
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (compound_assignment_operator)
+            right: (primary_expression
+              (literal
+                (hex_literal)))))))))
 
 ==================
 Compound shift assignment
@@ -141,19 +137,18 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier)))
-          (expression_statement
-            (assignment_expression
-              left: (primary_expression
-                (identifier))
-              operator: (compound_assignment_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier)))
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (compound_assignment_operator)
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))

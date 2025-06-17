@@ -12,14 +12,13 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier)))))))
 
 ==================
 Local variable with initializer
@@ -34,17 +33,16 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (primary_expression
-              (literal
-                (number_literal)))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (primary_expression
+            (literal
+              (number_literal))))))))
 
 ==================
 Tuple declaration
@@ -59,25 +57,24 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration_tuple
-              (variable_declaration
-                type: (uint_type)
-                name: (identifier))
-              (variable_declaration
-                type: (bool_type)
-                name: (identifier)))
-            value: (tuple_expression
-              (primary_expression
-                (literal
-                  (number_literal)))
-              (primary_expression
-                (literal
-                  (boolean_literal)))
-              (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration_tuple
+            (variable_declaration
+              type: (uint_type)
+              name: (identifier))
+            (variable_declaration
+              type: (bool_type)
+              name: (identifier)))
+          value: (tuple_expression
+            (primary_expression
+              (literal
+                (number_literal)))
+            (primary_expression
+              (literal
+                (boolean_literal)))
+            (primary_expression
+              (literal
+                (number_literal)))))))))

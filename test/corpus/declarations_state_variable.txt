@@ -10,10 +10,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (uint_type)
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (uint_type)
+      name: (identifier))))
 
 ==================
 Public constant state variable with initializer
@@ -27,15 +26,14 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (string_type)
-        visibility: (visibility)
-        mutability: (mutability)
-        name: (identifier)
-        value: (primary_expression
-          (literal
-            (string_literal)))))))
+    state_variable: (state_variable_declaration
+      type: (string_type)
+      visibility: (visibility)
+      mutability: (mutability)
+      name: (identifier)
+      value: (primary_expression
+        (literal
+          (string_literal))))))
 
 ==================
 Immutable state variable
@@ -49,12 +47,11 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (address_type)
-        visibility: (visibility)
-        mutability: (mutability)
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (address_type)
+      visibility: (visibility)
+      mutability: (mutability)
+      name: (identifier))))
 
 ==================
 Overriding state variable
@@ -86,12 +83,11 @@ contract C is I {
       (base_contract
         name: (identifier_path
           (identifier))))
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (string_type)
-        visibility: (visibility)
-        override: (override_specifier)
-        name: (identifier)
-        value: (primary_expression
-          (literal
-            (string_literal)))))))
+    state_variable: (state_variable_declaration
+      type: (string_type)
+      visibility: (visibility)
+      override: (override_specifier)
+      name: (identifier)
+      value: (primary_expression
+        (literal
+          (string_literal))))))

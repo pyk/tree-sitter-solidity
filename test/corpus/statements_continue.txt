@@ -17,36 +17,35 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (for_statement
-            initializer: (variable_declaration_statement
-              declaration: (variable_declaration
-                type: (uint_type)
-                name: (identifier))
-              value: (primary_expression
-                (literal
-                  (number_literal))))
-            condition: (comparison_expression
-              left: (primary_expression
-                (identifier))
-              operator: (comparison_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
-            update: (unary_expression
-              argument: (primary_expression
-                (identifier)))
-            body: (block
-              (if_statement
-                condition: (equality_expression
-                  left: (primary_expression
-                    (identifier))
-                  operator: (equality_operator)
-                  right: (primary_expression
-                    (literal
-                      (number_literal))))
-                consequence: (block
-                  (continue_statement))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (for_statement
+          initializer: (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (uint_type)
+              name: (identifier))
+            value: (primary_expression
+              (literal
+                (number_literal))))
+          condition: (comparison_expression
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_operator)
+            right: (primary_expression
+              (literal
+                (number_literal))))
+          update: (unary_expression
+            argument: (primary_expression
+              (identifier)))
+          body: (block
+            (if_statement
+              condition: (equality_expression
+                left: (primary_expression
+                  (identifier))
+                operator: (equality_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal))))
+              consequence: (block
+                (continue_statement)))))))))

@@ -12,17 +12,16 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (array_type
-                base: (uint_type))
-              location: (data_location)
-              name: (identifier))
-            value: (inline_array_expression)))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (array_type
+              base: (uint_type))
+            location: (data_location)
+            name: (identifier))
+          value: (inline_array_expression))))))
 
 ==================
 Inline array with a single element
@@ -38,20 +37,19 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (array_type
-                base: (uint_type))
-              location: (data_location)
-              name: (identifier))
-            value: (inline_array_expression
-              (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (array_type
+              base: (uint_type))
+            location: (data_location)
+            name: (identifier))
+          value: (inline_array_expression
+            (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Inline array with multiple elements
@@ -67,26 +65,25 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (array_type
-                base: (bytes_type))
-              location: (data_location)
-              name: (identifier))
-            value: (inline_array_expression
-              (primary_expression
-                (literal
-                  (string_literal)))
-              (primary_expression
-                (literal
-                  (string_literal)))
-              (primary_expression
-                (literal
-                  (string_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (array_type
+              base: (bytes_type))
+            location: (data_location)
+            name: (identifier))
+          value: (inline_array_expression
+            (primary_expression
+              (literal
+                (string_literal)))
+            (primary_expression
+              (literal
+                (string_literal)))
+            (primary_expression
+              (literal
+                (string_literal)))))))))
 
 ==================
 Nested inline array
@@ -102,29 +99,28 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (array_type
-                base: (array_type
-                  base: (uint_type)))
-              location: (data_location)
-              name: (identifier))
-            value: (inline_array_expression
-              (inline_array_expression
-                (primary_expression
-                  (literal
-                    (number_literal)))
-                (primary_expression
-                  (literal
-                    (number_literal))))
-              (inline_array_expression
-                (primary_expression
-                  (literal
-                    (number_literal)))
-                (primary_expression
-                  (literal
-                    (number_literal)))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (array_type
+              base: (array_type
+                base: (uint_type)))
+            location: (data_location)
+            name: (identifier))
+          value: (inline_array_expression
+            (inline_array_expression
+              (primary_expression
+                (literal
+                  (number_literal)))
+              (primary_expression
+                (literal
+                  (number_literal))))
+            (inline_array_expression
+              (primary_expression
+                (literal
+                  (number_literal)))
+              (primary_expression
+                (literal
+                  (number_literal))))))))))

@@ -13,22 +13,21 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (address_type)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
             type: (address_type)
-            name: (identifier)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (address_type)
-              name: (identifier))
-            value: (payable_conversion_expression
-              arguments: (call_argument_list
-                (primary_expression
-                  (identifier))))))))))
+            name: (identifier))
+          value: (payable_conversion_expression
+            arguments: (call_argument_list
+              (primary_expression
+                (identifier)))))))))
 
 ==================
 Payable conversion with member access
@@ -44,24 +43,23 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (address_type)
-            name: (identifier)))
-        body: (block
-          (expression_statement
-            (call_expression
-              function: (member_access_expression
-                object: (payable_conversion_expression
-                  arguments: (call_argument_list
-                    (primary_expression
-                      (identifier))))
-                member: (identifier))
-              arguments: (call_argument_list
-                (primary_expression
-                  (literal_with_subdenomination
-                    (number_literal)
-                    (subdenomination)))))))))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (address_type)
+          name: (identifier)))
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (member_access_expression
+              object: (payable_conversion_expression
+                arguments: (call_argument_list
+                  (primary_expression
+                    (identifier))))
+              member: (identifier))
+            arguments: (call_argument_list
+              (primary_expression
+                (literal_with_subdenomination
+                  (number_literal)
+                  (subdenomination))))))))))

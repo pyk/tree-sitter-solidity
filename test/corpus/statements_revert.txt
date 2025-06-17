@@ -14,16 +14,15 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      error: (error_definition
-        name: (identifier))
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (revert_statement
-            error: (identifier_path
-              (identifier))
-            arguments: (call_argument_list)))))))
+    error: (error_definition
+      name: (identifier))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (revert_statement
+          error: (identifier_path
+            (identifier))
+          arguments: (call_argument_list))))))
 
 ==================
 Revert with an error that has arguments
@@ -41,32 +40,31 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      error: (error_definition
-        name: (identifier)
-        parameters: (error_parameter_list
-          (error_parameter
-            type: (uint_type)
-            name: (identifier))
-          (error_parameter
-            type: (uint_type)
-            name: (identifier))))
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (uint_type)
-            name: (identifier)))
-        body: (block
-          (revert_statement
-            error: (identifier_path
+    error: (error_definition
+      name: (identifier)
+      parameters: (error_parameter_list
+        (error_parameter
+          type: (uint_type)
+          name: (identifier))
+        (error_parameter
+          type: (uint_type)
+          name: (identifier))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier)))
+      body: (block
+        (revert_statement
+          error: (identifier_path
+            (identifier))
+          arguments: (call_argument_list
+            (primary_expression
               (identifier))
-            arguments: (call_argument_list
-              (primary_expression
-                (identifier))
-              (primary_expression
-                (literal
-                  (number_literal))))))))))
+            (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Revert with a namespaced error
@@ -86,18 +84,17 @@ contract C {
     path: (string_literal))
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (uint_type)
-            name: (identifier)))
-        body: (block
-          (revert_statement
-            error: (identifier_path
-              (identifier)
-              (identifier))
-            arguments: (call_argument_list
-              (primary_expression
-                (identifier)))))))))
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier)))
+      body: (block
+        (revert_statement
+          error: (identifier_path
+            (identifier)
+            (identifier))
+          arguments: (call_argument_list
+            (primary_expression
+              (identifier))))))))

@@ -13,21 +13,20 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (exponentiation_expression
-              left: (primary_expression
-                (literal
-                  (number_literal)))
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (exponentiation_expression
+            left: (primary_expression
+              (literal
+                (number_literal)))
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Right-associativity of exponentiation
@@ -44,25 +43,24 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (exponentiation_expression
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (exponentiation_expression
+            left: (primary_expression
+              (literal
+                (number_literal)))
+            right: (exponentiation_expression
               left: (primary_expression
                 (literal
                   (number_literal)))
-              right: (exponentiation_expression
-                left: (primary_expression
-                  (literal
-                    (number_literal)))
-                right: (primary_expression
-                  (literal
-                    (number_literal)))))))))))
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
 
 ==================
 Precedence over multiplication
@@ -79,26 +77,25 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (multiplicative_expression
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (multiplicative_expression
+            left: (primary_expression
+              (literal
+                (number_literal)))
+            operator: (multiplicative_operator)
+            right: (exponentiation_expression
               left: (primary_expression
                 (literal
                   (number_literal)))
-              operator: (multiplicative_operator)
-              right: (exponentiation_expression
-                left: (primary_expression
-                  (literal
-                    (number_literal)))
-                right: (primary_expression
-                  (literal
-                    (number_literal)))))))))))
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
 
 ==================
 Precedence over addition
@@ -115,26 +112,25 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (additive_expression
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (additive_expression
+            left: (primary_expression
+              (literal
+                (number_literal)))
+            operator: (additive_operator)
+            right: (exponentiation_expression
               left: (primary_expression
                 (literal
                   (number_literal)))
-              operator: (additive_operator)
-              right: (exponentiation_expression
-                left: (primary_expression
-                  (literal
-                    (number_literal)))
-                right: (primary_expression
-                  (literal
-                    (number_literal)))))))))))
+              right: (primary_expression
+                (literal
+                  (number_literal))))))))))
 
 ==================
 Interaction with unary minus
@@ -151,22 +147,21 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (int_type)
-              name: (identifier))
-            value: (exponentiation_expression
-              left: (unary_expression
-                argument: (primary_expression
-                  (literal
-                    (number_literal))))
-              right: (primary_expression
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (int_type)
+            name: (identifier))
+          value: (exponentiation_expression
+            left: (unary_expression
+              argument: (primary_expression
                 (literal
-                  (number_literal))))))))))
+                  (number_literal))))
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Parentheses overriding precedence
@@ -183,27 +178,26 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (exponentiation_expression
-              left: (tuple_expression
-                (additive_expression
-                  left: (primary_expression
-                    (literal
-                      (number_literal)))
-                  operator: (additive_operator)
-                  right: (primary_expression
-                    (literal
-                      (number_literal)))))
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (exponentiation_expression
+            left: (tuple_expression
+              (additive_expression
+                left: (primary_expression
+                  (literal
+                    (number_literal)))
+                operator: (additive_operator)
+                right: (primary_expression
+                  (literal
+                    (number_literal)))))
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Top-level constant with exponentiation

@@ -11,10 +11,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (uint_type)
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (uint_type)
+      name: (identifier))))
 
 ==================
 State variable of type uint256
@@ -29,10 +28,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (uint_type)
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (uint_type)
+      name: (identifier))))
 
 ==================
 State variable of type uint8
@@ -47,10 +45,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      state_variable: (state_variable_declaration
-        type: (uint_type)
-        name: (identifier)))))
+    state_variable: (state_variable_declaration
+      type: (uint_type)
+      name: (identifier))))
 
 ==================
 Uint types in a function definition
@@ -68,31 +65,30 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        parameters: (parameter_list
-          (parameter_declaration
+    function: (function_definition
+      name: (identifier)
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier))
+        (parameter_declaration
+          type: (uint_type)
+          name: (identifier)))
+      visibility: (visibility)
+      returns: (parameter_list
+        (parameter_declaration
+          type: (uint_type)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          (parameter_declaration
-            type: (uint_type)
-            name: (identifier)))
-        visibility: (visibility)
-        returns: (parameter_list
-          (parameter_declaration
-            type: (uint_type)))
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (additive_expression
-              left: (primary_expression
-                (identifier))
-              operator: (additive_operator)
-              right: (primary_expression
-                (identifier))))
-          (return_statement
-            value: (primary_expression
-              (identifier))))))))
+          value: (additive_expression
+            left: (primary_expression
+              (identifier))
+            operator: (additive_operator)
+            right: (primary_expression
+              (identifier))))
+        (return_statement
+          value: (primary_expression
+            (identifier)))))))

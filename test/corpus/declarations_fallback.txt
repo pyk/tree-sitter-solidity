@@ -11,10 +11,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      fallback: (fallback_function_definition
-        visibility: (visibility)
-        body: (block)))))
+    fallback: (fallback_function_definition
+      visibility: (visibility)
+      body: (block))))
 
 ==================
 Payable fallback function
@@ -29,11 +28,10 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      fallback: (fallback_function_definition
-        visibility: (visibility)
-        mutability: (state_mutability)
-        body: (block)))))
+    fallback: (fallback_function_definition
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block))))
 
 ==================
 Fallback with parameters and returns
@@ -50,23 +48,22 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      fallback: (fallback_function_definition
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (bytes_type)
-            location: (data_location)
-            name: (identifier)))
-        visibility: (visibility)
-        mutability: (state_mutability)
-        returns: (parameter_list
-          (parameter_declaration
-            type: (bytes_type)
-            location: (data_location)))
-        body: (block
-          (return_statement
-            value: (primary_expression
-              (identifier))))))))
+    fallback: (fallback_function_definition
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (bytes_type)
+          location: (data_location)
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        (parameter_declaration
+          type: (bytes_type)
+          location: (data_location)))
+      body: (block
+        (return_statement
+          value: (primary_expression
+            (identifier)))))))
 
 ==================
 Abstract fallback function
@@ -81,15 +78,14 @@ abstract contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      fallback: (fallback_function_definition
-        parameters: (parameter_list
-          (parameter_declaration
-            type: (bytes_type)
-            location: (data_location)))
-        visibility: (visibility)
-        mutability: (state_mutability)
-        returns: (parameter_list
-          (parameter_declaration
-            type: (bytes_type)
-            location: (data_location)))))))
+    fallback: (fallback_function_definition
+      parameters: (parameter_list
+        (parameter_declaration
+          type: (bytes_type)
+          location: (data_location)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        (parameter_declaration
+          type: (bytes_type)
+          location: (data_location))))))

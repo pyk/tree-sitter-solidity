@@ -2226,42 +2226,6 @@
     "type": "contract",
     "named": true,
     "fields": {
-      "body": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "contract_body",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "parents": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "parent_list",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "contract_body",
-    "named": true,
-    "fields": {
       "constructor": {
         "multiple": true,
         "required": false,
@@ -2328,6 +2292,26 @@
         "types": [
           {
             "type": "modifier_definition",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parents": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "parent_list",
             "named": true
           }
         ]

@@ -13,22 +13,21 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (shift_expression
-              left: (primary_expression
-                (literal
-                  (number_literal)))
-              operator: (shift_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (shift_expression
+            left: (primary_expression
+              (literal
+                (number_literal)))
+            operator: (shift_operator)
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Left-associativity of shift operators
@@ -45,27 +44,26 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (shift_expression
-              left: (shift_expression
-                left: (primary_expression
-                  (literal
-                    (number_literal)))
-                operator: (shift_operator)
-                right: (primary_expression
-                  (literal
-                    (number_literal))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (shift_expression
+            left: (shift_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
               operator: (shift_operator)
               right: (primary_expression
                 (literal
-                  (number_literal))))))))))
+                  (number_literal))))
+            operator: (shift_operator)
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))
 
 ==================
 Precedence below addition
@@ -82,24 +80,23 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (shift_expression
-              left: (additive_expression
-                left: (primary_expression
-                  (literal
-                    (number_literal)))
-                operator: (additive_operator)
-                right: (primary_expression
-                  (literal
-                    (number_literal))))
-              operator: (shift_operator)
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (shift_expression
+            left: (additive_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
+              operator: (additive_operator)
               right: (primary_expression
                 (literal
-                  (number_literal))))))))))
+                  (number_literal))))
+            operator: (shift_operator)
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))

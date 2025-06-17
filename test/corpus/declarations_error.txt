@@ -59,10 +59,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      error: (error_definition
-        name: (identifier)
-        parameters: (error_parameter_list
-          (error_parameter
-            type: (string_type)
-            name: (identifier)))))))
+    error: (error_definition
+      name: (identifier)
+      parameters: (error_parameter_list
+        (error_parameter
+          type: (string_type)
+          name: (identifier))))))

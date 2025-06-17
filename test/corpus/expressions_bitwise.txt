@@ -13,21 +13,20 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (bitwise_and_expression
-              left: (primary_expression
-                (literal
-                  (hex_literal)))
-              right: (primary_expression
-                (literal
-                  (hex_literal))))))))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (bitwise_and_expression
+            left: (primary_expression
+              (literal
+                (hex_literal)))
+            right: (primary_expression
+              (literal
+                (hex_literal)))))))))
 
 ==================
 Bitwise operator precedence
@@ -49,29 +48,28 @@ contract C {
   (comment)
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (bitwise_or_expression
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (bitwise_or_expression
+            left: (primary_expression
+              (literal
+                (hex_literal)))
+            right: (bitwise_xor_expression
               left: (primary_expression
                 (literal
                   (hex_literal)))
-              right: (bitwise_xor_expression
+              right: (bitwise_and_expression
                 left: (primary_expression
                   (literal
                     (hex_literal)))
-                right: (bitwise_and_expression
-                  left: (primary_expression
-                    (literal
-                      (hex_literal)))
-                  right: (primary_expression
-                    (literal
-                      (hex_literal))))))))))))
+                right: (primary_expression
+                  (literal
+                    (hex_literal)))))))))))
 
 ==================
 Left-associativity of bitwise operators
@@ -88,25 +86,24 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (bitwise_and_expression
-              left: (bitwise_and_expression
-                left: (primary_expression
-                  (literal
-                    (hex_literal)))
-                right: (primary_expression
-                  (literal
-                    (hex_literal))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (bitwise_and_expression
+            left: (bitwise_and_expression
+              left: (primary_expression
+                (literal
+                  (hex_literal)))
               right: (primary_expression
                 (literal
-                  (hex_literal))))))))))
+                  (hex_literal))))
+            right: (primary_expression
+              (literal
+                (hex_literal)))))))))
 
 ==================
 Interaction with shift operators
@@ -124,23 +121,22 @@ contract C {
   (comment)
   (contract
     name: (identifier)
-    body: (contract_body
-      function: (function_definition
-        name: (identifier)
-        body: (block
-          (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (uint_type)
-              name: (identifier))
-            value: (bitwise_and_expression
-              left: (shift_expression
-                left: (primary_expression
-                  (literal
-                    (number_literal)))
-                operator: (shift_operator)
-                right: (primary_expression
-                  (literal
-                    (number_literal))))
+    function: (function_definition
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (uint_type)
+            name: (identifier))
+          value: (bitwise_and_expression
+            left: (shift_expression
+              left: (primary_expression
+                (literal
+                  (number_literal)))
+              operator: (shift_operator)
               right: (primary_expression
                 (literal
-                  (number_literal))))))))))
+                  (number_literal))))
+            right: (primary_expression
+              (literal
+                (number_literal)))))))))
