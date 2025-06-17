@@ -7,7 +7,7 @@ library MyLibrary {}
 ---
 
 (source_file
-  (library
+  definition: (library
     name: (identifier)))
 
 ==================
@@ -27,7 +27,7 @@ library Search {
 ---
 
 (source_file
-  (library
+  definition: (library
     name: (identifier)
     function: (function
       name: (identifier)

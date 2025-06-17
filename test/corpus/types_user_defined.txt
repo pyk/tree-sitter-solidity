@@ -10,7 +10,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     struct: (struct
       name: (identifier))
@@ -32,7 +32,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     enum: (enum
       name: (identifier)
@@ -61,9 +61,9 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier))
-  (contract
+  definition: (contract
     name: (identifier)
     function: (function
       name: (identifier)
@@ -87,7 +87,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     struct: (struct
       name: (identifier))
@@ -110,9 +110,9 @@ contract C {
 ---
 
 (source_file
-  (import_directive
+  directive: (import
     path: (string_literal))
-  (contract
+  definition: (contract
     name: (identifier)
     function: (function
       name: (identifier)

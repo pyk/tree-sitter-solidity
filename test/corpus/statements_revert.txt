@@ -12,7 +12,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     error: (error
       name: (identifier))
@@ -38,7 +38,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     error: (error
       name: (identifier)
@@ -80,9 +80,9 @@ contract C {
 ---
 
 (source_file
-  (import_directive
+  directive: (import
     path: (string_literal))
-  (contract
+  definition: (contract
     name: (identifier)
     function: (function
       name: (identifier)

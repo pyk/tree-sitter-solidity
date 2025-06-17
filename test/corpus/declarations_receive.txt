@@ -9,7 +9,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     receive: (receive_function_definition
       visibility: (visibility)
@@ -30,7 +30,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     event: (event
       name: (identifier)
@@ -68,7 +68,7 @@ abstract contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     receive: (receive_function_definition
       visibility: (visibility)

@@ -8,7 +8,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     storage: (storage
       type: (uint_type)
@@ -24,7 +24,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     storage: (storage
       type: (string_type)
@@ -45,7 +45,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     storage: (storage
       type: (address_type)
@@ -66,7 +66,7 @@ contract C is I {
 ---
 
 (source_file
-  (interface
+  definition: (interface
     name: (identifier)
     function: (function
       name: (identifier)
@@ -76,7 +76,7 @@ contract C is I {
         (parameter_declaration
           type: (string_type)
           location: (data_location)))))
-  (contract
+  definition: (contract
     name: (identifier)
     parents: (parent_list
       (parent

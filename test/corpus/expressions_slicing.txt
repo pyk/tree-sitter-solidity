@@ -11,7 +11,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     function: (function
       name: (identifier)
@@ -49,7 +49,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     function: (function
       name: (identifier)
@@ -84,7 +84,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     function: (function
       name: (identifier)
@@ -120,7 +120,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     struct: (struct
       name: (identifier)

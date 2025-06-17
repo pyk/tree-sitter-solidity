@@ -10,7 +10,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     (comment)
     storage: (storage
@@ -31,7 +31,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     (comment)
     storage: (storage
@@ -50,7 +50,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     (comment)
     function: (function
@@ -73,7 +73,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     (comment)
     function: (function
@@ -97,5 +97,5 @@ contract C {}
   (comment)
   (comment)
   (comment)
-  (contract
+  definition: (contract
     name: (identifier)))

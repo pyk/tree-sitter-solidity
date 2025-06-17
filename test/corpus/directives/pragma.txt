@@ -7,7 +7,7 @@ pragma solidity ^0.8.0;
 ---
 
 (source_file
-  (pragma
+  directive: (pragma
     name: (identifier)
     version: (version_constraint
       operator: (version_operator)
@@ -22,7 +22,7 @@ pragma solidity >=0.8.0 <0.9.0;
 ---
 
 (source_file
-  (pragma
+  directive: (pragma
     name: (identifier)
     version: (version_constraint
       operator: (version_operator)
@@ -40,7 +40,7 @@ pragma solidity 0.8.4;
 ---
 
 (source_file
-  (pragma
+  directive: (pragma
     name: (identifier)
     version: (version_constraint
       number: (version_literal))))

@@ -7,7 +7,7 @@ contract MyContract {}
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)))
 
 ==================
@@ -19,7 +19,7 @@ abstract contract MyAbstractContract {}
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)))
 
 ==================
@@ -31,7 +31,7 @@ contract MyContract is Ownable, ReentrancyGuard {}
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     parents: (parent_list
       (parent
@@ -52,9 +52,9 @@ contract Child is Parent.DeepParent {}
 ---
 
 (source_file
-  (import_directive
+  directive: (import
     path: (string_literal))
-  (contract
+  definition: (contract
     name: (identifier)
     parents: (parent_list
       (parent
@@ -71,7 +71,7 @@ contract MyToken is ERC20("My Token", "MTK") {}
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     parents: (parent_list
       (parent
@@ -94,7 +94,7 @@ contract MyContract is ReentrancyGuard() {}
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     parents: (parent_list
       (parent
@@ -111,7 +111,7 @@ contract MegaContract is Ownable, Parent.DeepParent, ERC20("Mega", "MGA"), Locka
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     parents: (parent_list
       (parent

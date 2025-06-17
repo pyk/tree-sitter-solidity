@@ -1,0 +1,67 @@
+==================
+Simple Import
+==================
+
+import "./MyFile.sol";
+
+---
+
+(source_file
+  directive: (import
+    path: (string_literal)))
+
+==================
+Import with alias
+==================
+
+import * as MyLib from "./MyLib.sol";
+
+---
+
+(source_file
+  directive: (import
+    alias: (identifier)
+    path: (string_literal)))
+
+==================
+Import with destructured symbols
+==================
+
+import {symbol1, symbol2 as alias2} from "./MyFile.sol";
+
+---
+
+(source_file
+  directive: (import
+    symbols: (symbol_aliases
+      (import_alias
+        symbol: (identifier))
+      (import_alias
+        symbol: (identifier)
+        alias: (identifier)))
+    path: (string_literal)))
+
+==================
+Multiple Imports
+==================
+
+import "./Simple.sol";
+import { Foo, Bar as Baz } from "./FooBar.sol";
+import * as Utils from "./Utils.sol";
+
+---
+
+(source_file
+  directive: (import
+    path: (string_literal))
+  directive: (import
+    symbols: (symbol_aliases
+      (import_alias
+        symbol: (identifier))
+      (import_alias
+        symbol: (identifier)
+        alias: (identifier)))
+    path: (string_literal))
+  directive: (import
+    alias: (identifier)
+    path: (string_literal)))

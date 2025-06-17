@@ -7,7 +7,7 @@ type MyInt is int;
 ---
 
 (source_file
-  (udvt
+  definition: (udvt
     name: (identifier)
     underlying_type: (int_type)))
 
@@ -22,7 +22,7 @@ contract C {
 ---
 
 (source_file
-  (contract
+  definition: (contract
     name: (identifier)
     udvt: (udvt
       name: (identifier)
@@ -41,10 +41,10 @@ contract C {
 ---
 
 (source_file
-  (udvt
+  definition: (udvt
     name: (identifier)
     underlying_type: (address_type))
-  (contract
+  definition: (contract
     name: (identifier)
     storage: (storage
       type: (user_defined_type
@@ -62,6 +62,6 @@ type MyBytes is bytes32;
 ---
 
 (source_file
-  (udvt
+  definition: (udvt
     name: (identifier)
     underlying_type: (bytes_type)))

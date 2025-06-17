@@ -85,10 +85,15 @@ module.exports = grammar({
     source_file: ($) =>
       seq(
         optional(field("license", $.license)),
-        repeat(choice($._top_level_directives, $._top_level_definitions)),
+        repeat(
+          choice(
+            field("directive", $._top_level_directives),
+            field("definition", $._top_level_definitions),
+          ),
+        ),
       ),
 
-    _top_level_directives: ($) => choice($.pragma, $.import_directive, $.using),
+    _top_level_directives: ($) => choice($.pragma, $.import, $.using),
 
     _top_level_definitions: ($) =>
       choice(
@@ -144,9 +149,6 @@ module.exports = grammar({
         ";",
       ),
 
-    // Remove the hidden `_pragma_expression` rule as it's no longer needed.
-    // The `repeat1` is now directly inside the `pragma` rule.
-
     version_constraint: ($) =>
       seq(
         // Add fields for operator and literal
@@ -158,33 +160,14 @@ module.exports = grammar({
 
     version_literal: ($) => /\d+(\.\d+){0,2}/,
 
-    //************************************************************//
-    //                          Comments                          //
-    //************************************************************//
-
-    // A regular, non-documentation comment
-    comment: ($) =>
-      token(
-        choice(
-          seq("//", /[^\r\n]*/),
-          seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
-        ),
-      ),
-
-    // A NatSpec documentation comment
-    natspec_comment: ($) =>
-      token(
-        choice(seq("///", /[^\r\n]*/), seq("/**", /([^*]|\*+[^/])*/, "*/")),
-      ),
-
-    //************************************************************//
-    //                         Directives                         //
-    //************************************************************//
+    //############################################################//
+    //                           Import                           //
+    //############################################################//
 
     /**
      * An import directive, used to import symbols from another file.
      */
-    import_directive: ($) =>
+    import: ($) =>
       seq(
         "import",
         choice(
@@ -211,6 +194,29 @@ module.exports = grammar({
         ),
         ";",
       ),
+
+    //************************************************************//
+    //                          Comments                          //
+    //************************************************************//
+
+    // A regular, non-documentation comment
+    comment: ($) =>
+      token(
+        choice(
+          seq("//", /[^\r\n]*/),
+          seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
+        ),
+      ),
+
+    // A NatSpec documentation comment
+    natspec_comment: ($) =>
+      token(
+        choice(seq("///", /[^\r\n]*/), seq("/**", /([^*]|\*+[^/])*/, "*/")),
+      ),
+
+    //************************************************************//
+    //                         Directives                         //
+    //************************************************************//
 
     /**
      * A set of symbol aliases in an import statement.
