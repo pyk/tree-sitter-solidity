@@ -8,7 +8,7 @@ using SafeMath for uint256;
 
 (source_file
   directive: (using
-    source: (identifier_path
+    library: (identifier_path
       (identifier))
     target: (uint_type)))
 
@@ -22,7 +22,7 @@ using SafeMath for *;
 
 (source_file
   directive: (using
-    source: (identifier_path
+    library: (identifier_path
       (identifier))
     target: (wildcard_type)))
 
@@ -36,13 +36,10 @@ using {add, sub} for uint256;
 
 (source_file
   directive: (using
-    source: (using_aliases
-      (using_alias
-        path: (identifier_path
-          (identifier)))
-      (using_alias
-        path: (identifier_path
-          (identifier))))
+    declaration: (using_declaration
+      name: (identifier))
+    declaration: (using_declaration
+      name: (identifier))
     target: (uint_type)))
 
 ==================
@@ -55,15 +52,12 @@ using {add as +, sub as -} for uint256;
 
 (source_file
   directive: (using
-    source: (using_aliases
-      (using_alias
-        path: (identifier_path
-          (identifier))
-        operator: (user_definable_operator))
-      (using_alias
-        path: (identifier_path
-          (identifier))
-        operator: (user_definable_operator)))
+    declaration: (using_declaration
+      name: (identifier)
+      operator: (user_definable_operator))
+    declaration: (using_declaration
+      name: (identifier)
+      operator: (user_definable_operator))
     target: (uint_type)))
 
 ==================
@@ -76,7 +70,7 @@ using SafeMath for uint256 global;
 
 (source_file
   directive: (using
-    source: (identifier_path
+    library: (identifier_path
       (identifier))
     target: (uint_type)
     (global_using)))
@@ -91,16 +85,15 @@ using {MyLib.add, MyLib.sub as -} for MyStruct global;
 
 (source_file
   directive: (using
-    source: (using_aliases
-      (using_alias
-        path: (identifier_path
-          (identifier)
-          (identifier)))
-      (using_alias
-        path: (identifier_path
-          (identifier)
-          (identifier))
-        operator: (user_definable_operator)))
+    declaration: (using_declaration
+      name: (qualified_function_name
+        scope: (identifier)
+        name: (identifier)))
+    declaration: (using_declaration
+      name: (qualified_function_name
+        scope: (identifier)
+        name: (identifier))
+      operator: (user_definable_operator))
     target: (user_defined_type
       (identifier_path
         (identifier)))

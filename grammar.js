@@ -164,9 +164,6 @@ module.exports = grammar({
     //                           Import                           //
     //############################################################//
 
-    /**
-     * An import directive, used to import symbols from another file.
-     */
     import: ($) =>
       seq(
         "import",
@@ -195,21 +192,50 @@ module.exports = grammar({
         ";",
       ),
 
-    /**
-     * A set of symbol aliases in an import statement.
-     * e.g., `{symbol1 as alias, symbol2}`
-     */
-    symbol_list: ($) => seq("{", commaSep($.import_alias), "}"),
+    symbol_list: ($) => seq("{", commaSep($.symbol), "}"),
 
-    /**
-     * A single symbol alias in an import statement.
-     * e.g., `MySymbol as MyAlias` or just `MySymbol`
-     */
-    import_alias: ($) =>
+    symbol: ($) =>
       seq(
-        field("symbol", $.identifier),
+        field("name", $.identifier),
         optional(seq("as", field("alias", $.identifier))),
       ),
+
+    //############################################################//
+    //                           Using                            //
+    //############################################################//
+
+    using: ($) =>
+      seq(
+        "using",
+        choice(
+          // e.g., using SafeMath for uint256;
+          field("library", $.identifier_path),
+          // e.g., using {add, sub} for uint256;
+          seq("{", commaSep(field("declaration", $.using_declaration)), "}"),
+        ),
+        "for",
+        field("target", choice($.wildcard_type, $._type_name)),
+        optional($.global_using),
+        ";",
+      ),
+
+    using_declaration: ($) =>
+      seq(
+        field("name", $._using_function_path), // Use our precise path rule
+        optional(seq("as", field("operator", $.user_definable_operator))),
+      ),
+
+    _using_function_path: ($) =>
+      choice($.identifier, $.qualified_function_name),
+
+    qualified_function_name: ($) =>
+      seq(field("scope", $.identifier), ".", field("name", $.identifier)),
+
+    //************************************************************//
+    //                          Comments                          //
+    //************************************************************//
+
+    //
 
     user_definable_operator: ($) =>
       choice(
@@ -262,22 +288,6 @@ module.exports = grammar({
     natspec_comment: ($) =>
       token(
         choice(seq("///", /[^\r\n]*/), seq("/**", /([^*]|\*+[^/])*/, "*/")),
-      ),
-
-    //************************************************************//
-    //                         Directives                         //
-    //************************************************************//
-
-    // The main directive rule
-    using: ($) =>
-      seq(
-        "using",
-        field("source", choice($.identifier_path, $.using_aliases)),
-        "for",
-        // The '*' is now captured by a named node.
-        field("target", choice($.wildcard_type, $._type_name)),
-        optional($.global_using),
-        ";",
       ),
 
     //##########################################################//
