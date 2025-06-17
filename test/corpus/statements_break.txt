@@ -20,7 +20,6 @@ contract C {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         body: (block
           (for_statement
             initializer: (variable_declaration_statement

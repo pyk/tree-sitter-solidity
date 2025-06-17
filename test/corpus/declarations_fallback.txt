@@ -13,7 +13,6 @@ contract C {
     name: (identifier)
     body: (contract_body
       fallback: (fallback_function_definition
-        parameters: (parameter_list)
         visibility: (visibility)
         body: (block)))))
 
@@ -32,7 +31,6 @@ contract C {
     name: (identifier)
     body: (contract_body
       fallback: (fallback_function_definition
-        parameters: (parameter_list)
         visibility: (visibility)
         mutability: (state_mutability)
         body: (block)))))

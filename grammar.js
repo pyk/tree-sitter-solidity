@@ -993,12 +993,20 @@ module.exports = grammar({
       seq(
         "function",
         field("name", $.identifier),
-        field("parameters", $.parameter_list),
+        "(",
+        optional(field("parameters", $.parameter_list)),
+        ")",
         repeat($._function_attribute),
-        optional(seq("returns", field("returns", $.parameter_list))),
+        optional(
+          seq(
+            "returns",
+            "(",
+            optional(field("returns", $.parameter_list)),
+            ")",
+          ),
+        ),
         choice(field("body", $.block), ";"),
       ),
-
     /**
      * An attribute of a function, such as visibility or state mutability.
      */
@@ -1013,10 +1021,8 @@ module.exports = grammar({
 
     /**
      * A list of parameters, used for function arguments and return values.
-     * e.g., `(uint256 _a, bool _b)`
      */
-    parameter_list: ($) =>
-      seq("(", optional(commaSep($.parameter_declaration)), ")"),
+    parameter_list: ($) => commaSep($.parameter_declaration),
 
     /**
      * A block of statements enclosed in curly braces.
@@ -1058,29 +1064,34 @@ module.exports = grammar({
     unindexed_event_parameter: ($) =>
       seq(field("type", $._type_name), optional(field("name", $.identifier))),
 
+    // New helper rules for event/error parameters
+    event_parameter_list: ($) => commaSep($._event_parameter),
+    error_parameter_list: ($) => commaSep($.error_parameter),
+
+    // Updated event/error definitions
     event_definition: ($) =>
       seq(
         "event",
         field("name", $.identifier),
         "(",
-        optional(commaSep($._event_parameter)),
+        optional(field("parameters", $.event_parameter_list)),
         ")",
         optional($.anonymous),
         ";",
       ),
-
-    // Rule for the `anonymous` keyword
-    anonymous: ($) => "anonymous",
 
     error_definition: ($) =>
       seq(
         "error",
         field("name", $.identifier),
         "(",
-        optional(commaSep($.error_parameter)),
+        optional(field("parameters", $.error_parameter_list)),
         ")",
         ";",
       ),
+
+    // Rule for the `anonymous` keyword
+    anonymous: ($) => "anonymous",
 
     error_parameter: ($) =>
       seq(field("type", $._type_name), optional(field("name", $.identifier))),
@@ -1102,7 +1113,9 @@ module.exports = grammar({
     constructor_definition: ($) =>
       seq(
         "constructor",
-        field("parameters", $.parameter_list),
+        "(",
+        optional(field("parameters", $.parameter_list)),
+        ")",
         repeat($._constructor_attribute),
         field("body", $.block),
       ),
@@ -1114,12 +1127,17 @@ module.exports = grammar({
       ),
 
     modifier_definition: ($) =>
-      seq(
-        "modifier",
-        field("name", $.identifier),
-        optional(field("parameters", $.parameter_list)),
-        repeat($._modifier_attribute),
-        choice(field("body", $.block), ";"),
+      prec(
+        1,
+        seq(
+          "modifier",
+          field("name", $.identifier),
+          "(",
+          optional(field("parameters", $.parameter_list)),
+          ")",
+          repeat($._modifier_attribute),
+          choice(field("body", $.block), ";"),
+        ),
       ),
 
     // Add a helper rule for receive/fallback attributes
@@ -1152,9 +1170,18 @@ module.exports = grammar({
     fallback_function_definition: ($) =>
       seq(
         "fallback",
-        field("parameters", $.parameter_list),
+        "(",
+        optional(field("parameters", $.parameter_list)),
+        ")",
         repeat($._function_like_attribute),
-        optional(seq("returns", field("returns", $.parameter_list))),
+        optional(
+          seq(
+            "returns",
+            "(",
+            optional(field("returns", $.parameter_list)),
+            ")",
+          ),
+        ),
         choice(field("body", $.block), ";"),
       ),
 

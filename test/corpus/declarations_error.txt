@@ -21,12 +21,13 @@ error InsufficientBalance(uint requested, uint available);
 (source_file
   (error_definition
     name: (identifier)
-    (error_parameter
-      type: (uint_type)
-      name: (identifier))
-    (error_parameter
-      type: (uint_type)
-      name: (identifier))))
+    parameters: (error_parameter_list
+      (error_parameter
+        type: (uint_type)
+        name: (identifier))
+      (error_parameter
+        type: (uint_type)
+        name: (identifier)))))
 
 ==================
 Error with unnamed parameters
@@ -39,10 +40,11 @@ error InvalidInput(address, uint256);
 (source_file
   (error_definition
     name: (identifier)
-    (error_parameter
-      type: (address_type))
-    (error_parameter
-      type: (uint_type))))
+    parameters: (error_parameter_list
+      (error_parameter
+        type: (address_type))
+      (error_parameter
+        type: (uint_type)))))
 
 ==================
 Error inside a contract
@@ -60,6 +62,7 @@ contract C {
     body: (contract_body
       error: (error_definition
         name: (identifier)
-        (error_parameter
-          type: (string_type)
-          name: (identifier))))))
+        parameters: (error_parameter_list
+          (error_parameter
+            type: (string_type)
+            name: (identifier)))))))

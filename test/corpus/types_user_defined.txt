@@ -71,7 +71,6 @@ contract C {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         visibility: (visibility)
         returns: (parameter_list
           (parameter_declaration

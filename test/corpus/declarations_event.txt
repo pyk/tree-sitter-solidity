@@ -9,15 +9,16 @@ event Transfer(address from, address to, uint256 value);
 (source_file
   (event_definition
     name: (identifier)
-    (unindexed_event_parameter
-      type: (address_type)
-      name: (identifier))
-    (unindexed_event_parameter
-      type: (address_type)
-      name: (identifier))
-    (unindexed_event_parameter
-      type: (uint_type)
-      name: (identifier))))
+    parameters: (event_parameter_list
+      (unindexed_event_parameter
+        type: (address_type)
+        name: (identifier))
+      (unindexed_event_parameter
+        type: (address_type)
+        name: (identifier))
+      (unindexed_event_parameter
+        type: (uint_type)
+        name: (identifier)))))
 
 ==================
 Event with indexed and anonymous parameters
@@ -30,15 +31,16 @@ event Approval(address indexed owner, address indexed spender, uint256 value) an
 (source_file
   (event_definition
     name: (identifier)
-    (indexed_event_parameter
-      type: (address_type)
-      name: (identifier))
-    (indexed_event_parameter
-      type: (address_type)
-      name: (identifier))
-    (unindexed_event_parameter
-      type: (uint_type)
-      name: (identifier))
+    parameters: (event_parameter_list
+      (indexed_event_parameter
+        type: (address_type)
+        name: (identifier))
+      (indexed_event_parameter
+        type: (address_type)
+        name: (identifier))
+      (unindexed_event_parameter
+        type: (uint_type)
+        name: (identifier)))
     (anonymous)))
 
 ==================
@@ -52,7 +54,8 @@ event MyEvent(uint256, bool indexed);
 (source_file
   (event_definition
     name: (identifier)
-    (unindexed_event_parameter
-      type: (uint_type))
-    (indexed_event_parameter
-      type: (bool_type))))
+    parameters: (event_parameter_list
+      (unindexed_event_parameter
+        type: (uint_type))
+      (indexed_event_parameter
+        type: (bool_type)))))

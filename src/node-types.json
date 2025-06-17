@@ -2197,7 +2197,7 @@
       },
       "parameters": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "parameter_list",
@@ -2834,17 +2834,17 @@
             "named": true
           }
         ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "error_parameter_list",
+            "named": true
+          }
+        ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "error_parameter",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -2902,6 +2902,21 @@
     }
   },
   {
+    "type": "error_parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "error_parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "event_definition",
     "named": true,
     "fields": {
@@ -2914,16 +2929,37 @@
             "named": true
           }
         ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "event_parameter_list",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
           "type": "anonymous",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "event_parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
         {
           "type": "indexed_event_parameter",
           "named": true
@@ -3298,7 +3334,7 @@
       },
       "parameters": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "parameter_list",
@@ -3670,7 +3706,7 @@
       },
       "parameters": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "parameter_list",
@@ -5972,7 +6008,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "parameter_declaration",

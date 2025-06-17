@@ -58,7 +58,6 @@ contract C {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         visibility: (visibility)
         body: (block
           (variable_declaration_statement

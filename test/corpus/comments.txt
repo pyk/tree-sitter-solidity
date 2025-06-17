@@ -58,7 +58,6 @@ contract C {
       (comment)
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         visibility: (visibility)
         body: (block)))))
 
@@ -83,7 +82,6 @@ contract C {
       (comment)
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         visibility: (visibility)
         body: (block)))))
 

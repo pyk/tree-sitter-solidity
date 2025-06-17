@@ -10,6 +10,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -18,7 +19,6 @@ contract C {
         name: (identifier))
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         body: (block
           (revert_statement
             error: (identifier_path
@@ -37,18 +37,20 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
     body: (contract_body
       error: (error_definition
         name: (identifier)
-        (error_parameter
-          type: (uint_type)
-          name: (identifier))
-        (error_parameter
-          type: (uint_type)
-          name: (identifier)))
+        parameters: (error_parameter_list
+          (error_parameter
+            type: (uint_type)
+            name: (identifier))
+          (error_parameter
+            type: (uint_type)
+            name: (identifier))))
       function: (function_definition
         name: (identifier)
         parameters: (parameter_list
@@ -78,6 +80,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (import_directive
     path: (string_literal))

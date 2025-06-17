@@ -16,7 +16,6 @@ contract C {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
@@ -49,7 +48,6 @@ contract C {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
@@ -83,7 +81,6 @@ contract C {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
@@ -122,7 +119,6 @@ contract C {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration

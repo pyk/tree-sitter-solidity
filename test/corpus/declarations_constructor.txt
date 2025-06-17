@@ -13,7 +13,6 @@ contract C {
     name: (identifier)
     body: (contract_body
       constructor: (constructor_definition
-        parameters: (parameter_list)
         body: (block)))))
 
 ==================
@@ -56,7 +55,6 @@ contract C {
     name: (identifier)
     body: (contract_body
       constructor: (constructor_definition
-        parameters: (parameter_list)
         mutability: (state_mutability)
         body: (block)))))
 
@@ -75,7 +73,6 @@ abstract contract C {
     name: (identifier)
     body: (contract_body
       constructor: (constructor_definition
-        parameters: (parameter_list)
         visibility: (visibility)
         body: (block)))))
 
@@ -124,11 +121,9 @@ contract C {
     body: (contract_body
       modifier: (modifier_definition
         name: (identifier)
-        parameters: (parameter_list)
         body: (block
           (placeholder_statement)))
       constructor: (constructor_definition
-        parameters: (parameter_list)
         invocation: (modifier_invocation
           name: (identifier_path
             (identifier)))

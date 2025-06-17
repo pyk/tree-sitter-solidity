@@ -36,10 +36,11 @@ contract C {
     body: (contract_body
       event: (event_definition
         name: (identifier)
-        (unindexed_event_parameter
-          type: (address_type))
-        (unindexed_event_parameter
-          type: (uint_type)))
+        parameters: (event_parameter_list
+          (unindexed_event_parameter
+            type: (address_type))
+          (unindexed_event_parameter
+            type: (uint_type))))
       receive: (receive_function_definition
         visibility: (visibility)
         mutability: (state_mutability)

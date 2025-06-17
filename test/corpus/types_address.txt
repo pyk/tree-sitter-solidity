@@ -78,7 +78,6 @@ contract C {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         visibility: (visibility)
         returns: (parameter_list
           (parameter_declaration
@@ -104,7 +103,6 @@ contract C {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         visibility: (visibility)
         body: (block
           (variable_declaration_statement
@@ -167,7 +165,6 @@ contract C {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         visibility: (visibility)
         mutability: (state_mutability)
         body: (block

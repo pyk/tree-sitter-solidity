@@ -16,7 +16,6 @@ contract C {
     body: (contract_body
       modifier: (modifier_definition
         name: (identifier)
-        parameters: (parameter_list)
         body: (block
           (placeholder_statement))))))
 
@@ -60,8 +59,7 @@ contract C {
     name: (identifier)
     body: (contract_body
       modifier: (modifier_definition
-        name: (identifier)
-        parameters: (parameter_list)))))
+        name: (identifier)))))
 
 ==================
 Virtual modifier
@@ -81,7 +79,6 @@ contract C {
     body: (contract_body
       modifier: (modifier_definition
         name: (identifier)
-        parameters: (parameter_list)
         virtual: (virtual)
         body: (block
           (placeholder_statement))))))
@@ -104,7 +101,6 @@ contract C {
     body: (contract_body
       modifier: (modifier_definition
         name: (identifier)
-        parameters: (parameter_list)
         override: (override_specifier)
         body: (block
           (placeholder_statement))))))
@@ -127,7 +123,6 @@ contract C {
     body: (contract_body
       modifier: (modifier_definition
         name: (identifier)
-        parameters: (parameter_list)
         override: (override_specifier
           from: (identifier_path
             (identifier))

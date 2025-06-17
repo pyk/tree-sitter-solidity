@@ -74,7 +74,6 @@ contract C is I {
     body: (contract_body
       function: (function_definition
         name: (identifier)
-        parameters: (parameter_list)
         visibility: (visibility)
         mutability: (state_mutability)
         returns: (parameter_list

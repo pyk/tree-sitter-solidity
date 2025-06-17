@@ -9,7 +9,6 @@ function helper() {}
 (source_file
   (function_definition
     name: (identifier)
-    parameters: (parameter_list)
     body: (block)))
 
 ==================
@@ -90,7 +89,6 @@ function myFunction() public virtual {}
 (source_file
   (function_definition
     name: (identifier)
-    parameters: (parameter_list)
     visibility: (visibility)
     virtual: (virtual)
     body: (block)))
@@ -106,7 +104,6 @@ function myFunction() public override {}
 (source_file
   (function_definition
     name: (identifier)
-    parameters: (parameter_list)
     visibility: (visibility)
     override: (override_specifier)
     body: (block)))
@@ -122,7 +119,6 @@ function myFunction() public override(Base) {}
 (source_file
   (function_definition
     name: (identifier)
-    parameters: (parameter_list)
     visibility: (visibility)
     override: (override_specifier
       from: (identifier_path
@@ -140,7 +136,6 @@ function myFunction() public override(Base1, Base2) {}
 (source_file
   (function_definition
     name: (identifier)
-    parameters: (parameter_list)
     visibility: (visibility)
     override: (override_specifier
       from: (identifier_path
@@ -160,7 +155,6 @@ function myFunction() public virtual override {}
 (source_file
   (function_definition
     name: (identifier)
-    parameters: (parameter_list)
     visibility: (visibility)
     virtual: (virtual)
     override: (override_specifier)
@@ -177,7 +171,6 @@ function myFunction() public onlyOwner returns (bool) {}
 (source_file
   (function_definition
     name: (identifier)
-    parameters: (parameter_list)
     visibility: (visibility)
     modifier: (modifier_invocation
       name: (identifier_path
