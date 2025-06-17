@@ -1,5 +1,5 @@
 ==================
-Simple constructor
+Simple constructor with no parameters
 ==================
 
 contract C {
@@ -73,10 +73,10 @@ abstract contract C {
       body: (block))))
 
 ==================
-Constructor with parameters and attributes
+Constructor with mixed attributes
 ==================
 
-contract C {
+abstract contract C {
   constructor(uint _x) internal payable {
     // ...
   }
@@ -97,15 +97,12 @@ contract C {
       body: (block
         (comment)))))
 
-
 ==================
-Constructor with base constructor invocation
+Constructor with single parent constructor invocation
 ==================
 
 contract MyToken is ERC20 {
-    constructor(string memory name, string memory symbol) ERC20(name, symbol) {
-        // ...
-    }
+    constructor(string memory name, string memory symbol) ERC20(name, symbol) {}
 }
 
 ---
@@ -135,5 +132,81 @@ contract MyToken is ERC20 {
             (identifier))
           (primary_expression
             (identifier))))
+      body: (block))))
+
+==================
+Constructor with multiple parent constructor invocations
+==================
+
+contract A {}
+contract B {}
+contract C is A, B {
+    constructor() A() B() {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier))
+  definition: (contract
+    name: (identifier))
+  definition: (contract
+    name: (identifier)
+    parents: (parent_list
+      (parent
+        name: (identifier_path
+          (identifier)))
+      (parent
+        name: (identifier_path
+          (identifier))))
+    constructor: (constructor
+      parent_constructor: (parent_constructor
+        name: (identifier_path
+          (identifier))
+        arguments: (call_argument_list))
+      parent_constructor: (parent_constructor
+        name: (identifier_path
+          (identifier))
+        arguments: (call_argument_list))
+      body: (block))))
+
+==================
+Constructor with all attributes and parent invocation
+==================
+
+abstract contract D is A, B {
+    constructor(uint x) internal payable A() B() {
+        // body
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    parents: (parent_list
+      (parent
+        name: (identifier_path
+          (identifier)))
+      (parent
+        name: (identifier_path
+          (identifier))))
+    constructor: (constructor
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (uint_type)
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      parent_constructor: (parent_constructor
+        name: (identifier_path
+          (identifier))
+        arguments: (call_argument_list))
+      parent_constructor: (parent_constructor
+        name: (identifier_path
+          (identifier))
+        arguments: (call_argument_list))
       body: (block
         (comment)))))
