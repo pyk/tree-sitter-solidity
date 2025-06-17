@@ -126,9 +126,7 @@ contract C {
         name: (identifier)
         parameters: (parameter_list)
         body: (block
-          (expression_statement
-            (primary_expression
-              (identifier)))))
+          (placeholder_statement)))
       (constructor_definition
         parameters: (parameter_list)
         invocation: (modifier_invocation

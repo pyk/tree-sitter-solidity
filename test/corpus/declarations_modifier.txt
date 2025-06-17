@@ -1,0 +1,138 @@
+==================
+Simple modifier
+==================
+
+contract C {
+  modifier onlyOwner() {
+    _;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (modifier_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (placeholder_statement))))))
+
+==================
+Modifier with parameters
+==================
+
+contract C {
+  modifier costs(uint256 price) {
+    _;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (modifier_definition
+        name: (identifier)
+        parameters: (parameter_list
+          (parameter_declaration
+            type: (uint_type)
+            name: (identifier)))
+        body: (block
+          (placeholder_statement))))))
+
+==================
+Abstract modifier
+==================
+
+contract C {
+  modifier myMod();
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (modifier_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (empty_body)))))
+
+==================
+Virtual modifier
+==================
+
+contract C {
+  modifier myMod() virtual {
+    _;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (modifier_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        virtual: (virtual)
+        body: (block
+          (placeholder_statement))))))
+
+==================
+Modifier with simple override
+==================
+
+contract C {
+  modifier myMod() override {
+    _;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (modifier_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        override: (override_specifier)
+        body: (block
+          (placeholder_statement))))))
+
+==================
+Modifier with override and bases
+==================
+
+contract C {
+  modifier myMod() override(Base1, Base2) {
+    _;
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      (modifier_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        override: (override_specifier
+          from: (identifier_path
+            (identifier))
+          from: (identifier_path
+            (identifier)))
+        body: (block
+          (placeholder_statement))))))

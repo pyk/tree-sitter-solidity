@@ -1307,6 +1307,10 @@
           "named": true
         },
         {
+          "type": "placeholder_statement",
+          "named": true
+        },
+        {
           "type": "return_statement",
           "named": true
         },
@@ -2316,6 +2320,10 @@
             "named": true
           },
           {
+            "type": "placeholder_statement",
+            "named": true
+          },
+          {
             "type": "return_statement",
             "named": true
           },
@@ -3252,6 +3260,10 @@
             "named": true
           },
           {
+            "type": "placeholder_statement",
+            "named": true
+          },
+          {
             "type": "return_statement",
             "named": true
           },
@@ -3641,6 +3653,10 @@
             "named": true
           },
           {
+            "type": "placeholder_statement",
+            "named": true
+          },
+          {
             "type": "return_statement",
             "named": true
           },
@@ -3786,6 +3802,10 @@
           },
           {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "placeholder_statement",
             "named": true
           },
           {
@@ -5336,12 +5356,32 @@
           }
         ]
       },
+      "override": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "override_specifier",
+            "named": true
+          }
+        ]
+      },
       "parameters": {
         "multiple": false,
         "required": false,
         "types": [
           {
             "type": "parameter_list",
+            "named": true
+          }
+        ]
+      },
+      "virtual": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "virtual",
             "named": true
           }
         ]
@@ -5876,6 +5916,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "placeholder_statement",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "pragma_directive",
@@ -7419,6 +7464,10 @@
             "named": true
           },
           {
+            "type": "placeholder_statement",
+            "named": true
+          },
+          {
             "type": "return_statement",
             "named": true
           },
@@ -7699,6 +7748,10 @@
   },
   {
     "type": "^=",
+    "named": false
+  },
+  {
+    "type": "_",
     "named": false
   },
   {

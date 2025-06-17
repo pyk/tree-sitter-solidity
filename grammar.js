@@ -340,6 +340,7 @@ module.exports = grammar({
         $.while_statement,
         $.do_while_statement,
         $.continue_statement,
+        $.placeholder_statement,
       ),
 
     /**
@@ -463,6 +464,8 @@ module.exports = grammar({
         ";",
       ),
     continue_statement: ($) => seq("continue", ";"),
+
+    placeholder_statement: ($) => prec(1, seq("_", ";")),
 
     //************************************************************//
     //                      Expression Rules                      //
@@ -1094,12 +1097,18 @@ module.exports = grammar({
         field("body", $.block),
       ),
 
+    _modifier_attribute: ($) =>
+      choice(
+        field("virtual", $.virtual),
+        field("override", $.override_specifier),
+      ),
+
     modifier_definition: ($) =>
       seq(
         "modifier",
         field("name", $.identifier),
         optional(field("parameters", $.parameter_list)),
-        // We'll add virtual/override later
+        repeat($._modifier_attribute),
         field("body", choice($.block, $.empty_body)),
       ),
 
