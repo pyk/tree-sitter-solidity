@@ -440,8 +440,21 @@
               "type": "FIELD",
               "name": "library",
               "content": {
-                "type": "SYMBOL",
-                "name": "identifier_path"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "identifier_path"
+                  },
+                  {
+                    "type": "PREC",
+                    "value": 1,
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "identifier"
+                    }
+                  }
+                ]
               }
             },
             {

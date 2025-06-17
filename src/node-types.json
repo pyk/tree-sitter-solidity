@@ -7410,6 +7410,10 @@
         "required": false,
         "types": [
           {
+            "type": "identifier",
+            "named": true
+          },
+          {
             "type": "identifier_path",
             "named": true
           }
