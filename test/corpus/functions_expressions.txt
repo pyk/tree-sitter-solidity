@@ -277,12 +277,10 @@ contract C {
         (variable_declaration_statement
           declaration: (variable_declaration
             type: (user_defined_type
-              (identifier_path
-                (identifier)))
+              (identifier))
             name: (identifier))
           value: (call_expression
             function: (new_expression
               type: (user_defined_type
-                (identifier_path
-                  (identifier))))
+                (identifier)))
             arguments: (call_argument_list)))))))

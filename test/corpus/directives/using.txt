@@ -92,6 +92,5 @@ using {MyLib.add, MyLib.sub as -} for MyStruct global;
         name: (identifier))
       operator: (user_definable_operator))
     target: (user_defined_type
-      (identifier_path
-        (identifier)))
+      (identifier))
     global: (global_using)))

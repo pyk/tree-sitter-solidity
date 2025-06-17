@@ -83,8 +83,7 @@ contract C {
     storage: (storage
       type: (array_type
         base: (user_defined_type
-          (identifier_path
-            (identifier))))
+          (identifier)))
       name: (identifier))))
 
 ==================

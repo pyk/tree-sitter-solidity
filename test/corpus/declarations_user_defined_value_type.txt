@@ -48,8 +48,7 @@ contract C {
     name: (identifier)
     storage: (storage
       type: (user_defined_type
-        (identifier_path
-          (identifier)))
+        (identifier))
       visibility: (visibility)
       name: (identifier))))
 

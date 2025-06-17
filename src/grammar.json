@@ -4439,8 +4439,17 @@
       }
     },
     "user_defined_type": {
-      "type": "SYMBOL",
-      "name": "identifier_path"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier_path"
+        }
+      ]
     },
     "_elementary_type_name": {
       "type": "CHOICE",
