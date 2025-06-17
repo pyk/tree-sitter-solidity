@@ -901,7 +901,9 @@ module.exports = grammar({
         optional("abstract"),
         "contract",
         field("name", $.identifier),
-        optional($.inheritance_specifier_list),
+        optional(
+          seq("is", commaSep(field("base_contracts", $.inheritance_specifier))),
+        ),
         field("body", $.contract_body),
       ),
 
@@ -939,23 +941,13 @@ module.exports = grammar({
       ),
 
     /**
-     * The list of parent contracts in an inheritance clause.
-     * e.g., `is Ownable, ReentrancyGuard`
-     */
-    inheritance_specifier_list: ($) =>
-      seq("is", commaSep($.inheritance_specifier)),
-
-    /**
      * A single parent contract in an inheritance list.
      * e.g., `Ownable` or `ERC20("MyToken", "MTK")`
      */
     inheritance_specifier: ($) =>
-      prec(
-        2, // <-- Give this rule a higher precedence
-        seq(
-          field("name", $.identifier_path),
-          optional(field("arguments", $.call_argument_list)),
-        ),
+      seq(
+        field("name", $.identifier_path),
+        optional(field("arguments", $.call_argument_list)),
       ),
 
     /**
@@ -966,7 +958,9 @@ module.exports = grammar({
       seq(
         "interface",
         field("name", $.identifier),
-        optional($.inheritance_specifier_list),
+        optional(
+          seq("is", commaSep(field("base_contracts", $.inheritance_specifier))),
+        ),
         field("body", $.contract_body),
       ),
 

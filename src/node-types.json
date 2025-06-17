@@ -2246,6 +2246,16 @@
     "type": "contract_definition",
     "named": true,
     "fields": {
+      "base_contracts": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "inheritance_specifier",
+            "named": true
+          }
+        ]
+      },
       "body": {
         "multiple": false,
         "required": true,
@@ -2266,16 +2276,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "inheritance_specifier_list",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -4489,21 +4489,6 @@
     }
   },
   {
-    "type": "inheritance_specifier_list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "inheritance_specifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "inline_array_expression",
     "named": true,
     "fields": {},
@@ -4614,6 +4599,16 @@
     "type": "interface_definition",
     "named": true,
     "fields": {
+      "base_contracts": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "inheritance_specifier",
+            "named": true
+          }
+        ]
+      },
       "body": {
         "multiple": false,
         "required": true,
@@ -4634,16 +4629,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "inheritance_specifier_list",
-          "named": true
-        }
-      ]
     }
   },
   {

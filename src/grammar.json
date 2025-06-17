@@ -2701,8 +2701,46 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "inheritance_specifier_list"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "is"
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "FIELD",
+                      "name": "base_contracts",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "inheritance_specifier"
+                      }
+                    },
+                    {
+                      "type": "REPEAT",
+                      "content": {
+                        "type": "SEQ",
+                        "members": [
+                          {
+                            "type": "STRING",
+                            "value": ","
+                          },
+                          {
+                            "type": "FIELD",
+                            "name": "base_contracts",
+                            "content": {
+                              "type": "SYMBOL",
+                              "name": "inheritance_specifier"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -2821,72 +2859,34 @@
         }
       ]
     },
-    "inheritance_specifier_list": {
+    "inheritance_specifier": {
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "is"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier_path"
+          }
         },
         {
-          "type": "SEQ",
+          "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "inheritance_specifier"
+              "type": "FIELD",
+              "name": "arguments",
+              "content": {
+                "type": "SYMBOL",
+                "name": "call_argument_list"
+              }
             },
             {
-              "type": "REPEAT",
-              "content": {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": ","
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "inheritance_specifier"
-                  }
-                ]
-              }
+              "type": "BLANK"
             }
           ]
         }
       ]
-    },
-    "inheritance_specifier": {
-      "type": "PREC",
-      "value": 2,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "name",
-            "content": {
-              "type": "SYMBOL",
-              "name": "identifier_path"
-            }
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "arguments",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "call_argument_list"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        ]
-      }
     },
     "interface_definition": {
       "type": "SEQ",
@@ -2907,8 +2907,46 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "inheritance_specifier_list"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "is"
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "FIELD",
+                      "name": "base_contracts",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "inheritance_specifier"
+                      }
+                    },
+                    {
+                      "type": "REPEAT",
+                      "content": {
+                        "type": "SEQ",
+                        "members": [
+                          {
+                            "type": "STRING",
+                            "value": ","
+                          },
+                          {
+                            "type": "FIELD",
+                            "name": "base_contracts",
+                            "content": {
+                              "type": "SYMBOL",
+                              "name": "inheritance_specifier"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "BLANK"

@@ -1,0 +1,139 @@
+==================
+Simple contract definition
+==================
+
+contract MyContract {}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body)))
+
+==================
+Abstract contract
+==================
+
+abstract contract MyAbstractContract {}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body)))
+
+==================
+Contract with simple inheritance
+==================
+
+contract MyContract is Ownable, ReentrancyGuard {}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    base_contracts: (inheritance_specifier
+      name: (identifier_path
+        (identifier)))
+    base_contracts: (inheritance_specifier
+      name: (identifier_path
+        (identifier)))
+    body: (contract_body)))
+
+==================
+Contract with namespaced inheritance
+==================
+
+import "./Parent.sol";
+
+contract Child is Parent.DeepParent {}
+
+---
+
+(source_file
+  (import_directive
+    path: (string_literal))
+  (contract_definition
+    name: (identifier)
+    base_contracts: (inheritance_specifier
+      name: (identifier_path
+        (identifier)
+        (identifier)))
+    body: (contract_body)))
+
+==================
+Contract with constructor arguments
+==================
+
+contract MyToken is ERC20("My Token", "MTK") {}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    base_contracts: (inheritance_specifier
+      name: (identifier_path
+        (identifier))
+      arguments: (call_argument_list
+        (primary_expression
+          (literal
+            (string_literal)))
+        (primary_expression
+          (literal
+            (string_literal)))))
+    body: (contract_body)))
+
+==================
+Contract with empty constructor arguments
+==================
+
+contract MyContract is ReentrancyGuard() {}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    base_contracts: (inheritance_specifier
+      name: (identifier_path
+        (identifier))
+      arguments: (call_argument_list))
+    body: (contract_body)))
+
+==================
+Contract with mixed inheritance styles
+==================
+
+contract MegaContract is Ownable, Parent.DeepParent, ERC20("Mega", "MGA"), Lockable() {}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    base_contracts: (inheritance_specifier
+      name: (identifier_path
+        (identifier)))
+    base_contracts: (inheritance_specifier
+      name: (identifier_path
+        (identifier)
+        (identifier)))
+    base_contracts: (inheritance_specifier
+      name: (identifier_path
+        (identifier))
+      arguments: (call_argument_list
+        (primary_expression
+          (literal
+            (string_literal)))
+        (primary_expression
+          (literal
+            (string_literal)))))
+    base_contracts: (inheritance_specifier
+      name: (identifier_path
+        (identifier))
+      arguments: (call_argument_list))
+    body: (contract_body)))
