@@ -304,10 +304,17 @@ module.exports = grammar({
         "}", // The body ends here
       ),
 
-    parent_list: ($) => seq("is", commaSep($.parent)),
+    parent_list: ($) => seq("is", commaSep(field("parent", $.parent))),
     parent: ($) =>
       seq(
-        field("name", $.identifier_path),
+        // The fix is here:
+        field(
+          "name",
+          choice(
+            prec(1, $.identifier), // Prefer simple identifier
+            $.identifier_path, // Fallback for qualified names
+          ),
+        ),
         optional(field("arguments", $.argument_list)),
       ),
 

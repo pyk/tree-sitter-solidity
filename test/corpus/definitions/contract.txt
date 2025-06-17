@@ -34,12 +34,10 @@ contract MyContract is Ownable, ReentrancyGuard {}
   definition: (contract
     name: (identifier)
     parents: (parent_list
-      (parent
-        name: (identifier_path
-          (identifier)))
-      (parent
-        name: (identifier_path
-          (identifier))))))
+      parent: (parent
+        name: (identifier))
+      parent: (parent
+        name: (identifier)))))
 
 ==================
 Contract with namespaced inheritance
@@ -57,7 +55,7 @@ contract Child is Parent.DeepParent {}
   definition: (contract
     name: (identifier)
     parents: (parent_list
-      (parent
+      parent: (parent
         name: (identifier_path
           (identifier)
           (identifier))))))
@@ -74,9 +72,8 @@ contract MyToken is ERC20("My Token", "MTK") {}
   definition: (contract
     name: (identifier)
     parents: (parent_list
-      (parent
-        name: (identifier_path
-          (identifier))
+      parent: (parent
+        name: (identifier)
         arguments: (argument_list
           argument: (primary_expression
             (literal
@@ -97,9 +94,8 @@ contract MyContract is ReentrancyGuard() {}
   definition: (contract
     name: (identifier)
     parents: (parent_list
-      (parent
-        name: (identifier_path
-          (identifier))
+      parent: (parent
+        name: (identifier)
         arguments: (argument_list)))))
 
 ==================
@@ -114,16 +110,14 @@ contract MegaContract is Ownable, Parent.DeepParent, ERC20("Mega", "MGA"), Locka
   definition: (contract
     name: (identifier)
     parents: (parent_list
-      (parent
-        name: (identifier_path
-          (identifier)))
-      (parent
+      parent: (parent
+        name: (identifier))
+      parent: (parent
         name: (identifier_path
           (identifier)
           (identifier)))
-      (parent
-        name: (identifier_path
-          (identifier))
+      parent: (parent
+        name: (identifier)
         arguments: (argument_list
           argument: (primary_expression
             (literal
@@ -131,7 +125,6 @@ contract MegaContract is Ownable, Parent.DeepParent, ERC20("Mega", "MGA"), Locka
           argument: (primary_expression
             (literal
               (string_literal)))))
-      (parent
-        name: (identifier_path
-          (identifier))
+      parent: (parent
+        name: (identifier)
         arguments: (argument_list)))))

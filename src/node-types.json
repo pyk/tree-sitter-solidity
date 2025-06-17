@@ -6252,6 +6252,10 @@
         "required": true,
         "types": [
           {
+            "type": "identifier",
+            "named": true
+          },
+          {
             "type": "identifier_path",
             "named": true
           }
@@ -6292,16 +6296,17 @@
   {
     "type": "parent_list",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "parent",
-          "named": true
-        }
-      ]
+    "fields": {
+      "parent": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "parent",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {

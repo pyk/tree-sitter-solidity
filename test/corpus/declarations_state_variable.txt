@@ -79,9 +79,8 @@ contract C is I {
   definition: (contract
     name: (identifier)
     parents: (parent_list
-      (parent
-        name: (identifier_path
-          (identifier))))
+      parent: (parent
+        name: (identifier)))
     storage: (storage
       type: (string_type)
       visibility: (visibility)
