@@ -6,11 +6,20 @@
     "source_file": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "_top_level_declarations"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "_top_level_directives"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_top_level_definitions"
+          }
+        ]
       }
     },
-    "_top_level_declarations": {
+    "_top_level_directives": {
       "type": "CHOICE",
       "members": [
         {
@@ -28,7 +37,12 @@
         {
           "type": "SYMBOL",
           "name": "using"
-        },
+        }
+      ]
+    },
+    "_top_level_definitions": {
+      "type": "CHOICE",
+      "members": [
         {
           "type": "SYMBOL",
           "name": "contract"

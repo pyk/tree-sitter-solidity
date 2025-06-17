@@ -57,24 +57,44 @@ module.exports = grammar({
   conflicts: ($) => [],
 
   rules: {
-    /**
-     * The top-level rule, representing a complete Solidity source file.
-     * It consists of a sequence of top-level declarations and directives.
-     */
-    source_file: ($) => repeat($._top_level_declarations),
+    //##########################################################//
+    //                         Keywords                         //
+    //##########################################################//
+
+    // Declaration: A declaration introduces a name and a type into a scope.
+    // It tells the compiler, "This thing exists, and this is what it's
+    // called and what type it is." It doesn't necessarily provide the full
+    // implementation.
+    //
+    // Definition: A definition is a declaration that also provides the full
+    // implementation or value. It tells the compiler,
+    // "This is what this thing is."
+    //
+    // Directives: These are instructions for the compiler. They affect the
+    // compilation process itself—how the code is treated, what other code is
+    // included, or what compiler features are enabled. They don't typically
+    // define runtime behavior or data structures that exist on the blockchain.
+
+    //##########################################################//
+    //                       Source File                        //
+    //##########################################################//
 
     /**
-     * A choice between any of the valid top-level elements in a Solidity file.
-     * This is a "hidden" rule (by convention, prefixed with `_`) that helps to
-     * avoid unnecessary nesting in the final syntax tree.
-     * The `choice` function allows any of the listed rules to be matched here.
+     * The top-level rule, representing a complete Solidity source file.
      */
-    _top_level_declarations: ($) =>
+    source_file: ($) =>
+      repeat(choice($._top_level_directives, $._top_level_definitions)),
+
+    _top_level_directives: ($) =>
       choice(
         $.spdx_license_identifier,
         $.pragma_directive,
         $.import_directive,
         $.using,
+      ),
+
+    _top_level_definitions: ($) =>
+      choice(
         $.contract,
         $.interface,
         $.library,
