@@ -2305,16 +2305,6 @@
           }
         ]
       },
-      "invocation": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "modifier_invocation",
-            "named": true
-          }
-        ]
-      },
       "mutability": {
         "multiple": true,
         "required": false,
@@ -2331,6 +2321,16 @@
         "types": [
           {
             "type": "parameter_list",
+            "named": true
+          }
+        ]
+      },
+      "parent_constructor": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "parent_constructor",
             "named": true
           }
         ]
@@ -6239,6 +6239,32 @@
       "arguments": {
         "multiple": false,
         "required": false,
+        "types": [
+          {
+            "type": "call_argument_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_path",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "parent_constructor",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
             "type": "call_argument_list",

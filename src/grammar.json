@@ -1289,10 +1289,31 @@
         },
         {
           "type": "FIELD",
-          "name": "invocation",
+          "name": "parent_constructor",
           "content": {
             "type": "SYMBOL",
-            "name": "modifier_invocation"
+            "name": "parent_constructor"
+          }
+        }
+      ]
+    },
+    "parent_constructor": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier_path"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "arguments",
+          "content": {
+            "type": "SYMBOL",
+            "name": "call_argument_list"
           }
         }
       ]

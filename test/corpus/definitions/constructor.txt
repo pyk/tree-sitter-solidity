@@ -97,31 +97,6 @@ contract C {
       body: (block
         (comment)))))
 
-==================
-Constructor with a modifier
-==================
-
-contract C {
-  modifier myMod() {
-    _;
-  }
-  constructor() myMod {}
-}
-
----
-
-(source_file
-  definition: (contract
-    name: (identifier)
-    modifier: (modifier_definition
-      name: (identifier)
-      body: (block
-        (placeholder_statement)))
-    constructor: (constructor
-      invocation: (modifier_invocation
-        name: (identifier_path
-          (identifier)))
-      body: (block))))
 
 ==================
 Constructor with base constructor invocation
@@ -152,7 +127,7 @@ contract MyToken is ERC20 {
           type: (string_type)
           location: (data_location)
           name: (identifier)))
-      invocation: (modifier_invocation
+      parent_constructor: (parent_constructor
         name: (identifier_path
           (identifier))
         arguments: (call_argument_list

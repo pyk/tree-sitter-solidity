@@ -391,8 +391,13 @@ module.exports = grammar({
       choice(
         field("visibility", $.visibility),
         field("mutability", $.state_mutability),
-        // Use a different field name here to allow for multiple
-        field("invocation", $.modifier_invocation),
+        field("parent_constructor", $.parent_constructor),
+      ),
+
+    parent_constructor: ($) =>
+      seq(
+        field("name", $.identifier_path),
+        field("arguments", $.call_argument_list),
       ),
 
     //############################################################//
