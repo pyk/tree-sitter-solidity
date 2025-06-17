@@ -92,7 +92,7 @@ module.exports = grammar({
         $.enum_definition,
         $.event_definition,
         $.error_definition,
-        $.library_definition,
+        $.library,
         $.function_definition,
         $.user_defined_value_type_definition,
         // $.constant_variable_declaration,
@@ -292,7 +292,7 @@ module.exports = grammar({
         field("body", $.interface_body),
       ),
 
-    library_definition: ($) =>
+    library: ($) =>
       seq(
         "library",
         field("name", $.identifier),

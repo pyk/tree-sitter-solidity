@@ -4833,6 +4833,32 @@
     }
   },
   {
+    "type": "library",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "library_body",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "library_body",
     "named": true,
     "fields": {
@@ -4902,32 +4928,6 @@
         "types": [
           {
             "type": "using_directive",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "library_definition",
-    "named": true,
-    "fields": {
-      "body": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "library_body",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
             "named": true
           }
         ]
@@ -6692,7 +6692,7 @@
           "named": true
         },
         {
-          "type": "library_definition",
+          "type": "library",
           "named": true
         },
         {

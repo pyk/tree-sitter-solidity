@@ -59,7 +59,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "library_definition"
+          "name": "library"
         },
         {
           "type": "SYMBOL",
@@ -765,7 +765,7 @@
         }
       ]
     },
-    "library_definition": {
+    "library": {
       "type": "SEQ",
       "members": [
         {
