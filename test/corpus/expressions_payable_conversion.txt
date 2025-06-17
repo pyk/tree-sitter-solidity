@@ -25,8 +25,8 @@ contract C {
             type: (address_type)
             name: (identifier))
           value: (payable_conversion_expression
-            arguments: (call_argument_list
-              (primary_expression
+            arguments: (argument_list
+              argument: (primary_expression
                 (identifier)))))))))
 
 ==================
@@ -54,12 +54,12 @@ contract C {
           (call_expression
             function: (member_access_expression
               object: (payable_conversion_expression
-                arguments: (call_argument_list
-                  (primary_expression
+                arguments: (argument_list
+                  argument: (primary_expression
                     (identifier))))
               member: (identifier))
-            arguments: (call_argument_list
-              (primary_expression
+            arguments: (argument_list
+              argument: (primary_expression
                 (literal_with_subdenomination
                   (number_literal)
                   (subdenomination))))))))))

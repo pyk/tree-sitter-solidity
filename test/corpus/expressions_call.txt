@@ -19,11 +19,11 @@ contract C {
           (call_expression
             function: (primary_expression
               (identifier))
-            arguments: (call_argument_list
-              (primary_expression
+            arguments: (argument_list
+              argument: (primary_expression
                 (literal
                   (number_literal)))
-              (primary_expression
+              argument: (primary_expression
                 (literal
                   (boolean_literal))))))))))
 
@@ -54,7 +54,7 @@ contract C {
                 value: (primary_expression
                   (literal
                     (number_literal)))))
-            arguments: (call_argument_list)))))))
+            arguments: (argument_list)))))))
 
 ==================
 Function call with gas option
@@ -83,7 +83,7 @@ contract C {
                 value: (primary_expression
                   (literal
                     (number_literal)))))
-            arguments: (call_argument_list)))))))
+            arguments: (argument_list)))))))
 
 ==================
 Function call with both value and gas options
@@ -117,7 +117,7 @@ contract C {
                 value: (primary_expression
                   (literal
                     (number_literal)))))
-            arguments: (call_argument_list)))))))
+            arguments: (argument_list)))))))
 
 ==================
 Function call options with arguments
@@ -146,8 +146,8 @@ contract C {
                 value: (primary_expression
                   (literal
                     (number_literal)))))
-            arguments: (call_argument_list
-              (primary_expression
+            arguments: (argument_list
+              argument: (primary_expression
                 (literal
                   (boolean_literal))))))))))
 
@@ -179,4 +179,4 @@ contract C {
                 value: (primary_expression
                   (literal
                     (number_literal)))))
-            arguments: (call_argument_list)))))))
+            arguments: (argument_list)))))))

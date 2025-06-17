@@ -47,12 +47,12 @@ contract C {
           (call_expression
             function: (primary_expression
               (identifier))
-            arguments: (call_argument_list
-              (member_access_expression
+            arguments: (argument_list
+              argument: (member_access_expression
                 object: (primary_expression
                   (identifier))
                 member: (identifier))
-              (member_access_expression
+              argument: (member_access_expression
                 object: (primary_expression
                   (identifier))
                 member: (identifier)))))))))

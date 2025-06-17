@@ -308,7 +308,7 @@ module.exports = grammar({
     parent: ($) =>
       seq(
         field("name", $.identifier_path),
-        optional(field("arguments", $.call_argument_list)),
+        optional(field("arguments", $.argument_list)),
       ),
 
     //##########################################################//
@@ -403,7 +403,7 @@ module.exports = grammar({
             $.identifier_path, // Fallback for qualified names
           ),
         ),
-        field("arguments", $.call_argument_list),
+        field("arguments", $.argument_list),
       ),
 
     //############################################################//
@@ -424,6 +424,26 @@ module.exports = grammar({
         field("type", $._type_name),
         optional(field("location", $.data_location)),
         optional(field("name", $.identifier)),
+      ),
+
+    //############################################################//
+    //                         Arguments                          //
+    //############################################################//
+
+    /**
+     * An argument list for a function call.
+     * e.g., `(arg1, arg2)` or `()`
+     */
+    argument_list: ($) =>
+      prec(
+        1, // Add precedence here to resolve ambiguity
+        seq(
+          "(",
+          // Make the comma-separated list of expressions optional
+          // to correctly handle calls with no arguments.
+          optional(commaSep(field("argument", $._expression))),
+          ")",
+        ),
       ),
 
     //##########################################################//
@@ -535,7 +555,7 @@ module.exports = grammar({
     modifier_invocation: ($) =>
       seq(
         field("name", $.identifier_path),
-        optional(field("arguments", $.call_argument_list)),
+        optional(field("arguments", $.argument_list)),
       ),
 
     _modifier_attribute: ($) =>
@@ -816,7 +836,7 @@ module.exports = grammar({
           "revert",
           // We can also be more specific about what an error can be
           field("error", $.identifier_path),
-          field("arguments", $.call_argument_list),
+          field("arguments", $.argument_list),
           ";",
         ),
       ),
@@ -955,22 +975,6 @@ module.exports = grammar({
       ),
 
     /**
-     * An argument list for a function call.
-     * e.g., `(arg1, arg2)` or `()`
-     */
-    call_argument_list: ($) =>
-      prec(
-        1, // Add precedence here to resolve ambiguity
-        seq(
-          "(",
-          // Make the comma-separated list of expressions optional
-          // to correctly handle calls with no arguments.
-          optional(commaSep($._expression)),
-          ")",
-        ),
-      ),
-
-    /**
      * The options block for a function call.
      * e.g., `{value: 1, gas: 10000}`
      */
@@ -993,7 +997,7 @@ module.exports = grammar({
         seq(
           field("function", $._expression),
           optional(field("options", $.call_options_block)),
-          field("arguments", $.call_argument_list),
+          field("arguments", $.argument_list),
         ),
       ),
 
@@ -1225,7 +1229,7 @@ module.exports = grammar({
     payable_conversion_expression: ($) =>
       prec(
         1, // Give it a lower precedence than address_type
-        seq("payable", field("arguments", $.call_argument_list)),
+        seq("payable", field("arguments", $.argument_list)),
       ),
 
     /**
