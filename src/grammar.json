@@ -4,28 +4,45 @@
   "word": "identifier",
   "rules": {
     "source_file": {
-      "type": "REPEAT",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_top_level_directives"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_top_level_definitions"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "license",
+              "content": {
+                "type": "SYMBOL",
+                "name": "license"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_top_level_directives"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_top_level_definitions"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
     },
     "_top_level_directives": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "license"
-        },
         {
           "type": "SYMBOL",
           "name": "pragma_directive"

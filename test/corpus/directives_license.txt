@@ -7,7 +7,7 @@ SPDX License Identifier
 ---
 
 (source_file
-  (license
+  license: (license
     value: (license_identifier)))
 
 ==================
@@ -19,5 +19,5 @@ Complex SPDX License Identifier
 ---
 
 (source_file
-  (license
+  license: (license
     value: (license_identifier)))

@@ -83,10 +83,13 @@ module.exports = grammar({
      * The top-level rule, representing a complete Solidity source file.
      */
     source_file: ($) =>
-      repeat(choice($._top_level_directives, $._top_level_definitions)),
+      seq(
+        optional(field("license", $.license)),
+        repeat(choice($._top_level_directives, $._top_level_definitions)),
+      ),
 
     _top_level_directives: ($) =>
-      choice($.license, $.pragma_directive, $.import_directive, $.using),
+      choice($.pragma_directive, $.import_directive, $.using),
 
     _top_level_definitions: ($) =>
       choice(

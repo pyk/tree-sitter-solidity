@@ -6626,7 +6626,18 @@
     "type": "source_file",
     "named": true,
     "root": true,
-    "fields": {},
+    "fields": {
+      "license": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "license",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -6661,10 +6672,6 @@
         },
         {
           "type": "library",
-          "named": true
-        },
-        {
-          "type": "license",
           "named": true
         },
         {
