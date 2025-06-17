@@ -140,7 +140,7 @@ contract C {
                 (identifier)))
             location: (data_location)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration

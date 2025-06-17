@@ -78,8 +78,8 @@ contract C {
           (parameter_declaration
             type: (uint_type)
             name: (identifier)))
-        (visibility)
-        (returns_clause
+        visibility: (visibility)
+        returns: (returns_clause
           returns: (parameter_list
             (parameter_declaration
               type: (uint_type))))

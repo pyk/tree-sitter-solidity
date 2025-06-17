@@ -2918,8 +2918,12 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "returns_clause"
+              "type": "FIELD",
+              "name": "returns",
+              "content": {
+                "type": "SYMBOL",
+                "name": "returns_clause"
+              }
             },
             {
               "type": "BLANK"
@@ -2949,20 +2953,20 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "visibility"
+          "type": "FIELD",
+          "name": "visibility",
+          "content": {
+            "type": "SYMBOL",
+            "name": "visibility"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "state_mutability"
-        },
-        {
-          "type": "STRING",
-          "value": "virtual"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "override_specifier"
+          "type": "FIELD",
+          "name": "mutability",
+          "content": {
+            "type": "SYMBOL",
+            "name": "state_mutability"
+          }
         },
         {
           "type": "FIELD",
@@ -2971,6 +2975,14 @@
             "type": "SYMBOL",
             "name": "modifier_invocation"
           }
+        },
+        {
+          "type": "STRING",
+          "value": "virtual"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "override_specifier"
         }
       ]
     },

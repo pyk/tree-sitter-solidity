@@ -977,7 +977,7 @@ module.exports = grammar({
         field("name", $.identifier),
         field("parameters", $.parameter_list),
         repeat($._function_attribute),
-        optional($.returns_clause),
+        optional(field("returns", $.returns_clause)),
         field("body", choice($.block, $.empty_body)),
       ),
 
@@ -986,11 +986,11 @@ module.exports = grammar({
      */
     _function_attribute: ($) =>
       choice(
-        $.visibility,
-        $.state_mutability,
+        field("visibility", $.visibility),
+        field("mutability", $.state_mutability),
+        field("modifier", $.modifier_invocation),
         "virtual",
         $.override_specifier,
-        field("modifier", $.modifier_invocation),
       ),
 
     /**

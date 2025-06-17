@@ -32,8 +32,8 @@ function add(uint x, uint y) pure returns (uint) {
       (parameter_declaration
         type: (uint_type)
         name: (identifier)))
-    (state_mutability)
-    (returns_clause
+    mutability: (state_mutability)
+    returns: (returns_clause
       returns: (parameter_list
         (parameter_declaration
           type: (uint_type))))
@@ -66,9 +66,9 @@ function mul(uint x, uint y) internal pure returns (uint) {
       (parameter_declaration
         type: (uint_type)
         name: (identifier)))
-    (visibility)
-    (state_mutability)
-    (returns_clause
+    visibility: (visibility)
+    mutability: (state_mutability)
+    returns: (returns_clause
       returns: (parameter_list
         (parameter_declaration
           type: (uint_type))))
@@ -93,7 +93,7 @@ function myFunction() public virtual {}
   (function_definition
     name: (identifier)
     parameters: (parameter_list)
-    (visibility)
+    visibility: (visibility)
     body: (block)))
 
 ==================
@@ -108,7 +108,7 @@ function myFunction() public override {}
   (function_definition
     name: (identifier)
     parameters: (parameter_list)
-    (visibility)
+    visibility: (visibility)
     (override_specifier)
     body: (block)))
 
@@ -124,7 +124,7 @@ function myFunction() public override(Base) {}
   (function_definition
     name: (identifier)
     parameters: (parameter_list)
-    (visibility)
+    visibility: (visibility)
     (override_specifier
       from: (identifier_path
         (identifier)))
@@ -142,7 +142,7 @@ function myFunction() public override(Base1, Base2) {}
   (function_definition
     name: (identifier)
     parameters: (parameter_list)
-    (visibility)
+    visibility: (visibility)
     (override_specifier
       from: (identifier_path
         (identifier))
@@ -162,7 +162,7 @@ function myFunction() public virtual override {}
   (function_definition
     name: (identifier)
     parameters: (parameter_list)
-    (visibility)
+    visibility: (visibility)
     (override_specifier)
     body: (block)))
 
@@ -178,11 +178,11 @@ function myFunction() public onlyOwner returns (bool) {}
   (function_definition
     name: (identifier)
     parameters: (parameter_list)
-    (visibility)
+    visibility: (visibility)
     modifier: (modifier_invocation
       name: (identifier_path
         (identifier)))
-    (returns_clause
+    returns: (returns_clause
       returns: (parameter_list
         (parameter_declaration
           type: (bool_type))))

@@ -42,9 +42,9 @@ library Search {
           (parameter_declaration
             type: (uint_type)
             name: (identifier)))
-        (visibility)
-        (state_mutability)
-        (returns_clause
+        visibility: (visibility)
+        mutability: (state_mutability)
+        returns: (returns_clause
           returns: (parameter_list
             (parameter_declaration
               type: (uint_type))))

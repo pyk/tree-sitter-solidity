@@ -3517,6 +3517,16 @@
           }
         ]
       },
+      "mutability": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "state_mutability",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -3536,6 +3546,26 @@
             "named": true
           }
         ]
+      },
+      "returns": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "returns_clause",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "visibility",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -3544,18 +3574,6 @@
       "types": [
         {
           "type": "override_specifier",
-          "named": true
-        },
-        {
-          "type": "returns_clause",
-          "named": true
-        },
-        {
-          "type": "state_mutability",
-          "named": true
-        },
-        {
-          "type": "visibility",
           "named": true
         }
       ]

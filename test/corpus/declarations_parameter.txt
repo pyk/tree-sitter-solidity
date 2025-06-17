@@ -18,7 +18,7 @@ contract C {
           (parameter_declaration
             type: (uint_type)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))
 
 ==================
@@ -42,7 +42,7 @@ contract C {
             type: (string_type)
             location: (data_location)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))
 
 ==================
@@ -64,7 +64,7 @@ contract C {
         parameters: (parameter_list
           (parameter_declaration
             type: (uint_type)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))
 
 ==================
@@ -87,7 +87,7 @@ contract C {
           (parameter_declaration
             type: (bytes_type)
             location: (data_location)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))
 
 ==================
@@ -119,7 +119,7 @@ contract C {
           (parameter_declaration
             type: (address_type)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))
 
 ==================
@@ -144,7 +144,7 @@ contract C {
               base: (uint_type))
             location: (data_location)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))
 
 ==================
@@ -173,5 +173,5 @@ contract C {
                 (identifier)))
             location: (data_location)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))

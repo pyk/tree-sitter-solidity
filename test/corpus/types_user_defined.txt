@@ -8,6 +8,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -15,7 +16,9 @@ contract C {
       (struct_definition
         name: (identifier))
       (state_variable_declaration
-        type: (user_defined_type (identifier_path (identifier)))
+        type: (user_defined_type
+          (identifier_path
+            (identifier)))
         name: (identifier)))))
 
 ==================
@@ -28,6 +31,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -40,9 +44,11 @@ contract C {
         name: (identifier)
         parameters: (parameter_list
           (parameter_declaration
-            type: (user_defined_type (identifier_path (identifier)))
+            type: (user_defined_type
+              (identifier_path
+                (identifier)))
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))
 
 ==================
@@ -55,6 +61,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -65,11 +72,13 @@ contract C {
       (function_definition
         name: (identifier)
         parameters: (parameter_list)
-        (visibility)
-        (returns_clause
+        visibility: (visibility)
+        returns: (returns_clause
           returns: (parameter_list
             (parameter_declaration
-              type: (user_defined_type (identifier_path (identifier))))))
+              type: (user_defined_type
+                (identifier_path
+                  (identifier))))))
         body: (block)))))
 
 ==================
@@ -82,6 +91,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (contract_definition
     name: (identifier)
@@ -90,7 +100,9 @@ contract C {
         name: (identifier))
       (state_variable_declaration
         type: (array_type
-          base: (user_defined_type (identifier_path (identifier))))
+          base: (user_defined_type
+            (identifier_path
+              (identifier))))
         name: (identifier)))))
 
 ==================
@@ -103,6 +115,7 @@ contract C {
 }
 
 ---
+
 (source_file
   (import_directive
     path: (string_literal))
@@ -118,5 +131,5 @@ contract C {
                 (identifier)
                 (identifier)))
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))

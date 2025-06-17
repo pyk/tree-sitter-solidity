@@ -81,7 +81,7 @@ contract C {
           (parameter_declaration
             type: (bytes_type)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration

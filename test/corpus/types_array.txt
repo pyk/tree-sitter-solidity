@@ -121,5 +121,5 @@ contract C {
                   (number_literal))))
             location: (data_location)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))

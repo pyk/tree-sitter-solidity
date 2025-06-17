@@ -57,7 +57,7 @@ contract C {
           (parameter_declaration
             type: (address_type)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))
 
 ==================
@@ -79,8 +79,8 @@ contract C {
       (function_definition
         name: (identifier)
         parameters: (parameter_list)
-        (visibility)
-        (returns_clause
+        visibility: (visibility)
+        returns: (returns_clause
           returns: (parameter_list
             (parameter_declaration
               type: (address_type))))
@@ -106,7 +106,7 @@ contract C {
       (function_definition
         name: (identifier)
         parameters: (parameter_list)
-        (visibility)
+        visibility: (visibility)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
@@ -139,7 +139,7 @@ contract C {
           (parameter_declaration
             type: (address_type)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
@@ -169,8 +169,8 @@ contract C {
       (function_definition
         name: (identifier)
         parameters: (parameter_list)
-        (visibility)
-        (state_mutability)
+        visibility: (visibility)
+        mutability: (state_mutability)
         body: (block
           (expression_statement
             (call_expression

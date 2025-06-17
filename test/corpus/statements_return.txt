@@ -17,7 +17,7 @@ contract C {
       (function_definition
         name: (identifier)
         parameters: (parameter_list)
-        (visibility)
+        visibility: (visibility)
         body: (block
           (return_statement))))))
 
@@ -40,8 +40,8 @@ contract C {
       (function_definition
         name: (identifier)
         parameters: (parameter_list)
-        (visibility)
-        (returns_clause
+        visibility: (visibility)
+        returns: (returns_clause
           returns: (parameter_list
             (parameter_declaration
               type: (uint_type))))
@@ -70,8 +70,8 @@ contract C {
       (function_definition
         name: (identifier)
         parameters: (parameter_list)
-        (visibility)
-        (returns_clause
+        visibility: (visibility)
+        returns: (returns_clause
           returns: (parameter_list
             (parameter_declaration
               type: (bool_type))

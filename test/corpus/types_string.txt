@@ -37,7 +37,7 @@ contract C {
             type: (string_type)
             location: (data_location)
             name: (identifier)))
-        (visibility)
+        visibility: (visibility)
         body: (block)))))
 
 ==================
@@ -59,7 +59,7 @@ contract C {
       (function_definition
         name: (identifier)
         parameters: (parameter_list)
-        (visibility)
+        visibility: (visibility)
         body: (block
           (variable_declaration_statement
             declaration: (variable_declaration
