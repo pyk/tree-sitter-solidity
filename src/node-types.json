@@ -3507,6 +3507,16 @@
           }
         ]
       },
+      "modifier": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "modifier_invocation",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -3532,6 +3542,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "override_specifier",
+          "named": true
+        },
         {
           "type": "returns_clause",
           "named": true
@@ -5725,6 +5739,22 @@
     }
   },
   {
+    "type": "override_specifier",
+    "named": true,
+    "fields": {
+      "from": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier_path",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "parameter_declaration",
     "named": true,
     "fields": {
@@ -7855,6 +7885,10 @@
   {
     "type": "number_literal",
     "named": true
+  },
+  {
+    "type": "override",
+    "named": false
   },
   {
     "type": "payable",

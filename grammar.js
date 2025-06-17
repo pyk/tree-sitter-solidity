@@ -989,8 +989,8 @@ module.exports = grammar({
         $.visibility,
         $.state_mutability,
         "virtual",
-        // $.override_specifier, // To be added later
-        // $.modifier_invocation // To be added later
+        $.override_specifier,
+        field("modifier", $.modifier_invocation),
       ),
 
     /**
@@ -1117,6 +1117,12 @@ module.exports = grammar({
         field("modifier", $.modifier_invocation),
         "virtual",
         // TODO: add override_specifier here later
+      ),
+
+    override_specifier: ($) =>
+      seq(
+        "override",
+        optional(seq("(", commaSep(field("from", $.identifier_path)), ")")),
       ),
 
     // The receive function definition

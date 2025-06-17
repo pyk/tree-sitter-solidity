@@ -5,6 +5,7 @@ Simple free function
 function helper() {}
 
 ---
+
 (source_file
   (function_definition
     name: (identifier)
@@ -20,6 +21,7 @@ function add(uint x, uint y) pure returns (uint) {
 }
 
 ---
+
 (source_file
   (function_definition
     name: (identifier)
@@ -38,9 +40,11 @@ function add(uint x, uint y) pure returns (uint) {
     body: (block
       (return_statement
         value: (additive_expression
-          left: (primary_expression (identifier))
+          left: (primary_expression
+            (identifier))
           operator: (additive_operator)
-          right: (primary_expression (identifier)))))))
+          right: (primary_expression
+            (identifier)))))))
 
 ==================
 Internal free function (explicit)
@@ -51,6 +55,7 @@ function mul(uint x, uint y) internal pure returns (uint) {
 }
 
 ---
+
 (source_file
   (function_definition
     name: (identifier)
@@ -70,6 +75,115 @@ function mul(uint x, uint y) internal pure returns (uint) {
     body: (block
       (return_statement
         value: (multiplicative_expression
-          left: (primary_expression (identifier))
+          left: (primary_expression
+            (identifier))
           operator: (multiplicative_operator)
-          right: (primary_expression (identifier)))))))
+          right: (primary_expression
+            (identifier)))))))
+
+==================
+Virtual function
+==================
+
+function myFunction() public virtual {}
+
+---
+
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameter_list)
+    (visibility)
+    body: (block)))
+
+==================
+Function with simple override
+==================
+
+function myFunction() public override {}
+
+---
+
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameter_list)
+    (visibility)
+    (override_specifier)
+    body: (block)))
+
+==================
+Function with override and single base
+==================
+
+function myFunction() public override(Base) {}
+
+---
+
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameter_list)
+    (visibility)
+    (override_specifier
+      from: (identifier_path
+        (identifier)))
+    body: (block)))
+
+==================
+Function with override and multiple bases
+==================
+
+function myFunction() public override(Base1, Base2) {}
+
+---
+
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameter_list)
+    (visibility)
+    (override_specifier
+      from: (identifier_path
+        (identifier))
+      from: (identifier_path
+        (identifier)))
+    body: (block)))
+
+==================
+Virtual and override function
+==================
+
+function myFunction() public virtual override {}
+
+---
+
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameter_list)
+    (visibility)
+    (override_specifier)
+    body: (block)))
+
+==================
+Function with modifiers
+==================
+
+function myFunction() public onlyOwner returns (bool) {}
+
+---
+
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameter_list)
+    (visibility)
+    modifier: (modifier_invocation
+      name: (identifier_path
+        (identifier)))
+    (returns_clause
+      returns: (parameter_list
+        (parameter_declaration
+          type: (bool_type))))
+    body: (block)))
