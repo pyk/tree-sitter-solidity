@@ -7413,6 +7413,16 @@
           }
         ]
       },
+      "global": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "global_using",
+            "named": true
+          }
+        ]
+      },
       "target": {
         "multiple": false,
         "required": true,
@@ -7455,16 +7465,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "global_using",
-          "named": true
-        }
-      ]
     }
   },
   {

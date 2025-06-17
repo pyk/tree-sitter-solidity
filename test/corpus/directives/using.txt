@@ -70,7 +70,7 @@ using SafeMath for uint256 global;
   directive: (using
     declaration: (identifier)
     target: (uint_type)
-    (global_using)))
+    global: (global_using)))
 
 ==================
 Complex using directive
@@ -94,4 +94,4 @@ using {MyLib.add, MyLib.sub as -} for MyStruct global;
     target: (user_defined_type
       (identifier_path
         (identifier)))
-    (global_using)))
+    global: (global_using)))

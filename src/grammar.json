@@ -530,8 +530,12 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "global_using"
+              "type": "FIELD",
+              "name": "global",
+              "content": {
+                "type": "SYMBOL",
+                "name": "global_using"
+              }
             },
             {
               "type": "BLANK"

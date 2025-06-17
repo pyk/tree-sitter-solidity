@@ -216,7 +216,7 @@ module.exports = grammar({
         ),
         "for",
         field("target", choice($.wildcard_type, $._type_name)),
-        optional($.global_using),
+        optional(field("global", $.global_using)),
         ";",
       ),
 
