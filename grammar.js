@@ -100,14 +100,13 @@ module.exports = grammar({
         $.contract,
         $.interface,
         $.library,
-        $.storage,
+        $.constant,
         $.struct,
         $.enum,
         $.event,
         $.error,
         $.function,
         $.udvt,
-        // $.constant_variable_declaration,
       ),
 
     //############################################################//
@@ -232,11 +231,8 @@ module.exports = grammar({
     qualified_function_name: ($) =>
       seq(field("scope", $.identifier), ".", field("name", $.identifier)),
 
-    //************************************************************//
-    //                          Comments                          //
-    //************************************************************//
-
-    //
+    // A named node for the `global` keyword
+    global_using: ($) => "global",
 
     user_definable_operator: ($) =>
       choice(
@@ -256,19 +252,6 @@ module.exports = grammar({
         "<=",
         "!=",
       ),
-
-    // This rule is for aliasing, e.g., `SafeMath.add as +`
-    using_alias: ($) =>
-      seq(
-        field("path", $.identifier_path),
-        optional(seq("as", field("operator", $.user_definable_operator))),
-      ),
-
-    // This is for the `{...}` block
-    using_aliases: ($) => seq("{", commaSep($.using_alias), "}"),
-
-    // A named node for the `global` keyword
-    global_using: ($) => "global",
 
     wildcard_type: ($) => "*",
 
@@ -374,6 +357,20 @@ module.exports = grammar({
           ),
         ),
         "}", // The body ends here
+      ),
+
+    //############################################################//
+    //                     Constant Variables                     //
+    //############################################################//
+
+    constant: ($) =>
+      seq(
+        field("type", $._type_name),
+        "constant",
+        field("name", $.identifier),
+        "=",
+        field("value", $._expression),
+        ";",
       ),
 
     //##########################################################//
@@ -1287,16 +1284,7 @@ module.exports = grammar({
       ),
 
     user_defined_type: ($) =>
-      seq(
-        field(
-          "name",
-          choice(
-            // The choice logic remains the same
-            $.identifier,
-            $.identifier_path,
-          ),
-        ),
-      ),
+      seq(field("name", choice($.identifier, $.identifier_path))),
 
     /**
      * A hidden rule for all elementary types.

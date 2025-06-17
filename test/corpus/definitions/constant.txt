@@ -1,0 +1,213 @@
+==================
+Top-level constant (uint)
+==================
+
+uint256 constant MY_CONSTANT = 42;
+
+---
+
+(source_file
+  definition: (constant
+    type: (uint_type)
+    name: (identifier)
+    value: (primary_expression
+      (literal
+        (number_literal)))))
+
+==================
+Top-level constant (negative int)
+==================
+
+int256 constant MY_NEGATIVE_CONSTANT = -100;
+
+---
+
+(source_file
+  definition: (constant
+    type: (int_type)
+    name: (identifier)
+    value: (unary_expression
+      argument: (primary_expression
+        (literal
+          (number_literal))))))
+
+==================
+Top-level constant (string)
+==================
+
+string constant GREETING = "Hello, World!";
+
+---
+
+(source_file
+  definition: (constant
+    type: (string_type)
+    name: (identifier)
+    value: (primary_expression
+      (literal
+        (string_literal)))))
+
+==================
+Top-level constant (address)
+==================
+
+address constant OWNER = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF;
+
+---
+
+(source_file
+  definition: (constant
+    type: (address_type)
+    name: (identifier)
+    value: (primary_expression
+      (literal
+        (hex_literal)))))
+
+==================
+Top-level constant (bool)
+==================
+
+bool constant IS_ENABLED = true;
+
+---
+
+(source_file
+  definition: (constant
+    type: (bool_type)
+    name: (identifier)
+    value: (primary_expression
+      (literal
+        (boolean_literal)))))
+
+==================
+Top-level constant (bytes)
+==================
+
+bytes32 constant MY_HASH = 0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef;
+
+---
+
+(source_file
+  definition: (constant
+    type: (bytes_type)
+    name: (identifier)
+    value: (primary_expression
+      (literal
+        (hex_literal)))))
+
+==================
+Constant with an arithmetic expression
+==================
+
+uint constant SECONDS_PER_DAY = 24 * 60 * 60;
+
+---
+
+(source_file
+  definition: (constant
+    type: (uint_type)
+    name: (identifier)
+    value: (multiplicative_expression
+      left: (multiplicative_expression
+        left: (primary_expression
+          (literal
+            (number_literal)))
+        operator: (multiplicative_operator)
+        right: (primary_expression
+          (literal
+            (number_literal))))
+      operator: (multiplicative_operator)
+      right: (primary_expression
+        (literal
+          (number_literal))))))
+
+==================
+Constant with exponentiation
+==================
+
+uint constant ONE_ETHER = 10 ** 18;
+
+---
+
+(source_file
+  definition: (constant
+    type: (uint_type)
+    name: (identifier)
+    value: (exponentiation_expression
+      left: (primary_expression
+        (literal
+          (number_literal)))
+      right: (primary_expression
+        (literal
+          (number_literal))))))
+
+==================
+Constant inside a contract
+==================
+
+contract MyContract {
+    uint public constant VERSION = 1;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (uint_type)
+      visibility: (visibility)
+      mutability: (mutability)
+      name: (identifier)
+      value: (primary_expression
+        (literal
+          (number_literal))))))
+
+==================
+Constant referring to another constant
+==================
+
+uint constant A = 1;
+uint constant B = A * 2;
+
+---
+
+(source_file
+  definition: (constant
+    type: (uint_type)
+    name: (identifier)
+    value: (primary_expression
+      (literal
+        (number_literal))))
+  definition: (constant
+    type: (uint_type)
+    name: (identifier)
+    value: (multiplicative_expression
+      left: (primary_expression
+        (identifier))
+      operator: (multiplicative_operator)
+      right: (primary_expression
+        (literal
+          (number_literal))))))
+
+==================
+Constant inside a Library
+==================
+
+library Math {
+    uint256 public constant PI = 31415926535;
+}
+
+---
+
+(source_file
+  definition: (library
+    name: (identifier)
+    storage: (storage
+      type: (uint_type)
+      visibility: (visibility)
+      mutability: (mutability)
+      name: (identifier)
+      value: (primary_expression
+        (literal
+          (number_literal))))))
