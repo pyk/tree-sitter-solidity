@@ -67,6 +67,7 @@ abstract contract C {
 
 (source_file
   definition: (contract
+    abstract: (abstract)
     name: (identifier)
     constructor: (constructor
       visibility: (visibility)
@@ -86,6 +87,7 @@ abstract contract C {
 
 (source_file
   definition: (contract
+    abstract: (abstract)
     name: (identifier)
     constructor: (constructor
       parameters: (parameter_list
@@ -179,6 +181,7 @@ abstract contract D is A, B {
 
 (source_file
   definition: (contract
+    abstract: (abstract)
     name: (identifier)
     parents: (parent_list
       parent: (parent

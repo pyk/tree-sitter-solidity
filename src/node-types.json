@@ -2357,6 +2357,16 @@
     "type": "contract",
     "named": true,
     "fields": {
+      "abstract": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "abstract",
+            "named": true
+          }
+        ]
+      },
       "constructor": {
         "multiple": true,
         "required": false,
@@ -8274,7 +8284,7 @@
   },
   {
     "type": "abstract",
-    "named": false
+    "named": true
   },
   {
     "type": "address",

@@ -780,8 +780,12 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "STRING",
-              "value": "abstract"
+              "type": "FIELD",
+              "name": "abstract",
+              "content": {
+                "type": "SYMBOL",
+                "name": "abstract"
+              }
             },
             {
               "type": "BLANK"
@@ -929,6 +933,10 @@
           "value": "}"
         }
       ]
+    },
+    "abstract": {
+      "type": "STRING",
+      "value": "abstract"
     },
     "parent_list": {
       "type": "SEQ",

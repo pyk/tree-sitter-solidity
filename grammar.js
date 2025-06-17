@@ -280,7 +280,7 @@ module.exports = grammar({
 
     contract: ($) =>
       seq(
-        optional("abstract"),
+        optional(field("abstract", $.abstract)),
         "contract",
         field("name", $.identifier),
         optional(field("parents", $.parent_list)),
@@ -304,6 +304,7 @@ module.exports = grammar({
         "}", // The body ends here
       ),
 
+    abstract: ($) => "abstract",
     parent_list: ($) => seq("is", commaSep(field("parent", $.parent))),
     parent: ($) =>
       seq(

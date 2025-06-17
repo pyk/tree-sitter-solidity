@@ -20,6 +20,7 @@ abstract contract MyAbstractContract {}
 
 (source_file
   definition: (contract
+    abstract: (abstract)
     name: (identifier)))
 
 ==================

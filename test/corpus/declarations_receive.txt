@@ -69,6 +69,7 @@ abstract contract C {
 
 (source_file
   definition: (contract
+    abstract: (abstract)
     name: (identifier)
     receive: (receive_function_definition
       visibility: (visibility)
