@@ -70,6 +70,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "constant"
+        },
+        {
+          "type": "SYMBOL",
           "name": "contract"
         },
         {
@@ -79,10 +83,6 @@
         {
           "type": "SYMBOL",
           "name": "library"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "constant"
         },
         {
           "type": "SYMBOL",
@@ -902,7 +902,7 @@
                 "name": "constructor",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "constructor_definition"
+                  "name": "constructor"
                 }
               },
               {
@@ -1217,6 +1217,83 @@
         {
           "type": "STRING",
           "value": ";"
+        }
+      ]
+    },
+    "constructor": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "constructor"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "parameters",
+              "content": {
+                "type": "SYMBOL",
+                "name": "parameter_list"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_constructor_attribute"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "block"
+          }
+        }
+      ]
+    },
+    "_constructor_attribute": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "visibility",
+          "content": {
+            "type": "SYMBOL",
+            "name": "visibility"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "mutability",
+          "content": {
+            "type": "SYMBOL",
+            "name": "state_mutability"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "invocation",
+          "content": {
+            "type": "SYMBOL",
+            "name": "modifier_invocation"
+          }
         }
       ]
     },
@@ -1817,83 +1894,6 @@
               "type": "BLANK"
             }
           ]
-        }
-      ]
-    },
-    "_constructor_attribute": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "visibility",
-          "content": {
-            "type": "SYMBOL",
-            "name": "visibility"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "mutability",
-          "content": {
-            "type": "SYMBOL",
-            "name": "state_mutability"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "invocation",
-          "content": {
-            "type": "SYMBOL",
-            "name": "modifier_invocation"
-          }
-        }
-      ]
-    },
-    "constructor_definition": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "constructor"
-        },
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "FIELD",
-              "name": "parameters",
-              "content": {
-                "type": "SYMBOL",
-                "name": "parameter_list"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_constructor_attribute"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "body",
-          "content": {
-            "type": "SYMBOL",
-            "name": "block"
-          }
         }
       ]
     },

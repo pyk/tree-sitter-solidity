@@ -2292,7 +2292,7 @@
     }
   },
   {
-    "type": "constructor_definition",
+    "type": "constructor",
     "named": true,
     "fields": {
       "body": {
@@ -2361,7 +2361,7 @@
         "required": false,
         "types": [
           {
-            "type": "constructor_definition",
+            "type": "constructor",
             "named": true
           }
         ]

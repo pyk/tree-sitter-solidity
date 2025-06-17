@@ -97,10 +97,10 @@ module.exports = grammar({
 
     _top_level_definitions: ($) =>
       choice(
+        $.constant,
         $.contract,
         $.interface,
         $.library,
-        $.constant,
         $.struct,
         $.enum,
         $.event,
@@ -296,7 +296,7 @@ module.exports = grammar({
             field("error", $.error),
             field("using", $.using),
             field("udvt", $.udvt),
-            field("constructor", $.constructor_definition),
+            field("constructor", $.constructor),
             field("fallback", $.fallback_function_definition),
             field("receive", $.receive_function_definition),
           ),
@@ -371,6 +371,28 @@ module.exports = grammar({
         "=",
         field("value", $._expression),
         ";",
+      ),
+
+    //############################################################//
+    //                        Constructor                         //
+    //############################################################//
+
+    constructor: ($) =>
+      seq(
+        "constructor",
+        "(",
+        optional(field("parameters", $.parameter_list)),
+        ")",
+        repeat($._constructor_attribute),
+        field("body", $.block),
+      ),
+
+    _constructor_attribute: ($) =>
+      choice(
+        field("visibility", $.visibility),
+        field("mutability", $.state_mutability),
+        // Use a different field name here to allow for multiple
+        field("invocation", $.modifier_invocation),
       ),
 
     //##########################################################//
@@ -488,24 +510,6 @@ module.exports = grammar({
       seq(
         field("name", $.identifier_path),
         optional(field("arguments", $.call_argument_list)),
-      ),
-
-    _constructor_attribute: ($) =>
-      choice(
-        field("visibility", $.visibility),
-        field("mutability", $.state_mutability),
-        // Use a different field name here to allow for multiple
-        field("invocation", $.modifier_invocation),
-      ),
-
-    constructor_definition: ($) =>
-      seq(
-        "constructor",
-        "(",
-        optional(field("parameters", $.parameter_list)),
-        ")",
-        repeat($._constructor_attribute),
-        field("body", $.block),
       ),
 
     _modifier_attribute: ($) =>

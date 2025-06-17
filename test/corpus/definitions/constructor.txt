@@ -11,7 +11,7 @@ contract C {
 (source_file
   definition: (contract
     name: (identifier)
-    constructor: (constructor_definition
+    constructor: (constructor
       body: (block))))
 
 ==================
@@ -27,7 +27,7 @@ contract C {
 (source_file
   definition: (contract
     name: (identifier)
-    constructor: (constructor_definition
+    constructor: (constructor
       parameters: (parameter_list
         (parameter_declaration
           type: (uint_type)
@@ -51,7 +51,7 @@ contract C {
 (source_file
   definition: (contract
     name: (identifier)
-    constructor: (constructor_definition
+    constructor: (constructor
       mutability: (state_mutability)
       body: (block))))
 
@@ -68,7 +68,7 @@ abstract contract C {
 (source_file
   definition: (contract
     name: (identifier)
-    constructor: (constructor_definition
+    constructor: (constructor
       visibility: (visibility)
       body: (block))))
 
@@ -87,7 +87,7 @@ contract C {
 (source_file
   definition: (contract
     name: (identifier)
-    constructor: (constructor_definition
+    constructor: (constructor
       parameters: (parameter_list
         (parameter_declaration
           type: (uint_type)
@@ -117,7 +117,7 @@ contract C {
       name: (identifier)
       body: (block
         (placeholder_statement)))
-    constructor: (constructor_definition
+    constructor: (constructor
       invocation: (modifier_invocation
         name: (identifier_path
           (identifier)))
@@ -142,7 +142,7 @@ contract MyToken is ERC20 {
       (parent
         name: (identifier_path
           (identifier))))
-    constructor: (constructor_definition
+    constructor: (constructor
       parameters: (parameter_list
         (parameter_declaration
           type: (string_type)
