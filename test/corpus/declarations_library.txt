@@ -9,7 +9,7 @@ library MyLibrary {}
 (source_file
   (library_definition
     name: (identifier)
-    body: (contract_body)))
+    body: (library_body)))
 
 ==================
 Library with a function
@@ -30,7 +30,7 @@ library Search {
 (source_file
   (library_definition
     name: (identifier)
-    body: (contract_body
+    body: (library_body
       function: (function_definition
         name: (identifier)
         parameters: (parameter_list

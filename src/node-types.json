@@ -4731,6 +4731,72 @@
     }
   },
   {
+    "type": "interface_body",
+    "named": true,
+    "fields": {
+      "enum": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "enum_definition",
+            "named": true
+          }
+        ]
+      },
+      "error": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "error_definition",
+            "named": true
+          }
+        ]
+      },
+      "event": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "event_definition",
+            "named": true
+          }
+        ]
+      },
+      "function": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "function_definition",
+            "named": true
+          }
+        ]
+      },
+      "struct": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "struct_definition",
+            "named": true
+          }
+        ]
+      },
+      "user_defined_value_type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "user_defined_value_type_definition",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "interface_definition",
     "named": true,
     "fields": {
@@ -4739,7 +4805,7 @@
         "required": true,
         "types": [
           {
-            "type": "contract_body",
+            "type": "interface_body",
             "named": true
           }
         ]
@@ -4767,6 +4833,82 @@
     }
   },
   {
+    "type": "library_body",
+    "named": true,
+    "fields": {
+      "enum": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "enum_definition",
+            "named": true
+          }
+        ]
+      },
+      "error": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "error_definition",
+            "named": true
+          }
+        ]
+      },
+      "event": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "event_definition",
+            "named": true
+          }
+        ]
+      },
+      "function": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "function_definition",
+            "named": true
+          }
+        ]
+      },
+      "state_variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "state_variable_declaration",
+            "named": true
+          }
+        ]
+      },
+      "struct": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "struct_definition",
+            "named": true
+          }
+        ]
+      },
+      "using": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "using_directive",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "library_definition",
     "named": true,
     "fields": {
@@ -4775,7 +4917,7 @@
         "required": true,
         "types": [
           {
-            "type": "contract_body",
+            "type": "library_body",
             "named": true
           }
         ]

@@ -71,7 +71,7 @@ contract C is I {
 (source_file
   (interface_definition
     name: (identifier)
-    body: (contract_body
+    body: (interface_body
       function: (function_definition
         name: (identifier)
         visibility: (visibility)

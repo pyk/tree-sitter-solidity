@@ -2777,6 +2777,47 @@
         }
       ]
     },
+    "interface_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "interface"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "parents",
+              "content": {
+                "type": "SYMBOL",
+                "name": "parent_list"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "interface_body"
+          }
+        }
+      ]
+    },
     "library_definition": {
       "type": "SEQ",
       "members": [
@@ -2797,7 +2838,7 @@
           "name": "body",
           "content": {
             "type": "SYMBOL",
-            "name": "contract_body"
+            "name": "library_body"
           }
         }
       ]
@@ -2919,6 +2960,152 @@
         }
       ]
     },
+    "interface_body": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "FIELD",
+                "name": "function",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "function_definition"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "struct",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "struct_definition"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "enum",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "enum_definition"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "event",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "event_definition"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "error",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "error_definition"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "user_defined_value_type",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "user_defined_value_type_definition"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "library_body": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "FIELD",
+                "name": "function",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "function_definition"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "struct",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "struct_definition"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "enum",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "enum_definition"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "event",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "event_definition"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "error",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "error_definition"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "using",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "using_directive"
+                }
+              },
+              {
+                "type": "FIELD",
+                "name": "state_variable",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "state_variable_declaration"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
     "inheritance_specifier": {
       "type": "SEQ",
       "members": [
@@ -2945,47 +3132,6 @@
               "type": "BLANK"
             }
           ]
-        }
-      ]
-    },
-    "interface_definition": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "interface"
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "FIELD",
-              "name": "parents",
-              "content": {
-                "type": "SYMBOL",
-                "name": "parent_list"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "FIELD",
-          "name": "body",
-          "content": {
-            "type": "SYMBOL",
-            "name": "contract_body"
-          }
         }
       ]
     },
