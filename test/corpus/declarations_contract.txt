@@ -35,12 +35,13 @@ contract MyContract is Ownable, ReentrancyGuard {}
 (source_file
   (contract_definition
     name: (identifier)
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier)))
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier)))
+    parents: (parent_list
+      (base_contract
+        name: (identifier_path
+          (identifier)))
+      (base_contract
+        name: (identifier_path
+          (identifier))))
     body: (contract_body)))
 
 ==================
@@ -58,10 +59,11 @@ contract Child is Parent.DeepParent {}
     path: (string_literal))
   (contract_definition
     name: (identifier)
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier)
-        (identifier)))
+    parents: (parent_list
+      (base_contract
+        name: (identifier_path
+          (identifier)
+          (identifier))))
     body: (contract_body)))
 
 ==================
@@ -75,16 +77,17 @@ contract MyToken is ERC20("My Token", "MTK") {}
 (source_file
   (contract_definition
     name: (identifier)
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier))
-      arguments: (call_argument_list
-        (primary_expression
-          (literal
-            (string_literal)))
-        (primary_expression
-          (literal
-            (string_literal)))))
+    parents: (parent_list
+      (base_contract
+        name: (identifier_path
+          (identifier))
+        arguments: (call_argument_list
+          (primary_expression
+            (literal
+              (string_literal)))
+          (primary_expression
+            (literal
+              (string_literal))))))
     body: (contract_body)))
 
 ==================
@@ -98,10 +101,11 @@ contract MyContract is ReentrancyGuard() {}
 (source_file
   (contract_definition
     name: (identifier)
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier))
-      arguments: (call_argument_list))
+    parents: (parent_list
+      (base_contract
+        name: (identifier_path
+          (identifier))
+        arguments: (call_argument_list)))
     body: (contract_body)))
 
 ==================
@@ -115,25 +119,26 @@ contract MegaContract is Ownable, Parent.DeepParent, ERC20("Mega", "MGA"), Locka
 (source_file
   (contract_definition
     name: (identifier)
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier)))
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier)
-        (identifier)))
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier))
-      arguments: (call_argument_list
-        (primary_expression
-          (literal
-            (string_literal)))
-        (primary_expression
-          (literal
-            (string_literal)))))
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier))
-      arguments: (call_argument_list))
+    parents: (parent_list
+      (base_contract
+        name: (identifier_path
+          (identifier)))
+      (base_contract
+        name: (identifier_path
+          (identifier)
+          (identifier)))
+      (base_contract
+        name: (identifier_path
+          (identifier))
+        arguments: (call_argument_list
+          (primary_expression
+            (literal
+              (string_literal)))
+          (primary_expression
+            (literal
+              (string_literal)))))
+      (base_contract
+        name: (identifier_path
+          (identifier))
+        arguments: (call_argument_list)))
     body: (contract_body)))

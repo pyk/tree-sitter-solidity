@@ -901,9 +901,7 @@ module.exports = grammar({
         optional("abstract"),
         "contract",
         field("name", $.identifier),
-        optional(
-          seq("is", commaSep(field("base_contracts", $.inheritance_specifier))),
-        ),
+        optional(field("parents", $.parent_list)),
         field("body", $.contract_body),
       ),
 
@@ -958,10 +956,15 @@ module.exports = grammar({
       seq(
         "interface",
         field("name", $.identifier),
-        optional(
-          seq("is", commaSep(field("base_contracts", $.inheritance_specifier))),
-        ),
+        optional(field("parents", $.parent_list)),
         field("body", $.contract_body),
+      ),
+
+    parent_list: ($) => seq("is", commaSep($.base_contract)),
+    base_contract: ($) =>
+      seq(
+        field("name", $.identifier_path),
+        optional(field("arguments", $.call_argument_list)),
       ),
 
     /**

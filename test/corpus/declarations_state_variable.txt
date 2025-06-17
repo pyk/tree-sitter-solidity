@@ -84,9 +84,10 @@ contract C is I {
         body: (empty_body))))
   (contract_definition
     name: (identifier)
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier)))
+    parents: (parent_list
+      (base_contract
+        name: (identifier_path
+          (identifier))))
     body: (contract_body
       (state_variable_declaration
         type: (string_type)

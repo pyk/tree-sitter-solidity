@@ -2701,46 +2701,12 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "is"
-                },
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "FIELD",
-                      "name": "base_contracts",
-                      "content": {
-                        "type": "SYMBOL",
-                        "name": "inheritance_specifier"
-                      }
-                    },
-                    {
-                      "type": "REPEAT",
-                      "content": {
-                        "type": "SEQ",
-                        "members": [
-                          {
-                            "type": "STRING",
-                            "value": ","
-                          },
-                          {
-                            "type": "FIELD",
-                            "name": "base_contracts",
-                            "content": {
-                              "type": "SYMBOL",
-                              "name": "inheritance_specifier"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              ]
+              "type": "FIELD",
+              "name": "parents",
+              "content": {
+                "type": "SYMBOL",
+                "name": "parent_list"
+              }
             },
             {
               "type": "BLANK"
@@ -2907,46 +2873,12 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "is"
-                },
-                {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "FIELD",
-                      "name": "base_contracts",
-                      "content": {
-                        "type": "SYMBOL",
-                        "name": "inheritance_specifier"
-                      }
-                    },
-                    {
-                      "type": "REPEAT",
-                      "content": {
-                        "type": "SEQ",
-                        "members": [
-                          {
-                            "type": "STRING",
-                            "value": ","
-                          },
-                          {
-                            "type": "FIELD",
-                            "name": "base_contracts",
-                            "content": {
-                              "type": "SYMBOL",
-                              "name": "inheritance_specifier"
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              ]
+              "type": "FIELD",
+              "name": "parents",
+              "content": {
+                "type": "SYMBOL",
+                "name": "parent_list"
+              }
             },
             {
               "type": "BLANK"
@@ -2960,6 +2892,69 @@
             "type": "SYMBOL",
             "name": "contract_body"
           }
+        }
+      ]
+    },
+    "parent_list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "is"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "base_contract"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": ","
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "base_contract"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "base_contract": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier_path"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "arguments",
+              "content": {
+                "type": "SYMBOL",
+                "name": "call_argument_list"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },

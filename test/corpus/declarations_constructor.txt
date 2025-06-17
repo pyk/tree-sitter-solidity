@@ -149,9 +149,10 @@ contract MyToken is ERC20 {
 (source_file
   (contract_definition
     name: (identifier)
-    base_contracts: (inheritance_specifier
-      name: (identifier_path
-        (identifier)))
+    parents: (parent_list
+      (base_contract
+        name: (identifier_path
+          (identifier))))
     body: (contract_body
       (constructor_definition
         parameters: (parameter_list
