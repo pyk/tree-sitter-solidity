@@ -4861,6 +4861,22 @@
     }
   },
   {
+    "type": "license",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "license_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "literal",
     "named": true,
     "fields": {},
@@ -6648,11 +6664,11 @@
           "named": true
         },
         {
-          "type": "pragma_directive",
+          "type": "license",
           "named": true
         },
         {
-          "type": "spdx_license_identifier",
+          "type": "pragma_directive",
           "named": true
         },
         {
@@ -6672,22 +6688,6 @@
           "named": true
         }
       ]
-    }
-  },
-  {
-    "type": "spdx_license_identifier",
-    "named": true,
-    "fields": {
-      "license": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "license_identifier",
-            "named": true
-          }
-        ]
-      }
     }
   },
   {

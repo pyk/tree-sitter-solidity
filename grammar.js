@@ -86,12 +86,7 @@ module.exports = grammar({
       repeat(choice($._top_level_directives, $._top_level_definitions)),
 
     _top_level_directives: ($) =>
-      choice(
-        $.spdx_license_identifier,
-        $.pragma_directive,
-        $.import_directive,
-        $.using,
-      ),
+      choice($.license, $.pragma_directive, $.import_directive, $.using),
 
     _top_level_definitions: ($) =>
       choice(
@@ -107,6 +102,25 @@ module.exports = grammar({
         $.udvt,
         // $.constant_variable_declaration,
       ),
+
+    //##########################################################//
+    //                         License                          //
+    //##########################################################//
+
+    /**
+     * The SPDX license identifier, which should appear at the top of a source file.
+     * This rule captures the license string itself in a 'license' field.
+     * e.g., `// SPDX-License-Identifier: MIT`
+     */
+    license: ($) =>
+      seq(
+        // By wrapping the regex in `token(prec(1, ...))` we tell the lexer:
+        // "This specific pattern has higher priority than a generic comment."
+        token(prec(1, /\/\/\s*SPDX-License-Identifier:/)),
+        field("value", $.license_identifier),
+      ),
+
+    license_identifier: ($) => /[\w\.-]+/,
 
     //************************************************************//
     //                          Comments                          //
@@ -126,26 +140,6 @@ module.exports = grammar({
       token(
         choice(seq("///", /[^\r\n]*/), seq("/**", /([^*]|\*+[^/])*/, "*/")),
       ),
-
-    //************************************************************//
-    //                       SPDX License                         //
-    //************************************************************//
-
-    /**
-     * The SPDX license identifier, which should appear at the top of a source file.
-     * This rule captures the license string itself in a 'license' field.
-     * e.g., `// SPDX-License-Identifier: MIT`
-     */
-    spdx_license_identifier: ($) =>
-      seq(
-        // By wrapping the regex in `token(prec(1, ...))` we tell the lexer:
-        // "This specific pattern has higher priority than a generic comment."
-        token(prec(1, /\/\/\s*SPDX-License-Identifier:/)),
-        field("license", $.license_identifier),
-      ),
-
-    // Re-add the license_identifier rule so it can be inlined
-    license_identifier: ($) => /[\w\.-]+/,
 
     //************************************************************//
     //                         Directives                         //

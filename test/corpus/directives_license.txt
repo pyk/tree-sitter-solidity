@@ -1,0 +1,23 @@
+==================
+SPDX License Identifier
+==================
+
+// SPDX-License-Identifier: MIT
+
+---
+
+(source_file
+  (license
+    value: (license_identifier)))
+
+==================
+Complex SPDX License Identifier
+==================
+
+// SPDX-License-Identifier: Apache-2.0
+
+---
+
+(source_file
+  (license
+    value: (license_identifier)))

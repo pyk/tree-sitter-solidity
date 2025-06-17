@@ -24,7 +24,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "spdx_license_identifier"
+          "name": "license"
         },
         {
           "type": "SYMBOL",
@@ -84,6 +84,34 @@
           "name": "udvt"
         }
       ]
+    },
+    "license": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "TOKEN",
+          "content": {
+            "type": "PREC",
+            "value": 1,
+            "content": {
+              "type": "PATTERN",
+              "value": "\\/\\/\\s*SPDX-License-Identifier:"
+            }
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "license_identifier"
+          }
+        }
+      ]
+    },
+    "license_identifier": {
+      "type": "PATTERN",
+      "value": "[\\w\\.-]+"
     },
     "comment": {
       "type": "TOKEN",
@@ -160,34 +188,6 @@
           }
         ]
       }
-    },
-    "spdx_license_identifier": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "TOKEN",
-          "content": {
-            "type": "PREC",
-            "value": 1,
-            "content": {
-              "type": "PATTERN",
-              "value": "\\/\\/\\s*SPDX-License-Identifier:"
-            }
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "license",
-          "content": {
-            "type": "SYMBOL",
-            "name": "license_identifier"
-          }
-        }
-      ]
-    },
-    "license_identifier": {
-      "type": "PATTERN",
-      "value": "[\\w\\.-]+"
     },
     "pragma_directive": {
       "type": "SEQ",
