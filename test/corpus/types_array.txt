@@ -11,7 +11,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (array_type
         base: (uint_type))
       name: (identifier))))
@@ -29,7 +29,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (array_type
         base: (address_type)
         size: (primary_expression
@@ -50,7 +50,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (array_type
         base: (array_type
           base: (bool_type)
@@ -75,12 +75,12 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    struct: (struct_definition
+    struct: (struct
       name: (identifier)
       (struct_member
         type: (uint_type)
         name: (identifier)))
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (array_type
         base: (user_defined_type
           (identifier_path
@@ -100,7 +100,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       parameters: (parameter_list
         (parameter_declaration

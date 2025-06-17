@@ -84,17 +84,17 @@ module.exports = grammar({
         $.spdx_license_identifier,
         $.pragma_directive,
         $.import_directive,
-        $.using_directive,
+        $.using,
         $.contract,
         $.interface,
         $.library,
-        $.state_variable_declaration,
-        $.struct_definition,
-        $.enum_definition,
-        $.event_definition,
-        $.error_definition,
-        $.function_definition,
-        $.user_defined_value_type_definition,
+        $.storage,
+        $.struct,
+        $.enum,
+        $.event,
+        $.error,
+        $.function,
+        $.udvt,
         // $.constant_variable_declaration,
       ),
 
@@ -252,7 +252,7 @@ module.exports = grammar({
     wildcard_type: ($) => "*",
 
     // The main directive rule
-    using_directive: ($) =>
+    using: ($) =>
       seq(
         "using",
         field("source", choice($.identifier_path, $.using_aliases)),
@@ -276,18 +276,15 @@ module.exports = grammar({
         "{", // The body starts here
         repeat(
           choice(
-            field("state_variable", $.state_variable_declaration),
-            field("function", $.function_definition),
+            field("storage", $.storage),
+            field("function", $.function),
             field("modifier", $.modifier_definition),
-            field("struct", $.struct_definition),
-            field("enum", $.enum_definition),
-            field("event", $.event_definition),
-            field("error", $.error_definition),
-            field("using", $.using_directive),
-            field(
-              "user_defined_value_type",
-              $.user_defined_value_type_definition,
-            ),
+            field("struct", $.struct),
+            field("enum", $.enum),
+            field("event", $.event),
+            field("error", $.error),
+            field("using", $.using),
+            field("udvt", $.udvt),
             field("constructor", $.constructor_definition),
             field("fallback", $.fallback_function_definition),
             field("receive", $.receive_function_definition),
@@ -316,15 +313,12 @@ module.exports = grammar({
         repeat(
           choice(
             // Interfaces can contain: functions (unimplemented), structs, enums, events, errors
-            field("function", $.function_definition),
-            field("struct", $.struct_definition),
-            field("enum", $.enum_definition),
-            field("event", $.event_definition),
-            field("error", $.error_definition),
-            field(
-              "user_defined_value_type",
-              $.user_defined_value_type_definition,
-            ),
+            field("function", $.function),
+            field("struct", $.struct),
+            field("enum", $.enum),
+            field("event", $.event),
+            field("error", $.error),
+            field("udvt", $.udvt),
           ),
         ),
         "}", // The body ends here
@@ -342,13 +336,13 @@ module.exports = grammar({
         repeat(
           choice(
             // Libraries can contain: functions, structs, enums, events, errors, using directives, state variables (constants only)
-            field("function", $.function_definition),
-            field("struct", $.struct_definition),
-            field("enum", $.enum_definition),
-            field("event", $.event_definition),
-            field("error", $.error_definition),
-            field("using", $.using_directive),
-            field("state_variable", $.state_variable_declaration), // The parser doesn't enforce constant here; that's a job for a semantic checker or linter.
+            field("function", $.function),
+            field("struct", $.struct),
+            field("enum", $.enum),
+            field("event", $.event),
+            field("error", $.error),
+            field("using", $.using),
+            field("storage", $.storage), // The parser doesn't enforce constant here; that's a job for a semantic checker or linter.
           ),
         ),
         "}", // The body ends here
@@ -358,11 +352,7 @@ module.exports = grammar({
     //                          Others                          //
     //##########################################################//
 
-    /**
-     * The definition of a function.
-     * e.g., `function myFunc(uint256 _a) public pure returns (bool) { ... }`
-     */
-    function_definition: ($) =>
+    function: ($) =>
       seq(
         "function",
         field("name", $.identifier),
@@ -402,7 +392,7 @@ module.exports = grammar({
      */
     block: ($) => seq("{", repeat($._statement), "}"),
 
-    struct_definition: ($) =>
+    struct: ($) =>
       seq(
         "struct",
         field("name", $.identifier),
@@ -414,7 +404,7 @@ module.exports = grammar({
     struct_member: ($) =>
       seq(field("type", $._type_name), field("name", $.identifier), ";"),
 
-    enum_definition: ($) =>
+    enum: ($) =>
       seq(
         "enum",
         field("name", $.identifier),
@@ -442,7 +432,7 @@ module.exports = grammar({
     error_parameter_list: ($) => commaSep($.error_parameter),
 
     // Updated event/error definitions
-    event_definition: ($) =>
+    event: ($) =>
       seq(
         "event",
         field("name", $.identifier),
@@ -453,7 +443,7 @@ module.exports = grammar({
         ";",
       ),
 
-    error_definition: ($) =>
+    error: ($) =>
       seq(
         "error",
         field("name", $.identifier),
@@ -558,7 +548,7 @@ module.exports = grammar({
         choice(field("body", $.block), ";"),
       ),
 
-    user_defined_value_type_definition: ($) =>
+    udvt: ($) =>
       seq(
         "type",
         field("name", $.identifier),
@@ -575,7 +565,7 @@ module.exports = grammar({
      * A state variable declaration within a contract.
      * e.g., `uint256 public myVar = 1;`
      */
-    state_variable_declaration: ($) =>
+    storage: ($) =>
       seq(
         field("type", $._type_name),
         repeat($._state_variable_attribute),

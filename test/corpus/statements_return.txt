@@ -13,7 +13,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       visibility: (visibility)
       body: (block
@@ -34,7 +34,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       visibility: (visibility)
       returns: (parameter_list
@@ -61,7 +61,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       visibility: (visibility)
       returns: (parameter_list

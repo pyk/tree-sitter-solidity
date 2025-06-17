@@ -13,7 +13,7 @@ contract C {
   (contract
     name: (identifier)
     (comment)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (uint_type)
       name: (identifier))))
 
@@ -34,7 +34,7 @@ contract C {
   (contract
     name: (identifier)
     (comment)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (uint_type)
       name: (identifier))))
 
@@ -53,7 +53,7 @@ contract C {
   (contract
     name: (identifier)
     (comment)
-    function: (function_definition
+    function: (function
       name: (identifier)
       visibility: (visibility)
       body: (block))))
@@ -76,7 +76,7 @@ contract C {
   (contract
     name: (identifier)
     (comment)
-    function: (function_definition
+    function: (function
       name: (identifier)
       visibility: (visibility)
       body: (block))))

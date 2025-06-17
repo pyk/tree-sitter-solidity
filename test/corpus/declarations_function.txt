@@ -7,7 +7,7 @@ function helper() {}
 ---
 
 (source_file
-  (function_definition
+  (function
     name: (identifier)
     body: (block)))
 
@@ -22,7 +22,7 @@ function add(uint x, uint y) pure returns (uint) {
 ---
 
 (source_file
-  (function_definition
+  (function
     name: (identifier)
     parameters: (parameter_list
       (parameter_declaration
@@ -55,7 +55,7 @@ function mul(uint x, uint y) internal pure returns (uint) {
 ---
 
 (source_file
-  (function_definition
+  (function
     name: (identifier)
     parameters: (parameter_list
       (parameter_declaration
@@ -87,7 +87,7 @@ function myFunction() public virtual {}
 ---
 
 (source_file
-  (function_definition
+  (function
     name: (identifier)
     visibility: (visibility)
     virtual: (virtual)
@@ -102,7 +102,7 @@ function myFunction() public override {}
 ---
 
 (source_file
-  (function_definition
+  (function
     name: (identifier)
     visibility: (visibility)
     override: (override_specifier)
@@ -117,7 +117,7 @@ function myFunction() public override(Base) {}
 ---
 
 (source_file
-  (function_definition
+  (function
     name: (identifier)
     visibility: (visibility)
     override: (override_specifier
@@ -134,7 +134,7 @@ function myFunction() public override(Base1, Base2) {}
 ---
 
 (source_file
-  (function_definition
+  (function
     name: (identifier)
     visibility: (visibility)
     override: (override_specifier
@@ -153,7 +153,7 @@ function myFunction() public virtual override {}
 ---
 
 (source_file
-  (function_definition
+  (function
     name: (identifier)
     visibility: (visibility)
     virtual: (virtual)
@@ -169,7 +169,7 @@ function myFunction() public onlyOwner returns (bool) {}
 ---
 
 (source_file
-  (function_definition
+  (function
     name: (identifier)
     visibility: (visibility)
     modifier: (modifier_invocation

@@ -7,7 +7,7 @@ using SafeMath for uint256;
 ---
 
 (source_file
-  (using_directive
+  (using
     source: (identifier_path
       (identifier))
     target: (uint_type)))
@@ -19,9 +19,11 @@ Using directive for all types (wildcard)
 using SafeMath for *;
 
 ---
+
 (source_file
-  (using_directive
-    source: (identifier_path (identifier))
+  (using
+    source: (identifier_path
+      (identifier))
     target: (wildcard_type)))
 
 ==================
@@ -33,7 +35,7 @@ using {add, sub} for uint256;
 ---
 
 (source_file
-  (using_directive
+  (using
     source: (using_aliases
       (using_alias
         path: (identifier_path
@@ -52,7 +54,7 @@ using {add as +, sub as -} for uint256;
 ---
 
 (source_file
-  (using_directive
+  (using
     source: (using_aliases
       (using_alias
         path: (identifier_path
@@ -73,7 +75,7 @@ using SafeMath for uint256 global;
 ---
 
 (source_file
-  (using_directive
+  (using
     source: (identifier_path
       (identifier))
     target: (uint_type)
@@ -88,7 +90,7 @@ using {MyLib.add, MyLib.sub as -} for MyStruct global;
 ---
 
 (source_file
-  (using_directive
+  (using
     source: (using_aliases
       (using_alias
         path: (identifier_path

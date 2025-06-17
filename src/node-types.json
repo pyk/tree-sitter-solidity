@@ -2215,7 +2215,7 @@
         "required": false,
         "types": [
           {
-            "type": "enum_definition",
+            "type": "enum",
             "named": true
           }
         ]
@@ -2225,7 +2225,7 @@
         "required": false,
         "types": [
           {
-            "type": "error_definition",
+            "type": "error",
             "named": true
           }
         ]
@@ -2235,7 +2235,7 @@
         "required": false,
         "types": [
           {
-            "type": "event_definition",
+            "type": "event",
             "named": true
           }
         ]
@@ -2255,7 +2255,7 @@
         "required": false,
         "types": [
           {
-            "type": "function_definition",
+            "type": "function",
             "named": true
           }
         ]
@@ -2300,12 +2300,12 @@
           }
         ]
       },
-      "state_variable": {
+      "storage": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "state_variable_declaration",
+            "type": "storage",
             "named": true
           }
         ]
@@ -2315,17 +2315,17 @@
         "required": false,
         "types": [
           {
-            "type": "struct_definition",
+            "type": "struct",
             "named": true
           }
         ]
       },
-      "user_defined_value_type": {
+      "udvt": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "user_defined_value_type_definition",
+            "type": "udvt",
             "named": true
           }
         ]
@@ -2335,7 +2335,7 @@
         "required": false,
         "types": [
           {
-            "type": "using_directive",
+            "type": "using",
             "named": true
           }
         ]
@@ -2529,7 +2529,7 @@
     }
   },
   {
-    "type": "enum_definition",
+    "type": "enum",
     "named": true,
     "fields": {
       "name": {
@@ -2780,7 +2780,7 @@
     "fields": {}
   },
   {
-    "type": "error_definition",
+    "type": "error",
     "named": true,
     "fields": {
       "name": {
@@ -2875,7 +2875,7 @@
     }
   },
   {
-    "type": "event_definition",
+    "type": "event",
     "named": true,
     "fields": {
       "name": {
@@ -3609,7 +3609,7 @@
     }
   },
   {
-    "type": "function_definition",
+    "type": "function",
     "named": true,
     "fields": {
       "body": {
@@ -4697,7 +4697,7 @@
         "required": false,
         "types": [
           {
-            "type": "enum_definition",
+            "type": "enum",
             "named": true
           }
         ]
@@ -4707,7 +4707,7 @@
         "required": false,
         "types": [
           {
-            "type": "error_definition",
+            "type": "error",
             "named": true
           }
         ]
@@ -4717,7 +4717,7 @@
         "required": false,
         "types": [
           {
-            "type": "event_definition",
+            "type": "event",
             "named": true
           }
         ]
@@ -4727,7 +4727,7 @@
         "required": false,
         "types": [
           {
-            "type": "function_definition",
+            "type": "function",
             "named": true
           }
         ]
@@ -4757,17 +4757,17 @@
         "required": false,
         "types": [
           {
-            "type": "struct_definition",
+            "type": "struct",
             "named": true
           }
         ]
       },
-      "user_defined_value_type": {
+      "udvt": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "user_defined_value_type_definition",
+            "type": "udvt",
             "named": true
           }
         ]
@@ -4783,7 +4783,7 @@
         "required": false,
         "types": [
           {
-            "type": "enum_definition",
+            "type": "enum",
             "named": true
           }
         ]
@@ -4793,7 +4793,7 @@
         "required": false,
         "types": [
           {
-            "type": "error_definition",
+            "type": "error",
             "named": true
           }
         ]
@@ -4803,7 +4803,7 @@
         "required": false,
         "types": [
           {
-            "type": "event_definition",
+            "type": "event",
             "named": true
           }
         ]
@@ -4813,7 +4813,7 @@
         "required": false,
         "types": [
           {
-            "type": "function_definition",
+            "type": "function",
             "named": true
           }
         ]
@@ -4828,12 +4828,12 @@
           }
         ]
       },
-      "state_variable": {
+      "storage": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "state_variable_declaration",
+            "type": "storage",
             "named": true
           }
         ]
@@ -4843,7 +4843,7 @@
         "required": false,
         "types": [
           {
-            "type": "struct_definition",
+            "type": "struct",
             "named": true
           }
         ]
@@ -4853,7 +4853,7 @@
         "required": false,
         "types": [
           {
-            "type": "using_directive",
+            "type": "using",
             "named": true
           }
         ]
@@ -6620,19 +6620,19 @@
           "named": true
         },
         {
-          "type": "enum_definition",
+          "type": "enum",
           "named": true
         },
         {
-          "type": "error_definition",
+          "type": "error",
           "named": true
         },
         {
-          "type": "event_definition",
+          "type": "event",
           "named": true
         },
         {
-          "type": "function_definition",
+          "type": "function",
           "named": true
         },
         {
@@ -6656,19 +6656,19 @@
           "named": true
         },
         {
-          "type": "state_variable_declaration",
+          "type": "storage",
           "named": true
         },
         {
-          "type": "struct_definition",
+          "type": "struct",
           "named": true
         },
         {
-          "type": "user_defined_value_type_definition",
+          "type": "udvt",
           "named": true
         },
         {
-          "type": "using_directive",
+          "type": "using",
           "named": true
         }
       ]
@@ -6696,7 +6696,7 @@
     "fields": {}
   },
   {
-    "type": "state_variable_declaration",
+    "type": "storage",
     "named": true,
     "fields": {
       "mutability": {
@@ -6892,7 +6892,7 @@
     }
   },
   {
-    "type": "struct_definition",
+    "type": "struct",
     "named": true,
     "fields": {
       "name": {
@@ -7096,6 +7096,48 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "udvt",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "underlying_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -7311,90 +7353,7 @@
     }
   },
   {
-    "type": "user_defined_value_type_definition",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "underlying_type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "address_type",
-            "named": true
-          },
-          {
-            "type": "bool_type",
-            "named": true
-          },
-          {
-            "type": "bytes_type",
-            "named": true
-          },
-          {
-            "type": "int_type",
-            "named": true
-          },
-          {
-            "type": "uint_type",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "using_alias",
-    "named": true,
-    "fields": {
-      "operator": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "user_definable_operator",
-            "named": true
-          }
-        ]
-      },
-      "path": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier_path",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "using_aliases",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "using_alias",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "using_directive",
+    "type": "using",
     "named": true,
     "fields": {
       "source": {
@@ -7460,6 +7419,47 @@
       "types": [
         {
           "type": "global_using",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "using_alias",
+    "named": true,
+    "fields": {
+      "operator": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "user_definable_operator",
+            "named": true
+          }
+        ]
+      },
+      "path": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_path",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "using_aliases",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "using_alias",
           "named": true
         }
       ]

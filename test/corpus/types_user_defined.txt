@@ -12,9 +12,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    struct: (struct_definition
+    struct: (struct
       name: (identifier))
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (user_defined_type
         (identifier_path
           (identifier)))
@@ -34,11 +34,11 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    enum: (enum_definition
+    enum: (enum
       name: (identifier)
       value: (identifier)
       value: (identifier))
-    function: (function_definition
+    function: (function
       name: (identifier)
       parameters: (parameter_list
         (parameter_declaration
@@ -65,7 +65,7 @@ contract C {
     name: (identifier))
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       visibility: (visibility)
       returns: (parameter_list
@@ -89,9 +89,9 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    struct: (struct_definition
+    struct: (struct
       name: (identifier))
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (array_type
         base: (user_defined_type
           (identifier_path
@@ -114,7 +114,7 @@ contract C {
     path: (string_literal))
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       parameters: (parameter_list
         (parameter_declaration

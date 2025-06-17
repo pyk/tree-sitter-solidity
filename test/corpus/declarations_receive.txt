@@ -32,7 +32,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    event: (event_definition
+    event: (event
       name: (identifier)
       parameters: (event_parameter_list
         (unindexed_event_parameter

@@ -7,7 +7,7 @@ event Transfer(address from, address to, uint256 value);
 ---
 
 (source_file
-  (event_definition
+  (event
     name: (identifier)
     parameters: (event_parameter_list
       (unindexed_event_parameter
@@ -29,7 +29,7 @@ event Approval(address indexed owner, address indexed spender, uint256 value) an
 ---
 
 (source_file
-  (event_definition
+  (event
     name: (identifier)
     parameters: (event_parameter_list
       (indexed_event_parameter
@@ -52,7 +52,7 @@ event MyEvent(uint256, bool indexed);
 ---
 
 (source_file
-  (event_definition
+  (event
     name: (identifier)
     parameters: (event_parameter_list
       (unindexed_event_parameter

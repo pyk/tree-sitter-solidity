@@ -13,7 +13,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       body: (block
         (variable_declaration_statement
@@ -43,7 +43,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       body: (block
         (variable_declaration_statement
@@ -74,7 +74,7 @@ contract C {
   (comment)
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       parameters: (parameter_list
         (parameter_declaration
@@ -116,7 +116,7 @@ contract C {
   (comment)
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       parameters: (parameter_list
         (parameter_declaration

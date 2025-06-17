@@ -27,7 +27,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "using_directive"
+          "name": "using"
         },
         {
           "type": "SYMBOL",
@@ -43,31 +43,31 @@
         },
         {
           "type": "SYMBOL",
-          "name": "state_variable_declaration"
+          "name": "storage"
         },
         {
           "type": "SYMBOL",
-          "name": "struct_definition"
+          "name": "struct"
         },
         {
           "type": "SYMBOL",
-          "name": "enum_definition"
+          "name": "enum"
         },
         {
           "type": "SYMBOL",
-          "name": "event_definition"
+          "name": "event"
         },
         {
           "type": "SYMBOL",
-          "name": "error_definition"
+          "name": "error"
         },
         {
           "type": "SYMBOL",
-          "name": "function_definition"
+          "name": "function"
         },
         {
           "type": "SYMBOL",
-          "name": "user_defined_value_type_definition"
+          "name": "udvt"
         }
       ]
     },
@@ -608,7 +608,7 @@
       "type": "STRING",
       "value": "*"
     },
-    "using_directive": {
+    "using": {
       "type": "SEQ",
       "members": [
         {
@@ -725,10 +725,10 @@
             "members": [
               {
                 "type": "FIELD",
-                "name": "state_variable",
+                "name": "storage",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "state_variable_declaration"
+                  "name": "storage"
                 }
               },
               {
@@ -736,7 +736,7 @@
                 "name": "function",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "function_definition"
+                  "name": "function"
                 }
               },
               {
@@ -752,7 +752,7 @@
                 "name": "struct",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "struct_definition"
+                  "name": "struct"
                 }
               },
               {
@@ -760,7 +760,7 @@
                 "name": "enum",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "enum_definition"
+                  "name": "enum"
                 }
               },
               {
@@ -768,7 +768,7 @@
                 "name": "event",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "event_definition"
+                  "name": "event"
                 }
               },
               {
@@ -776,7 +776,7 @@
                 "name": "error",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "error_definition"
+                  "name": "error"
                 }
               },
               {
@@ -784,15 +784,15 @@
                 "name": "using",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "using_directive"
+                  "name": "using"
                 }
               },
               {
                 "type": "FIELD",
-                "name": "user_defined_value_type",
+                "name": "udvt",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "user_defined_value_type_definition"
+                  "name": "udvt"
                 }
               },
               {
@@ -936,7 +936,7 @@
                 "name": "function",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "function_definition"
+                  "name": "function"
                 }
               },
               {
@@ -944,7 +944,7 @@
                 "name": "struct",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "struct_definition"
+                  "name": "struct"
                 }
               },
               {
@@ -952,7 +952,7 @@
                 "name": "enum",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "enum_definition"
+                  "name": "enum"
                 }
               },
               {
@@ -960,7 +960,7 @@
                 "name": "event",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "event_definition"
+                  "name": "event"
                 }
               },
               {
@@ -968,15 +968,15 @@
                 "name": "error",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "error_definition"
+                  "name": "error"
                 }
               },
               {
                 "type": "FIELD",
-                "name": "user_defined_value_type",
+                "name": "udvt",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "user_defined_value_type_definition"
+                  "name": "udvt"
                 }
               }
             ]
@@ -1017,7 +1017,7 @@
                 "name": "function",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "function_definition"
+                  "name": "function"
                 }
               },
               {
@@ -1025,7 +1025,7 @@
                 "name": "struct",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "struct_definition"
+                  "name": "struct"
                 }
               },
               {
@@ -1033,7 +1033,7 @@
                 "name": "enum",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "enum_definition"
+                  "name": "enum"
                 }
               },
               {
@@ -1041,7 +1041,7 @@
                 "name": "event",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "event_definition"
+                  "name": "event"
                 }
               },
               {
@@ -1049,7 +1049,7 @@
                 "name": "error",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "error_definition"
+                  "name": "error"
                 }
               },
               {
@@ -1057,15 +1057,15 @@
                 "name": "using",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "using_directive"
+                  "name": "using"
                 }
               },
               {
                 "type": "FIELD",
-                "name": "state_variable",
+                "name": "storage",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "state_variable_declaration"
+                  "name": "storage"
                 }
               }
             ]
@@ -1077,7 +1077,7 @@
         }
       ]
     },
-    "function_definition": {
+    "function": {
       "type": "SEQ",
       "members": [
         {
@@ -1273,7 +1273,7 @@
         }
       ]
     },
-    "struct_definition": {
+    "struct": {
       "type": "SEQ",
       "members": [
         {
@@ -1330,7 +1330,7 @@
         }
       ]
     },
-    "enum_definition": {
+    "enum": {
       "type": "SEQ",
       "members": [
         {
@@ -1513,7 +1513,7 @@
         }
       ]
     },
-    "event_definition": {
+    "event": {
       "type": "SEQ",
       "members": [
         {
@@ -1570,7 +1570,7 @@
         }
       ]
     },
-    "error_definition": {
+    "error": {
       "type": "SEQ",
       "members": [
         {
@@ -2079,7 +2079,7 @@
         }
       ]
     },
-    "user_defined_value_type_definition": {
+    "udvt": {
       "type": "SEQ",
       "members": [
         {
@@ -2112,7 +2112,7 @@
         }
       ]
     },
-    "state_variable_declaration": {
+    "storage": {
       "type": "SEQ",
       "members": [
         {

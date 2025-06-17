@@ -11,7 +11,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (uint_type)
       name: (identifier))))
 
@@ -28,7 +28,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (uint_type)
       name: (identifier))))
 
@@ -45,7 +45,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (uint_type)
       name: (identifier))))
 
@@ -65,7 +65,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       parameters: (parameter_list
         (parameter_declaration

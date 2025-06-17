@@ -29,7 +29,7 @@ library Search {
 (source_file
   (library
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       parameters: (parameter_list
         (parameter_declaration

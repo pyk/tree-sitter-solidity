@@ -10,7 +10,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (uint_type)
       name: (identifier))))
 
@@ -26,7 +26,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (string_type)
       visibility: (visibility)
       mutability: (mutability)
@@ -47,7 +47,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (address_type)
       visibility: (visibility)
       mutability: (mutability)
@@ -68,7 +68,7 @@ contract C is I {
 (source_file
   (interface
     name: (identifier)
-    function: (function_definition
+    function: (function
       name: (identifier)
       visibility: (visibility)
       mutability: (state_mutability)
@@ -82,7 +82,7 @@ contract C is I {
       (parent
         name: (identifier_path
           (identifier))))
-    state_variable: (state_variable_declaration
+    storage: (storage
       type: (string_type)
       visibility: (visibility)
       override: (override_specifier)

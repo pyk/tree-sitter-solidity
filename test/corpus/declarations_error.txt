@@ -7,7 +7,7 @@ error Unauthorized();
 ---
 
 (source_file
-  (error_definition
+  (error
     name: (identifier)))
 
 ==================
@@ -19,7 +19,7 @@ error InsufficientBalance(uint requested, uint available);
 ---
 
 (source_file
-  (error_definition
+  (error
     name: (identifier)
     parameters: (error_parameter_list
       (error_parameter
@@ -38,7 +38,7 @@ error InvalidInput(address, uint256);
 ---
 
 (source_file
-  (error_definition
+  (error
     name: (identifier)
     parameters: (error_parameter_list
       (error_parameter
@@ -59,7 +59,7 @@ contract C {
 (source_file
   (contract
     name: (identifier)
-    error: (error_definition
+    error: (error
       name: (identifier)
       parameters: (error_parameter_list
         (error_parameter
