@@ -2772,8 +2772,12 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "constructor_definition"
+          "type": "FIELD",
+          "name": "constructor",
+          "content": {
+            "type": "SYMBOL",
+            "name": "constructor_definition"
+          }
         },
         {
           "type": "SYMBOL",

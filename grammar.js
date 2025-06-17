@@ -923,7 +923,7 @@ module.exports = grammar({
      */
     _contract_body_element: ($) =>
       choice(
-        $.constructor_definition,
+        field("constructor", $.constructor_definition),
         $.modifier_definition,
         $.state_variable_declaration,
         $.function_definition,

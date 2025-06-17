@@ -2212,15 +2212,22 @@
   {
     "type": "contract_body",
     "named": true,
-    "fields": {},
+    "fields": {
+      "constructor": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "constructor_definition",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
       "types": [
-        {
-          "type": "constructor_definition",
-          "named": true
-        },
         {
           "type": "enum_definition",
           "named": true
