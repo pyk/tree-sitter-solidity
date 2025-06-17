@@ -959,6 +959,10 @@
         {
           "type": "SYMBOL",
           "name": "placeholder_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "break_statement"
         }
       ]
     },
@@ -1370,6 +1374,19 @@
           }
         ]
       }
+    },
+    "break_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "break"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
     },
     "_expression": {
       "type": "CHOICE",

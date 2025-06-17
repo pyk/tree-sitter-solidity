@@ -341,6 +341,7 @@ module.exports = grammar({
         $.do_while_statement,
         $.continue_statement,
         $.placeholder_statement,
+        $.break_statement,
       ),
 
     /**
@@ -466,6 +467,8 @@ module.exports = grammar({
     continue_statement: ($) => seq("continue", ";"),
 
     placeholder_statement: ($) => prec(1, seq("_", ";")),
+
+    break_statement: ($) => seq("break", ";"),
 
     //************************************************************//
     //                      Expression Rules                      //

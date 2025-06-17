@@ -1309,6 +1309,10 @@
           "named": true
         },
         {
+          "type": "break_statement",
+          "named": true
+        },
+        {
           "type": "continue_statement",
           "named": true
         },
@@ -1353,6 +1357,11 @@
   },
   {
     "type": "boolean_literal",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "break_statement",
     "named": true,
     "fields": {}
   },
@@ -2389,6 +2398,10 @@
             "named": true
           },
           {
+            "type": "break_statement",
+            "named": true
+          },
+          {
             "type": "continue_statement",
             "named": true
           },
@@ -3320,6 +3333,10 @@
             "named": true
           },
           {
+            "type": "break_statement",
+            "named": true
+          },
+          {
             "type": "continue_statement",
             "named": true
           },
@@ -3709,6 +3726,10 @@
             "named": true
           },
           {
+            "type": "break_statement",
+            "named": true
+          },
+          {
             "type": "continue_statement",
             "named": true
           },
@@ -3858,6 +3879,10 @@
         "types": [
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "break_statement",
             "named": true
           },
           {
@@ -7512,6 +7537,10 @@
             "named": true
           },
           {
+            "type": "break_statement",
+            "named": true
+          },
+          {
             "type": "continue_statement",
             "named": true
           },
@@ -7845,6 +7874,10 @@
   {
     "type": "bool_type",
     "named": true
+  },
+  {
+    "type": "break",
+    "named": false
   },
   {
     "type": "bytes_type",

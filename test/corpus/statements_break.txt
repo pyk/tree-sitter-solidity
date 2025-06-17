@@ -1,0 +1,53 @@
+==================
+Break statement in a for loop
+==================
+
+contract C {
+  function f() {
+    for (uint i = 0; i < 10; i++) {
+      if (i == 5) {
+        break;
+      }
+    }
+  }
+}
+
+---
+
+(source_file
+  (contract_definition
+    name: (identifier)
+    body: (contract_body
+      function: (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (for_statement
+            initializer: (variable_declaration_statement
+              declaration: (variable_declaration
+                type: (uint_type)
+                name: (identifier))
+              value: (primary_expression
+                (literal
+                  (number_literal))))
+            condition: (comparison_expression
+              left: (primary_expression
+                (identifier))
+              operator: (comparison_operator)
+              right: (primary_expression
+                (literal
+                  (number_literal))))
+            update: (unary_expression
+              argument: (primary_expression
+                (identifier)))
+            body: (block
+              (if_statement
+                condition: (equality_expression
+                  left: (primary_expression
+                    (identifier))
+                  operator: (equality_operator)
+                  right: (primary_expression
+                    (literal
+                      (number_literal))))
+                consequence: (block
+                  (break_statement))))))))))

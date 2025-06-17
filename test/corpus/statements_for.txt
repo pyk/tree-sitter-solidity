@@ -63,9 +63,7 @@ contract C {
         body: (block
           (for_statement
             body: (block
-              (expression_statement
-                (primary_expression
-                  (identifier))))))))))
+              (break_statement))))))))
 
 ==================
 For loop with only a condition (while loop)
