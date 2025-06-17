@@ -989,8 +989,8 @@ module.exports = grammar({
         field("visibility", $.visibility),
         field("mutability", $.state_mutability),
         field("modifier", $.modifier_invocation),
-        "virtual",
-        $.override_specifier,
+        field("virtual", $.virtual),
+        field("override", $.override_specifier), // <-- Added field name
       ),
 
     /**
@@ -1276,5 +1276,6 @@ module.exports = grammar({
     number_literal: ($) => /\d+/,
     string_literal: ($) => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
     identifier: ($) => /[a-zA-Z_]\w*/,
+    virtual: ($) => "virtual",
   },
 })

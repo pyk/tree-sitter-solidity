@@ -3537,6 +3537,16 @@
           }
         ]
       },
+      "override": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "override_specifier",
+            "named": true
+          }
+        ]
+      },
       "parameters": {
         "multiple": false,
         "required": true,
@@ -3557,6 +3567,16 @@
           }
         ]
       },
+      "virtual": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "virtual",
+            "named": true
+          }
+        ]
+      },
       "visibility": {
         "multiple": true,
         "required": false,
@@ -3567,16 +3587,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "override_specifier",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -7375,6 +7385,11 @@
   },
   {
     "type": "version_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "virtual",
     "named": true,
     "fields": {}
   },

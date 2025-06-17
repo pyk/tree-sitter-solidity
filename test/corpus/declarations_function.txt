@@ -94,6 +94,7 @@ function myFunction() public virtual {}
     name: (identifier)
     parameters: (parameter_list)
     visibility: (visibility)
+    virtual: (virtual)
     body: (block)))
 
 ==================
@@ -109,7 +110,7 @@ function myFunction() public override {}
     name: (identifier)
     parameters: (parameter_list)
     visibility: (visibility)
-    (override_specifier)
+    override: (override_specifier)
     body: (block)))
 
 ==================
@@ -125,7 +126,7 @@ function myFunction() public override(Base) {}
     name: (identifier)
     parameters: (parameter_list)
     visibility: (visibility)
-    (override_specifier
+    override: (override_specifier
       from: (identifier_path
         (identifier)))
     body: (block)))
@@ -143,7 +144,7 @@ function myFunction() public override(Base1, Base2) {}
     name: (identifier)
     parameters: (parameter_list)
     visibility: (visibility)
-    (override_specifier
+    override: (override_specifier
       from: (identifier_path
         (identifier))
       from: (identifier_path
@@ -163,7 +164,8 @@ function myFunction() public virtual override {}
     name: (identifier)
     parameters: (parameter_list)
     visibility: (visibility)
-    (override_specifier)
+    virtual: (virtual)
+    override: (override_specifier)
     body: (block)))
 
 ==================

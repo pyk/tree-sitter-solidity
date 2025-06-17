@@ -2977,12 +2977,20 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "virtual"
+          "type": "FIELD",
+          "name": "virtual",
+          "content": {
+            "type": "SYMBOL",
+            "name": "virtual"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "override_specifier"
+          "type": "FIELD",
+          "name": "override",
+          "content": {
+            "type": "SYMBOL",
+            "name": "override_specifier"
+          }
         }
       ]
     },
@@ -4147,6 +4155,10 @@
     "identifier": {
       "type": "PATTERN",
       "value": "[a-zA-Z_]\\w*"
+    },
+    "virtual": {
+      "type": "STRING",
+      "value": "virtual"
     }
   },
   "extras": [
