@@ -342,6 +342,7 @@ module.exports = grammar({
         $.continue_statement,
         $.placeholder_statement,
         $.break_statement,
+        $.revert_statement,
       ),
 
     /**
@@ -469,6 +470,18 @@ module.exports = grammar({
     placeholder_statement: ($) => prec(1, seq("_", ";")),
 
     break_statement: ($) => seq("break", ";"),
+
+    revert_statement: ($) =>
+      prec(
+        1,
+        seq(
+          "revert",
+          // We can also be more specific about what an error can be
+          field("error", $.identifier_path),
+          field("arguments", $.call_argument_list),
+          ";",
+        ),
+      ),
 
     //************************************************************//
     //                      Expression Rules                      //

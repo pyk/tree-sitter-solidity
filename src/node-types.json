@@ -1345,6 +1345,10 @@
           "named": true
         },
         {
+          "type": "revert_statement",
+          "named": true
+        },
+        {
           "type": "variable_declaration_statement",
           "named": true
         },
@@ -2434,6 +2438,10 @@
             "named": true
           },
           {
+            "type": "revert_statement",
+            "named": true
+          },
+          {
             "type": "variable_declaration_statement",
             "named": true
           },
@@ -3369,6 +3377,10 @@
             "named": true
           },
           {
+            "type": "revert_statement",
+            "named": true
+          },
+          {
             "type": "variable_declaration_statement",
             "named": true
           },
@@ -3762,6 +3774,10 @@
             "named": true
           },
           {
+            "type": "revert_statement",
+            "named": true
+          },
+          {
             "type": "variable_declaration_statement",
             "named": true
           },
@@ -3915,6 +3931,10 @@
           },
           {
             "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "revert_statement",
             "named": true
           },
           {
@@ -6201,6 +6221,32 @@
     }
   },
   {
+    "type": "revert_statement",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "call_argument_list",
+            "named": true
+          }
+        ]
+      },
+      "error": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier_path",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "shift_expression",
     "named": true,
     "fields": {
@@ -7573,6 +7619,10 @@
             "named": true
           },
           {
+            "type": "revert_statement",
+            "named": true
+          },
+          {
             "type": "variable_declaration_statement",
             "named": true
           },
@@ -8095,6 +8145,10 @@
   },
   {
     "type": "returns",
+    "named": false
+  },
+  {
+    "type": "revert",
     "named": false
   },
   {
