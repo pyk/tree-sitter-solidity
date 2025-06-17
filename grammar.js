@@ -1286,7 +1286,17 @@ module.exports = grammar({
         seq("address", optional(field("mutability", "payable"))),
       ),
 
-    user_defined_type: ($) => choice($.identifier, $.identifier_path),
+    user_defined_type: ($) =>
+      seq(
+        field(
+          "name",
+          choice(
+            // The choice logic remains the same
+            $.identifier,
+            $.identifier_path,
+          ),
+        ),
+      ),
 
     /**
      * A hidden rule for all elementary types.

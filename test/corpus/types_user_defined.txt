@@ -16,7 +16,7 @@ contract C {
       name: (identifier))
     storage: (storage
       type: (user_defined_type
-        (identifier))
+        name: (identifier))
       name: (identifier))))
 
 ==================
@@ -42,7 +42,7 @@ contract C {
       parameters: (parameter_list
         (parameter_declaration
           type: (user_defined_type
-            (identifier))
+            name: (identifier))
           name: (identifier)))
       visibility: (visibility)
       body: (block))))
@@ -69,7 +69,7 @@ contract C {
       returns: (parameter_list
         (parameter_declaration
           type: (user_defined_type
-            (identifier))))
+            name: (identifier))))
       body: (block))))
 
 ==================
@@ -91,7 +91,7 @@ contract C {
     storage: (storage
       type: (array_type
         base: (user_defined_type
-          (identifier)))
+          name: (identifier)))
       name: (identifier))))
 
 ==================
@@ -115,7 +115,7 @@ contract C {
       parameters: (parameter_list
         (parameter_declaration
           type: (user_defined_type
-            (identifier_path
+            name: (identifier_path
               (identifier)
               (identifier)))
           name: (identifier)))
