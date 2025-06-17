@@ -139,7 +139,7 @@ contract MyToken is ERC20 {
   (contract
     name: (identifier)
     parents: (parent_list
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier))))
     constructor: (constructor_definition

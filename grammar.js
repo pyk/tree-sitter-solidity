@@ -296,6 +296,13 @@ module.exports = grammar({
         "}", // The body ends here
       ),
 
+    parent_list: ($) => seq("is", commaSep($.parent)),
+    parent: ($) =>
+      seq(
+        field("name", $.identifier_path),
+        optional(field("arguments", $.call_argument_list)),
+      ),
+
     //##########################################################//
     //                        Interface                         //
     //##########################################################//
@@ -305,7 +312,7 @@ module.exports = grammar({
         "interface",
         field("name", $.identifier),
         optional(field("parents", $.parent_list)),
-        "{",
+        "{", // The body starts here
         repeat(
           choice(
             // Interfaces can contain: functions (unimplemented), structs, enums, events, errors
@@ -320,7 +327,7 @@ module.exports = grammar({
             ),
           ),
         ),
-        "}",
+        "}", // The body ends here
       ),
 
     //##########################################################//
@@ -331,7 +338,7 @@ module.exports = grammar({
       seq(
         "library",
         field("name", $.identifier),
-        "{",
+        "{", // The body starts here
         repeat(
           choice(
             // Libraries can contain: functions, structs, enums, events, errors, using directives, state variables (constants only)
@@ -344,28 +351,12 @@ module.exports = grammar({
             field("state_variable", $.state_variable_declaration), // The parser doesn't enforce constant here; that's a job for a semantic checker or linter.
           ),
         ),
-        "}",
+        "}", // The body ends here
       ),
 
     //##########################################################//
     //                          Others                          //
     //##########################################################//
-
-    /**
-     * A single parent contract in an inheritance list.
-     * e.g., `Ownable` or `ERC20("MyToken", "MTK")`
-     */
-    inheritance_specifier: ($) =>
-      seq(
-        field("name", $.identifier_path),
-        optional(field("arguments", $.call_argument_list)),
-      ),
-    parent_list: ($) => seq("is", commaSep($.base_contract)),
-    base_contract: ($) =>
-      seq(
-        field("name", $.identifier_path),
-        optional(field("arguments", $.call_argument_list)),
-      ),
 
     /**
      * The definition of a function.

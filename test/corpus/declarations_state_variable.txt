@@ -79,7 +79,7 @@ contract C is I {
   (contract
     name: (identifier)
     parents: (parent_list
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier))))
     state_variable: (state_variable_declaration

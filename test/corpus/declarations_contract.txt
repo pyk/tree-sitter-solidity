@@ -34,10 +34,10 @@ contract MyContract is Ownable, ReentrancyGuard {}
   (contract
     name: (identifier)
     parents: (parent_list
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier)))
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier))))))
 
@@ -57,7 +57,7 @@ contract Child is Parent.DeepParent {}
   (contract
     name: (identifier)
     parents: (parent_list
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier)
           (identifier))))))
@@ -74,7 +74,7 @@ contract MyToken is ERC20("My Token", "MTK") {}
   (contract
     name: (identifier)
     parents: (parent_list
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier))
         arguments: (call_argument_list
@@ -97,7 +97,7 @@ contract MyContract is ReentrancyGuard() {}
   (contract
     name: (identifier)
     parents: (parent_list
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier))
         arguments: (call_argument_list)))))
@@ -114,14 +114,14 @@ contract MegaContract is Ownable, Parent.DeepParent, ERC20("Mega", "MGA"), Locka
   (contract
     name: (identifier)
     parents: (parent_list
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier)))
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier)
           (identifier)))
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier))
         arguments: (call_argument_list
@@ -131,7 +131,7 @@ contract MegaContract is Ownable, Parent.DeepParent, ERC20("Mega", "MGA"), Locka
           (primary_expression
             (literal
               (string_literal)))))
-      (base_contract
+      (parent
         name: (identifier_path
           (identifier))
         arguments: (call_argument_list)))))
