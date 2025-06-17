@@ -67,14 +67,14 @@ contract C {
     function: (function
       name: (identifier)
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (bytes_type)
           location: (data_location)
           name: (identifier))
-        (parameter_declaration
+        parameter: (parameter
           type: (bytes_type)
           name: (identifier))
-        (parameter_declaration
+        parameter: (parameter
           type: (bytes_type)
           name: (identifier)))
       visibility: (visibility)

@@ -52,7 +52,7 @@ contract C {
     function: (function
       name: (identifier)
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (uint_type)
           name: (identifier)))
       body: (block
@@ -87,7 +87,7 @@ contract C {
     function: (function
       name: (identifier)
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (uint_type)
           name: (identifier)))
       body: (block

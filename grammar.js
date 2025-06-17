@@ -395,6 +395,26 @@ module.exports = grammar({
         field("invocation", $.modifier_invocation),
       ),
 
+    //############################################################//
+    //                         Parameters                         //
+    //############################################################//
+
+    /**
+     * A list of parameters, used for function arguments and return values.
+     */
+    parameter_list: ($) => commaSep(field("parameter", $.parameter)),
+
+    /**
+     * A single parameter declaration.
+     * e.g., `uint256 _myVar` or `string memory _name`
+     */
+    parameter: ($) =>
+      seq(
+        field("type", $._type_name),
+        optional(field("location", $.data_location)),
+        optional(field("name", $.identifier)),
+      ),
+
     //##########################################################//
     //                          Others                          //
     //##########################################################//
@@ -428,11 +448,6 @@ module.exports = grammar({
         field("virtual", $.virtual),
         field("override", $.override_specifier), // <-- Added field name
       ),
-
-    /**
-     * A list of parameters, used for function arguments and return values.
-     */
-    parameter_list: ($) => commaSep($.parameter_declaration),
 
     /**
      * A block of statements enclosed in curly braces.
@@ -632,17 +647,6 @@ module.exports = grammar({
     variable_declaration_tuple: ($) =>
       // Give this rule a higher precedence than tuple_expression to resolve ambiguity.
       prec(1, seq("(", commaSep(optional($.variable_declaration)), ")")),
-
-    /**
-     * A single parameter declaration.
-     * e.g., `uint256 _myVar` or `string memory _name`
-     */
-    parameter_declaration: ($) =>
-      seq(
-        field("type", $._type_name),
-        optional(field("location", $.data_location)),
-        optional(field("name", $.identifier)),
-      ),
 
     //************************************************************//
     //                         Statements                         //

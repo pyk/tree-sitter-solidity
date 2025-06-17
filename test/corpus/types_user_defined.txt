@@ -40,7 +40,7 @@ contract C {
     function: (function
       name: (identifier)
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (user_defined_type
             name: (identifier))
           name: (identifier)))
@@ -67,7 +67,7 @@ contract C {
       name: (identifier)
       visibility: (visibility)
       returns: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (user_defined_type
             name: (identifier))))
       body: (block))))
@@ -113,7 +113,7 @@ contract C {
     function: (function
       name: (identifier)
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (user_defined_type
             name: (identifier_path
               (identifier)

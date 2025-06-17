@@ -73,7 +73,7 @@ contract C is I {
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (string_type)
           location: (data_location)))))
   definition: (contract

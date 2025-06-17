@@ -25,15 +25,15 @@ function add(uint x, uint y) pure returns (uint) {
   definition: (function
     name: (identifier)
     parameters: (parameter_list
-      (parameter_declaration
+      parameter: (parameter
         type: (uint_type)
         name: (identifier))
-      (parameter_declaration
+      parameter: (parameter
         type: (uint_type)
         name: (identifier)))
     mutability: (state_mutability)
     returns: (parameter_list
-      (parameter_declaration
+      parameter: (parameter
         type: (uint_type)))
     body: (block
       (return_statement
@@ -58,16 +58,16 @@ function mul(uint x, uint y) internal pure returns (uint) {
   definition: (function
     name: (identifier)
     parameters: (parameter_list
-      (parameter_declaration
+      parameter: (parameter
         type: (uint_type)
         name: (identifier))
-      (parameter_declaration
+      parameter: (parameter
         type: (uint_type)
         name: (identifier)))
     visibility: (visibility)
     mutability: (state_mutability)
     returns: (parameter_list
-      (parameter_declaration
+      parameter: (parameter
         type: (uint_type)))
     body: (block
       (return_statement
@@ -176,6 +176,6 @@ function myFunction() public onlyOwner returns (bool) {}
       name: (identifier_path
         (identifier)))
     returns: (parameter_list
-      (parameter_declaration
+      parameter: (parameter
         type: (bool_type)))
     body: (block)))

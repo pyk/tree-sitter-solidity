@@ -32,18 +32,18 @@ library Search {
     function: (function
       name: (identifier)
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (array_type
             base: (uint_type))
           location: (data_location)
           name: (identifier))
-        (parameter_declaration
+        parameter: (parameter
           type: (uint_type)
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (uint_type)))
       body: (block
         (comment)))))

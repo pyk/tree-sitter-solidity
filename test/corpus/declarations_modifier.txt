@@ -36,7 +36,7 @@ contract C {
     modifier: (modifier_definition
       name: (identifier)
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (uint_type)
           name: (identifier)))
       body: (block

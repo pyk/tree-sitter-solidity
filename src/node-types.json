@@ -6153,7 +6153,7 @@
     }
   },
   {
-    "type": "parameter_declaration",
+    "type": "parameter",
     "named": true,
     "fields": {
       "location": {
@@ -6219,16 +6219,17 @@
   {
     "type": "parameter_list",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "parameter_declaration",
-          "named": true
-        }
-      ]
+    "fields": {
+      "parameter": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "parameter",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {

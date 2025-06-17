@@ -29,10 +29,10 @@ contract C {
     name: (identifier)
     constructor: (constructor
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (uint_type)
           name: (identifier))
-        (parameter_declaration
+        parameter: (parameter
           type: (string_type)
           location: (data_location)
           name: (identifier)))
@@ -89,7 +89,7 @@ contract C {
     name: (identifier)
     constructor: (constructor
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (uint_type)
           name: (identifier)))
       visibility: (visibility)
@@ -144,11 +144,11 @@ contract MyToken is ERC20 {
           (identifier))))
     constructor: (constructor
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (string_type)
           location: (data_location)
           name: (identifier))
-        (parameter_declaration
+        parameter: (parameter
           type: (string_type)
           location: (data_location)
           name: (identifier)))

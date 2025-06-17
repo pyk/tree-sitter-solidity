@@ -50,14 +50,14 @@ contract C {
     name: (identifier)
     fallback: (fallback_function_definition
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (bytes_type)
           location: (data_location)
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (bytes_type)
           location: (data_location)))
       body: (block
@@ -80,12 +80,12 @@ abstract contract C {
     name: (identifier)
     fallback: (fallback_function_definition
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (bytes_type)
           location: (data_location)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (bytes_type)
           location: (data_location))))))

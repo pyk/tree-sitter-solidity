@@ -17,7 +17,7 @@ contract C {
     function: (function
       name: (identifier)
       parameters: (parameter_list
-        (parameter_declaration
+        parameter: (parameter
           type: (user_defined_type
             name: (identifier))
           name: (identifier)))
