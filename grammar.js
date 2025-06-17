@@ -285,10 +285,10 @@ module.exports = grammar({
      */
     _state_variable_attribute: ($) =>
       choice(
-        $.visibility,
-        $.mutability,
-        // $.override_specifier, // To be added later
-        "transient",
+        field("visibility", $.visibility),
+        field("mutability", $.mutability),
+        field("override", $.override_specifier),
+        field("transient", "transient"),
       ),
 
     /**

@@ -732,16 +732,36 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "visibility"
+          "type": "FIELD",
+          "name": "visibility",
+          "content": {
+            "type": "SYMBOL",
+            "name": "visibility"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "mutability"
+          "type": "FIELD",
+          "name": "mutability",
+          "content": {
+            "type": "SYMBOL",
+            "name": "mutability"
+          }
         },
         {
-          "type": "STRING",
-          "value": "transient"
+          "type": "FIELD",
+          "name": "override",
+          "content": {
+            "type": "SYMBOL",
+            "name": "override_specifier"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "transient",
+          "content": {
+            "type": "STRING",
+            "value": "transient"
+          }
         }
       ]
     },

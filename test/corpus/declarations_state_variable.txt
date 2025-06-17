@@ -16,7 +16,7 @@ contract C {
         name: (identifier)))))
 
 ==================
-State variable with attributes and initializer
+Public constant state variable with initializer
 ==================
 
 contract C {
@@ -30,59 +30,19 @@ contract C {
     body: (contract_body
       (state_variable_declaration
         type: (string_type)
-        (visibility)
-        (mutability)
+        visibility: (visibility)
+        mutability: (mutability)
         name: (identifier)
         value: (primary_expression
           (literal
             (string_literal)))))))
 
 ==================
-State variable with custom type
+Immutable state variable
 ==================
 
 contract C {
-  MyStruct myStruct;
-}
----
-
-(source_file
-  (contract_definition
-    name: (identifier)
-    body: (contract_body
-      (state_variable_declaration
-        type: (user_defined_type
-          (identifier_path
-            (identifier)))
-        name: (identifier)))))
-
-==================
-State variable with boolean literal
-==================
-
-contract C {
-  bool public active = true;
-}
----
-
-(source_file
-  (contract_definition
-    name: (identifier)
-    body: (contract_body
-      (state_variable_declaration
-        type: (bool_type)
-        (visibility)
-        name: (identifier)
-        value: (primary_expression
-          (literal
-            (boolean_literal)))))))
-
-==================
-State variable with address literal
-==================
-
-contract C {
-  address public owner = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;
+  address public immutable owner;
 }
 ---
 
@@ -92,8 +52,48 @@ contract C {
     body: (contract_body
       (state_variable_declaration
         type: (address_type)
-        (visibility)
+        visibility: (visibility)
+        mutability: (mutability)
+        name: (identifier)))))
+
+==================
+Overriding state variable
+==================
+
+interface I {
+  function name() external view returns (string memory);
+}
+contract C is I {
+  string public override name = "MyContract";
+}
+---
+
+(source_file
+  (interface_definition
+    name: (identifier)
+    body: (contract_body
+      (function_definition
+        name: (identifier)
+        parameters: (parameter_list)
+        visibility: (visibility)
+        mutability: (state_mutability)
+        returns: (parameter_list
+          (parameter_declaration
+            type: (string_type)
+            location: (data_location)))
+        body: (empty_body))))
+  (contract_definition
+    name: (identifier)
+    (inheritance_specifier_list
+      (inheritance_specifier
+        name: (identifier_path
+          (identifier))))
+    body: (contract_body
+      (state_variable_declaration
+        type: (string_type)
+        visibility: (visibility)
+        override: (override_specifier)
         name: (identifier)
         value: (primary_expression
           (literal
-            (hex_literal)))))))
+            (string_literal)))))))

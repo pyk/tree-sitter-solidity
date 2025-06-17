@@ -222,7 +222,7 @@ uint256 constant MY_EXP = 2 ** 8;
 (source_file
   (state_variable_declaration
     type: (uint_type)
-    (mutability)
+    mutability: (mutability)
     name: (identifier)
     value: (exponentiation_expression
       left: (primary_expression

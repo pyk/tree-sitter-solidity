@@ -6452,6 +6452,16 @@
     "type": "state_variable_declaration",
     "named": true,
     "fields": {
+      "mutability": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "mutability",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -6459,6 +6469,26 @@
           {
             "type": "identifier",
             "named": true
+          }
+        ]
+      },
+      "override": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "override_specifier",
+            "named": true
+          }
+        ]
+      },
+      "transient": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "transient",
+            "named": false
           }
         ]
       },
@@ -6601,21 +6631,17 @@
             "named": true
           }
         ]
+      },
+      "visibility": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "visibility",
+            "named": true
+          }
+        ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "mutability",
-          "named": true
-        },
-        {
-          "type": "visibility",
-          "named": true
-        }
-      ]
     }
   },
   {
