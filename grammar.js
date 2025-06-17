@@ -57,21 +57,11 @@ module.exports = grammar({
   conflicts: ($) => [],
 
   rules: {
-    // source_file
-    // └─── repeats 0 or more times...
-    //      └─── _top_level_element
-    //           ├─── spdx_license_identifier  (e.g., // SPDX-License-Identifier: MIT)
-    //           ├─── pragma_directive         (e.g., pragma solidity ^0.8.0;)
-    //           ├─── import_directive         (e.g., import "./MyFile.sol";)
-    //           ├─── contract      (e.g., contract C { ... })
-    //           └─── interface     (e.g., interface I { ... })
-
     /**
      * The top-level rule, representing a complete Solidity source file.
      * It consists of a sequence of top-level declarations and directives.
-     *
      */
-    source_file: ($) => repeat($._top_level_element),
+    source_file: ($) => repeat($._top_level_declarations),
 
     /**
      * A choice between any of the valid top-level elements in a Solidity file.
@@ -79,7 +69,7 @@ module.exports = grammar({
      * avoid unnecessary nesting in the final syntax tree.
      * The `choice` function allows any of the listed rules to be matched here.
      */
-    _top_level_element: ($) =>
+    _top_level_declarations: ($) =>
       choice(
         $.spdx_license_identifier,
         $.pragma_directive,

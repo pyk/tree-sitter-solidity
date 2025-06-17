@@ -7,10 +7,10 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "_top_level_element"
+        "name": "_top_level_declarations"
       }
     },
-    "_top_level_element": {
+    "_top_level_declarations": {
       "type": "CHOICE",
       "members": [
         {
