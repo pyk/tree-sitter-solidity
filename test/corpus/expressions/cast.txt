@@ -1,0 +1,221 @@
+==================
+Cast of an integer literal to a type
+==================
+
+contract C {
+    address constant ZERO_ADDRESS = address(0);
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    storage: (storage
+      type: (primitive_type
+        (address_type))
+      mutability: (mutability)
+      name: (symbol
+        name: (identifier))
+      value: (cast
+        type: (primitive_type
+          (address_type))
+        arguments: (argument_list
+          argument: (literal
+            (number)))))))
+
+==================
+Cast between primitive integer types
+==================
+
+contract C {
+    function f(uint8 x) public pure returns (uint16) {
+        return uint16(x);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (cast
+            type: (primitive_type
+              (uint_type))
+            arguments: (argument_list
+              argument: (primary_expression
+                (identifier)))))))))
+
+==================
+Cast of bytesN to an integer
+==================
+
+contract C {
+    function f(bytes4 b) public pure returns (uint32) {
+        return uint32(b);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (cast
+            type: (primitive_type
+              (uint_type))
+            arguments: (argument_list
+              argument: (primary_expression
+                (identifier)))))))))
+
+==================
+Cast to a contract type
+==================
+
+contract OtherContract {}
+contract C {
+    function f(address a) public pure returns (OtherContract) {
+        return OtherContract(a);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))))
+      body: (block
+        (return_statement
+          value: (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (primary_expression
+                (identifier)))))))))
+
+==================
+Cast of 'this' to an address
+==================
+
+contract C {
+    function getAddress() public view returns (address) {
+        return address(this);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))))
+      body: (block
+        (return_statement
+          value: (cast
+            type: (primitive_type
+              (address_type))
+            arguments: (argument_list
+              argument: (primary_expression
+                (identifier)))))))))
+
+==================
+Cast inside an arithmetic expression
+==================
+
+contract C {
+    function f() public pure returns (uint) {
+        return 1 + uint(2);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (arithmetic
+            (add
+              left: (literal
+                (number))
+              operator: (add_op)
+              right: (cast
+                type: (primitive_type
+                  (uint_type))
+                arguments: (argument_list
+                  argument: (literal
+                    (number)))))))))))
