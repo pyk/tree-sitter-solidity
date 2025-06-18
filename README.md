@@ -49,6 +49,23 @@ source_file
 |   |           `-- path: (string)
 |   |
 |   `-- using
+|       `-- (using_library | using_function)
+|           |
+|           |-- (using_library)
+|           |   |-- library: (symbol)
+|           |   |   |-- scope: (symbol)?
+|           |   |   `-- name: (identifier)
+|           |   |-- target: (type | wildcard)
+|           |   `-- global?
+|           |
+|           `-- (using_function)
+|               |-- declaration: (using_declaration)+
+|               |   |-- name: (symbol)
+|               |   |   |-- scope: (symbol)?
+|               |   |   `-- name: (identifier)
+|               |   `-- operator: (using_op)?
+|               |-- target: (type | wildcard)
+|               `-- global?
 |
 `-- definition*
     |-- contract
