@@ -18,16 +18,18 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (add_expression
-            left: (literal
-              (number))
-            operator: (add_op)
-            right: (mul_expression
+          value: (arithmetic
+            (add_expression
               left: (literal
                 (number))
-              operator: (mul_op)
-              right: (literal
-                (number)))))))))
+              operator: (add_op)
+              right: (arithmetic
+                (mul_expression
+                  left: (literal
+                    (number))
+                  operator: (mul_op)
+                  right: (literal
+                    (number)))))))))))
 
 ==================
 Unary expressions

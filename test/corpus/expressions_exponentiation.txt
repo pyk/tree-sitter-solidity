@@ -20,12 +20,13 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (exp_expression
-            left: (literal
-              (number))
-            operator: (exp_op)
-            right: (literal
-              (number))))))))
+          value: (arithmetic
+            (exp_expression
+              left: (literal
+                (number))
+              operator: (exp_op)
+              right: (literal
+                (number)))))))))
 
 ==================
 Right-associativity of exponentiation
@@ -49,16 +50,18 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (exp_expression
-            left: (literal
-              (number))
-            operator: (exp_op)
-            right: (exp_expression
+          value: (arithmetic
+            (exp_expression
               left: (literal
                 (number))
               operator: (exp_op)
-              right: (literal
-                (number)))))))))
+              right: (arithmetic
+                (exp_expression
+                  left: (literal
+                    (number))
+                  operator: (exp_op)
+                  right: (literal
+                    (number)))))))))))
 
 ==================
 Precedence over multiplication
@@ -82,16 +85,18 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (mul_expression
-            left: (literal
-              (number))
-            operator: (mul_op)
-            right: (exp_expression
+          value: (arithmetic
+            (mul_expression
               left: (literal
                 (number))
-              operator: (exp_op)
-              right: (literal
-                (number)))))))))
+              operator: (mul_op)
+              right: (arithmetic
+                (exp_expression
+                  left: (literal
+                    (number))
+                  operator: (exp_op)
+                  right: (literal
+                    (number)))))))))))
 
 ==================
 Precedence over addition
@@ -115,16 +120,18 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (add_expression
-            left: (literal
-              (number))
-            operator: (add_op)
-            right: (exp_expression
+          value: (arithmetic
+            (add_expression
               left: (literal
                 (number))
-              operator: (exp_op)
-              right: (literal
-                (number)))))))))
+              operator: (add_op)
+              right: (arithmetic
+                (exp_expression
+                  left: (literal
+                    (number))
+                  operator: (exp_op)
+                  right: (literal
+                    (number)))))))))))
 
 ==================
 Interaction with unary minus
@@ -148,13 +155,14 @@ contract C {
           declaration: (variable_declaration
             type: (int_type)
             name: (identifier))
-          value: (exp_expression
-            left: (unary_expression
-              argument: (literal
-                (number)))
-            operator: (exp_op)
-            right: (literal
-              (number))))))))
+          value: (arithmetic
+            (exp_expression
+              left: (unary_expression
+                argument: (literal
+                  (number)))
+              operator: (exp_op)
+              right: (literal
+                (number)))))))))
 
 ==================
 Parentheses overriding precedence
@@ -178,17 +186,19 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (exp_expression
-            left: (tuple_expression
-              (add_expression
-                left: (literal
-                  (number))
-                operator: (add_op)
-                right: (literal
-                  (number))))
-            operator: (exp_op)
-            right: (literal
-              (number))))))))
+          value: (arithmetic
+            (exp_expression
+              left: (tuple_expression
+                (arithmetic
+                  (add_expression
+                    left: (literal
+                      (number))
+                    operator: (add_op)
+                    right: (literal
+                      (number)))))
+              operator: (exp_op)
+              right: (literal
+                (number)))))))))
 
 ==================
 Top-level constant with exponentiation
@@ -202,9 +212,10 @@ uint256 constant MY_EXP = 2 ** 8;
   definition: (constant
     type: (uint_type)
     name: (identifier)
-    value: (exp_expression
-      left: (literal
-        (number))
-      operator: (exp_op)
-      right: (literal
-        (number)))))
+    value: (arithmetic
+      (exp_expression
+        left: (literal
+          (number))
+        operator: (exp_op)
+        right: (literal
+          (number))))))

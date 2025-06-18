@@ -487,6 +487,13 @@ module.exports = grammar({
     //                   Arithmetic expression                    //
     //############################################################//
 
+    // The hidden umbrella rule
+    _arithmetic_expression: ($) =>
+      choice($.exp_expression, $.mul_expression, $.add_expression),
+
+    // The public wrapper rule
+    arithmetic: ($) => $._arithmetic_expression,
+
     exp_expression: ($) =>
       prec.right(
         PREC.EXP,
@@ -955,9 +962,7 @@ module.exports = grammar({
         prec(2, alias($._literal, $.literal)),
 
         // Arithmetic expression
-        $.add_expression,
-        $.mul_expression,
-        $.exp_expression,
+        $.arithmetic,
 
         // Others
         $.primary_expression,

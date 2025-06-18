@@ -37,12 +37,13 @@ function add(uint x, uint y) pure returns (uint) {
         type: (uint_type)))
     body: (block
       (return_statement
-        value: (add_expression
-          left: (primary_expression
-            (identifier))
-          operator: (add_op)
-          right: (primary_expression
-            (identifier)))))))
+        value: (arithmetic
+          (add_expression
+            left: (primary_expression
+              (identifier))
+            operator: (add_op)
+            right: (primary_expression
+              (identifier))))))))
 
 ==================
 Internal free function (explicit)
@@ -71,12 +72,13 @@ function mul(uint x, uint y) internal pure returns (uint) {
         type: (uint_type)))
     body: (block
       (return_statement
-        value: (mul_expression
-          left: (primary_expression
-            (identifier))
-          operator: (mul_op)
-          right: (primary_expression
-            (identifier)))))))
+        value: (arithmetic
+          (mul_expression
+            left: (primary_expression
+              (identifier))
+            operator: (mul_op)
+            right: (primary_expression
+              (identifier))))))))
 
 ==================
 Virtual function

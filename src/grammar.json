@@ -1644,6 +1644,27 @@
         }
       ]
     },
+    "_arithmetic_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "exp_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "mul_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "add_expression"
+        }
+      ]
+    },
+    "arithmetic": {
+      "type": "SYMBOL",
+      "name": "_arithmetic_expression"
+    },
     "exp_expression": {
       "type": "PREC_RIGHT",
       "value": 12,
@@ -3437,15 +3458,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "add_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "mul_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "exp_expression"
+          "name": "arithmetic"
         },
         {
           "type": "SYMBOL",

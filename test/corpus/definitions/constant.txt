@@ -101,16 +101,18 @@ uint constant SECONDS_PER_DAY = 24 * 60 * 60;
   definition: (constant
     type: (uint_type)
     name: (identifier)
-    value: (mul_expression
-      left: (mul_expression
-        left: (literal
-          (number))
+    value: (arithmetic
+      (mul_expression
+        left: (arithmetic
+          (mul_expression
+            left: (literal
+              (number))
+            operator: (mul_op)
+            right: (literal
+              (number))))
         operator: (mul_op)
         right: (literal
-          (number)))
-      operator: (mul_op)
-      right: (literal
-        (number)))))
+          (number))))))
 
 ==================
 Constant with exponentiation
@@ -124,12 +126,13 @@ uint constant ONE_ETHER = 10 ** 18;
   definition: (constant
     type: (uint_type)
     name: (identifier)
-    value: (exp_expression
-      left: (literal
-        (number))
-      operator: (exp_op)
-      right: (literal
-        (number)))))
+    value: (arithmetic
+      (exp_expression
+        left: (literal
+          (number))
+        operator: (exp_op)
+        right: (literal
+          (number))))))
 
 ==================
 Constant inside a contract
@@ -170,12 +173,13 @@ uint constant B = A * 2;
   definition: (constant
     type: (uint_type)
     name: (identifier)
-    value: (mul_expression
-      left: (primary_expression
-        (identifier))
-      operator: (mul_op)
-      right: (literal
-        (number)))))
+    value: (arithmetic
+      (mul_expression
+        left: (primary_expression
+          (identifier))
+        operator: (mul_op)
+        right: (literal
+          (number))))))
 
 ==================
 Constant inside a Library

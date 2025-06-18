@@ -8,7 +8,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -44,10 +44,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -77,10 +73,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -124,7 +116,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -160,10 +152,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -193,10 +181,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -257,7 +241,7 @@
         "required": false,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -293,10 +277,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -329,10 +309,6 @@
             "named": true
           },
           {
-            "type": "mul_expression",
-            "named": true
-          },
-          {
             "type": "new_expression",
             "named": true
           },
@@ -358,6 +334,29 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "arithmetic",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "add_expression",
+          "named": true
+        },
+        {
+          "type": "exp_expression",
+          "named": true
+        },
+        {
+          "type": "mul_expression",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -407,7 +406,7 @@
         "required": false,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -443,10 +442,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -476,10 +471,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -519,7 +510,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -555,10 +546,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -588,10 +575,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -639,7 +622,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -675,10 +658,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -708,10 +687,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -751,7 +726,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -787,10 +762,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -820,10 +791,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -867,7 +834,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -903,10 +870,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -936,10 +899,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -979,7 +938,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -1015,10 +974,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1048,10 +1003,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -1095,7 +1046,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -1131,10 +1082,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1164,10 +1111,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -1207,7 +1150,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -1243,10 +1186,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1276,10 +1215,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -1323,7 +1258,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -1359,10 +1294,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1392,10 +1323,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -1518,7 +1445,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -1554,10 +1481,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1587,10 +1510,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -1655,7 +1574,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -1691,10 +1610,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1724,10 +1639,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -1771,7 +1682,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -1807,10 +1718,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1840,10 +1747,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -1893,7 +1796,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -1929,10 +1832,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1962,10 +1861,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -1999,7 +1894,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -2035,10 +1930,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -2068,10 +1959,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -2105,7 +1992,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -2141,10 +2028,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -2174,10 +2057,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -2265,7 +2144,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -2301,10 +2180,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -2334,10 +2209,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -2657,7 +2528,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -2693,10 +2564,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -2726,10 +2593,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -2810,7 +2673,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -2846,10 +2709,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -2879,10 +2738,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -2926,7 +2781,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -2962,10 +2817,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -2995,10 +2846,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -3193,7 +3040,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -3229,10 +3076,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -3262,10 +3105,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -3309,7 +3148,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -3345,10 +3184,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -3378,10 +3213,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -3421,7 +3252,7 @@
       "required": true,
       "types": [
         {
-          "type": "add_expression",
+          "type": "arithmetic",
           "named": true
         },
         {
@@ -3457,10 +3288,6 @@
           "named": true
         },
         {
-          "type": "exp_expression",
-          "named": true
-        },
-        {
           "type": "index_access_expression",
           "named": true
         },
@@ -3490,10 +3317,6 @@
         },
         {
           "type": "meta_type_expression",
-          "named": true
-        },
-        {
-          "type": "mul_expression",
           "named": true
         },
         {
@@ -3656,7 +3479,7 @@
         "required": false,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -3692,10 +3515,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -3725,10 +3544,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -3780,7 +3595,7 @@
         "required": false,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -3816,10 +3631,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -3849,10 +3660,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -4061,7 +3868,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -4097,10 +3904,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -4130,10 +3933,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -4267,7 +4066,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -4303,10 +4102,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -4336,10 +4131,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -4373,7 +4164,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -4409,10 +4200,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -4442,10 +4229,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -4485,7 +4268,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -4521,10 +4304,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -4554,10 +4333,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -4591,7 +4366,7 @@
         "required": false,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -4627,10 +4402,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -4660,10 +4431,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -4697,7 +4464,7 @@
         "required": false,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -4733,10 +4500,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -4766,10 +4529,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -4863,7 +4622,7 @@
       "required": false,
       "types": [
         {
-          "type": "add_expression",
+          "type": "arithmetic",
           "named": true
         },
         {
@@ -4899,10 +4658,6 @@
           "named": true
         },
         {
-          "type": "exp_expression",
-          "named": true
-        },
-        {
           "type": "index_access_expression",
           "named": true
         },
@@ -4932,10 +4687,6 @@
         },
         {
           "type": "meta_type_expression",
-          "named": true
-        },
-        {
-          "type": "mul_expression",
           "named": true
         },
         {
@@ -5216,7 +4967,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -5252,10 +5003,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -5285,10 +5032,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -5332,7 +5075,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -5368,10 +5111,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -5401,10 +5140,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -5444,7 +5179,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -5480,10 +5215,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -5513,10 +5244,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -5560,7 +5287,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -5596,10 +5323,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -5629,10 +5352,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -5682,7 +5401,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -5718,10 +5437,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -5751,10 +5466,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -5920,7 +5631,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -5956,10 +5667,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -5989,10 +5696,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -6036,7 +5739,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -6072,10 +5775,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -6105,10 +5804,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -6168,7 +5863,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -6204,10 +5899,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -6237,10 +5928,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -6630,7 +6317,7 @@
         "required": false,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -6666,10 +6353,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -6699,10 +6382,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -6768,7 +6447,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -6804,10 +6483,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -6837,10 +6512,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -6884,7 +6555,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -6920,10 +6591,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -6953,10 +6620,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -7170,7 +6833,7 @@
         "required": false,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -7206,10 +6869,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -7239,10 +6898,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -7418,7 +7073,7 @@
       "required": false,
       "types": [
         {
-          "type": "add_expression",
+          "type": "arithmetic",
           "named": true
         },
         {
@@ -7454,10 +7109,6 @@
           "named": true
         },
         {
-          "type": "exp_expression",
-          "named": true
-        },
-        {
           "type": "index_access_expression",
           "named": true
         },
@@ -7487,10 +7138,6 @@
         },
         {
           "type": "meta_type_expression",
-          "named": true
-        },
-        {
-          "type": "mul_expression",
           "named": true
         },
         {
@@ -7571,7 +7218,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -7607,10 +7254,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -7640,10 +7283,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -7976,7 +7615,7 @@
         "required": false,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -8012,10 +7651,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -8045,10 +7680,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {
@@ -8202,7 +7833,7 @@
         "required": true,
         "types": [
           {
-            "type": "add_expression",
+            "type": "arithmetic",
             "named": true
           },
           {
@@ -8238,10 +7869,6 @@
             "named": true
           },
           {
-            "type": "exp_expression",
-            "named": true
-          },
-          {
             "type": "index_access_expression",
             "named": true
           },
@@ -8271,10 +7898,6 @@
           },
           {
             "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mul_expression",
             "named": true
           },
           {

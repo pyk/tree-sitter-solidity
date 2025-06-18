@@ -83,12 +83,13 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (add_expression
-            left: (primary_expression
-              (identifier))
-            operator: (add_op)
-            right: (primary_expression
-              (identifier))))
+          value: (arithmetic
+            (add_expression
+              left: (primary_expression
+                (identifier))
+              operator: (add_op)
+              right: (primary_expression
+                (identifier)))))
         (return_statement
           value: (primary_expression
             (identifier)))))))

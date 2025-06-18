@@ -83,12 +83,13 @@ contract C {
             type: (uint_type)
             name: (identifier))
           value: (shift_expression
-            left: (add_expression
-              left: (literal
-                (number))
-              operator: (add_op)
-              right: (literal
-                (number)))
+            left: (arithmetic
+              (add_expression
+                left: (literal
+                  (number))
+                operator: (add_op)
+                right: (literal
+                  (number))))
             operator: (shift_operator)
             right: (literal
               (number))))))))
