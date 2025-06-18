@@ -136,9 +136,10 @@ contract C {
               (address_type)))))
       body: (block
         (return_statement
-          value: (call_expression
-            function: (primary_expression
-              (identifier))
+          value: (cast
+            type: (type
+              (primitive_type
+                (address_type)))
             arguments: (argument_list
               argument: (primary_expression
                 (identifier)))))))))
@@ -328,9 +329,10 @@ contract C {
       mutability: (mutability)
       name: (symbol
         name: (identifier))
-      value: (call_expression
-        function: (primary_expression
-          (identifier))
+      value: (cast
+        type: (type
+          (primitive_type
+            (address_type)))
         arguments: (argument_list
           argument: (literal
             (number)))))))

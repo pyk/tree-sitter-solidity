@@ -137,9 +137,10 @@ contract C {
           location: (data_location)))
       body: (block
         (return_statement
-          value: (call_expression
-            function: (primary_expression
-              (identifier))
+          value: (cast
+            type: (type
+              (primitive_type
+                (string_type)))
             arguments: (argument_list
               argument: (primary_expression
                 (identifier)))))))))

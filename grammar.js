@@ -36,7 +36,8 @@ const PREC = {
   UNARY: 13,
   POSTFIX: 14,
   MEMBER: 15,
-  NEW: 16,
+  CAST: 16,
+  NEW: 17,
 }
 
 // Helper function for comma-separated lists
@@ -514,6 +515,128 @@ module.exports = grammar({
         "!=",
       ),
 
+    //############################################################//
+    //                         Expression                         //
+    //############################################################//
+
+    /**
+     * The main, hidden expression rule.
+     * As a hidden rule, it doesn't appear in the AST. Instead, its chosen
+     * child (e.g., add_expression) is hoisted into its place.
+     */
+    _expression: ($) =>
+      choice(
+        // Give direct literals the highest precedence in the expression tree.
+        prec(2, alias($._literal, $.literal)),
+
+        // Type cast
+        $.cast,
+
+        // Arithmetic expression
+        $.arithmetic,
+
+        // Others
+        $.primary_expression,
+        $.unary_expression,
+        $.conditional_expression,
+        $.payable_conversion_expression,
+        $.meta_type_expression,
+        $.call_expression,
+        $.member_access_expression,
+        $.index_access_expression,
+        $.index_range_access_expression,
+        $.new_expression,
+        $.assignment_expression,
+        $.shift_expression,
+        $.tuple_expression,
+        $.bitwise_and_expression,
+        $.bitwise_xor_expression,
+        $.bitwise_or_expression,
+        $.comparison_expression,
+        $.equality_expression,
+        $.logical_and_expression,
+        $.logical_or_expression,
+        $.inline_array_expression,
+      ),
+
+    //############################################################//
+    //                      Cast expression                       //
+    //############################################################//
+
+    cast: ($) =>
+      prec(
+        PREC.CAST,
+        seq(field("type", $.type), field("arguments", $.argument_list)),
+      ),
+
+    //############################################################//
+    //                   Arithmetic expression                    //
+    //############################################################//
+
+    arithmetic: ($) =>
+      choice(
+        $.exp_expression,
+        $.mul_expression,
+        $.add_expression,
+        $.bitnot_expression,
+      ),
+
+    exp_expression: ($) =>
+      prec.right(
+        PREC.EXP,
+        seq(
+          field("left", $._expression),
+          field("operator", $.exp_op),
+          field("right", $._expression),
+        ),
+      ),
+
+    add_expression: ($) =>
+      prec.left(
+        PREC.ADD,
+        seq(
+          field("left", $._expression),
+          field("operator", $.add_op),
+          field("right", $._expression),
+        ),
+      ),
+
+    mul_expression: ($) =>
+      prec.left(
+        PREC.MULTIPLY,
+        seq(
+          field("left", $._expression),
+          field("operator", $.mul_op),
+          field("right", $._expression),
+        ),
+      ),
+
+    bitnot_expression: ($) =>
+      prec.right(
+        PREC.UNARY,
+        seq(field("operator", $.bitnot_op), field("argument", $._expression)),
+      ),
+
+    // Operators
+    add_op: ($) => choice("+", "-"),
+    mul_op: ($) => choice("*", "/", "%"),
+    exp_op: ($) => "**",
+    bitnot_op: ($) => "~",
+
+    //############################################################//
+    //                     Constant Variables                     //
+    //############################################################//
+
+    constant: ($) =>
+      seq(
+        field("type", $.type),
+        "constant",
+        field("name", alias($._simple_symbol, $.symbol)),
+        "=",
+        field("value", $._expression),
+        ";",
+      ),
+
     //************************************************************//
     //                          Comments                          //
     //************************************************************//
@@ -620,20 +743,6 @@ module.exports = grammar({
       ),
 
     //############################################################//
-    //                     Constant Variables                     //
-    //############################################################//
-
-    constant: ($) =>
-      seq(
-        field("type", $.type),
-        "constant",
-        field("name", alias($._simple_symbol, $.symbol)),
-        "=",
-        field("value", $._expression),
-        ";",
-      ),
-
-    //############################################################//
     //                        Constructor                         //
     //############################################################//
 
@@ -737,52 +846,6 @@ module.exports = grammar({
     literal_with_subdenomination: ($) => seq($.number, $.subdenomination),
     subdenomination: ($) =>
       choice("wei", "gwei", "ether", "seconds", "minutes", "hours", "days"),
-
-    //############################################################//
-    //                   Arithmetic expression                    //
-    //############################################################//
-
-    // The hidden umbrella rule
-    _arithmetic_expression: ($) =>
-      choice($.exp_expression, $.mul_expression, $.add_expression),
-
-    // The public wrapper rule
-    arithmetic: ($) => $._arithmetic_expression,
-
-    exp_expression: ($) =>
-      prec.right(
-        PREC.EXP,
-        seq(
-          field("left", $._expression),
-          field("operator", $.exp_op),
-          field("right", $._expression),
-        ),
-      ),
-
-    add_expression: ($) =>
-      prec.left(
-        PREC.ADD,
-        seq(
-          field("left", $._expression),
-          field("operator", $.add_op),
-          field("right", $._expression),
-        ),
-      ),
-
-    mul_expression: ($) =>
-      prec.left(
-        PREC.MULTIPLY,
-        seq(
-          field("left", $._expression),
-          field("operator", $.mul_op),
-          field("right", $._expression),
-        ),
-      ),
-
-    // Operators
-    add_op: ($) => choice("+", "-"),
-    mul_op: ($) => choice("*", "/", "%"),
-    exp_op: ($) => "**",
 
     //############################################################//
     //                           Others                           //
@@ -1210,43 +1273,6 @@ module.exports = grammar({
     //     └── _expression (repeated)
 
     /**
-     * The main, hidden expression rule.
-     * As a hidden rule, it doesn't appear in the AST. Instead, its chosen
-     * child (e.g., add_expression) is hoisted into its place.
-     */
-    _expression: ($) =>
-      choice(
-        // Give direct literals the highest precedence in the expression tree.
-        prec(2, alias($._literal, $.literal)),
-
-        // Arithmetic expression
-        $.arithmetic,
-
-        // Others
-        $.primary_expression,
-        $.unary_expression,
-        $.conditional_expression,
-        $.payable_conversion_expression,
-        $.meta_type_expression,
-        $.call_expression,
-        $.member_access_expression,
-        $.index_access_expression,
-        $.index_range_access_expression,
-        $.new_expression,
-        $.assignment_expression,
-        $.shift_expression,
-        $.tuple_expression,
-        $.bitwise_and_expression,
-        $.bitwise_xor_expression,
-        $.bitwise_or_expression,
-        $.comparison_expression,
-        $.equality_expression,
-        $.logical_and_expression,
-        $.logical_or_expression,
-        $.inline_array_expression,
-      ),
-
-    /**
      * Primary expressions are the leaf nodes of the expression tree.
      */
     // primary_expression: ($) =>
@@ -1269,7 +1295,7 @@ module.exports = grammar({
         prec.right(
           PREC.UNARY,
           seq(
-            field("operator", choice("!", "~", "-", "delete")),
+            field("operator", choice("!", "-", "delete")),
             field("argument", $._expression),
           ),
         ),

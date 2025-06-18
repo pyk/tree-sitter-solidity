@@ -68,9 +68,10 @@ contract C {
           name: (identifier)))
       body: (block
         (return_statement
-          value: (call_expression
-            function: (primary_expression
-              (identifier))
+          value: (cast
+            type: (type
+              (primitive_type
+                (uint_type)))
             arguments: (argument_list
               argument: (primary_expression
                 (identifier)))))))))
@@ -141,9 +142,10 @@ contract C {
               (uint_type)))))
       body: (block
         (return_statement
-          value: (call_expression
-            function: (primary_expression
-              (identifier))
+          value: (cast
+            type: (type
+              (primitive_type
+                (uint_type)))
             arguments: (argument_list
               argument: (primary_expression
                 (identifier)))))))))

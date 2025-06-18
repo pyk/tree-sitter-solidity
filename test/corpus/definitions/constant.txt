@@ -72,10 +72,10 @@ address constant OWNER = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF;
       (hex))))
 
 ==================
-Top-level constant (bool)
+Top-level constant (bool with unary operator)
 ==================
 
-bool constant IS_ENABLED = true;
+bool constant IS_NOT_ENABLED = !true;
 
 ---
 
@@ -86,8 +86,9 @@ bool constant IS_ENABLED = true;
         (bool_type)))
     name: (symbol
       name: (identifier))
-    value: (literal
-      (boolean))))
+    value: (unary_expression
+      argument: (literal
+        (boolean)))))
 
 ==================
 Top-level constant (bytes)
@@ -108,10 +109,34 @@ bytes32 constant MY_HASH = 0x1234567890abcdef1234567890abcdef1234567890abcdef123
       (hex))))
 
 ==================
-Constant with an arithmetic expression
+Constant with a parenthesized expression
 ==================
 
-uint constant SECONDS_PER_DAY = 24 * 60 * 60;
+uint constant WITH_PARENS = (1 + 2);
+
+---
+
+(source_file
+  definition: (constant
+    type: (type
+      (primitive_type
+        (uint_type)))
+    name: (symbol
+      name: (identifier))
+    value: (tuple_expression
+      (arithmetic
+        (add_expression
+          left: (literal
+            (number))
+          operator: (add_op)
+          right: (literal
+            (number)))))))
+
+==================
+Constant with parentheses to override precedence
+==================
+
+uint constant SECONDS_PER_DAY = (60 + 60) * 12;
 
 ---
 
@@ -124,13 +149,14 @@ uint constant SECONDS_PER_DAY = 24 * 60 * 60;
       name: (identifier))
     value: (arithmetic
       (mul_expression
-        left: (arithmetic
-          (mul_expression
-            left: (literal
-              (number))
-            operator: (mul_op)
-            right: (literal
-              (number))))
+        left: (tuple_expression
+          (arithmetic
+            (add_expression
+              left: (literal
+                (number))
+              operator: (add_op)
+              right: (literal
+                (number)))))
         operator: (mul_op)
         right: (literal
           (number))))))
@@ -156,6 +182,51 @@ uint constant ONE_ETHER = 10 ** 18;
           (number))
         operator: (exp_op)
         right: (literal
+          (number))))))
+
+==================
+Constant with built-in function call
+==================
+
+bytes32 constant EMPTY_STRING_HASH = keccak256("");
+
+---
+
+(source_file
+  definition: (constant
+    type: (type
+      (primitive_type
+        (bytes_type)))
+    name: (symbol
+      name: (identifier))
+    value: (call_expression
+      function: (primary_expression
+        (identifier))
+      arguments: (argument_list
+        argument: (literal
+          (string))))))
+
+==================
+Constant with type casting
+==================
+
+address constant ZERO_ADDRESS = address(0);
+
+---
+
+(source_file
+  definition: (constant
+    type: (type
+      (primitive_type
+        (address_type)))
+    name: (symbol
+      name: (identifier))
+    value: (cast
+      type: (type
+        (primitive_type
+          (address_type)))
+      arguments: (argument_list
+        argument: (literal
           (number))))))
 
 ==================
@@ -239,3 +310,29 @@ library Math {
         name: (identifier))
       value: (literal
         (number)))))
+
+==================
+Constant with bitwise not
+==================
+
+uint constant BITWISE_NOT = ~uint(0);
+
+---
+
+(source_file
+  definition: (constant
+    type: (type
+      (primitive_type
+        (uint_type)))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (bitnot_expression
+        operator: (bitnot_op)
+        argument: (cast
+          type: (type
+            (primitive_type
+              (uint_type)))
+          arguments: (argument_list
+            argument: (literal
+              (number))))))))
