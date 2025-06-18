@@ -308,14 +308,8 @@ module.exports = grammar({
     parent_list: ($) => seq("is", commaSep(field("parent", $.parent))),
     parent: ($) =>
       seq(
-        // The fix is here:
-        field(
-          "name",
-          choice(
-            prec(1, $.identifier), // Prefer simple identifier
-            $.identifier_path, // Fallback for qualified names
-          ),
-        ),
+        // The name can ONLY be a simple identifier.
+        field("name", $.identifier),
         optional(field("arguments", $.argument_list)),
       ),
 
