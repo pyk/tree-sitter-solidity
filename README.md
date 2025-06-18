@@ -13,6 +13,7 @@ source_file
 |-- directive*
 |   |-- pragma
 |   |   `-- (solidity | abicoder | experimental)
+|   |       |
 |   |       |-- (solidity)
 |   |       |   `-- version: (version_constraint)+
 |   |       |       |-- operator: (version_operator)?
@@ -57,7 +58,7 @@ Notes:
 
 - `?` Optional
 - `*` Zero or more
-- `(Choice)` The child of pragma is a choice between solidity, abicoder, or experimental.
+- `(Choice)` e.g. The child of pragma is a choice between solidity, abicoder, or experimental.
 - `+` One or more
 
 ## Setup
