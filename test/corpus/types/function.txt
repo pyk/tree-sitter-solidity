@@ -1,0 +1,268 @@
+==================
+Simple function type with no parameters or returns
+==================
+
+contract C {
+    function() internal myVar;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (function_type
+          visibility: (visibility)))
+      name: (identifier))))
+
+==================
+Function type with parameters
+==================
+
+contract C {
+    function (uint, address) internal myFunc;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (function_type
+          parameters: (parameter_list
+            parameter: (parameter
+              type: (type
+                (primitive_type
+                  (uint_type))))
+            parameter: (parameter
+              type: (type
+                (primitive_type
+                  (address_type)))))
+          visibility: (visibility)))
+      name: (identifier))))
+
+==================
+Function type with return values
+==================
+
+contract C {
+    function () internal returns (bool) myFunc;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (function_type
+          visibility: (visibility)
+          returns: (parameter_list
+            parameter: (parameter
+              type: (type
+                (primitive_type
+                  (bool_type)))))))
+      name: (identifier))))
+
+==================
+External function type with all attributes
+==================
+
+contract C {
+    function (string memory) external view returns (bytes memory) myFunc;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (function_type
+          parameters: (parameter_list
+            parameter: (parameter
+              type: (type
+                (primitive_type
+                  (string_type)))
+              location: (data_location)))
+          visibility: (visibility)
+          mutability: (state_mutability)
+          returns: (parameter_list
+            parameter: (parameter
+              type: (type
+                (primitive_type
+                  (bytes_type)))
+              location: (data_location)))))
+      name: (identifier))))
+
+==================
+Payable function type
+==================
+
+contract C {
+    function(address) external payable myPayableFunc;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (function_type
+          parameters: (parameter_list
+            parameter: (parameter
+              type: (type
+                (primitive_type
+                  (address_type)))))
+          visibility: (visibility)
+          mutability: (state_mutability)))
+      name: (identifier))))
+
+==================
+Pure function type
+==================
+
+contract C {
+    function () internal pure returns (uint) myPureFunc;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (function_type
+          visibility: (visibility)
+          mutability: (state_mutability)
+          returns: (parameter_list
+            parameter: (parameter
+              type: (type
+                (primitive_type
+                  (uint_type)))))))
+      name: (identifier))))
+
+==================
+Function type with complex parameters (array)
+==================
+
+contract C {
+    function(uint[] memory) external myComplexFunc;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (function_type
+          parameters: (parameter_list
+            parameter: (parameter
+              type: (type
+                (array_type
+                  base: (type
+                    (primitive_type
+                      (uint_type)))))
+              location: (data_location)))
+          visibility: (visibility)))
+      name: (identifier))))
+
+==================
+Function type with multiple named return values
+==================
+
+contract C {
+    function () internal returns (uint a, bool b) myMultiReturnFunc;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (function_type
+          visibility: (visibility)
+          returns: (parameter_list
+            parameter: (parameter
+              type: (type
+                (primitive_type
+                  (uint_type)))
+              name: (identifier))
+            parameter: (parameter
+              type: (type
+                (primitive_type
+                  (bool_type)))
+              name: (identifier)))))
+      name: (identifier))))
+
+==================
+Function type as a function parameter
+==================
+
+contract C {
+    function doSomething(function(uint) internal pure returns (uint) callback) public {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (type
+            (function_type
+              parameters: (parameter_list
+                parameter: (parameter
+                  type: (type
+                    (primitive_type
+                      (uint_type)))))
+              visibility: (visibility)
+              mutability: (state_mutability)
+              returns: (parameter_list
+                parameter: (parameter
+                  type: (type
+                    (primitive_type
+                      (uint_type)))))))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block))))
+
+==================
+Function type with no data location on parameter
+==================
+
+contract C {
+    function(uint) internal myFunc;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (function_type
+          parameters: (parameter_list
+            parameter: (parameter
+              type: (type
+                (primitive_type
+                  (uint_type)))))
+          visibility: (visibility)))
+      name: (identifier))))
