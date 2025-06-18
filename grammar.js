@@ -163,7 +163,7 @@ module.exports = grammar({
     //############################################################//
 
     // The visible root for all types.
-    type: ($) =>
+    _type: ($) =>
       choice(
         // Give primitive_type higher precedence to resolve ambiguity
         // with identifiers that look like primitives (e.g., `uint`).
@@ -320,7 +320,7 @@ module.exports = grammar({
 
     array_type: ($) =>
       seq(
-        field("base", $.type),
+        field("base", $._type),
         "[",
         optional(field("size", $._expression)),
         "]",
@@ -330,9 +330,9 @@ module.exports = grammar({
       seq(
         "mapping",
         "(",
-        field("key", $.type),
+        field("key", $._type),
         "=>",
-        field("value", $.type),
+        field("value", $._type),
         ")",
       ),
 
@@ -476,7 +476,7 @@ module.exports = grammar({
       seq(
         field("library", $.symbol),
         "for",
-        field("target", choice($.type, $.wildcard)),
+        field("target", choice($._type, $.wildcard)),
         optional(field("global", $.global)),
       ),
 
@@ -486,7 +486,7 @@ module.exports = grammar({
         commaSep(field("declaration", $.using_declaration)),
         "}",
         "for",
-        field("target", choice($.type, $.wildcard)),
+        field("target", choice($._type, $.wildcard)),
         optional(field("global", $.global)),
       ),
 
@@ -566,7 +566,7 @@ module.exports = grammar({
     cast: ($) =>
       prec(
         PREC.CAST,
-        seq(field("type", $.type), field("arguments", $.argument_list)),
+        seq(field("type", $._type), field("arguments", $.argument_list)),
       ),
 
     //############################################################//
@@ -629,7 +629,7 @@ module.exports = grammar({
 
     constant: ($) =>
       seq(
-        field("type", $.type),
+        field("type", $._type),
         "constant",
         field("name", alias($._simple_symbol, $.symbol)),
         "=",
@@ -783,7 +783,7 @@ module.exports = grammar({
      */
     parameter: ($) =>
       seq(
-        field("type", $.type),
+        field("type", $._type),
         optional(field("location", $.data_location)),
         optional(field("name", $.identifier)),
       ),
@@ -899,7 +899,7 @@ module.exports = grammar({
 
     struct_member: ($) =>
       seq(
-        field("type", $.type),
+        field("type", $._type),
         field("name", alias($._simple_symbol, $.symbol)),
         ";",
       ),
@@ -919,14 +919,14 @@ module.exports = grammar({
 
     indexed_event_parameter: ($) =>
       seq(
-        field("type", $.type),
+        field("type", $._type),
         "indexed",
         optional(field("name", alias($._simple_symbol, $.symbol))),
       ),
 
     unindexed_event_parameter: ($) =>
       seq(
-        field("type", $.type),
+        field("type", $._type),
         optional(field("name", alias($._simple_symbol, $.symbol))),
       ),
 
@@ -961,7 +961,7 @@ module.exports = grammar({
 
     error_parameter: ($) =>
       seq(
-        field("type", $.type),
+        field("type", $._type),
         optional(field("name", alias($._simple_symbol, $.symbol))),
       ),
 
@@ -1046,7 +1046,7 @@ module.exports = grammar({
      */
     storage: ($) =>
       seq(
-        field("type", $.type),
+        field("type", $._type),
         repeat($._state_variable_attribute),
         field("name", alias($._simple_symbol, $.symbol)),
         optional(seq("=", field("value", $._expression))),
@@ -1070,7 +1070,7 @@ module.exports = grammar({
      */
     variable_declaration: ($) =>
       seq(
-        field("type", $.type),
+        field("type", $._type),
         optional(field("location", $.data_location)),
         optional(field("name", alias($._simple_symbol, $.symbol))),
       ),
@@ -1435,7 +1435,7 @@ module.exports = grammar({
      * attempts to find a member access.
      */
     new_expression: ($) =>
-      prec.right(PREC.NEW, seq("new", field("type", $.type))),
+      prec.right(PREC.NEW, seq("new", field("type", $._type))),
 
     assignment_expression: ($) =>
       prec.right(
@@ -1574,7 +1574,7 @@ module.exports = grammar({
      * e.g., `type(MyContract)`
      */
     meta_type_expression: ($) =>
-      prec(PREC.MEMBER, seq("type", "(", field("type", $.type), ")")),
+      prec(PREC.MEMBER, seq("type", "(", field("type", $._type), ")")),
 
     /**
      * An inline array expression.

@@ -14,25 +14,19 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (uint_type)))
-          value: (type
-            (primitive_type
-              (address_type)))))
+      type: (mapping_type
+        key: (primitive_type
+          (uint_type))
+        value: (primitive_type
+          (address_type)))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (address_type)))
-          value: (type
-            (primitive_type
-              (bool_type)))))
+      type: (mapping_type
+        key: (primitive_type
+          (address_type))
+        value: (primitive_type
+          (bool_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -52,19 +46,14 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (address_type)))
-          value: (type
-            (mapping_type
-              key: (type
-                (primitive_type
-                  (uint_type)))
-              value: (type
-                (primitive_type
-                  (uint_type)))))))
+      type: (mapping_type
+        key: (primitive_type
+          (address_type))
+        value: (mapping_type
+          key: (primitive_type
+            (uint_type))
+          value: (primitive_type
+            (uint_type))))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -88,14 +77,11 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (bytes_type)))
-          value: (type
-            (primitive_type
-              (uint_type)))))
+      type: (mapping_type
+        key: (primitive_type
+          (bytes_type))
+        value: (primitive_type
+          (uint_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))
@@ -104,14 +90,11 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (mapping_type
-              key: (type
-                (primitive_type
-                  (bytes_type)))
-              value: (type
-                (primitive_type
-                  (uint_type)))))
+          type: (mapping_type
+            key: (primitive_type
+              (bytes_type))
+            value: (primitive_type
+              (uint_type)))
           location: (data_location)
           name: (identifier)))
       visibility: (visibility)
@@ -137,14 +120,11 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (address_type)))
-          value: (type
-            (primitive_type
-              (uint_type)))))
+      type: (mapping_type
+        key: (primitive_type
+          (address_type))
+        value: (primitive_type
+          (uint_type)))
       name: (symbol
         name: (identifier)))
     function: (function
@@ -154,14 +134,11 @@ contract C {
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (mapping_type
-              key: (type
-                (primitive_type
-                  (address_type)))
-              value: (type
-                (primitive_type
-                  (uint_type)))))
+          type: (mapping_type
+            key: (primitive_type
+              (address_type))
+            value: (primitive_type
+              (uint_type)))
           location: (data_location)))
       body: (block
         (return_statement
@@ -187,14 +164,11 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (uint_type)))
-          value: (type
-            (primitive_type
-              (address_type)))))
+      type: (mapping_type
+        key: (primitive_type
+          (uint_type))
+        value: (primitive_type
+          (address_type)))
       name: (symbol
         name: (identifier)))
     function: (function
@@ -204,14 +178,11 @@ contract C {
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration
-            type: (type
-              (mapping_type
-                key: (type
-                  (primitive_type
-                    (uint_type)))
-                value: (type
-                  (primitive_type
-                    (address_type)))))
+            type: (mapping_type
+              key: (primitive_type
+                (uint_type))
+              value: (primitive_type
+                (address_type)))
             location: (data_location)
             name: (symbol
               name: (identifier)))
@@ -239,20 +210,16 @@ contract C {
       name: (symbol
         name: (identifier))
       (struct_member
-        type: (type
-          (mapping_type
-            key: (type
-              (primitive_type
-                (uint_type)))
-            value: (type
-              (primitive_type
-                (bool_type)))))
+        type: (mapping_type
+          key: (primitive_type
+            (uint_type))
+          value: (primitive_type
+            (bool_type)))
         name: (symbol
           name: (identifier)))
       (struct_member
-        type: (type
-          (primitive_type
-            (uint_type)))
+        type: (primitive_type
+          (uint_type))
         name: (symbol
           name: (identifier))))))
 
@@ -282,16 +249,13 @@ contract C {
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))
-          value: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))))
+      type: (mapping_type
+        key: (custom_type
+          symbol: (symbol
+            name: (identifier)))
+        value: (custom_type
+          symbol: (symbol
+            name: (identifier))))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -310,16 +274,12 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (address_type)))
-          value: (type
-            (array_type
-              base: (type
-                (primitive_type
-                  (uint_type)))))))
+      type: (mapping_type
+        key: (primitive_type
+          (address_type))
+        value: (array_type
+          base: (primitive_type
+            (uint_type))))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -342,21 +302,17 @@ contract C {
       name: (symbol
         name: (identifier))
       (struct_member
-        type: (type
-          (primitive_type
-            (bool_type)))
+        type: (primitive_type
+          (bool_type))
         name: (symbol
           name: (identifier))))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (uint_type)))
-          value: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))))
+      type: (mapping_type
+        key: (primitive_type
+          (uint_type))
+        value: (custom_type
+          symbol: (symbol
+            name: (identifier))))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))

@@ -284,7 +284,7 @@
       "type": "STRING",
       "value": "*"
     },
-    "type": {
+    "_type": {
       "type": "CHOICE",
       "members": [
         {
@@ -836,7 +836,7 @@
           "name": "base",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -881,7 +881,7 @@
           "name": "key",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -893,7 +893,7 @@
           "name": "value",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -1469,7 +1469,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "type"
+                "name": "_type"
               },
               {
                 "type": "SYMBOL",
@@ -1552,7 +1552,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "type"
+                "name": "_type"
               },
               {
                 "type": "SYMBOL",
@@ -1803,7 +1803,7 @@
             "name": "type",
             "content": {
               "type": "SYMBOL",
-              "name": "type"
+              "name": "_type"
             }
           },
           {
@@ -2008,7 +2008,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -2715,7 +2715,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -3212,7 +3212,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -3318,7 +3318,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -3356,7 +3356,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -3556,7 +3556,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -3949,7 +3949,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -4048,7 +4048,7 @@
           "name": "type",
           "content": {
             "type": "SYMBOL",
-            "name": "type"
+            "name": "_type"
           }
         },
         {
@@ -5093,7 +5093,7 @@
             "name": "type",
             "content": {
               "type": "SYMBOL",
-              "name": "type"
+              "name": "_type"
             }
           }
         ]
@@ -5574,7 +5574,7 @@
             "name": "type",
             "content": {
               "type": "SYMBOL",
-              "name": "type"
+              "name": "_type"
             }
           },
           {

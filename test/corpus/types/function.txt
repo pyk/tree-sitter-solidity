@@ -13,9 +13,8 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (function_type
-          visibility: (visibility)))
+      type: (function_type
+        visibility: (visibility))
       name: (symbol
         name: (identifier)))))
 
@@ -34,18 +33,15 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (function_type
-          parameters: (parameter_list
-            parameter: (parameter
-              type: (type
-                (primitive_type
-                  (uint_type))))
-            parameter: (parameter
-              type: (type
-                (primitive_type
-                  (address_type)))))
-          visibility: (visibility)))
+      type: (function_type
+        parameters: (parameter_list
+          parameter: (parameter
+            type: (primitive_type
+              (uint_type)))
+          parameter: (parameter
+            type: (primitive_type
+              (address_type))))
+        visibility: (visibility))
       name: (symbol
         name: (identifier)))))
 
@@ -64,14 +60,12 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (function_type
-          visibility: (visibility)
-          returns: (parameter_list
-            parameter: (parameter
-              type: (type
-                (primitive_type
-                  (bool_type)))))))
+      type: (function_type
+        visibility: (visibility)
+        returns: (parameter_list
+          parameter: (parameter
+            type: (primitive_type
+              (bool_type)))))
       name: (symbol
         name: (identifier)))))
 
@@ -90,22 +84,19 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (function_type
-          parameters: (parameter_list
-            parameter: (parameter
-              type: (type
-                (primitive_type
-                  (string_type)))
-              location: (data_location)))
-          visibility: (visibility)
-          mutability: (state_mutability)
-          returns: (parameter_list
-            parameter: (parameter
-              type: (type
-                (primitive_type
-                  (bytes_type)))
-              location: (data_location)))))
+      type: (function_type
+        parameters: (parameter_list
+          parameter: (parameter
+            type: (primitive_type
+              (string_type))
+            location: (data_location)))
+        visibility: (visibility)
+        mutability: (state_mutability)
+        returns: (parameter_list
+          parameter: (parameter
+            type: (primitive_type
+              (bytes_type))
+            location: (data_location))))
       name: (symbol
         name: (identifier)))))
 
@@ -124,15 +115,13 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (function_type
-          parameters: (parameter_list
-            parameter: (parameter
-              type: (type
-                (primitive_type
-                  (address_type)))))
-          visibility: (visibility)
-          mutability: (state_mutability)))
+      type: (function_type
+        parameters: (parameter_list
+          parameter: (parameter
+            type: (primitive_type
+              (address_type))))
+        visibility: (visibility)
+        mutability: (state_mutability))
       name: (symbol
         name: (identifier)))))
 
@@ -151,15 +140,13 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (function_type
-          visibility: (visibility)
-          mutability: (state_mutability)
-          returns: (parameter_list
-            parameter: (parameter
-              type: (type
-                (primitive_type
-                  (uint_type)))))))
+      type: (function_type
+        visibility: (visibility)
+        mutability: (state_mutability)
+        returns: (parameter_list
+          parameter: (parameter
+            type: (primitive_type
+              (uint_type)))))
       name: (symbol
         name: (identifier)))))
 
@@ -178,17 +165,14 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (function_type
-          parameters: (parameter_list
-            parameter: (parameter
-              type: (type
-                (array_type
-                  base: (type
-                    (primitive_type
-                      (uint_type)))))
-              location: (data_location)))
-          visibility: (visibility)))
+      type: (function_type
+        parameters: (parameter_list
+          parameter: (parameter
+            type: (array_type
+              base: (primitive_type
+                (uint_type)))
+            location: (data_location)))
+        visibility: (visibility))
       name: (symbol
         name: (identifier)))))
 
@@ -207,20 +191,17 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (function_type
-          visibility: (visibility)
-          returns: (parameter_list
-            parameter: (parameter
-              type: (type
-                (primitive_type
-                  (uint_type)))
-              name: (identifier))
-            parameter: (parameter
-              type: (type
-                (primitive_type
-                  (bool_type)))
-              name: (identifier)))))
+      type: (function_type
+        visibility: (visibility)
+        returns: (parameter_list
+          parameter: (parameter
+            type: (primitive_type
+              (uint_type))
+            name: (identifier))
+          parameter: (parameter
+            type: (primitive_type
+              (bool_type))
+            name: (identifier))))
       name: (symbol
         name: (identifier)))))
 
@@ -243,20 +224,17 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (function_type
-              parameters: (parameter_list
-                parameter: (parameter
-                  type: (type
-                    (primitive_type
-                      (uint_type)))))
-              visibility: (visibility)
-              mutability: (state_mutability)
-              returns: (parameter_list
-                parameter: (parameter
-                  type: (type
-                    (primitive_type
-                      (uint_type)))))))
+          type: (function_type
+            parameters: (parameter_list
+              parameter: (parameter
+                type: (primitive_type
+                  (uint_type))))
+            visibility: (visibility)
+            mutability: (state_mutability)
+            returns: (parameter_list
+              parameter: (parameter
+                type: (primitive_type
+                  (uint_type)))))
           name: (identifier)))
       visibility: (visibility)
       body: (block))))
@@ -276,13 +254,11 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (function_type
-          parameters: (parameter_list
-            parameter: (parameter
-              type: (type
-                (primitive_type
-                  (uint_type)))))
-          visibility: (visibility)))
+      type: (function_type
+        parameters: (parameter_list
+          parameter: (parameter
+            type: (primitive_type
+              (uint_type))))
+        visibility: (visibility))
       name: (symbol
         name: (identifier)))))

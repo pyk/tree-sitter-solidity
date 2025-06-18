@@ -8,9 +8,8 @@ uint256 constant MY_CONSTANT = 42;
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (uint_type)))
+    type: (primitive_type
+      (uint_type))
     name: (symbol
       name: (identifier))
     value: (literal
@@ -26,9 +25,8 @@ int256 constant MY_NEGATIVE_CONSTANT = -100;
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (int_type)))
+    type: (primitive_type
+      (int_type))
     name: (symbol
       name: (identifier))
     value: (unary_expression
@@ -45,9 +43,8 @@ string constant GREETING = "Hello, World!";
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (string_type)))
+    type: (primitive_type
+      (string_type))
     name: (symbol
       name: (identifier))
     value: (literal
@@ -63,9 +60,8 @@ address constant OWNER = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF;
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (address_type)))
+    type: (primitive_type
+      (address_type))
     name: (symbol
       name: (identifier))
     value: (literal
@@ -81,9 +77,8 @@ bool constant IS_NOT_ENABLED = !true;
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (bool_type)))
+    type: (primitive_type
+      (bool_type))
     name: (symbol
       name: (identifier))
     value: (unary_expression
@@ -100,9 +95,8 @@ bytes32 constant MY_HASH = 0x1234567890abcdef1234567890abcdef1234567890abcdef123
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (bytes_type)))
+    type: (primitive_type
+      (bytes_type))
     name: (symbol
       name: (identifier))
     value: (literal
@@ -118,9 +112,8 @@ uint constant WITH_PARENS = (1 + 2);
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (uint_type)))
+    type: (primitive_type
+      (uint_type))
     name: (symbol
       name: (identifier))
     value: (tuple_expression
@@ -142,9 +135,8 @@ uint constant SECONDS_PER_DAY = (60 + 60) * 12;
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (uint_type)))
+    type: (primitive_type
+      (uint_type))
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -171,9 +163,8 @@ uint constant ONE_ETHER = 10 ** 18;
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (uint_type)))
+    type: (primitive_type
+      (uint_type))
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -194,9 +185,8 @@ bytes32 constant EMPTY_STRING_HASH = keccak256("");
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (bytes_type)))
+    type: (primitive_type
+      (bytes_type))
     name: (symbol
       name: (identifier))
     value: (call_expression
@@ -216,15 +206,13 @@ address constant ZERO_ADDRESS = address(0);
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (address_type)))
+    type: (primitive_type
+      (address_type))
     name: (symbol
       name: (identifier))
     value: (cast
-      type: (type
-        (primitive_type
-          (address_type)))
+      type: (primitive_type
+        (address_type))
       arguments: (argument_list
         argument: (literal
           (number))))))
@@ -244,9 +232,8 @@ contract MyContract {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+      type: (primitive_type
+        (uint_type))
       visibility: (visibility)
       mutability: (mutability)
       name: (symbol
@@ -265,17 +252,15 @@ uint constant B = A * 2;
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (uint_type)))
+    type: (primitive_type
+      (uint_type))
     name: (symbol
       name: (identifier))
     value: (literal
       (number)))
   definition: (constant
-    type: (type
-      (primitive_type
-        (uint_type)))
+    type: (primitive_type
+      (uint_type))
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -301,9 +286,8 @@ library Math {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+      type: (primitive_type
+        (uint_type))
       visibility: (visibility)
       mutability: (mutability)
       name: (symbol
@@ -321,18 +305,16 @@ uint constant BITWISE_NOT = ~uint(0);
 
 (source_file
   definition: (constant
-    type: (type
-      (primitive_type
-        (uint_type)))
+    type: (primitive_type
+      (uint_type))
     name: (symbol
       name: (identifier))
     value: (arithmetic
       (bitnot_expression
         operator: (bitnot_op)
         argument: (cast
-          type: (type
-            (primitive_type
-              (uint_type)))
+          type: (primitive_type
+            (uint_type))
           arguments: (argument_list
             argument: (literal
               (number))))))))

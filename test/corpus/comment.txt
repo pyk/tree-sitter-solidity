@@ -15,9 +15,8 @@ contract C {
       name: (identifier))
     (comment)
     storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+      type: (primitive_type
+        (uint_type))
       name: (symbol
         name: (identifier)))))
 
@@ -40,9 +39,8 @@ contract C {
       name: (identifier))
     (comment)
     storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+      type: (primitive_type
+        (uint_type))
       name: (symbol
         name: (identifier)))))
 

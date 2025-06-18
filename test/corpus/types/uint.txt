@@ -15,21 +15,18 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+      type: (primitive_type
+        (uint_type))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+      type: (primitive_type
+        (uint_type))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+      type: (primitive_type
+        (uint_type))
       name: (symbol
         name: (identifier)))))
 
@@ -54,24 +51,21 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (uint_type)))
+          type: (primitive_type
+            (uint_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (uint_type)))
+          type: (primitive_type
+            (uint_type))
           name: (identifier)))
       body: (block
         (return_statement
           value: (cast
-            type: (type
-              (primitive_type
-                (uint_type)))
+            type: (primitive_type
+              (uint_type))
             arguments: (argument_list
               argument: (primary_expression
                 (identifier)))))))))
@@ -100,9 +94,8 @@ contract C {
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration
-            type: (type
-              (primitive_type
-                (uint_type)))
+            type: (primitive_type
+              (uint_type))
             name: (symbol
               name: (identifier)))
           value: (literal
@@ -129,23 +122,20 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))
+          type: (primitive_type
+            (bytes_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (uint_type)))))
+          type: (primitive_type
+            (uint_type))))
       body: (block
         (return_statement
           value: (cast
-            type: (type
-              (primitive_type
-                (uint_type)))
+            type: (primitive_type
+              (uint_type))
             arguments: (argument_list
               argument: (primary_expression
                 (identifier)))))))))
@@ -171,15 +161,13 @@ contract C {
       name: (symbol
         name: (identifier))
       (struct_member
-        type: (type
-          (primitive_type
-            (uint_type)))
+        type: (primitive_type
+          (uint_type))
         name: (symbol
           name: (identifier)))
       (struct_member
-        type: (type
-          (primitive_type
-            (uint_type)))
+        type: (primitive_type
+          (uint_type))
         name: (symbol
           name: (identifier))))))
 
@@ -198,14 +186,11 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (uint_type)))
-          value: (type
-            (primitive_type
-              (uint_type)))))
+      type: (mapping_type
+        key: (primitive_type
+          (uint_type))
+        value: (primitive_type
+          (uint_type)))
       name: (symbol
         name: (identifier)))))
 
@@ -225,22 +210,18 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (uint_type)))))
+      type: (array_type
+        base: (primitive_type
+          (uint_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (uint_type)))
-          size: (literal
-            (number))))
+      type: (array_type
+        base: (primitive_type
+          (uint_type))
+        size: (literal
+          (number)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -258,9 +239,8 @@ using SafeMath for uint256;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (type
-        (primitive_type
-          (uint_type))))))
+      target: (primitive_type
+        (uint_type)))))
 
 ==================
 Uint in a constant variable
@@ -278,18 +258,16 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+      type: (primitive_type
+        (uint_type))
       mutability: (mutability)
       name: (symbol
         name: (identifier))
       value: (literal
         (number)))
     storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+      type: (primitive_type
+        (uint_type))
       visibility: (visibility)
       mutability: (mutability)
       name: (symbol
@@ -316,15 +294,13 @@ contract C {
         name: (identifier))
       parameters: (event_parameter_list
         (indexed_event_parameter
-          type: (type
-            (primitive_type
-              (uint_type)))
+          type: (primitive_type
+            (uint_type))
           name: (symbol
             name: (identifier)))
         (unindexed_event_parameter
-          type: (type
-            (primitive_type
-              (uint_type)))
+          type: (primitive_type
+            (uint_type))
           name: (symbol
             name: (identifier)))))))
 
@@ -347,15 +323,13 @@ contract C {
         name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
-          type: (type
-            (primitive_type
-              (uint_type)))
+          type: (primitive_type
+            (uint_type))
           name: (symbol
             name: (identifier)))
         (error_parameter
-          type: (type
-            (primitive_type
-              (uint_type)))
+          type: (primitive_type
+            (uint_type))
           name: (symbol
             name: (identifier)))))))
 

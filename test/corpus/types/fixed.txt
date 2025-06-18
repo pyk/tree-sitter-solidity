@@ -16,27 +16,23 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (fixed_type)))
+      type: (primitive_type
+        (fixed_type))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (primitive_type
-          (ufixed_type)))
+      type: (primitive_type
+        (ufixed_type))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (primitive_type
-          (fixed_type)))
+      type: (primitive_type
+        (fixed_type))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (primitive_type
-          (ufixed_type)))
+      type: (primitive_type
+        (ufixed_type))
       name: (symbol
         name: (identifier)))))
 
@@ -61,17 +57,15 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (fixed_type)))
+          type: (primitive_type
+            (fixed_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (ufixed_type)))))
+          type: (primitive_type
+            (ufixed_type))))
       body: (block
         (comment)))))
 
@@ -99,9 +93,8 @@ contract C {
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration
-            type: (type
-              (primitive_type
-                (fixed_type)))
+            type: (primitive_type
+              (fixed_type))
             name: (symbol
               name: (identifier))))))))
 
@@ -126,23 +119,20 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (int_type)))
+          type: (primitive_type
+            (int_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (fixed_type)))))
+          type: (primitive_type
+            (fixed_type))))
       body: (block
         (return_statement
           value: (cast
-            type: (type
-              (primitive_type
-                (fixed_type)))
+            type: (primitive_type
+              (fixed_type))
             arguments: (argument_list
               argument: (primary_expression
                 (identifier)))))))))
@@ -168,15 +158,13 @@ contract C {
       name: (symbol
         name: (identifier))
       (struct_member
-        type: (type
-          (primitive_type
-            (fixed_type)))
+        type: (primitive_type
+          (fixed_type))
         name: (symbol
           name: (identifier)))
       (struct_member
-        type: (type
-          (primitive_type
-            (ufixed_type)))
+        type: (primitive_type
+          (ufixed_type))
         name: (symbol
           name: (identifier))))))
 
@@ -195,14 +183,11 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (uint_type)))
-          value: (type
-            (primitive_type
-              (fixed_type)))))
+      type: (mapping_type
+        key: (primitive_type
+          (uint_type))
+        value: (primitive_type
+          (fixed_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -223,22 +208,18 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (ufixed_type)))))
+      type: (array_type
+        base: (primitive_type
+          (ufixed_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (fixed_type)))
-          size: (literal
-            (number))))
+      type: (array_type
+        base: (primitive_type
+          (fixed_type))
+        size: (literal
+          (number)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -261,16 +242,14 @@ using FixedMath for ufixed256x18;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (type
-        (primitive_type
-          (fixed_type)))))
+      target: (primitive_type
+        (fixed_type))))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
-      target: (type
-        (primitive_type
-          (ufixed_type))))))
+      target: (primitive_type
+        (ufixed_type)))))
 
 ==================
 Fixed-point in an event parameter
@@ -291,9 +270,8 @@ contract C {
         name: (identifier))
       parameters: (event_parameter_list
         (unindexed_event_parameter
-          type: (type
-            (primitive_type
-              (fixed_type)))
+          type: (primitive_type
+            (fixed_type))
           name: (symbol
             name: (identifier)))))))
 
@@ -316,9 +294,8 @@ contract C {
         name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
-          type: (type
-            (primitive_type
-              (ufixed_type)))
+          type: (primitive_type
+            (ufixed_type))
           name: (symbol
             name: (identifier)))))))
 

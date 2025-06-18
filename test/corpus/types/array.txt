@@ -15,33 +15,26 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (uint_type)))))
+      type: (array_type
+        base: (primitive_type
+          (uint_type)))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (bool_type)))
-          size: (literal
-            (number))))
+      type: (array_type
+        base: (primitive_type
+          (bool_type))
+        size: (literal
+          (number)))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (array_type
-              base: (type
-                (primitive_type
-                  (address_type)))))
-          size: (literal
-            (number))))
+      type: (array_type
+        base: (array_type
+          base: (primitive_type
+            (address_type)))
+        size: (literal
+          (number)))
       name: (symbol
         name: (identifier)))))
 
@@ -66,24 +59,19 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (array_type
-              base: (type
-                (array_type
-                  base: (type
-                    (primitive_type
-                      (string_type)))))))
+          type: (array_type
+            base: (array_type
+              base: (primitive_type
+                (string_type))))
           location: (data_location)
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (array_type
-              base: (type
-                (primitive_type
-                  (bytes_type)))))
+          type: (array_type
+            base: (primitive_type
+              (bytes_type)))
           location: (data_location)))
       body: (block
         (comment)))))
@@ -109,21 +97,17 @@ contract C {
       name: (symbol
         name: (identifier))
       (struct_member
-        type: (type
-          (array_type
-            base: (type
-              (primitive_type
-                (uint_type)))))
+        type: (array_type
+          base: (primitive_type
+            (uint_type)))
         name: (symbol
           name: (identifier)))
       (struct_member
-        type: (type
-          (array_type
-            base: (type
-              (primitive_type
-                (bytes_type)))
-            size: (literal
-              (number))))
+        type: (array_type
+          base: (primitive_type
+            (bytes_type))
+          size: (literal
+            (number)))
         name: (symbol
           name: (identifier))))))
 
@@ -142,16 +126,12 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (address_type)))
-          value: (type
-            (array_type
-              base: (type
-                (primitive_type
-                  (int_type)))))))
+      type: (mapping_type
+        key: (primitive_type
+          (address_type))
+        value: (array_type
+          base: (primitive_type
+            (int_type))))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -174,18 +154,14 @@ contract C {
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (array_type
-              base: (type
-                (array_type
-                  base: (type
-                    (custom_type
-                      symbol: (symbol
-                        name: (identifier))))))
-              size: (literal
-                (number))))))
+      type: (array_type
+        base: (array_type
+          base: (array_type
+            base: (custom_type
+              symbol: (symbol
+                name: (identifier))))
+          size: (literal
+            (number))))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -204,16 +180,12 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (mapping_type
-              key: (type
-                (primitive_type
-                  (address_type)))
-              value: (type
-                (primitive_type
-                  (uint_type)))))))
+      type: (array_type
+        base: (mapping_type
+          key: (primitive_type
+            (address_type))
+          value: (primitive_type
+            (uint_type))))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -236,22 +208,18 @@ using ArrayLib for uint[2];
     (using_library
       library: (symbol
         name: (identifier))
-      target: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (uint_type)))))))
+      target: (array_type
+        base: (primitive_type
+          (uint_type)))))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
-      target: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (uint_type)))
-          size: (literal
-            (number)))))))
+      target: (array_type
+        base: (primitive_type
+          (uint_type))
+        size: (literal
+          (number))))))
 
 ==================
 Array in an event parameter
@@ -272,21 +240,17 @@ contract C {
         name: (identifier))
       parameters: (event_parameter_list
         (unindexed_event_parameter
-          type: (type
-            (array_type
-              base: (type
-                (primitive_type
-                  (uint_type)))))
+          type: (array_type
+            base: (primitive_type
+              (uint_type)))
           name: (symbol
             name: (identifier)))
         (unindexed_event_parameter
-          type: (type
-            (array_type
-              base: (type
-                (primitive_type
-                  (bool_type)))
-              size: (literal
-                (number))))
+          type: (array_type
+            base: (primitive_type
+              (bool_type))
+            size: (literal
+              (number)))
           name: (symbol
             name: (identifier)))))))
 
@@ -309,10 +273,8 @@ contract C {
         name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
-          type: (type
-            (array_type
-              base: (type
-                (primitive_type
-                  (bytes_type)))))
+          type: (array_type
+            base: (primitive_type
+              (bytes_type)))
           name: (symbol
             name: (identifier)))))))

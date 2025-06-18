@@ -23,17 +23,15 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (custom_type
-          symbol: (symbol
-            name: (identifier))))
+      type: (custom_type
+        symbol: (symbol
+          name: (identifier)))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (custom_type
-          symbol: (symbol
-            name: (identifier))))
+      type: (custom_type
+        symbol: (symbol
+          name: (identifier)))
       name: (symbol
         name: (identifier)))))
 
@@ -57,12 +55,11 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (custom_type
-          symbol: (symbol
-            scope: (symbol
-              name: (identifier))
-            name: (identifier))))
+      type: (custom_type
+        symbol: (symbol
+          scope: (symbol
+            name: (identifier))
+          name: (identifier)))
       name: (symbol
         name: (identifier)))))
 
@@ -92,19 +89,17 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))))
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))))
       body: (block
         (return_statement
           value: (primary_expression
@@ -137,10 +132,9 @@ contract C {
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration
-            type: (type
-              (custom_type
-                symbol: (symbol
-                  name: (identifier))))
+            type: (custom_type
+              symbol: (symbol
+                name: (identifier)))
             location: (data_location)
             name: (symbol
               name: (identifier))))))))
@@ -170,18 +164,16 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (address_type)))
+          type: (primitive_type
+            (address_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))))
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))))
       body: (block
         (return_statement
           value: (call_expression
@@ -216,16 +208,13 @@ contract C {
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))
-          value: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))))
+      type: (mapping_type
+        key: (custom_type
+          symbol: (symbol
+            name: (identifier)))
+        value: (custom_type
+          symbol: (symbol
+            name: (identifier))))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -249,12 +238,10 @@ contract C {
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))))
+      type: (array_type
+        base: (custom_type
+          symbol: (symbol
+            name: (identifier))))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -281,10 +268,9 @@ using MyLib for MyData;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (type
-        (custom_type
-          symbol: (symbol
-            name: (identifier)))))))
+      target: (custom_type
+        symbol: (symbol
+          name: (identifier))))))
 
 ==================
 Custom type in an event or error parameter
@@ -310,10 +296,9 @@ contract C {
         name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
-          type: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
           name: (symbol
             name: (identifier)))))
     event: (event
@@ -321,10 +306,9 @@ contract C {
         name: (identifier))
       parameters: (event_parameter_list
         (indexed_event_parameter
-          type: (type
-            (custom_type
-              symbol: (symbol
-                name: (identifier))))
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
           name: (symbol
             name: (identifier)))))))
 
@@ -356,16 +340,14 @@ contract Factory {
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration
-            type: (type
-              (custom_type
-                symbol: (symbol
-                  name: (identifier))))
+            type: (custom_type
+              symbol: (symbol
+                name: (identifier)))
             name: (symbol
               name: (identifier)))
           value: (call_expression
             function: (new_expression
-              type: (type
-                (custom_type
-                  symbol: (symbol
-                    name: (identifier)))))
+              type: (custom_type
+                symbol: (symbol
+                  name: (identifier))))
             arguments: (argument_list)))))))

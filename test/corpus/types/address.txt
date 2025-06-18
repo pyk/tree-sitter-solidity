@@ -14,15 +14,13 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (address_type)))
+      type: (primitive_type
+        (address_type))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (primitive_type
-          (address_type)))
+      type: (primitive_type
+        (address_type))
       name: (symbol
         name: (identifier)))))
 
@@ -47,22 +45,19 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (address_type)))
+          type: (primitive_type
+            (address_type))
           name: (identifier))
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (address_type)))
+          type: (primitive_type
+            (address_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (address_type)))))
+          type: (primitive_type
+            (address_type))))
       body: (block
         (return_statement
           value: (primary_expression
@@ -92,9 +87,8 @@ contract C {
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration
-            type: (type
-              (primitive_type
-                (address_type)))
+            type: (primitive_type
+              (address_type))
             name: (symbol
               name: (identifier)))
           value: (member_access_expression
@@ -123,23 +117,20 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))
+          type: (primitive_type
+            (bytes_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (address_type)))))
+          type: (primitive_type
+            (address_type))))
       body: (block
         (return_statement
           value: (cast
-            type: (type
-              (primitive_type
-                (address_type)))
+            type: (primitive_type
+              (address_type))
             arguments: (argument_list
               argument: (primary_expression
                 (identifier)))))))))
@@ -165,17 +156,15 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (address_type)))
+          type: (primitive_type
+            (address_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (address_type)))))
+          type: (primitive_type
+            (address_type))))
       body: (block
         (return_statement
           value: (payable_conversion_expression
@@ -204,15 +193,13 @@ contract C {
       name: (symbol
         name: (identifier))
       (struct_member
-        type: (type
-          (primitive_type
-            (address_type)))
+        type: (primitive_type
+          (address_type))
         name: (symbol
           name: (identifier)))
       (struct_member
-        type: (type
-          (primitive_type
-            (address_type)))
+        type: (primitive_type
+          (address_type))
         name: (symbol
           name: (identifier))))))
 
@@ -231,14 +218,11 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (address_type)))
-          value: (type
-            (primitive_type
-              (address_type)))))
+      type: (mapping_type
+        key: (primitive_type
+          (address_type))
+        value: (primitive_type
+          (address_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -259,22 +243,18 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (address_type)))))
+      type: (array_type
+        base: (primitive_type
+          (address_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (address_type)))
-          size: (literal
-            (number))))
+      type: (array_type
+        base: (primitive_type
+          (address_type))
+        size: (literal
+          (number)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -297,16 +277,14 @@ using AddressUtils for address payable;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (type
-        (primitive_type
-          (address_type)))))
+      target: (primitive_type
+        (address_type))))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
-      target: (type
-        (primitive_type
-          (address_type))))))
+      target: (primitive_type
+        (address_type)))))
 
 ==================
 Address as a constant variable
@@ -323,16 +301,14 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (address_type)))
+      type: (primitive_type
+        (address_type))
       mutability: (mutability)
       name: (symbol
         name: (identifier))
       value: (cast
-        type: (type
-          (primitive_type
-            (address_type)))
+        type: (primitive_type
+          (address_type))
         arguments: (argument_list
           argument: (literal
             (number)))))))
@@ -356,15 +332,13 @@ contract C {
         name: (identifier))
       parameters: (event_parameter_list
         (indexed_event_parameter
-          type: (type
-            (primitive_type
-              (address_type)))
+          type: (primitive_type
+            (address_type))
           name: (symbol
             name: (identifier)))
         (indexed_event_parameter
-          type: (type
-            (primitive_type
-              (address_type)))
+          type: (primitive_type
+            (address_type))
           name: (symbol
             name: (identifier)))))))
 
@@ -387,9 +361,8 @@ contract C {
         name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
-          type: (type
-            (primitive_type
-              (address_type)))
+          type: (primitive_type
+            (address_type))
           name: (symbol
             name: (identifier)))))))
 

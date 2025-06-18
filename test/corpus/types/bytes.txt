@@ -15,21 +15,18 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (bytes_type)))
+      type: (primitive_type
+        (bytes_type))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (primitive_type
-          (bytes_type)))
+      type: (primitive_type
+        (bytes_type))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (primitive_type
-          (bytes_type)))
+      type: (primitive_type
+        (bytes_type))
       name: (symbol
         name: (identifier)))))
 
@@ -54,28 +51,24 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))
+          type: (primitive_type
+            (bytes_type))
           location: (data_location)
           name: (identifier))
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))
+          type: (primitive_type
+            (bytes_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))
+          type: (primitive_type
+            (bytes_type))
           location: (data_location))
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))))
+          type: (primitive_type
+            (bytes_type))))
       body: (block
         (return_statement
           value: (tuple_expression
@@ -112,9 +105,8 @@ contract C {
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration
-            type: (type
-              (primitive_type
-                (bytes_type)))
+            type: (primitive_type
+              (bytes_type))
             location: (data_location)
             name: (symbol
               name: (identifier)))
@@ -122,9 +114,8 @@ contract C {
             (hex_string)))
         (variable_declaration_statement
           declaration: (variable_declaration
-            type: (type
-              (primitive_type
-                (bytes_type)))
+            type: (primitive_type
+              (bytes_type))
             name: (symbol
               name: (identifier)))
           value: (literal
@@ -151,25 +142,22 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (string_type)))
+          type: (primitive_type
+            (string_type))
           location: (data_location)
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))
+          type: (primitive_type
+            (bytes_type))
           location: (data_location)))
       body: (block
         (return_statement
           value: (cast
-            type: (type
-              (primitive_type
-                (bytes_type)))
+            type: (primitive_type
+              (bytes_type))
             arguments: (argument_list
               argument: (primary_expression
                 (identifier)))))))))
@@ -195,15 +183,13 @@ contract C {
       name: (symbol
         name: (identifier))
       (struct_member
-        type: (type
-          (primitive_type
-            (bytes_type)))
+        type: (primitive_type
+          (bytes_type))
         name: (symbol
           name: (identifier)))
       (struct_member
-        type: (type
-          (primitive_type
-            (bytes_type)))
+        type: (primitive_type
+          (bytes_type))
         name: (symbol
           name: (identifier))))))
 
@@ -222,14 +208,11 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (bytes_type)))
-          value: (type
-            (primitive_type
-              (bytes_type)))))
+      type: (mapping_type
+        key: (primitive_type
+          (bytes_type))
+        value: (primitive_type
+          (bytes_type)))
       name: (symbol
         name: (identifier)))))
 
@@ -249,22 +232,18 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (bytes_type)))))
+      type: (array_type
+        base: (primitive_type
+          (bytes_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (bytes_type)))
-          size: (literal
-            (number))))
+      type: (array_type
+        base: (primitive_type
+          (bytes_type))
+        size: (literal
+          (number)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -286,9 +265,8 @@ using BytesUtils for bytes;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (type
-        (primitive_type
-          (bytes_type))))))
+      target: (primitive_type
+        (bytes_type)))))
 
 ==================
 Bytes as a constant variable
@@ -305,9 +283,8 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (bytes_type)))
+      type: (primitive_type
+        (bytes_type))
       mutability: (mutability)
       name: (symbol
         name: (identifier))
@@ -333,15 +310,13 @@ contract C {
         name: (identifier))
       parameters: (event_parameter_list
         (indexed_event_parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))
+          type: (primitive_type
+            (bytes_type))
           name: (symbol
             name: (identifier)))
         (unindexed_event_parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))
+          type: (primitive_type
+            (bytes_type))
           name: (symbol
             name: (identifier)))))))
 
@@ -364,9 +339,8 @@ contract C {
         name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))
+          type: (primitive_type
+            (bytes_type))
           name: (symbol
             name: (identifier)))))))
 

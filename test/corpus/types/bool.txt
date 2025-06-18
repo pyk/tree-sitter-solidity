@@ -14,15 +14,13 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (bool_type)))
+      type: (primitive_type
+        (bool_type))
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (primitive_type
-          (bool_type)))
+      type: (primitive_type
+        (bool_type))
       visibility: (visibility)
       name: (symbol
         name: (identifier))
@@ -50,17 +48,15 @@ contract C {
         name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (bool_type)))
+          type: (primitive_type
+            (bool_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (bool_type)))))
+          type: (primitive_type
+            (bool_type))))
       body: (block
         (return_statement
           value: (unary_expression
@@ -91,9 +87,8 @@ contract C {
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration
-            type: (type
-              (primitive_type
-                (bool_type)))
+            type: (primitive_type
+              (bool_type))
             name: (symbol
               name: (identifier)))
           value: (literal
@@ -120,15 +115,13 @@ contract C {
       name: (symbol
         name: (identifier))
       (struct_member
-        type: (type
-          (primitive_type
-            (bool_type)))
+        type: (primitive_type
+          (bool_type))
         name: (symbol
           name: (identifier)))
       (struct_member
-        type: (type
-          (primitive_type
-            (bool_type)))
+        type: (primitive_type
+          (bool_type))
         name: (symbol
           name: (identifier))))))
 
@@ -147,14 +140,11 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (mapping_type
-          key: (type
-            (primitive_type
-              (address_type)))
-          value: (type
-            (primitive_type
-              (bool_type)))))
+      type: (mapping_type
+        key: (primitive_type
+          (address_type))
+        value: (primitive_type
+          (bool_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -175,22 +165,18 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (bool_type)))))
+      type: (array_type
+        base: (primitive_type
+          (bool_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))
     storage: (storage
-      type: (type
-        (array_type
-          base: (type
-            (primitive_type
-              (bool_type)))
-          size: (literal
-            (number))))
+      type: (array_type
+        base: (primitive_type
+          (bool_type))
+        size: (literal
+          (number)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))))
@@ -212,9 +198,8 @@ using BoolUtils for bool;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (type
-        (primitive_type
-          (bool_type))))))
+      target: (primitive_type
+        (bool_type)))))
 
 ==================
 Bool as a constant variable
@@ -231,9 +216,8 @@ contract C {
     name: (symbol
       name: (identifier))
     storage: (storage
-      type: (type
-        (primitive_type
-          (bool_type)))
+      type: (primitive_type
+        (bool_type))
       mutability: (mutability)
       name: (symbol
         name: (identifier))
@@ -259,15 +243,13 @@ contract C {
         name: (identifier))
       parameters: (event_parameter_list
         (indexed_event_parameter
-          type: (type
-            (primitive_type
-              (bool_type)))
+          type: (primitive_type
+            (bool_type))
           name: (symbol
             name: (identifier)))
         (unindexed_event_parameter
-          type: (type
-            (primitive_type
-              (bool_type)))
+          type: (primitive_type
+            (bool_type))
           name: (symbol
             name: (identifier)))))))
 
@@ -290,15 +272,13 @@ contract C {
         name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
-          type: (type
-            (primitive_type
-              (bool_type)))
+          type: (primitive_type
+            (bool_type))
           name: (symbol
             name: (identifier)))
         (error_parameter
-          type: (type
-            (primitive_type
-              (bool_type)))
+          type: (primitive_type
+            (bool_type))
           name: (symbol
             name: (identifier)))))))
 
@@ -339,9 +319,8 @@ contract C {
       mutability: (state_mutability)
       returns: (parameter_list
         parameter: (parameter
-          type: (type
-            (primitive_type
-              (bool_type)))))
+          type: (primitive_type
+            (bool_type))))
       body: (block
         (return_statement
           value: (logical_and_expression
