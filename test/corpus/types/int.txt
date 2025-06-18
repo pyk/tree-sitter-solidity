@@ -1,11 +1,11 @@
 ==================
-Uint as a state variable
+Int as a state variable
 ==================
 
 contract C {
-  uint myVar;
-  uint8 myVar8;
-  uint256 myVar256;
+  int myVar;
+  int8 myVar8;
+  int256 myVar256;
 }
 
 ---
@@ -16,26 +16,26 @@ contract C {
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (int_type)))
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (int_type)))
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (int_type)))
       name: (identifier))))
 
 ==================
-Uint as a function parameter and return type
+Int as a function parameter and return type
 ==================
 
 contract C {
-  function process(uint8 input) public pure returns (uint result) {
-    return uint(input);
+  function process(int128 input) public pure returns (int result) {
+    return int(input);
   }
 }
 
@@ -50,7 +50,7 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (int_type)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
@@ -58,7 +58,7 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (int_type)))
           name: (identifier)))
       body: (block
         (return_statement
@@ -70,12 +70,12 @@ contract C {
                 (identifier)))))))))
 
 ==================
-Uint as a local variable
+Int as a local variable
 ==================
 
 contract C {
   function f() public pure {
-    uint256 localCounter = 42;
+    int localCounter = -100;
   }
 }
 
@@ -93,18 +93,19 @@ contract C {
           declaration: (variable_declaration
             type: (type
               (primitive_type
-                (uint_type)))
+                (int_type)))
             name: (identifier))
-          value: (literal
-            (number)))))))
+          value: (unary_expression
+            argument: (literal
+              (number))))))))
 
 ==================
-Uint in a type cast
+Int in a type cast
 ==================
 
 contract C {
-  function f(bytes1 b) public pure returns (uint8) {
-    return uint8(b);
+  function f(uint8 u) public pure returns (int8) {
+    return int8(u);
   }
 }
 
@@ -119,7 +120,7 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (bytes_type)))
+              (uint_type)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
@@ -127,7 +128,7 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))))
+              (int_type)))))
       body: (block
         (return_statement
           value: (call_expression
@@ -138,13 +139,13 @@ contract C {
                 (identifier)))))))))
 
 ==================
-Uint in a struct definition
+Int in a struct definition
 ==================
 
 contract C {
   struct MyStruct {
-    uint24 id;
-    uint amount;
+    int id;
+    int256 value;
   }
 }
 
@@ -158,20 +159,20 @@ contract C {
       (struct_member
         type: (type
           (primitive_type
-            (uint_type)))
+            (int_type)))
         name: (identifier))
       (struct_member
         type: (type
           (primitive_type
-            (uint_type)))
+            (int_type)))
         name: (identifier)))))
 
 ==================
-Uint in a mapping definition
+Int in a mapping definition
 ==================
 
 contract C {
-  mapping(uint => uint256) balances;
+  mapping(int => int256) balances;
 }
 
 ---
@@ -184,19 +185,19 @@ contract C {
         (mapping_type
           key: (type
             (primitive_type
-              (uint_type)))
+              (int_type)))
           value: (type
             (primitive_type
-              (uint_type)))))
+              (int_type)))))
       name: (identifier))))
 
 ==================
-Uint as an array base type
+Int as an array base type
 ==================
 
 contract C {
-  uint[] public numbers;
-  uint[5] public fixedNumbers;
+  int[] public numbers;
+  int[5] public fixedNumbers;
 }
 
 ---
@@ -209,7 +210,7 @@ contract C {
         (array_type
           base: (type
             (primitive_type
-              (uint_type)))))
+              (int_type)))))
       visibility: (visibility)
       name: (identifier))
     storage: (storage
@@ -217,36 +218,39 @@ contract C {
         (array_type
           base: (type
             (primitive_type
-              (uint_type)))
+              (int_type)))
           size: (literal
             (number))))
       visibility: (visibility)
       name: (identifier))))
 
 ==================
-Uint in a 'using for' directive
+Int in a 'using for' directive
 ==================
 
-using SafeMath for uint256;
+library MathUtils {}
+using MathUtils for int;
 
 ---
 
 (source_file
+  definition: (library
+    name: (identifier))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
       target: (type
         (primitive_type
-          (uint_type))))))
+          (int_type))))))
 
 ==================
-Uint in a constant variable
+Int as a constant and immutable variable
 ==================
 
 contract C {
-  uint constant MY_CONST = 100;
-  uint128 public immutable MY_IMMUTABLE = 200;
+  int constant MY_CONST = -100;
+  int128 public immutable MY_IMMUTABLE = -200;
 }
 
 ---
@@ -257,27 +261,29 @@ contract C {
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (int_type)))
       mutability: (mutability)
       name: (identifier)
-      value: (literal
-        (number)))
+      value: (unary_expression
+        argument: (literal
+          (number))))
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (int_type)))
       visibility: (visibility)
       mutability: (mutability)
       name: (identifier)
-      value: (literal
-        (number)))))
+      value: (unary_expression
+        argument: (literal
+          (number))))))
 
 ==================
-Uint in an event parameter
+Int in an event parameter
 ==================
 
 contract C {
-  event ValueChanged(uint indexed oldValue, uint newValue);
+  event ValueChanged(int indexed oldValue, int newValue);
 }
 
 ---
@@ -291,20 +297,20 @@ contract C {
         (indexed_event_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (int_type)))
           name: (identifier))
         (unindexed_event_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (int_type)))
           name: (identifier))))))
 
 ==================
-Uint in an error parameter
+Int in an error parameter
 ==================
 
 contract C {
-  error InsufficientFunds(uint required, uint available);
+  error InvalidValue(int provided, int expected);
 }
 
 ---
@@ -318,19 +324,19 @@ contract C {
         (error_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (int_type)))
           name: (identifier))
         (error_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (int_type)))
           name: (identifier))))))
 
 ==================
-Uint as underlying type for UDVT
+Int as underlying type for UDVT
 ==================
 
-type MyUint is uint128;
+type MyInt is int128;
 
 ---
 
@@ -338,4 +344,4 @@ type MyUint is uint128;
   definition: (udvt
     name: (identifier)
     underlying_type: (primitive_type
-      (uint_type))))
+      (int_type))))

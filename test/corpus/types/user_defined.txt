@@ -1,0 +1,335 @@
+==================
+Custom type as a state variable
+==================
+
+struct MyStruct {}
+contract OtherContract {}
+
+contract C {
+  MyStruct myStruct;
+  OtherContract myContract;
+}
+
+---
+
+(source_file
+  definition: (struct
+    name: (identifier))
+  definition: (contract
+    name: (identifier))
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (custom_type
+          symbol: (symbol
+            name: (identifier))))
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (custom_type
+          symbol: (symbol
+            name: (identifier))))
+      name: (identifier))))
+
+==================
+Qualified custom type (from import)
+==================
+
+import "./MyLib.sol";
+
+contract C {
+  MyLib.Data myData;
+}
+
+---
+
+(source_file
+  directive: (import
+    (file_import
+      path: (string)))
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (custom_type
+          symbol: (symbol
+            scope: (symbol
+              name: (identifier))
+            name: (identifier))))
+      name: (identifier))))
+
+==================
+Custom type as a function parameter and return type
+==================
+
+interface IMyInterface {}
+
+contract C {
+  function process(IMyInterface iface) public pure returns (IMyInterface) {
+    return iface;
+  }
+}
+
+---
+
+(source_file
+  definition: (interface
+    name: (identifier))
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))))
+      body: (block
+        (return_statement
+          value: (primary_expression
+            (identifier)))))))
+
+==================
+Custom type as a local variable
+==================
+
+contract C {
+  struct Data {}
+  function f() public {
+    Data memory localData;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    struct: (struct
+      name: (identifier))
+    function: (function
+      name: (identifier)
+      visibility: (visibility)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (type
+              (custom_type
+                symbol: (symbol
+                  name: (identifier))))
+            location: (data_location)
+            name: (identifier)))))))
+
+==================
+Custom type in a type cast
+==================
+
+contract Other {}
+contract C {
+  function f(address a) public pure returns (Other) {
+    return Other(a);
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier))
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (address_type)))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))))
+      body: (block
+        (return_statement
+          value: (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (primary_expression
+                (identifier)))))))))
+
+==================
+Custom type in a mapping key and value
+==================
+
+contract C {
+  enum Status { PENDING, ACTIVE }
+  struct UserProfile {}
+  mapping(Status => UserProfile) public profiles;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    enum: (enum
+      name: (identifier)
+      value: (identifier)
+      value: (identifier))
+    struct: (struct
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))
+          value: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+Custom type as an array base
+==================
+
+contract C {
+  struct Point {}
+  Point[] public path;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    struct: (struct
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (array_type
+          base: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+Custom type in a 'using for' directive
+==================
+
+library MyLib {}
+struct MyData {}
+
+using MyLib for MyData;
+
+---
+
+(source_file
+  definition: (library
+    name: (identifier))
+  definition: (struct
+    name: (identifier))
+  directive: (using
+    (using_library
+      library: (symbol
+        name: (identifier))
+      target: (type
+        (custom_type
+          symbol: (symbol
+            name: (identifier)))))))
+
+==================
+Custom type in an event or error parameter
+==================
+
+contract C {
+    struct EventData {}
+    error CustomError(EventData data);
+    event CustomEvent(EventData indexed data);
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    struct: (struct
+      name: (identifier))
+    error: (error
+      name: (identifier)
+      parameters: (error_parameter_list
+        (error_parameter
+          type: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))
+          name: (identifier))))
+    event: (event
+      name: (identifier)
+      parameters: (event_parameter_list
+        (indexed_event_parameter
+          type: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))
+          name: (identifier))))))
+
+==================
+Custom type in a `new` expression
+==================
+
+contract MyToken {}
+
+contract Factory {
+    function create() public {
+        MyToken token = new MyToken();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier))
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      visibility: (visibility)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (type
+              (custom_type
+                symbol: (symbol
+                  name: (identifier))))
+            name: (identifier))
+          value: (call_expression
+            function: (new_expression
+              type: (type
+                (custom_type
+                  symbol: (symbol
+                    name: (identifier)))))
+            arguments: (argument_list)))))))

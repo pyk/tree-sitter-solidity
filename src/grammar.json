@@ -73,40 +73,76 @@
           "name": "constant"
         },
         {
-          "type": "SYMBOL",
-          "name": "contract"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "contract"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "interface"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "interface"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "library"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "library"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "struct"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "struct"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "enum"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "enum"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "event"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "event"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "error"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "error"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "function"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "function"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "udvt"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "udvt"
+          }
         }
       ]
     },
@@ -487,15 +523,23 @@
     "fixed_type": {
       "type": "TOKEN",
       "content": {
-        "type": "PATTERN",
-        "value": "fixed([0-9]+x[0-9]+)?"
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "fixed([0-9]+x[0-9]+)?"
+        }
       }
     },
     "ufixed_type": {
       "type": "TOKEN",
       "content": {
-        "type": "PATTERN",
-        "value": "ufixed([0-9]+x[0-9]+)?"
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "ufixed([0-9]+x[0-9]+)?"
+        }
       }
     },
     "int_type": {
@@ -829,7 +873,7 @@
           "name": "key",
           "content": {
             "type": "SYMBOL",
-            "name": "_mapping_key_type"
+            "name": "type"
           }
         },
         {
@@ -847,19 +891,6 @@
         {
           "type": "STRING",
           "value": ")"
-        }
-      ]
-    },
-    "_mapping_key_type": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "primitive_type"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "custom_type"
         }
       ]
     },
@@ -2234,27 +2265,39 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "FIELD",
-          "name": "visibility",
+          "type": "PREC",
+          "value": 2,
           "content": {
-            "type": "SYMBOL",
-            "name": "visibility"
+            "type": "FIELD",
+            "name": "visibility",
+            "content": {
+              "type": "SYMBOL",
+              "name": "visibility"
+            }
           }
         },
         {
-          "type": "FIELD",
-          "name": "mutability",
+          "type": "PREC",
+          "value": 2,
           "content": {
-            "type": "SYMBOL",
-            "name": "state_mutability"
+            "type": "FIELD",
+            "name": "mutability",
+            "content": {
+              "type": "SYMBOL",
+              "name": "state_mutability"
+            }
           }
         },
         {
-          "type": "FIELD",
-          "name": "parent_constructor",
+          "type": "PREC",
+          "value": 1,
           "content": {
-            "type": "SYMBOL",
-            "name": "parent_constructor"
+            "type": "FIELD",
+            "name": "parent_constructor",
+            "content": {
+              "type": "SYMBOL",
+              "name": "parent_constructor"
+            }
           }
         }
       ]
@@ -2841,43 +2884,63 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "FIELD",
-          "name": "visibility",
+          "type": "PREC",
+          "value": 2,
           "content": {
-            "type": "SYMBOL",
-            "name": "visibility"
+            "type": "FIELD",
+            "name": "visibility",
+            "content": {
+              "type": "SYMBOL",
+              "name": "visibility"
+            }
           }
         },
         {
-          "type": "FIELD",
-          "name": "mutability",
+          "type": "PREC",
+          "value": 2,
           "content": {
-            "type": "SYMBOL",
-            "name": "state_mutability"
+            "type": "FIELD",
+            "name": "mutability",
+            "content": {
+              "type": "SYMBOL",
+              "name": "state_mutability"
+            }
           }
         },
         {
-          "type": "FIELD",
-          "name": "modifier",
+          "type": "PREC",
+          "value": 2,
           "content": {
-            "type": "SYMBOL",
-            "name": "modifier_invocation"
+            "type": "FIELD",
+            "name": "virtual",
+            "content": {
+              "type": "SYMBOL",
+              "name": "virtual"
+            }
           }
         },
         {
-          "type": "FIELD",
-          "name": "virtual",
+          "type": "PREC",
+          "value": 2,
           "content": {
-            "type": "SYMBOL",
-            "name": "virtual"
+            "type": "FIELD",
+            "name": "override",
+            "content": {
+              "type": "SYMBOL",
+              "name": "override_specifier"
+            }
           }
         },
         {
-          "type": "FIELD",
-          "name": "override",
+          "type": "PREC",
+          "value": 1,
           "content": {
-            "type": "SYMBOL",
-            "name": "override_specifier"
+            "type": "FIELD",
+            "name": "modifier",
+            "content": {
+              "type": "SYMBOL",
+              "name": "modifier_invocation"
+            }
           }
         }
       ]

@@ -1,11 +1,10 @@
 ==================
-Uint as a state variable
+Address as a state variable
 ==================
 
 contract C {
-  uint myVar;
-  uint8 myVar8;
-  uint256 myVar256;
+  address owner;
+  address payable recipient;
 }
 
 ---
@@ -16,26 +15,21 @@ contract C {
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (address_type)))
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
-      name: (identifier))
-    storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+          (address_type)))
       name: (identifier))))
 
 ==================
-Uint as a function parameter and return type
+Address as a function parameter and return type
 ==================
 
 contract C {
-  function process(uint8 input) public pure returns (uint result) {
-    return uint(input);
+  function process(address sender, address payable receiver) public pure returns (address payable) {
+    return receiver;
   }
 }
 
@@ -50,7 +44,12 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (address_type)))
+          name: (identifier))
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (address_type)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
@@ -58,24 +57,19 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))
-          name: (identifier)))
+              (address_type)))))
       body: (block
         (return_statement
-          value: (call_expression
-            function: (primary_expression
-              (identifier))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+          value: (primary_expression
+            (identifier)))))))
 
 ==================
-Uint as a local variable
+Address as a local variable
 ==================
 
 contract C {
-  function f() public pure {
-    uint256 localCounter = 42;
+  function f() public view {
+    address localAddress = msg.sender;
   }
 }
 
@@ -93,18 +87,20 @@ contract C {
           declaration: (variable_declaration
             type: (type
               (primitive_type
-                (uint_type)))
+                (address_type)))
             name: (identifier))
-          value: (literal
-            (number)))))))
+          value: (member_access_expression
+            object: (primary_expression
+              (identifier))
+            member: (identifier)))))))
 
 ==================
-Uint in a type cast
+Address in a type cast
 ==================
 
 contract C {
-  function f(bytes1 b) public pure returns (uint8) {
-    return uint8(b);
+  function f(bytes20 b) public pure returns (address) {
+    return address(b);
   }
 }
 
@@ -127,7 +123,7 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))))
+              (address_type)))))
       body: (block
         (return_statement
           value: (call_expression
@@ -138,13 +134,50 @@ contract C {
                 (identifier)))))))))
 
 ==================
-Uint in a struct definition
+Payable conversion expression
 ==================
 
 contract C {
-  struct MyStruct {
-    uint24 id;
-    uint amount;
+  function f(address addr) public pure returns (address payable) {
+    return payable(addr);
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (address_type)))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (address_type)))))
+      body: (block
+        (return_statement
+          value: (payable_conversion_expression
+            arguments: (argument_list
+              argument: (primary_expression
+                (identifier)))))))))
+
+==================
+Address in a struct definition
+==================
+
+contract C {
+  struct User {
+    address addr;
+    address payable withdrawalAddress;
   }
 }
 
@@ -158,20 +191,20 @@ contract C {
       (struct_member
         type: (type
           (primitive_type
-            (uint_type)))
+            (address_type)))
         name: (identifier))
       (struct_member
         type: (type
           (primitive_type
-            (uint_type)))
+            (address_type)))
         name: (identifier)))))
 
 ==================
-Uint in a mapping definition
+Address as a mapping key and value
 ==================
 
 contract C {
-  mapping(uint => uint256) balances;
+  mapping(address => address payable) public delegates;
 }
 
 ---
@@ -184,19 +217,20 @@ contract C {
         (mapping_type
           key: (type
             (primitive_type
-              (uint_type)))
+              (address_type)))
           value: (type
             (primitive_type
-              (uint_type)))))
+              (address_type)))))
+      visibility: (visibility)
       name: (identifier))))
 
 ==================
-Uint as an array base type
+Address as an array base type
 ==================
 
 contract C {
-  uint[] public numbers;
-  uint[5] public fixedNumbers;
+  address[] public users;
+  address payable[5] public payees;
 }
 
 ---
@@ -209,7 +243,7 @@ contract C {
         (array_type
           base: (type
             (primitive_type
-              (uint_type)))))
+              (address_type)))))
       visibility: (visibility)
       name: (identifier))
     storage: (storage
@@ -217,36 +251,46 @@ contract C {
         (array_type
           base: (type
             (primitive_type
-              (uint_type)))
+              (address_type)))
           size: (literal
             (number))))
       visibility: (visibility)
       name: (identifier))))
 
 ==================
-Uint in a 'using for' directive
+Address in a 'using for' directive
 ==================
 
-using SafeMath for uint256;
+library AddressUtils {}
+using AddressUtils for address;
+using AddressUtils for address payable;
 
 ---
 
 (source_file
+  definition: (library
+    name: (identifier))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
       target: (type
         (primitive_type
-          (uint_type))))))
+          (address_type)))))
+  directive: (using
+    (using_library
+      library: (symbol
+        name: (identifier))
+      target: (type
+        (primitive_type
+          (address_type))))))
 
 ==================
-Uint in a constant variable
+Address as a constant variable
 ==================
 
 contract C {
-  uint constant MY_CONST = 100;
-  uint128 public immutable MY_IMMUTABLE = 200;
+  address constant ZERO_ADDRESS = address(0);
 }
 
 ---
@@ -257,27 +301,22 @@ contract C {
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (address_type)))
       mutability: (mutability)
       name: (identifier)
-      value: (literal
-        (number)))
-    storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
-      visibility: (visibility)
-      mutability: (mutability)
-      name: (identifier)
-      value: (literal
-        (number)))))
+      value: (call_expression
+        function: (primary_expression
+          (identifier))
+        arguments: (argument_list
+          argument: (literal
+            (number)))))))
 
 ==================
-Uint in an event parameter
+Address in an event parameter
 ==================
 
 contract C {
-  event ValueChanged(uint indexed oldValue, uint newValue);
+  event Transfer(address indexed from, address indexed to);
 }
 
 ---
@@ -291,20 +330,20 @@ contract C {
         (indexed_event_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (address_type)))
           name: (identifier))
-        (unindexed_event_parameter
+        (indexed_event_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (address_type)))
           name: (identifier))))))
 
 ==================
-Uint in an error parameter
+Address in an error parameter
 ==================
 
 contract C {
-  error InsufficientFunds(uint required, uint available);
+  error InvalidSender(address sender);
 }
 
 ---
@@ -318,19 +357,14 @@ contract C {
         (error_parameter
           type: (type
             (primitive_type
-              (uint_type)))
-          name: (identifier))
-        (error_parameter
-          type: (type
-            (primitive_type
-              (uint_type)))
+              (address_type)))
           name: (identifier))))))
 
 ==================
-Uint as underlying type for UDVT
+Address as underlying type for UDVT
 ==================
 
-type MyUint is uint128;
+type Wallet is address;
 
 ---
 
@@ -338,4 +372,4 @@ type MyUint is uint128;
   definition: (udvt
     name: (identifier)
     underlying_type: (primitive_type
-      (uint_type))))
+      (address_type))))

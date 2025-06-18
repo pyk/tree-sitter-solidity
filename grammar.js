@@ -98,15 +98,15 @@ module.exports = grammar({
     _top_level_definitions: ($) =>
       choice(
         $.constant,
-        $.contract,
-        $.interface,
-        $.library,
-        $.struct,
-        $.enum,
-        $.event,
-        $.error,
-        $.function,
-        $.udvt,
+        prec(1, $.contract),
+        prec(1, $.interface),
+        prec(1, $.library),
+        prec(1, $.struct),
+        prec(1, $.enum),
+        prec(1, $.event),
+        prec(1, $.error),
+        prec(1, $.function),
+        prec(1, $.udvt),
       ),
 
     //############################################################//
@@ -189,8 +189,6 @@ module.exports = grammar({
 
     bool_type: ($) => "bool",
 
-    // By explicitly listing each keyword, we ensure the lexer prioritizes them
-    // over the general 'identifier' rule. This is the key to fixing the ambiguity.
     bytes_type: ($) =>
       choice(
         "bytes",
@@ -228,10 +226,12 @@ module.exports = grammar({
         "bytes32",
       ),
 
-    // `fixed` and `ufixed` have a dynamic part (MxN), so a regex token is correct here.
-    // They don't conflict with identifiers in the same way as `uint`, etc.
-    fixed_type: ($) => token(/fixed([0-9]+x[0-9]+)?/),
-    ufixed_type: ($) => token(/ufixed([0-9]+x[0-9]+)?/),
+    // We give the token a lexical precedence of 1 to ensure it is
+    // preferred over the generic `identifier` token, which has a
+    // default precedence of 0. This resolves the lexer ambiguity.
+    fixed_type: ($) => token(prec(1, /fixed([0-9]+x[0-9]+)?/)),
+
+    ufixed_type: ($) => token(prec(1, /ufixed([0-9]+x[0-9]+)?/)),
 
     int_type: ($) =>
       choice(
@@ -308,6 +308,7 @@ module.exports = grammar({
         "uint248",
         "uint256",
       ),
+
     // --- Complex Type Definitions ---
 
     array_type: ($) =>
@@ -322,14 +323,11 @@ module.exports = grammar({
       seq(
         "mapping",
         "(",
-        field("key", $._mapping_key_type),
+        field("key", $.type),
         "=>",
         field("value", $.type),
         ")",
       ),
-
-    // Helper for mapping keys.
-    _mapping_key_type: ($) => choice($.primitive_type, $.custom_type),
 
     function_type: ($) =>
       prec.right(
@@ -646,9 +644,11 @@ module.exports = grammar({
 
     _constructor_attribute: ($) =>
       choice(
-        field("visibility", $.visibility),
-        field("mutability", $.state_mutability),
-        field("parent_constructor", $.parent_constructor),
+        // Give specific keywords higher precedence (2)
+        prec(2, field("visibility", $.visibility)),
+        prec(2, field("mutability", $.state_mutability)),
+        // Give the generic parent constructor invocation lower precedence (1)
+        prec(1, field("parent_constructor", $.parent_constructor)),
       ),
 
     parent_constructor: ($) =>
@@ -806,11 +806,13 @@ module.exports = grammar({
      */
     _function_attribute: ($) =>
       choice(
-        field("visibility", $.visibility),
-        field("mutability", $.state_mutability),
-        field("modifier", $.modifier_invocation),
-        field("virtual", $.virtual),
-        field("override", $.override_specifier), // <-- Added field name
+        // Give specific keywords higher precedence (2)
+        prec(2, field("visibility", $.visibility)),
+        prec(2, field("mutability", $.state_mutability)),
+        prec(2, field("virtual", $.virtual)),
+        prec(2, field("override", $.override_specifier)),
+        // Give the generic modifier invocation lower precedence (1)
+        prec(1, field("modifier", $.modifier_invocation)),
       ),
 
     /**

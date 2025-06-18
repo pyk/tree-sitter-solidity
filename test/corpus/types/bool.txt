@@ -1,11 +1,10 @@
 ==================
-Uint as a state variable
+Bool as a state variable
 ==================
 
 contract C {
-  uint myVar;
-  uint8 myVar8;
-  uint256 myVar256;
+  bool myVar;
+  bool public myFlag = true;
 }
 
 ---
@@ -16,26 +15,24 @@ contract C {
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (bool_type)))
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
-      name: (identifier))
-    storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
-      name: (identifier))))
+          (bool_type)))
+      visibility: (visibility)
+      name: (identifier)
+      value: (literal
+        (boolean)))))
 
 ==================
-Uint as a function parameter and return type
+Bool as a function parameter and return type
 ==================
 
 contract C {
-  function process(uint8 input) public pure returns (uint result) {
-    return uint(input);
+  function check(bool flag) public pure returns (bool) {
+    return !flag;
   }
 }
 
@@ -50,7 +47,7 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (bool_type)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
@@ -58,24 +55,20 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))
-          name: (identifier)))
+              (bool_type)))))
       body: (block
         (return_statement
-          value: (call_expression
-            function: (primary_expression
-              (identifier))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+          value: (unary_expression
+            argument: (primary_expression
+              (identifier))))))))
 
 ==================
-Uint as a local variable
+Bool as a local variable
 ==================
 
 contract C {
   function f() public pure {
-    uint256 localCounter = 42;
+    bool localCondition = false;
   }
 }
 
@@ -93,58 +86,19 @@ contract C {
           declaration: (variable_declaration
             type: (type
               (primitive_type
-                (uint_type)))
+                (bool_type)))
             name: (identifier))
           value: (literal
-            (number)))))))
+            (boolean)))))))
 
 ==================
-Uint in a type cast
-==================
-
-contract C {
-  function f(bytes1 b) public pure returns (uint8) {
-    return uint8(b);
-  }
-}
-
----
-
-(source_file
-  definition: (contract
-    name: (identifier)
-    function: (function
-      name: (identifier)
-      parameters: (parameter_list
-        parameter: (parameter
-          type: (type
-            (primitive_type
-              (bytes_type)))
-          name: (identifier)))
-      visibility: (visibility)
-      mutability: (state_mutability)
-      returns: (parameter_list
-        parameter: (parameter
-          type: (type
-            (primitive_type
-              (uint_type)))))
-      body: (block
-        (return_statement
-          value: (call_expression
-            function: (primary_expression
-              (identifier))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
-
-==================
-Uint in a struct definition
+Bool in a struct definition
 ==================
 
 contract C {
-  struct MyStruct {
-    uint24 id;
-    uint amount;
+  struct Config {
+    bool enabled;
+    bool requiresAuth;
   }
 }
 
@@ -158,20 +112,20 @@ contract C {
       (struct_member
         type: (type
           (primitive_type
-            (uint_type)))
+            (bool_type)))
         name: (identifier))
       (struct_member
         type: (type
           (primitive_type
-            (uint_type)))
+            (bool_type)))
         name: (identifier)))))
 
 ==================
-Uint in a mapping definition
+Bool as a mapping value
 ==================
 
 contract C {
-  mapping(uint => uint256) balances;
+  mapping(address => bool) public isRegistered;
 }
 
 ---
@@ -184,19 +138,20 @@ contract C {
         (mapping_type
           key: (type
             (primitive_type
-              (uint_type)))
+              (address_type)))
           value: (type
             (primitive_type
-              (uint_type)))))
+              (bool_type)))))
+      visibility: (visibility)
       name: (identifier))))
 
 ==================
-Uint as an array base type
+Bool as an array base type
 ==================
 
 contract C {
-  uint[] public numbers;
-  uint[5] public fixedNumbers;
+  bool[] public flags;
+  bool[4] public fixedFlags;
 }
 
 ---
@@ -209,7 +164,7 @@ contract C {
         (array_type
           base: (type
             (primitive_type
-              (uint_type)))))
+              (bool_type)))))
       visibility: (visibility)
       name: (identifier))
     storage: (storage
@@ -217,36 +172,38 @@ contract C {
         (array_type
           base: (type
             (primitive_type
-              (uint_type)))
+              (bool_type)))
           size: (literal
             (number))))
       visibility: (visibility)
       name: (identifier))))
 
 ==================
-Uint in a 'using for' directive
+Bool in a 'using for' directive
 ==================
 
-using SafeMath for uint256;
+library BoolUtils {}
+using BoolUtils for bool;
 
 ---
 
 (source_file
+  definition: (library
+    name: (identifier))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
       target: (type
         (primitive_type
-          (uint_type))))))
+          (bool_type))))))
 
 ==================
-Uint in a constant variable
+Bool as a constant variable
 ==================
 
 contract C {
-  uint constant MY_CONST = 100;
-  uint128 public immutable MY_IMMUTABLE = 200;
+  bool constant IS_ACTIVE = true;
 }
 
 ---
@@ -257,27 +214,18 @@ contract C {
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (bool_type)))
       mutability: (mutability)
       name: (identifier)
       value: (literal
-        (number)))
-    storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
-      visibility: (visibility)
-      mutability: (mutability)
-      name: (identifier)
-      value: (literal
-        (number)))))
+        (boolean)))))
 
 ==================
-Uint in an event parameter
+Bool in an event parameter
 ==================
 
 contract C {
-  event ValueChanged(uint indexed oldValue, uint newValue);
+  event StatusChanged(bool indexed isActive, bool completed);
 }
 
 ---
@@ -291,20 +239,20 @@ contract C {
         (indexed_event_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (bool_type)))
           name: (identifier))
         (unindexed_event_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (bool_type)))
           name: (identifier))))))
 
 ==================
-Uint in an error parameter
+Bool in an error parameter
 ==================
 
 contract C {
-  error InsufficientFunds(uint required, uint available);
+  error StateMismatch(bool expected, bool actual);
 }
 
 ---
@@ -318,19 +266,19 @@ contract C {
         (error_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (bool_type)))
           name: (identifier))
         (error_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (bool_type)))
           name: (identifier))))))
 
 ==================
-Uint as underlying type for UDVT
+Bool as underlying type for UDVT
 ==================
 
-type MyUint is uint128;
+type Flag is bool;
 
 ---
 
@@ -338,4 +286,40 @@ type MyUint is uint128;
   definition: (udvt
     name: (identifier)
     underlying_type: (primitive_type
-      (uint_type))))
+      (bool_type))))
+
+==================
+Boolean literals in an expression
+==================
+
+contract C {
+    function getStatus() public pure returns (bool) {
+        return true && (false || true);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (bool_type)))))
+      body: (block
+        (return_statement
+          value: (logical_and_expression
+            left: (literal
+              (boolean))
+            right: (tuple_expression
+              (logical_or_expression
+                left: (literal
+                  (boolean))
+                right: (literal
+                  (boolean))))))))))

@@ -1,0 +1,293 @@
+==================
+Array as a state variable
+==================
+
+contract C {
+  uint[] myDynamicArray;
+  bool[5] myFixedArray;
+  address[][3] my2DArray;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (array_type
+          base: (type
+            (primitive_type
+              (uint_type)))))
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (array_type
+          base: (type
+            (primitive_type
+              (bool_type)))
+          size: (literal
+            (number))))
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (array_type
+          base: (type
+            (array_type
+              base: (type
+                (primitive_type
+                  (address_type)))))
+          size: (literal
+            (number))))
+      name: (identifier))))
+
+==================
+Array as a function parameter and return type
+==================
+
+contract C {
+  function process(string[][] calldata data) public pure returns (bytes[] memory) {
+    // ...
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (type
+            (array_type
+              base: (type
+                (array_type
+                  base: (type
+                    (primitive_type
+                      (string_type)))))))
+          location: (data_location)
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (type
+            (array_type
+              base: (type
+                (primitive_type
+                  (bytes_type)))))
+          location: (data_location)))
+      body: (block
+        (comment)))))
+
+==================
+Array in a struct definition
+==================
+
+contract C {
+  struct MyData {
+    uint[] values;
+    bytes32[4] hashes;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    struct: (struct
+      name: (identifier)
+      (struct_member
+        type: (type
+          (array_type
+            base: (type
+              (primitive_type
+                (uint_type)))))
+        name: (identifier))
+      (struct_member
+        type: (type
+          (array_type
+            base: (type
+              (primitive_type
+                (bytes_type)))
+            size: (literal
+              (number))))
+        name: (identifier)))))
+
+==================
+Array as a mapping value
+==================
+
+contract C {
+  mapping(address => int[]) private balances;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (primitive_type
+              (address_type)))
+          value: (type
+            (array_type
+              base: (type
+                (primitive_type
+                  (int_type)))))))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+Deeply nested multi-dimensional array
+==================
+
+contract C {
+    struct MyStruct {}
+    MyStruct[][5][] public data;
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    struct: (struct
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (array_type
+          base: (type
+            (array_type
+              base: (type
+                (array_type
+                  base: (type
+                    (custom_type
+                      symbol: (symbol
+                        name: (identifier))))))
+              size: (literal
+                (number))))))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+Array of mappings (storage only)
+==================
+
+contract C {
+    mapping(address => uint)[] public userBalances;
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (array_type
+          base: (type
+            (mapping_type
+              key: (type
+                (primitive_type
+                  (address_type)))
+              value: (type
+                (primitive_type
+                  (uint_type)))))))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+Array in a 'using for' directive
+==================
+
+library ArrayLib {}
+using ArrayLib for uint[];
+using ArrayLib for uint[2];
+
+---
+
+(source_file
+  definition: (library
+    name: (identifier))
+  directive: (using
+    (using_library
+      library: (symbol
+        name: (identifier))
+      target: (type
+        (array_type
+          base: (type
+            (primitive_type
+              (uint_type)))))))
+  directive: (using
+    (using_library
+      library: (symbol
+        name: (identifier))
+      target: (type
+        (array_type
+          base: (type
+            (primitive_type
+              (uint_type)))
+          size: (literal
+            (number)))))))
+
+==================
+Array in an event parameter
+==================
+
+contract C {
+  event DataProcessed(uint[] data, bool[3] flags);
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    event: (event
+      name: (identifier)
+      parameters: (event_parameter_list
+        (unindexed_event_parameter
+          type: (type
+            (array_type
+              base: (type
+                (primitive_type
+                  (uint_type)))))
+          name: (identifier))
+        (unindexed_event_parameter
+          type: (type
+            (array_type
+              base: (type
+                (primitive_type
+                  (bool_type)))
+              size: (literal
+                (number))))
+          name: (identifier))))))
+
+==================
+Array in an error parameter
+==================
+
+contract C {
+  error InvalidArray(bytes[] data);
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    error: (error
+      name: (identifier)
+      parameters: (error_parameter_list
+        (error_parameter
+          type: (type
+            (array_type
+              base: (type
+                (primitive_type
+                  (bytes_type)))))
+          name: (identifier))))))

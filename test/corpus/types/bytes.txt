@@ -1,11 +1,11 @@
 ==================
-Uint as a state variable
+Bytes as a state variable
 ==================
 
 contract C {
-  uint myVar;
-  uint8 myVar8;
-  uint256 myVar256;
+  bytes myBytes;
+  bytes1 myByte1;
+  bytes32 myBytes32;
 }
 
 ---
@@ -16,26 +16,26 @@ contract C {
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (bytes_type)))
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (bytes_type)))
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (bytes_type)))
       name: (identifier))))
 
 ==================
-Uint as a function parameter and return type
+Bytes as a function parameter and return type
 ==================
 
 contract C {
-  function process(uint8 input) public pure returns (uint result) {
-    return uint(input);
+  function process(bytes calldata input, bytes4 fixedInput) public pure returns (bytes memory, bytes1) {
+    return (input, fixedInput[0]);
   }
 }
 
@@ -50,7 +50,13 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (bytes_type)))
+          location: (data_location)
+          name: (identifier))
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (bytes_type)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
@@ -58,24 +64,31 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))
-          name: (identifier)))
+              (bytes_type)))
+          location: (data_location))
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (bytes_type)))))
       body: (block
         (return_statement
-          value: (call_expression
-            function: (primary_expression
+          value: (tuple_expression
+            (primary_expression
               (identifier))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+            (index_access_expression
+              base: (primary_expression
+                (identifier))
+              index: (literal
+                (number)))))))))
 
 ==================
-Uint as a local variable
+Bytes as a local variable
 ==================
 
 contract C {
   function f() public pure {
-    uint256 localCounter = 42;
+    bytes memory localData = hex"123456";
+    bytes32 localHash = 0x123;
   }
 }
 
@@ -93,18 +106,27 @@ contract C {
           declaration: (variable_declaration
             type: (type
               (primitive_type
-                (uint_type)))
+                (bytes_type)))
+            location: (data_location)
             name: (identifier))
           value: (literal
-            (number)))))))
+            (hex_string)))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (type
+              (primitive_type
+                (bytes_type)))
+            name: (identifier))
+          value: (literal
+            (hex)))))))
 
 ==================
-Uint in a type cast
+Bytes in a type cast
 ==================
 
 contract C {
-  function f(bytes1 b) public pure returns (uint8) {
-    return uint8(b);
+  function f(string memory s) public pure returns (bytes memory) {
+    return bytes(s);
   }
 }
 
@@ -119,7 +141,8 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (bytes_type)))
+              (string_type)))
+          location: (data_location)
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
@@ -127,7 +150,8 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))))
+              (bytes_type)))
+          location: (data_location)))
       body: (block
         (return_statement
           value: (call_expression
@@ -138,13 +162,13 @@ contract C {
                 (identifier)))))))))
 
 ==================
-Uint in a struct definition
+Bytes in a struct definition
 ==================
 
 contract C {
-  struct MyStruct {
-    uint24 id;
-    uint amount;
+  struct MyData {
+    bytes data;
+    bytes32 id;
   }
 }
 
@@ -158,20 +182,20 @@ contract C {
       (struct_member
         type: (type
           (primitive_type
-            (uint_type)))
+            (bytes_type)))
         name: (identifier))
       (struct_member
         type: (type
           (primitive_type
-            (uint_type)))
+            (bytes_type)))
         name: (identifier)))))
 
 ==================
-Uint in a mapping definition
+Bytes in a mapping definition (key must be fixed-size)
 ==================
 
 contract C {
-  mapping(uint => uint256) balances;
+  mapping(bytes32 => bytes) dataStore;
 }
 
 ---
@@ -184,19 +208,19 @@ contract C {
         (mapping_type
           key: (type
             (primitive_type
-              (uint_type)))
+              (bytes_type)))
           value: (type
             (primitive_type
-              (uint_type)))))
+              (bytes_type)))))
       name: (identifier))))
 
 ==================
-Uint as an array base type
+Bytes as an array base type
 ==================
 
 contract C {
-  uint[] public numbers;
-  uint[5] public fixedNumbers;
+  bytes[] public dataChunks;
+  bytes32[3] public hashes;
 }
 
 ---
@@ -209,7 +233,7 @@ contract C {
         (array_type
           base: (type
             (primitive_type
-              (uint_type)))))
+              (bytes_type)))))
       visibility: (visibility)
       name: (identifier))
     storage: (storage
@@ -217,36 +241,38 @@ contract C {
         (array_type
           base: (type
             (primitive_type
-              (uint_type)))
+              (bytes_type)))
           size: (literal
             (number))))
       visibility: (visibility)
       name: (identifier))))
 
 ==================
-Uint in a 'using for' directive
+Bytes in a 'using for' directive
 ==================
 
-using SafeMath for uint256;
+library BytesUtils {}
+using BytesUtils for bytes;
 
 ---
 
 (source_file
+  definition: (library
+    name: (identifier))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
       target: (type
         (primitive_type
-          (uint_type))))))
+          (bytes_type))))))
 
 ==================
-Uint in a constant variable
+Bytes as a constant variable
 ==================
 
 contract C {
-  uint constant MY_CONST = 100;
-  uint128 public immutable MY_IMMUTABLE = 200;
+  bytes32 constant MY_HASH = 0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef;
 }
 
 ---
@@ -257,27 +283,18 @@ contract C {
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (bytes_type)))
       mutability: (mutability)
       name: (identifier)
       value: (literal
-        (number)))
-    storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
-      visibility: (visibility)
-      mutability: (mutability)
-      name: (identifier)
-      value: (literal
-        (number)))))
+        (hex)))))
 
 ==================
-Uint in an event parameter
+Bytes in an event parameter
 ==================
 
 contract C {
-  event ValueChanged(uint indexed oldValue, uint newValue);
+  event DataReceived(bytes32 indexed topic, bytes data);
 }
 
 ---
@@ -291,20 +308,20 @@ contract C {
         (indexed_event_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (bytes_type)))
           name: (identifier))
         (unindexed_event_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (bytes_type)))
           name: (identifier))))))
 
 ==================
-Uint in an error parameter
+Bytes in an error parameter
 ==================
 
 contract C {
-  error InsufficientFunds(uint required, uint available);
+  error InvalidData(bytes received);
 }
 
 ---
@@ -318,19 +335,14 @@ contract C {
         (error_parameter
           type: (type
             (primitive_type
-              (uint_type)))
-          name: (identifier))
-        (error_parameter
-          type: (type
-            (primitive_type
-              (uint_type)))
+              (bytes_type)))
           name: (identifier))))))
 
 ==================
-Uint as underlying type for UDVT
+Bytes as underlying type for UDVT
 ==================
 
-type MyUint is uint128;
+type Hash is bytes32;
 
 ---
 
@@ -338,4 +350,4 @@ type MyUint is uint128;
   definition: (udvt
     name: (identifier)
     underlying_type: (primitive_type
-      (uint_type))))
+      (bytes_type))))

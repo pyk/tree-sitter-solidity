@@ -1,0 +1,333 @@
+==================
+Mapping as a state variable
+==================
+
+contract C {
+  mapping(uint => address) myMapping;
+  mapping(address => bool) public flags;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (primitive_type
+              (uint_type)))
+          value: (type
+            (primitive_type
+              (address_type)))))
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (primitive_type
+              (address_type)))
+          value: (type
+            (primitive_type
+              (bool_type)))))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+Nested mapping as a state variable
+==================
+
+contract C {
+  mapping(address => mapping(uint => uint)) public nestedMapping;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (primitive_type
+              (address_type)))
+          value: (type
+            (mapping_type
+              key: (type
+                (primitive_type
+                  (uint_type)))
+              value: (type
+                (primitive_type
+                  (uint_type)))))))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+Mapping as a function parameter (storage pointer)
+==================
+
+contract C {
+  mapping(bytes32 => uint) internal data;
+
+  function process(mapping(bytes32 => uint) storage _data) internal {
+    // ...
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (primitive_type
+              (bytes_type)))
+          value: (type
+            (primitive_type
+              (uint_type)))))
+      visibility: (visibility)
+      name: (identifier))
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (type
+            (mapping_type
+              key: (type
+                (primitive_type
+                  (bytes_type)))
+              value: (type
+                (primitive_type
+                  (uint_type)))))
+          location: (data_location)
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (comment)))))
+
+==================
+Mapping as a function return type (storage pointer)
+==================
+
+contract C {
+  mapping(address => uint) balances;
+
+  function getBalances() internal view returns (mapping(address => uint) storage) {
+    return balances;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (primitive_type
+              (address_type)))
+          value: (type
+            (primitive_type
+              (uint_type)))))
+      name: (identifier))
+    function: (function
+      name: (identifier)
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (type
+            (mapping_type
+              key: (type
+                (primitive_type
+                  (address_type)))
+              value: (type
+                (primitive_type
+                  (uint_type)))))
+          location: (data_location)))
+      body: (block
+        (return_statement
+          value: (primary_expression
+            (identifier)))))))
+
+==================
+Mapping as a local variable (storage pointer)
+==================
+
+contract C {
+  mapping(uint => address) userAddresses;
+
+  function f() public {
+    mapping(uint => address) storage localMap = userAddresses;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (primitive_type
+              (uint_type)))
+          value: (type
+            (primitive_type
+              (address_type)))))
+      name: (identifier))
+    function: (function
+      name: (identifier)
+      visibility: (visibility)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (type
+              (mapping_type
+                key: (type
+                  (primitive_type
+                    (uint_type)))
+                value: (type
+                  (primitive_type
+                    (address_type)))))
+            location: (data_location)
+            name: (identifier))
+          value: (primary_expression
+            (identifier)))))))
+
+==================
+Mapping inside a struct definition
+==================
+
+contract C {
+  struct UserData {
+    mapping(uint => bool) permissions;
+    uint lastLogin;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    struct: (struct
+      name: (identifier)
+      (struct_member
+        type: (type
+          (mapping_type
+            key: (type
+              (primitive_type
+                (uint_type)))
+            value: (type
+              (primitive_type
+                (bool_type)))))
+        name: (identifier))
+      (struct_member
+        type: (type
+          (primitive_type
+            (uint_type)))
+        name: (identifier)))))
+
+==================
+Mapping with a custom type as key or value
+==================
+
+contract C {
+  enum Status { Active, Inactive }
+  struct Data {}
+
+  mapping(Status => Data) public statusData;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    enum: (enum
+      name: (identifier)
+      value: (identifier)
+      value: (identifier))
+    struct: (struct
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))
+          value: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+Mapping value is an array
+==================
+
+contract C {
+    mapping(address => uint[]) public userHistories;
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (primitive_type
+              (address_type)))
+          value: (type
+            (array_type
+              base: (type
+                (primitive_type
+                  (uint_type)))))))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+Mapping value is a struct
+==================
+
+contract C {
+    struct User { bool active; }
+    mapping(uint => User) public users;
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    struct: (struct
+      name: (identifier)
+      (struct_member
+        type: (type
+          (primitive_type
+            (bool_type)))
+        name: (identifier)))
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (type
+            (primitive_type
+              (uint_type)))
+          value: (type
+            (custom_type
+              symbol: (symbol
+                name: (identifier))))))
+      visibility: (visibility)
+      name: (identifier))))

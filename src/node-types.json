@@ -5407,11 +5407,7 @@
         "required": true,
         "types": [
           {
-            "type": "custom_type",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
+            "type": "type",
             "named": true
           }
         ]

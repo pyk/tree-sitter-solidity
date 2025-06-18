@@ -1,11 +1,12 @@
 ==================
-Uint as a state variable
+Fixed-point as a state variable
 ==================
 
 contract C {
-  uint myVar;
-  uint8 myVar8;
-  uint256 myVar256;
+  fixed myFixed;
+  ufixed myUFixed;
+  fixed128x18 myFixedExplicit;
+  ufixed256x80 myUFixedExplicit;
 }
 
 ---
@@ -16,26 +17,31 @@ contract C {
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (fixed_type)))
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (ufixed_type)))
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
-          (uint_type)))
+          (fixed_type)))
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (primitive_type
+          (ufixed_type)))
       name: (identifier))))
 
 ==================
-Uint as a function parameter and return type
+Fixed-point as a function parameter and return type
 ==================
 
 contract C {
-  function process(uint8 input) public pure returns (uint result) {
-    return uint(input);
+  function process(fixed128x18 input) public pure returns (ufixed) {
+    // ...
   }
 }
 
@@ -50,7 +56,7 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (fixed_type)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
@@ -58,24 +64,17 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))
-          name: (identifier)))
+              (ufixed_type)))))
       body: (block
-        (return_statement
-          value: (call_expression
-            function: (primary_expression
-              (identifier))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+        (comment)))))
 
 ==================
-Uint as a local variable
+Fixed-point as a local variable
 ==================
 
 contract C {
   function f() public pure {
-    uint256 localCounter = 42;
+    fixed localPrice;
   }
 }
 
@@ -93,18 +92,16 @@ contract C {
           declaration: (variable_declaration
             type: (type
               (primitive_type
-                (uint_type)))
-            name: (identifier))
-          value: (literal
-            (number)))))))
+                (fixed_type)))
+            name: (identifier)))))))
 
 ==================
-Uint in a type cast
+Fixed-point in a type cast
 ==================
 
 contract C {
-  function f(bytes1 b) public pure returns (uint8) {
-    return uint8(b);
+  function f(int i) public pure returns (fixed) {
+    return fixed(i);
   }
 }
 
@@ -119,7 +116,7 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (bytes_type)))
+              (int_type)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
@@ -127,7 +124,7 @@ contract C {
         parameter: (parameter
           type: (type
             (primitive_type
-              (uint_type)))))
+              (fixed_type)))))
       body: (block
         (return_statement
           value: (call_expression
@@ -138,13 +135,13 @@ contract C {
                 (identifier)))))))))
 
 ==================
-Uint in a struct definition
+Fixed-point in a struct definition
 ==================
 
 contract C {
-  struct MyStruct {
-    uint24 id;
-    uint amount;
+  struct PricePoint {
+    fixed price;
+    ufixed volatility;
   }
 }
 
@@ -158,20 +155,20 @@ contract C {
       (struct_member
         type: (type
           (primitive_type
-            (uint_type)))
+            (fixed_type)))
         name: (identifier))
       (struct_member
         type: (type
           (primitive_type
-            (uint_type)))
+            (ufixed_type)))
         name: (identifier)))))
 
 ==================
-Uint in a mapping definition
+Fixed-point as a mapping value
 ==================
 
 contract C {
-  mapping(uint => uint256) balances;
+  mapping(uint => fixed) public priceFeed;
 }
 
 ---
@@ -187,16 +184,17 @@ contract C {
               (uint_type)))
           value: (type
             (primitive_type
-              (uint_type)))))
+              (fixed_type)))))
+      visibility: (visibility)
       name: (identifier))))
 
 ==================
-Uint as an array base type
+Fixed-point as an array base type
 ==================
 
 contract C {
-  uint[] public numbers;
-  uint[5] public fixedNumbers;
+  ufixed[] public rates;
+  fixed64x10[4] public history;
 }
 
 ---
@@ -209,7 +207,7 @@ contract C {
         (array_type
           base: (type
             (primitive_type
-              (uint_type)))))
+              (ufixed_type)))))
       visibility: (visibility)
       name: (identifier))
     storage: (storage
@@ -217,67 +215,46 @@ contract C {
         (array_type
           base: (type
             (primitive_type
-              (uint_type)))
+              (fixed_type)))
           size: (literal
             (number))))
       visibility: (visibility)
       name: (identifier))))
 
 ==================
-Uint in a 'using for' directive
+Fixed-point in a 'using for' directive
 ==================
 
-using SafeMath for uint256;
+library FixedMath {}
+using FixedMath for fixed;
+using FixedMath for ufixed256x18;
 
 ---
 
 (source_file
+  definition: (library
+    name: (identifier))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
       target: (type
         (primitive_type
-          (uint_type))))))
+          (fixed_type)))))
+  directive: (using
+    (using_library
+      library: (symbol
+        name: (identifier))
+      target: (type
+        (primitive_type
+          (ufixed_type))))))
 
 ==================
-Uint in a constant variable
+Fixed-point in an event parameter
 ==================
 
 contract C {
-  uint constant MY_CONST = 100;
-  uint128 public immutable MY_IMMUTABLE = 200;
-}
-
----
-
-(source_file
-  definition: (contract
-    name: (identifier)
-    storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
-      mutability: (mutability)
-      name: (identifier)
-      value: (literal
-        (number)))
-    storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
-      visibility: (visibility)
-      mutability: (mutability)
-      name: (identifier)
-      value: (literal
-        (number)))))
-
-==================
-Uint in an event parameter
-==================
-
-contract C {
-  event ValueChanged(uint indexed oldValue, uint newValue);
+  event PriceUpdated(fixed newPrice);
 }
 
 ---
@@ -288,23 +265,18 @@ contract C {
     event: (event
       name: (identifier)
       parameters: (event_parameter_list
-        (indexed_event_parameter
-          type: (type
-            (primitive_type
-              (uint_type)))
-          name: (identifier))
         (unindexed_event_parameter
           type: (type
             (primitive_type
-              (uint_type)))
+              (fixed_type)))
           name: (identifier))))))
 
 ==================
-Uint in an error parameter
+Fixed-point in an error parameter
 ==================
 
 contract C {
-  error InsufficientFunds(uint required, uint available);
+  error InvalidPrice(ufixed price);
 }
 
 ---
@@ -318,19 +290,14 @@ contract C {
         (error_parameter
           type: (type
             (primitive_type
-              (uint_type)))
-          name: (identifier))
-        (error_parameter
-          type: (type
-            (primitive_type
-              (uint_type)))
+              (ufixed_type)))
           name: (identifier))))))
 
 ==================
-Uint as underlying type for UDVT
+Fixed-point as underlying type for UDVT
 ==================
 
-type MyUint is uint128;
+type Price is fixed128x18;
 
 ---
 
@@ -338,4 +305,4 @@ type MyUint is uint128;
   definition: (udvt
     name: (identifier)
     underlying_type: (primitive_type
-      (uint_type))))
+      (fixed_type))))
