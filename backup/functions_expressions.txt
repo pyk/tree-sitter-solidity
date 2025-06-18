@@ -1,0 +1,300 @@
+==================
+Operator precedence
+==================
+contract C {
+  function f() {
+    uint a = 1 + 2 * 3;
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (arithmetic
+            (add_expression
+              left: (literal
+                (number))
+              operator: (add_op)
+              right: (arithmetic
+                (mul_expression
+                  left: (literal
+                    (number))
+                  operator: (mul_op)
+                  right: (literal
+                    (number)))))))))))
+
+==================
+Unary expressions
+==================
+
+contract C {
+  function f(uint a) {
+    bool b = !true;
+    uint c = -a;
+    uint d = ++a;
+    uint e = a--;
+    delete a;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bool_type)
+            name: (identifier))
+          value: (unary_expression
+            argument: (literal
+              (boolean))))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (unary_expression
+            argument: (primary_expression
+              (identifier))))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (unary_expression
+            argument: (primary_expression
+              (identifier))))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (unary_expression
+            argument: (primary_expression
+              (identifier))))
+        (expression_statement
+          (unary_expression
+            argument: (primary_expression
+              (identifier))))))))
+
+==================
+Conditional expression
+==================
+contract C {
+  function f(bool a) {
+    uint b = a ? 1 : 2;
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (bool_type)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (conditional_expression
+            condition: (primary_expression
+              (identifier))
+            consequence: (literal
+              (number))
+            alternative: (literal
+              (number))))))))
+
+==================
+Nested conditional expression
+==================
+contract C {
+  function f(bool a, bool c) {
+    uint b = a ? 1 : c ? 2 : 3;
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (bool_type)
+          name: (identifier))
+        parameter: (parameter
+          type: (bool_type)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (conditional_expression
+            condition: (primary_expression
+              (identifier))
+            consequence: (literal
+              (number))
+            alternative: (conditional_expression
+              condition: (primary_expression
+                (identifier))
+              consequence: (literal
+                (number))
+              alternative: (literal
+                (number)))))))))
+
+==================
+Comprehensive member access expressions
+==================
+contract C {
+  function f() {
+    address sender = msg.sender;
+    uint chain = block.chainid.something;
+    address owner = getContract().owner;
+    address addr = myPayable.address;
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (address_type)
+            name: (identifier))
+          value: (member_access_expression
+            object: (primary_expression
+              (identifier))
+            member: (identifier)))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (member_access_expression
+            object: (member_access_expression
+              object: (primary_expression
+                (identifier))
+              member: (identifier))
+            member: (identifier)))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (address_type)
+            name: (identifier))
+          value: (member_access_expression
+            object: (call_expression
+              function: (primary_expression
+                (identifier))
+              arguments: (argument_list))
+            member: (identifier)))
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (address_type)
+            name: (identifier))
+          value: (member_access_expression
+            object: (primary_expression
+              (identifier))
+            member: (identifier)))))))
+
+==================
+Index access expression
+==================
+contract C {
+  function f(uint[] memory arr) {
+    uint val = arr[0];
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (array_type
+            base: (user_defined_type
+              name: (symbol
+                name: (identifier))))
+          location: (data_location)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (index_access_expression
+            base: (primary_expression
+              (identifier))
+            index: (literal
+              (number))))))))
+
+==================
+New expression
+==================
+contract C {
+  function f() {
+    OtherContract o = new OtherContract();
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (call_expression
+            function: (new_expression
+              type: (user_defined_type
+                name: (symbol
+                  name: (identifier))))
+            arguments: (argument_list)))))))

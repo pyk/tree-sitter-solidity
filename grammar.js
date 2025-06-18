@@ -127,12 +127,28 @@ module.exports = grammar({
      * for all named entities (functions, contracts, variables, etc.),
      * making static analysis and tool-building much easier.
      */
-    symbol: ($) => $.identifier,
+    symbol: ($) =>
+      choice(
+        // The base case: a symbol that is just a simple identifier.
+        field("name", $.identifier),
 
-    // A named node for the `global` keyword
+        // The recursive case: a symbol with a scope and a name.
+        prec.left(
+          PREC.MEMBER, // Use member access precedence to handle associativity correctly
+          seq(
+            field("scope", $.symbol), // The scope is another symbol
+            ".",
+            field("name", $.identifier),
+          ),
+        ),
+      ),
+
+    data_location: ($) => choice("memory", "storage", "calldata"),
     global: ($) => "global",
-
-    // A named node for the `*` keyword
+    mutability: ($) => choice("constant", "immutable"),
+    state_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
+    virtual: ($) => "virtual",
+    visibility: ($) => choice("public", "private", "internal", "external"),
     wildcard: ($) => "*",
 
     //############################################################//
@@ -256,15 +272,9 @@ module.exports = grammar({
 
     using_declaration: ($) =>
       seq(
-        field("name", $._using_function_path),
+        field("name", $.symbol),
         optional(seq("as", field("operator", $.using_op))),
       ),
-
-    _using_function_path: ($) =>
-      choice($.identifier, $.qualified_function_name),
-
-    qualified_function_name: ($) =>
-      seq(field("scope", $.identifier), ".", field("name", $.identifier)),
 
     using_op: ($) =>
       choice(
@@ -427,16 +437,7 @@ module.exports = grammar({
       ),
 
     parent_constructor: ($) =>
-      seq(
-        field(
-          "name",
-          choice(
-            prec(1, $.identifier), // Prefer simple identifier
-            $.identifier_path, // Fallback for qualified names
-          ),
-        ),
-        field("arguments", $.argument_list),
-      ),
+      seq(field("name", $.symbol), field("arguments", $.argument_list)),
 
     //############################################################//
     //                         Parameters                         //
@@ -671,7 +672,7 @@ module.exports = grammar({
 
     modifier_invocation: ($) =>
       seq(
-        field("name", $.identifier_path),
+        field("name", $.symbol),
         optional(field("arguments", $.argument_list)),
       ),
 
@@ -708,7 +709,7 @@ module.exports = grammar({
     override_specifier: ($) =>
       seq(
         "override",
-        optional(seq("(", commaSep(field("from", $.identifier_path)), ")")),
+        optional(seq("(", commaSep(field("from", $.symbol)), ")")),
       ),
 
     // The receive function definition
@@ -952,7 +953,7 @@ module.exports = grammar({
         seq(
           "revert",
           // We can also be more specific about what an error can be
-          field("error", $.identifier_path),
+          field("error", $.symbol),
           field("arguments", $.argument_list),
           ";",
         ),
@@ -1389,8 +1390,7 @@ module.exports = grammar({
         seq("address", optional(field("mutability", "payable"))),
       ),
 
-    user_defined_type: ($) =>
-      seq(field("name", choice($.identifier, $.identifier_path))),
+    user_defined_type: ($) => seq(field("name", $.symbol)),
 
     /**
      * A hidden rule for all elementary types.
@@ -1418,18 +1418,5 @@ module.exports = grammar({
     //************************************************************//
     //                       Common Rules                         //
     //************************************************************//
-
-    // This tells the parser: "When you are building an identifier_path and you have a choice
-    // between finishing the rule (reducing) or consuming another token to make it longer
-    // (shifting), always choose to shift.
-    identifier_path: ($) =>
-      prec.right(-1, seq($.identifier, repeat(seq(".", $.identifier)))),
-
-    visibility: ($) => choice("public", "private", "internal", "external"),
-    mutability: ($) => choice("constant", "immutable"),
-    state_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
-    data_location: ($) => choice("memory", "storage", "calldata"),
-
-    virtual: ($) => "virtual",
   },
 })

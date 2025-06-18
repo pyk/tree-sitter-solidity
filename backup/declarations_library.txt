@@ -1,0 +1,55 @@
+==================
+Empty library definition
+==================
+
+library MyLibrary {}
+
+---
+
+(source_file
+  definition: (library
+    name: (identifier)))
+
+==================
+Library with a function
+==================
+
+library Search {
+  function indexOf(uint[] storage self, uint value)
+    public
+    view
+    returns (uint)
+  {
+    // implementation
+  }
+}
+
+---
+
+(source_file
+  definition: (library
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (array_type
+            base: (user_defined_type
+              name: (symbol
+                name: (identifier))))
+          location: (data_location)
+          name: (identifier))
+        parameter: (parameter
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))))
+      body: (block
+        (comment)))))

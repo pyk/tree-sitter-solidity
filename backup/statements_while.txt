@@ -1,0 +1,41 @@
+==================
+While loop
+==================
+
+contract C {
+  function f() {
+    uint i = 0;
+    while (i < 10) {
+      i++;
+    }
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (literal
+            (number)))
+        (while_statement
+          condition: (comparison_expression
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_operator)
+            right: (literal
+              (number)))
+          body: (block
+            (expression_statement
+              (unary_expression
+                argument: (primary_expression
+                  (identifier))))))))))

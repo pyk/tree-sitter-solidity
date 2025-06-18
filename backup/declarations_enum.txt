@@ -1,0 +1,67 @@
+==================
+Simple event definition
+==================
+
+event Transfer(address from, address to, uint256 value);
+
+---
+
+(source_file
+  definition: (event
+    name: (identifier)
+    parameters: (event_parameter_list
+      (unindexed_event_parameter
+        type: (address_type)
+        name: (identifier))
+      (unindexed_event_parameter
+        type: (address_type)
+        name: (identifier))
+      (unindexed_event_parameter
+        type: (user_defined_type
+          name: (symbol
+            name: (identifier)))
+        name: (identifier)))))
+
+==================
+Event with indexed and anonymous parameters
+==================
+
+event Approval(address indexed owner, address indexed spender, uint256 value) anonymous;
+
+---
+
+(source_file
+  definition: (event
+    name: (identifier)
+    parameters: (event_parameter_list
+      (indexed_event_parameter
+        type: (address_type)
+        name: (identifier))
+      (indexed_event_parameter
+        type: (address_type)
+        name: (identifier))
+      (unindexed_event_parameter
+        type: (user_defined_type
+          name: (symbol
+            name: (identifier)))
+        name: (identifier)))
+    (anonymous)))
+
+==================
+Event with unnamed parameters
+==================
+
+event MyEvent(uint256, bool indexed);
+
+---
+
+(source_file
+  definition: (event
+    name: (identifier)
+    parameters: (event_parameter_list
+      (unindexed_event_parameter
+        type: (user_defined_type
+          name: (symbol
+            name: (identifier))))
+      (indexed_event_parameter
+        type: (bool_type)))))

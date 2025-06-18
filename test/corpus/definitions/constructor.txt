@@ -30,7 +30,9 @@ contract C {
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter
-          type: (uint_type)
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))
           name: (identifier))
         parameter: (parameter
           type: (string_type)
@@ -92,7 +94,9 @@ abstract contract C {
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter
-          type: (uint_type)
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
@@ -126,7 +130,8 @@ contract MyToken is ERC20 {
           location: (data_location)
           name: (identifier)))
       parent_constructor: (parent_constructor
-        name: (identifier)
+        name: (symbol
+          name: (identifier))
         arguments: (argument_list
           argument: (primary_expression
             (identifier))
@@ -160,10 +165,12 @@ contract C is A, B {
         name: (identifier)))
     constructor: (constructor
       parent_constructor: (parent_constructor
-        name: (identifier)
+        name: (symbol
+          name: (identifier))
         arguments: (argument_list))
       parent_constructor: (parent_constructor
-        name: (identifier)
+        name: (symbol
+          name: (identifier))
         arguments: (argument_list))
       body: (block))))
 
@@ -191,15 +198,19 @@ abstract contract D is A, B {
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter
-          type: (uint_type)
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
       parent_constructor: (parent_constructor
-        name: (identifier)
+        name: (symbol
+          name: (identifier))
         arguments: (argument_list))
       parent_constructor: (parent_constructor
-        name: (identifier)
+        name: (symbol
+          name: (identifier))
         arguments: (argument_list))
       body: (block
         (comment)))))

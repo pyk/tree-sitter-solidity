@@ -1,0 +1,159 @@
+==================
+Simple assignment
+==================
+
+contract C {
+  function f() {
+    uint a;
+    a = 1;
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier)))
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (simple_assignment_operator)
+            right: (literal
+              (number))))))))
+
+==================
+Compound additive assignment
+==================
+
+contract C {
+  function f() {
+    uint a;
+    a += 1;
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier)))
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (compound_assignment_operator)
+            right: (literal
+              (number))))))))
+
+==================
+Compound multiplicative assignment
+==================
+
+contract C {
+  function f() {
+    uint a;
+    a *= 2;
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier)))
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (compound_assignment_operator)
+            right: (literal
+              (number))))))))
+
+==================
+Compound bitwise assignment
+==================
+
+contract C {
+  function f() {
+    uint a;
+    a &= 0xFF;
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier)))
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (compound_assignment_operator)
+            right: (literal
+              (hex))))))))
+
+==================
+Compound shift assignment
+==================
+
+contract C {
+  function f() {
+    uint a;
+    a <<= 2;
+  }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier)))
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (compound_assignment_operator)
+            right: (literal
+              (number))))))))

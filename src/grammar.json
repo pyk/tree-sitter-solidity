@@ -115,12 +115,126 @@
       "value": "[a-zA-Z_]\\w*"
     },
     "symbol": {
-      "type": "SYMBOL",
-      "name": "identifier"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "PREC_LEFT",
+          "value": 15,
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "FIELD",
+                "name": "scope",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "symbol"
+                }
+              },
+              {
+                "type": "STRING",
+                "value": "."
+              },
+              {
+                "type": "FIELD",
+                "name": "name",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "data_location": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "memory"
+        },
+        {
+          "type": "STRING",
+          "value": "storage"
+        },
+        {
+          "type": "STRING",
+          "value": "calldata"
+        }
+      ]
     },
     "global": {
       "type": "STRING",
       "value": "global"
+    },
+    "mutability": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "constant"
+        },
+        {
+          "type": "STRING",
+          "value": "immutable"
+        }
+      ]
+    },
+    "state_mutability": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "pure"
+        },
+        {
+          "type": "STRING",
+          "value": "view"
+        },
+        {
+          "type": "STRING",
+          "value": "payable"
+        },
+        {
+          "type": "STRING",
+          "value": "nonpayable"
+        }
+      ]
+    },
+    "virtual": {
+      "type": "STRING",
+      "value": "virtual"
+    },
+    "visibility": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "public"
+        },
+        {
+          "type": "STRING",
+          "value": "private"
+        },
+        {
+          "type": "STRING",
+          "value": "internal"
+        },
+        {
+          "type": "STRING",
+          "value": "external"
+        }
+      ]
     },
     "wildcard": {
       "type": "STRING",
@@ -676,7 +790,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "_using_function_path"
+            "name": "symbol"
           }
         },
         {
@@ -703,44 +817,6 @@
               "type": "BLANK"
             }
           ]
-        }
-      ]
-    },
-    "_using_function_path": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "qualified_function_name"
-        }
-      ]
-    },
-    "qualified_function_name": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "scope",
-          "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "."
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
-          }
         }
       ]
     },
@@ -1432,21 +1508,8 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "PREC",
-                "value": 1,
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "identifier"
-                }
-              },
-              {
-                "type": "SYMBOL",
-                "name": "identifier_path"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "symbol"
           }
         },
         {
@@ -2464,7 +2527,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier_path"
+            "name": "symbol"
           }
         },
         {
@@ -2633,7 +2696,7 @@
                       "name": "from",
                       "content": {
                         "type": "SYMBOL",
-                        "name": "identifier_path"
+                        "name": "symbol"
                       }
                     },
                     {
@@ -2650,7 +2713,7 @@
                             "name": "from",
                             "content": {
                               "type": "SYMBOL",
-                              "name": "identifier_path"
+                              "name": "symbol"
                             }
                           }
                         ]
@@ -3534,7 +3597,7 @@
             "name": "error",
             "content": {
               "type": "SYMBOL",
-              "name": "identifier_path"
+              "name": "symbol"
             }
           },
           {
@@ -4729,17 +4792,8 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "identifier"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "identifier_path"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "symbol"
           }
         }
       ]
@@ -4793,111 +4847,6 @@
           "name": "array_type"
         }
       ]
-    },
-    "identifier_path": {
-      "type": "PREC_RIGHT",
-      "value": -1,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "identifier"
-          },
-          {
-            "type": "REPEAT",
-            "content": {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "."
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "identifier"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    "visibility": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "public"
-        },
-        {
-          "type": "STRING",
-          "value": "private"
-        },
-        {
-          "type": "STRING",
-          "value": "internal"
-        },
-        {
-          "type": "STRING",
-          "value": "external"
-        }
-      ]
-    },
-    "mutability": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "constant"
-        },
-        {
-          "type": "STRING",
-          "value": "immutable"
-        }
-      ]
-    },
-    "state_mutability": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "pure"
-        },
-        {
-          "type": "STRING",
-          "value": "view"
-        },
-        {
-          "type": "STRING",
-          "value": "payable"
-        },
-        {
-          "type": "STRING",
-          "value": "nonpayable"
-        }
-      ]
-    },
-    "data_location": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "memory"
-        },
-        {
-          "type": "STRING",
-          "value": "storage"
-        },
-        {
-          "type": "STRING",
-          "value": "calldata"
-        }
-      ]
-    },
-    "virtual": {
-      "type": "STRING",
-      "value": "virtual"
     }
   },
   "extras": [

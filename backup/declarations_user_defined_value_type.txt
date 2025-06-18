@@ -1,0 +1,67 @@
+==================
+Top-level user-defined value type
+==================
+
+type MyInt is int;
+
+---
+
+(source_file
+  definition: (udvt
+    name: (identifier)
+    underlying_type: (int_type)))
+
+==================
+Contract-level user-defined value type
+==================
+
+contract C {
+  type MyBool is bool;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    udvt: (udvt
+      name: (identifier)
+      underlying_type: (bool_type))))
+
+==================
+Usage of a user-defined value type
+==================
+
+type MyAddress is address;
+
+contract C {
+  MyAddress public owner;
+}
+
+---
+
+(source_file
+  definition: (udvt
+    name: (identifier)
+    underlying_type: (address_type))
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (user_defined_type
+        name: (symbol
+          name: (identifier)))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+User-defined value type based on bytes
+==================
+
+type MyBytes is bytes32;
+
+---
+
+(source_file
+  definition: (udvt
+    name: (identifier)
+    underlying_type: (bytes_type)))

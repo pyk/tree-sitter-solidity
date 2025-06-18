@@ -1,0 +1,145 @@
+==================
+Simple logical AND
+==================
+
+contract C {
+  function f() {
+    bool a = true && false;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bool_type)
+            name: (identifier))
+          value: (logical_and_expression
+            left: (literal
+              (boolean))
+            right: (literal
+              (boolean))))))))
+
+==================
+Simple logical OR
+==================
+
+contract C {
+  function f() {
+    bool a = true || false;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bool_type)
+            name: (identifier))
+          value: (logical_or_expression
+            left: (literal
+              (boolean))
+            right: (literal
+              (boolean))))))))
+
+==================
+Precedence of AND vs OR
+==================
+// Should parse as `(a && b) || c`
+contract C {
+  function f(bool a, bool b, bool c) {
+    bool r = a && b || c;
+  }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (bool_type)
+          name: (identifier))
+        parameter: (parameter
+          type: (bool_type)
+          name: (identifier))
+        parameter: (parameter
+          type: (bool_type)
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bool_type)
+            name: (identifier))
+          value: (logical_or_expression
+            left: (logical_and_expression
+              left: (primary_expression
+                (identifier))
+              right: (primary_expression
+                (identifier)))
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Interaction with equality operators
+==================
+// Equality has higher precedence than logical AND
+contract C {
+  function f(uint a, uint b) {
+    bool r = a == 1 && b == 2;
+  }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))
+          name: (identifier))
+        parameter: (parameter
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))
+          name: (identifier)))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (bool_type)
+            name: (identifier))
+          value: (logical_and_expression
+            left: (equality_expression
+              left: (primary_expression
+                (identifier))
+              operator: (equality_operator)
+              right: (literal
+                (number)))
+            right: (equality_expression
+              left: (primary_expression
+                (identifier))
+              operator: (equality_operator)
+              right: (literal
+                (number)))))))))

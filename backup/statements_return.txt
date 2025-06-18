@@ -1,0 +1,81 @@
+==================
+Return with no value
+==================
+
+contract C {
+  function f() public {
+    return;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      visibility: (visibility)
+      body: (block
+        (return_statement)))))
+
+==================
+Return with a single value
+==================
+
+contract C {
+  function f() public returns (uint) {
+    return 42;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      visibility: (visibility)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))))
+      body: (block
+        (return_statement
+          value: (literal
+            (number)))))))
+
+==================
+Return with a tuple
+==================
+
+contract C {
+  function f() public returns (bool, uint) {
+    return (true, 123);
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      visibility: (visibility)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (bool_type))
+        parameter: (parameter
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))))
+      body: (block
+        (return_statement
+          value: (tuple_expression
+            (literal
+              (boolean))
+            (literal
+              (number))))))))

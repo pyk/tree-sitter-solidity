@@ -8,7 +8,9 @@ uint256 constant MY_CONSTANT = 42;
 
 (source_file
   definition: (constant
-    type: (uint_type)
+    type: (user_defined_type
+      name: (symbol
+        name: (identifier)))
     name: (identifier)
     value: (literal
       (number))))
@@ -23,7 +25,9 @@ int256 constant MY_NEGATIVE_CONSTANT = -100;
 
 (source_file
   definition: (constant
-    type: (int_type)
+    type: (user_defined_type
+      name: (symbol
+        name: (identifier)))
     name: (identifier)
     value: (unary_expression
       argument: (literal
@@ -84,7 +88,9 @@ bytes32 constant MY_HASH = 0x1234567890abcdef1234567890abcdef1234567890abcdef123
 
 (source_file
   definition: (constant
-    type: (bytes_type)
+    type: (user_defined_type
+      name: (symbol
+        name: (identifier)))
     name: (identifier)
     value: (literal
       (hex))))
@@ -99,7 +105,9 @@ uint constant SECONDS_PER_DAY = 24 * 60 * 60;
 
 (source_file
   definition: (constant
-    type: (uint_type)
+    type: (user_defined_type
+      name: (symbol
+        name: (identifier)))
     name: (identifier)
     value: (arithmetic
       (mul_expression
@@ -124,7 +132,9 @@ uint constant ONE_ETHER = 10 ** 18;
 
 (source_file
   definition: (constant
-    type: (uint_type)
+    type: (user_defined_type
+      name: (symbol
+        name: (identifier)))
     name: (identifier)
     value: (arithmetic
       (exp_expression
@@ -148,7 +158,9 @@ contract MyContract {
   definition: (contract
     name: (identifier)
     storage: (storage
-      type: (uint_type)
+      type: (user_defined_type
+        name: (symbol
+          name: (identifier)))
       visibility: (visibility)
       mutability: (mutability)
       name: (identifier)
@@ -166,12 +178,16 @@ uint constant B = A * 2;
 
 (source_file
   definition: (constant
-    type: (uint_type)
+    type: (user_defined_type
+      name: (symbol
+        name: (identifier)))
     name: (identifier)
     value: (literal
       (number)))
   definition: (constant
-    type: (uint_type)
+    type: (user_defined_type
+      name: (symbol
+        name: (identifier)))
     name: (identifier)
     value: (arithmetic
       (mul_expression
@@ -195,7 +211,9 @@ library Math {
   definition: (library
     name: (identifier)
     storage: (storage
-      type: (uint_type)
+      type: (user_defined_type
+        name: (symbol
+          name: (identifier)))
       visibility: (visibility)
       mutability: (mutability)
       name: (identifier)

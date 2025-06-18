@@ -1,0 +1,109 @@
+==================
+State variable of type int (alias)
+==================
+
+contract C {
+  int myVar;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (user_defined_type
+        name: (symbol
+          name: (identifier)))
+      name: (identifier))))
+
+==================
+State variable of type int256
+==================
+
+contract C {
+  int256 myVar;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (user_defined_type
+        name: (symbol
+          name: (identifier)))
+      name: (identifier))))
+
+==================
+State variable of type int8
+==================
+
+contract C {
+  int8 myVar;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (user_defined_type
+        name: (symbol
+          name: (identifier)))
+      name: (identifier))))
+
+==================
+Int types in a function definition
+==================
+
+contract C {
+  function sub(int256 a, int8 b) public returns (int) {
+    int result = a - b;
+    return result;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))
+          name: (identifier))
+        parameter: (parameter
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))
+          name: (identifier)))
+      visibility: (visibility)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (user_defined_type
+            name: (symbol
+              name: (identifier)))))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (user_defined_type
+              name: (symbol
+                name: (identifier)))
+            name: (identifier))
+          value: (arithmetic
+            (add_expression
+              left: (primary_expression
+                (identifier))
+              operator: (add_op)
+              right: (primary_expression
+                (identifier)))))
+        (return_statement
+          value: (primary_expression
+            (identifier)))))))

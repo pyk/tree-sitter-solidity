@@ -24,7 +24,7 @@ import "./MyLib.sol" as MyLib;
     (file_import
       path: (string)
       alias: (symbol
-        (identifier)))))
+        name: (identifier)))))
 
 ==================
 Wildcard Alias Import
@@ -38,7 +38,7 @@ import * as MyLib from "./MyLib.sol";
   directive: (import
     (wildcard_import
       alias: (symbol
-        (identifier))
+        name: (identifier))
       path: (string))))
 
 ==================
@@ -54,12 +54,12 @@ import {symbol1, symbol2 as alias2} from "./MyFile.sol";
     (symbol_import
       symbol: (imported_symbol
         name: (symbol
-          (identifier)))
+          name: (identifier)))
       symbol: (imported_symbol
         name: (symbol
-          (identifier))
+          name: (identifier))
         alias: (symbol
-          (identifier)))
+          name: (identifier)))
       path: (string))))
 
 ==================
@@ -80,15 +80,15 @@ import * as Utils from "./Utils.sol";
     (symbol_import
       symbol: (imported_symbol
         name: (symbol
-          (identifier)))
+          name: (identifier)))
       symbol: (imported_symbol
         name: (symbol
-          (identifier))
+          name: (identifier))
         alias: (symbol
-          (identifier)))
+          name: (identifier)))
       path: (string)))
   directive: (import
     (wildcard_import
       alias: (symbol
-        (identifier))
+        name: (identifier))
       path: (string))))
