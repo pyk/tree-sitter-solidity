@@ -8,9 +8,9 @@ uint256 constant MY_CONSTANT = 42;
 
 (source_file
   definition: (constant
-    type: (user_defined_type
-      name: (symbol
-        name: (identifier)))
+    type: (type
+      (primitive_type
+        (uint_type)))
     name: (identifier)
     value: (literal
       (number))))
@@ -25,9 +25,9 @@ int256 constant MY_NEGATIVE_CONSTANT = -100;
 
 (source_file
   definition: (constant
-    type: (user_defined_type
-      name: (symbol
-        name: (identifier)))
+    type: (type
+      (primitive_type
+        (int_type)))
     name: (identifier)
     value: (unary_expression
       argument: (literal
@@ -43,7 +43,9 @@ string constant GREETING = "Hello, World!";
 
 (source_file
   definition: (constant
-    type: (string_type)
+    type: (type
+      (primitive_type
+        (string_type)))
     name: (identifier)
     value: (literal
       (string))))
@@ -58,7 +60,9 @@ address constant OWNER = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF;
 
 (source_file
   definition: (constant
-    type: (address_type)
+    type: (type
+      (primitive_type
+        (address_type)))
     name: (identifier)
     value: (literal
       (hex))))
@@ -73,7 +77,9 @@ bool constant IS_ENABLED = true;
 
 (source_file
   definition: (constant
-    type: (bool_type)
+    type: (type
+      (primitive_type
+        (bool_type)))
     name: (identifier)
     value: (literal
       (boolean))))
@@ -88,9 +94,9 @@ bytes32 constant MY_HASH = 0x1234567890abcdef1234567890abcdef1234567890abcdef123
 
 (source_file
   definition: (constant
-    type: (user_defined_type
-      name: (symbol
-        name: (identifier)))
+    type: (type
+      (primitive_type
+        (bytes_type)))
     name: (identifier)
     value: (literal
       (hex))))
@@ -105,9 +111,9 @@ uint constant SECONDS_PER_DAY = 24 * 60 * 60;
 
 (source_file
   definition: (constant
-    type: (user_defined_type
-      name: (symbol
-        name: (identifier)))
+    type: (type
+      (primitive_type
+        (uint_type)))
     name: (identifier)
     value: (arithmetic
       (mul_expression
@@ -132,9 +138,9 @@ uint constant ONE_ETHER = 10 ** 18;
 
 (source_file
   definition: (constant
-    type: (user_defined_type
-      name: (symbol
-        name: (identifier)))
+    type: (type
+      (primitive_type
+        (uint_type)))
     name: (identifier)
     value: (arithmetic
       (exp_expression
@@ -158,9 +164,9 @@ contract MyContract {
   definition: (contract
     name: (identifier)
     storage: (storage
-      type: (user_defined_type
-        name: (symbol
-          name: (identifier)))
+      type: (type
+        (primitive_type
+          (uint_type)))
       visibility: (visibility)
       mutability: (mutability)
       name: (identifier)
@@ -178,16 +184,16 @@ uint constant B = A * 2;
 
 (source_file
   definition: (constant
-    type: (user_defined_type
-      name: (symbol
-        name: (identifier)))
+    type: (type
+      (primitive_type
+        (uint_type)))
     name: (identifier)
     value: (literal
       (number)))
   definition: (constant
-    type: (user_defined_type
-      name: (symbol
-        name: (identifier)))
+    type: (type
+      (primitive_type
+        (uint_type)))
     name: (identifier)
     value: (arithmetic
       (mul_expression
@@ -211,9 +217,9 @@ library Math {
   definition: (library
     name: (identifier)
     storage: (storage
-      type: (user_defined_type
-        name: (symbol
-          name: (identifier)))
+      type: (type
+        (primitive_type
+          (uint_type)))
       visibility: (visibility)
       mutability: (mutability)
       name: (identifier)

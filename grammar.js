@@ -152,6 +152,221 @@ module.exports = grammar({
     wildcard: ($) => "*",
 
     //############################################################//
+    //                           Types                            //
+    //############################################################//
+
+    // The visible root for all types.
+    type: ($) =>
+      choice(
+        // Give primitive_type higher precedence to resolve ambiguity
+        // with identifiers that look like primitives (e.g., `uint`).
+        prec(1, $.primitive_type),
+        $.custom_type,
+        $.array_type,
+        $.mapping_type,
+        $.function_type,
+      ),
+
+    primitive_type: ($) =>
+      choice(
+        $.address_type,
+        $.bool_type,
+        $.bytes_type,
+        $.fixed_type,
+        $.int_type,
+        $.string_type,
+        $.ufixed_type,
+        $.uint_type,
+      ),
+
+    // Visible wrapper for user-defined types.
+    custom_type: ($) => field("symbol", $.symbol),
+
+    // --- Primitive Type Definitions ---
+
+    address_type: ($) =>
+      prec.right(seq("address", optional(field("mutability", "payable")))),
+
+    bool_type: ($) => "bool",
+
+    // By explicitly listing each keyword, we ensure the lexer prioritizes them
+    // over the general 'identifier' rule. This is the key to fixing the ambiguity.
+    bytes_type: ($) =>
+      choice(
+        "bytes",
+        "bytes1",
+        "bytes2",
+        "bytes3",
+        "bytes4",
+        "bytes5",
+        "bytes6",
+        "bytes7",
+        "bytes8",
+        "bytes9",
+        "bytes10",
+        "bytes11",
+        "bytes12",
+        "bytes13",
+        "bytes14",
+        "bytes15",
+        "bytes16",
+        "bytes17",
+        "bytes18",
+        "bytes19",
+        "bytes20",
+        "bytes21",
+        "bytes22",
+        "bytes23",
+        "bytes24",
+        "bytes25",
+        "bytes26",
+        "bytes27",
+        "bytes28",
+        "bytes29",
+        "bytes30",
+        "bytes31",
+        "bytes32",
+      ),
+
+    // `fixed` and `ufixed` have a dynamic part (MxN), so a regex token is correct here.
+    // They don't conflict with identifiers in the same way as `uint`, etc.
+    fixed_type: ($) => token(/fixed([0-9]+x[0-9]+)?/),
+    ufixed_type: ($) => token(/ufixed([0-9]+x[0-9]+)?/),
+
+    int_type: ($) =>
+      choice(
+        "int",
+        "int8",
+        "int16",
+        "int24",
+        "int32",
+        "int40",
+        "int48",
+        "int56",
+        "int64",
+        "int72",
+        "int80",
+        "int88",
+        "int96",
+        "int104",
+        "int112",
+        "int120",
+        "int128",
+        "int136",
+        "int144",
+        "int152",
+        "int160",
+        "int168",
+        "int176",
+        "int184",
+        "int192",
+        "int200",
+        "int208",
+        "int216",
+        "int224",
+        "int232",
+        "int240",
+        "int248",
+        "int256",
+      ),
+
+    string_type: ($) => "string",
+
+    uint_type: ($) =>
+      choice(
+        "uint",
+        "uint8",
+        "uint16",
+        "uint24",
+        "uint32",
+        "uint40",
+        "uint48",
+        "uint56",
+        "uint64",
+        "uint72",
+        "uint80",
+        "uint88",
+        "uint96",
+        "uint104",
+        "uint112",
+        "uint120",
+        "uint128",
+        "uint136",
+        "uint144",
+        "uint152",
+        "uint160",
+        "uint168",
+        "uint176",
+        "uint184",
+        "uint192",
+        "uint200",
+        "uint208",
+        "uint216",
+        "uint224",
+        "uint232",
+        "uint240",
+        "uint248",
+        "uint256",
+      ),
+    // --- Complex Type Definitions ---
+
+    array_type: ($) =>
+      seq(
+        field("base", $.type),
+        "[",
+        optional(field("size", $._expression)),
+        "]",
+      ),
+
+    mapping_type: ($) =>
+      seq(
+        "mapping",
+        "(",
+        field("key", $._mapping_key_type),
+        "=>",
+        field("value", $.type),
+        ")",
+      ),
+
+    // Helper for mapping keys.
+    _mapping_key_type: ($) => choice($.primitive_type, $.custom_type),
+
+    function_type: ($) =>
+      prec.right(
+        seq(
+          "function",
+          "(",
+          optional(field("parameters", $.parameter_list)),
+          ")",
+          repeat(
+            choice(
+              field("visibility", $.visibility),
+              field("mutability", $.state_mutability),
+            ),
+          ),
+          optional(
+            seq(
+              "returns",
+              "(",
+              optional(field("returns", $.parameter_list)),
+              ")",
+            ),
+          ),
+        ),
+      ),
+
+    // --- User-Defined Value Type ---
+
+    udvt: ($) =>
+      seq(
+        "type",
+        field("name", $.identifier),
+        "is",
+        field("underlying_type", $.primitive_type),
+        ";",
+      ),
+
+    //############################################################//
     //                          License                           //
     //############################################################//
 
@@ -256,7 +471,7 @@ module.exports = grammar({
       seq(
         field("library", $.symbol),
         "for",
-        field("target", choice($._type_name, $.wildcard)),
+        field("target", choice($.type, $.wildcard)),
         optional(field("global", $.global)),
       ),
 
@@ -266,7 +481,7 @@ module.exports = grammar({
         commaSep(field("declaration", $.using_declaration)),
         "}",
         "for",
-        field("target", choice($._type_name, $.wildcard)),
+        field("target", choice($.type, $.wildcard)),
         optional(field("global", $.global)),
       ),
 
@@ -407,7 +622,7 @@ module.exports = grammar({
 
     constant: ($) =>
       seq(
-        field("type", $._type_name),
+        field("type", $.type),
         "constant",
         field("name", $.identifier),
         "=",
@@ -454,7 +669,7 @@ module.exports = grammar({
      */
     parameter: ($) =>
       seq(
-        field("type", $._type_name),
+        field("type", $.type),
         optional(field("location", $.data_location)),
         optional(field("name", $.identifier)),
       ),
@@ -613,7 +828,7 @@ module.exports = grammar({
       ),
 
     struct_member: ($) =>
-      seq(field("type", $._type_name), field("name", $.identifier), ";"),
+      seq(field("type", $.type), field("name", $.identifier), ";"),
 
     enum: ($) =>
       seq(
@@ -630,13 +845,13 @@ module.exports = grammar({
 
     indexed_event_parameter: ($) =>
       seq(
-        field("type", $._type_name),
+        field("type", $.type),
         "indexed",
         optional(field("name", $.identifier)),
       ),
 
     unindexed_event_parameter: ($) =>
-      seq(field("type", $._type_name), optional(field("name", $.identifier))),
+      seq(field("type", $.type), optional(field("name", $.identifier))),
 
     // New helper rules for event/error parameters
     event_parameter_list: ($) => commaSep($._event_parameter),
@@ -668,7 +883,7 @@ module.exports = grammar({
     anonymous: ($) => "anonymous",
 
     error_parameter: ($) =>
-      seq(field("type", $._type_name), optional(field("name", $.identifier))),
+      seq(field("type", $.type), optional(field("name", $.identifier))),
 
     modifier_invocation: ($) =>
       seq(
@@ -741,15 +956,6 @@ module.exports = grammar({
         choice(field("body", $.block), ";"),
       ),
 
-    udvt: ($) =>
-      seq(
-        "type",
-        field("name", $.identifier),
-        "is",
-        field("underlying_type", $._elementary_type_name),
-        ";",
-      ),
-
     //************************************************************//
     //                        Declarations                        //
     //************************************************************//
@@ -760,7 +966,7 @@ module.exports = grammar({
      */
     storage: ($) =>
       seq(
-        field("type", $._type_name),
+        field("type", $.type),
         repeat($._state_variable_attribute),
         field("name", $.identifier),
         optional(seq("=", field("value", $._expression))),
@@ -784,7 +990,7 @@ module.exports = grammar({
      */
     variable_declaration: ($) =>
       seq(
-        field("type", $._type_name),
+        field("type", $.type),
         optional(field("location", $.data_location)),
         optional(field("name", $.identifier)),
       ),
@@ -1182,7 +1388,7 @@ module.exports = grammar({
      * attempts to find a member access.
      */
     new_expression: ($) =>
-      prec.right(PREC.NEW, seq("new", field("type", $._type_name))),
+      prec.right(PREC.NEW, seq("new", field("type", $.type))),
 
     assignment_expression: ($) =>
       prec.right(
@@ -1321,7 +1527,7 @@ module.exports = grammar({
      * e.g., `type(MyContract)`
      */
     meta_type_expression: ($) =>
-      prec(PREC.MEMBER, seq("type", "(", field("type", $._type_name), ")")),
+      prec(PREC.MEMBER, seq("type", "(", field("type", $.type), ")")),
 
     /**
      * An inline array expression.
@@ -1329,94 +1535,5 @@ module.exports = grammar({
      */
     inline_array_expression: ($) =>
       seq("[", optional(commaSep($._expression)), "]"),
-
-    //************************************************************//
-    //                           Types                            //
-    //************************************************************//
-
-    /**
-     * An unsigned integer type.
-     * Uses a token to ensure 'uint256' is not mistaken for an identifier.
-     */
-    uint_type: ($) =>
-      token(
-        /uint(8|16|24|32|40|48|56|64|72|80|88|96|104|112|120|128|136|144|152|160|168|176|184|192|200|208|216|224|232|240|248|256)?/,
-      ),
-
-    /**
-     * A signed integer type.
-     */
-    int_type: ($) =>
-      token(
-        /int(8|16|24|32|40|48|56|64|72|80|88|96|104|112|120|128|136|144|152|160|168|176|184|192|200|208|216|224|232|240|248|256)?/,
-      ),
-
-    /**
-     * A fixed-size bytes type.
-     */
-    bytes_type: ($) =>
-      token(
-        /bytes(1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32)?/,
-      ),
-
-    /**
-     * A boolean type.
-     */
-    bool_type: ($) => "bool",
-
-    /**
-     * A string type.
-     */
-    string_type: ($) => "string",
-
-    /**
-     * An array type.
-     * e.g., `uint[]`, `MyStruct[][]`
-     */
-    array_type: ($) =>
-      seq(
-        field("base", $._type_name),
-        "[",
-        optional(field("size", $._expression)), // <-- Add field("size", ...)
-        "]",
-      ),
-
-    /**
-     * An address type, which can be payable.
-     */
-    address_type: ($) =>
-      prec.right(
-        2, // Give it a precedence level of 2
-        seq("address", optional(field("mutability", "payable"))),
-      ),
-
-    user_defined_type: ($) => seq(field("name", $.symbol)),
-
-    /**
-     * A hidden rule for all elementary types.
-     */
-    _elementary_type_name: ($) =>
-      choice(
-        $.address_type,
-        $.uint_type,
-        $.int_type,
-        $.bytes_type,
-        $.bool_type,
-      ),
-
-    /**
-     * A hidden rule for any type name.
-     */
-    _type_name: ($) =>
-      choice(
-        $.string_type,
-        $._elementary_type_name,
-        prec(-1, $.user_defined_type),
-        $.array_type,
-      ),
-
-    //************************************************************//
-    //                       Common Rules                         //
-    //************************************************************//
   },
 })

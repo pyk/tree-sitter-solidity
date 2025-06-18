@@ -1,0 +1,340 @@
+==================
+Uint as a state variable
+==================
+
+contract C {
+  uint myVar;
+  uint8 myVar8;
+  uint256 myVar256;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (primitive_type
+          (uint_type)))
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (primitive_type
+          (uint_type)))
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (primitive_type
+          (uint_type)))
+      name: (identifier))))
+
+==================
+Uint as a function parameter and return type
+==================
+
+contract C {
+  function process(uint8 input) public pure returns (uint result) {
+    return uint(input);
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (uint_type)))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (uint_type)))
+          name: (identifier)))
+      body: (block
+        (return_statement
+          value: (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (primary_expression
+                (identifier)))))))))
+
+==================
+Uint as a local variable
+==================
+
+contract C {
+  function f() public pure {
+    uint256 localCounter = 42;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (type
+              (primitive_type
+                (uint_type)))
+            name: (identifier))
+          value: (literal
+            (number)))))))
+
+==================
+Uint in a type cast
+==================
+
+contract C {
+  function f(bytes1 b) public pure returns (uint8) {
+    return uint8(b);
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    function: (function
+      name: (identifier)
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (bytes_type)))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (type
+            (primitive_type
+              (uint_type)))))
+      body: (block
+        (return_statement
+          value: (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (primary_expression
+                (identifier)))))))))
+
+==================
+Uint in a struct definition
+==================
+
+contract C {
+  struct MyStruct {
+    uint24 id;
+    uint amount;
+  }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    struct: (struct
+      name: (identifier)
+      (struct_member
+        type: (type
+          (primitive_type
+            (uint_type)))
+        name: (identifier))
+      (struct_member
+        type: (type
+          (primitive_type
+            (uint_type)))
+        name: (identifier)))))
+
+==================
+Uint in a mapping definition
+==================
+
+contract C {
+  mapping(uint => uint256) balances;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (mapping_type
+          key: (primitive_type
+            (uint_type))
+          value: (type
+            (primitive_type
+              (uint_type)))))
+      name: (identifier))))
+
+==================
+Uint as an array base type
+==================
+
+contract C {
+  uint[] public numbers;
+  uint[5] public fixedNumbers;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (array_type
+          base: (type
+            (primitive_type
+              (uint_type)))))
+      visibility: (visibility)
+      name: (identifier))
+    storage: (storage
+      type: (type
+        (array_type
+          base: (type
+            (primitive_type
+              (uint_type)))
+          size: (literal
+            (number))))
+      visibility: (visibility)
+      name: (identifier))))
+
+==================
+Uint in a 'using for' directive
+==================
+
+using SafeMath for uint256;
+
+---
+
+(source_file
+  directive: (using
+    (using_library
+      library: (symbol
+        name: (identifier))
+      target: (type
+        (primitive_type
+          (uint_type))))))
+
+==================
+Uint in a constant variable
+==================
+
+contract C {
+  uint constant MY_CONST = 100;
+  uint128 public immutable MY_IMMUTABLE = 200;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    storage: (storage
+      type: (type
+        (primitive_type
+          (uint_type)))
+      mutability: (mutability)
+      name: (identifier)
+      value: (literal
+        (number)))
+    storage: (storage
+      type: (type
+        (primitive_type
+          (uint_type)))
+      visibility: (visibility)
+      mutability: (mutability)
+      name: (identifier)
+      value: (literal
+        (number)))))
+
+==================
+Uint in an event parameter
+==================
+
+contract C {
+  event ValueChanged(uint indexed oldValue, uint newValue);
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    event: (event
+      name: (identifier)
+      parameters: (event_parameter_list
+        (indexed_event_parameter
+          type: (type
+            (primitive_type
+              (uint_type)))
+          name: (identifier))
+        (unindexed_event_parameter
+          type: (type
+            (primitive_type
+              (uint_type)))
+          name: (identifier))))))
+
+==================
+Uint in an error parameter
+==================
+
+contract C {
+  error InsufficientFunds(uint required, uint available);
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (identifier)
+    error: (error
+      name: (identifier)
+      parameters: (error_parameter_list
+        (error_parameter
+          type: (type
+            (primitive_type
+              (uint_type)))
+          name: (identifier))
+        (error_parameter
+          type: (type
+            (primitive_type
+              (uint_type)))
+          name: (identifier))))))
+
+==================
+Uint as underlying type for UDVT
+==================
+
+type MyUint is uint128;
+
+---
+
+(source_file
+  definition: (udvt
+    name: (identifier)
+    underlying_type: (primitive_type
+      (uint_type))))

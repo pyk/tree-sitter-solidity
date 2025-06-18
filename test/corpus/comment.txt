@@ -14,9 +14,9 @@ contract C {
     name: (identifier)
     (comment)
     storage: (storage
-      type: (user_defined_type
-        name: (symbol
-          name: (identifier)))
+      type: (type
+        (primitive_type
+          (uint_type)))
       name: (identifier))))
 
 ==================
@@ -37,9 +37,9 @@ contract C {
     name: (identifier)
     (comment)
     storage: (storage
-      type: (user_defined_type
-        name: (symbol
-          name: (identifier)))
+      type: (type
+        (primitive_type
+          (uint_type)))
       name: (identifier))))
 
 ==================

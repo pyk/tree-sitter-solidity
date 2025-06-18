@@ -11,9 +11,9 @@ using SafeMath for uint256;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (user_defined_type
-        name: (symbol
-          name: (identifier))))))
+      target: (type
+        (primitive_type
+          (uint_type))))))
 
 ==================
 Using directive for all types (wildcard)
@@ -47,9 +47,9 @@ using {add, sub} for uint256;
       declaration: (using_declaration
         name: (symbol
           name: (identifier)))
-      target: (user_defined_type
-        name: (symbol
-          name: (identifier))))))
+      target: (type
+        (primitive_type
+          (uint_type))))))
 
 ==================
 Using directive with operator aliasing
@@ -70,9 +70,9 @@ using {add as +, sub as -} for uint256;
         name: (symbol
           name: (identifier))
         operator: (using_op))
-      target: (user_defined_type
-        name: (symbol
-          name: (identifier))))))
+      target: (type
+        (primitive_type
+          (uint_type))))))
 
 ==================
 Using directive with global keyword
@@ -87,9 +87,9 @@ using SafeMath for uint256 global;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (user_defined_type
-        name: (symbol
-          name: (identifier)))
+      target: (type
+        (primitive_type
+          (uint_type)))
       global: (global))))
 
 ==================
@@ -114,7 +114,8 @@ using {MyLib.add, MyLib.sub as -} for MyStruct global;
             name: (identifier))
           name: (identifier))
         operator: (using_op))
-      target: (user_defined_type
-        name: (symbol
-          name: (identifier)))
+      target: (type
+        (custom_type
+          symbol: (symbol
+            name: (identifier))))
       global: (global))))

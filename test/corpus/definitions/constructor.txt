@@ -30,12 +30,14 @@ contract C {
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter
-          type: (user_defined_type
-            name: (symbol
-              name: (identifier)))
+          type: (type
+            (primitive_type
+              (uint_type)))
           name: (identifier))
         parameter: (parameter
-          type: (string_type)
+          type: (type
+            (primitive_type
+              (string_type)))
           location: (data_location)
           name: (identifier)))
       body: (block))))
@@ -94,9 +96,9 @@ abstract contract C {
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter
-          type: (user_defined_type
-            name: (symbol
-              name: (identifier)))
+          type: (type
+            (primitive_type
+              (uint_type)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
@@ -122,11 +124,15 @@ contract MyToken is ERC20 {
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter
-          type: (string_type)
+          type: (type
+            (primitive_type
+              (string_type)))
           location: (data_location)
           name: (identifier))
         parameter: (parameter
-          type: (string_type)
+          type: (type
+            (primitive_type
+              (string_type)))
           location: (data_location)
           name: (identifier)))
       parent_constructor: (parent_constructor
@@ -198,9 +204,9 @@ abstract contract D is A, B {
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter
-          type: (user_defined_type
-            name: (symbol
-              name: (identifier)))
+          type: (type
+            (primitive_type
+              (uint_type)))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
