@@ -38,7 +38,7 @@ Notes:
 - `?` Optional
 - `*` Zero or more
 - `(Choice)` The child of pragma is a choice between solidity, abicoder, or experimental.
-- `*` One or more
+- `+` One or more
 
 ## Setup
 
