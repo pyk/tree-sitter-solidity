@@ -25,6 +25,26 @@ source_file
 |   |           `-- feature: (identifier)
 |   |
 |   |-- import
+|   |   `-- (file_import | symbol_import | wildcard_import)
+|   |       |
+|   |       |-- (file_import)
+|   |       |   |-- path: (string)
+|   |       |   `-- alias: (symbol)?
+|   |       |       `-- (identifier)
+|   |       |
+|   |       |-- (symbol_import)
+|   |       |   |-- symbol: (imported_symbol)*
+|   |       |   |   |-- name: (symbol)
+|   |       |   |   |   `-- (identifier)
+|   |       |   |   `-- alias: (symbol)?
+|   |       |   |       `-- (identifier)
+|   |       |   `-- path: (string)
+|   |       |
+|   |       `-- (wildcard_import)
+|   |           |-- alias: (symbol)
+|   |           |   `-- (identifier)
+|   |           `-- path: (string)
+|   |
 |   `-- using
 |
 `-- definition*
