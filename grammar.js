@@ -132,32 +132,33 @@ module.exports = grammar({
     //                           Pragma                           //
     //############################################################//
 
-    /**
-     * A pragma directive, used to enable certain compiler features or checks.
-     * e.g., `pragma solidity 0.8.0;`
-     * e.g., `pragma solidity ^0.8.0;`
-     * e.g., `pragma solidity >=0.8.0 <0.9.0;`
-     */
     pragma: ($) =>
       seq(
         "pragma",
-        field("name", $.identifier),
-        // Use `version` for the field name. Since it's a `repeat1`,
-        // it will correctly capture one or more constraints.
-        field("version", repeat1($.version_constraint)),
+        choice(
+          $.solidity,
+          $.abicoder,
+          $.experimental,
+          // Other pragma
+        ),
         ";",
       ),
 
+    solidity: ($) =>
+      seq("solidity", repeat1(field("version", $.version_constraint))),
+
+    abicoder: ($) =>
+      seq("abicoder", field("version", alias(/v[12]/, $.identifier))),
+
+    experimental: ($) => seq("experimental", field("feature", $.identifier)),
+
     version_constraint: ($) =>
       seq(
-        // Add fields for operator and literal
         optional(field("operator", $.version_operator)),
-        field("number", $.version_literal), // Using 'number' is a good, specific choice
+        field("number", $.version),
       ),
-
     version_operator: ($) => choice("^", "~", ">=", "<=", ">", "<", "="),
-
-    version_literal: ($) => /\d+(\.\d+){0,2}/,
+    version: ($) => token(/(\d+)(\.\d+)?(\.\d+)?/),
 
     //############################################################//
     //                           Import                           //

@@ -1,5 +1,5 @@
 ==================
-Simple Pragma
+Solidity Version Pragma (Simple)
 ==================
 
 pragma solidity ^0.8.0;
@@ -8,13 +8,13 @@ pragma solidity ^0.8.0;
 
 (source_file
   directive: (pragma
-    name: (identifier)
-    version: (version_constraint
-      operator: (version_operator)
-      number: (version_literal))))
+    (solidity
+      version: (version_constraint
+        operator: (version_operator)
+        number: (version)))))
 
 ==================
-Pragma with multiple constraints
+Solidity Version Pragma (Complex)
 ==================
 
 pragma solidity >=0.8.0 <0.9.0;
@@ -23,16 +23,16 @@ pragma solidity >=0.8.0 <0.9.0;
 
 (source_file
   directive: (pragma
-    name: (identifier)
-    version: (version_constraint
-      operator: (version_operator)
-      number: (version_literal))
-    version: (version_constraint
-      operator: (version_operator)
-      number: (version_literal))))
+    (solidity
+      version: (version_constraint
+        operator: (version_operator)
+        number: (version))
+      version: (version_constraint
+        operator: (version_operator)
+        number: (version)))))
 
 ==================
-Pragma with exact version (no operator)
+Solidity Version Pragma (Exact)
 ==================
 
 pragma solidity 0.8.4;
@@ -41,6 +41,32 @@ pragma solidity 0.8.4;
 
 (source_file
   directive: (pragma
-    name: (identifier)
-    version: (version_constraint
-      number: (version_literal))))
+    (solidity
+      version: (version_constraint
+        number: (version)))))
+
+==================
+ABI Coder Pragma
+==================
+
+pragma abicoder v2;
+
+---
+
+(source_file
+  directive: (pragma
+    (abicoder
+      version: (identifier))))
+
+==================
+Experimental Pragma
+==================
+
+pragma experimental SMTChecker;
+
+---
+
+(source_file
+  directive: (pragma
+    (experimental
+      feature: (identifier))))

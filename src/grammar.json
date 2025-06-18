@@ -146,27 +146,84 @@
           "value": "pragma"
         },
         {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "solidity"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "abicoder"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "experimental"
+            }
+          ]
         },
         {
-          "type": "FIELD",
-          "name": "version",
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "solidity": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "solidity"
+        },
+        {
+          "type": "REPEAT1",
           "content": {
-            "type": "REPEAT1",
+            "type": "FIELD",
+            "name": "version",
             "content": {
               "type": "SYMBOL",
               "name": "version_constraint"
             }
           }
-        },
+        }
+      ]
+    },
+    "abicoder": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "STRING",
-          "value": ";"
+          "value": "abicoder"
+        },
+        {
+          "type": "FIELD",
+          "name": "version",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "v[12]"
+            },
+            "named": true,
+            "value": "identifier"
+          }
+        }
+      ]
+    },
+    "experimental": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "experimental"
+        },
+        {
+          "type": "FIELD",
+          "name": "feature",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
         }
       ]
     },
@@ -194,7 +251,7 @@
           "name": "number",
           "content": {
             "type": "SYMBOL",
-            "name": "version_literal"
+            "name": "version"
           }
         }
       ]
@@ -232,9 +289,12 @@
         }
       ]
     },
-    "version_literal": {
-      "type": "PATTERN",
-      "value": "\\d+(\\.\\d+){0,2}"
+    "version": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "(\\d+)(\\.\\d+)?(\\.\\d+)?"
+      }
     },
     "import": {
       "type": "SEQ",
