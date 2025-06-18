@@ -1,4 +1,44 @@
-# Solidity Grammar for Tree Sitter
+# tree-sitter-solidity
+
+Solidity Grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
+
+## CST
+
+```
+source_file
+|
+|-- license?
+|   `-- value: (license_identifier)
+|
+|-- directive*
+|   |-- pragma
+|   |   `-- (solidity | abicoder | experimental)
+|   |       |-- (solidity)
+|   |       |   `-- version: (version_constraint)+
+|   |       |       |-- operator: (version_operator)?
+|   |       |       `-- number: (version)
+|   |       |
+|   |       |-- (abicoder)
+|   |       |   `-- version: (identifier)
+|   |       |
+|   |       `-- (experimental)
+|   |           `-- feature: (identifier)
+|   |
+|   |-- import
+|   `-- using
+|
+`-- definition*
+    |-- contract
+    |-- library
+    `-- interface
+```
+
+Notes:
+
+- `?` Optional
+- `*` Zero or more
+- `(Choice)` The child of pragma is a choice between solidity, abicoder, or experimental.
+- `*` One or more
 
 ## Setup
 
