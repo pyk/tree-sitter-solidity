@@ -86,6 +86,5 @@ contract C {
           value: (index_access_expression
             base: (primary_expression
               (identifier))
-            index: (primary_expression
-              (literal
-                (number_literal)))))))))
+            index: (literal
+              (number_literal))))))))

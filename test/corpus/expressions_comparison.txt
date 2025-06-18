@@ -21,13 +21,11 @@ contract C {
             type: (bool_type)
             name: (identifier))
           value: (equality_expression
-            left: (primary_expression
-              (literal
-                (number_literal)))
+            left: (literal
+              (number_literal))
             operator: (equality_operator)
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+            right: (literal
+              (number_literal))))))))
 
 ==================
 Simple comparison expression
@@ -52,13 +50,11 @@ contract C {
             type: (bool_type)
             name: (identifier))
           value: (comparison_expression
-            left: (primary_expression
-              (literal
-                (number_literal)))
+            left: (literal
+              (number_literal))
             operator: (comparison_operator)
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+            right: (literal
+              (number_literal))))))))
 
 ==================
 Precedence of comparison vs equality
@@ -85,17 +81,14 @@ contract C {
             name: (identifier))
           value: (equality_expression
             left: (comparison_expression
-              left: (primary_expression
-                (literal
-                  (number_literal)))
+              left: (literal
+                (number_literal))
               operator: (comparison_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
+              right: (literal
+                (number_literal)))
             operator: (equality_operator)
-            right: (primary_expression
-              (literal
-                (boolean_literal)))))))))
+            right: (literal
+              (boolean_literal))))))))
 
 ==================
 Interaction with bitwise operators
@@ -122,18 +115,14 @@ contract C {
             name: (identifier))
           value: (bitwise_or_expression
             left: (comparison_expression
-              left: (primary_expression
-                (literal
-                  (number_literal)))
+              left: (literal
+                (number_literal))
               operator: (comparison_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
+              right: (literal
+                (number_literal)))
             right: (comparison_expression
-              left: (primary_expression
-                (literal
-                  (number_literal)))
+              left: (literal
+                (number_literal))
               operator: (comparison_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
+              right: (literal
+                (number_literal)))))))))

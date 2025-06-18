@@ -29,12 +29,10 @@ contract C {
           value: (index_range_access_expression
             base: (primary_expression
               (identifier))
-            start: (primary_expression
-              (literal
-                (number_literal)))
-            end: (primary_expression
-              (literal
-                (number_literal)))))))))
+            start: (literal
+              (number_literal))
+            end: (literal
+              (number_literal))))))))
 
 ==================
 Slice with only end
@@ -67,9 +65,8 @@ contract C {
           value: (index_range_access_expression
             base: (primary_expression
               (identifier))
-            end: (primary_expression
-              (literal
-                (number_literal)))))))))
+            end: (literal
+              (number_literal))))))))
 
 ==================
 Slice with only start
@@ -102,9 +99,8 @@ contract C {
           value: (index_range_access_expression
             base: (primary_expression
               (identifier))
-            start: (primary_expression
-              (literal
-                (number_literal)))))))))
+            start: (literal
+              (number_literal))))))))
 
 ==================
 Interaction with member access
@@ -147,9 +143,7 @@ contract C {
               object: (primary_expression
                 (identifier))
               member: (identifier))
-            start: (primary_expression
-              (literal
-                (number_literal)))
-            end: (primary_expression
-              (literal
-                (number_literal)))))))))
+            start: (literal
+              (number_literal))
+            end: (literal
+              (number_literal))))))))

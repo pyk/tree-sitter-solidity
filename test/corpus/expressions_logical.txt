@@ -21,12 +21,10 @@ contract C {
             type: (bool_type)
             name: (identifier))
           value: (logical_and_expression
-            left: (primary_expression
-              (literal
-                (boolean_literal)))
-            right: (primary_expression
-              (literal
-                (boolean_literal)))))))))
+            left: (literal
+              (boolean_literal))
+            right: (literal
+              (boolean_literal))))))))
 
 ==================
 Simple logical OR
@@ -51,12 +49,10 @@ contract C {
             type: (bool_type)
             name: (identifier))
           value: (logical_or_expression
-            left: (primary_expression
-              (literal
-                (boolean_literal)))
-            right: (primary_expression
-              (literal
-                (boolean_literal)))))))))
+            left: (literal
+              (boolean_literal))
+            right: (literal
+              (boolean_literal))))))))
 
 ==================
 Precedence of AND vs OR
@@ -135,13 +131,11 @@ contract C {
               left: (primary_expression
                 (identifier))
               operator: (equality_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
+              right: (literal
+                (number_literal)))
             right: (equality_expression
               left: (primary_expression
                 (identifier))
               operator: (equality_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
+              right: (literal
+                (number_literal)))))))))

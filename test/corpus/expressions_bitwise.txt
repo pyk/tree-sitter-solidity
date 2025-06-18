@@ -21,12 +21,10 @@ contract C {
             type: (uint_type)
             name: (identifier))
           value: (bitwise_and_expression
-            left: (primary_expression
-              (literal
-                (hex_literal)))
-            right: (primary_expression
-              (literal
-                (hex_literal)))))))))
+            left: (literal
+              (hex_literal))
+            right: (literal
+              (hex_literal))))))))
 
 ==================
 Bitwise operator precedence
@@ -56,20 +54,16 @@ contract C {
             type: (uint_type)
             name: (identifier))
           value: (bitwise_or_expression
-            left: (primary_expression
-              (literal
-                (hex_literal)))
+            left: (literal
+              (hex_literal))
             right: (bitwise_xor_expression
-              left: (primary_expression
-                (literal
-                  (hex_literal)))
+              left: (literal
+                (hex_literal))
               right: (bitwise_and_expression
-                left: (primary_expression
-                  (literal
-                    (hex_literal)))
-                right: (primary_expression
-                  (literal
-                    (hex_literal)))))))))))
+                left: (literal
+                  (hex_literal))
+                right: (literal
+                  (hex_literal))))))))))
 
 ==================
 Left-associativity of bitwise operators
@@ -95,15 +89,12 @@ contract C {
             name: (identifier))
           value: (bitwise_and_expression
             left: (bitwise_and_expression
-              left: (primary_expression
-                (literal
-                  (hex_literal)))
-              right: (primary_expression
-                (literal
-                  (hex_literal))))
-            right: (primary_expression
-              (literal
-                (hex_literal)))))))))
+              left: (literal
+                (hex_literal))
+              right: (literal
+                (hex_literal)))
+            right: (literal
+              (hex_literal))))))))
 
 ==================
 Interaction with shift operators
@@ -130,13 +121,10 @@ contract C {
             name: (identifier))
           value: (bitwise_and_expression
             left: (shift_expression
-              left: (primary_expression
-                (literal
-                  (number_literal)))
+              left: (literal
+                (number_literal))
               operator: (shift_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+              right: (literal
+                (number_literal)))
+            right: (literal
+              (number_literal))))))))

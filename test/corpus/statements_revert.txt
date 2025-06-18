@@ -62,9 +62,8 @@ contract C {
           arguments: (argument_list
             argument: (primary_expression
               (identifier))
-            argument: (primary_expression
-              (literal
-                (number_literal)))))))))
+            argument: (literal
+              (number_literal))))))))
 
 ==================
 Revert with a namespaced error

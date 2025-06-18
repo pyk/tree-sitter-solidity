@@ -40,9 +40,8 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (primary_expression
-            (literal
-              (number_literal))))))))
+          value: (literal
+            (number_literal)))))))
 
 ==================
 Tuple declaration
@@ -69,12 +68,9 @@ contract C {
               type: (bool_type)
               name: (identifier)))
           value: (tuple_expression
-            (primary_expression
-              (literal
-                (number_literal)))
-            (primary_expression
-              (literal
-                (boolean_literal)))
-            (primary_expression
-              (literal
-                (number_literal)))))))))
+            (literal
+              (number_literal))
+            (literal
+              (boolean_literal))
+            (literal
+              (number_literal))))))))

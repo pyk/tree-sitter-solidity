@@ -23,9 +23,8 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (primary_expression
-            (literal
-              (number_literal))))
+          value: (literal
+            (number_literal)))
         (do_while_statement
           body: (block
             (expression_statement
@@ -36,6 +35,5 @@ contract C {
             left: (primary_expression
               (identifier))
             operator: (comparison_operator)
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+            right: (literal
+              (number_literal))))))))

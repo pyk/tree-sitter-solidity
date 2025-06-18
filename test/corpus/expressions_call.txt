@@ -20,12 +20,10 @@ contract C {
             function: (primary_expression
               (identifier))
             arguments: (argument_list
-              argument: (primary_expression
-                (literal
-                  (number_literal)))
-              argument: (primary_expression
-                (literal
-                  (boolean_literal))))))))))
+              argument: (literal
+                (number_literal))
+              argument: (literal
+                (boolean_literal)))))))))
 
 ==================
 Function call with value option
@@ -51,9 +49,8 @@ contract C {
             options: (call_options_block
               (named_argument
                 name: (identifier)
-                value: (primary_expression
-                  (literal
-                    (number_literal)))))
+                value: (literal
+                  (number_literal))))
             arguments: (argument_list)))))))
 
 ==================
@@ -80,9 +77,8 @@ contract C {
             options: (call_options_block
               (named_argument
                 name: (identifier)
-                value: (primary_expression
-                  (literal
-                    (number_literal)))))
+                value: (literal
+                  (number_literal))))
             arguments: (argument_list)))))))
 
 ==================
@@ -109,14 +105,12 @@ contract C {
             options: (call_options_block
               (named_argument
                 name: (identifier)
-                value: (primary_expression
-                  (literal
-                    (number_literal))))
+                value: (literal
+                  (number_literal)))
               (named_argument
                 name: (identifier)
-                value: (primary_expression
-                  (literal
-                    (number_literal)))))
+                value: (literal
+                  (number_literal))))
             arguments: (argument_list)))))))
 
 ==================
@@ -143,13 +137,11 @@ contract C {
             options: (call_options_block
               (named_argument
                 name: (identifier)
-                value: (primary_expression
-                  (literal
-                    (number_literal)))))
+                value: (literal
+                  (number_literal))))
             arguments: (argument_list
-              argument: (primary_expression
-                (literal
-                  (boolean_literal))))))))))
+              argument: (literal
+                (boolean_literal)))))))))
 
 ==================
 Function call options on a member access
@@ -176,7 +168,6 @@ contract C {
             options: (call_options_block
               (named_argument
                 name: (identifier)
-                value: (primary_expression
-                  (literal
-                    (number_literal)))))
+                value: (literal
+                  (number_literal))))
             arguments: (argument_list)))))))

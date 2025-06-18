@@ -19,18 +19,15 @@ contract C {
             type: (uint_type)
             name: (identifier))
           value: (additive_expression
-            left: (primary_expression
-              (literal
-                (number_literal)))
+            left: (literal
+              (number_literal))
             operator: (additive_operator)
             right: (multiplicative_expression
-              left: (primary_expression
-                (literal
-                  (number_literal)))
+              left: (literal
+                (number_literal))
               operator: (multiplicative_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))))))))
+              right: (literal
+                (number_literal)))))))))
 
 ==================
 Unary expressions
@@ -63,9 +60,8 @@ contract C {
             type: (bool_type)
             name: (identifier))
           value: (unary_expression
-            argument: (primary_expression
-              (literal
-                (boolean_literal)))))
+            argument: (literal
+              (boolean_literal))))
         (variable_declaration_statement
           declaration: (variable_declaration
             type: (uint_type)
@@ -119,12 +115,10 @@ contract C {
           value: (conditional_expression
             condition: (primary_expression
               (identifier))
-            consequence: (primary_expression
-              (literal
-                (number_literal)))
-            alternative: (primary_expression
-              (literal
-                (number_literal)))))))))
+            consequence: (literal
+              (number_literal))
+            alternative: (literal
+              (number_literal))))))))
 
 ==================
 Nested conditional expression
@@ -156,18 +150,15 @@ contract C {
           value: (conditional_expression
             condition: (primary_expression
               (identifier))
-            consequence: (primary_expression
-              (literal
-                (number_literal)))
+            consequence: (literal
+              (number_literal))
             alternative: (conditional_expression
               condition: (primary_expression
                 (identifier))
-              consequence: (primary_expression
-                (literal
-                  (number_literal)))
-              alternative: (primary_expression
-                (literal
-                  (number_literal))))))))))
+              consequence: (literal
+                (number_literal))
+              alternative: (literal
+                (number_literal)))))))))
 
 ==================
 Comprehensive member access expressions
@@ -254,9 +245,8 @@ contract C {
           value: (index_access_expression
             base: (primary_expression
               (identifier))
-            index: (primary_expression
-              (literal
-                (number_literal)))))))))
+            index: (literal
+              (number_literal))))))))
 
 ==================
 New expression

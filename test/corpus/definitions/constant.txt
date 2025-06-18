@@ -10,9 +10,8 @@ uint256 constant MY_CONSTANT = 42;
   definition: (constant
     type: (uint_type)
     name: (identifier)
-    value: (primary_expression
-      (literal
-        (number_literal)))))
+    value: (literal
+      (number_literal))))
 
 ==================
 Top-level constant (negative int)
@@ -27,9 +26,8 @@ int256 constant MY_NEGATIVE_CONSTANT = -100;
     type: (int_type)
     name: (identifier)
     value: (unary_expression
-      argument: (primary_expression
-        (literal
-          (number_literal))))))
+      argument: (literal
+        (number_literal)))))
 
 ==================
 Top-level constant (string)
@@ -43,9 +41,8 @@ string constant GREETING = "Hello, World!";
   definition: (constant
     type: (string_type)
     name: (identifier)
-    value: (primary_expression
-      (literal
-        (string_literal)))))
+    value: (literal
+      (string_literal))))
 
 ==================
 Top-level constant (address)
@@ -59,9 +56,8 @@ address constant OWNER = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF;
   definition: (constant
     type: (address_type)
     name: (identifier)
-    value: (primary_expression
-      (literal
-        (hex_literal)))))
+    value: (literal
+      (hex_literal))))
 
 ==================
 Top-level constant (bool)
@@ -75,9 +71,8 @@ bool constant IS_ENABLED = true;
   definition: (constant
     type: (bool_type)
     name: (identifier)
-    value: (primary_expression
-      (literal
-        (boolean_literal)))))
+    value: (literal
+      (boolean_literal))))
 
 ==================
 Top-level constant (bytes)
@@ -91,9 +86,8 @@ bytes32 constant MY_HASH = 0x1234567890abcdef1234567890abcdef1234567890abcdef123
   definition: (constant
     type: (bytes_type)
     name: (identifier)
-    value: (primary_expression
-      (literal
-        (hex_literal)))))
+    value: (literal
+      (hex_literal))))
 
 ==================
 Constant with an arithmetic expression
@@ -109,17 +103,14 @@ uint constant SECONDS_PER_DAY = 24 * 60 * 60;
     name: (identifier)
     value: (multiplicative_expression
       left: (multiplicative_expression
-        left: (primary_expression
-          (literal
-            (number_literal)))
+        left: (literal
+          (number_literal))
         operator: (multiplicative_operator)
-        right: (primary_expression
-          (literal
-            (number_literal))))
+        right: (literal
+          (number_literal)))
       operator: (multiplicative_operator)
-      right: (primary_expression
-        (literal
-          (number_literal))))))
+      right: (literal
+        (number_literal)))))
 
 ==================
 Constant with exponentiation
@@ -134,12 +125,10 @@ uint constant ONE_ETHER = 10 ** 18;
     type: (uint_type)
     name: (identifier)
     value: (exponentiation_expression
-      left: (primary_expression
-        (literal
-          (number_literal)))
-      right: (primary_expression
-        (literal
-          (number_literal))))))
+      left: (literal
+        (number_literal))
+      right: (literal
+        (number_literal)))))
 
 ==================
 Constant inside a contract
@@ -159,9 +148,8 @@ contract MyContract {
       visibility: (visibility)
       mutability: (mutability)
       name: (identifier)
-      value: (primary_expression
-        (literal
-          (number_literal))))))
+      value: (literal
+        (number_literal)))))
 
 ==================
 Constant referring to another constant
@@ -176,9 +164,8 @@ uint constant B = A * 2;
   definition: (constant
     type: (uint_type)
     name: (identifier)
-    value: (primary_expression
-      (literal
-        (number_literal))))
+    value: (literal
+      (number_literal)))
   definition: (constant
     type: (uint_type)
     name: (identifier)
@@ -186,9 +173,8 @@ uint constant B = A * 2;
       left: (primary_expression
         (identifier))
       operator: (multiplicative_operator)
-      right: (primary_expression
-        (literal
-          (number_literal))))))
+      right: (literal
+        (number_literal)))))
 
 ==================
 Constant inside a Library
@@ -208,6 +194,5 @@ library Math {
       visibility: (visibility)
       mutability: (mutability)
       name: (identifier)
-      value: (primary_expression
-        (literal
-          (number_literal))))))
+      value: (literal
+        (number_literal)))))

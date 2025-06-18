@@ -32,9 +32,8 @@ contract C {
     storage: (storage
       type: (array_type
         base: (address_type)
-        size: (primary_expression
-          (literal
-            (number_literal))))
+        size: (literal
+          (number_literal)))
       name: (identifier))))
 
 ==================
@@ -54,9 +53,8 @@ contract C {
       type: (array_type
         base: (array_type
           base: (bool_type)
-          size: (primary_expression
-            (literal
-              (number_literal)))))
+          size: (literal
+            (number_literal))))
       name: (identifier))))
 
 ==================
@@ -110,9 +108,8 @@ contract C {
         parameter: (parameter
           type: (array_type
             base: (bool_type)
-            size: (primary_expression
-              (literal
-                (number_literal))))
+            size: (literal
+              (number_literal)))
           location: (data_location)
           name: (identifier)))
       visibility: (visibility)

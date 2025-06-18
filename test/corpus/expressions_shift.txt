@@ -21,13 +21,11 @@ contract C {
             type: (uint_type)
             name: (identifier))
           value: (shift_expression
-            left: (primary_expression
-              (literal
-                (number_literal)))
+            left: (literal
+              (number_literal))
             operator: (shift_operator)
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+            right: (literal
+              (number_literal))))))))
 
 ==================
 Left-associativity of shift operators
@@ -53,17 +51,14 @@ contract C {
             name: (identifier))
           value: (shift_expression
             left: (shift_expression
-              left: (primary_expression
-                (literal
-                  (number_literal)))
+              left: (literal
+                (number_literal))
               operator: (shift_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
+              right: (literal
+                (number_literal)))
             operator: (shift_operator)
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+            right: (literal
+              (number_literal))))))))
 
 ==================
 Precedence below addition
@@ -89,14 +84,11 @@ contract C {
             name: (identifier))
           value: (shift_expression
             left: (additive_expression
-              left: (primary_expression
-                (literal
-                  (number_literal)))
+              left: (literal
+                (number_literal))
               operator: (additive_operator)
-              right: (primary_expression
-                (literal
-                  (number_literal))))
+              right: (literal
+                (number_literal)))
             operator: (shift_operator)
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+            right: (literal
+              (number_literal))))))))

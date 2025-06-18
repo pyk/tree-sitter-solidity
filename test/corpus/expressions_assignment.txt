@@ -25,9 +25,8 @@ contract C {
             left: (primary_expression
               (identifier))
             operator: (simple_assignment_operator)
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+            right: (literal
+              (number_literal))))))))
 
 ==================
 Compound additive assignment
@@ -56,9 +55,8 @@ contract C {
             left: (primary_expression
               (identifier))
             operator: (compound_assignment_operator)
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+            right: (literal
+              (number_literal))))))))
 
 ==================
 Compound multiplicative assignment
@@ -87,9 +85,8 @@ contract C {
             left: (primary_expression
               (identifier))
             operator: (compound_assignment_operator)
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+            right: (literal
+              (number_literal))))))))
 
 ==================
 Compound bitwise assignment
@@ -118,9 +115,8 @@ contract C {
             left: (primary_expression
               (identifier))
             operator: (compound_assignment_operator)
-            right: (primary_expression
-              (literal
-                (hex_literal)))))))))
+            right: (literal
+              (hex_literal))))))))
 
 ==================
 Compound shift assignment
@@ -149,6 +145,5 @@ contract C {
             left: (primary_expression
               (identifier))
             operator: (compound_assignment_operator)
-            right: (primary_expression
-              (literal
-                (number_literal)))))))))
+            right: (literal
+              (number_literal))))))))

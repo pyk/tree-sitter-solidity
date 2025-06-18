@@ -31,9 +31,8 @@ contract C {
       visibility: (visibility)
       mutability: (mutability)
       name: (identifier)
-      value: (primary_expression
-        (literal
-          (string_literal))))))
+      value: (literal
+        (string_literal)))))
 
 ==================
 Immutable state variable
@@ -86,6 +85,5 @@ contract C is I {
       visibility: (visibility)
       override: (override_specifier)
       name: (identifier)
-      value: (primary_expression
-        (literal
-          (string_literal))))))
+      value: (literal
+        (string_literal)))))

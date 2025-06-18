@@ -47,9 +47,8 @@ contract C {
             location: (data_location)
             name: (identifier))
           value: (inline_array_expression
-            (primary_expression
-              (literal
-                (number_literal)))))))))
+            (literal
+              (number_literal))))))))
 
 ==================
 Inline array with multiple elements
@@ -75,15 +74,12 @@ contract C {
             location: (data_location)
             name: (identifier))
           value: (inline_array_expression
-            (primary_expression
-              (literal
-                (string_literal)))
-            (primary_expression
-              (literal
-                (string_literal)))
-            (primary_expression
-              (literal
-                (string_literal)))))))))
+            (literal
+              (string_literal))
+            (literal
+              (string_literal))
+            (literal
+              (string_literal))))))))
 
 ==================
 Nested inline array
@@ -111,16 +107,12 @@ contract C {
             name: (identifier))
           value: (inline_array_expression
             (inline_array_expression
-              (primary_expression
-                (literal
-                  (number_literal)))
-              (primary_expression
-                (literal
-                  (number_literal))))
+              (literal
+                (number_literal))
+              (literal
+                (number_literal)))
             (inline_array_expression
-              (primary_expression
-                (literal
-                  (number_literal)))
-              (primary_expression
-                (literal
-                  (number_literal))))))))))
+              (literal
+                (number_literal))
+              (literal
+                (number_literal)))))))))

@@ -62,6 +62,5 @@ contract C {
             type: (string_type)
             location: (data_location)
             name: (identifier))
-          value: (primary_expression
-            (literal
-              (string_literal))))))))
+          value: (literal
+            (string_literal)))))))

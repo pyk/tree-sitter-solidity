@@ -3129,6 +3129,19 @@
       "type": "CHOICE",
       "members": [
         {
+          "type": "PREC",
+          "value": 2,
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_literal"
+            },
+            "named": true,
+            "value": "literal"
+          }
+        },
+        {
           "type": "SYMBOL",
           "name": "primary_expression"
         },
@@ -3229,10 +3242,6 @@
     "primary_expression": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "literal"
-        },
         {
           "type": "SYMBOL",
           "name": "literal_with_subdenomination"
@@ -4643,6 +4652,35 @@
       ]
     },
     "literal": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "number_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "boolean_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "hex_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "hex_string_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unicode_string_literal"
+        }
+      ]
+    },
+    "_literal": {
       "type": "CHOICE",
       "members": [
         {

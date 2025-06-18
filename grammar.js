@@ -877,6 +877,9 @@ module.exports = grammar({
      */
     _expression: ($) =>
       choice(
+        // Give direct literals the highest precedence in the expression tree.
+        prec(2, alias($._literal, $.literal)),
+
         $.primary_expression,
         $.unary_expression,
         $.conditional_expression,
@@ -906,8 +909,11 @@ module.exports = grammar({
     /**
      * Primary expressions are the leaf nodes of the expression tree.
      */
+    // primary_expression: ($) =>
+    //   choice($.literal, $.literal_with_subdenomination, prec(1, $.identifier)),
+
     primary_expression: ($) =>
-      choice($.literal, $.literal_with_subdenomination, prec(1, $.identifier)),
+      choice($.literal_with_subdenomination, prec(1, $.identifier)),
 
     literal_with_subdenomination: ($) =>
       seq($.number_literal, $.subdenomination),
@@ -1353,6 +1359,16 @@ module.exports = grammar({
      * A literal value, such as a number, string, boolean, or address.
      */
     literal: ($) =>
+      choice(
+        $.number_literal,
+        $.string_literal,
+        $.boolean_literal,
+        $.hex_literal,
+        $.hex_string_literal,
+        $.unicode_string_literal,
+      ),
+
+    _literal: ($) =>
       choice(
         $.number_literal,
         $.string_literal,
