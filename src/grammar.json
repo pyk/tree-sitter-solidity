@@ -1822,23 +1822,23 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "exp_expression"
+          "name": "exp"
         },
         {
           "type": "SYMBOL",
-          "name": "mul_expression"
+          "name": "mul"
         },
         {
           "type": "SYMBOL",
-          "name": "add_expression"
+          "name": "add"
         },
         {
           "type": "SYMBOL",
-          "name": "bitnot_expression"
+          "name": "bitnot"
         }
       ]
     },
-    "exp_expression": {
+    "exp": {
       "type": "PREC_RIGHT",
       "value": 12,
       "content": {
@@ -1871,7 +1871,7 @@
         ]
       }
     },
-    "add_expression": {
+    "add": {
       "type": "PREC_LEFT",
       "value": 10,
       "content": {
@@ -1904,7 +1904,7 @@
         ]
       }
     },
-    "mul_expression": {
+    "mul": {
       "type": "PREC_LEFT",
       "value": 11,
       "content": {
@@ -1937,7 +1937,7 @@
         ]
       }
     },
-    "bitnot_expression": {
+    "bitnot": {
       "type": "PREC_RIGHT",
       "value": 13,
       "content": {

@@ -522,7 +522,7 @@ module.exports = grammar({
     /**
      * The main, hidden expression rule.
      * As a hidden rule, it doesn't appear in the AST. Instead, its chosen
-     * child (e.g., add_expression) is hoisted into its place.
+     * child (e.g., add) is hoisted into its place.
      */
     _expression: ($) =>
       choice(
@@ -573,15 +573,9 @@ module.exports = grammar({
     //                   Arithmetic expression                    //
     //############################################################//
 
-    arithmetic: ($) =>
-      choice(
-        $.exp_expression,
-        $.mul_expression,
-        $.add_expression,
-        $.bitnot_expression,
-      ),
+    arithmetic: ($) => choice($.exp, $.mul, $.add, $.bitnot),
 
-    exp_expression: ($) =>
+    exp: ($) =>
       prec.right(
         PREC.EXP,
         seq(
@@ -591,7 +585,7 @@ module.exports = grammar({
         ),
       ),
 
-    add_expression: ($) =>
+    add: ($) =>
       prec.left(
         PREC.ADD,
         seq(
@@ -601,7 +595,7 @@ module.exports = grammar({
         ),
       ),
 
-    mul_expression: ($) =>
+    mul: ($) =>
       prec.left(
         PREC.MULTIPLY,
         seq(
@@ -611,7 +605,7 @@ module.exports = grammar({
         ),
       ),
 
-    bitnot_expression: ($) =>
+    bitnot: ($) =>
       prec.right(
         PREC.UNARY,
         seq(field("operator", $.bitnot_op), field("argument", $._expression)),
@@ -1257,11 +1251,11 @@ module.exports = grammar({
     // │   │   ├── boolean_literal
     // │   │   └── hex_literal
     // │   └── identifier
-    // ├── add_expression
+    // ├── add
     // │   ├── left: _expression
     // │   ├── operator: add_op
     // │   └── right: _expression
-    // ├── mul_expression
+    // ├── mul
     // │   ├── left: _expression
     // │   ├── operator: mul_op
     // │   └── right: _expression

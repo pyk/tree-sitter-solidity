@@ -118,7 +118,7 @@ uint constant WITH_PARENS = (1 + 2);
       name: (identifier))
     value: (tuple_expression
       (arithmetic
-        (add_expression
+        (add
           left: (literal
             (number))
           operator: (add_op)
@@ -140,10 +140,10 @@ uint constant SECONDS_PER_DAY = (60 + 60) * 12;
     name: (symbol
       name: (identifier))
     value: (arithmetic
-      (mul_expression
+      (mul
         left: (tuple_expression
           (arithmetic
-            (add_expression
+            (add
               left: (literal
                 (number))
               operator: (add_op)
@@ -168,7 +168,7 @@ uint constant ONE_ETHER = 10 ** 18;
     name: (symbol
       name: (identifier))
     value: (arithmetic
-      (exp_expression
+      (exp
         left: (literal
           (number))
         operator: (exp_op)
@@ -264,7 +264,7 @@ uint constant B = A * 2;
     name: (symbol
       name: (identifier))
     value: (arithmetic
-      (mul_expression
+      (mul
         left: (primary_expression
           (identifier))
         operator: (mul_op)
@@ -310,7 +310,7 @@ uint constant BITWISE_NOT = ~uint(0);
     name: (symbol
       name: (identifier))
     value: (arithmetic
-      (bitnot_expression
+      (bitnot
         operator: (bitnot_op)
         argument: (cast
           type: (primitive_type

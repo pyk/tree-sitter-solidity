@@ -16,7 +16,7 @@
     }
   },
   {
-    "type": "add_expression",
+    "type": "add",
     "named": true,
     "fields": {
       "left": {
@@ -373,19 +373,19 @@
       "required": true,
       "types": [
         {
-          "type": "add_expression",
+          "type": "add",
           "named": true
         },
         {
-          "type": "bitnot_expression",
+          "type": "bitnot",
           "named": true
         },
         {
-          "type": "exp_expression",
+          "type": "exp",
           "named": true
         },
         {
-          "type": "mul_expression",
+          "type": "mul",
           "named": true
         }
       ]
@@ -750,7 +750,7 @@
     }
   },
   {
-    "type": "bitnot_expression",
+    "type": "bitnot",
     "named": true,
     "fields": {
       "argument": {
@@ -3290,7 +3290,7 @@
     }
   },
   {
-    "type": "exp_expression",
+    "type": "exp",
     "named": true,
     "fields": {
       "left": {
@@ -6074,7 +6074,7 @@
     }
   },
   {
-    "type": "mul_expression",
+    "type": "mul",
     "named": true,
     "fields": {
       "left": {
