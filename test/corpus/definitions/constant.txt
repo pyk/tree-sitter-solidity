@@ -11,7 +11,8 @@ uint256 constant MY_CONSTANT = 42;
     type: (type
       (primitive_type
         (uint_type)))
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     value: (literal
       (number))))
 
@@ -28,7 +29,8 @@ int256 constant MY_NEGATIVE_CONSTANT = -100;
     type: (type
       (primitive_type
         (int_type)))
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     value: (unary_expression
       argument: (literal
         (number)))))
@@ -46,7 +48,8 @@ string constant GREETING = "Hello, World!";
     type: (type
       (primitive_type
         (string_type)))
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     value: (literal
       (string))))
 
@@ -63,7 +66,8 @@ address constant OWNER = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF;
     type: (type
       (primitive_type
         (address_type)))
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     value: (literal
       (hex))))
 
@@ -80,7 +84,8 @@ bool constant IS_ENABLED = true;
     type: (type
       (primitive_type
         (bool_type)))
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     value: (literal
       (boolean))))
 
@@ -97,7 +102,8 @@ bytes32 constant MY_HASH = 0x1234567890abcdef1234567890abcdef1234567890abcdef123
     type: (type
       (primitive_type
         (bytes_type)))
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     value: (literal
       (hex))))
 
@@ -114,7 +120,8 @@ uint constant SECONDS_PER_DAY = 24 * 60 * 60;
     type: (type
       (primitive_type
         (uint_type)))
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     value: (arithmetic
       (mul_expression
         left: (arithmetic
@@ -141,7 +148,8 @@ uint constant ONE_ETHER = 10 ** 18;
     type: (type
       (primitive_type
         (uint_type)))
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     value: (arithmetic
       (exp_expression
         left: (literal
@@ -162,14 +170,16 @@ contract MyContract {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
           (uint_type)))
       visibility: (visibility)
       mutability: (mutability)
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       value: (literal
         (number)))))
 
@@ -187,14 +197,16 @@ uint constant B = A * 2;
     type: (type
       (primitive_type
         (uint_type)))
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     value: (literal
       (number)))
   definition: (constant
     type: (type
       (primitive_type
         (uint_type)))
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     value: (arithmetic
       (mul_expression
         left: (primary_expression
@@ -215,13 +227,15 @@ library Math {
 
 (source_file
   definition: (library
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
           (uint_type)))
       visibility: (visibility)
       mutability: (mutability)
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       value: (literal
         (number)))))

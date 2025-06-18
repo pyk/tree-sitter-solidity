@@ -12,22 +12,26 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
-    storage: (storage
-      type: (type
-        (primitive_type
-          (uint_type)))
+    name: (symbol
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
           (uint_type)))
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (primitive_type
           (uint_type)))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))
+    storage: (storage
+      type: (type
+        (primitive_type
+          (uint_type)))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Uint as a function parameter and return type
@@ -43,9 +47,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -83,9 +89,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       mutability: (state_mutability)
       body: (block
@@ -94,7 +102,8 @@ contract C {
             type: (type
               (primitive_type
                 (uint_type)))
-            name: (identifier))
+            name: (symbol
+              name: (identifier)))
           value: (literal
             (number)))))))
 
@@ -112,9 +121,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -152,19 +163,23 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     struct: (struct
-      name: (identifier)
-      (struct_member
-        type: (type
-          (primitive_type
-            (uint_type)))
+      name: (symbol
         name: (identifier))
       (struct_member
         type: (type
           (primitive_type
             (uint_type)))
-        name: (identifier)))))
+        name: (symbol
+          name: (identifier)))
+      (struct_member
+        type: (type
+          (primitive_type
+            (uint_type)))
+        name: (symbol
+          name: (identifier))))))
 
 ==================
 Uint in a mapping definition
@@ -178,7 +193,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -188,7 +204,8 @@ contract C {
           value: (type
             (primitive_type
               (uint_type)))))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Uint as an array base type
@@ -203,7 +220,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (array_type
@@ -211,7 +229,8 @@ contract C {
             (primitive_type
               (uint_type)))))
       visibility: (visibility)
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (array_type
@@ -221,7 +240,8 @@ contract C {
           size: (literal
             (number))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Uint in a 'using for' directive
@@ -253,13 +273,15 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
           (uint_type)))
       mutability: (mutability)
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       value: (literal
         (number)))
     storage: (storage
@@ -268,7 +290,8 @@ contract C {
           (uint_type)))
       visibility: (visibility)
       mutability: (mutability)
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       value: (literal
         (number)))))
 
@@ -284,20 +307,24 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     event: (event
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (event_parameter_list
         (indexed_event_parameter
           type: (type
             (primitive_type
               (uint_type)))
-          name: (identifier))
+          name: (symbol
+            name: (identifier)))
         (unindexed_event_parameter
           type: (type
             (primitive_type
               (uint_type)))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 Uint in an error parameter
@@ -311,20 +338,24 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     error: (error
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
           type: (type
             (primitive_type
               (uint_type)))
-          name: (identifier))
+          name: (symbol
+            name: (identifier)))
         (error_parameter
           type: (type
             (primitive_type
               (uint_type)))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 Uint as underlying type for UDVT

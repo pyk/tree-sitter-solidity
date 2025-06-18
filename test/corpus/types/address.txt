@@ -11,17 +11,20 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
-    storage: (storage
-      type: (type
-        (primitive_type
-          (address_type)))
+    name: (symbol
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
           (address_type)))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))
+    storage: (storage
+      type: (type
+        (primitive_type
+          (address_type)))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Address as a function parameter and return type
@@ -37,9 +40,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -77,9 +82,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       mutability: (state_mutability)
       body: (block
@@ -88,7 +95,8 @@ contract C {
             type: (type
               (primitive_type
                 (address_type)))
-            name: (identifier))
+            name: (symbol
+              name: (identifier)))
           value: (member_access_expression
             object: (primary_expression
               (identifier))
@@ -108,9 +116,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -147,9 +157,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -185,19 +197,23 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     struct: (struct
-      name: (identifier)
-      (struct_member
-        type: (type
-          (primitive_type
-            (address_type)))
+      name: (symbol
         name: (identifier))
       (struct_member
         type: (type
           (primitive_type
             (address_type)))
-        name: (identifier)))))
+        name: (symbol
+          name: (identifier)))
+      (struct_member
+        type: (type
+          (primitive_type
+            (address_type)))
+        name: (symbol
+          name: (identifier))))))
 
 ==================
 Address as a mapping key and value
@@ -211,7 +227,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -222,7 +239,8 @@ contract C {
             (primitive_type
               (address_type)))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Address as an array base type
@@ -237,7 +255,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (array_type
@@ -245,7 +264,8 @@ contract C {
             (primitive_type
               (address_type)))))
       visibility: (visibility)
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (array_type
@@ -255,7 +275,8 @@ contract C {
           size: (literal
             (number))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Address in a 'using for' directive
@@ -269,7 +290,8 @@ using AddressUtils for address payable;
 
 (source_file
   definition: (library
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   directive: (using
     (using_library
       library: (symbol
@@ -297,13 +319,15 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
           (address_type)))
       mutability: (mutability)
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       value: (call_expression
         function: (primary_expression
           (identifier))
@@ -323,20 +347,24 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     event: (event
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (event_parameter_list
         (indexed_event_parameter
           type: (type
             (primitive_type
               (address_type)))
-          name: (identifier))
+          name: (symbol
+            name: (identifier)))
         (indexed_event_parameter
           type: (type
             (primitive_type
               (address_type)))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 Address in an error parameter
@@ -350,15 +378,18 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     error: (error
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
           type: (type
             (primitive_type
               (address_type)))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 Address as underlying type for UDVT

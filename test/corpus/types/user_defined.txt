@@ -14,23 +14,28 @@ contract C {
 
 (source_file
   definition: (struct
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   definition: (contract
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   definition: (contract
-    name: (identifier)
-    storage: (storage
-      type: (type
-        (custom_type
-          symbol: (symbol
-            name: (identifier))))
+    name: (symbol
       name: (identifier))
     storage: (storage
       type: (type
         (custom_type
           symbol: (symbol
             name: (identifier))))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))
+    storage: (storage
+      type: (type
+        (custom_type
+          symbol: (symbol
+            name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Qualified custom type (from import)
@@ -49,7 +54,8 @@ contract C {
     (file_import
       path: (string)))
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (custom_type
@@ -57,7 +63,8 @@ contract C {
             scope: (symbol
               name: (identifier))
             name: (identifier))))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Custom type as a function parameter and return type
@@ -75,11 +82,14 @@ contract C {
 
 (source_file
   definition: (interface
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -115,11 +125,14 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
-    struct: (struct
+    name: (symbol
       name: (identifier))
+    struct: (struct
+      name: (symbol
+        name: (identifier)))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       body: (block
         (variable_declaration_statement
@@ -129,7 +142,8 @@ contract C {
                 symbol: (symbol
                   name: (identifier))))
             location: (data_location)
-            name: (identifier)))))))
+            name: (symbol
+              name: (identifier))))))))
 
 ==================
 Custom type in a type cast
@@ -146,11 +160,14 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -188,13 +205,16 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     enum: (enum
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       value: (identifier)
       value: (identifier))
     struct: (struct
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (mapping_type
@@ -207,7 +227,8 @@ contract C {
               symbol: (symbol
                 name: (identifier))))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Custom type as an array base
@@ -222,9 +243,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
-    struct: (struct
+    name: (symbol
       name: (identifier))
+    struct: (struct
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (array_type
@@ -233,7 +256,8 @@ contract C {
               symbol: (symbol
                 name: (identifier))))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Custom type in a 'using for' directive
@@ -248,9 +272,11 @@ using MyLib for MyData;
 
 (source_file
   definition: (library
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   definition: (struct
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   directive: (using
     (using_library
       library: (symbol
@@ -274,27 +300,33 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
-    struct: (struct
+    name: (symbol
       name: (identifier))
+    struct: (struct
+      name: (symbol
+        name: (identifier)))
     error: (error
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
           type: (type
             (custom_type
               symbol: (symbol
                 name: (identifier))))
-          name: (identifier))))
+          name: (symbol
+            name: (identifier)))))
     event: (event
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (event_parameter_list
         (indexed_event_parameter
           type: (type
             (custom_type
               symbol: (symbol
                 name: (identifier))))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 Custom type in a `new` expression
@@ -312,11 +344,14 @@ contract Factory {
 
 (source_file
   definition: (contract
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       body: (block
         (variable_declaration_statement
@@ -325,7 +360,8 @@ contract Factory {
               (custom_type
                 symbol: (symbol
                   name: (identifier))))
-            name: (identifier))
+            name: (symbol
+              name: (identifier)))
           value: (call_expression
             function: (new_expression
               type: (type

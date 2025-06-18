@@ -11,13 +11,15 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     (comment)
     storage: (storage
       type: (type
         (primitive_type
           (uint_type)))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Regular block comment
@@ -34,13 +36,15 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     (comment)
     storage: (storage
       type: (type
         (primitive_type
           (uint_type)))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 NatSpec single-line comment
@@ -55,10 +59,12 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     (comment)
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       body: (block))))
 
@@ -78,10 +84,12 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     (comment)
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       body: (block))))
 
@@ -102,4 +110,5 @@ contract C {}
   (comment)
   (comment)
   definition: (contract
-    name: (identifier)))
+    name: (symbol
+      name: (identifier))))

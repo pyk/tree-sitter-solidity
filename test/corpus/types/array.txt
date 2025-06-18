@@ -12,14 +12,16 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (array_type
           base: (type
             (primitive_type
               (uint_type)))))
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (array_type
@@ -28,7 +30,8 @@ contract C {
               (bool_type)))
           size: (literal
             (number))))
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (array_type
@@ -39,7 +42,8 @@ contract C {
                   (address_type)))))
           size: (literal
             (number))))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Array as a function parameter and return type
@@ -55,9 +59,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -97,16 +103,19 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     struct: (struct
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       (struct_member
         type: (type
           (array_type
             base: (type
               (primitive_type
                 (uint_type)))))
-        name: (identifier))
+        name: (symbol
+          name: (identifier)))
       (struct_member
         type: (type
           (array_type
@@ -115,7 +124,8 @@ contract C {
                 (bytes_type)))
             size: (literal
               (number))))
-        name: (identifier)))))
+        name: (symbol
+          name: (identifier))))))
 
 ==================
 Array as a mapping value
@@ -129,7 +139,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -142,7 +153,8 @@ contract C {
                 (primitive_type
                   (int_type)))))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Deeply nested multi-dimensional array
@@ -156,9 +168,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
-    struct: (struct
+    name: (symbol
       name: (identifier))
+    struct: (struct
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (array_type
@@ -173,7 +187,8 @@ contract C {
               size: (literal
                 (number))))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Array of mappings (storage only)
@@ -186,7 +201,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (array_type
@@ -199,7 +215,8 @@ contract C {
                 (primitive_type
                   (uint_type)))))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Array in a 'using for' directive
@@ -213,7 +230,8 @@ using ArrayLib for uint[2];
 
 (source_file
   definition: (library
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   directive: (using
     (using_library
       library: (symbol
@@ -247,9 +265,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     event: (event
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (event_parameter_list
         (unindexed_event_parameter
           type: (type
@@ -257,7 +277,8 @@ contract C {
               base: (type
                 (primitive_type
                   (uint_type)))))
-          name: (identifier))
+          name: (symbol
+            name: (identifier)))
         (unindexed_event_parameter
           type: (type
             (array_type
@@ -266,7 +287,8 @@ contract C {
                   (bool_type)))
               size: (literal
                 (number))))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 Array in an error parameter
@@ -280,9 +302,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     error: (error
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
           type: (type
@@ -290,4 +314,5 @@ contract C {
               base: (type
                 (primitive_type
                   (bytes_type)))))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))

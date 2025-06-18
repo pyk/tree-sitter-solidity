@@ -10,12 +10,14 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (function_type
           visibility: (visibility)))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Function type with parameters
@@ -29,7 +31,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (function_type
@@ -43,7 +46,8 @@ contract C {
                 (primitive_type
                   (address_type)))))
           visibility: (visibility)))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Function type with return values
@@ -57,7 +61,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (function_type
@@ -67,7 +72,8 @@ contract C {
               type: (type
                 (primitive_type
                   (bool_type)))))))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 External function type with all attributes
@@ -81,7 +87,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (function_type
@@ -99,7 +106,8 @@ contract C {
                 (primitive_type
                   (bytes_type)))
               location: (data_location)))))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Payable function type
@@ -113,7 +121,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (function_type
@@ -124,7 +133,8 @@ contract C {
                   (address_type)))))
           visibility: (visibility)
           mutability: (state_mutability)))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Pure function type
@@ -138,7 +148,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (function_type
@@ -149,7 +160,8 @@ contract C {
               type: (type
                 (primitive_type
                   (uint_type)))))))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Function type with complex parameters (array)
@@ -163,7 +175,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (function_type
@@ -176,7 +189,8 @@ contract C {
                       (uint_type)))))
               location: (data_location)))
           visibility: (visibility)))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Function type with multiple named return values
@@ -190,7 +204,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (function_type
@@ -206,7 +221,8 @@ contract C {
                 (primitive_type
                   (bool_type)))
               name: (identifier)))))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Function type as a function parameter
@@ -220,9 +236,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -255,7 +273,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (function_type
@@ -265,4 +284,5 @@ contract C {
                 (primitive_type
                   (uint_type)))))
           visibility: (visibility)))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))

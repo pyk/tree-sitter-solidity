@@ -11,18 +11,21 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
-    storage: (storage
-      type: (type
-        (primitive_type
-          (string_type)))
+    name: (symbol
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
           (string_type)))
+      name: (symbol
+        name: (identifier)))
+    storage: (storage
+      type: (type
+        (primitive_type
+          (string_type)))
       visibility: (visibility)
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       value: (literal
         (string)))))
 
@@ -40,9 +43,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -77,9 +82,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       mutability: (state_mutability)
       body: (block
@@ -89,7 +96,8 @@ contract C {
               (primitive_type
                 (string_type)))
             location: (data_location)
-            name: (identifier))
+            name: (symbol
+              name: (identifier)))
           value: (literal
             (string)))))))
 
@@ -107,9 +115,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -149,19 +159,23 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     struct: (struct
-      name: (identifier)
-      (struct_member
-        type: (type
-          (primitive_type
-            (string_type)))
+      name: (symbol
         name: (identifier))
       (struct_member
         type: (type
           (primitive_type
             (string_type)))
-        name: (identifier)))))
+        name: (symbol
+          name: (identifier)))
+      (struct_member
+        type: (type
+          (primitive_type
+            (string_type)))
+        name: (symbol
+          name: (identifier))))))
 
 ==================
 String in a mapping value
@@ -175,7 +189,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -186,7 +201,8 @@ contract C {
             (primitive_type
               (string_type)))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 String as an array base type
@@ -201,7 +217,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (array_type
@@ -209,7 +226,8 @@ contract C {
             (primitive_type
               (string_type)))))
       visibility: (visibility)
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (array_type
@@ -219,7 +237,8 @@ contract C {
           size: (literal
             (number))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 String in a 'using for' directive
@@ -232,7 +251,8 @@ using StringUtils for string;
 
 (source_file
   definition: (library
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   directive: (using
     (using_library
       library: (symbol
@@ -253,13 +273,15 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
           (string_type)))
       mutability: (mutability)
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       value: (literal
         (string)))))
 
@@ -275,20 +297,24 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     event: (event
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (event_parameter_list
         (indexed_event_parameter
           type: (type
             (primitive_type
               (string_type)))
-          name: (identifier))
+          name: (symbol
+            name: (identifier)))
         (unindexed_event_parameter
           type: (type
             (primitive_type
               (string_type)))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 String in an error parameter
@@ -302,15 +328,18 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     error: (error
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
           type: (type
             (primitive_type
               (string_type)))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 String literal in an expression
@@ -326,9 +355,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list

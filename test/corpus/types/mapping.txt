@@ -11,7 +11,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -21,7 +22,8 @@ contract C {
           value: (type
             (primitive_type
               (address_type)))))
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (mapping_type
@@ -32,7 +34,8 @@ contract C {
             (primitive_type
               (bool_type)))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Nested mapping as a state variable
@@ -46,7 +49,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -62,7 +66,8 @@ contract C {
                 (primitive_type
                   (uint_type)))))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Mapping as a function parameter (storage pointer)
@@ -80,7 +85,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -91,9 +97,11 @@ contract C {
             (primitive_type
               (uint_type)))))
       visibility: (visibility)
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -126,7 +134,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -136,9 +145,11 @@ contract C {
           value: (type
             (primitive_type
               (uint_type)))))
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameter_list
@@ -173,7 +184,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -183,9 +195,11 @@ contract C {
           value: (type
             (primitive_type
               (address_type)))))
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       body: (block
         (variable_declaration_statement
@@ -199,7 +213,8 @@ contract C {
                   (primitive_type
                     (address_type)))))
             location: (data_location)
-            name: (identifier))
+            name: (symbol
+              name: (identifier)))
           value: (primary_expression
             (identifier)))))))
 
@@ -218,9 +233,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     struct: (struct
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       (struct_member
         type: (type
           (mapping_type
@@ -230,12 +247,14 @@ contract C {
             value: (type
               (primitive_type
                 (bool_type)))))
-        name: (identifier))
+        name: (symbol
+          name: (identifier)))
       (struct_member
         type: (type
           (primitive_type
             (uint_type)))
-        name: (identifier)))))
+        name: (symbol
+          name: (identifier))))))
 
 ==================
 Mapping with a custom type as key or value
@@ -252,13 +271,16 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     enum: (enum
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       value: (identifier)
       value: (identifier))
     struct: (struct
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (mapping_type
@@ -271,7 +293,8 @@ contract C {
               symbol: (symbol
                 name: (identifier))))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Mapping value is an array
@@ -284,7 +307,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -297,7 +321,8 @@ contract C {
                 (primitive_type
                   (uint_type)))))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Mapping value is a struct
@@ -311,14 +336,17 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     struct: (struct
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       (struct_member
         type: (type
           (primitive_type
             (bool_type)))
-        name: (identifier)))
+        name: (symbol
+          name: (identifier))))
     storage: (storage
       type: (type
         (mapping_type
@@ -330,4 +358,5 @@ contract C {
               symbol: (symbol
                 name: (identifier))))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))

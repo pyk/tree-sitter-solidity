@@ -12,22 +12,26 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
-    storage: (storage
-      type: (type
-        (primitive_type
-          (bytes_type)))
+    name: (symbol
       name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
           (bytes_type)))
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (primitive_type
           (bytes_type)))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))
+    storage: (storage
+      type: (type
+        (primitive_type
+          (bytes_type)))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Bytes as a function parameter and return type
@@ -43,9 +47,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -96,9 +102,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       visibility: (visibility)
       mutability: (state_mutability)
       body: (block
@@ -108,7 +116,8 @@ contract C {
               (primitive_type
                 (bytes_type)))
             location: (data_location)
-            name: (identifier))
+            name: (symbol
+              name: (identifier)))
           value: (literal
             (hex_string)))
         (variable_declaration_statement
@@ -116,7 +125,8 @@ contract C {
             type: (type
               (primitive_type
                 (bytes_type)))
-            name: (identifier))
+            name: (symbol
+              name: (identifier)))
           value: (literal
             (hex)))))))
 
@@ -134,9 +144,11 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     function: (function
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (parameter_list
         parameter: (parameter
           type: (type
@@ -176,19 +188,23 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     struct: (struct
-      name: (identifier)
-      (struct_member
-        type: (type
-          (primitive_type
-            (bytes_type)))
+      name: (symbol
         name: (identifier))
       (struct_member
         type: (type
           (primitive_type
             (bytes_type)))
-        name: (identifier)))))
+        name: (symbol
+          name: (identifier)))
+      (struct_member
+        type: (type
+          (primitive_type
+            (bytes_type)))
+        name: (symbol
+          name: (identifier))))))
 
 ==================
 Bytes in a mapping definition (key must be fixed-size)
@@ -202,7 +218,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (mapping_type
@@ -212,7 +229,8 @@ contract C {
           value: (type
             (primitive_type
               (bytes_type)))))
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Bytes as an array base type
@@ -227,7 +245,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (array_type
@@ -235,7 +254,8 @@ contract C {
             (primitive_type
               (bytes_type)))))
       visibility: (visibility)
-      name: (identifier))
+      name: (symbol
+        name: (identifier)))
     storage: (storage
       type: (type
         (array_type
@@ -245,7 +265,8 @@ contract C {
           size: (literal
             (number))))
       visibility: (visibility)
-      name: (identifier))))
+      name: (symbol
+        name: (identifier)))))
 
 ==================
 Bytes in a 'using for' directive
@@ -258,7 +279,8 @@ using BytesUtils for bytes;
 
 (source_file
   definition: (library
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   directive: (using
     (using_library
       library: (symbol
@@ -279,13 +301,15 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     storage: (storage
       type: (type
         (primitive_type
           (bytes_type)))
       mutability: (mutability)
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       value: (literal
         (hex)))))
 
@@ -301,20 +325,24 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     event: (event
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (event_parameter_list
         (indexed_event_parameter
           type: (type
             (primitive_type
               (bytes_type)))
-          name: (identifier))
+          name: (symbol
+            name: (identifier)))
         (unindexed_event_parameter
           type: (type
             (primitive_type
               (bytes_type)))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 Bytes in an error parameter
@@ -328,15 +356,18 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     error: (error
-      name: (identifier)
+      name: (symbol
+        name: (identifier))
       parameters: (error_parameter_list
         (error_parameter
           type: (type
             (primitive_type
               (bytes_type)))
-          name: (identifier))))))
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 Bytes as underlying type for UDVT

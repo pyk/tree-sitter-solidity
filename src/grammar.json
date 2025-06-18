@@ -77,30 +77,6 @@
           "value": 1,
           "content": {
             "type": "SYMBOL",
-            "name": "contract"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 1,
-          "content": {
-            "type": "SYMBOL",
-            "name": "interface"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 1,
-          "content": {
-            "type": "SYMBOL",
-            "name": "library"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 1,
-          "content": {
-            "type": "SYMBOL",
             "name": "struct"
           }
         },
@@ -142,6 +118,30 @@
           "content": {
             "type": "SYMBOL",
             "name": "udvt"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "contract"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "interface"
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "library"
           }
         }
       ]
@@ -191,6 +191,14 @@
           }
         }
       ]
+    },
+    "_simple_symbol": {
+      "type": "FIELD",
+      "name": "name",
+      "content": {
+        "type": "SYMBOL",
+        "name": "identifier"
+      }
     },
     "data_location": {
       "type": "CHOICE",
@@ -1777,8 +1785,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -1964,8 +1977,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -1997,8 +2015,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -2094,8 +2117,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -2191,8 +2219,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -2785,8 +2818,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -2976,8 +3014,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -3012,8 +3055,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -3033,8 +3081,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -3115,8 +3168,13 @@
               "type": "FIELD",
               "name": "name",
               "content": {
-                "type": "SYMBOL",
-                "name": "identifier"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_simple_symbol"
+                },
+                "named": true,
+                "value": "symbol"
               }
             },
             {
@@ -3144,8 +3202,13 @@
               "type": "FIELD",
               "name": "name",
               "content": {
-                "type": "SYMBOL",
-                "name": "identifier"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_simple_symbol"
+                },
+                "named": true,
+                "value": "symbol"
               }
             },
             {
@@ -3216,8 +3279,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -3273,8 +3341,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -3329,8 +3402,13 @@
               "type": "FIELD",
               "name": "name",
               "content": {
-                "type": "SYMBOL",
-                "name": "identifier"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_simple_symbol"
+                },
+                "named": true,
+                "value": "symbol"
               }
             },
             {
@@ -3404,8 +3482,13 @@
             "type": "FIELD",
             "name": "name",
             "content": {
-              "type": "SYMBOL",
-              "name": "identifier"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_simple_symbol"
+              },
+              "named": true,
+              "value": "symbol"
             }
           },
           {
@@ -3716,8 +3799,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -3822,8 +3910,13 @@
               "type": "FIELD",
               "name": "name",
               "content": {
-                "type": "SYMBOL",
-                "name": "identifier"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_simple_symbol"
+                },
+                "named": true,
+                "value": "symbol"
               }
             },
             {
@@ -4744,8 +4837,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {

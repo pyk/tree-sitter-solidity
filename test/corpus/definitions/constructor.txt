@@ -10,7 +10,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     constructor: (constructor
       body: (block))))
 
@@ -26,7 +27,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter
@@ -54,7 +56,8 @@ contract C {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     constructor: (constructor
       mutability: (state_mutability)
       body: (block))))
@@ -72,7 +75,8 @@ abstract contract C {
 (source_file
   definition: (contract
     abstract: (abstract)
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     constructor: (constructor
       visibility: (visibility)
       body: (block))))
@@ -92,7 +96,8 @@ abstract contract C {
 (source_file
   definition: (contract
     abstract: (abstract)
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter
@@ -117,10 +122,12 @@ contract MyToken is ERC20 {
 
 (source_file
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     parents: (parent_list
       parent: (parent
-        name: (identifier)))
+        name: (symbol
+          name: (identifier))))
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter
@@ -159,16 +166,21 @@ contract C is A, B {
 
 (source_file
   definition: (contract
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   definition: (contract
-    name: (identifier))
+    name: (symbol
+      name: (identifier)))
   definition: (contract
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     parents: (parent_list
       parent: (parent
-        name: (identifier))
+        name: (symbol
+          name: (identifier)))
       parent: (parent
-        name: (identifier)))
+        name: (symbol
+          name: (identifier))))
     constructor: (constructor
       parent_constructor: (parent_constructor
         name: (symbol
@@ -195,12 +207,15 @@ abstract contract D is A, B {
 (source_file
   definition: (contract
     abstract: (abstract)
-    name: (identifier)
+    name: (symbol
+      name: (identifier))
     parents: (parent_list
       parent: (parent
-        name: (identifier))
+        name: (symbol
+          name: (identifier)))
       parent: (parent
-        name: (identifier)))
+        name: (symbol
+          name: (identifier))))
     constructor: (constructor
       parameters: (parameter_list
         parameter: (parameter

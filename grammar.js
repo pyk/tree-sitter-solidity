@@ -98,15 +98,17 @@ module.exports = grammar({
     _top_level_definitions: ($) =>
       choice(
         $.constant,
-        prec(1, $.contract),
-        prec(1, $.interface),
-        prec(1, $.library),
+        //
         prec(1, $.struct),
         prec(1, $.enum),
         prec(1, $.event),
         prec(1, $.error),
         prec(1, $.function),
         prec(1, $.udvt),
+        //
+        prec(1, $.contract),
+        prec(1, $.interface),
+        prec(1, $.library),
       ),
 
     //############################################################//
@@ -142,6 +144,10 @@ module.exports = grammar({
           ),
         ),
       ),
+
+    // A hidden rule to capture the structure of a simple symbol.
+    // This will be aliased for declaration names.
+    _simple_symbol: ($) => field("name", $.identifier),
 
     data_location: ($) => choice("memory", "storage", "calldata"),
     global: ($) => "global",
@@ -535,7 +541,7 @@ module.exports = grammar({
       seq(
         optional(field("abstract", $.abstract)),
         "contract",
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         optional(field("parents", $.parent_list)),
         "{", // The body starts here
         repeat(
@@ -561,8 +567,7 @@ module.exports = grammar({
     parent_list: ($) => seq("is", commaSep(field("parent", $.parent))),
     parent: ($) =>
       seq(
-        // The name can ONLY be a simple identifier.
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         optional(field("arguments", $.argument_list)),
       ),
 
@@ -573,7 +578,7 @@ module.exports = grammar({
     interface: ($) =>
       seq(
         "interface",
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         optional(field("parents", $.parent_list)),
         "{", // The body starts here
         repeat(
@@ -597,7 +602,7 @@ module.exports = grammar({
     library: ($) =>
       seq(
         "library",
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         "{", // The body starts here
         repeat(
           choice(
@@ -622,7 +627,7 @@ module.exports = grammar({
       seq(
         field("type", $.type),
         "constant",
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         "=",
         field("value", $._expression),
         ";",
@@ -786,7 +791,7 @@ module.exports = grammar({
     function: ($) =>
       seq(
         "function",
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         "(",
         optional(field("parameters", $.parameter_list)),
         ")",
@@ -823,19 +828,23 @@ module.exports = grammar({
     struct: ($) =>
       seq(
         "struct",
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         "{",
         repeat($.struct_member),
         "}",
       ),
 
     struct_member: ($) =>
-      seq(field("type", $.type), field("name", $.identifier), ";"),
+      seq(
+        field("type", $.type),
+        field("name", alias($._simple_symbol, $.symbol)),
+        ";",
+      ),
 
     enum: ($) =>
       seq(
         "enum",
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         "{",
         // The commaSep helper handles one or more comma-separated values
         commaSep(field("value", $.identifier)),
@@ -849,11 +858,14 @@ module.exports = grammar({
       seq(
         field("type", $.type),
         "indexed",
-        optional(field("name", $.identifier)),
+        optional(field("name", alias($._simple_symbol, $.symbol))),
       ),
 
     unindexed_event_parameter: ($) =>
-      seq(field("type", $.type), optional(field("name", $.identifier))),
+      seq(
+        field("type", $.type),
+        optional(field("name", alias($._simple_symbol, $.symbol))),
+      ),
 
     // New helper rules for event/error parameters
     event_parameter_list: ($) => commaSep($._event_parameter),
@@ -863,7 +875,7 @@ module.exports = grammar({
     event: ($) =>
       seq(
         "event",
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         "(",
         optional(field("parameters", $.event_parameter_list)),
         ")",
@@ -874,7 +886,7 @@ module.exports = grammar({
     error: ($) =>
       seq(
         "error",
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         "(",
         optional(field("parameters", $.error_parameter_list)),
         ")",
@@ -885,7 +897,10 @@ module.exports = grammar({
     anonymous: ($) => "anonymous",
 
     error_parameter: ($) =>
-      seq(field("type", $.type), optional(field("name", $.identifier))),
+      seq(
+        field("type", $.type),
+        optional(field("name", alias($._simple_symbol, $.symbol))),
+      ),
 
     modifier_invocation: ($) =>
       seq(
@@ -904,7 +919,7 @@ module.exports = grammar({
         1,
         seq(
           "modifier",
-          field("name", $.identifier),
+          field("name", alias($._simple_symbol, $.symbol)),
           "(",
           optional(field("parameters", $.parameter_list)),
           ")",
@@ -970,7 +985,7 @@ module.exports = grammar({
       seq(
         field("type", $.type),
         repeat($._state_variable_attribute),
-        field("name", $.identifier),
+        field("name", alias($._simple_symbol, $.symbol)),
         optional(seq("=", field("value", $._expression))),
         ";",
       ),
@@ -994,7 +1009,7 @@ module.exports = grammar({
       seq(
         field("type", $.type),
         optional(field("location", $.data_location)),
-        optional(field("name", $.identifier)),
+        optional(field("name", alias($._simple_symbol, $.symbol))),
       ),
 
     /**
@@ -1314,7 +1329,11 @@ module.exports = grammar({
      * e.g., `value: 1 ether` or `gas: 10000`
      */
     named_argument: ($) =>
-      seq(field("name", $.identifier), ":", field("value", $._expression)),
+      seq(
+        field("name", alias($._simple_symbol, $.symbol)),
+        ":",
+        field("value", $._expression),
+      ),
 
     /**
      * A function call expression, with optional call options.
