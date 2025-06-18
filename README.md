@@ -33,7 +33,13 @@ tree-sitter test
 To update the test:
 
 ```shell
-tree-sitter generate && tree-sitter test --update --show-fields
+tree-sitter test -r --update
+```
+
+Run individual test file:
+
+```shell
+tree-sitter test --update -r --file-name pragma.txt
 ```
 
 ## References
