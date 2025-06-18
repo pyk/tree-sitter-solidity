@@ -1,6 +1,6 @@
 [
   {
-    "type": "additive_expression",
+    "type": "add_expression",
     "named": true,
     "fields": {
       "left": {
@@ -8,7 +8,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -44,7 +44,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -80,7 +80,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -114,7 +114,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_operator",
+            "type": "add_op",
             "named": true
           }
         ]
@@ -124,7 +124,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -160,7 +160,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -196,7 +196,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -228,7 +228,7 @@
     }
   },
   {
-    "type": "additive_operator",
+    "type": "add_op",
     "named": true,
     "fields": {}
   },
@@ -257,7 +257,7 @@
         "required": false,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -293,7 +293,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -329,7 +329,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -407,7 +407,7 @@
         "required": false,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -443,7 +443,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -479,7 +479,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -519,7 +519,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -555,7 +555,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -591,7 +591,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -639,7 +639,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -675,7 +675,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -711,7 +711,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -751,7 +751,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -787,7 +787,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -823,7 +823,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -867,7 +867,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -903,7 +903,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -939,7 +939,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -979,7 +979,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -1015,7 +1015,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -1051,7 +1051,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -1095,7 +1095,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -1131,7 +1131,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -1167,7 +1167,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -1207,7 +1207,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -1243,7 +1243,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -1279,7 +1279,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -1323,7 +1323,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -1359,7 +1359,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -1395,7 +1395,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -1518,7 +1518,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -1554,7 +1554,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -1590,7 +1590,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -1655,7 +1655,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -1691,7 +1691,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -1727,7 +1727,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -1771,7 +1771,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -1807,7 +1807,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -1843,7 +1843,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -1893,7 +1893,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -1929,7 +1929,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -1965,7 +1965,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -1999,7 +1999,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -2035,7 +2035,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -2071,7 +2071,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -2105,7 +2105,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -2141,7 +2141,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -2177,7 +2177,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -2265,7 +2265,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -2301,7 +2301,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -2337,7 +2337,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -2657,7 +2657,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -2693,7 +2693,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -2729,7 +2729,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -2810,7 +2810,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -2846,7 +2846,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -2882,7 +2882,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -2926,7 +2926,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -2962,7 +2962,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -2998,7 +2998,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -3185,7 +3185,7 @@
     }
   },
   {
-    "type": "exponentiation_expression",
+    "type": "exp_expression",
     "named": true,
     "fields": {
       "left": {
@@ -3193,7 +3193,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -3229,7 +3229,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -3265,7 +3265,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -3299,8 +3299,8 @@
         "required": true,
         "types": [
           {
-            "type": "**",
-            "named": false
+            "type": "exp_op",
+            "named": true
           }
         ]
       },
@@ -3309,7 +3309,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -3345,7 +3345,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -3381,7 +3381,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -3421,7 +3421,7 @@
       "required": true,
       "types": [
         {
-          "type": "additive_expression",
+          "type": "add_expression",
           "named": true
         },
         {
@@ -3457,7 +3457,7 @@
           "named": true
         },
         {
-          "type": "exponentiation_expression",
+          "type": "exp_expression",
           "named": true
         },
         {
@@ -3493,7 +3493,7 @@
           "named": true
         },
         {
-          "type": "multiplicative_expression",
+          "type": "mul_expression",
           "named": true
         },
         {
@@ -3656,7 +3656,7 @@
         "required": false,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -3692,7 +3692,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -3728,7 +3728,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -3780,7 +3780,7 @@
         "required": false,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -3816,7 +3816,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -3852,7 +3852,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -4061,7 +4061,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -4097,7 +4097,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -4133,7 +4133,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -4267,7 +4267,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -4303,7 +4303,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -4339,7 +4339,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -4373,7 +4373,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -4409,7 +4409,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -4445,7 +4445,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -4485,7 +4485,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -4521,7 +4521,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -4557,7 +4557,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -4591,7 +4591,7 @@
         "required": false,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -4627,7 +4627,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -4663,7 +4663,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -4697,7 +4697,7 @@
         "required": false,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -4733,7 +4733,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -4769,7 +4769,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -4863,7 +4863,7 @@
       "required": false,
       "types": [
         {
-          "type": "additive_expression",
+          "type": "add_expression",
           "named": true
         },
         {
@@ -4899,7 +4899,7 @@
           "named": true
         },
         {
-          "type": "exponentiation_expression",
+          "type": "exp_expression",
           "named": true
         },
         {
@@ -4935,7 +4935,7 @@
           "named": true
         },
         {
-          "type": "multiplicative_expression",
+          "type": "mul_expression",
           "named": true
         },
         {
@@ -5216,7 +5216,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -5252,7 +5252,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -5288,7 +5288,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -5332,7 +5332,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -5368,7 +5368,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -5404,7 +5404,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -5444,7 +5444,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -5480,7 +5480,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -5516,7 +5516,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -5560,7 +5560,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -5596,7 +5596,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -5632,7 +5632,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -5682,7 +5682,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -5718,7 +5718,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -5754,7 +5754,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -5912,7 +5912,7 @@
     }
   },
   {
-    "type": "multiplicative_expression",
+    "type": "mul_expression",
     "named": true,
     "fields": {
       "left": {
@@ -5920,7 +5920,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -5956,7 +5956,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -5992,7 +5992,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -6026,7 +6026,7 @@
         "required": true,
         "types": [
           {
-            "type": "multiplicative_operator",
+            "type": "mul_op",
             "named": true
           }
         ]
@@ -6036,7 +6036,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -6072,7 +6072,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -6108,7 +6108,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -6140,7 +6140,7 @@
     }
   },
   {
-    "type": "multiplicative_operator",
+    "type": "mul_op",
     "named": true,
     "fields": {}
   },
@@ -6168,7 +6168,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -6204,7 +6204,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -6240,7 +6240,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -6630,7 +6630,7 @@
         "required": false,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -6666,7 +6666,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -6702,7 +6702,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -6768,7 +6768,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -6804,7 +6804,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -6840,7 +6840,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -6884,7 +6884,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -6920,7 +6920,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -6956,7 +6956,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -7170,7 +7170,7 @@
         "required": false,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -7206,7 +7206,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -7242,7 +7242,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -7418,7 +7418,7 @@
       "required": false,
       "types": [
         {
-          "type": "additive_expression",
+          "type": "add_expression",
           "named": true
         },
         {
@@ -7454,7 +7454,7 @@
           "named": true
         },
         {
-          "type": "exponentiation_expression",
+          "type": "exp_expression",
           "named": true
         },
         {
@@ -7490,7 +7490,7 @@
           "named": true
         },
         {
-          "type": "multiplicative_expression",
+          "type": "mul_expression",
           "named": true
         },
         {
@@ -7571,7 +7571,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -7607,7 +7607,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -7643,7 +7643,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -7976,7 +7976,7 @@
         "required": false,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -8012,7 +8012,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -8048,7 +8048,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -8202,7 +8202,7 @@
         "required": true,
         "types": [
           {
-            "type": "additive_expression",
+            "type": "add_expression",
             "named": true
           },
           {
@@ -8238,7 +8238,7 @@
             "named": true
           },
           {
-            "type": "exponentiation_expression",
+            "type": "exp_expression",
             "named": true
           },
           {
@@ -8274,7 +8274,7 @@
             "named": true
           },
           {
-            "type": "multiplicative_expression",
+            "type": "mul_expression",
             "named": true
           },
           {
@@ -8348,10 +8348,6 @@
   },
   {
     "type": "*",
-    "named": false
-  },
-  {
-    "type": "**",
     "named": false
   },
   {
@@ -8562,6 +8558,10 @@
   {
     "type": "event",
     "named": false
+  },
+  {
+    "type": "exp_op",
+    "named": true
   },
   {
     "type": "external",

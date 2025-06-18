@@ -20,9 +20,10 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (exponentiation_expression
+          value: (exp_expression
             left: (literal
               (number))
+            operator: (exp_op)
             right: (literal
               (number))))))))
 
@@ -48,12 +49,14 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (exponentiation_expression
+          value: (exp_expression
             left: (literal
               (number))
-            right: (exponentiation_expression
+            operator: (exp_op)
+            right: (exp_expression
               left: (literal
                 (number))
+              operator: (exp_op)
               right: (literal
                 (number)))))))))
 
@@ -79,13 +82,14 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (multiplicative_expression
+          value: (mul_expression
             left: (literal
               (number))
-            operator: (multiplicative_operator)
-            right: (exponentiation_expression
+            operator: (mul_op)
+            right: (exp_expression
               left: (literal
                 (number))
+              operator: (exp_op)
               right: (literal
                 (number)))))))))
 
@@ -111,13 +115,14 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (additive_expression
+          value: (add_expression
             left: (literal
               (number))
-            operator: (additive_operator)
-            right: (exponentiation_expression
+            operator: (add_op)
+            right: (exp_expression
               left: (literal
                 (number))
+              operator: (exp_op)
               right: (literal
                 (number)))))))))
 
@@ -143,10 +148,11 @@ contract C {
           declaration: (variable_declaration
             type: (int_type)
             name: (identifier))
-          value: (exponentiation_expression
+          value: (exp_expression
             left: (unary_expression
               argument: (literal
                 (number)))
+            operator: (exp_op)
             right: (literal
               (number))))))))
 
@@ -172,14 +178,15 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (exponentiation_expression
+          value: (exp_expression
             left: (tuple_expression
-              (additive_expression
+              (add_expression
                 left: (literal
                   (number))
-                operator: (additive_operator)
+                operator: (add_op)
                 right: (literal
                   (number))))
+            operator: (exp_op)
             right: (literal
               (number))))))))
 
@@ -195,8 +202,9 @@ uint256 constant MY_EXP = 2 ** 8;
   definition: (constant
     type: (uint_type)
     name: (identifier)
-    value: (exponentiation_expression
+    value: (exp_expression
       left: (literal
         (number))
+      operator: (exp_op)
       right: (literal
         (number)))))

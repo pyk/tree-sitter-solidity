@@ -37,10 +37,10 @@ function add(uint x, uint y) pure returns (uint) {
         type: (uint_type)))
     body: (block
       (return_statement
-        value: (additive_expression
+        value: (add_expression
           left: (primary_expression
             (identifier))
-          operator: (additive_operator)
+          operator: (add_op)
           right: (primary_expression
             (identifier)))))))
 
@@ -71,10 +71,10 @@ function mul(uint x, uint y) internal pure returns (uint) {
         type: (uint_type)))
     body: (block
       (return_statement
-        value: (multiplicative_expression
+        value: (mul_expression
           left: (primary_expression
             (identifier))
-          operator: (multiplicative_operator)
+          operator: (mul_op)
           right: (primary_expression
             (identifier)))))))
 

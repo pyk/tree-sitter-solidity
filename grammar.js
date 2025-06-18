@@ -484,6 +484,45 @@ module.exports = grammar({
       choice("wei", "gwei", "ether", "seconds", "minutes", "hours", "days"),
 
     //############################################################//
+    //                   Arithmetic expression                    //
+    //############################################################//
+
+    exp_expression: ($) =>
+      prec.right(
+        PREC.EXP,
+        seq(
+          field("left", $._expression),
+          field("operator", $.exp_op),
+          field("right", $._expression),
+        ),
+      ),
+
+    add_expression: ($) =>
+      prec.left(
+        PREC.ADD,
+        seq(
+          field("left", $._expression),
+          field("operator", $.add_op),
+          field("right", $._expression),
+        ),
+      ),
+
+    mul_expression: ($) =>
+      prec.left(
+        PREC.MULTIPLY,
+        seq(
+          field("left", $._expression),
+          field("operator", $.mul_op),
+          field("right", $._expression),
+        ),
+      ),
+
+    // Operators
+    add_op: ($) => choice("+", "-"),
+    mul_op: ($) => choice("*", "/", "%"),
+    exp_op: ($) => "**",
+
+    //############################################################//
     //                           Others                           //
     //############################################################//
 
@@ -890,13 +929,13 @@ module.exports = grammar({
     // │   │   ├── boolean_literal
     // │   │   └── hex_literal
     // │   └── identifier
-    // ├── additive_expression
+    // ├── add_expression
     // │   ├── left: _expression
-    // │   ├── operator: additive_operator
+    // │   ├── operator: add_op
     // │   └── right: _expression
-    // ├── multiplicative_expression
+    // ├── mul_expression
     // │   ├── left: _expression
-    // │   ├── operator: multiplicative_operator
+    // │   ├── operator: mul_op
     // │   └── right: _expression
     // ├── assignment_expression
     // │   ├── left: _expression
@@ -908,13 +947,19 @@ module.exports = grammar({
     /**
      * The main, hidden expression rule.
      * As a hidden rule, it doesn't appear in the AST. Instead, its chosen
-     * child (e.g., additive_expression) is hoisted into its place.
+     * child (e.g., add_expression) is hoisted into its place.
      */
     _expression: ($) =>
       choice(
         // Give direct literals the highest precedence in the expression tree.
         prec(2, alias($._literal, $.literal)),
 
+        // Arithmetic expression
+        $.add_expression,
+        $.mul_expression,
+        $.exp_expression,
+
+        // Others
         $.primary_expression,
         $.unary_expression,
         $.conditional_expression,
@@ -926,9 +971,6 @@ module.exports = grammar({
         $.index_range_access_expression,
         $.new_expression,
         $.assignment_expression,
-        $.additive_expression,
-        $.multiplicative_expression,
-        $.exponentiation_expression,
         $.shift_expression,
         $.tuple_expression,
         $.bitwise_and_expression,
@@ -984,6 +1026,8 @@ module.exports = grammar({
           ),
         ),
       ),
+
+    shift_operator: ($) => choice("<<", ">>", ">>>"),
 
     /**
      * A conditional (ternary) expression. e.g., `a ? b : c`
@@ -1100,30 +1144,6 @@ module.exports = grammar({
     new_expression: ($) =>
       prec.right(PREC.NEW, seq("new", field("type", $._type_name))),
 
-    /**
-     * Specific expression types for different operator precedence levels.
-     * This makes the AST much more descriptive.
-     */
-    additive_expression: ($) =>
-      prec.left(
-        PREC.ADD,
-        seq(
-          field("left", $._expression),
-          field("operator", $.additive_operator),
-          field("right", $._expression),
-        ),
-      ),
-
-    multiplicative_expression: ($) =>
-      prec.left(
-        PREC.MULTIPLY,
-        seq(
-          field("left", $._expression),
-          field("operator", $.multiplicative_operator),
-          field("right", $._expression),
-        ),
-      ),
-
     assignment_expression: ($) =>
       prec.right(
         PREC.ASSIGN,
@@ -1136,16 +1156,6 @@ module.exports = grammar({
               $.compound_assignment_operator,
             ),
           ),
-          field("right", $._expression),
-        ),
-      ),
-
-    exponentiation_expression: ($) =>
-      prec.right(
-        PREC.EXP,
-        seq(
-          field("left", $._expression),
-          field("operator", "**"),
           field("right", $._expression),
         ),
       ),
@@ -1234,9 +1244,6 @@ module.exports = grammar({
      * Named operator rules. Because these are named, they will appear
      * in the final syntax tree.
      */
-    additive_operator: ($) => choice("+", "-"),
-    multiplicative_operator: ($) => choice("*", "/", "%"),
-    shift_operator: ($) => choice("<<", ">>", ">>>"),
 
     /**
      * The simple assignment operator.

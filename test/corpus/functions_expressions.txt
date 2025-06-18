@@ -18,14 +18,14 @@ contract C {
           declaration: (variable_declaration
             type: (uint_type)
             name: (identifier))
-          value: (additive_expression
+          value: (add_expression
             left: (literal
               (number))
-            operator: (additive_operator)
-            right: (multiplicative_expression
+            operator: (add_op)
+            right: (mul_expression
               left: (literal
                 (number))
-              operator: (multiplicative_operator)
+              operator: (mul_op)
               right: (literal
                 (number)))))))))
 
