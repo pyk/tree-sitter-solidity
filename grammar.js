@@ -110,6 +110,32 @@ module.exports = grammar({
       ),
 
     //############################################################//
+    //                   Core & Semantic Tokens                   //
+    //############################################################//
+
+    /**
+     * The basic syntactic unit for a name. This is the "token" that the lexer
+     * recognizes. It is used throughout the grammar to represent any kind of
+     * name, from variables to functions to contract names.
+     */
+    identifier: ($) => /[a-zA-Z_]\w*/,
+
+    /**
+     * A semantic wrapper for an identifier that represents a named declaration.
+     * This rule uses `alias` to create a `(symbol)` node in the AST that
+     * contains an `(identifier)`. This provides a universal, queryable node
+     * for all named entities (functions, contracts, variables, etc.),
+     * making static analysis and tool-building much easier.
+     */
+    symbol: ($) => $.identifier,
+
+    // A named node for the `global` keyword
+    global: ($) => "global",
+
+    // A named node for the `*` keyword
+    wildcard: ($) => "*",
+
+    //############################################################//
     //                          License                           //
     //############################################################//
 
@@ -129,7 +155,7 @@ module.exports = grammar({
     license_identifier: ($) => /[\w\.-]+/,
 
     //############################################################//
-    //                           Pragma                           //
+    //                      Pragma directive                      //
     //############################################################//
 
     pragma: ($) =>
@@ -161,27 +187,7 @@ module.exports = grammar({
     version: ($) => token(/(\d+)(\.\d+)?(\.\d+)?/),
 
     //############################################################//
-    //                   Core & Semantic Tokens                   //
-    //############################################################//
-
-    /**
-     * The basic syntactic unit for a name. This is the "token" that the lexer
-     * recognizes. It is used throughout the grammar to represent any kind of
-     * name, from variables to functions to contract names.
-     */
-    identifier: ($) => /[a-zA-Z_]\w*/,
-
-    /**
-     * A semantic wrapper for an identifier that represents a named declaration.
-     * This rule uses `alias` to create a `(symbol)` node in the AST that
-     * contains an `(identifier)`. This provides a universal, queryable node
-     * for all named entities (functions, contracts, variables, etc.),
-     * making static analysis and tool-building much easier.
-     */
-    symbol: ($) => $.identifier,
-
-    //############################################################//
-    //                           Import                           //
+    //                      Import directive                      //
     //############################################################//
 
     import: ($) =>
@@ -225,29 +231,33 @@ module.exports = grammar({
       seq("*", "as", field("alias", $.symbol), "from", field("path", $.string)),
 
     //############################################################//
-    //                           Using                            //
+    //                      Using directive                       //
     //############################################################//
 
-    using: ($) =>
+    using: ($) => seq("using", choice($.using_library, $.using_function), ";"),
+
+    using_library: ($) =>
       seq(
-        "using",
-        choice(
-          field(
-            "declaration",
-            choice($.identifier_path, prec(1, $.identifier)),
-          ),
-          seq("{", commaSep(field("declaration", $.using_declaration)), "}"),
-        ),
+        field("library", $.symbol),
         "for",
-        field("target", choice($.wildcard_type, $._type_name)),
-        optional(field("global", $.global_using)),
-        ";",
+        field("target", choice($._type_name, $.wildcard)),
+        optional(field("global", $.global)),
+      ),
+
+    using_function: ($) =>
+      seq(
+        "{",
+        commaSep(field("declaration", $.using_declaration)),
+        "}",
+        "for",
+        field("target", choice($._type_name, $.wildcard)),
+        optional(field("global", $.global)),
       ),
 
     using_declaration: ($) =>
       seq(
-        field("name", $._using_function_path), // Use our precise path rule
-        optional(seq("as", field("operator", $.user_definable_operator))),
+        field("name", $._using_function_path),
+        optional(seq("as", field("operator", $.using_op))),
       ),
 
     _using_function_path: ($) =>
@@ -256,10 +266,7 @@ module.exports = grammar({
     qualified_function_name: ($) =>
       seq(field("scope", $.identifier), ".", field("name", $.identifier)),
 
-    // A named node for the `global` keyword
-    global_using: ($) => "global",
-
-    user_definable_operator: ($) =>
+    using_op: ($) =>
       choice(
         "&",
         "~",
@@ -277,8 +284,6 @@ module.exports = grammar({
         "<=",
         "!=",
       ),
-
-    wildcard_type: ($) => "*",
 
     //************************************************************//
     //                          Comments                          //
