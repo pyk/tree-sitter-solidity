@@ -56,9 +56,9 @@ contract MyToken is ERC20("My Token", "MTK") {}
         name: (identifier)
         arguments: (argument_list
           argument: (literal
-            (string_literal))
+            (string))
           argument: (literal
-            (string_literal)))))))
+            (string)))))))
 
 ==================
 Contract with empty constructor arguments
@@ -94,9 +94,9 @@ contract MegaContract is Ownable, ERC20("Mega", "MGA"), Lockable() {}
         name: (identifier)
         arguments: (argument_list
           argument: (literal
-            (string_literal))
+            (string))
           argument: (literal
-            (string_literal))))
+            (string))))
       parent: (parent
         name: (identifier)
         arguments: (argument_list)))))

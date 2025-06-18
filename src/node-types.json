@@ -1490,7 +1490,7 @@
     }
   },
   {
-    "type": "boolean_literal",
+    "type": "boolean",
     "named": true,
     "fields": {}
   },
@@ -4241,7 +4241,7 @@
         "required": true,
         "types": [
           {
-            "type": "string_literal",
+            "type": "string",
             "named": true
           }
         ]
@@ -5162,27 +5162,27 @@
       "required": true,
       "types": [
         {
-          "type": "boolean_literal",
+          "type": "boolean",
           "named": true
         },
         {
-          "type": "hex_literal",
+          "type": "hex",
           "named": true
         },
         {
-          "type": "hex_string_literal",
+          "type": "hex_string",
           "named": true
         },
         {
-          "type": "number_literal",
+          "type": "number",
           "named": true
         },
         {
-          "type": "string_literal",
+          "type": "string",
           "named": true
         },
         {
-          "type": "unicode_string_literal",
+          "type": "unicode_string",
           "named": true
         }
       ]
@@ -5197,7 +5197,7 @@
       "required": true,
       "types": [
         {
-          "type": "number_literal",
+          "type": "number",
           "named": true
         },
         {
@@ -8596,11 +8596,11 @@
     "named": false
   },
   {
-    "type": "hex_literal",
+    "type": "hex",
     "named": true
   },
   {
-    "type": "hex_string_literal",
+    "type": "hex_string",
     "named": true
   },
   {
@@ -8677,7 +8677,7 @@
     "named": false
   },
   {
-    "type": "number_literal",
+    "type": "number",
     "named": true
   },
   {
@@ -8729,7 +8729,7 @@
     "named": false
   },
   {
-    "type": "string_literal",
+    "type": "string",
     "named": true
   },
   {
@@ -8757,7 +8757,7 @@
     "named": true
   },
   {
-    "type": "unicode_string_literal",
+    "type": "unicode_string",
     "named": true
   },
   {

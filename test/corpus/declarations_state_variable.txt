@@ -32,7 +32,7 @@ contract C {
       mutability: (mutability)
       name: (identifier)
       value: (literal
-        (string_literal)))))
+        (string)))))
 
 ==================
 Immutable state variable
@@ -86,4 +86,4 @@ contract C is I {
       override: (override_specifier)
       name: (identifier)
       value: (literal
-        (string_literal)))))
+        (string)))))

@@ -41,7 +41,7 @@ contract C {
             type: (uint_type)
             name: (identifier))
           value: (literal
-            (number_literal)))))))
+            (number)))))))
 
 ==================
 Tuple declaration
@@ -69,8 +69,8 @@ contract C {
               name: (identifier)))
           value: (tuple_expression
             (literal
-              (number_literal))
+              (number))
             (literal
-              (boolean_literal))
+              (boolean))
             (literal
-              (number_literal))))))))
+              (number))))))))

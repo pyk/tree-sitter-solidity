@@ -43,7 +43,7 @@ contract C {
       body: (block
         (return_statement
           value: (literal
-            (number_literal)))))))
+            (number)))))))
 
 ==================
 Return with a tuple
@@ -72,6 +72,6 @@ contract C {
         (return_statement
           value: (tuple_expression
             (literal
-              (boolean_literal))
+              (boolean))
             (literal
-              (number_literal))))))))
+              (number))))))))

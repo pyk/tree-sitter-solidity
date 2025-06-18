@@ -87,4 +87,4 @@ contract C {
             base: (primary_expression
               (identifier))
             index: (literal
-              (number_literal))))))))
+              (number))))))))

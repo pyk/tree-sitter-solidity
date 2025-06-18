@@ -24,14 +24,14 @@ contract C {
             type: (uint_type)
             name: (identifier))
           value: (literal
-            (number_literal)))
+            (number)))
         (while_statement
           condition: (comparison_expression
             left: (primary_expression
               (identifier))
             operator: (comparison_operator)
             right: (literal
-              (number_literal)))
+              (number)))
           body: (block
             (expression_statement
               (unary_expression

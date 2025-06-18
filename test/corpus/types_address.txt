@@ -174,5 +174,5 @@ contract C {
             arguments: (argument_list
               argument: (primary_expression
                 (literal_with_subdenomination
-                  (number_literal)
+                  (number)
                   (subdenomination))))))))))

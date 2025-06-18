@@ -61,7 +61,7 @@ contract C {
       body: (block
         (return_statement
           value: (literal
-            (boolean_literal)))))))
+            (boolean)))))))
 
 ==================
 Bool type as a local variable
@@ -87,4 +87,4 @@ contract C {
             type: (bool_type)
             name: (identifier))
           value: (literal
-            (boolean_literal)))))))
+            (boolean)))))))

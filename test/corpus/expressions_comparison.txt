@@ -22,10 +22,10 @@ contract C {
             name: (identifier))
           value: (equality_expression
             left: (literal
-              (number_literal))
+              (number))
             operator: (equality_operator)
             right: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Simple comparison expression
@@ -51,10 +51,10 @@ contract C {
             name: (identifier))
           value: (comparison_expression
             left: (literal
-              (number_literal))
+              (number))
             operator: (comparison_operator)
             right: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Precedence of comparison vs equality
@@ -82,13 +82,13 @@ contract C {
           value: (equality_expression
             left: (comparison_expression
               left: (literal
-                (number_literal))
+                (number))
               operator: (comparison_operator)
               right: (literal
-                (number_literal)))
+                (number)))
             operator: (equality_operator)
             right: (literal
-              (boolean_literal))))))))
+              (boolean))))))))
 
 ==================
 Interaction with bitwise operators
@@ -116,13 +116,13 @@ contract C {
           value: (bitwise_or_expression
             left: (comparison_expression
               left: (literal
-                (number_literal))
+                (number))
               operator: (comparison_operator)
               right: (literal
-                (number_literal)))
+                (number)))
             right: (comparison_expression
               left: (literal
-                (number_literal))
+                (number))
               operator: (comparison_operator)
               right: (literal
-                (number_literal)))))))))
+                (number)))))))))

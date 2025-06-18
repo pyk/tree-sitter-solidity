@@ -33,7 +33,7 @@ contract C {
       type: (array_type
         base: (address_type)
         size: (literal
-          (number_literal)))
+          (number)))
       name: (identifier))))
 
 ==================
@@ -54,7 +54,7 @@ contract C {
         base: (array_type
           base: (bool_type)
           size: (literal
-            (number_literal))))
+            (number))))
       name: (identifier))))
 
 ==================
@@ -109,7 +109,7 @@ contract C {
           type: (array_type
             base: (bool_type)
             size: (literal
-              (number_literal)))
+              (number)))
           location: (data_location)
           name: (identifier)))
       visibility: (visibility)

@@ -63,7 +63,7 @@ contract C {
             argument: (primary_expression
               (identifier))
             argument: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Revert with a namespaced error
@@ -80,7 +80,7 @@ contract C {
 
 (source_file
   directive: (import
-    path: (string_literal))
+    path: (string))
   definition: (contract
     name: (identifier)
     function: (function

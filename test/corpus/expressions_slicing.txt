@@ -30,9 +30,9 @@ contract C {
             base: (primary_expression
               (identifier))
             start: (literal
-              (number_literal))
+              (number))
             end: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Slice with only end
@@ -66,7 +66,7 @@ contract C {
             base: (primary_expression
               (identifier))
             end: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Slice with only start
@@ -100,7 +100,7 @@ contract C {
             base: (primary_expression
               (identifier))
             start: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Interaction with member access
@@ -144,6 +144,6 @@ contract C {
                 (identifier))
               member: (identifier))
             start: (literal
-              (number_literal))
+              (number))
             end: (literal
-              (number_literal))))))))
+              (number))))))))

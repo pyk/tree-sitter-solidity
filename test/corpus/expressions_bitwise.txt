@@ -22,9 +22,9 @@ contract C {
             name: (identifier))
           value: (bitwise_and_expression
             left: (literal
-              (hex_literal))
+              (hex))
             right: (literal
-              (hex_literal))))))))
+              (hex))))))))
 
 ==================
 Bitwise operator precedence
@@ -55,15 +55,15 @@ contract C {
             name: (identifier))
           value: (bitwise_or_expression
             left: (literal
-              (hex_literal))
+              (hex))
             right: (bitwise_xor_expression
               left: (literal
-                (hex_literal))
+                (hex))
               right: (bitwise_and_expression
                 left: (literal
-                  (hex_literal))
+                  (hex))
                 right: (literal
-                  (hex_literal))))))))))
+                  (hex))))))))))
 
 ==================
 Left-associativity of bitwise operators
@@ -90,11 +90,11 @@ contract C {
           value: (bitwise_and_expression
             left: (bitwise_and_expression
               left: (literal
-                (hex_literal))
+                (hex))
               right: (literal
-                (hex_literal)))
+                (hex)))
             right: (literal
-              (hex_literal))))))))
+              (hex))))))))
 
 ==================
 Interaction with shift operators
@@ -122,9 +122,9 @@ contract C {
           value: (bitwise_and_expression
             left: (shift_expression
               left: (literal
-                (number_literal))
+                (number))
               operator: (shift_operator)
               right: (literal
-                (number_literal)))
+                (number)))
             right: (literal
-              (number_literal))))))))
+              (number))))))))

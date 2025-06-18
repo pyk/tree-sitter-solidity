@@ -48,7 +48,7 @@ contract C {
             name: (identifier))
           value: (inline_array_expression
             (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Inline array with multiple elements
@@ -75,11 +75,11 @@ contract C {
             name: (identifier))
           value: (inline_array_expression
             (literal
-              (string_literal))
+              (string))
             (literal
-              (string_literal))
+              (string))
             (literal
-              (string_literal))))))))
+              (string))))))))
 
 ==================
 Nested inline array
@@ -108,11 +108,11 @@ contract C {
           value: (inline_array_expression
             (inline_array_expression
               (literal
-                (number_literal))
+                (number))
               (literal
-                (number_literal)))
+                (number)))
             (inline_array_expression
               (literal
-                (number_literal))
+                (number))
               (literal
-                (number_literal)))))))))
+                (number)))))))))

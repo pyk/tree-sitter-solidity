@@ -20,14 +20,14 @@ contract C {
             name: (identifier))
           value: (additive_expression
             left: (literal
-              (number_literal))
+              (number))
             operator: (additive_operator)
             right: (multiplicative_expression
               left: (literal
-                (number_literal))
+                (number))
               operator: (multiplicative_operator)
               right: (literal
-                (number_literal)))))))))
+                (number)))))))))
 
 ==================
 Unary expressions
@@ -61,7 +61,7 @@ contract C {
             name: (identifier))
           value: (unary_expression
             argument: (literal
-              (boolean_literal))))
+              (boolean))))
         (variable_declaration_statement
           declaration: (variable_declaration
             type: (uint_type)
@@ -116,9 +116,9 @@ contract C {
             condition: (primary_expression
               (identifier))
             consequence: (literal
-              (number_literal))
+              (number))
             alternative: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Nested conditional expression
@@ -151,14 +151,14 @@ contract C {
             condition: (primary_expression
               (identifier))
             consequence: (literal
-              (number_literal))
+              (number))
             alternative: (conditional_expression
               condition: (primary_expression
                 (identifier))
               consequence: (literal
-                (number_literal))
+                (number))
               alternative: (literal
-                (number_literal)))))))))
+                (number)))))))))
 
 ==================
 Comprehensive member access expressions
@@ -246,7 +246,7 @@ contract C {
             base: (primary_expression
               (identifier))
             index: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 New expression

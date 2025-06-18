@@ -22,10 +22,10 @@ contract C {
             name: (identifier))
           value: (shift_expression
             left: (literal
-              (number_literal))
+              (number))
             operator: (shift_operator)
             right: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Left-associativity of shift operators
@@ -52,13 +52,13 @@ contract C {
           value: (shift_expression
             left: (shift_expression
               left: (literal
-                (number_literal))
+                (number))
               operator: (shift_operator)
               right: (literal
-                (number_literal)))
+                (number)))
             operator: (shift_operator)
             right: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Precedence below addition
@@ -85,10 +85,10 @@ contract C {
           value: (shift_expression
             left: (additive_expression
               left: (literal
-                (number_literal))
+                (number))
               operator: (additive_operator)
               right: (literal
-                (number_literal)))
+                (number)))
             operator: (shift_operator)
             right: (literal
-              (number_literal))))))))
+              (number))))))))

@@ -21,9 +21,9 @@ contract C {
               (identifier))
             arguments: (argument_list
               argument: (literal
-                (number_literal))
+                (number))
               argument: (literal
-                (boolean_literal)))))))))
+                (boolean)))))))))
 
 ==================
 Function call with value option
@@ -50,7 +50,7 @@ contract C {
               (named_argument
                 name: (identifier)
                 value: (literal
-                  (number_literal))))
+                  (number))))
             arguments: (argument_list)))))))
 
 ==================
@@ -78,7 +78,7 @@ contract C {
               (named_argument
                 name: (identifier)
                 value: (literal
-                  (number_literal))))
+                  (number))))
             arguments: (argument_list)))))))
 
 ==================
@@ -106,11 +106,11 @@ contract C {
               (named_argument
                 name: (identifier)
                 value: (literal
-                  (number_literal)))
+                  (number)))
               (named_argument
                 name: (identifier)
                 value: (literal
-                  (number_literal))))
+                  (number))))
             arguments: (argument_list)))))))
 
 ==================
@@ -138,10 +138,10 @@ contract C {
               (named_argument
                 name: (identifier)
                 value: (literal
-                  (number_literal))))
+                  (number))))
             arguments: (argument_list
               argument: (literal
-                (boolean_literal)))))))))
+                (boolean)))))))))
 
 ==================
 Function call options on a member access
@@ -169,5 +169,5 @@ contract C {
               (named_argument
                 name: (identifier)
                 value: (literal
-                  (number_literal))))
+                  (number))))
             arguments: (argument_list)))))))

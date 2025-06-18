@@ -107,7 +107,7 @@ contract C {
 
 (source_file
   directive: (import
-    path: (string_literal))
+    path: (string))
   definition: (contract
     name: (identifier)
     function: (function

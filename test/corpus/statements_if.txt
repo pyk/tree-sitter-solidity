@@ -27,7 +27,7 @@ contract C {
               (identifier))
             operator: (comparison_operator)
             right: (literal
-              (number_literal)))
+              (number)))
           consequence: (block
             (expression_statement
               (assignment_expression
@@ -35,7 +35,7 @@ contract C {
                   (identifier))
                 operator: (simple_assignment_operator)
                 right: (literal
-                  (number_literal))))))))))
+                  (number))))))))))
 
 ==================
 If-else statement
@@ -68,7 +68,7 @@ contract C {
               (identifier))
             operator: (comparison_operator)
             right: (literal
-              (number_literal)))
+              (number)))
           consequence: (block
             (expression_statement
               (assignment_expression
@@ -76,7 +76,7 @@ contract C {
                   (identifier))
                 operator: (simple_assignment_operator)
                 right: (literal
-                  (number_literal)))))
+                  (number)))))
           alternative: (block
             (expression_statement
               (assignment_expression
@@ -84,7 +84,7 @@ contract C {
                   (identifier))
                 operator: (simple_assignment_operator)
                 right: (literal
-                  (number_literal))))))))))
+                  (number))))))))))
 
 ==================
 If-else if-else statement chain
@@ -119,7 +119,7 @@ contract C {
               (identifier))
             operator: (equality_operator)
             right: (literal
-              (number_literal)))
+              (number)))
           consequence: (block
             (expression_statement
               (assignment_expression
@@ -127,14 +127,14 @@ contract C {
                   (identifier))
                 operator: (simple_assignment_operator)
                 right: (literal
-                  (number_literal)))))
+                  (number)))))
           alternative: (if_statement
             condition: (equality_expression
               left: (primary_expression
                 (identifier))
               operator: (equality_operator)
               right: (literal
-                (number_literal)))
+                (number)))
             consequence: (block
               (expression_statement
                 (assignment_expression
@@ -142,7 +142,7 @@ contract C {
                     (identifier))
                   operator: (simple_assignment_operator)
                   right: (literal
-                    (number_literal)))))
+                    (number)))))
             alternative: (block
               (expression_statement
                 (assignment_expression
@@ -150,4 +150,4 @@ contract C {
                     (identifier))
                   operator: (simple_assignment_operator)
                   right: (literal
-                    (number_literal)))))))))))
+                    (number)))))))))))

@@ -26,13 +26,13 @@ contract C {
               type: (uint_type)
               name: (identifier))
             value: (literal
-              (number_literal)))
+              (number)))
           condition: (comparison_expression
             left: (primary_expression
               (identifier))
             operator: (comparison_operator)
             right: (literal
-              (number_literal)))
+              (number)))
           update: (unary_expression
             argument: (primary_expression
               (identifier)))
@@ -43,6 +43,6 @@ contract C {
                   (identifier))
                 operator: (equality_operator)
                 right: (literal
-                  (number_literal)))
+                  (number)))
               consequence: (block
                 (continue_statement)))))))))

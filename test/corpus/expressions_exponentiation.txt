@@ -22,9 +22,9 @@ contract C {
             name: (identifier))
           value: (exponentiation_expression
             left: (literal
-              (number_literal))
+              (number))
             right: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Right-associativity of exponentiation
@@ -50,12 +50,12 @@ contract C {
             name: (identifier))
           value: (exponentiation_expression
             left: (literal
-              (number_literal))
+              (number))
             right: (exponentiation_expression
               left: (literal
-                (number_literal))
+                (number))
               right: (literal
-                (number_literal)))))))))
+                (number)))))))))
 
 ==================
 Precedence over multiplication
@@ -81,13 +81,13 @@ contract C {
             name: (identifier))
           value: (multiplicative_expression
             left: (literal
-              (number_literal))
+              (number))
             operator: (multiplicative_operator)
             right: (exponentiation_expression
               left: (literal
-                (number_literal))
+                (number))
               right: (literal
-                (number_literal)))))))))
+                (number)))))))))
 
 ==================
 Precedence over addition
@@ -113,13 +113,13 @@ contract C {
             name: (identifier))
           value: (additive_expression
             left: (literal
-              (number_literal))
+              (number))
             operator: (additive_operator)
             right: (exponentiation_expression
               left: (literal
-                (number_literal))
+                (number))
               right: (literal
-                (number_literal)))))))))
+                (number)))))))))
 
 ==================
 Interaction with unary minus
@@ -146,9 +146,9 @@ contract C {
           value: (exponentiation_expression
             left: (unary_expression
               argument: (literal
-                (number_literal)))
+                (number)))
             right: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Parentheses overriding precedence
@@ -176,12 +176,12 @@ contract C {
             left: (tuple_expression
               (additive_expression
                 left: (literal
-                  (number_literal))
+                  (number))
                 operator: (additive_operator)
                 right: (literal
-                  (number_literal))))
+                  (number))))
             right: (literal
-              (number_literal))))))))
+              (number))))))))
 
 ==================
 Top-level constant with exponentiation
@@ -197,6 +197,6 @@ uint256 constant MY_EXP = 2 ** 8;
     name: (identifier)
     value: (exponentiation_expression
       left: (literal
-        (number_literal))
+        (number))
       right: (literal
-        (number_literal)))))
+        (number)))))

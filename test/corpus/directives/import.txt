@@ -8,7 +8,7 @@ import "./MyFile.sol";
 
 (source_file
   directive: (import
-    path: (string_literal)))
+    path: (string)))
 
 ==================
 Import with alias
@@ -21,7 +21,7 @@ import * as MyLib from "./MyLib.sol";
 (source_file
   directive: (import
     alias: (identifier)
-    path: (string_literal)))
+    path: (string)))
 
 ==================
 Import with destructured symbols
@@ -39,7 +39,7 @@ import {symbol1, symbol2 as alias2} from "./MyFile.sol";
       (symbol
         name: (identifier)
         alias: (identifier)))
-    path: (string_literal)))
+    path: (string)))
 
 ==================
 Multiple Imports
@@ -53,7 +53,7 @@ import * as Utils from "./Utils.sol";
 
 (source_file
   directive: (import
-    path: (string_literal))
+    path: (string))
   directive: (import
     symbols: (symbol_list
       (symbol
@@ -61,7 +61,7 @@ import * as Utils from "./Utils.sol";
       (symbol
         name: (identifier)
         alias: (identifier)))
-    path: (string_literal))
+    path: (string))
   directive: (import
     alias: (identifier)
-    path: (string_literal)))
+    path: (string)))

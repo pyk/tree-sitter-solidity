@@ -170,22 +170,18 @@ module.exports = grammar({
           // e.g., import "path/to/file.sol";
           // e.g., import "path/to/file.sol" as MyContract;
           seq(
-            field("path", $.string_literal),
+            field("path", $.string),
             optional(seq("as", field("alias", $.identifier))),
           ),
           // e.g., import {symbol1 as alias, symbol2} from "path/to/file.sol";
-          seq(
-            field("symbols", $.symbol_list),
-            "from",
-            field("path", $.string_literal),
-          ),
+          seq(field("symbols", $.symbol_list), "from", field("path", $.string)),
           // e.g., import * as MyLib from "path/to/file.sol";
           seq(
             "*",
             "as",
             field("alias", $.identifier),
             "from",
-            field("path", $.string_literal),
+            field("path", $.string),
           ),
         ),
         ";",
@@ -448,9 +444,48 @@ module.exports = grammar({
         ),
       ),
 
-    //##########################################################//
-    //                          Others                          //
-    //##########################################################//
+    //############################################################//
+    //                          Literal                           //
+    //############################################################//
+
+    /**
+     * A literal value, such as a number, string, boolean, or address.
+     */
+    literal: ($) =>
+      choice(
+        $.number,
+        $.string,
+        $.boolean,
+        $.hex,
+        $.hex_string,
+        $.unicode_string,
+      ),
+
+    _literal: ($) =>
+      choice(
+        $.number,
+        $.string,
+        $.boolean,
+        $.hex,
+        $.hex_string,
+        $.unicode_string,
+      ),
+
+    boolean: ($) => choice("true", "false"),
+    hex: ($) => /0x[0-9a-fA-F]+/,
+    hex_string: ($) => token(seq("hex", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
+    unicode_string: ($) =>
+      token(seq("unicode", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
+    number: ($) => /\d+/,
+    string: ($) => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
+
+    literal_with_subdenomination: ($) => seq($.number, $.subdenomination),
+    subdenomination: ($) =>
+      choice("wei", "gwei", "ether", "seconds", "minutes", "hours", "days"),
+
+    //############################################################//
+    //                           Others                           //
+    //############################################################//
 
     function: ($) =>
       seq(
@@ -850,8 +885,8 @@ module.exports = grammar({
     // _expression
     // ├── primary_expression
     // │   ├── literal
-    // │   │   ├── number_literal
-    // │   │   ├── string_literal
+    // │   │   ├── number
+    // │   │   ├── string
     // │   │   ├── boolean_literal
     // │   │   └── hex_literal
     // │   └── identifier
@@ -914,12 +949,6 @@ module.exports = grammar({
 
     primary_expression: ($) =>
       choice($.literal_with_subdenomination, prec(1, $.identifier)),
-
-    literal_with_subdenomination: ($) =>
-      seq($.number_literal, $.subdenomination),
-
-    subdenomination: ($) =>
-      choice("wei", "gwei", "ether", "seconds", "minutes", "hours", "days"),
 
     /**
      * A unary expression, handling both prefix and suffix operators.
@@ -1355,37 +1384,6 @@ module.exports = grammar({
     state_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
     data_location: ($) => choice("memory", "storage", "calldata"),
 
-    /**
-     * A literal value, such as a number, string, boolean, or address.
-     */
-    literal: ($) =>
-      choice(
-        $.number_literal,
-        $.string_literal,
-        $.boolean_literal,
-        $.hex_literal,
-        $.hex_string_literal,
-        $.unicode_string_literal,
-      ),
-
-    _literal: ($) =>
-      choice(
-        $.number_literal,
-        $.string_literal,
-        $.boolean_literal,
-        $.hex_literal,
-        $.hex_string_literal,
-        $.unicode_string_literal,
-      ),
-
-    boolean_literal: ($) => choice("true", "false"),
-    hex_literal: ($) => /0x[0-9a-fA-F]+/,
-    hex_string_literal: ($) =>
-      token(seq("hex", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
-    unicode_string_literal: ($) =>
-      token(seq("unicode", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
-    number_literal: ($) => /\d+/,
-    string_literal: ($) => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
     identifier: ($) => /[a-zA-Z_]\w*/,
     virtual: ($) => "virtual",
   },
