@@ -79,7 +79,7 @@ tree-sitter test -r --update
 Run individual test file:
 
 ```shell
-tree-sitter test --update -r --file-name pragma.txt
+tree-sitter generate && tree-sitter test --update --file-name pragma.txt
 ```
 
 ## References

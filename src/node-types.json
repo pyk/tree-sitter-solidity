@@ -3445,6 +3445,32 @@
     }
   },
   {
+    "type": "file_import",
+    "named": true,
+    "fields": {
+      "alias": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "path": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "for_statement",
     "named": true,
     "fields": {
@@ -4056,33 +4082,46 @@
   {
     "type": "import",
     "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "file_import",
+          "named": true
+        },
+        {
+          "type": "symbol_import",
+          "named": true
+        },
+        {
+          "type": "wildcard_import",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "imported_symbol",
+    "named": true,
     "fields": {
       "alias": {
         "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "identifier",
+            "type": "symbol",
             "named": true
           }
         ]
       },
-      "path": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "string",
-            "named": true
-          }
-        ]
-      },
-      "symbols": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "symbol_list",
+            "type": "symbol",
             "named": true
           }
         ]
@@ -7071,42 +7110,42 @@
   {
     "type": "symbol",
     "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "symbol_import",
+    "named": true,
     "fields": {
-      "alias": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "name": {
+      "path": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "symbol": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "imported_symbol",
             "named": true
           }
         ]
       }
-    }
-  },
-  {
-    "type": "symbol_list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "symbol",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -7967,6 +8006,32 @@
           },
           {
             "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "wildcard_import",
+    "named": true,
+    "fields": {
+      "alias": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "path": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
             "named": true
           }
         ]

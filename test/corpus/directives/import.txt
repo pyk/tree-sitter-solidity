@@ -1,5 +1,5 @@
 ==================
-Simple Import
+File Import
 ==================
 
 import "./MyFile.sol";
@@ -8,10 +8,26 @@ import "./MyFile.sol";
 
 (source_file
   directive: (import
-    path: (string)))
+    (file_import
+      path: (string))))
 
 ==================
-Import with alias
+File Import with File Alias
+==================
+
+import "./MyLib.sol" as MyLib;
+
+---
+
+(source_file
+  directive: (import
+    (file_import
+      path: (string)
+      alias: (symbol
+        (identifier)))))
+
+==================
+Wildcard Alias Import
 ==================
 
 import * as MyLib from "./MyLib.sol";
@@ -20,11 +36,13 @@ import * as MyLib from "./MyLib.sol";
 
 (source_file
   directive: (import
-    alias: (identifier)
-    path: (string)))
+    (wildcard_import
+      alias: (symbol
+        (identifier))
+      path: (string))))
 
 ==================
-Import with destructured symbols
+Symbol Import
 ==================
 
 import {symbol1, symbol2 as alias2} from "./MyFile.sol";
@@ -33,13 +51,16 @@ import {symbol1, symbol2 as alias2} from "./MyFile.sol";
 
 (source_file
   directive: (import
-    symbols: (symbol_list
-      (symbol
-        name: (identifier))
-      (symbol
-        name: (identifier)
-        alias: (identifier)))
-    path: (string)))
+    (symbol_import
+      symbol: (imported_symbol
+        name: (symbol
+          (identifier)))
+      symbol: (imported_symbol
+        name: (symbol
+          (identifier))
+        alias: (symbol
+          (identifier)))
+      path: (string))))
 
 ==================
 Multiple Imports
@@ -53,15 +74,21 @@ import * as Utils from "./Utils.sol";
 
 (source_file
   directive: (import
-    path: (string))
+    (file_import
+      path: (string)))
   directive: (import
-    symbols: (symbol_list
-      (symbol
-        name: (identifier))
-      (symbol
-        name: (identifier)
-        alias: (identifier)))
-    path: (string))
+    (symbol_import
+      symbol: (imported_symbol
+        name: (symbol
+          (identifier)))
+      symbol: (imported_symbol
+        name: (symbol
+          (identifier))
+        alias: (symbol
+          (identifier)))
+      path: (string)))
   directive: (import
-    alias: (identifier)
-    path: (string)))
+    (wildcard_import
+      alias: (symbol
+        (identifier))
+      path: (string))))

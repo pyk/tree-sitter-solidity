@@ -296,6 +296,14 @@
         "value": "(\\d+)(\\.\\d+)?(\\.\\d+)?"
       }
     },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z_]\\w*"
+    },
+    "symbol": {
+      "type": "SYMBOL",
+      "name": "identifier"
+    },
     "import": {
       "type": "SEQ",
       "members": [
@@ -307,100 +315,16 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "FIELD",
-                  "name": "path",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "string"
-                  }
-                },
-                {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "SEQ",
-                      "members": [
-                        {
-                          "type": "STRING",
-                          "value": "as"
-                        },
-                        {
-                          "type": "FIELD",
-                          "name": "alias",
-                          "content": {
-                            "type": "SYMBOL",
-                            "name": "identifier"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BLANK"
-                    }
-                  ]
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "file_import"
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "FIELD",
-                  "name": "symbols",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "symbol_list"
-                  }
-                },
-                {
-                  "type": "STRING",
-                  "value": "from"
-                },
-                {
-                  "type": "FIELD",
-                  "name": "path",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "string"
-                  }
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "symbol_import"
             },
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "*"
-                },
-                {
-                  "type": "STRING",
-                  "value": "as"
-                },
-                {
-                  "type": "FIELD",
-                  "name": "alias",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "identifier"
-                  }
-                },
-                {
-                  "type": "STRING",
-                  "value": "from"
-                },
-                {
-                  "type": "FIELD",
-                  "name": "path",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "string"
-                  }
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "wildcard_import"
             }
           ]
         },
@@ -410,53 +334,15 @@
         }
       ]
     },
-    "symbol_list": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "{"
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "symbol"
-            },
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": ","
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "symbol"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": "}"
-        }
-      ]
-    },
-    "symbol": {
+    "file_import": {
       "type": "SEQ",
       "members": [
         {
           "type": "FIELD",
-          "name": "name",
+          "name": "path",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "string"
           }
         },
         {
@@ -474,7 +360,7 @@
                   "name": "alias",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "identifier"
+                    "name": "symbol"
                   }
                 }
               ]
@@ -483,6 +369,135 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "symbol_import": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "symbol",
+              "content": {
+                "type": "SYMBOL",
+                "name": "imported_symbol"
+              }
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": ","
+                  },
+                  {
+                    "type": "FIELD",
+                    "name": "symbol",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "imported_symbol"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        },
+        {
+          "type": "STRING",
+          "value": "from"
+        },
+        {
+          "type": "FIELD",
+          "name": "path",
+          "content": {
+            "type": "SYMBOL",
+            "name": "string"
+          }
+        }
+      ]
+    },
+    "imported_symbol": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "symbol"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "as"
+                },
+                {
+                  "type": "FIELD",
+                  "name": "alias",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "symbol"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "wildcard_import": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "*"
+        },
+        {
+          "type": "STRING",
+          "value": "as"
+        },
+        {
+          "type": "FIELD",
+          "name": "alias",
+          "content": {
+            "type": "SYMBOL",
+            "name": "symbol"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "from"
+        },
+        {
+          "type": "FIELD",
+          "name": "path",
+          "content": {
+            "type": "SYMBOL",
+            "name": "string"
+          }
         }
       ]
     },
@@ -4842,10 +4857,6 @@
           "value": "calldata"
         }
       ]
-    },
-    "identifier": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z_]\\w*"
     },
     "virtual": {
       "type": "STRING",

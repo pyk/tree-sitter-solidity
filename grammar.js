@@ -161,6 +161,26 @@ module.exports = grammar({
     version: ($) => token(/(\d+)(\.\d+)?(\.\d+)?/),
 
     //############################################################//
+    //                   Core & Semantic Tokens                   //
+    //############################################################//
+
+    /**
+     * The basic syntactic unit for a name. This is the "token" that the lexer
+     * recognizes. It is used throughout the grammar to represent any kind of
+     * name, from variables to functions to contract names.
+     */
+    identifier: ($) => /[a-zA-Z_]\w*/,
+
+    /**
+     * A semantic wrapper for an identifier that represents a named declaration.
+     * This rule uses `alias` to create a `(symbol)` node in the AST that
+     * contains an `(identifier)`. This provides a universal, queryable node
+     * for all named entities (functions, contracts, variables, etc.),
+     * making static analysis and tool-building much easier.
+     */
+    symbol: ($) => $.identifier,
+
+    //############################################################//
     //                           Import                           //
     //############################################################//
 
@@ -168,33 +188,41 @@ module.exports = grammar({
       seq(
         "import",
         choice(
-          // e.g., import "path/to/file.sol";
-          // e.g., import "path/to/file.sol" as MyContract;
-          seq(
-            field("path", $.string),
-            optional(seq("as", field("alias", $.identifier))),
-          ),
-          // e.g., import {symbol1 as alias, symbol2} from "path/to/file.sol";
-          seq(field("symbols", $.symbol_list), "from", field("path", $.string)),
-          // e.g., import * as MyLib from "path/to/file.sol";
-          seq(
-            "*",
-            "as",
-            field("alias", $.identifier),
-            "from",
-            field("path", $.string),
-          ),
+          // e.g. import "./MyFile.sol"
+          // e.g. import "./MyLib.sol" as MyLib;
+          $.file_import,
+          // e.g. import {symbol1, symbol2 as alias2} from "./MyFile.sol"
+          $.symbol_import,
+          // e.g. import * as MyLib from "./MyLib.sol";
+          $.wildcard_import,
         ),
         ";",
       ),
 
-    symbol_list: ($) => seq("{", commaSep($.symbol), "}"),
-
-    symbol: ($) =>
+    file_import: ($) =>
       seq(
-        field("name", $.identifier),
-        optional(seq("as", field("alias", $.identifier))),
+        field("path", $.string),
+        optional(seq("as", field("alias", $.symbol))),
       ),
+
+    symbol_import: ($) =>
+      seq(
+        "{",
+        // The list of specifiers is now directly here, as repeated fields.
+        commaSep(field("symbol", $.imported_symbol)),
+        "}",
+        "from",
+        field("path", $.string),
+      ),
+
+    imported_symbol: ($) =>
+      seq(
+        field("name", $.symbol),
+        optional(seq("as", field("alias", $.symbol))),
+      ),
+
+    wildcard_import: ($) =>
+      seq("*", "as", field("alias", $.symbol), "from", field("path", $.string)),
 
     //############################################################//
     //                           Using                            //
@@ -1397,7 +1425,6 @@ module.exports = grammar({
     state_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
     data_location: ($) => choice("memory", "storage", "calldata"),
 
-    identifier: ($) => /[a-zA-Z_]\w*/,
     virtual: ($) => "virtual",
   },
 })
