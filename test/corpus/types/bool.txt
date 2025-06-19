@@ -323,14 +323,14 @@ contract C {
             (bool_type))))
       body: (block
         (return_statement
-          value: (logical_and
+          value: (and
             left: (literal
               (boolean))
-            operator: (logical_and_op)
+            operator: (and_op)
             right: (group
-              expression: (logical_or
+              expression: (or
                 left: (literal
                   (boolean))
-                operator: (logical_or_op)
+                operator: (or_op)
                 right: (literal
                   (boolean))))))))))

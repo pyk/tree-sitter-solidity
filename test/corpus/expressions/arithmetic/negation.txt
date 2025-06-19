@@ -278,7 +278,7 @@ contract C {
             (bool_type))))
       body: (block
         (return_statement
-          value: (logical_and
+          value: (and
             left: (comparison
               left: (arithmetic
                 (negation
@@ -288,7 +288,7 @@ contract C {
               operator: (comparison_op)
               right: (literal
                 (number)))
-            operator: (logical_and_op)
+            operator: (and_op)
             right: (comparison
               left: (arithmetic
                 (negation

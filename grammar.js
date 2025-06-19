@@ -540,8 +540,8 @@ module.exports = grammar({
         $.equality,
 
         // Logical expressions
-        $.logical_and,
-        $.logical_or,
+        $.and,
+        $.or,
 
         // Others
         $.primary_expression,
@@ -613,27 +613,27 @@ module.exports = grammar({
     //                     Logical expression                     //
     //############################################################//
 
-    logical_and: ($) =>
+    and: ($) =>
       prec.left(
         PREC.AND,
         seq(
           field("left", $._expression),
-          field("operator", $.logical_and_op),
+          field("operator", $.and_op),
           field("right", $._expression),
         ),
       ),
-    logical_and_op: ($) => "&&",
+    and_op: ($) => "&&",
 
-    logical_or: ($) =>
+    or: ($) =>
       prec.left(
         PREC.OR,
         seq(
           field("left", $._expression),
-          field("operator", $.logical_or_op),
+          field("operator", $.or_op),
           field("right", $._expression),
         ),
       ),
-    logical_or_op: ($) => "||",
+    or_op: ($) => "||",
 
     //############################################################//
     //                   Arithmetic expression                    //
@@ -1599,7 +1599,7 @@ module.exports = grammar({
         ),
       ),
 
-    logical_and_expression: ($) =>
+    and_expression: ($) =>
       prec.left(
         PREC.AND,
         seq(
@@ -1609,7 +1609,7 @@ module.exports = grammar({
         ),
       ),
 
-    logical_or_expression: ($) =>
+    or_expression: ($) =>
       prec.left(
         PREC.OR,
         seq(

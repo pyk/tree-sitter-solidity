@@ -184,14 +184,14 @@ bool x = a == b || c != d;
       (bool_type))
     name: (symbol
       name: (identifier))
-    value: (logical_or
+    value: (or
       left: (equality
         left: (primary_expression
           (identifier))
         operator: (equality_op)
         right: (primary_expression
           (identifier)))
-      operator: (logical_or_op)
+      operator: (or_op)
       right: (equality
         left: (primary_expression
           (identifier))

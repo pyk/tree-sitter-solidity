@@ -1724,11 +1724,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "logical_and"
+          "name": "and"
         },
         {
           "type": "SYMBOL",
-          "name": "logical_or"
+          "name": "or"
         },
         {
           "type": "SYMBOL",
@@ -1958,7 +1958,7 @@
         }
       ]
     },
-    "logical_and": {
+    "and": {
       "type": "PREC_LEFT",
       "value": 3,
       "content": {
@@ -1977,7 +1977,7 @@
             "name": "operator",
             "content": {
               "type": "SYMBOL",
-              "name": "logical_and_op"
+              "name": "and_op"
             }
           },
           {
@@ -1991,11 +1991,11 @@
         ]
       }
     },
-    "logical_and_op": {
+    "and_op": {
       "type": "STRING",
       "value": "&&"
     },
-    "logical_or": {
+    "or": {
       "type": "PREC_LEFT",
       "value": 2,
       "content": {
@@ -2014,7 +2014,7 @@
             "name": "operator",
             "content": {
               "type": "SYMBOL",
-              "name": "logical_or_op"
+              "name": "or_op"
             }
           },
           {
@@ -2028,7 +2028,7 @@
         ]
       }
     },
-    "logical_or_op": {
+    "or_op": {
       "type": "STRING",
       "value": "||"
     },
@@ -5644,7 +5644,7 @@
         ]
       }
     },
-    "logical_and_expression": {
+    "and_expression": {
       "type": "PREC_LEFT",
       "value": 3,
       "content": {
@@ -5677,7 +5677,7 @@
         ]
       }
     },
-    "logical_or_expression": {
+    "or_expression": {
       "type": "PREC_LEFT",
       "value": 2,
       "content": {

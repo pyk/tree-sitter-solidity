@@ -134,14 +134,14 @@ bool x = a < b && c > d;
       (bool_type))
     name: (symbol
       name: (identifier))
-    value: (logical_and
+    value: (and
       left: (comparison
         left: (primary_expression
           (identifier))
         operator: (comparison_op)
         right: (primary_expression
           (identifier)))
-      operator: (logical_and_op)
+      operator: (and_op)
       right: (comparison
         left: (primary_expression
           (identifier))
