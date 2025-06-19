@@ -1956,7 +1956,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "call_expression"
+          "name": "call"
         },
         {
           "type": "SYMBOL",
@@ -2910,6 +2910,47 @@
           "value": ">>>"
         }
       ]
+    },
+    "call": {
+      "type": "PREC",
+      "value": 15,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "function",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "FIELD",
+                "name": "options",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "call_options_block"
+                }
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          },
+          {
+            "type": "FIELD",
+            "name": "arguments",
+            "content": {
+              "type": "SYMBOL",
+              "name": "argument_list"
+            }
+          }
+        ]
+      }
     },
     "variable": {
       "type": "SEQ",
@@ -5305,7 +5346,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "call_expression"
+          "name": "call"
         },
         {
           "type": "STRING",
@@ -5601,47 +5642,6 @@
           }
         }
       ]
-    },
-    "call_expression": {
-      "type": "PREC",
-      "value": 15,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "function",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "options",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "call_options_block"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "FIELD",
-            "name": "arguments",
-            "content": {
-              "type": "SYMBOL",
-              "name": "argument_list"
-            }
-          }
-        ]
-      }
     },
     "member_access_expression": {
       "type": "PREC_LEFT",

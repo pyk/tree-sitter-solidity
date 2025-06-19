@@ -176,7 +176,7 @@ contract C {
               name: (identifier)))))
       body: (block
         (return_statement
-          value: (call_expression
+          value: (call
             function: (symbol
               name: (identifier))
             arguments: (argument_list
@@ -345,7 +345,7 @@ contract Factory {
                 name: (identifier)))
             name: (symbol
               name: (identifier)))
-          value: (call_expression
+          value: (call
             function: (new_expression
               type: (custom_type
                 symbol: (symbol

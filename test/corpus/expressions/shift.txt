@@ -255,7 +255,7 @@ contract C {
       mutability: (state_mutability)
       body: (block
         (expression_statement
-          (call_expression
+          (call
             function: (symbol
               name: (identifier))
             arguments: (argument_list

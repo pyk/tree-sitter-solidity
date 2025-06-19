@@ -202,7 +202,7 @@ bytes32 constant EMPTY_STRING_HASH = keccak256("");
     mutability: (mutability)
     name: (symbol
       name: (identifier))
-    value: (call_expression
+    value: (call
       function: (symbol
         name: (identifier))
       arguments: (argument_list

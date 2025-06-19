@@ -245,7 +245,7 @@ contract C {
       mutability: (state_mutability)
       body: (block
         (expression_statement
-          (call_expression
+          (call
             function: (symbol
               name: (identifier))
             arguments: (argument_list
@@ -308,7 +308,7 @@ contract C {
             left: (symbol
               name: (identifier))
             operator: (comparison_op)
-            right: (call_expression
+            right: (call
               function: (symbol
                 name: (identifier))
               arguments: (argument_list))))))))

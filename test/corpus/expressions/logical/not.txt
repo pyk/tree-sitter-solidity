@@ -167,7 +167,7 @@ contract C {
         (return_statement
           value: (not
             operator: (not_op)
-            argument: (call_expression
+            argument: (call
               function: (symbol
                 name: (identifier))
               arguments: (argument_list))))))))
@@ -280,13 +280,13 @@ contract C {
       mutability: (state_mutability)
       body: (block
         (expression_statement
-          (call_expression
+          (call
             function: (symbol
               name: (identifier))
             arguments: (argument_list
               argument: (not
                 operator: (not_op)
-                argument: (call_expression
+                argument: (call
                   function: (symbol
                     name: (identifier))
                   arguments: (argument_list

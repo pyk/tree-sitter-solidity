@@ -606,7 +606,7 @@ module.exports = grammar({
         $.conditional_expression,
         $.payable_conversion_expression,
         $.meta_type_expression,
-        $.call_expression,
+        $.call,
         $.member_access_expression,
         $.index_access_expression,
         $.index_range_access_expression,
@@ -893,6 +893,24 @@ module.exports = grammar({
         ),
       ),
     shift_op: ($) => choice("<<", ">>", ">>>"),
+
+    //############################################################//
+    //                      Call expression                       //
+    //############################################################//
+
+    /**
+     * A function call expression, with optional call options.
+     * e.g., `myFunction(arg1, arg2)` or `myFunc{value: 1 ether}()`
+     */
+    call: ($) =>
+      prec(
+        PREC.MEMBER,
+        seq(
+          field("function", $._expression),
+          optional(field("options", $.call_options_block)),
+          field("arguments", $.argument_list),
+        ),
+      ),
 
     //############################################################//
     //                          Variable                          //
@@ -1449,7 +1467,7 @@ module.exports = grammar({
      * An emit statement.
      * e.g., `emit MyEvent(arg1, arg2);`
      */
-    emit_statement: ($) => seq("emit", $.call_expression, ";"),
+    emit_statement: ($) => seq("emit", $.call, ";"),
 
     while_statement: ($) =>
       seq(
@@ -1576,20 +1594,6 @@ module.exports = grammar({
       ),
 
     /**
-     * A function call expression, with optional call options.
-     * e.g., `myFunction(arg1, arg2)` or `myFunc{value: 1 ether}()`
-     */
-    call_expression: ($) =>
-      prec(
-        PREC.MEMBER,
-        seq(
-          field("function", $._expression),
-          optional(field("options", $.call_options_block)),
-          field("arguments", $.argument_list),
-        ),
-      ),
-
-    /**
      * A member access expression.
      * e.g., `myVariable.property`
      *
@@ -1597,7 +1601,7 @@ module.exports = grammar({
      * chained member access is parsed correctly. For example, an expression
      * like `a.b.c` is grouped from left to right as `(a.b).c`.
      *
-     * It shares the same high precedence level as `call_expression` (`PREC.MEMBER`)
+     * It shares the same high precedence level as `call` (`PREC.MEMBER`)
      * to correctly handle interactions between them, such as accessing a property
      * on the result of a function call: `myFunc().property`.
      */

@@ -137,7 +137,7 @@ contract C {
               name: (identifier)))))
       body: (block
         (return_statement
-          value: (call_expression
+          value: (call
             function: (symbol
               name: (identifier))
             arguments: (argument_list
