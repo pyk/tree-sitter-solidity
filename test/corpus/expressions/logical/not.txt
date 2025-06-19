@@ -1,0 +1,296 @@
+==================
+Simple logical NOT on a boolean literal
+==================
+
+bool x = !true;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (not
+      operator: (not_op)
+      argument: (literal
+        (boolean)))))
+
+==================
+Logical NOT on a variable
+==================
+
+contract C {
+    function f(bool a) public pure returns (bool) {
+        return !a;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        (return_statement
+          value: (not
+            operator: (not_op)
+            argument: (primary_expression
+              (identifier))))))))
+
+==================
+Double logical NOT
+==================
+
+bool x = !!a;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (not
+      operator: (not_op)
+      argument: (not
+        operator: (not_op)
+        argument: (primary_expression
+          (identifier))))))
+
+==================
+Logical NOT precedence with equality (critical test)
+==================
+
+// Should parse as (!a) == b
+bool x = !a == b;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (equality
+      left: (not
+        operator: (not_op)
+        argument: (primary_expression
+          (identifier)))
+      operator: (equality_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+Logical NOT on a parenthesized expression
+==================
+
+bool x = !(a && b);
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (not
+      operator: (not_op)
+      argument: (group
+        expression: (and
+          left: (primary_expression
+            (identifier))
+          operator: (and_op)
+          right: (primary_expression
+            (identifier)))))))
+
+==================
+Logical NOT on a function call result
+==================
+
+contract C {
+    function isReady() public pure returns (bool) { return false; }
+    function f() public pure returns (bool) {
+        return !isReady();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        (return_statement
+          value: (literal
+            (boolean)))))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        (return_statement
+          value: (not
+            operator: (not_op)
+            argument: (call_expression
+              function: (primary_expression
+                (identifier))
+              arguments: (argument_list))))))))
+
+==================
+Complex logical expression with NOT
+==================
+
+// Should parse as (a && !b) || c
+bool x = a && !b || c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (or
+      left: (and
+        left: (primary_expression
+          (identifier))
+        operator: (and_op)
+        right: (not
+          operator: (not_op)
+          argument: (primary_expression
+            (identifier))))
+      operator: (or_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+Logical NOT in an if statement
+==================
+
+contract C {
+    function f(bool locked) public {
+        if (!locked) {
+            // ...
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (if_statement
+          condition: (not
+            operator: (not_op)
+            argument: (primary_expression
+              (identifier)))
+          consequence: (block
+            (comment)))))))
+
+==================
+Logical NOT in a require statement
+==================
+
+contract C {
+    function isContract(address) internal pure returns (bool) {}
+    function f(address user) public view {
+        require(!isContract(user), "User cannot be a contract");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (not
+                operator: (not_op)
+                argument: (call_expression
+                  function: (primary_expression
+                    (identifier))
+                  arguments: (argument_list
+                    argument: (primary_expression
+                      (identifier)))))
+              argument: (literal
+                (string)))))))))

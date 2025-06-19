@@ -59,7 +59,8 @@ contract C {
             (bool_type))))
       body: (block
         (return_statement
-          value: (unary_expression
+          value: (not
+            operator: (not_op)
             argument: (primary_expression
               (identifier))))))))
 

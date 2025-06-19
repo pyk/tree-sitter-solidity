@@ -1736,6 +1736,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "not"
+        },
+        {
+          "type": "SYMBOL",
           "name": "shift"
         },
         {
@@ -2023,6 +2027,35 @@
     "or_op": {
       "type": "STRING",
       "value": "||"
+    },
+    "not": {
+      "type": "PREC_RIGHT",
+      "value": 13,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "SYMBOL",
+              "name": "not_op"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "argument",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "not_op": {
+      "type": "STRING",
+      "value": "!"
     },
     "arithmetic": {
       "type": "CHOICE",
@@ -5404,17 +5437,8 @@
                 "type": "FIELD",
                 "name": "operator",
                 "content": {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "!"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "delete"
-                    }
-                  ]
+                  "type": "STRING",
+                  "value": "delete"
                 }
               },
               {

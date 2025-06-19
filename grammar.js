@@ -545,6 +545,7 @@ module.exports = grammar({
         // Logical expressions
         $.and,
         $.or,
+        $.not,
 
         // Shift expression
         $.shift,
@@ -636,6 +637,14 @@ module.exports = grammar({
         ),
       ),
     or_op: ($) => "||",
+
+    not: ($) =>
+      prec.right(
+        PREC.UNARY,
+        seq(field("operator", $.not_op), field("argument", $._expression)),
+      ),
+
+    not_op: ($) => "!",
 
     //############################################################//
     //                   Arithmetic expression                    //
@@ -1506,10 +1515,7 @@ module.exports = grammar({
         // Prefix operators (e.g., `!a`) are right-associative.
         prec.right(
           PREC.UNARY,
-          seq(
-            field("operator", choice("!", "delete")),
-            field("argument", $._expression),
-          ),
+          seq(field("operator", "delete"), field("argument", $._expression)),
         ),
       ),
 

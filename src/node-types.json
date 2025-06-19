@@ -92,6 +92,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -197,6 +201,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -325,6 +333,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -433,6 +445,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -534,6 +550,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -714,6 +734,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -815,6 +839,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -930,6 +958,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -1031,6 +1063,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -1142,6 +1178,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -1248,6 +1288,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -1370,6 +1414,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -1475,6 +1523,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -1614,6 +1666,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -1719,6 +1775,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -1919,6 +1979,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -2045,6 +2109,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -2178,6 +2246,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -2283,6 +2355,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -2400,6 +2476,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -2498,6 +2578,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -2593,6 +2677,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -2957,6 +3045,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -3062,6 +3154,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -3232,6 +3328,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -3377,6 +3477,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -3482,6 +3586,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -3732,6 +3840,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -3837,6 +3949,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -3957,6 +4073,10 @@
         },
         {
           "type": "new_expression",
+          "named": true
+        },
+        {
+          "type": "not",
           "named": true
         },
         {
@@ -4213,6 +4333,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -4326,6 +4450,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -4575,6 +4703,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -4734,6 +4866,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -4967,6 +5103,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -5062,6 +5202,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -5169,6 +5313,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -5267,6 +5415,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -5362,6 +5514,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -5508,6 +5664,10 @@
         },
         {
           "type": "new_expression",
+          "named": true
+        },
+        {
+          "type": "not",
           "named": true
         },
         {
@@ -5929,6 +6089,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -6065,6 +6229,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -6170,6 +6338,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -6364,6 +6536,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -6469,6 +6645,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -6596,6 +6776,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -6700,6 +6884,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -6768,6 +6956,124 @@
           },
           {
             "type": "primitive_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "not",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "not_op",
             "named": true
           }
         ]
@@ -6848,6 +7154,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -6956,6 +7266,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -7236,6 +7550,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -7347,6 +7665,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -7487,6 +7809,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -7598,6 +7924,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -7823,6 +8153,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -7953,6 +8287,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -8058,6 +8396,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -8343,6 +8685,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -8525,6 +8871,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -8630,6 +8980,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -8804,6 +9158,10 @@
           "named": true
         },
         {
+          "type": "not",
+          "named": true
+        },
+        {
           "type": "or",
           "named": true
         },
@@ -8938,6 +9296,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -8967,10 +9329,6 @@
         "multiple": false,
         "required": true,
         "types": [
-          {
-            "type": "!",
-            "named": false
-          },
           {
             "type": "delete",
             "named": false
@@ -9326,6 +9684,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -9503,6 +9865,10 @@
           },
           {
             "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
             "named": true
           },
           {
@@ -9724,6 +10090,10 @@
             "named": true
           },
           {
+            "type": "not",
+            "named": true
+          },
+          {
             "type": "or",
             "named": true
           },
@@ -9781,10 +10151,6 @@
         ]
       }
     }
-  },
-  {
-    "type": "!",
-    "named": false
   },
   {
     "type": "!=",
@@ -10423,6 +10789,10 @@
   {
     "type": "nonpayable",
     "named": false
+  },
+  {
+    "type": "not_op",
+    "named": true
   },
   {
     "type": "number",

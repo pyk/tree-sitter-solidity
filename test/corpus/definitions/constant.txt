@@ -88,7 +88,8 @@ bool constant IS_NOT_ENABLED = !true;
     mutability: (mutability)
     name: (symbol
       name: (identifier))
-    value: (unary_expression
+    value: (not
+      operator: (not_op)
       argument: (literal
         (boolean)))))
 
