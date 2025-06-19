@@ -161,12 +161,12 @@ contract C {
     struct: (struct
       name: (symbol
         name: (identifier))
-      (struct_member
+      member: (struct_member
         type: (primitive_type
           (int_type))
         name: (symbol
           name: (identifier)))
-      (struct_member
+      member: (struct_member
         type: (primitive_type
           (int_type))
         name: (symbol

@@ -9287,6 +9287,16 @@
     "type": "struct",
     "named": true,
     "fields": {
+      "member": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "struct_member",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -9297,16 +9307,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "struct_member",
-          "named": true
-        }
-      ]
     }
   },
   {

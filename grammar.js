@@ -1082,6 +1082,26 @@ module.exports = grammar({
       ),
 
     //############################################################//
+    //                     Struct definition                      //
+    //############################################################//
+
+    struct: ($) =>
+      seq(
+        "struct",
+        field("name", alias($._simple_symbol, $.symbol)),
+        "{",
+        field("member", repeat($.struct_member)),
+        "}",
+      ),
+
+    struct_member: ($) =>
+      seq(
+        field("type", $._type),
+        field("name", alias($._simple_symbol, $.symbol)),
+        ";",
+      ),
+
+    //############################################################//
     //                        Constructor                         //
     //############################################################//
 
@@ -1187,22 +1207,6 @@ module.exports = grammar({
      * A block of statements enclosed in curly braces.
      */
     block: ($) => seq("{", repeat($._statement), "}"),
-
-    struct: ($) =>
-      seq(
-        "struct",
-        field("name", alias($._simple_symbol, $.symbol)),
-        "{",
-        repeat($.struct_member),
-        "}",
-      ),
-
-    struct_member: ($) =>
-      seq(
-        field("type", $._type),
-        field("name", alias($._simple_symbol, $.symbol)),
-        ";",
-      ),
 
     enum: ($) =>
       seq(

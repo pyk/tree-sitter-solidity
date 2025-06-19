@@ -267,7 +267,7 @@ contract C {
     struct: (struct
       name: (symbol
         name: (identifier))
-      (struct_member
+      member: (struct_member
         type: (primitive_type
           (uint_type))
         name: (symbol

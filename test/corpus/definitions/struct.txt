@@ -1,0 +1,261 @@
+==================
+Simple struct definition at top level
+==================
+
+struct Point {
+    uint x;
+    uint y;
+}
+
+---
+
+(source_file
+  definition: (struct
+    name: (symbol
+      name: (identifier))
+    member: (struct_member
+      type: (primitive_type
+        (uint_type))
+      name: (symbol
+        name: (identifier)))
+    member: (struct_member
+      type: (primitive_type
+        (uint_type))
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Struct definition inside a contract
+==================
+
+contract C {
+    struct Voter {
+        uint weight;
+        bool voted;
+        address delegate;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    struct: (struct
+      name: (symbol
+        name: (identifier))
+      member: (struct_member
+        type: (primitive_type
+          (uint_type))
+        name: (symbol
+          name: (identifier)))
+      member: (struct_member
+        type: (primitive_type
+          (bool_type))
+        name: (symbol
+          name: (identifier)))
+      member: (struct_member
+        type: (primitive_type
+          (address_type))
+        name: (symbol
+          name: (identifier))))))
+
+==================
+Struct with different member types
+==================
+
+struct MyData {
+    int amount;
+    bytes32 hash;
+    string name;
+    address owner;
+}
+
+---
+
+(source_file
+  definition: (struct
+    name: (symbol
+      name: (identifier))
+    member: (struct_member
+      type: (primitive_type
+        (int_type))
+      name: (symbol
+        name: (identifier)))
+    member: (struct_member
+      type: (primitive_type
+        (bytes_type))
+      name: (symbol
+        name: (identifier)))
+    member: (struct_member
+      type: (primitive_type
+        (string_type))
+      name: (symbol
+        name: (identifier)))
+    member: (struct_member
+      type: (primitive_type
+        (address_type))
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Struct with an array member
+==================
+
+struct Portfolio {
+    address owner;
+    uint[] tokenIds;
+}
+
+---
+
+(source_file
+  definition: (struct
+    name: (symbol
+      name: (identifier))
+    member: (struct_member
+      type: (primitive_type
+        (address_type))
+      name: (symbol
+        name: (identifier)))
+    member: (struct_member
+      type: (array_type
+        base: (primitive_type
+          (uint_type)))
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Struct with a fixed-size array member
+==================
+
+struct FixedData {
+    bytes32[4] dataPoints;
+}
+
+---
+
+(source_file
+  definition: (struct
+    name: (symbol
+      name: (identifier))
+    member: (struct_member
+      type: (array_type
+        base: (primitive_type
+          (bytes_type))
+        size: (literal
+          (number)))
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Struct with a mapping member
+==================
+
+struct Balances {
+    mapping(address => uint) userBalances;
+}
+
+---
+
+(source_file
+  definition: (struct
+    name: (symbol
+      name: (identifier))
+    member: (struct_member
+      type: (mapping_type
+        key: (primitive_type
+          (address_type))
+        value: (primitive_type
+          (uint_type)))
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Struct with a member of another custom struct type
+==================
+
+struct Point {
+    uint x;
+    uint y;
+}
+struct Line {
+    Point start;
+    Point end;
+}
+
+---
+
+(source_file
+  definition: (struct
+    name: (symbol
+      name: (identifier))
+    member: (struct_member
+      type: (primitive_type
+        (uint_type))
+      name: (symbol
+        name: (identifier)))
+    member: (struct_member
+      type: (primitive_type
+        (uint_type))
+      name: (symbol
+        name: (identifier))))
+  definition: (struct
+    name: (symbol
+      name: (identifier))
+    member: (struct_member
+      type: (custom_type
+        symbol: (symbol
+          name: (identifier)))
+      name: (symbol
+        name: (identifier)))
+    member: (struct_member
+      type: (custom_type
+        symbol: (symbol
+          name: (identifier)))
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Struct with no members (should be valid syntax, though Solidity compiler may reject)
+==================
+
+struct Empty {}
+
+---
+
+(source_file
+  definition: (struct
+    name: (symbol
+      name: (identifier))))
+
+==================
+Struct inside a library
+==================
+
+library MyLib {
+    struct Config {
+        address admin;
+        uint rate;
+    }
+}
+---
+
+(source_file
+  definition: (library
+    name: (symbol
+      name: (identifier))
+    struct: (struct
+      name: (symbol
+        name: (identifier))
+      member: (struct_member
+        type: (primitive_type
+          (address_type))
+        name: (symbol
+          name: (identifier)))
+      member: (struct_member
+        type: (primitive_type
+          (uint_type))
+        name: (symbol
+          name: (identifier))))))
