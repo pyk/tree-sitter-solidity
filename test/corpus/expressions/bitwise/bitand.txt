@@ -233,16 +233,16 @@ contract C {
             function: (primary_expression
               (identifier))
             arguments: (argument_list
-              argument: (bitwise
-                (bitand
-                  left: (primary_expression
-                    (identifier))
-                  operator: (bitand_op)
-                  right: (equality
+              argument: (equality
+                left: (bitwise
+                  (bitand
                     left: (primary_expression
                       (identifier))
-                    operator: (equality_op)
+                    operator: (bitand_op)
                     right: (primary_expression
-                      (identifier)))))
+                      (identifier))))
+                operator: (equality_op)
+                right: (primary_expression
+                  (identifier)))
               argument: (literal
                 (string)))))))))

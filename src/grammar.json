@@ -163,7 +163,7 @@
         },
         {
           "type": "PREC_LEFT",
-          "value": 15,
+          "value": 18,
           "content": {
             "type": "SEQ",
             "members": [
@@ -1794,7 +1794,7 @@
     },
     "cast": {
       "type": "PREC",
-      "value": 16,
+      "value": 19,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2055,7 +2055,7 @@
     },
     "negation": {
       "type": "PREC_RIGHT",
-      "value": 12,
+      "value": 16,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2101,7 +2101,7 @@
     },
     "prefix_increment": {
       "type": "PREC_RIGHT",
-      "value": 12,
+      "value": 16,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2126,7 +2126,7 @@
     },
     "postfix_increment": {
       "type": "PREC_LEFT",
-      "value": 14,
+      "value": 17,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2168,7 +2168,7 @@
     },
     "prefix_decrement": {
       "type": "PREC_RIGHT",
-      "value": 12,
+      "value": 16,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2193,7 +2193,7 @@
     },
     "postfix_decrement": {
       "type": "PREC_LEFT",
-      "value": 14,
+      "value": 17,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2218,7 +2218,7 @@
     },
     "exp": {
       "type": "PREC_RIGHT",
-      "value": 13,
+      "value": 15,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2255,7 +2255,7 @@
     },
     "add": {
       "type": "PREC_LEFT",
-      "value": 10,
+      "value": 13,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2301,7 +2301,7 @@
     },
     "mul": {
       "type": "PREC_LEFT",
-      "value": 11,
+      "value": 14,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2372,7 +2372,7 @@
     },
     "bitand": {
       "type": "PREC_LEFT",
-      "value": 6,
+      "value": 11,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2409,7 +2409,7 @@
     },
     "bitor": {
       "type": "PREC_LEFT",
-      "value": 4,
+      "value": 9,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2446,7 +2446,7 @@
     },
     "bitxor": {
       "type": "PREC_LEFT",
-      "value": 5,
+      "value": 10,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2483,7 +2483,7 @@
     },
     "bitnot": {
       "type": "PREC_RIGHT",
-      "value": 12,
+      "value": 16,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2512,7 +2512,7 @@
     },
     "shift": {
       "type": "PREC_LEFT",
-      "value": 9,
+      "value": 12,
       "content": {
         "type": "SEQ",
         "members": [
@@ -5295,7 +5295,7 @@
       "members": [
         {
           "type": "PREC_RIGHT",
-          "value": 12,
+          "value": 16,
           "content": {
             "type": "SEQ",
             "members": [
@@ -5440,7 +5440,7 @@
     },
     "call_expression": {
       "type": "PREC",
-      "value": 15,
+      "value": 18,
       "content": {
         "type": "SEQ",
         "members": [
@@ -5481,7 +5481,7 @@
     },
     "member_access_expression": {
       "type": "PREC_LEFT",
-      "value": 15,
+      "value": 18,
       "content": {
         "type": "SEQ",
         "members": [
@@ -5510,7 +5510,7 @@
     },
     "index_access_expression": {
       "type": "PREC_LEFT",
-      "value": 15,
+      "value": 18,
       "content": {
         "type": "SEQ",
         "members": [
@@ -5543,7 +5543,7 @@
     },
     "index_range_access_expression": {
       "type": "PREC_LEFT",
-      "value": 15,
+      "value": 18,
       "content": {
         "type": "SEQ",
         "members": [
@@ -5604,7 +5604,7 @@
     },
     "new_expression": {
       "type": "PREC_RIGHT",
-      "value": 17,
+      "value": 20,
       "content": {
         "type": "SEQ",
         "members": [
@@ -5830,7 +5830,7 @@
     },
     "meta_type_expression": {
       "type": "PREC",
-      "value": 15,
+      "value": 18,
       "content": {
         "type": "SEQ",
         "members": [

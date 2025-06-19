@@ -80,7 +80,8 @@ contract C {
 Bitwise NOT precedence with exponentiation
 ==================
 
-// Should parse as ~(a ** b) because exponentiation has higher precedence
+// Unary bitwise NOT has higher precedence than exponentiation.
+// This should parse as (~a) ** b.
 uint x = ~a ** b;
 
 ---
@@ -92,16 +93,16 @@ uint x = ~a ** b;
       (uint_type))
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitnot
-        operator: (bitnot_op)
-        argument: (arithmetic
-          (exp
-            left: (primary_expression
-              (identifier))
-            operator: (exp_op)
-            right: (primary_expression
-              (identifier))))))))
+    value: (arithmetic
+      (exp
+        left: (bitwise
+          (bitnot
+            operator: (bitnot_op)
+            argument: (primary_expression
+              (identifier))))
+        operator: (exp_op)
+        right: (primary_expression
+          (identifier))))))
 
 ==================
 Parentheses to force bitwise NOT first

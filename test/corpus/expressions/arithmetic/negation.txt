@@ -84,7 +84,7 @@ contract C {
 Negation precedence over exponentiation (right-associative)
 ==================
 
-// Should parse as -(2**3), not (-2)**3
+// Should parse as (-2)**3
 int x = -2**3;
 
 ---
@@ -97,15 +97,15 @@ int x = -2**3;
     name: (symbol
       name: (identifier))
     value: (arithmetic
-      (negation
-        operator: (negation_op)
-        argument: (arithmetic
-          (exp
-            left: (literal
-              (number))
-            operator: (exp_op)
-            right: (literal
-              (number))))))))
+      (exp
+        left: (arithmetic
+          (negation
+            operator: (negation_op)
+            argument: (literal
+              (number))))
+        operator: (exp_op)
+        right: (literal
+          (number))))))
 
 ==================
 Negation precedence with multiplication

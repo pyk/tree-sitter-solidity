@@ -20,22 +20,22 @@
  * recommended by the Tree-sitter documentation.
  */
 const PREC = {
-  ASSIGN: 0,
-  CONDITIONAL: 1,
-  OR: 2,
-  AND: 3,
-  BIT_OR: 4,
-  BIT_XOR: 5,
-  BIT_AND: 6,
-  EQUALITY: 7,
-  COMPARE: 8,
-  SHIFT: 9,
-  ADD: 10,
-  MULTIPLY: 11,
-  UNARY: 12,
-  EXP: 13,
-  POSTFIX: 14,
-  MEMBER: 15,
+  ASSIGN: 0, // =
+  CONDITIONAL: 1, // ?:
+  OR: 2, // ||
+  AND: 3, // &&
+  EQUALITY: 4, // ==, !=
+  COMPARE: 5, // <, >, <=, >=
+  BIT_OR: 6, // |
+  BIT_XOR: 7, // ^
+  BIT_AND: 8, // &
+  SHIFT: 9, // <<, >>, >>>
+  ADD: 10, // +, -
+  MULTIPLY: 11, // *, /, %
+  EXP: 12, // **
+  UNARY: 13, // -, ~, !, delete, ++, -- (prefix)
+  POSTFIX: 14, // ++, -- (postfix)
+  MEMBER: 15, // .
   CAST: 16,
   NEW: 17,
 }
