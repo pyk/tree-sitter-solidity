@@ -1801,7 +1801,7 @@
       "type": "PATTERN",
       "value": "\"([^\"\\\\]|\\\\.)*\"|'([^'\\\\]|\\\\.)*'"
     },
-    "literal_with_subdenomination": {
+    "ether": {
       "type": "SEQ",
       "members": [
         {
@@ -1810,11 +1810,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "subdenomination"
+          "name": "ether_unit"
         }
       ]
     },
-    "subdenomination": {
+    "ether_unit": {
       "type": "CHOICE",
       "members": [
         {
@@ -1828,7 +1828,25 @@
         {
           "type": "STRING",
           "value": "ether"
+        }
+      ]
+    },
+    "time": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "number"
         },
+        {
+          "type": "SYMBOL",
+          "name": "time_unit"
+        }
+      ]
+    },
+    "time_unit": {
+      "type": "CHOICE",
+      "members": [
         {
           "type": "STRING",
           "value": "seconds"
@@ -1844,6 +1862,10 @@
         {
           "type": "STRING",
           "value": "days"
+        },
+        {
+          "type": "STRING",
+          "value": "weeks"
         }
       ]
     },
@@ -1962,7 +1984,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "literal_with_subdenomination"
+          "name": "ether"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "time"
         },
         {
           "type": "PREC",

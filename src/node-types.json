@@ -60,6 +60,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -77,10 +81,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -113,6 +113,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -176,6 +180,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -193,10 +201,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -229,6 +233,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -309,6 +317,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -326,10 +338,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -362,6 +370,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -425,6 +437,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -442,10 +458,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -478,6 +490,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -537,6 +553,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -554,10 +574,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -590,6 +606,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -722,6 +742,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -739,10 +763,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -775,6 +795,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -834,6 +858,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -851,10 +879,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -887,6 +911,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -954,6 +982,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -971,10 +1003,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -1007,6 +1035,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -1066,6 +1098,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -1083,10 +1119,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -1119,6 +1151,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -1182,6 +1218,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -1199,10 +1239,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -1235,6 +1271,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -1299,6 +1339,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -1316,10 +1360,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -1352,6 +1392,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -1426,6 +1470,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -1443,10 +1491,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -1479,6 +1523,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -1542,6 +1590,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -1559,10 +1611,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -1595,6 +1643,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -1686,6 +1738,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -1703,10 +1759,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -1739,6 +1791,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -1802,6 +1858,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -1819,10 +1879,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -1855,6 +1911,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -2007,6 +2067,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -2024,10 +2088,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -2060,6 +2120,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -2144,6 +2208,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -2161,10 +2229,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -2197,6 +2261,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -2282,6 +2350,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -2299,10 +2371,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -2335,6 +2403,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -2398,6 +2470,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -2415,10 +2491,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -2451,6 +2523,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -2520,6 +2596,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -2537,10 +2617,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -2573,6 +2649,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -2626,6 +2706,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -2643,10 +2727,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -2679,6 +2759,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -2732,6 +2816,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -2749,10 +2837,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -2785,6 +2869,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -3101,6 +3189,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -3118,10 +3210,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -3154,6 +3242,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -3217,6 +3309,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -3234,10 +3330,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -3270,6 +3362,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -3392,6 +3488,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -3409,10 +3509,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -3445,6 +3541,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -3545,6 +3645,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -3562,10 +3666,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -3598,6 +3698,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -3661,6 +3765,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -3678,10 +3786,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -3714,6 +3818,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -3817,6 +3925,30 @@
     }
   },
   {
+    "type": "ether",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ether_unit",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ether_unit",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "event",
     "named": true,
     "fields": {
@@ -3916,6 +4048,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -3933,10 +4069,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -3969,6 +4101,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -4032,6 +4168,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -4049,10 +4189,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -4085,6 +4221,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -4160,6 +4300,10 @@
           "named": true
         },
         {
+          "type": "ether",
+          "named": true
+        },
+        {
           "type": "group",
           "named": true
         },
@@ -4177,10 +4321,6 @@
         },
         {
           "type": "literal",
-          "named": true
-        },
-        {
-          "type": "literal_with_subdenomination",
           "named": true
         },
         {
@@ -4213,6 +4353,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "time",
           "named": true
         },
         {
@@ -4421,6 +4565,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -4438,10 +4586,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -4474,6 +4618,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -4545,6 +4693,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -4562,10 +4714,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -4598,6 +4746,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -4799,6 +4951,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -4816,10 +4972,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -4852,6 +5004,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -4969,6 +5125,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -4986,10 +5146,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -5022,6 +5178,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -5207,6 +5367,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -5224,10 +5388,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -5260,6 +5420,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -5313,6 +5477,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -5330,10 +5498,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -5366,6 +5530,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -5425,6 +5593,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -5442,10 +5614,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -5478,6 +5646,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -5531,6 +5703,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -5548,10 +5724,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -5584,6 +5756,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -5637,6 +5813,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -5654,10 +5834,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -5690,6 +5866,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -5791,6 +5971,10 @@
           "named": true
         },
         {
+          "type": "ether",
+          "named": true
+        },
+        {
           "type": "group",
           "named": true
         },
@@ -5808,10 +5992,6 @@
         },
         {
           "type": "literal",
-          "named": true
-        },
-        {
-          "type": "literal_with_subdenomination",
           "named": true
         },
         {
@@ -5844,6 +6024,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "time",
           "named": true
         },
         {
@@ -6086,25 +6270,6 @@
     }
   },
   {
-    "type": "literal_with_subdenomination",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "subdenomination",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "mapping_type",
     "named": true,
     "fields": {
@@ -6217,6 +6382,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -6234,10 +6403,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -6270,6 +6435,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -6361,6 +6530,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -6378,10 +6551,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -6414,6 +6583,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -6477,6 +6650,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -6494,10 +6671,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -6530,6 +6703,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -6676,6 +6853,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -6693,10 +6874,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -6729,6 +6906,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -6792,6 +6973,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -6809,10 +6994,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -6845,6 +7026,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -6924,6 +7109,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -6941,10 +7130,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -6977,6 +7162,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -7036,6 +7225,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -7053,10 +7246,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -7089,6 +7278,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -7195,6 +7388,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -7212,10 +7409,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -7248,6 +7441,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -7317,6 +7514,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -7334,10 +7535,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -7370,6 +7567,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -7433,6 +7634,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -7450,10 +7655,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -7486,6 +7687,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -7718,6 +7923,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -7735,10 +7944,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -7771,6 +7976,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -7840,6 +8049,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -7857,10 +8070,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -7893,6 +8102,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -7985,6 +8198,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -8002,10 +8219,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -8038,6 +8251,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -8107,6 +8324,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -8124,10 +8345,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -8160,6 +8377,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -8318,6 +8539,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -8335,10 +8560,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -8371,6 +8592,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -8456,6 +8681,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -8473,10 +8702,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -8509,6 +8734,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -8572,6 +8801,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -8589,10 +8822,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -8625,6 +8854,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -8862,6 +9095,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -8879,10 +9116,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -8915,6 +9148,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -9052,6 +9289,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -9069,10 +9310,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -9105,6 +9342,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -9168,6 +9409,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -9185,10 +9430,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -9224,6 +9465,10 @@
             "named": true
           },
           {
+            "type": "time",
+            "named": true
+          },
+          {
             "type": "tuple_expression",
             "named": true
           },
@@ -9237,11 +9482,6 @@
   },
   {
     "type": "sub_op",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "subdenomination",
     "named": true,
     "fields": {}
   },
@@ -9298,6 +9538,30 @@
     }
   },
   {
+    "type": "time",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "time_unit",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "time_unit",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "transient",
     "named": true,
     "fields": {}
@@ -9347,6 +9611,10 @@
           "named": true
         },
         {
+          "type": "ether",
+          "named": true
+        },
+        {
           "type": "group",
           "named": true
         },
@@ -9364,10 +9632,6 @@
         },
         {
           "type": "literal",
-          "named": true
-        },
-        {
-          "type": "literal_with_subdenomination",
           "named": true
         },
         {
@@ -9400,6 +9664,10 @@
         },
         {
           "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "time",
           "named": true
         },
         {
@@ -9489,6 +9757,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -9506,10 +9778,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -9542,6 +9810,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -9881,6 +10153,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -9898,10 +10174,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -9934,6 +10206,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -10069,6 +10345,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -10086,10 +10366,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -10122,6 +10398,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -10295,6 +10575,10 @@
             "named": true
           },
           {
+            "type": "ether",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -10312,10 +10596,6 @@
           },
           {
             "type": "literal",
-            "named": true
-          },
-          {
-            "type": "literal_with_subdenomination",
             "named": true
           },
           {
@@ -10348,6 +10628,10 @@
           },
           {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time",
             "named": true
           },
           {
@@ -11273,6 +11557,10 @@
   },
   {
     "type": "virtual",
+    "named": false
+  },
+  {
+    "type": "weeks",
     "named": false
   },
   {

@@ -1,0 +1,285 @@
+==================
+Ether unit: wei
+==================
+
+uint value = 1 wei;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (ether
+      (number)
+      (ether_unit))))
+
+==================
+Ether unit: gwei
+==================
+
+uint value = 10 gwei;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (ether
+      (number)
+      (ether_unit))))
+
+==================
+Ether unit: ether
+==================
+
+uint value = 0.5 ether;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (ether
+      (number)
+      (ether_unit))))
+
+==================
+Time unit: seconds
+==================
+
+uint duration = 30 seconds;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (time
+      (number)
+      (time_unit))))
+
+==================
+Time unit: minutes
+==================
+
+uint duration = 5 minutes;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (time
+      (number)
+      (time_unit))))
+
+==================
+Time unit: hours
+==================
+
+uint duration = 2 hours;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (time
+      (number)
+      (time_unit))))
+
+==================
+Time unit: days
+==================
+
+uint duration = 7 days;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (time
+      (number)
+      (time_unit))))
+
+==================
+Time unit: weeks
+==================
+
+uint duration = 4 weeks;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (time
+      (number)
+      (time_unit))))
+
+==================
+Units in arithmetic expressions
+==================
+
+uint total = 1 ether + 500 gwei;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (add
+        left: (ether
+          (number)
+          (ether_unit))
+        operator: (add_op)
+        right: (ether
+          (number)
+          (ether_unit))))))
+
+==================
+Units in comparison expressions
+==================
+
+contract C {
+    function f() public view {
+        if (block.timestamp + 5 minutes > someTime) {}
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (if_statement
+          condition: (comparison
+            left: (arithmetic
+              (add
+                left: (symbol
+                  scope: (symbol
+                    name: (identifier))
+                  name: (identifier))
+                operator: (add_op)
+                right: (time
+                  (number)
+                  (time_unit))))
+            operator: (comparison_op)
+            right: (symbol
+              name: (identifier)))
+          consequence: (block))))))
+
+==================
+Units in a require statement
+==================
+
+contract C {
+    function f() public payable {
+        require(msg.value >= 1 ether, "Insufficient payment");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (symbol
+              name: (identifier))
+            arguments: (argument_list
+              argument: (comparison
+                left: (symbol
+                  scope: (symbol
+                    name: (identifier))
+                  name: (identifier))
+                operator: (comparison_op)
+                right: (ether
+                  (number)
+                  (ether_unit)))
+              argument: (literal
+                (string)))))))))
+
+==================
+Units in a function call argument
+==================
+
+contract C {
+    function setDelay(uint _delay) public {}
+    function f() public {
+        setDelay(10 minutes);
+    }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (symbol
+              name: (identifier))
+            arguments: (argument_list
+              argument: (time
+                (number)
+                (time_unit)))))))))

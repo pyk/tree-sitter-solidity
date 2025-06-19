@@ -545,9 +545,10 @@ module.exports = grammar({
     number: ($) => /\d+/,
     string: ($) => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
 
-    literal_with_subdenomination: ($) => seq($.number, $.subdenomination),
-    subdenomination: ($) =>
-      choice("wei", "gwei", "ether", "seconds", "minutes", "hours", "days"),
+    ether: ($) => seq($.number, $.ether_unit),
+    ether_unit: ($) => choice("wei", "gwei", "ether"),
+    time: ($) => seq($.number, $.time_unit),
+    time_unit: ($) => choice("seconds", "minutes", "hours", "days", "weeks"),
 
     //############################################################//
     //                         Expression                         //
@@ -611,8 +612,7 @@ module.exports = grammar({
     //                     Primary Expression                     //
     //############################################################//
 
-    _primary_expression: ($) =>
-      choice($.literal_with_subdenomination, prec(1, $.symbol)),
+    _primary_expression: ($) => choice($.ether, $.time, prec(1, $.symbol)),
 
     //############################################################//
     //                      Cast expression                       //
