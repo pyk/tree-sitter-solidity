@@ -1,0 +1,343 @@
+==================
+Prefix increment as a statement
+==================
+
+contract C {
+    function f(uint a) public {
+        ++a;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (expression_statement
+          (arithmetic
+            (increment
+              (prefix_increment
+                operator: (increment_op)
+                argument: (primary_expression
+                  (identifier))))))))))
+
+==================
+Postfix increment as a statement
+==================
+
+contract C {
+    function f(uint a) public {
+        a++;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (expression_statement
+          (arithmetic
+            (increment
+              (postfix_increment
+                argument: (primary_expression
+                  (identifier))
+                operator: (increment_op)))))))))
+
+==================
+Prefix increment in an assignment
+==================
+
+// b should be assigned the value of a AFTER it is incremented
+contract C {
+    function f(uint a) public returns (uint b) {
+        b = ++a;
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      body: (block
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (simple_assignment_operator)
+            right: (arithmetic
+              (increment
+                (prefix_increment
+                  operator: (increment_op)
+                  argument: (primary_expression
+                    (identifier)))))))))))
+
+==================
+Postfix increment in an assignment
+==================
+
+// b should be assigned the value of a BEFORE it is incremented
+contract C {
+    function f(uint a) public returns (uint b) {
+        b = a++;
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      body: (block
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (simple_assignment_operator)
+            right: (arithmetic
+              (increment
+                (postfix_increment
+                  argument: (primary_expression
+                    (identifier))
+                  operator: (increment_op))))))))))
+
+==================
+Postfix increment of an array element
+==================
+
+contract C {
+    function f(uint[] memory arr) public {
+        arr[0]++;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (array_type
+            base: (primitive_type
+              (uint_type)))
+          location: (data_location)
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (expression_statement
+          (arithmetic
+            (increment
+              (postfix_increment
+                argument: (index_access_expression
+                  base: (primary_expression
+                    (identifier))
+                  index: (literal
+                    (number)))
+                operator: (increment_op)))))))))
+
+==================
+Prefix increment precedence vs multiplication
+==================
+
+// Should parse as (++a) * b because prefix unary has high precedence
+contract C {
+    function f(uint a, uint b) public pure returns (uint) {
+        return ++a * b;
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (arithmetic
+            (mul
+              left: (arithmetic
+                (increment
+                  (prefix_increment
+                    operator: (increment_op)
+                    argument: (primary_expression
+                      (identifier)))))
+              operator: (mul_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Postfix increment precedence vs member access (critical test)
+==================
+
+// Should parse as (a.length)++ because member access has higher precedence
+contract C {
+    struct S { uint length; }
+    function f(S storage s) public {
+        s.length++;
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    struct: (struct
+      name: (symbol
+        name: (identifier))
+      (struct_member
+        type: (primitive_type
+          (uint_type))
+        name: (symbol
+          name: (identifier))))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          location: (data_location)
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (expression_statement
+          (arithmetic
+            (increment
+              (postfix_increment
+                argument: (member_access_expression
+                  object: (primary_expression
+                    (identifier))
+                  member: (identifier))
+                operator: (increment_op)))))))))
+
+==================
+Increment in a for loop
+==================
+
+contract C {
+    function f() public pure {
+        for (uint i = 0; i < 10; i++) {
+            // loop
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (for_statement
+          initializer: (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (primitive_type
+                (uint_type))
+              name: (symbol
+                name: (identifier)))
+            value: (literal
+              (number)))
+          condition: (comparison
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          update: (arithmetic
+            (increment
+              (postfix_increment
+                argument: (primary_expression
+                  (identifier))
+                operator: (increment_op))))
+          body: (block
+            (comment)))))))
