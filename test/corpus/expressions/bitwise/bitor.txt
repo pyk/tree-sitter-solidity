@@ -58,11 +58,9 @@ contract C {
         (return_statement
           value: (bitwise
             (bitor
-              left: (primary_expression
-                (identifier))
+              left: (identifier)
               operator: (bitor_op)
-              right: (primary_expression
-                (identifier)))))))))
+              right: (identifier))))))))
 
 ==================
 Chained bitwise OR expressions (left-associative)
@@ -84,14 +82,11 @@ uint x = a | b | c;
       (bitor
         left: (bitwise
           (bitor
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (bitor_op)
-            right: (primary_expression
-              (identifier))))
+            right: (identifier)))
         operator: (bitor_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Bitwise OR precedence with XOR and AND (critical test)
@@ -111,21 +106,17 @@ uint x = a | b ^ c & d;
       name: (identifier))
     value: (bitwise
       (bitor
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (bitor_op)
         right: (bitwise
           (bitxor
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (bitxor_op)
             right: (bitwise
               (bitand
-                left: (primary_expression
-                  (identifier))
+                left: (identifier)
                 operator: (bitand_op)
-                right: (primary_expression
-                  (identifier))))))))))
+                right: (identifier)))))))))
 
 ==================
 Bitwise OR precedence with logical AND
@@ -150,19 +141,15 @@ bool x = a | b && c | d;
     value: (and
       left: (bitwise
         (bitor
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (bitor_op)
-          right: (primary_expression
-            (identifier))))
+          right: (identifier)))
       operator: (and_op)
       right: (bitwise
         (bitor
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (bitor_op)
-          right: (primary_expression
-            (identifier)))))))
+          right: (identifier))))))
 
 ==================
 Bitwise OR with parenthesized logical AND expression
@@ -184,14 +171,11 @@ bool x = (a | b) && c;
       left: (group
         expression: (bitwise
           (bitor
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (bitor_op)
-            right: (primary_expression
-              (identifier)))))
+            right: (identifier))))
       operator: (and_op)
-      right: (primary_expression
-        (identifier)))))
+      right: (identifier))))
 
 ==================
 Bitwise OR in an if statement condition
@@ -229,11 +213,9 @@ contract C {
           condition: (comparison
             left: (bitwise
               (bitor
-                left: (primary_expression
-                  (identifier))
+                left: (identifier)
                 operator: (bitor_op)
-                right: (primary_expression
-                  (identifier))))
+                right: (identifier)))
             operator: (comparison_op)
             right: (literal
               (number)))

@@ -60,8 +60,7 @@ contract C {
             (address_type))))
       body: (block
         (return_statement
-          value: (primary_expression
-            (identifier)))))))
+          value: (identifier))))))
 
 ==================
 Address as a local variable
@@ -92,8 +91,7 @@ contract C {
             name: (symbol
               name: (identifier)))
           value: (member_access_expression
-            object: (primary_expression
-              (identifier))
+            object: (identifier)
             member: (identifier)))))))
 
 ==================
@@ -131,8 +129,7 @@ contract C {
           value: (cast
             type: (primitive_type
               (address_type))
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 Payable conversion expression
@@ -168,8 +165,7 @@ contract C {
         (return_statement
           value: (payable_conversion_expression
             arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+              argument: (identifier))))))))
 
 ==================
 Address in a struct definition

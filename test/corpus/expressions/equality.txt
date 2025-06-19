@@ -56,11 +56,9 @@ contract C {
       body: (block
         (return_statement
           value: (equality
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (equality_op)
-            right: (primary_expression
-              (identifier))))))))
+            right: (identifier)))))))
 
 ==================
 Equality with boolean literals
@@ -126,14 +124,12 @@ bool x = a + 5 == b;
     value: (equality
       left: (arithmetic
         (add
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (add_op)
           right: (literal
             (number))))
       operator: (equality_op)
-      right: (primary_expression
-        (identifier)))))
+      right: (identifier))))
 
 ==================
 Equality precedence vs. comparison (left-associative)
@@ -155,18 +151,14 @@ bool x = a < b == c > d;
       name: (identifier))
     value: (equality
       left: (comparison
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (comparison_op)
-        right: (primary_expression
-          (identifier)))
+        right: (identifier))
       operator: (equality_op)
       right: (comparison
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (comparison_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Equality used in a logical OR expression
@@ -186,18 +178,14 @@ bool x = a == b || c != d;
       name: (identifier))
     value: (or
       left: (equality
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (equality_op)
-        right: (primary_expression
-          (identifier)))
+        right: (identifier))
       operator: (or_op)
       right: (equality
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (equality_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Equality in an if statement condition
@@ -230,12 +218,10 @@ contract C {
       body: (block
         (if_statement
           condition: (equality
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (equality_op)
             right: (member_access_expression
-              object: (primary_expression
-                (identifier))
+              object: (identifier)
               member: (identifier)))
           consequence: (block
             (comment)))))))
@@ -274,8 +260,7 @@ contract C {
       body: (block
         (if_statement
           condition: (assignment_expression
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (simple_assignment_operator)
             right: (literal
               (number)))

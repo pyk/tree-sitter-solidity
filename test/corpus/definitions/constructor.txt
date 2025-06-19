@@ -141,10 +141,8 @@ contract MyToken is ERC20 {
         name: (symbol
           name: (identifier))
         arguments: (argument_list
-          argument: (primary_expression
-            (identifier))
-          argument: (primary_expression
-            (identifier))))
+          argument: (identifier)
+          argument: (identifier)))
       body: (block))))
 
 ==================

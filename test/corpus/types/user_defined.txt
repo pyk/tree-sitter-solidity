@@ -102,8 +102,7 @@ contract C {
               name: (identifier)))))
       body: (block
         (return_statement
-          value: (primary_expression
-            (identifier)))))))
+          value: (identifier))))))
 
 ==================
 Custom type as a local variable
@@ -177,11 +176,9 @@ contract C {
       body: (block
         (return_statement
           value: (call_expression
-            function: (primary_expression
-              (identifier))
+            function: (identifier)
             arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+              argument: (identifier))))))))
 
 ==================
 Custom type in a mapping key and value

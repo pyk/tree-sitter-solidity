@@ -59,8 +59,7 @@ contract C {
           value: (cast
             type: (primitive_type
               (uint_type))
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 Cast of bytesN to an integer
@@ -97,8 +96,7 @@ contract C {
           value: (cast
             type: (primitive_type
               (uint_type))
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 Cast to a contract type
@@ -138,11 +136,9 @@ contract C {
       body: (block
         (return_statement
           value: (call_expression
-            function: (primary_expression
-              (identifier))
+            function: (identifier)
             arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+              argument: (identifier))))))))
 
 ==================
 Cast of 'this' to an address
@@ -174,8 +170,7 @@ contract C {
           value: (cast
             type: (primitive_type
               (address_type))
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 Cast inside an arithmetic expression

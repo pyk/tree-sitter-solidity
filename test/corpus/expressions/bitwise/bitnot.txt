@@ -73,8 +73,7 @@ contract C {
           value: (bitwise
             (bitnot
               operator: (bitnot_op)
-              argument: (primary_expression
-                (identifier)))))))))
+              argument: (identifier))))))))
 
 ==================
 Bitwise NOT precedence with exponentiation
@@ -99,11 +98,9 @@ uint x = ~a ** b;
         left: (bitwise
           (bitnot
             operator: (bitnot_op)
-            argument: (primary_expression
-              (identifier))))
+            argument: (identifier)))
         operator: (exp_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Parentheses to force bitwise NOT first
@@ -127,11 +124,9 @@ uint x = (~a) ** b;
           expression: (bitwise
             (bitnot
               operator: (bitnot_op)
-              argument: (primary_expression
-                (identifier)))))
+              argument: (identifier))))
         operator: (exp_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Bitwise NOT precedence with bitwise AND
@@ -154,11 +149,9 @@ uint x = ~a & b;
         left: (bitwise
           (bitnot
             operator: (bitnot_op)
-            argument: (primary_expression
-              (identifier))))
+            argument: (identifier)))
         operator: (bitand_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Bitwise NOT on a parenthesized expression
@@ -182,11 +175,9 @@ uint x = ~(a | b);
         argument: (group
           expression: (bitwise
             (bitor
-              left: (primary_expression
-                (identifier))
+              left: (identifier)
               operator: (bitor_op)
-              right: (primary_expression
-                (identifier)))))))))
+              right: (identifier))))))))
 
 ==================
 Double bitwise NOT
@@ -208,8 +199,7 @@ uint x = ~~a;
         argument: (bitwise
           (bitnot
             operator: (bitnot_op)
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 Bitwise NOT on a cast expression
@@ -277,11 +267,9 @@ contract C {
       body: (block
         (expression_statement
           (call_expression
-            function: (primary_expression
-              (identifier))
+            function: (identifier)
             arguments: (argument_list
               argument: (bitwise
                 (bitnot
                   operator: (bitnot_op)
-                  argument: (primary_expression
-                    (identifier)))))))))))
+                  argument: (identifier))))))))))

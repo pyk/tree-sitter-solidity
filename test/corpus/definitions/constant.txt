@@ -203,8 +203,7 @@ bytes32 constant EMPTY_STRING_HASH = keccak256("");
     name: (symbol
       name: (identifier))
     value: (call_expression
-      function: (primary_expression
-        (identifier))
+      function: (identifier)
       arguments: (argument_list
         argument: (literal
           (string))))))
@@ -280,8 +279,7 @@ uint constant B = A * 2;
       name: (identifier))
     value: (arithmetic
       (mul
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (mul_op)
         right: (literal
           (number))))))

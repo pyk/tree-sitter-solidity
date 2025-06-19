@@ -550,8 +550,10 @@ module.exports = grammar({
         // Shift expression
         $.shift,
 
+        // Primary expression
+        $._primary_expression,
+
         // Others
-        $.primary_expression,
         $.unary_expression,
         $.conditional_expression,
         $.payable_conversion_expression,
@@ -565,6 +567,13 @@ module.exports = grammar({
         $.tuple_expression,
         $.inline_array_expression,
       ),
+
+    //############################################################//
+    //                     Primary Expression                     //
+    //############################################################//
+
+    _primary_expression: ($) =>
+      choice($.literal_with_subdenomination, prec(1, $.identifier)),
 
     //############################################################//
     //                      Cast expression                       //
@@ -1492,15 +1501,6 @@ module.exports = grammar({
     // │   └── right: _expression
     // └── tuple_expression
     //     └── _expression (repeated)
-
-    /**
-     * Primary expressions are the leaf nodes of the expression tree.
-     */
-    // primary_expression: ($) =>
-    //   choice($.literal, $.literal_with_subdenomination, prec(1, $.identifier)),
-
-    primary_expression: ($) =>
-      choice($.literal_with_subdenomination, prec(1, $.identifier)),
 
     /**
      * A unary expression, handling both prefix and suffix operators.

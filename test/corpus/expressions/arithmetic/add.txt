@@ -58,11 +58,9 @@ contract C {
         (return_statement
           value: (arithmetic
             (sub
-              left: (primary_expression
-                (identifier))
+              left: (identifier)
               operator: (sub_op)
-              right: (primary_expression
-                (identifier)))))))))
+              right: (identifier))))))))
 
 ==================
 Chained addition and subtraction (left-associative)
@@ -86,17 +84,13 @@ uint x = a + b - c + d;
           (sub
             left: (arithmetic
               (add
-                left: (primary_expression
-                  (identifier))
+                left: (identifier)
                 operator: (add_op)
-                right: (primary_expression
-                  (identifier))))
+                right: (identifier)))
             operator: (sub_op)
-            right: (primary_expression
-              (identifier))))
+            right: (identifier)))
         operator: (add_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Addition precedence with multiplication (critical test)
@@ -116,16 +110,13 @@ uint x = a + b * c;
       name: (identifier))
     value: (arithmetic
       (add
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (add_op)
         right: (arithmetic
           (mul
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (mul_op)
-            right: (primary_expression
-              (identifier))))))))
+            right: (identifier)))))))
 
 ==================
 Addition precedence with exponentiation
@@ -145,16 +136,13 @@ uint x = a + b ** c;
       name: (identifier))
     value: (arithmetic
       (add
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (add_op)
         right: (arithmetic
           (exp
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (exp_op)
-            right: (primary_expression
-              (identifier))))))))
+            right: (identifier)))))))
 
 ==================
 Addition precedence with shift operators
@@ -175,14 +163,11 @@ uint x = a + b << c;
     value: (shift
       left: (arithmetic
         (add
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (add_op)
-          right: (primary_expression
-            (identifier))))
+          right: (identifier)))
       operator: (shift_op)
-      right: (primary_expression
-        (identifier)))))
+      right: (identifier))))
 
 ==================
 Addition precedence with comparison operators
@@ -203,14 +188,11 @@ bool x = a + b > c;
     value: (comparison
       left: (arithmetic
         (add
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (add_op)
-          right: (primary_expression
-            (identifier))))
+          right: (identifier)))
       operator: (comparison_op)
-      right: (primary_expression
-        (identifier)))))
+      right: (identifier))))
 
 ==================
 Addition with a parenthesized expression
@@ -230,17 +212,14 @@ uint x = a * (b + c);
       name: (identifier))
     value: (arithmetic
       (mul
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (mul_op)
         right: (group
           expression: (arithmetic
             (add
-              left: (primary_expression
-                (identifier))
+              left: (identifier)
               operator: (add_op)
-              right: (primary_expression
-                (identifier)))))))))
+              right: (identifier))))))))
 
 ==================
 Subtraction used in a require statement
@@ -275,17 +254,14 @@ contract C {
       body: (block
         (expression_statement
           (call_expression
-            function: (primary_expression
-              (identifier))
+            function: (identifier)
             arguments: (argument_list
               argument: (comparison
                 left: (arithmetic
                   (sub
-                    left: (primary_expression
-                      (identifier))
+                    left: (identifier)
                     operator: (sub_op)
-                    right: (primary_expression
-                      (identifier))))
+                    right: (identifier)))
                 operator: (comparison_op)
                 right: (literal
                   (number)))

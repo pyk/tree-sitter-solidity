@@ -142,8 +142,7 @@ contract C {
           location: (data_location)))
       body: (block
         (return_statement
-          value: (primary_expression
-            (identifier)))))))
+          value: (identifier))))))
 
 ==================
 Mapping as a local variable (storage pointer)
@@ -186,8 +185,7 @@ contract C {
             location: (data_location)
             name: (symbol
               name: (identifier)))
-          value: (primary_expression
-            (identifier)))))))
+          value: (identifier))))))
 
 ==================
 Mapping inside a struct definition

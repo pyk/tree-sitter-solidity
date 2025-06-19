@@ -58,11 +58,9 @@ contract C {
         (return_statement
           value: (arithmetic
             (div
-              left: (primary_expression
-                (identifier))
+              left: (identifier)
               operator: (div_op)
-              right: (primary_expression
-                (identifier)))))))))
+              right: (identifier))))))))
 
 ==================
 Chained division and multiplication (left-associative)
@@ -111,16 +109,13 @@ uint x = a / b ** c;
       name: (identifier))
     value: (arithmetic
       (div
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (div_op)
         right: (arithmetic
           (exp
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (exp_op)
-            right: (primary_expression
-              (identifier))))))))
+            right: (identifier)))))))
 
 ==================
 Division precedence with subtraction (critical test)
@@ -142,14 +137,11 @@ uint x = a / b - c;
       (sub
         left: (arithmetic
           (div
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (div_op)
-            right: (primary_expression
-              (identifier))))
+            right: (identifier)))
         operator: (sub_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Division with a parenthesized expression
@@ -169,17 +161,14 @@ uint x = a / (b - c);
       name: (identifier))
     value: (arithmetic
       (div
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (div_op)
         right: (group
           expression: (arithmetic
             (sub
-              left: (primary_expression
-                (identifier))
+              left: (identifier)
               operator: (sub_op)
-              right: (primary_expression
-                (identifier)))))))))
+              right: (identifier))))))))
 
 ==================
 Division in an if statement condition
@@ -218,11 +207,9 @@ contract C {
           condition: (equality
             left: (arithmetic
               (div
-                left: (primary_expression
-                  (identifier))
+                left: (identifier)
                 operator: (div_op)
-                right: (primary_expression
-                  (identifier))))
+                right: (identifier)))
             operator: (equality_op)
             right: (literal
               (number)))
@@ -256,8 +243,7 @@ contract C {
       body: (block
         (expression_statement
           (assignment_expression
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (compound_assignment_operator)
             right: (literal
               (number))))))))

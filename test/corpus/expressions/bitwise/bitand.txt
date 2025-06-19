@@ -58,11 +58,9 @@ contract C {
         (return_statement
           value: (bitwise
             (bitand
-              left: (primary_expression
-                (identifier))
+              left: (identifier)
               operator: (bitand_op)
-              right: (primary_expression
-                (identifier)))))))))
+              right: (identifier))))))))
 
 ==================
 Chained bitwise AND expressions (left-associative)
@@ -84,14 +82,11 @@ uint x = a & b & c;
       (bitand
         left: (bitwise
           (bitand
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (bitand_op)
-            right: (primary_expression
-              (identifier))))
+            right: (identifier)))
         operator: (bitand_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Bitwise AND precedence with bitwise XOR and OR
@@ -117,17 +112,13 @@ uint x = a & b ^ c | d;
           (bitxor
             left: (bitwise
               (bitand
-                left: (primary_expression
-                  (identifier))
+                left: (identifier)
                 operator: (bitand_op)
-                right: (primary_expression
-                  (identifier))))
+                right: (identifier)))
             operator: (bitxor_op)
-            right: (primary_expression
-              (identifier))))
+            right: (identifier)))
         operator: (bitor_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Bitwise AND precedence with shift and arithmetic operators
@@ -148,16 +139,14 @@ uint x = a << 1 & b + 1;
     value: (bitwise
       (bitand
         left: (shift
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (shift_op)
           right: (literal
             (number)))
         operator: (bitand_op)
         right: (arithmetic
           (add
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (add_op)
             right: (literal
               (number))))))))
@@ -180,17 +169,14 @@ uint x = a & (b | c);
       name: (identifier))
     value: (bitwise
       (bitand
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (bitand_op)
         right: (group
           expression: (bitwise
             (bitor
-              left: (primary_expression
-                (identifier))
+              left: (identifier)
               operator: (bitor_op)
-              right: (primary_expression
-                (identifier)))))))))
+              right: (identifier))))))))
 
 ==================
 Bitwise AND in a require statement
@@ -230,19 +216,15 @@ contract C {
       body: (block
         (expression_statement
           (call_expression
-            function: (primary_expression
-              (identifier))
+            function: (identifier)
             arguments: (argument_list
               argument: (equality
                 left: (bitwise
                   (bitand
-                    left: (primary_expression
-                      (identifier))
+                    left: (identifier)
                     operator: (bitand_op)
-                    right: (primary_expression
-                      (identifier))))
+                    right: (identifier)))
                 operator: (equality_op)
-                right: (primary_expression
-                  (identifier)))
+                right: (identifier))
               argument: (literal
                 (string)))))))))

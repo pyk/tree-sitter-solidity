@@ -66,8 +66,7 @@ contract C {
           value: (cast
             type: (primitive_type
               (int_type))
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 Int as a local variable
@@ -138,8 +137,7 @@ contract C {
           value: (cast
             type: (primitive_type
               (int_type))
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 Int in a struct definition

@@ -40,14 +40,11 @@ uint x = a * b / c;
       (div
         left: (arithmetic
           (mul
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (mul_op)
-            right: (primary_expression
-              (identifier))))
+            right: (identifier)))
         operator: (div_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Multiplication precedence with exponentiation
@@ -67,16 +64,13 @@ uint x = a * b ** c;
       name: (identifier))
     value: (arithmetic
       (mul
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (mul_op)
         right: (arithmetic
           (exp
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (exp_op)
-            right: (primary_expression
-              (identifier))))))))
+            right: (identifier)))))))
 
 ==================
 Multiplication precedence with addition
@@ -98,14 +92,11 @@ uint x = a * b + c;
       (add
         left: (arithmetic
           (mul
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (mul_op)
-            right: (primary_expression
-              (identifier))))
+            right: (identifier)))
         operator: (add_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Multiplication with a parenthesized expression
@@ -128,11 +119,8 @@ uint x = (a + b) * c;
         left: (group
           expression: (arithmetic
             (add
-              left: (primary_expression
-                (identifier))
+              left: (identifier)
               operator: (add_op)
-              right: (primary_expression
-                (identifier)))))
+              right: (identifier))))
         operator: (mul_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))

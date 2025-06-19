@@ -29,8 +29,7 @@ contract C {
             (increment
               (prefix_increment
                 operator: (increment_op)
-                argument: (primary_expression
-                  (identifier))))))))))
+                argument: (identifier)))))))))
 
 ==================
 Postfix increment as a statement
@@ -62,8 +61,7 @@ contract C {
           (arithmetic
             (increment
               (postfix_increment
-                argument: (primary_expression
-                  (identifier))
+                argument: (identifier)
                 operator: (increment_op)))))))))
 
 ==================
@@ -101,15 +99,13 @@ contract C {
       body: (block
         (expression_statement
           (assignment_expression
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (simple_assignment_operator)
             right: (arithmetic
               (increment
                 (prefix_increment
                   operator: (increment_op)
-                  argument: (primary_expression
-                    (identifier)))))))))))
+                  argument: (identifier))))))))))
 
 ==================
 Postfix increment in an assignment
@@ -146,14 +142,12 @@ contract C {
       body: (block
         (expression_statement
           (assignment_expression
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (simple_assignment_operator)
             right: (arithmetic
               (increment
                 (postfix_increment
-                  argument: (primary_expression
-                    (identifier))
+                  argument: (identifier)
                   operator: (increment_op))))))))))
 
 ==================
@@ -189,8 +183,7 @@ contract C {
             (increment
               (postfix_increment
                 argument: (index_access_expression
-                  base: (primary_expression
-                    (identifier))
+                  base: (identifier)
                   index: (literal
                     (number)))
                 operator: (increment_op)))))))))
@@ -239,11 +232,9 @@ contract C {
                 (increment
                   (prefix_increment
                     operator: (increment_op)
-                    argument: (primary_expression
-                      (identifier)))))
+                    argument: (identifier))))
               operator: (mul_op)
-              right: (primary_expression
-                (identifier)))))))))
+              right: (identifier))))))))
 
 ==================
 Postfix increment precedence vs member access (critical test)
@@ -289,8 +280,7 @@ contract C {
             (increment
               (postfix_increment
                 argument: (member_access_expression
-                  object: (primary_expression
-                    (identifier))
+                  object: (identifier)
                   member: (identifier))
                 operator: (increment_op)))))))))
 
@@ -328,16 +318,14 @@ contract C {
             value: (literal
               (number)))
           condition: (comparison
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (comparison_op)
             right: (literal
               (number)))
           update: (arithmetic
             (increment
               (postfix_increment
-                argument: (primary_expression
-                  (identifier))
+                argument: (identifier)
                 operator: (increment_op))))
           body: (block
             (comment)))))))

@@ -51,8 +51,7 @@ contract C {
         (return_statement
           value: (not
             operator: (not_op)
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 Double logical NOT
@@ -72,8 +71,7 @@ bool x = !!a;
       operator: (not_op)
       argument: (not
         operator: (not_op)
-        argument: (primary_expression
-          (identifier))))))
+        argument: (identifier)))))
 
 ==================
 Logical NOT precedence with equality (critical test)
@@ -94,11 +92,9 @@ bool x = !a == b;
     value: (equality
       left: (not
         operator: (not_op)
-        argument: (primary_expression
-          (identifier)))
+        argument: (identifier))
       operator: (equality_op)
-      right: (primary_expression
-        (identifier)))))
+      right: (identifier))))
 
 ==================
 Logical NOT on a parenthesized expression
@@ -118,11 +114,9 @@ bool x = !(a && b);
       operator: (not_op)
       argument: (group
         expression: (and
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (and_op)
-          right: (primary_expression
-            (identifier)))))))
+          right: (identifier))))))
 
 ==================
 Logical NOT on a function call result
@@ -168,8 +162,7 @@ contract C {
           value: (not
             operator: (not_op)
             argument: (call_expression
-              function: (primary_expression
-                (identifier))
+              function: (identifier)
               arguments: (argument_list))))))))
 
 ==================
@@ -190,16 +183,13 @@ bool x = a && !b || c;
       name: (identifier))
     value: (or
       left: (and
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (and_op)
         right: (not
           operator: (not_op)
-          argument: (primary_expression
-            (identifier))))
+          argument: (identifier)))
       operator: (or_op)
-      right: (primary_expression
-        (identifier)))))
+      right: (identifier))))
 
 ==================
 Logical NOT in an if statement
@@ -232,8 +222,7 @@ contract C {
         (if_statement
           condition: (not
             operator: (not_op)
-            argument: (primary_expression
-              (identifier)))
+            argument: (identifier))
           consequence: (block
             (comment)))))))
 
@@ -281,16 +270,13 @@ contract C {
       body: (block
         (expression_statement
           (call_expression
-            function: (primary_expression
-              (identifier))
+            function: (identifier)
             arguments: (argument_list
               argument: (not
                 operator: (not_op)
                 argument: (call_expression
-                  function: (primary_expression
-                    (identifier))
+                  function: (identifier)
                   arguments: (argument_list
-                    argument: (primary_expression
-                      (identifier)))))
+                    argument: (identifier))))
               argument: (literal
                 (string)))))))))

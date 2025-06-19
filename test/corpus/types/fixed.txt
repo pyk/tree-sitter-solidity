@@ -133,8 +133,7 @@ contract C {
           value: (cast
             type: (primitive_type
               (fixed_type))
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 Fixed-point in a struct definition

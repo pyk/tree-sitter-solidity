@@ -56,11 +56,9 @@ contract C {
       body: (block
         (return_statement
           value: (or
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (or_op)
-            right: (primary_expression
-              (identifier))))))))
+            right: (identifier)))))))
 
 ==================
 Chained OR expressions (left-associative)
@@ -80,14 +78,11 @@ bool x = a || b || c;
       name: (identifier))
     value: (or
       left: (or
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (or_op)
-        right: (primary_expression
-          (identifier)))
+        right: (identifier))
       operator: (or_op)
-      right: (primary_expression
-        (identifier)))))
+      right: (identifier))))
 
 ==================
 OR precedence with AND (critical test)
@@ -106,15 +101,12 @@ bool x = a || b && c;
     name: (symbol
       name: (identifier))
     value: (or
-      left: (primary_expression
-        (identifier))
+      left: (identifier)
       operator: (or_op)
       right: (and
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (and_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 OR with equality and comparison expressions
@@ -134,18 +126,14 @@ bool x = a == b || c < d;
       name: (identifier))
     value: (or
       left: (equality
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (equality_op)
-        right: (primary_expression
-          (identifier)))
+        right: (identifier))
       operator: (or_op)
       right: (comparison
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (comparison_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 OR with a parenthesized AND expression
@@ -166,14 +154,11 @@ bool x = (a || b) && c;
     value: (and
       left: (group
         expression: (or
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (or_op)
-          right: (primary_expression
-            (identifier))))
+          right: (identifier)))
       operator: (and_op)
-      right: (primary_expression
-        (identifier)))))
+      right: (identifier))))
 
 ==================
 OR in an if statement condition
@@ -209,11 +194,9 @@ contract C {
       body: (block
         (if_statement
           condition: (or
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (or_op)
-            right: (primary_expression
-              (identifier)))
+            right: (identifier))
           consequence: (block
             (comment)))))))
 
@@ -246,20 +229,17 @@ contract C {
       body: (block
         (expression_statement
           (call_expression
-            function: (primary_expression
-              (identifier))
+            function: (identifier)
             arguments: (argument_list
               argument: (or
                 left: (equality
-                  left: (primary_expression
-                    (identifier))
+                  left: (identifier)
                   operator: (equality_op)
                   right: (literal
                     (number)))
                 operator: (or_op)
                 right: (comparison
-                  left: (primary_expression
-                    (identifier))
+                  left: (identifier)
                   operator: (comparison_op)
                   right: (literal
                     (number))))
@@ -305,11 +285,9 @@ contract C {
         (return_statement
           value: (conditional_expression
             condition: (or
-              left: (primary_expression
-                (identifier))
+              left: (identifier)
               operator: (or_op)
-              right: (primary_expression
-                (identifier)))
+              right: (identifier))
             consequence: (literal
               (string))
             alternative: (literal

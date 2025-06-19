@@ -56,11 +56,9 @@ contract C {
       body: (block
         (return_statement
           value: (shift
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (shift_op)
-            right: (primary_expression
-              (identifier))))))))
+            right: (identifier)))))))
 
 ==================
 Unsigned right shift
@@ -101,14 +99,11 @@ uint x = a << b << c;
       name: (identifier))
     value: (shift
       left: (shift
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (shift_op)
-        right: (primary_expression
-          (identifier)))
+        right: (identifier))
       operator: (shift_op)
-      right: (primary_expression
-        (identifier)))))
+      right: (identifier))))
 
 ==================
 Shift precedence with arithmetic operators (add/mul)
@@ -129,16 +124,14 @@ uint x = a * 2 << b + 1;
     value: (shift
       left: (arithmetic
         (mul
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (mul_op)
           right: (literal
             (number))))
       operator: (shift_op)
       right: (arithmetic
         (add
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (add_op)
           right: (literal
             (number)))))))
@@ -162,14 +155,11 @@ uint x = a << b & c;
     value: (bitwise
       (bitand
         left: (shift
-          left: (primary_expression
-            (identifier))
+          left: (identifier)
           operator: (shift_op)
-          right: (primary_expression
-            (identifier)))
+          right: (identifier))
         operator: (bitand_op)
-        right: (primary_expression
-          (identifier))))))
+        right: (identifier)))))
 
 ==================
 Shift precedence with comparison operators
@@ -189,14 +179,11 @@ bool x = a >> b < c;
       name: (identifier))
     value: (comparison
       left: (shift
-        left: (primary_expression
-          (identifier))
+        left: (identifier)
         operator: (shift_op)
-        right: (primary_expression
-          (identifier)))
+        right: (identifier))
       operator: (comparison_op)
-      right: (primary_expression
-        (identifier)))))
+      right: (identifier))))
 
 ==================
 Shift with parenthesized bitwise AND
@@ -215,17 +202,14 @@ uint x = a << (b & MASK);
     name: (symbol
       name: (identifier))
     value: (shift
-      left: (primary_expression
-        (identifier))
+      left: (identifier)
       operator: (shift_op)
       right: (group
         expression: (bitwise
           (bitand
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (bitand_op)
-            right: (primary_expression
-              (identifier))))))))
+            right: (identifier)))))))
 
 ==================
 Shift in a require statement
@@ -256,13 +240,11 @@ contract C {
       body: (block
         (expression_statement
           (call_expression
-            function: (primary_expression
-              (identifier))
+            function: (identifier)
             arguments: (argument_list
               argument: (comparison
                 left: (shift
-                  left: (primary_expression
-                    (identifier))
+                  left: (identifier)
                   operator: (shift_op)
                   right: (literal
                     (number)))

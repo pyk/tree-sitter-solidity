@@ -29,8 +29,7 @@ contract C {
             (decrement
               (prefix_decrement
                 operator: (decrement_op)
-                argument: (primary_expression
-                  (identifier))))))))))
+                argument: (identifier)))))))))
 
 ==================
 Postfix decrement as a statement
@@ -62,8 +61,7 @@ contract C {
           (arithmetic
             (decrement
               (postfix_decrement
-                argument: (primary_expression
-                  (identifier))
+                argument: (identifier)
                 operator: (decrement_op)))))))))
 
 ==================
@@ -101,15 +99,13 @@ contract C {
       body: (block
         (expression_statement
           (assignment_expression
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (simple_assignment_operator)
             right: (arithmetic
               (decrement
                 (prefix_decrement
                   operator: (decrement_op)
-                  argument: (primary_expression
-                    (identifier)))))))))))
+                  argument: (identifier))))))))))
 
 ==================
 Postfix decrement in an assignment
@@ -146,14 +142,12 @@ contract C {
       body: (block
         (expression_statement
           (assignment_expression
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (simple_assignment_operator)
             right: (arithmetic
               (decrement
                 (postfix_decrement
-                  argument: (primary_expression
-                    (identifier))
+                  argument: (identifier)
                   operator: (decrement_op))))))))))
 
 ==================
@@ -189,8 +183,7 @@ contract C {
             (decrement
               (postfix_decrement
                 argument: (index_access_expression
-                  base: (primary_expression
-                    (identifier))
+                  base: (identifier)
                   index: (literal
                     (number)))
                 operator: (decrement_op)))))))))
@@ -239,11 +232,9 @@ contract C {
                 (decrement
                   (prefix_decrement
                     operator: (decrement_op)
-                    argument: (primary_expression
-                      (identifier)))))
+                    argument: (identifier))))
               operator: (mul_op)
-              right: (primary_expression
-                (identifier)))))))))
+              right: (identifier))))))))
 
 ==================
 Postfix decrement precedence vs member access (critical test)
@@ -289,8 +280,7 @@ contract C {
             (decrement
               (postfix_decrement
                 argument: (member_access_expression
-                  object: (primary_expression
-                    (identifier))
+                  object: (identifier)
                   member: (identifier))
                 operator: (decrement_op)))))))))
 
@@ -328,16 +318,14 @@ contract C {
             value: (literal
               (number)))
           condition: (comparison
-            left: (primary_expression
-              (identifier))
+            left: (identifier)
             operator: (comparison_op)
             right: (literal
               (number)))
           update: (arithmetic
             (decrement
               (postfix_decrement
-                argument: (primary_expression
-                  (identifier))
+                argument: (identifier)
                 operator: (decrement_op))))
           body: (block
             (comment)))))))

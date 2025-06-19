@@ -61,8 +61,7 @@ contract C {
           location: (data_location)))
       body: (block
         (return_statement
-          value: (primary_expression
-            (identifier)))))))
+          value: (identifier))))))
 
 ==================
 String as a local variable
@@ -133,8 +132,7 @@ contract C {
           value: (cast
             type: (primitive_type
               (string_type))
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 String in a struct definition

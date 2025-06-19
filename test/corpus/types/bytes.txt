@@ -72,11 +72,9 @@ contract C {
       body: (block
         (return_statement
           value: (tuple_expression
-            (primary_expression
-              (identifier))
+            (identifier)
             (index_access_expression
-              base: (primary_expression
-                (identifier))
+              base: (identifier)
               index: (literal
                 (number)))))))))
 
@@ -158,8 +156,7 @@ contract C {
           value: (cast
             type: (primitive_type
               (bytes_type))
-            argument: (primary_expression
-              (identifier))))))))
+            argument: (identifier)))))))
 
 ==================
 Bytes in a struct definition
