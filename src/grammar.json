@@ -1736,6 +1736,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "shift"
+        },
+        {
+          "type": "SYMBOL",
           "name": "primary_expression"
         },
         {
@@ -1777,10 +1781,6 @@
         {
           "type": "SYMBOL",
           "name": "assignment_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "shift_expression"
         },
         {
           "type": "SYMBOL",
@@ -2509,6 +2509,56 @@
     "bitnot_op": {
       "type": "STRING",
       "value": "~"
+    },
+    "shift": {
+      "type": "PREC_LEFT",
+      "value": 9,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "SYMBOL",
+              "name": "shift_op"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "shift_op": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "<<"
+        },
+        {
+          "type": "STRING",
+          "value": ">>"
+        },
+        {
+          "type": "STRING",
+          "value": ">>>"
+        }
+      ]
     },
     "variable": {
       "type": "SEQ",
@@ -5279,23 +5329,6 @@
         }
       ]
     },
-    "shift_operator": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "<<"
-        },
-        {
-          "type": "STRING",
-          "value": ">>"
-        },
-        {
-          "type": "STRING",
-          "value": ">>>"
-        }
-      ]
-    },
     "conditional_expression": {
       "type": "PREC_RIGHT",
       "value": 1,
@@ -5619,39 +5652,6 @@
                   "name": "compound_assignment_operator"
                 }
               ]
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "right",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          }
-        ]
-      }
-    },
-    "shift_expression": {
-      "type": "PREC_LEFT",
-      "value": 9,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "left",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "operator",
-            "content": {
-              "type": "SYMBOL",
-              "name": "shift_operator"
             }
           },
           {

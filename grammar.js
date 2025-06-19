@@ -546,6 +546,9 @@ module.exports = grammar({
         $.and,
         $.or,
 
+        // Shift expression
+        $.shift,
+
         // Others
         $.primary_expression,
         $.unary_expression,
@@ -558,7 +561,6 @@ module.exports = grammar({
         $.index_range_access_expression,
         $.new_expression,
         $.assignment_expression,
-        $.shift_expression,
         $.tuple_expression,
         $.inline_array_expression,
       ),
@@ -774,6 +776,21 @@ module.exports = grammar({
         seq(field("operator", $.bitnot_op), field("argument", $._expression)),
       ),
     bitnot_op: ($) => "~",
+
+    //############################################################//
+    //                      Shift expression                      //
+    //############################################################//
+
+    shift: ($) =>
+      prec.left(
+        PREC.SHIFT,
+        seq(
+          field("left", $._expression),
+          field("operator", $.shift_op),
+          field("right", $._expression),
+        ),
+      ),
+    shift_op: ($) => choice("<<", ">>", ">>>"),
 
     //############################################################//
     //                          Variable                          //
@@ -1460,8 +1477,6 @@ module.exports = grammar({
         ),
       ),
 
-    shift_operator: ($) => choice("<<", ">>", ">>>"),
-
     /**
      * A conditional (ternary) expression. e.g., `a ? b : c`
      *
@@ -1593,16 +1608,6 @@ module.exports = grammar({
               $.compound_assignment_operator,
             ),
           ),
-          field("right", $._expression),
-        ),
-      ),
-
-    shift_expression: ($) =>
-      prec.left(
-        PREC.SHIFT,
-        seq(
-          field("left", $._expression),
-          field("operator", $.shift_operator),
           field("right", $._expression),
         ),
       ),

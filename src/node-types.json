@@ -104,7 +104,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -212,7 +212,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -337,7 +337,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -445,7 +445,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -549,7 +549,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -714,7 +714,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -818,7 +818,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -930,7 +930,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -1034,7 +1034,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -1142,7 +1142,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -1251,7 +1251,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -1370,7 +1370,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -1478,7 +1478,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -1614,7 +1614,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -1722,7 +1722,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -1919,7 +1919,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -2048,7 +2048,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -2178,7 +2178,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -2286,7 +2286,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -2400,7 +2400,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -2498,7 +2498,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -2596,7 +2596,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -3015,7 +3015,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -3160,7 +3160,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -3268,7 +3268,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -3515,7 +3515,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -3623,7 +3623,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -3743,7 +3743,7 @@
           "named": true
         },
         {
-          "type": "shift_expression",
+          "type": "shift",
           "named": true
         },
         {
@@ -3996,7 +3996,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -4112,7 +4112,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -4358,7 +4358,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -4520,7 +4520,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -4750,7 +4750,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -4848,7 +4848,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -4952,7 +4952,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -5050,7 +5050,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -5148,7 +5148,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -5294,7 +5294,7 @@
           "named": true
         },
         {
-          "type": "shift_expression",
+          "type": "shift",
           "named": true
         },
         {
@@ -5712,7 +5712,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -5930,7 +5930,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -6038,7 +6038,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -6162,7 +6162,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -6266,7 +6266,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -6417,7 +6417,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -6525,7 +6525,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -6802,7 +6802,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -6916,7 +6916,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -7053,7 +7053,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -7167,7 +7167,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -7389,7 +7389,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -7431,7 +7431,7 @@
     }
   },
   {
-    "type": "shift_expression",
+    "type": "shift",
     "named": true,
     "fields": {
       "left": {
@@ -7519,7 +7519,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -7537,7 +7537,7 @@
         "required": true,
         "types": [
           {
-            "type": "shift_operator",
+            "type": "shift_op",
             "named": true
           }
         ]
@@ -7627,7 +7627,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -7643,7 +7643,7 @@
     }
   },
   {
-    "type": "shift_operator",
+    "type": "shift_op",
     "named": true,
     "fields": {}
   },
@@ -7909,7 +7909,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -8153,7 +8153,7 @@
           "named": true
         },
         {
-          "type": "shift_expression",
+          "type": "shift",
           "named": true
         },
         {
@@ -8287,7 +8287,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -8675,7 +8675,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -8855,7 +8855,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {
@@ -9073,7 +9073,7 @@
             "named": true
           },
           {
-            "type": "shift_expression",
+            "type": "shift",
             "named": true
           },
           {

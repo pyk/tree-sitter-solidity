@@ -147,10 +147,10 @@ uint x = a << 1 & b + 1;
       name: (identifier))
     value: (bitwise
       (bitand
-        left: (shift_expression
+        left: (shift
           left: (primary_expression
             (identifier))
-          operator: (shift_operator)
+          operator: (shift_op)
           right: (literal
             (number)))
         operator: (bitand_op)
