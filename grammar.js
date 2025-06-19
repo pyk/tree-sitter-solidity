@@ -527,27 +527,20 @@ module.exports = grammar({
         $.unicode_string,
       ),
 
-    _literal: ($) =>
-      choice(
-        $.number,
-        $.string,
-        $.boolean,
-        $.hex,
-        $.hex_string,
-        $.unicode_string,
-      ),
-
     boolean: ($) => choice("true", "false"),
     hex: ($) => /0x[0-9a-fA-F]+/,
     hex_string: ($) => token(seq("hex", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
     unicode_string: ($) =>
       token(seq("unicode", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
-    number: ($) => /\d+/,
+    number: ($) => token(/\d+(\.\d*)?/),
     string: ($) => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
 
-    ether: ($) => seq($.number, $.ether_unit),
+    ether: ($) =>
+      prec(1, seq(field("value", $.number), field("unit", $.ether_unit))),
     ether_unit: ($) => choice("wei", "gwei", "ether"),
-    time: ($) => seq($.number, $.time_unit),
+
+    time: ($) =>
+      prec(1, seq(field("value", $.number), field("unit", $.time_unit))),
     time_unit: ($) => choice("seconds", "minutes", "hours", "days", "weeks"),
 
     //############################################################//
@@ -561,9 +554,6 @@ module.exports = grammar({
      */
     _expression: ($) =>
       choice(
-        // Give direct literals the highest precedence in the expression tree.
-        prec(2, alias($._literal, $.literal)),
-
         // Type cast
         $.cast,
 
@@ -612,7 +602,8 @@ module.exports = grammar({
     //                     Primary Expression                     //
     //############################################################//
 
-    _primary_expression: ($) => choice($.ether, $.time, prec(1, $.symbol)),
+    _primary_expression: ($) =>
+      choice($.ether, $.time, $.literal, prec(1, $.symbol)),
 
     //############################################################//
     //                      Cast expression                       //

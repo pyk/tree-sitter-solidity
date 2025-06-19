@@ -13,8 +13,8 @@ uint value = 1 wei;
     name: (symbol
       name: (identifier))
     value: (ether
-      (number)
-      (ether_unit))))
+      value: (number)
+      unit: (ether_unit))))
 
 ==================
 Ether unit: gwei
@@ -31,11 +31,11 @@ uint value = 10 gwei;
     name: (symbol
       name: (identifier))
     value: (ether
-      (number)
-      (ether_unit))))
+      value: (number)
+      unit: (ether_unit))))
 
 ==================
-Ether unit: ether
+Ether unit: ether with decimal
 ==================
 
 uint value = 0.5 ether;
@@ -49,8 +49,8 @@ uint value = 0.5 ether;
     name: (symbol
       name: (identifier))
     value: (ether
-      (number)
-      (ether_unit))))
+      value: (number)
+      unit: (ether_unit))))
 
 ==================
 Time unit: seconds
@@ -67,8 +67,8 @@ uint duration = 30 seconds;
     name: (symbol
       name: (identifier))
     value: (time
-      (number)
-      (time_unit))))
+      value: (number)
+      unit: (time_unit))))
 
 ==================
 Time unit: minutes
@@ -85,8 +85,8 @@ uint duration = 5 minutes;
     name: (symbol
       name: (identifier))
     value: (time
-      (number)
-      (time_unit))))
+      value: (number)
+      unit: (time_unit))))
 
 ==================
 Time unit: hours
@@ -103,8 +103,8 @@ uint duration = 2 hours;
     name: (symbol
       name: (identifier))
     value: (time
-      (number)
-      (time_unit))))
+      value: (number)
+      unit: (time_unit))))
 
 ==================
 Time unit: days
@@ -121,8 +121,8 @@ uint duration = 7 days;
     name: (symbol
       name: (identifier))
     value: (time
-      (number)
-      (time_unit))))
+      value: (number)
+      unit: (time_unit))))
 
 ==================
 Time unit: weeks
@@ -139,8 +139,8 @@ uint duration = 4 weeks;
     name: (symbol
       name: (identifier))
     value: (time
-      (number)
-      (time_unit))))
+      value: (number)
+      unit: (time_unit))))
 
 ==================
 Units in arithmetic expressions
@@ -159,12 +159,12 @@ uint total = 1 ether + 500 gwei;
     value: (arithmetic
       (add
         left: (ether
-          (number)
-          (ether_unit))
+          value: (number)
+          unit: (ether_unit))
         operator: (add_op)
         right: (ether
-          (number)
-          (ether_unit))))))
+          value: (number)
+          unit: (ether_unit))))))
 
 ==================
 Units in comparison expressions
@@ -198,8 +198,8 @@ contract C {
                   name: (identifier))
                 operator: (add_op)
                 right: (time
-                  (number)
-                  (time_unit))))
+                  value: (number)
+                  unit: (time_unit))))
             operator: (comparison_op)
             right: (symbol
               name: (identifier)))
@@ -239,8 +239,8 @@ contract C {
                   name: (identifier))
                 operator: (comparison_op)
                 right: (ether
-                  (number)
-                  (ether_unit)))
+                  value: (number)
+                  unit: (ether_unit)))
               argument: (literal
                 (string)))))))))
 
@@ -281,5 +281,5 @@ contract C {
               name: (identifier))
             arguments: (argument_list
               argument: (time
-                (number)
-                (time_unit)))))))))
+                value: (number)
+                unit: (time_unit)))))))))

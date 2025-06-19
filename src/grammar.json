@@ -1715,35 +1715,6 @@
         }
       ]
     },
-    "_literal": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "number"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "string"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "boolean"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "hex"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "hex_string"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "unicode_string"
-        }
-      ]
-    },
     "boolean": {
       "type": "CHOICE",
       "members": [
@@ -1794,25 +1765,40 @@
       }
     },
     "number": {
-      "type": "PATTERN",
-      "value": "\\d+"
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\d+(\\.\\d*)?"
+      }
     },
     "string": {
       "type": "PATTERN",
       "value": "\"([^\"\\\\]|\\\\.)*\"|'([^'\\\\]|\\\\.)*'"
     },
     "ether": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "number"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "ether_unit"
-        }
-      ]
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "value",
+            "content": {
+              "type": "SYMBOL",
+              "name": "number"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "unit",
+            "content": {
+              "type": "SYMBOL",
+              "name": "ether_unit"
+            }
+          }
+        ]
+      }
     },
     "ether_unit": {
       "type": "CHOICE",
@@ -1832,17 +1818,29 @@
       ]
     },
     "time": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "number"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "time_unit"
-        }
-      ]
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "value",
+            "content": {
+              "type": "SYMBOL",
+              "name": "number"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "unit",
+            "content": {
+              "type": "SYMBOL",
+              "name": "time_unit"
+            }
+          }
+        ]
+      }
     },
     "time_unit": {
       "type": "CHOICE",
@@ -1872,19 +1870,6 @@
     "_expression": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "PREC",
-          "value": 2,
-          "content": {
-            "type": "ALIAS",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_literal"
-            },
-            "named": true,
-            "value": "literal"
-          }
-        },
         {
           "type": "SYMBOL",
           "name": "cast"
@@ -1989,6 +1974,10 @@
         {
           "type": "SYMBOL",
           "name": "time"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "literal"
         },
         {
           "type": "PREC",
