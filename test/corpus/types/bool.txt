@@ -61,7 +61,8 @@ contract C {
         (return_statement
           value: (not
             operator: (not_op)
-            argument: (identifier)))))))
+            argument: (symbol
+              name: (identifier))))))))
 
 ==================
 Bool as a local variable

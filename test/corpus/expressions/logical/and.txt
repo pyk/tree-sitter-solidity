@@ -56,9 +56,11 @@ contract C {
       body: (block
         (return_statement
           value: (and
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (and_op)
-            right: (identifier)))))))
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Chained AND expressions (left-associative)
@@ -78,11 +80,14 @@ bool x = a && b && c;
       name: (identifier))
     value: (and
       left: (and
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (and_op)
-        right: (identifier))
+        right: (symbol
+          name: (identifier)))
       operator: (and_op)
-      right: (identifier))))
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 AND precedence over OR
@@ -102,11 +107,14 @@ bool x = a && b || c;
       name: (identifier))
     value: (or
       left: (and
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (and_op)
-        right: (identifier))
+        right: (symbol
+          name: (identifier)))
       operator: (or_op)
-      right: (identifier))))
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 AND with comparison and equality expressions
@@ -126,14 +134,18 @@ bool x = a > b && c == d;
       name: (identifier))
     value: (and
       left: (comparison
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (comparison_op)
-        right: (identifier))
+        right: (symbol
+          name: (identifier)))
       operator: (and_op)
       right: (equality
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (equality_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 AND with a parenthesized OR expression
@@ -152,13 +164,16 @@ bool x = a && (b || c);
     name: (symbol
       name: (identifier))
     value: (and
-      left: (identifier)
+      left: (symbol
+        name: (identifier))
       operator: (and_op)
       right: (group
         expression: (or
-          left: (identifier)
+          left: (symbol
+            name: (identifier))
           operator: (or_op)
-          right: (identifier))))))
+          right: (symbol
+            name: (identifier)))))))
 
 ==================
 AND in an if statement condition
@@ -194,9 +209,11 @@ contract C {
       body: (block
         (if_statement
           condition: (and
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (and_op)
-            right: (identifier))
+            right: (symbol
+              name: (identifier)))
           consequence: (block
             (comment)))))))
 
@@ -233,17 +250,20 @@ contract C {
       body: (block
         (expression_statement
           (call_expression
-            function: (identifier)
+            function: (symbol
+              name: (identifier))
             arguments: (argument_list
               argument: (and
                 left: (comparison
-                  left: (identifier)
+                  left: (symbol
+                    name: (identifier))
                   operator: (comparison_op)
                   right: (literal
                     (number)))
                 operator: (and_op)
                 right: (comparison
-                  left: (identifier)
+                  left: (symbol
+                    name: (identifier))
                   operator: (comparison_op)
                   right: (literal
                     (number))))
@@ -288,9 +308,11 @@ contract C {
         (return_statement
           value: (conditional_expression
             condition: (and
-              left: (identifier)
+              left: (symbol
+                name: (identifier))
               operator: (and_op)
-              right: (identifier))
+              right: (symbol
+                name: (identifier)))
             consequence: (literal
               (number))
             alternative: (literal

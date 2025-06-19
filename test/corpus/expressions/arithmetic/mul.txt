@@ -40,11 +40,14 @@ uint x = a * b / c;
       (div
         left: (arithmetic
           (mul
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (mul_op)
-            right: (identifier)))
+            right: (symbol
+              name: (identifier))))
         operator: (div_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Multiplication precedence with exponentiation
@@ -64,13 +67,16 @@ uint x = a * b ** c;
       name: (identifier))
     value: (arithmetic
       (mul
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (mul_op)
         right: (arithmetic
           (exp
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (exp_op)
-            right: (identifier)))))))
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Multiplication precedence with addition
@@ -92,11 +98,14 @@ uint x = a * b + c;
       (add
         left: (arithmetic
           (mul
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (mul_op)
-            right: (identifier)))
+            right: (symbol
+              name: (identifier))))
         operator: (add_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Multiplication with a parenthesized expression
@@ -119,8 +128,11 @@ uint x = (a + b) * c;
         left: (group
           expression: (arithmetic
             (add
-              left: (identifier)
+              left: (symbol
+                name: (identifier))
               operator: (add_op)
-              right: (identifier))))
+              right: (symbol
+                name: (identifier)))))
         operator: (mul_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))

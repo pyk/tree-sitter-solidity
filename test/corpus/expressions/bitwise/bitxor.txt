@@ -58,9 +58,11 @@ contract C {
         (return_statement
           value: (bitwise
             (bitxor
-              left: (identifier)
+              left: (symbol
+                name: (identifier))
               operator: (bitxor_op)
-              right: (identifier))))))))
+              right: (symbol
+                name: (identifier)))))))))
 
 ==================
 Chained bitwise XOR expressions (left-associative)
@@ -82,11 +84,14 @@ uint x = a ^ b ^ c;
       (bitxor
         left: (bitwise
           (bitxor
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (bitxor_op)
-            right: (identifier)))
+            right: (symbol
+              name: (identifier))))
         operator: (bitxor_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Bitwise XOR precedence with bitwise AND (critical test)
@@ -106,13 +111,16 @@ uint x = a ^ b & c;
       name: (identifier))
     value: (bitwise
       (bitxor
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (bitxor_op)
         right: (bitwise
           (bitand
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (bitand_op)
-            right: (identifier)))))))
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Bitwise XOR precedence with bitwise OR (critical test)
@@ -134,11 +142,14 @@ uint x = a ^ b | c;
       (bitor
         left: (bitwise
           (bitxor
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (bitxor_op)
-            right: (identifier)))
+            right: (symbol
+              name: (identifier))))
         operator: (bitor_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Bitwise XOR precedence with comparison operators
@@ -159,11 +170,14 @@ bool x = a ^ b > c;
     value: (comparison
       left: (bitwise
         (bitxor
-          left: (identifier)
+          left: (symbol
+            name: (identifier))
           operator: (bitxor_op)
-          right: (identifier)))
+          right: (symbol
+            name: (identifier))))
       operator: (comparison_op)
-      right: (identifier))))
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Bitwise XOR with parenthesized expression
@@ -183,14 +197,17 @@ uint x = a ^ (b + c);
       name: (identifier))
     value: (bitwise
       (bitxor
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (bitxor_op)
         right: (group
           expression: (arithmetic
             (add
-              left: (identifier)
+              left: (symbol
+                name: (identifier))
               operator: (add_op)
-              right: (identifier))))))))
+              right: (symbol
+                name: (identifier)))))))))
 
 ==================
 Bitwise XOR in an assignment expression
@@ -224,6 +241,8 @@ contract C {
       body: (block
         (expression_statement
           (assignment_expression
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (compound_assignment_operator)
-            right: (identifier)))))))
+            right: (symbol
+              name: (identifier))))))))

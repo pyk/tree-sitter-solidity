@@ -77,7 +77,8 @@ contract C {
           value: (arithmetic
             (negation
               operator: (negation_op)
-              argument: (identifier))))))))
+              argument: (symbol
+                name: (identifier)))))))))
 
 ==================
 Negation precedence over exponentiation (right-associative)
@@ -282,7 +283,8 @@ contract C {
               left: (arithmetic
                 (negation
                   operator: (negation_op)
-                  argument: (identifier)))
+                  argument: (symbol
+                    name: (identifier))))
               operator: (comparison_op)
               right: (literal
                 (number)))
@@ -291,7 +293,8 @@ contract C {
               left: (arithmetic
                 (negation
                   operator: (negation_op)
-                  argument: (identifier)))
+                  argument: (symbol
+                    name: (identifier))))
               operator: (comparison_op)
               right: (literal
                 (number)))))))))
@@ -324,13 +327,15 @@ contract C {
       body: (block
         (expression_statement
           (call_expression
-            function: (identifier)
+            function: (symbol
+              name: (identifier))
             arguments: (argument_list
               argument: (comparison
                 left: (arithmetic
                   (negation
                     operator: (negation_op)
-                    argument: (identifier)))
+                    argument: (symbol
+                      name: (identifier))))
                 operator: (comparison_op)
                 right: (literal
                   (number)))

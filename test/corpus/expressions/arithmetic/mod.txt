@@ -58,9 +58,11 @@ contract C {
         (return_statement
           value: (arithmetic
             (mod
-              left: (identifier)
+              left: (symbol
+                name: (identifier))
               operator: (mod_op)
-              right: (identifier))))))))
+              right: (symbol
+                name: (identifier)))))))))
 
 ==================
 Chained multiplication and modulo (left-associative)
@@ -82,11 +84,14 @@ uint x = a * b % c;
       (mod
         left: (arithmetic
           (mul
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (mul_op)
-            right: (identifier)))
+            right: (symbol
+              name: (identifier))))
         operator: (mod_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Modulo precedence with exponentiation (critical test)
@@ -106,13 +111,16 @@ uint x = a % b ** c;
       name: (identifier))
     value: (arithmetic
       (mod
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (mod_op)
         right: (arithmetic
           (exp
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (exp_op)
-            right: (identifier)))))))
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Modulo precedence with addition (critical test)
@@ -134,11 +142,14 @@ uint x = a % b + c;
       (add
         left: (arithmetic
           (mod
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (mod_op)
-            right: (identifier)))
+            right: (symbol
+              name: (identifier))))
         operator: (add_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Modulo with a parenthesized expression
@@ -158,14 +169,17 @@ uint x = a % (b + c);
       name: (identifier))
     value: (arithmetic
       (mod
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (mod_op)
         right: (group
           expression: (arithmetic
             (add
-              left: (identifier)
+              left: (symbol
+                name: (identifier))
               operator: (add_op)
-              right: (identifier))))))))
+              right: (symbol
+                name: (identifier)))))))))
 
 ==================
 Modulo in an if statement condition (checking for evenness)
@@ -205,7 +219,8 @@ contract C {
           condition: (equality
             left: (arithmetic
               (mod
-                left: (identifier)
+                left: (symbol
+                  name: (identifier))
                 operator: (mod_op)
                 right: (literal
                   (number))))
@@ -247,7 +262,8 @@ contract C {
       body: (block
         (expression_statement
           (assignment_expression
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (compound_assignment_operator)
             right: (literal
               (number))))))))

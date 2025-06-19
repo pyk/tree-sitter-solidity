@@ -56,9 +56,11 @@ contract C {
       body: (block
         (return_statement
           value: (comparison
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (comparison_op)
-            right: (identifier)))))))
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Comparison precedence with addition
@@ -79,11 +81,14 @@ bool x = a + b > c;
     value: (comparison
       left: (arithmetic
         (add
-          left: (identifier)
+          left: (symbol
+            name: (identifier))
           operator: (add_op)
-          right: (identifier)))
+          right: (symbol
+            name: (identifier))))
       operator: (comparison_op)
-      right: (identifier))))
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Comparison precedence with multiplication
@@ -102,13 +107,16 @@ bool x = a < b * c;
     name: (symbol
       name: (identifier))
     value: (comparison
-      left: (identifier)
+      left: (symbol
+        name: (identifier))
       operator: (comparison_op)
       right: (arithmetic
         (mul
-          left: (identifier)
+          left: (symbol
+            name: (identifier))
           operator: (mul_op)
-          right: (identifier))))))
+          right: (symbol
+            name: (identifier)))))))
 
 ==================
 Comparison used in a logical AND expression
@@ -128,14 +136,18 @@ bool x = a < b && c > d;
       name: (identifier))
     value: (and
       left: (comparison
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (comparison_op)
-        right: (identifier))
+        right: (symbol
+          name: (identifier)))
       operator: (and_op)
       right: (comparison
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (comparison_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Chained comparisons (invalid Solidity, but should parse)
@@ -157,11 +169,14 @@ bool x = a < b < c;
       name: (identifier))
     value: (comparison
       left: (comparison
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (comparison_op)
-        right: (identifier))
+        right: (symbol
+          name: (identifier)))
       operator: (comparison_op)
-      right: (identifier))))
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Comparison in an if statement condition
@@ -194,7 +209,8 @@ contract C {
       body: (block
         (if_statement
           condition: (comparison
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (comparison_op)
             right: (literal
               (number)))
@@ -230,10 +246,12 @@ contract C {
       body: (block
         (expression_statement
           (call_expression
-            function: (identifier)
+            function: (symbol
+              name: (identifier))
             arguments: (argument_list
               argument: (comparison
-                left: (identifier)
+                left: (symbol
+                  name: (identifier))
                 operator: (comparison_op)
                 right: (literal
                   (number)))
@@ -287,8 +305,10 @@ contract C {
       body: (block
         (return_statement
           value: (comparison
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (comparison_op)
             right: (call_expression
-              function: (identifier)
+              function: (symbol
+                name: (identifier))
               arguments: (argument_list))))))))

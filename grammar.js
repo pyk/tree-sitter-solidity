@@ -511,6 +511,45 @@ module.exports = grammar({
       ),
 
     //############################################################//
+    //                          Literal                           //
+    //############################################################//
+
+    /**
+     * A literal value, such as a number, string, boolean, or address.
+     */
+    literal: ($) =>
+      choice(
+        $.number,
+        $.string,
+        $.boolean,
+        $.hex,
+        $.hex_string,
+        $.unicode_string,
+      ),
+
+    _literal: ($) =>
+      choice(
+        $.number,
+        $.string,
+        $.boolean,
+        $.hex,
+        $.hex_string,
+        $.unicode_string,
+      ),
+
+    boolean: ($) => choice("true", "false"),
+    hex: ($) => /0x[0-9a-fA-F]+/,
+    hex_string: ($) => token(seq("hex", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
+    unicode_string: ($) =>
+      token(seq("unicode", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
+    number: ($) => /\d+/,
+    string: ($) => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
+
+    literal_with_subdenomination: ($) => seq($.number, $.subdenomination),
+    subdenomination: ($) =>
+      choice("wei", "gwei", "ether", "seconds", "minutes", "hours", "days"),
+
+    //############################################################//
     //                         Expression                         //
     //############################################################//
 
@@ -573,7 +612,7 @@ module.exports = grammar({
     //############################################################//
 
     _primary_expression: ($) =>
-      choice($.literal_with_subdenomination, prec(1, $.identifier)),
+      choice($.literal_with_subdenomination, prec(1, $.symbol)),
 
     //############################################################//
     //                      Cast expression                       //
@@ -1041,41 +1080,6 @@ module.exports = grammar({
     //############################################################//
     //                          Literal                           //
     //############################################################//
-
-    /**
-     * A literal value, such as a number, string, boolean, or address.
-     */
-    literal: ($) =>
-      choice(
-        $.number,
-        $.string,
-        $.boolean,
-        $.hex,
-        $.hex_string,
-        $.unicode_string,
-      ),
-
-    _literal: ($) =>
-      choice(
-        $.number,
-        $.string,
-        $.boolean,
-        $.hex,
-        $.hex_string,
-        $.unicode_string,
-      ),
-
-    boolean: ($) => choice("true", "false"),
-    hex: ($) => /0x[0-9a-fA-F]+/,
-    hex_string: ($) => token(seq("hex", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
-    unicode_string: ($) =>
-      token(seq("unicode", /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/)),
-    number: ($) => /\d+/,
-    string: ($) => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
-
-    literal_with_subdenomination: ($) => seq($.number, $.subdenomination),
-    subdenomination: ($) =>
-      choice("wei", "gwei", "ether", "seconds", "minutes", "hours", "days"),
 
     //############################################################//
     //                           Others                           //

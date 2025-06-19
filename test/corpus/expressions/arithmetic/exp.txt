@@ -58,9 +58,11 @@ contract C {
         (return_statement
           value: (arithmetic
             (exp
-              left: (identifier)
+              left: (symbol
+                name: (identifier))
               operator: (exp_op)
-              right: (identifier))))))))
+              right: (symbol
+                name: (identifier)))))))))
 
 ==================
 Chained exponentiation (right-associative)
@@ -80,13 +82,16 @@ uint x = a ** b ** c;
       name: (identifier))
     value: (arithmetic
       (exp
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (exp_op)
         right: (arithmetic
           (exp
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (exp_op)
-            right: (identifier)))))))
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Exponentiation precedence with multiplication
@@ -108,11 +113,14 @@ uint x = a ** b * c;
       (mul
         left: (arithmetic
           (exp
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (exp_op)
-            right: (identifier)))
+            right: (symbol
+              name: (identifier))))
         operator: (mul_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Exponentiation precedence with addition
@@ -132,13 +140,16 @@ uint x = a + b ** c;
       name: (identifier))
     value: (arithmetic
       (add
-        left: (identifier)
+        left: (symbol
+          name: (identifier))
         operator: (add_op)
         right: (arithmetic
           (exp
-            left: (identifier)
+            left: (symbol
+              name: (identifier))
             operator: (exp_op)
-            right: (identifier)))))))
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Exponentiation with a unary minus (critical test)
@@ -161,9 +172,11 @@ int x = -a ** b;
         left: (arithmetic
           (negation
             operator: (negation_op)
-            argument: (identifier)))
+            argument: (symbol
+              name: (identifier))))
         operator: (exp_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Exponentiation with a parenthesized expression as base
@@ -186,11 +199,14 @@ uint x = (a + b) ** c;
         left: (group
           expression: (arithmetic
             (add
-              left: (identifier)
+              left: (symbol
+                name: (identifier))
               operator: (add_op)
-              right: (identifier))))
+              right: (symbol
+                name: (identifier)))))
         operator: (exp_op)
-        right: (identifier)))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Exponentiation in a require statement
@@ -221,7 +237,8 @@ contract C {
       body: (block
         (expression_statement
           (call_expression
-            function: (identifier)
+            function: (symbol
+              name: (identifier))
             arguments: (argument_list
               argument: (comparison
                 left: (arithmetic
@@ -229,7 +246,8 @@ contract C {
                     left: (literal
                       (number))
                     operator: (exp_op)
-                    right: (identifier)))
+                    right: (symbol
+                      name: (identifier))))
                 operator: (comparison_op)
                 right: (literal
                   (number)))
