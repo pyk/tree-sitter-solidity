@@ -1,0 +1,293 @@
+==================
+Simple addition with number literals
+==================
+
+uint x = 10 + 20;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (add
+        left: (literal
+          (number))
+        operator: (add_op)
+        right: (literal
+          (number))))))
+
+==================
+Simple subtraction with variables
+==================
+
+contract C {
+    function f(int a, int b) public pure returns (int) {
+        return a - b;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))))
+      body: (block
+        (return_statement
+          value: (arithmetic
+            (add
+              left: (primary_expression
+                (identifier))
+              operator: (add_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Chained addition and subtraction (left-associative)
+==================
+
+// Should parse as ((a + b) - c) + d
+uint x = a + b - c + d;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (add
+        left: (arithmetic
+          (add
+            left: (arithmetic
+              (add
+                left: (primary_expression
+                  (identifier))
+                operator: (add_op)
+                right: (primary_expression
+                  (identifier))))
+            operator: (add_op)
+            right: (primary_expression
+              (identifier))))
+        operator: (add_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Addition precedence with multiplication (critical test)
+==================
+
+// Should parse as a + (b * c)
+uint x = a + b * c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (add
+        left: (primary_expression
+          (identifier))
+        operator: (add_op)
+        right: (arithmetic
+          (mul
+            left: (primary_expression
+              (identifier))
+            operator: (mul_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Addition precedence with exponentiation
+==================
+
+// Should parse as a + (b ** c)
+uint x = a + b ** c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (add
+        left: (primary_expression
+          (identifier))
+        operator: (add_op)
+        right: (arithmetic
+          (exp
+            left: (primary_expression
+              (identifier))
+            operator: (exp_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Addition precedence with shift operators
+==================
+
+// Should parse as (a + b) << c
+uint x = a + b << c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (shift
+      left: (arithmetic
+        (add
+          left: (primary_expression
+            (identifier))
+          operator: (add_op)
+          right: (primary_expression
+            (identifier))))
+      operator: (shift_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+Addition precedence with comparison operators
+==================
+
+// Should parse as (a + b) > c
+bool x = a + b > c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (comparison
+      left: (arithmetic
+        (add
+          left: (primary_expression
+            (identifier))
+          operator: (add_op)
+          right: (primary_expression
+            (identifier))))
+      operator: (comparison_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+Addition with a parenthesized expression
+==================
+
+// Should parse as a * (b + c)
+uint x = a * (b + c);
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (mul
+        left: (primary_expression
+          (identifier))
+        operator: (mul_op)
+        right: (group
+          expression: (arithmetic
+            (add
+              left: (primary_expression
+                (identifier))
+              operator: (add_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Subtraction used in a require statement
+==================
+
+contract C {
+    function f(uint a, uint b) public pure {
+        require(a - b > 0, "a must be greater than b");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (comparison
+                left: (arithmetic
+                  (add
+                    left: (primary_expression
+                      (identifier))
+                    operator: (add_op)
+                    right: (primary_expression
+                      (identifier))))
+                operator: (comparison_op)
+                right: (literal
+                  (number)))
+              argument: (literal
+                (string)))))))))
