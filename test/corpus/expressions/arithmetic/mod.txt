@@ -1,0 +1,269 @@
+==================
+Simple modulo with number literals
+==================
+
+uint x = 27 % 5;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (mod
+        left: (literal
+          (number))
+        operator: (mod_op)
+        right: (literal
+          (number))))))
+
+==================
+Modulo with variables
+==================
+
+contract C {
+    function f(uint a, uint b) public pure returns (uint) {
+        return a % b;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (arithmetic
+            (mod
+              left: (primary_expression
+                (identifier))
+              operator: (mod_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Chained multiplication and modulo (left-associative)
+==================
+
+// Should parse as ((a * b) % c)
+uint x = a * b % c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (mod
+        left: (arithmetic
+          (mul
+            left: (primary_expression
+              (identifier))
+            operator: (mul_op)
+            right: (primary_expression
+              (identifier))))
+        operator: (mod_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Modulo precedence with exponentiation (critical test)
+==================
+
+// Should parse as a % (b ** c)
+uint x = a % b ** c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (mod
+        left: (primary_expression
+          (identifier))
+        operator: (mod_op)
+        right: (arithmetic
+          (exp
+            left: (primary_expression
+              (identifier))
+            operator: (exp_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Modulo precedence with addition (critical test)
+==================
+
+// Should parse as (a % b) + c
+uint x = a % b + c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (add
+        left: (arithmetic
+          (mod
+            left: (primary_expression
+              (identifier))
+            operator: (mod_op)
+            right: (primary_expression
+              (identifier))))
+        operator: (add_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Modulo with a parenthesized expression
+==================
+
+// Should parse as a % (b + c)
+uint x = a % (b + c);
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (mod
+        left: (primary_expression
+          (identifier))
+        operator: (mod_op)
+        right: (group
+          expression: (arithmetic
+            (add
+              left: (primary_expression
+                (identifier))
+              operator: (add_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Modulo in an if statement condition (checking for evenness)
+==================
+
+contract C {
+    function isEven(uint n) public pure returns (bool) {
+        if (n % 2 == 0) {
+            return true;
+        }
+        return false;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        (if_statement
+          condition: (equality
+            left: (arithmetic
+              (mod
+                left: (primary_expression
+                  (identifier))
+                operator: (mod_op)
+                right: (literal
+                  (number))))
+            operator: (equality_op)
+            right: (literal
+              (number)))
+          consequence: (block
+            (return_statement
+              value: (literal
+                (boolean)))))
+        (return_statement
+          value: (literal
+            (boolean)))))))
+
+==================
+Modulo in a compound assignment
+==================
+
+contract C {
+    function f(uint a) public {
+        a %= 5;
+    }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (compound_assignment_operator)
+            right: (literal
+              (number))))))))

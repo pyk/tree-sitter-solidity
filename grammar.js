@@ -651,6 +651,8 @@ module.exports = grammar({
         $.exp,
         $.mul,
         $.add,
+        $.div,
+        $.mod,
       ),
 
     negation: ($) =>
@@ -729,7 +731,29 @@ module.exports = grammar({
           field("right", $._expression),
         ),
       ),
-    mul_op: ($) => choice("*", "/", "%"),
+    mul_op: ($) => "*",
+
+    div: ($) =>
+      prec.left(
+        PREC.MULTIPLY,
+        seq(
+          field("left", $._expression),
+          field("operator", $.div_op),
+          field("right", $._expression),
+        ),
+      ),
+    div_op: ($) => "/",
+
+    mod: ($) =>
+      prec.left(
+        PREC.MULTIPLY,
+        seq(
+          field("left", $._expression),
+          field("operator", $.mod_op),
+          field("right", $._expression),
+        ),
+      ),
+    mod_op: ($) => "%",
 
     //############################################################//
     //                     Bitwise expression                     //

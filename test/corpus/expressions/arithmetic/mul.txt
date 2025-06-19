@@ -1,0 +1,138 @@
+==================
+Simple multiplication with number literals
+==================
+
+uint x = 10 * 20;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (mul
+        left: (literal
+          (number))
+        operator: (mul_op)
+        right: (literal
+          (number))))))
+
+==================
+Chained multiplication and division (left-associative)
+==================
+
+// Should parse as ((a * b) / c)
+uint x = a * b / c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (div
+        left: (arithmetic
+          (mul
+            left: (primary_expression
+              (identifier))
+            operator: (mul_op)
+            right: (primary_expression
+              (identifier))))
+        operator: (div_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Multiplication precedence with exponentiation
+==================
+
+// Should parse as a * (b ** c)
+uint x = a * b ** c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (mul
+        left: (primary_expression
+          (identifier))
+        operator: (mul_op)
+        right: (arithmetic
+          (exp
+            left: (primary_expression
+              (identifier))
+            operator: (exp_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Multiplication precedence with addition
+==================
+
+// Should parse as (a * b) + c
+uint x = a * b + c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (add
+        left: (arithmetic
+          (mul
+            left: (primary_expression
+              (identifier))
+            operator: (mul_op)
+            right: (primary_expression
+              (identifier))))
+        operator: (add_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Multiplication with a parenthesized expression
+==================
+
+// Should parse as (a + b) * c
+uint x = (a + b) * c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (mul
+        left: (group
+          expression: (arithmetic
+            (add
+              left: (primary_expression
+                (identifier))
+              operator: (add_op)
+              right: (primary_expression
+                (identifier)))))
+        operator: (mul_op)
+        right: (primary_expression
+          (identifier))))))
