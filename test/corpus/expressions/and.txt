@@ -1,0 +1,319 @@
+==================
+Simple AND with boolean literals
+==================
+
+bool x = true && false;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (and
+      left: (literal
+        (boolean))
+      operator: (and_op)
+      right: (literal
+        (boolean)))))
+
+==================
+AND with variables
+==================
+
+contract C {
+    function f(bool a, bool b) public pure returns (bool) {
+        return a && b;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        (return_statement
+          value: (and
+            left: (primary_expression
+              (identifier))
+            operator: (and_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Chained AND expressions (left-associative)
+==================
+
+// Should parse as (a && b) && c
+bool x = a && b && c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (and
+      left: (and
+        left: (primary_expression
+          (identifier))
+        operator: (and_op)
+        right: (primary_expression
+          (identifier)))
+      operator: (and_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+AND precedence over OR
+==================
+
+// Should parse as (a && b) || c
+bool x = a && b || c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (or
+      left: (and
+        left: (primary_expression
+          (identifier))
+        operator: (and_op)
+        right: (primary_expression
+          (identifier)))
+      operator: (or_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+AND with comparison and equality expressions
+==================
+
+// Should parse as (a > b) && (c == d)
+bool x = a > b && c == d;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (and
+      left: (comparison
+        left: (primary_expression
+          (identifier))
+        operator: (comparison_op)
+        right: (primary_expression
+          (identifier)))
+      operator: (and_op)
+      right: (equality
+        left: (primary_expression
+          (identifier))
+        operator: (equality_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+AND with a parenthesized OR expression
+==================
+
+// Should parse as a && (b || c)
+bool x = a && (b || c);
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (and
+      left: (primary_expression
+        (identifier))
+      operator: (and_op)
+      right: (group
+        expression: (or
+          left: (primary_expression
+            (identifier))
+          operator: (or_op)
+          right: (primary_expression
+            (identifier)))))))
+
+==================
+AND in an if statement condition
+==================
+
+contract C {
+    function f(bool a, bool b) public {
+        if (a && b) {
+            // ...
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (if_statement
+          condition: (and
+            left: (primary_expression
+              (identifier))
+            operator: (and_op)
+            right: (primary_expression
+              (identifier)))
+          consequence: (block
+            (comment)))))))
+
+==================
+AND in a require statement
+==================
+
+contract C {
+    function f(uint a, uint b) public pure {
+        require(a > 0 && b > 0, "Both must be positive");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (and
+                left: (comparison
+                  left: (primary_expression
+                    (identifier))
+                  operator: (comparison_op)
+                  right: (literal
+                    (number)))
+                operator: (and_op)
+                right: (comparison
+                  left: (primary_expression
+                    (identifier))
+                  operator: (comparison_op)
+                  right: (literal
+                    (number))))
+              argument: (literal
+                (string)))))))))
+
+==================
+AND in a ternary expression
+==================
+
+contract C {
+    function f(bool a, bool b) public pure returns (uint) {
+        return a && b ? 1 : 0;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (conditional_expression
+            condition: (and
+              left: (primary_expression
+                (identifier))
+              operator: (and_op)
+              right: (primary_expression
+                (identifier)))
+            consequence: (literal
+              (number))
+            alternative: (literal
+              (number))))))))
