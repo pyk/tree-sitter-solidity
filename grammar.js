@@ -1012,18 +1012,18 @@ module.exports = grammar({
 
     _contract_level_definitions: ($) =>
       choice(
-        $.variable,
+        $.constructor,
+        $.enum,
+        $.error,
+        $.event,
+        $.fallback_function_definition,
         $.function,
         $.modifier_definition,
-        $.struct,
-        $.enum,
-        $.event,
-        $.error,
-        $.using,
-        $.udvt,
-        $.constructor,
-        $.fallback_function_definition,
         $.receive_function_definition,
+        $.struct,
+        $.udvt,
+        $.using,
+        $.variable,
       ),
 
     abstract: ($) => "abstract",
@@ -1049,7 +1049,7 @@ module.exports = grammar({
       ),
 
     _interface_level_definitions: ($) =>
-      choice($.function, $.struct, $.enum, $.event, $.error, $.udvt),
+      choice($.enum, $.error, $.event, $.function, $.struct, $.udvt),
 
     //############################################################//
     //                     Library definition                     //
@@ -1066,11 +1066,11 @@ module.exports = grammar({
 
     _library_level_definitions: ($) =>
       choice(
+        $.enum,
+        $.error,
+        $.event,
         $.function,
         $.struct,
-        $.enum,
-        $.event,
-        $.error,
         $.using,
         $.variable,
       ),

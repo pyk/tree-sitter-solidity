@@ -3310,7 +3310,23 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "variable"
+          "name": "constructor"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "error"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "fallback_function_definition"
         },
         {
           "type": "SYMBOL",
@@ -3322,23 +3338,11 @@
         },
         {
           "type": "SYMBOL",
+          "name": "receive_function_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "struct"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "enum"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "event"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "error"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "using"
         },
         {
           "type": "SYMBOL",
@@ -3346,15 +3350,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "constructor"
+          "name": "using"
         },
         {
           "type": "SYMBOL",
-          "name": "fallback_function_definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "receive_function_definition"
+          "name": "variable"
         }
       ]
     },
@@ -3500,15 +3500,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "function"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "struct"
-        },
-        {
-          "type": "SYMBOL",
           "name": "enum"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "error"
         },
         {
           "type": "SYMBOL",
@@ -3516,7 +3512,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "error"
+          "name": "function"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "struct"
         },
         {
           "type": "SYMBOL",
@@ -3570,15 +3570,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "function"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "struct"
-        },
-        {
-          "type": "SYMBOL",
           "name": "enum"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "error"
         },
         {
           "type": "SYMBOL",
@@ -3586,7 +3582,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "error"
+          "name": "function"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "struct"
         },
         {
           "type": "SYMBOL",
