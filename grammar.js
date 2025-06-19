@@ -535,13 +535,31 @@ module.exports = grammar({
     number: ($) => token(/\d+(\.\d*)?/),
     string: ($) => /"([^"\\]|\\.)*"|'([^'\\]|\\.)*'/,
 
-    ether: ($) =>
-      prec(1, seq(field("value", $.number), field("unit", $.ether_unit))),
-    ether_unit: ($) => choice("wei", "gwei", "ether"),
+    ether_literal: ($) =>
+      prec(
+        1,
+        seq(
+          field("value", $.number),
+          field("unit", choice($.wei, $.gwei, $.ether)),
+        ),
+      ),
+    wei: ($) => "wei",
+    gwei: ($) => "gwei",
+    ether: ($) => "ether",
 
-    time: ($) =>
-      prec(1, seq(field("value", $.number), field("unit", $.time_unit))),
-    time_unit: ($) => choice("seconds", "minutes", "hours", "days", "weeks"),
+    time_literal: ($) =>
+      prec(
+        1,
+        seq(
+          field("value", $.number),
+          field("unit", choice($.seconds, $.minutes, $.hours, $.days, $.weeks)),
+        ),
+      ),
+    seconds: ($) => "seconds",
+    minutes: ($) => "minutes",
+    hours: ($) => "hours",
+    days: ($) => "days",
+    weeks: ($) => "weeks",
 
     //############################################################//
     //                         Expression                         //
@@ -603,7 +621,7 @@ module.exports = grammar({
     //############################################################//
 
     _primary_expression: ($) =>
-      choice($.ether, $.time, $.literal, prec(1, $.symbol)),
+      choice($.ether_literal, $.time_literal, $.literal, prec(1, $.symbol)),
 
     //############################################################//
     //                      Cast expression                       //

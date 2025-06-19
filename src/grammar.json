@@ -1775,7 +1775,57 @@
       "type": "PATTERN",
       "value": "\"([^\"\\\\]|\\\\.)*\"|'([^'\\\\]|\\\\.)*'"
     },
+    "ether_literal": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "value",
+            "content": {
+              "type": "SYMBOL",
+              "name": "number"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "unit",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "wei"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "gwei"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "ether"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "wei": {
+      "type": "STRING",
+      "value": "wei"
+    },
+    "gwei": {
+      "type": "STRING",
+      "value": "gwei"
+    },
     "ether": {
+      "type": "STRING",
+      "value": "ether"
+    },
+    "time_literal": {
       "type": "PREC",
       "value": 1,
       "content": {
@@ -1793,79 +1843,53 @@
             "type": "FIELD",
             "name": "unit",
             "content": {
-              "type": "SYMBOL",
-              "name": "ether_unit"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "seconds"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "minutes"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "hours"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "days"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "weeks"
+                }
+              ]
             }
           }
         ]
       }
     },
-    "ether_unit": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "wei"
-        },
-        {
-          "type": "STRING",
-          "value": "gwei"
-        },
-        {
-          "type": "STRING",
-          "value": "ether"
-        }
-      ]
+    "seconds": {
+      "type": "STRING",
+      "value": "seconds"
     },
-    "time": {
-      "type": "PREC",
-      "value": 1,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "value",
-            "content": {
-              "type": "SYMBOL",
-              "name": "number"
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "unit",
-            "content": {
-              "type": "SYMBOL",
-              "name": "time_unit"
-            }
-          }
-        ]
-      }
+    "minutes": {
+      "type": "STRING",
+      "value": "minutes"
     },
-    "time_unit": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "seconds"
-        },
-        {
-          "type": "STRING",
-          "value": "minutes"
-        },
-        {
-          "type": "STRING",
-          "value": "hours"
-        },
-        {
-          "type": "STRING",
-          "value": "days"
-        },
-        {
-          "type": "STRING",
-          "value": "weeks"
-        }
-      ]
+    "hours": {
+      "type": "STRING",
+      "value": "hours"
+    },
+    "days": {
+      "type": "STRING",
+      "value": "days"
+    },
+    "weeks": {
+      "type": "STRING",
+      "value": "weeks"
     },
     "_expression": {
       "type": "CHOICE",
@@ -1969,11 +1993,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "ether"
+          "name": "ether_literal"
         },
         {
           "type": "SYMBOL",
-          "name": "time"
+          "name": "time_literal"
         },
         {
           "type": "SYMBOL",
