@@ -14,17 +14,17 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (primitive_type
         (int_type))
       name: (symbol
         name: (identifier)))
-    storage: (storage
+    variable: (variable
       type: (primitive_type
         (int_type))
       name: (symbol
         name: (identifier)))
-    storage: (storage
+    variable: (variable
       type: (primitive_type
         (int_type))
       name: (symbol
@@ -184,7 +184,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (primitive_type
           (int_type))
@@ -208,14 +208,14 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (array_type
         base: (primitive_type
           (int_type)))
       visibility: (visibility)
       name: (symbol
         name: (identifier)))
-    storage: (storage
+    variable: (variable
       type: (array_type
         base: (primitive_type
           (int_type))
@@ -260,7 +260,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (primitive_type
         (int_type))
       mutability: (mutability)
@@ -269,7 +269,7 @@ contract C {
       value: (unary_expression
         argument: (literal
           (number))))
-    storage: (storage
+    variable: (variable
       type: (primitive_type
         (int_type))
       visibility: (visibility)

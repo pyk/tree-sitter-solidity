@@ -7,9 +7,10 @@ uint256 constant MY_CONSTANT = 42;
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (uint_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (literal
@@ -24,9 +25,10 @@ int256 constant MY_NEGATIVE_CONSTANT = -100;
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (int_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (unary_expression
@@ -42,9 +44,10 @@ string constant GREETING = "Hello, World!";
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (string_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (literal
@@ -59,9 +62,10 @@ address constant OWNER = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF;
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (address_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (literal
@@ -76,9 +80,10 @@ bool constant IS_NOT_ENABLED = !true;
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (bool_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (unary_expression
@@ -94,9 +99,10 @@ bytes32 constant MY_HASH = 0x1234567890abcdef1234567890abcdef1234567890abcdef123
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (bytes_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (literal
@@ -111,9 +117,10 @@ uint constant WITH_PARENS = (1 + 2);
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (uint_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (tuple_expression
@@ -134,9 +141,10 @@ uint constant SECONDS_PER_DAY = (60 + 60) * 12;
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (uint_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -162,9 +170,10 @@ uint constant ONE_ETHER = 10 ** 18;
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (uint_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -184,9 +193,10 @@ bytes32 constant EMPTY_STRING_HASH = keccak256("");
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (bytes_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (call_expression
@@ -205,9 +215,10 @@ address constant ZERO_ADDRESS = address(0);
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (address_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (cast
@@ -230,7 +241,7 @@ contract MyContract {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (primitive_type
         (uint_type))
       visibility: (visibility)
@@ -250,16 +261,18 @@ uint constant B = A * 2;
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (uint_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (literal
       (number)))
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (uint_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -303,9 +316,10 @@ uint constant BITWISE_NOT = ~uint(0);
 ---
 
 (source_file
-  definition: (constant
+  definition: (variable
     type: (primitive_type
       (uint_type))
+    mutability: (mutability)
     name: (symbol
       name: (identifier))
     value: (arithmetic

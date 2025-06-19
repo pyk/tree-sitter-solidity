@@ -13,7 +13,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (primitive_type
           (uint_type))
@@ -21,7 +21,7 @@ contract C {
           (address_type)))
       name: (symbol
         name: (identifier)))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -45,7 +45,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -76,7 +76,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (primitive_type
           (bytes_type))
@@ -119,7 +119,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -163,7 +163,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (primitive_type
           (uint_type))
@@ -248,7 +248,7 @@ contract C {
     struct: (struct
       name: (symbol
         name: (identifier)))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (custom_type
           symbol: (symbol
@@ -273,7 +273,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -306,7 +306,7 @@ contract C {
           (bool_type))
         name: (symbol
           name: (identifier))))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (primitive_type
           (uint_type))

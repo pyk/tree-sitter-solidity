@@ -22,13 +22,13 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (custom_type
         symbol: (symbol
           name: (identifier)))
       name: (symbol
         name: (identifier)))
-    storage: (storage
+    variable: (variable
       type: (custom_type
         symbol: (symbol
           name: (identifier)))
@@ -54,7 +54,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (custom_type
         symbol: (symbol
           scope: (symbol
@@ -207,7 +207,7 @@ contract C {
     struct: (struct
       name: (symbol
         name: (identifier)))
-    storage: (storage
+    variable: (variable
       type: (mapping_type
         key: (custom_type
           symbol: (symbol
@@ -237,7 +237,7 @@ contract C {
     struct: (struct
       name: (symbol
         name: (identifier)))
-    storage: (storage
+    variable: (variable
       type: (array_type
         base: (custom_type
           symbol: (symbol

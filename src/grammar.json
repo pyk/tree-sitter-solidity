@@ -70,7 +70,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "constant"
+          "name": "variable"
         },
         {
           "type": "PREC",
@@ -283,6 +283,10 @@
     "wildcard": {
       "type": "STRING",
       "value": "*"
+    },
+    "transient": {
+      "type": "STRING",
+      "value": "transient"
     },
     "_type": {
       "type": "CHOICE",
@@ -2008,7 +2012,7 @@
       "type": "STRING",
       "value": "~"
     },
-    "constant": {
+    "variable": {
       "type": "SEQ",
       "members": [
         {
@@ -2020,8 +2024,11 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "constant"
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_variable_attribute"
+          }
         },
         {
           "type": "FIELD",
@@ -2037,20 +2044,70 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "="
-        },
-        {
-          "type": "FIELD",
-          "name": "value",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_expression"
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "="
+                },
+                {
+                  "type": "FIELD",
+                  "name": "value",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_expression"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
           "value": ";"
+        }
+      ]
+    },
+    "_variable_attribute": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "visibility",
+          "content": {
+            "type": "SYMBOL",
+            "name": "visibility"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "mutability",
+          "content": {
+            "type": "SYMBOL",
+            "name": "mutability"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "override",
+          "content": {
+            "type": "SYMBOL",
+            "name": "override_specifier"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "transient",
+          "content": {
+            "type": "SYMBOL",
+            "name": "transient"
+          }
         }
       ]
     },
@@ -2193,10 +2250,10 @@
             "members": [
               {
                 "type": "FIELD",
-                "name": "storage",
+                "name": "variable",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "storage"
+                  "name": "variable"
                 }
               },
               {

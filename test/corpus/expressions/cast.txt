@@ -12,7 +12,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    storage: (storage
+    variable: (variable
       type: (primitive_type
         (address_type))
       mutability: (mutability)

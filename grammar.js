@@ -98,7 +98,7 @@ module.exports = grammar({
 
     _top_level_definitions: ($) =>
       choice(
-        $.constant,
+        $.variable,
         //
         prec(1, $.struct),
         prec(1, $.enum),
@@ -157,6 +157,7 @@ module.exports = grammar({
     virtual: ($) => "virtual",
     visibility: ($) => choice("public", "private", "internal", "external"),
     wildcard: ($) => "*",
+    transient: ($) => "transient",
 
     //############################################################//
     //                           Types                            //
@@ -618,17 +619,24 @@ module.exports = grammar({
     bitnot_op: ($) => "~",
 
     //############################################################//
-    //                     Constant Variables                     //
+    //                          Variable                          //
     //############################################################//
 
-    constant: ($) =>
+    variable: ($) =>
       seq(
         field("type", $._type),
-        "constant",
+        repeat($._variable_attribute),
         field("name", alias($._simple_symbol, $.symbol)),
-        "=",
-        field("value", $._expression),
+        optional(seq("=", field("value", $._expression))),
         ";",
+      ),
+
+    _variable_attribute: ($) =>
+      choice(
+        field("visibility", $.visibility),
+        field("mutability", $.mutability),
+        field("override", $.override_specifier),
+        field("transient", $.transient),
       ),
 
     //************************************************************//
@@ -663,7 +671,7 @@ module.exports = grammar({
         "{", // The body starts here
         repeat(
           choice(
-            field("storage", $.storage),
+            field("variable", $.variable),
             field("function", $.function),
             field("modifier", $.modifier_definition),
             field("struct", $.struct),
