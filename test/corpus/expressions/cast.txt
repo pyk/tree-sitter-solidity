@@ -21,9 +21,8 @@ contract C {
       value: (cast
         type: (primitive_type
           (address_type))
-        arguments: (argument_list
-          argument: (literal
-            (number)))))))
+        argument: (literal
+          (number))))))
 
 ==================
 Cast between primitive integer types
@@ -60,9 +59,8 @@ contract C {
           value: (cast
             type: (primitive_type
               (uint_type))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+            argument: (primary_expression
+              (identifier))))))))
 
 ==================
 Cast of bytesN to an integer
@@ -99,9 +97,8 @@ contract C {
           value: (cast
             type: (primitive_type
               (uint_type))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+            argument: (primary_expression
+              (identifier))))))))
 
 ==================
 Cast to a contract type
@@ -177,9 +174,8 @@ contract C {
           value: (cast
             type: (primitive_type
               (address_type))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+            argument: (primary_expression
+              (identifier))))))))
 
 ==================
 Cast inside an arithmetic expression
@@ -216,6 +212,5 @@ contract C {
               right: (cast
                 type: (primitive_type
                   (uint_type))
-                arguments: (argument_list
-                  argument: (literal
-                    (number)))))))))))
+                argument: (literal
+                  (number))))))))))

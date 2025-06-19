@@ -66,9 +66,8 @@ contract C {
           value: (cast
             type: (primitive_type
               (uint_type))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+            argument: (primary_expression
+              (identifier))))))))
 
 ==================
 Uint as a local variable
@@ -136,9 +135,8 @@ contract C {
           value: (cast
             type: (primitive_type
               (uint_type))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+            argument: (primary_expression
+              (identifier))))))))
 
 ==================
 Uint in a struct definition

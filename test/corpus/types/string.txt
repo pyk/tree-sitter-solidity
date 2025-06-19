@@ -133,9 +133,8 @@ contract C {
           value: (cast
             type: (primitive_type
               (string_type))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+            argument: (primary_expression
+              (identifier))))))))
 
 ==================
 String in a struct definition

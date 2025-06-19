@@ -1807,12 +1807,20 @@
             }
           },
           {
+            "type": "STRING",
+            "value": "("
+          },
+          {
             "type": "FIELD",
-            "name": "arguments",
+            "name": "argument",
             "content": {
               "type": "SYMBOL",
-              "name": "argument_list"
+              "name": "_expression"
             }
+          },
+          {
+            "type": "STRING",
+            "value": ")"
           }
         ]
       }

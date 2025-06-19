@@ -566,7 +566,7 @@ module.exports = grammar({
     cast: ($) =>
       prec(
         PREC.CAST,
-        seq(field("type", $._type), field("arguments", $.argument_list)),
+        seq(field("type", $._type), "(", field("argument", $._expression), ")"),
       ),
 
     //############################################################//

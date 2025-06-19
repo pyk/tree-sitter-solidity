@@ -158,9 +158,8 @@ contract C {
           value: (cast
             type: (primitive_type
               (bytes_type))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+            argument: (primary_expression
+              (identifier))))))))
 
 ==================
 Bytes in a struct definition

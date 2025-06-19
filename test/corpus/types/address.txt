@@ -131,9 +131,8 @@ contract C {
           value: (cast
             type: (primitive_type
               (address_type))
-            arguments: (argument_list
-              argument: (primary_expression
-                (identifier)))))))))
+            argument: (primary_expression
+              (identifier))))))))
 
 ==================
 Payable conversion expression
@@ -309,9 +308,8 @@ contract C {
       value: (cast
         type: (primitive_type
           (address_type))
-        arguments: (argument_list
-          argument: (literal
-            (number)))))))
+        argument: (literal
+          (number))))))
 
 ==================
 Address in an event parameter

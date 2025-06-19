@@ -213,9 +213,8 @@ address constant ZERO_ADDRESS = address(0);
     value: (cast
       type: (primitive_type
         (address_type))
-      arguments: (argument_list
-        argument: (literal
-          (number))))))
+      argument: (literal
+        (number)))))
 
 ==================
 Constant inside a contract
@@ -315,6 +314,5 @@ uint constant BITWISE_NOT = ~uint(0);
         argument: (cast
           type: (primitive_type
             (uint_type))
-          arguments: (argument_list
-            argument: (literal
-              (number))))))))
+          argument: (literal
+            (number)))))))
