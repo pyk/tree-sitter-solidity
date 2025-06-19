@@ -146,6 +146,82 @@
         }
       ]
     },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "//"
+              },
+              {
+                "type": "PATTERN",
+                "value": "[^\\r\\n]*"
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "/*"
+              },
+              {
+                "type": "PATTERN",
+                "value": "[^*]*\\*+([^/*][^*]*\\*+)*"
+              },
+              {
+                "type": "STRING",
+                "value": "/"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "natspec_comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "///"
+              },
+              {
+                "type": "PATTERN",
+                "value": "[^\\r\\n]*"
+              }
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "/**"
+              },
+              {
+                "type": "PATTERN",
+                "value": "([^*]|\\*+[^/])*"
+              },
+              {
+                "type": "STRING",
+                "value": "*/"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "identifier": {
       "type": "PATTERN",
       "value": "[a-zA-Z_]\\w*"
@@ -3156,82 +3232,6 @@
         }
       ]
     },
-    "comment": {
-      "type": "TOKEN",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "//"
-              },
-              {
-                "type": "PATTERN",
-                "value": "[^\\r\\n]*"
-              }
-            ]
-          },
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "/*"
-              },
-              {
-                "type": "PATTERN",
-                "value": "[^*]*\\*+([^/*][^*]*\\*+)*"
-              },
-              {
-                "type": "STRING",
-                "value": "/"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "natspec_comment": {
-      "type": "TOKEN",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "///"
-              },
-              {
-                "type": "PATTERN",
-                "value": "[^\\r\\n]*"
-              }
-            ]
-          },
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "/**"
-              },
-              {
-                "type": "PATTERN",
-                "value": "([^*]|\\*+[^/])*"
-              },
-              {
-                "type": "STRING",
-                "value": "*/"
-              }
-            ]
-          }
-        ]
-      }
-    },
     "contract": {
       "type": "SEQ",
       "members": [
@@ -3659,10 +3659,10 @@
               },
               {
                 "type": "FIELD",
-                "name": "storage",
+                "name": "variable",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "storage"
+                  "name": "variable"
                 }
               }
             ]
@@ -4887,105 +4887,6 @@
               "value": ";"
             }
           ]
-        }
-      ]
-    },
-    "storage": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "type",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_type"
-          }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_state_variable_attribute"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "ALIAS",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_simple_symbol"
-            },
-            "named": true,
-            "value": "symbol"
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "="
-                },
-                {
-                  "type": "FIELD",
-                  "name": "value",
-                  "content": {
-                    "type": "SYMBOL",
-                    "name": "_expression"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "STRING",
-          "value": ";"
-        }
-      ]
-    },
-    "_state_variable_attribute": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "visibility",
-          "content": {
-            "type": "SYMBOL",
-            "name": "visibility"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "mutability",
-          "content": {
-            "type": "SYMBOL",
-            "name": "mutability"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "override",
-          "content": {
-            "type": "SYMBOL",
-            "name": "override_specifier"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "transient",
-          "content": {
-            "type": "STRING",
-            "value": "transient"
-          }
         }
       ]
     },

@@ -6412,16 +6412,6 @@
           }
         ]
       },
-      "storage": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "storage",
-            "named": true
-          }
-        ]
-      },
       "struct": {
         "multiple": true,
         "required": false,
@@ -6438,6 +6428,16 @@
         "types": [
           {
             "type": "using",
+            "named": true
+          }
+        ]
+      },
+      "variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "variable",
             "named": true
           }
         ]
@@ -9284,202 +9284,6 @@
     "fields": {}
   },
   {
-    "type": "storage",
-    "named": true,
-    "fields": {
-      "mutability": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "mutability",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "symbol",
-            "named": true
-          }
-        ]
-      },
-      "override": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "override_specifier",
-            "named": true
-          }
-        ]
-      },
-      "transient": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "transient",
-            "named": false
-          }
-        ]
-      },
-      "type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "array_type",
-            "named": true
-          },
-          {
-            "type": "custom_type",
-            "named": true
-          },
-          {
-            "type": "function_type",
-            "named": true
-          },
-          {
-            "type": "mapping_type",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          }
-        ]
-      },
-      "value": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "and",
-            "named": true
-          },
-          {
-            "type": "arithmetic",
-            "named": true
-          },
-          {
-            "type": "assignment_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise",
-            "named": true
-          },
-          {
-            "type": "builtin_function",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "cast",
-            "named": true
-          },
-          {
-            "type": "comparison",
-            "named": true
-          },
-          {
-            "type": "conditional_expression",
-            "named": true
-          },
-          {
-            "type": "equality",
-            "named": true
-          },
-          {
-            "type": "ether_literal",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
-            "type": "inline_array_expression",
-            "named": true
-          },
-          {
-            "type": "literal",
-            "named": true
-          },
-          {
-            "type": "member_access_expression",
-            "named": true
-          },
-          {
-            "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "new_expression",
-            "named": true
-          },
-          {
-            "type": "not",
-            "named": true
-          },
-          {
-            "type": "or",
-            "named": true
-          },
-          {
-            "type": "payable_conversion_expression",
-            "named": true
-          },
-          {
-            "type": "shift",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "time_literal",
-            "named": true
-          },
-          {
-            "type": "tuple_expression",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
-            "named": true
-          }
-        ]
-      },
-      "visibility": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "visibility",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "struct",
     "named": true,
     "fields": {
@@ -9889,11 +9693,6 @@
         ]
       }
     }
-  },
-  {
-    "type": "transient",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "tuple_expression",
@@ -11782,7 +11581,7 @@
   },
   {
     "type": "transient",
-    "named": false
+    "named": true
   },
   {
     "type": "true",

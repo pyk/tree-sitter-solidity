@@ -113,6 +113,25 @@ module.exports = grammar({
       ),
 
     //############################################################//
+    //                          Comment                           //
+    //############################################################//
+
+    // A regular, non-documentation comment
+    comment: ($) =>
+      token(
+        choice(
+          seq("//", /[^\r\n]*/),
+          seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
+        ),
+      ),
+
+    // A NatSpec documentation comment
+    natspec_comment: ($) =>
+      token(
+        choice(seq("///", /[^\r\n]*/), seq("/**", /([^*]|\*+[^/])*/, "*/")),
+      ),
+
+    //############################################################//
     //                   Core & Semantic Tokens                   //
     //############################################################//
 
@@ -976,28 +995,9 @@ module.exports = grammar({
         field("transient", $.transient),
       ),
 
-    //************************************************************//
-    //                          Comments                          //
-    //************************************************************//
-
-    // A regular, non-documentation comment
-    comment: ($) =>
-      token(
-        choice(
-          seq("//", /[^\r\n]*/),
-          seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
-        ),
-      ),
-
-    // A NatSpec documentation comment
-    natspec_comment: ($) =>
-      token(
-        choice(seq("///", /[^\r\n]*/), seq("/**", /([^*]|\*+[^/])*/, "*/")),
-      ),
-
-    //##########################################################//
-    //                         Contract                         //
-    //##########################################################//
+    //############################################################//
+    //                    Contract definition                     //
+    //############################################################//
 
     contract: ($) =>
       seq(
@@ -1033,9 +1033,9 @@ module.exports = grammar({
         optional(field("arguments", $.argument_list)),
       ),
 
-    //##########################################################//
-    //                        Interface                         //
-    //##########################################################//
+    //############################################################//
+    //                    Interface Definition                    //
+    //############################################################//
 
     interface: ($) =>
       seq(
@@ -1057,9 +1057,9 @@ module.exports = grammar({
         "}", // The body ends here
       ),
 
-    //##########################################################//
-    //                         Library                          //
-    //##########################################################//
+    //############################################################//
+    //                     Library definition                     //
+    //############################################################//
 
     library: ($) =>
       seq(
@@ -1075,7 +1075,7 @@ module.exports = grammar({
             field("event", $.event),
             field("error", $.error),
             field("using", $.using),
-            field("storage", $.storage), // The parser doesn't enforce constant here; that's a job for a semantic checker or linter.
+            field("variable", $.variable), // The parser doesn't enforce constant here; that's a job for a semantic checker or linter.
           ),
         ),
         "}", // The body ends here
@@ -1146,10 +1146,6 @@ module.exports = grammar({
           ")",
         ),
       ),
-
-    //############################################################//
-    //                          Literal                           //
-    //############################################################//
 
     //############################################################//
     //                           Others                           //
@@ -1343,30 +1339,6 @@ module.exports = grammar({
     //************************************************************//
     //                        Declarations                        //
     //************************************************************//
-
-    /**
-     * A state variable declaration within a contract.
-     * e.g., `uint256 public myVar = 1;`
-     */
-    storage: ($) =>
-      seq(
-        field("type", $._type),
-        repeat($._state_variable_attribute),
-        field("name", alias($._simple_symbol, $.symbol)),
-        optional(seq("=", field("value", $._expression))),
-        ";",
-      ),
-
-    /**
-     * An attribute of a state variable, such as visibility or mutability.
-     */
-    _state_variable_attribute: ($) =>
-      choice(
-        field("visibility", $.visibility),
-        field("mutability", $.mutability),
-        field("override", $.override_specifier),
-        field("transient", "transient"),
-      ),
 
     /**
      * A single variable declaration, used in statements and tuples.
