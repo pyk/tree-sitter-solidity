@@ -1,0 +1,255 @@
+==================
+Simple exponentiation with number literals
+==================
+
+uint x = 2 ** 8;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (exp
+        left: (literal
+          (number))
+        operator: (exp_op)
+        right: (literal
+          (number))))))
+
+==================
+Exponentiation with variables
+==================
+
+contract C {
+    function f(uint base, uint exponent) public pure returns (uint) {
+        return base ** exponent;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (arithmetic
+            (exp
+              left: (primary_expression
+                (identifier))
+              operator: (exp_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Chained exponentiation (right-associative)
+==================
+
+// Should parse as a ** (b ** c)
+uint x = a ** b ** c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (exp
+        left: (primary_expression
+          (identifier))
+        operator: (exp_op)
+        right: (arithmetic
+          (exp
+            left: (primary_expression
+              (identifier))
+            operator: (exp_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Exponentiation precedence with multiplication
+==================
+
+// Should parse as (a ** b) * c
+uint x = a ** b * c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (mul
+        left: (arithmetic
+          (exp
+            left: (primary_expression
+              (identifier))
+            operator: (exp_op)
+            right: (primary_expression
+              (identifier))))
+        operator: (mul_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Exponentiation precedence with addition
+==================
+
+// Should parse as a + (b ** c)
+uint x = a + b ** c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (add
+        left: (primary_expression
+          (identifier))
+        operator: (add_op)
+        right: (arithmetic
+          (exp
+            left: (primary_expression
+              (identifier))
+            operator: (exp_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Exponentiation with a unary minus (critical test)
+==================
+
+// Should parse as (-a) ** b because unary minus has higher precedence
+int x = -a ** b;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (int_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (exp
+        left: (arithmetic
+          (negation
+            operator: (negation_op)
+            argument: (primary_expression
+              (identifier))))
+        operator: (exp_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Exponentiation with a parenthesized expression as base
+==================
+
+// Should parse as (a + b) ** c
+uint x = (a + b) ** c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (exp
+        left: (group
+          expression: (arithmetic
+            (add
+              left: (primary_expression
+                (identifier))
+              operator: (add_op)
+              right: (primary_expression
+                (identifier)))))
+        operator: (exp_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Exponentiation in a require statement
+==================
+
+contract C {
+    function f(uint a) public pure {
+        require(2 ** a < 1024, "Too large");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (comparison
+                left: (arithmetic
+                  (exp
+                    left: (literal
+                      (number))
+                    operator: (exp_op)
+                    right: (primary_expression
+                      (identifier))))
+                operator: (comparison_op)
+                right: (literal
+                  (number)))
+              argument: (literal
+                (string)))))))))
