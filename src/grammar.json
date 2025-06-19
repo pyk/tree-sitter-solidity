@@ -2005,6 +2005,14 @@
         },
         {
           "type": "PREC",
+          "value": 2,
+          "content": {
+            "type": "SYMBOL",
+            "name": "builtin_function"
+          }
+        },
+        {
+          "type": "PREC",
           "value": 1,
           "content": {
             "type": "SYMBOL",
@@ -2951,6 +2959,103 @@
           }
         ]
       }
+    },
+    "builtin_function": {
+      "type": "FIELD",
+      "name": "name",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "keccak256"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "sha256"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "ripemd160"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "ecrecover"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "addmod"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "mulmod"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "require"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "assert"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "revert"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "selfdestruct"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "gasleft"
+          }
+        ]
+      }
+    },
+    "keccak256": {
+      "type": "STRING",
+      "value": "keccak256"
+    },
+    "sha256": {
+      "type": "STRING",
+      "value": "sha256"
+    },
+    "ripemd160": {
+      "type": "STRING",
+      "value": "ripemd160"
+    },
+    "ecrecover": {
+      "type": "STRING",
+      "value": "ecrecover"
+    },
+    "addmod": {
+      "type": "STRING",
+      "value": "addmod"
+    },
+    "mulmod": {
+      "type": "STRING",
+      "value": "mulmod"
+    },
+    "require": {
+      "type": "STRING",
+      "value": "require"
+    },
+    "assert": {
+      "type": "STRING",
+      "value": "assert"
+    },
+    "revert": {
+      "type": "STRING",
+      "value": "revert"
+    },
+    "selfdestruct": {
+      "type": "STRING",
+      "value": "selfdestruct"
+    },
+    "gasleft": {
+      "type": "STRING",
+      "value": "gasleft"
     },
     "variable": {
       "type": "SEQ",

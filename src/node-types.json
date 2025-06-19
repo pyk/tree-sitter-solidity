@@ -40,6 +40,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -157,6 +161,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -297,6 +305,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -417,6 +429,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -530,6 +546,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -722,6 +742,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -835,6 +859,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -962,6 +990,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -1075,6 +1107,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -1198,6 +1234,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -1316,6 +1356,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -1450,6 +1494,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -1567,6 +1615,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -1718,6 +1770,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -1835,6 +1891,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -2008,6 +2068,62 @@
     "fields": {}
   },
   {
+    "type": "builtin_function",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "assert",
+            "named": true
+          },
+          {
+            "type": "ecrecover",
+            "named": true
+          },
+          {
+            "type": "gasleft",
+            "named": true
+          },
+          {
+            "type": "keccak256",
+            "named": true
+          },
+          {
+            "type": "mulmod",
+            "named": true
+          },
+          {
+            "type": "require",
+            "named": true
+          },
+          {
+            "type": "revert",
+            "named": true
+          },
+          {
+            "type": "ripemd160",
+            "named": true
+          },
+          {
+            "type": "selfdestruct",
+            "named": true
+          },
+          {
+            "type": "sha256",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "bytes_type",
     "named": true,
     "fields": {}
@@ -2044,6 +2160,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -2185,6 +2305,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -2330,6 +2454,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -2447,6 +2575,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -2576,6 +2708,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -2686,6 +2822,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -2793,6 +2933,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -3169,6 +3313,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -3286,6 +3434,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -3468,6 +3620,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -3625,6 +3781,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -3742,6 +3902,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -4038,6 +4202,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -4155,6 +4323,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -4287,6 +4459,10 @@
         },
         {
           "type": "bitwise",
+          "named": true
+        },
+        {
+          "type": "builtin_function",
           "named": true
         },
         {
@@ -4555,6 +4731,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -4680,6 +4860,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -4941,6 +5125,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -5112,6 +5300,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -5357,6 +5549,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -5464,6 +5660,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -5583,6 +5783,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -5693,6 +5897,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -5800,6 +6008,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -5958,6 +6170,10 @@
         },
         {
           "type": "bitwise",
+          "named": true
+        },
+        {
+          "type": "builtin_function",
           "named": true
         },
         {
@@ -6372,6 +6588,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -6520,6 +6740,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -6637,6 +6861,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -6843,6 +7071,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -6960,6 +7192,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -7099,6 +7335,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -7212,6 +7452,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -7378,6 +7622,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -7504,6 +7752,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -7621,6 +7873,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -7913,6 +8169,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -8036,6 +8296,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -8188,6 +8452,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -8311,6 +8579,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -8529,6 +8801,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -8621,6 +8897,11 @@
     }
   },
   {
+    "type": "revert",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "revert_statement",
     "named": true,
     "fields": {
@@ -8668,6 +8949,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -8788,6 +9073,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -9085,6 +9374,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -9279,6 +9572,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -9396,6 +9693,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -9619,6 +9920,10 @@
           "named": true
         },
         {
+          "type": "builtin_function",
+          "named": true
+        },
+        {
           "type": "call",
           "named": true
         },
@@ -9762,6 +10067,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -10161,6 +10470,10 @@
             "named": true
           },
           {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -10350,6 +10663,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -10580,6 +10897,10 @@
           },
           {
             "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
             "named": true
           },
           {
@@ -10862,6 +11183,10 @@
     "named": true
   },
   {
+    "type": "addmod",
+    "named": true
+  },
+  {
     "type": "address",
     "named": false
   },
@@ -10876,6 +11201,10 @@
   {
     "type": "as",
     "named": false
+  },
+  {
+    "type": "assert",
+    "named": true
   },
   {
     "type": "bool_type",
@@ -11059,6 +11388,10 @@
     "named": false
   },
   {
+    "type": "ecrecover",
+    "named": true
+  },
+  {
     "type": "else",
     "named": false
   },
@@ -11117,6 +11450,10 @@
   {
     "type": "function",
     "named": false
+  },
+  {
+    "type": "gasleft",
+    "named": true
   },
   {
     "type": "global",
@@ -11307,6 +11644,10 @@
     "named": false
   },
   {
+    "type": "keccak256",
+    "named": true
+  },
+  {
     "type": "library",
     "named": false
   },
@@ -11329,6 +11670,10 @@
   {
     "type": "modifier",
     "named": false
+  },
+  {
+    "type": "mulmod",
+    "named": true
   },
   {
     "type": "natspec_comment",
@@ -11384,6 +11729,10 @@
     "named": false
   },
   {
+    "type": "require",
+    "named": true
+  },
+  {
     "type": "return",
     "named": false
   },
@@ -11396,7 +11745,19 @@
     "named": false
   },
   {
+    "type": "ripemd160",
+    "named": true
+  },
+  {
     "type": "seconds",
+    "named": true
+  },
+  {
+    "type": "selfdestruct",
+    "named": true
+  },
+  {
+    "type": "sha256",
     "named": true
   },
   {

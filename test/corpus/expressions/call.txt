@@ -1,0 +1,418 @@
+==================
+Simple function call
+==================
+
+contract C {
+    function test() {
+        myFunction(a, b);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (expression_statement
+          (call
+            function: (symbol
+              name: (identifier))
+            arguments: (argument_list
+              argument: (symbol
+                name: (identifier))
+              argument: (symbol
+                name: (identifier)))))))))
+
+==================
+Call with no arguments
+==================
+
+contract C {
+    function test() {
+        doSomething();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (expression_statement
+          (call
+            function: (symbol
+              name: (identifier))
+            arguments: (argument_list)))))))
+
+==================
+Call as part of a member access
+==================
+
+contract C {
+    function test() {
+        myContract.myFunction();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (expression_statement
+          (call
+            function: (symbol
+              scope: (symbol
+                name: (identifier))
+              name: (identifier))
+            arguments: (argument_list)))))))
+
+==================
+Call with value and gas options
+==================
+
+contract C {
+    function test() {
+        other.f{value: 1 ether, gas: 10000}();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (expression_statement
+          (call
+            function: (symbol
+              scope: (symbol
+                name: (identifier))
+              name: (identifier))
+            options: (call_options_block
+              (named_argument
+                name: (symbol
+                  name: (identifier))
+                value: (ether_literal
+                  value: (number)
+                  unit: (ether)))
+              (named_argument
+                name: (symbol
+                  name: (identifier))
+                value: (literal
+                  (number))))
+            arguments: (argument_list)))))))
+
+==================
+Nested function calls
+==================
+
+contract C {
+    function test() {
+        f(g(x));
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (expression_statement
+          (call
+            function: (symbol
+              name: (identifier))
+            arguments: (argument_list
+              argument: (call
+                function: (symbol
+                  name: (identifier))
+                arguments: (argument_list
+                  argument: (symbol
+                    name: (identifier)))))))))))
+
+==================
+Call as return value
+==================
+
+contract C {
+    function otherFunction() internal pure returns(uint) {}
+    function f() public pure returns (uint) {
+        return otherFunction();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (call
+            function: (symbol
+              name: (identifier))
+            arguments: (argument_list)))))))
+
+==================
+Built-in function call: keccak256
+==================
+
+contract C {
+    function test() {
+        bytes32 hash = keccak256("hello");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (primitive_type
+              (bytes_type))
+            name: (symbol
+              name: (identifier)))
+          value: (call
+            function: (builtin_function
+              name: (keccak256))
+            arguments: (argument_list
+              argument: (literal
+                (string)))))))))
+
+==================
+Built-in function call: require
+==================
+
+contract C {
+    function test() {
+        require(a > b, "a must be greater than b");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (expression_statement
+          (call
+            function: (builtin_function
+              name: (require))
+            arguments: (argument_list
+              argument: (comparison
+                left: (symbol
+                  name: (identifier))
+                operator: (comparison_op)
+                right: (symbol
+                  name: (identifier)))
+              argument: (literal
+                (string)))))))))
+
+==================
+Built-in function call: assert
+==================
+
+contract C {
+    function test() {
+        assert(a == 0);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (expression_statement
+          (call
+            function: (builtin_function
+              name: (assert))
+            arguments: (argument_list
+              argument: (equality
+                left: (symbol
+                  name: (identifier))
+                operator: (equality_op)
+                right: (literal
+                  (number))))))))))
+
+==================
+Built-in function call: revert with a custom error
+==================
+
+contract C {
+    error MyCustomError(uint);
+    function test() {
+        revert MyCustomError(arg1);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    error: (error
+      name: (symbol
+        name: (identifier))
+      parameters: (error_parameter_list
+        (error_parameter
+          type: (primitive_type
+            (uint_type)))))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (revert_statement
+          error: (symbol
+            name: (identifier))
+          arguments: (argument_list
+            argument: (symbol
+              name: (identifier))))))))
+
+==================
+Call on a casted address
+==================
+
+contract MyContract {
+    function doThing() public {}
+}
+contract C {
+    function test(address someAddress) {
+        MyContract(someAddress).doThing();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      body: (block)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (identifier)))
+      body: (block
+        (expression_statement
+          (call
+            function: (member_access_expression
+              object: (call
+                function: (symbol
+                  name: (identifier))
+                arguments: (argument_list
+                  argument: (symbol
+                    name: (identifier))))
+              member: (identifier))
+            arguments: (argument_list)))))))
+
+==================
+New expression call (contract creation)
+==================
+
+contract MyContract {}
+contract C {
+    function test() {
+        MyContract c = new MyContract();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (custom_type
+              symbol: (symbol
+                name: (identifier)))
+            name: (symbol
+              name: (identifier)))
+          value: (call
+            function: (new_expression
+              type: (custom_type
+                symbol: (symbol
+                  name: (identifier))))
+            arguments: (argument_list)))))))

@@ -246,8 +246,8 @@ contract C {
       body: (block
         (expression_statement
           (call
-            function: (symbol
-              name: (identifier))
+            function: (builtin_function
+              name: (require))
             arguments: (argument_list
               argument: (or
                 left: (equality

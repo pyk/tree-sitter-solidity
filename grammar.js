@@ -621,7 +621,13 @@ module.exports = grammar({
     //############################################################//
 
     _primary_expression: ($) =>
-      choice($.ether_literal, $.time_literal, $.literal, prec(1, $.symbol)),
+      choice(
+        $.ether_literal,
+        $.time_literal,
+        $.literal,
+        prec(2, $.builtin_function),
+        prec(1, $.symbol),
+      ),
 
     //############################################################//
     //                      Cast expression                       //
@@ -911,6 +917,43 @@ module.exports = grammar({
           field("arguments", $.argument_list),
         ),
       ),
+
+    builtin_function: ($) =>
+      field(
+        "name",
+        choice(
+          $.keccak256,
+          $.sha256,
+          $.ripemd160,
+          $.ecrecover,
+          $.addmod,
+          $.mulmod,
+          $.require,
+          $.assert,
+          $.revert,
+          $.selfdestruct,
+          $.gasleft,
+        ),
+      ),
+
+    // Cryptography
+    keccak256: ($) => "keccak256",
+    sha256: ($) => "sha256",
+    ripemd160: ($) => "ripemd160",
+    ecrecover: ($) => "ecrecover",
+
+    // Mathematical
+    addmod: ($) => "addmod",
+    mulmod: ($) => "mulmod",
+
+    // Error Handling
+    require: ($) => "require",
+    assert: ($) => "assert",
+    revert: ($) => "revert",
+
+    // Contract & Transaction
+    selfdestruct: ($) => "selfdestruct",
+    gasleft: ($) => "gasleft",
 
     //############################################################//
     //                          Variable                          //
