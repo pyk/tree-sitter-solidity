@@ -1,0 +1,314 @@
+==================
+Simple less-than comparison with literals
+==================
+
+bool x = 1 < 2;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (comparison
+      left: (literal
+        (number))
+      operator: (comparison_op)
+      right: (literal
+        (number)))))
+
+==================
+Greater-than-or-equal comparison with variables
+==================
+
+contract C {
+    function f(uint a, uint b) public pure returns (bool) {
+        return a >= b;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        (return_statement
+          value: (comparison
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Comparison precedence with addition
+==================
+
+// Should parse as (a + b) > c
+bool x = a + b > c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (comparison
+      left: (arithmetic
+        (add
+          left: (primary_expression
+            (identifier))
+          operator: (add_op)
+          right: (primary_expression
+            (identifier))))
+      operator: (comparison_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+Comparison precedence with multiplication
+==================
+
+// Should parse as a < (b * c)
+bool x = a < b * c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (comparison
+      left: (primary_expression
+        (identifier))
+      operator: (comparison_op)
+      right: (arithmetic
+        (mul
+          left: (primary_expression
+            (identifier))
+          operator: (mul_op)
+          right: (primary_expression
+            (identifier)))))))
+
+==================
+Comparison used in a logical AND expression
+==================
+
+// Should parse as (a < b) && (c > d)
+bool x = a < b && c > d;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (logical_and
+      left: (comparison
+        left: (primary_expression
+          (identifier))
+        operator: (comparison_op)
+        right: (primary_expression
+          (identifier)))
+      operator: (logical_and_op)
+      right: (comparison
+        left: (primary_expression
+          (identifier))
+        operator: (comparison_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Chained comparisons (invalid Solidity, but should parse)
+==================
+
+// Solidity does not support chained comparisons, but the parser should handle it gracefully.
+// The linter would then flag this as an error. Parsed as (a < b) < c.
+bool x = a < b < c;
+
+---
+
+(source_file
+  (comment)
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (comparison
+      left: (comparison
+        left: (primary_expression
+          (identifier))
+        operator: (comparison_op)
+        right: (primary_expression
+          (identifier)))
+      operator: (comparison_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+Comparison in an if statement condition
+==================
+
+contract C {
+    function f(uint a) public pure {
+        if (a > 100) {
+            // ...
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (if_statement
+          condition: (comparison
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          consequence: (block
+            (comment)))))))
+
+==================
+Comparison in a require statement
+==================
+
+contract C {
+    function f(uint a) public pure {
+        require(a <= 10, "Value too high");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (comparison
+                left: (primary_expression
+                  (identifier))
+                operator: (comparison_op)
+                right: (literal
+                  (number)))
+              argument: (literal
+                (string)))))))))
+
+==================
+Comparison involving a function call
+==================
+
+contract C {
+    function getLimit() public pure returns (uint) { return 100; }
+    function check(uint val) public pure returns (bool) {
+        return val < getLimit();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (literal
+            (number)))))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        (return_statement
+          value: (comparison
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_op)
+            right: (call_expression
+              function: (primary_expression
+                (identifier))
+              arguments: (argument_list))))))))
