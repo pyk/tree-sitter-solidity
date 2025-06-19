@@ -268,7 +268,7 @@ contract C {
       name: (symbol
         name: (identifier))
       parameters: (event_parameter_list
-        (unindexed_event_parameter
+        parameter: (event_parameter
           type: (primitive_type
             (fixed_type))
           name: (symbol

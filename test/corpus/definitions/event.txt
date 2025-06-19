@@ -1,0 +1,286 @@
+==================
+Simple event with no parameters
+==================
+
+event SimpleEvent();
+
+---
+
+(source_file
+  definition: (event
+    name: (symbol
+      name: (identifier))))
+
+==================
+Event with unindexed parameters
+==================
+
+event Transfer(address from, uint256 amount);
+
+---
+
+(source_file
+  definition: (event
+    name: (symbol
+      name: (identifier))
+    parameters: (event_parameter_list
+      parameter: (event_parameter
+        type: (primitive_type
+          (address_type))
+        name: (symbol
+          name: (identifier)))
+      parameter: (event_parameter
+        type: (primitive_type
+          (uint_type))
+        name: (symbol
+          name: (identifier))))))
+
+==================
+Event with indexed parameters
+==================
+
+event Approval(address indexed owner, address indexed spender);
+
+---
+
+(source_file
+  definition: (event
+    name: (symbol
+      name: (identifier))
+    parameters: (event_parameter_list
+      parameter: (event_parameter
+        type: (primitive_type
+          (address_type))
+        indexed: (indexed)
+        name: (symbol
+          name: (identifier)))
+      parameter: (event_parameter
+        type: (primitive_type
+          (address_type))
+        indexed: (indexed)
+        name: (symbol
+          name: (identifier))))))
+
+==================
+Event with mixed indexed and unindexed parameters
+==================
+
+event Sent(address indexed from, address indexed to, uint256 value);
+
+---
+
+(source_file
+  definition: (event
+    name: (symbol
+      name: (identifier))
+    parameters: (event_parameter_list
+      parameter: (event_parameter
+        type: (primitive_type
+          (address_type))
+        indexed: (indexed)
+        name: (symbol
+          name: (identifier)))
+      parameter: (event_parameter
+        type: (primitive_type
+          (address_type))
+        indexed: (indexed)
+        name: (symbol
+          name: (identifier)))
+      parameter: (event_parameter
+        type: (primitive_type
+          (uint_type))
+        name: (symbol
+          name: (identifier))))))
+
+==================
+Event with unnamed parameters
+==================
+
+event DataPoint(uint256, bool, bytes32 indexed);
+
+---
+
+(source_file
+  definition: (event
+    name: (symbol
+      name: (identifier))
+    parameters: (event_parameter_list
+      parameter: (event_parameter
+        type: (primitive_type
+          (uint_type)))
+      parameter: (event_parameter
+        type: (primitive_type
+          (bool_type)))
+      parameter: (event_parameter
+        type: (primitive_type
+          (bytes_type))
+        indexed: (indexed)))))
+
+==================
+Anonymous event
+==================
+
+event AnonymizedLog(address indexed sender, string message) anonymous;
+
+---
+
+(source_file
+  definition: (event
+    name: (symbol
+      name: (identifier))
+    parameters: (event_parameter_list
+      parameter: (event_parameter
+        type: (primitive_type
+          (address_type))
+        indexed: (indexed)
+        name: (symbol
+          name: (identifier)))
+      parameter: (event_parameter
+        type: (primitive_type
+          (string_type))
+        name: (symbol
+          name: (identifier))))
+    (anonymous)))
+
+==================
+Event with a struct parameter
+==================
+
+struct MyData { uint id; string value; }
+event DataStored(MyData data);
+
+---
+
+(source_file
+  definition: (struct
+    name: (symbol
+      name: (identifier))
+    member: (struct_member
+      type: (primitive_type
+        (uint_type))
+      name: (symbol
+        name: (identifier)))
+    member: (struct_member
+      type: (primitive_type
+        (string_type))
+      name: (symbol
+        name: (identifier))))
+  definition: (event
+    name: (symbol
+      name: (identifier))
+    parameters: (event_parameter_list
+      parameter: (event_parameter
+        type: (custom_type
+          symbol: (symbol
+            name: (identifier)))
+        name: (symbol
+          name: (identifier))))))
+
+==================
+Event with an array parameter
+==================
+
+event BatchProcessed(uint[] ids);
+
+---
+
+(source_file
+  definition: (event
+    name: (symbol
+      name: (identifier))
+    parameters: (event_parameter_list
+      parameter: (event_parameter
+        type: (array_type
+          base: (primitive_type
+            (uint_type)))
+        name: (symbol
+          name: (identifier))))))
+
+==================
+Event defined inside a contract
+==================
+
+contract MyContract {
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    event: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameter_list
+        parameter: (event_parameter
+          type: (primitive_type
+            (address_type))
+          indexed: (indexed)
+          name: (symbol
+            name: (identifier)))
+        parameter: (event_parameter
+          type: (primitive_type
+            (address_type))
+          indexed: (indexed)
+          name: (symbol
+            name: (identifier)))))))
+
+==================
+Event defined inside an interface
+==================
+
+interface IMyContract {
+    event ValueSet(uint256 indexed key, uint256 newValue);
+}
+
+---
+
+(source_file
+  definition: (interface
+    name: (symbol
+      name: (identifier))
+    event: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameter_list
+        parameter: (event_parameter
+          type: (primitive_type
+            (uint_type))
+          indexed: (indexed)
+          name: (symbol
+            name: (identifier)))
+        parameter: (event_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))))))
+
+==================
+Event defined inside a library
+==================
+
+library MyLibrary {
+    event Operation(string name, bool success);
+}
+---
+
+(source_file
+  definition: (library
+    name: (symbol
+      name: (identifier))
+    event: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameter_list
+        parameter: (event_parameter
+          type: (primitive_type
+            (string_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (event_parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier)))))))

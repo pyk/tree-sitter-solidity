@@ -307,10 +307,11 @@ contract C {
       name: (symbol
         name: (identifier))
       parameters: (event_parameter_list
-        (indexed_event_parameter
+        parameter: (event_parameter
           type: (custom_type
             symbol: (symbol
               name: (identifier)))
+          indexed: (indexed)
           name: (symbol
             name: (identifier)))))))
 

@@ -284,12 +284,13 @@ contract C {
       name: (symbol
         name: (identifier))
       parameters: (event_parameter_list
-        (indexed_event_parameter
+        parameter: (event_parameter
           type: (primitive_type
             (string_type))
+          indexed: (indexed)
           name: (symbol
             name: (identifier)))
-        (unindexed_event_parameter
+        parameter: (event_parameter
           type: (primitive_type
             (string_type))
           name: (symbol

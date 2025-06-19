@@ -1116,6 +1116,33 @@ module.exports = grammar({
       ),
 
     //############################################################//
+    //                      Event definition                      //
+    //############################################################//
+
+    event: ($) =>
+      seq(
+        "event",
+        field("name", alias($._simple_symbol, $.symbol)),
+        "(",
+        optional(field("parameters", $.event_parameter_list)),
+        ")",
+        optional($.anonymous),
+        ";",
+      ),
+
+    event_parameter: ($) =>
+      seq(
+        field("type", $._type),
+        optional(field("indexed", $.indexed)),
+        optional(field("name", alias($._simple_symbol, $.symbol))),
+      ),
+
+    indexed: ($) => "indexed",
+
+    event_parameter_list: ($) =>
+      commaSep(field("parameter", $.event_parameter)),
+
+    //############################################################//
     //                        Constructor                         //
     //############################################################//
 
@@ -1222,37 +1249,7 @@ module.exports = grammar({
      */
     block: ($) => seq("{", repeat($._statement), "}"),
 
-    _event_parameter: ($) =>
-      choice($.indexed_event_parameter, $.unindexed_event_parameter),
-
-    indexed_event_parameter: ($) =>
-      seq(
-        field("type", $._type),
-        "indexed",
-        optional(field("name", alias($._simple_symbol, $.symbol))),
-      ),
-
-    unindexed_event_parameter: ($) =>
-      seq(
-        field("type", $._type),
-        optional(field("name", alias($._simple_symbol, $.symbol))),
-      ),
-
-    // New helper rules for event/error parameters
-    event_parameter_list: ($) => commaSep($._event_parameter),
     error_parameter_list: ($) => commaSep($.error_parameter),
-
-    // Updated event/error definitions
-    event: ($) =>
-      seq(
-        "event",
-        field("name", alias($._simple_symbol, $.symbol)),
-        "(",
-        optional(field("parameters", $.event_parameter_list)),
-        ")",
-        optional($.anonymous),
-        ";",
-      ),
 
     error: ($) =>
       seq(
