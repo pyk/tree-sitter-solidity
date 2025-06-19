@@ -1102,6 +1102,20 @@ module.exports = grammar({
       ),
 
     //############################################################//
+    //                      Enum definition                       //
+    //############################################################//
+
+    enum: ($) =>
+      seq(
+        "enum",
+        field("name", alias($._simple_symbol, $.symbol)),
+        "{",
+        // The commaSep helper handles one or more comma-separated values
+        commaSep(field("value", alias($._simple_symbol, $.symbol))),
+        "}",
+      ),
+
+    //############################################################//
     //                        Constructor                         //
     //############################################################//
 
@@ -1207,16 +1221,6 @@ module.exports = grammar({
      * A block of statements enclosed in curly braces.
      */
     block: ($) => seq("{", repeat($._statement), "}"),
-
-    enum: ($) =>
-      seq(
-        "enum",
-        field("name", alias($._simple_symbol, $.symbol)),
-        "{",
-        // The commaSep helper handles one or more comma-separated values
-        commaSep(field("value", $.identifier)),
-        "}",
-      ),
 
     _event_parameter: ($) =>
       choice($.indexed_event_parameter, $.unindexed_event_parameter),

@@ -243,8 +243,10 @@ contract C {
     enum: (enum
       name: (symbol
         name: (identifier))
-      value: (identifier)
-      value: (identifier))
+      value: (symbol
+        name: (identifier))
+      value: (symbol
+        name: (identifier)))
     struct: (struct
       name: (symbol
         name: (identifier)))

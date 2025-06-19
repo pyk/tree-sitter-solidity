@@ -1,0 +1,279 @@
+==================
+Simple enum definition at top level
+==================
+
+enum Status {
+    Pending,
+    Active,
+    Inactive
+}
+
+---
+
+(source_file
+  definition: (enum
+    name: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))))
+
+==================
+Enum definition inside a contract
+==================
+
+contract Process {
+    enum State {
+        Created,
+        Running,
+        Paused,
+        Finished
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    enum: (enum
+      name: (symbol
+        name: (identifier))
+      value: (symbol
+        name: (identifier))
+      value: (symbol
+        name: (identifier))
+      value: (symbol
+        name: (identifier))
+      value: (symbol
+        name: (identifier)))))
+
+==================
+Enum with a single member
+==================
+
+enum Singleton {
+    Only
+}
+
+---
+
+(source_file
+  definition: (enum
+    name: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))))
+
+==================
+Enum as a state variable's type
+==================
+
+enum Action { Go, Stop }
+contract TrafficLight {
+    Action public currentAction;
+}
+
+---
+
+(source_file
+  definition: (enum
+    name: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    variable: (variable
+      type: (custom_type
+        symbol: (symbol
+          name: (identifier)))
+      visibility: (visibility)
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Enum as a function parameter and return type
+==================
+
+enum Direction { Left, Right, Up, Down }
+
+contract Navigator {
+    function getOpposite(Direction _dir) public pure returns (Direction) {
+        // ...
+    }
+}
+---
+
+(source_file
+  definition: (enum
+    name: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))))
+      body: (block
+        (comment)))))
+
+==================
+Enum as a mapping key
+==================
+
+enum AssetType { Token, NFT }
+
+contract Registry {
+    mapping(AssetType => address) public contractAddresses;
+}
+---
+
+(source_file
+  definition: (enum
+    name: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    variable: (variable
+      type: (mapping_type
+        key: (custom_type
+          symbol: (symbol
+            name: (identifier)))
+        value: (primitive_type
+          (address_type)))
+      visibility: (visibility)
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Enum in an event definition
+==================
+
+enum EventType { LogIn, LogOut }
+
+contract Logger {
+    event UserActivity(address user, EventType indexed activity);
+}
+---
+
+(source_file
+  definition: (enum
+    name: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    event: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameter_list
+        (unindexed_event_parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier)))
+        (indexed_event_parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          name: (symbol
+            name: (identifier)))))))
+
+==================
+Enum in an error definition
+==================
+
+enum ErrorCode { InvalidInput, Unauthorized }
+
+contract AccessControl {
+    error AccessDenied(address caller, ErrorCode code);
+}
+---
+
+(source_file
+  definition: (enum
+    name: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier))
+    value: (symbol
+      name: (identifier)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    error: (error
+      name: (symbol
+        name: (identifier))
+      parameters: (error_parameter_list
+        (error_parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier)))
+        (error_parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          name: (symbol
+            name: (identifier)))))))
+
+==================
+Enum defined inside a library
+==================
+
+library Utilities {
+    enum Choice { A, B, C }
+}
+---
+
+(source_file
+  definition: (library
+    name: (symbol
+      name: (identifier))
+    enum: (enum
+      name: (symbol
+        name: (identifier))
+      value: (symbol
+        name: (identifier))
+      value: (symbol
+        name: (identifier))
+      value: (symbol
+        name: (identifier)))))

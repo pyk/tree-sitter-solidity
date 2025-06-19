@@ -3749,7 +3749,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "symbol",
             "named": true
           }
         ]
