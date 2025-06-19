@@ -1,0 +1,342 @@
+==================
+Negation of a positive integer literal
+==================
+
+int x = -1;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (int_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (negation
+        operator: (negation_op)
+        argument: (literal
+          (number))))))
+
+==================
+Negation of a negative integer literal (double negative)
+==================
+
+int x = -(-1);
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (int_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (negation
+        operator: (negation_op)
+        argument: (group
+          expression: (arithmetic
+            (negation
+              operator: (negation_op)
+              argument: (literal
+                (number)))))))))
+
+==================
+Negation of a variable
+==================
+
+contract C {
+    function f(int a) public pure returns (int) {
+        return -a;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))))
+      body: (block
+        (return_statement
+          value: (arithmetic
+            (negation
+              operator: (negation_op)
+              argument: (primary_expression
+                (identifier)))))))))
+
+==================
+Negation precedence over exponentiation (right-associative)
+==================
+
+// Should parse as -(2**3), not (-2)**3
+int x = -2**3;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (int_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (negation
+        operator: (negation_op)
+        argument: (arithmetic
+          (exp
+            left: (literal
+              (number))
+            operator: (exp_op)
+            right: (literal
+              (number))))))))
+
+==================
+Negation precedence with multiplication
+==================
+
+// Should parse as (-2) * 3
+int x = -2 * 3;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (int_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (mul
+        left: (arithmetic
+          (negation
+            operator: (negation_op)
+            argument: (literal
+              (number))))
+        operator: (mul_op)
+        right: (literal
+          (number))))))
+
+==================
+Negation precedence with addition
+==================
+
+// Should parse as (-2) + 3
+int x = -2 + 3;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (int_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (add
+        left: (arithmetic
+          (negation
+            operator: (negation_op)
+            argument: (literal
+              (number))))
+        operator: (add_op)
+        right: (literal
+          (number))))))
+
+==================
+Addition with a negated right-hand side
+==================
+
+// Should parse as 2 + (-3)
+int x = 2 + -3;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (int_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (add
+        left: (literal
+          (number))
+        operator: (add_op)
+        right: (arithmetic
+          (negation
+            operator: (negation_op)
+            argument: (literal
+              (number))))))))
+
+==================
+Negation of a parenthesized arithmetic expression
+==================
+
+// Should apply negation to the result of (2 * 3)
+int x = -(2 * 3);
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (int_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (negation
+        operator: (negation_op)
+        argument: (group
+          expression: (arithmetic
+            (mul
+              left: (literal
+                (number))
+              operator: (mul_op)
+              right: (literal
+                (number)))))))))
+
+==================
+Negation inside a comparison expression
+==================
+
+bool b = -5 < -2;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (comparison_expression
+      left: (arithmetic
+        (negation
+          operator: (negation_op)
+          argument: (literal
+            (number))))
+      operator: (comparison_operator)
+      right: (arithmetic
+        (negation
+          operator: (negation_op)
+          argument: (literal
+            (number)))))))
+
+==================
+Negation inside a logical expression
+==================
+
+contract C {
+    function f(int a, int b) public pure returns (bool) {
+        return -a > 0 && -b < 0;
+    }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        (return_statement
+          value: (logical_and_expression
+            left: (comparison_expression
+              left: (arithmetic
+                (negation
+                  operator: (negation_op)
+                  argument: (primary_expression
+                    (identifier))))
+              operator: (comparison_operator)
+              right: (literal
+                (number)))
+            right: (comparison_expression
+              left: (arithmetic
+                (negation
+                  operator: (negation_op)
+                  argument: (primary_expression
+                    (identifier))))
+              operator: (comparison_operator)
+              right: (literal
+                (number)))))))))
+
+==================
+Negation in a require statement
+==================
+
+contract C {
+    function f(int a) public pure {
+        require(-a > 0, "must be negative");
+    }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (comparison_expression
+                left: (arithmetic
+                  (negation
+                    operator: (negation_op)
+                    argument: (primary_expression
+                      (identifier))))
+                operator: (comparison_operator)
+                right: (literal
+                  (number)))
+              argument: (literal
+                (string)))))))))

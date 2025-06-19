@@ -64,6 +64,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -173,6 +177,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -305,6 +313,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -381,7 +393,15 @@
           "named": true
         },
         {
+          "type": "decrement",
+          "named": true
+        },
+        {
           "type": "exp",
+          "named": true
+        },
+        {
+          "type": "increment",
           "named": true
         },
         {
@@ -467,6 +487,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -575,6 +599,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -694,6 +722,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -799,6 +831,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -925,6 +961,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1037,6 +1077,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1142,6 +1186,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -1257,6 +1305,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1362,6 +1414,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -1474,6 +1530,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -1673,6 +1733,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -1803,6 +1867,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -1940,6 +2008,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -2049,6 +2121,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -2170,6 +2246,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -2272,6 +2352,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -2371,6 +2455,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -2672,6 +2760,25 @@
     "fields": {}
   },
   {
+    "type": "decrement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "postfix_decrement",
+          "named": true
+        },
+        {
+          "type": "prefix_decrement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "do_while_statement",
     "named": true,
     "fields": {
@@ -2775,6 +2882,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -2927,6 +3038,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -3036,6 +3151,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -3290,6 +3409,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -3399,6 +3522,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -3523,6 +3650,10 @@
         },
         {
           "type": "equality_expression",
+          "named": true
+        },
+        {
+          "type": "group",
           "named": true
         },
         {
@@ -3783,6 +3914,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -3900,6 +4035,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -4105,6 +4244,118 @@
     }
   },
   {
+    "type": "group",
+    "named": true,
+    "fields": {
+      "expression": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_and_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_or_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_xor_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "logical_and_expression",
+            "named": true
+          },
+          {
+            "type": "logical_or_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "if_statement",
     "named": true,
     "fields": {
@@ -4208,6 +4459,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -4378,6 +4633,25 @@
     }
   },
   {
+    "type": "increment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "postfix_increment",
+          "named": true
+        },
+        {
+          "type": "prefix_increment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "index_access_expression",
     "named": true,
     "fields": {
@@ -4423,6 +4697,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -4525,6 +4803,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -4636,6 +4918,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -4738,6 +5024,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -4837,6 +5127,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -4987,6 +5281,10 @@
         },
         {
           "type": "equality_expression",
+          "named": true
+        },
+        {
+          "type": "group",
           "named": true
         },
         {
@@ -5344,6 +5642,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -5456,6 +5758,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -5561,6 +5867,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -5673,6 +5983,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -5849,6 +6163,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -6074,6 +6392,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -6183,6 +6505,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -6314,6 +6640,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -6419,6 +6749,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -6702,6 +7036,250 @@
     "fields": {}
   },
   {
+    "type": "postfix_decrement",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_and_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_or_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_xor_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "logical_and_expression",
+            "named": true
+          },
+          {
+            "type": "logical_or_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "decrement_op",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "postfix_increment",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_and_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_or_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_xor_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "logical_and_expression",
+            "named": true
+          },
+          {
+            "type": "logical_or_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "increment_op",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "pragma",
     "named": true,
     "fields": {},
@@ -6722,6 +7300,250 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "prefix_decrement",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_and_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_or_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_xor_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "logical_and_expression",
+            "named": true
+          },
+          {
+            "type": "logical_or_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "decrement_op",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "prefix_increment",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_and_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_or_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_xor_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "logical_and_expression",
+            "named": true
+          },
+          {
+            "type": "logical_or_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "increment_op",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -6881,6 +7703,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -7015,6 +7841,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -7124,6 +7954,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -7413,6 +8247,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -7661,6 +8499,10 @@
           "named": true
         },
         {
+          "type": "group",
+          "named": true
+        },
+        {
           "type": "index_access_expression",
           "named": true
         },
@@ -7799,6 +8641,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -7862,14 +8708,6 @@
         "types": [
           {
             "type": "!",
-            "named": false
-          },
-          {
-            "type": "++",
-            "named": false
-          },
-          {
-            "type": "--",
             "named": false
           },
           {
@@ -8199,6 +9037,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -8380,6 +9222,10 @@
           },
           {
             "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "group",
             "named": true
           },
           {
@@ -8605,6 +9451,10 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "index_access_expression",
             "named": true
           },
@@ -8744,10 +9594,6 @@
     "named": false
   },
   {
-    "type": "++",
-    "named": false
-  },
-  {
     "type": "+=",
     "named": false
   },
@@ -8757,10 +9603,6 @@
   },
   {
     "type": "-",
-    "named": false
-  },
-  {
-    "type": "--",
     "named": false
   },
   {
@@ -9049,6 +9891,10 @@
     "named": false
   },
   {
+    "type": "decrement_op",
+    "named": true
+  },
+  {
     "type": "delete",
     "named": false
   },
@@ -9151,6 +9997,10 @@
   {
     "type": "import",
     "named": false
+  },
+  {
+    "type": "increment_op",
+    "named": true
   },
   {
     "type": "indexed",

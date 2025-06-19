@@ -32,8 +32,8 @@ const PREC = {
   SHIFT: 9,
   ADD: 10,
   MULTIPLY: 11,
-  EXP: 12,
-  UNARY: 13,
+  UNARY: 12,
+  EXP: 13,
   POSTFIX: 14,
   MEMBER: 15,
   CAST: 16,
@@ -533,6 +533,9 @@ module.exports = grammar({
         // Type cast
         $.cast,
 
+        // Group (a)
+        $.group,
+
         // Arithmetic expression
         $.arithmetic,
 
@@ -571,6 +574,12 @@ module.exports = grammar({
       ),
 
     //############################################################//
+    //                      Group expression                      //
+    //############################################################//
+
+    group: ($) => prec(1, seq("(", field("expression", $._expression), ")")),
+
+    //############################################################//
     //                   Arithmetic expression                    //
     //############################################################//
 
@@ -579,6 +588,8 @@ module.exports = grammar({
         // Unary
         $.negation, // -a
         $.bitnot, // ~a
+        $.increment, // ++a or a++
+        $.decrement, // --a or a--
         // Binary
         $.exp,
         $.mul,
@@ -591,6 +602,44 @@ module.exports = grammar({
         seq(field("operator", $.negation_op), field("argument", $._expression)),
       ),
     negation_op: ($) => "-",
+
+    increment: ($) => choice($.prefix_increment, $.postfix_increment),
+    increment_op: ($) => "++",
+    prefix_increment: ($) =>
+      prec.right(
+        PREC.UNARY,
+        seq(
+          field("operator", $.increment_op),
+          field("argument", $._expression),
+        ),
+      ),
+    postfix_increment: ($) =>
+      prec.left(
+        PREC.POSTFIX,
+        seq(
+          field("argument", $._expression),
+          field("operator", $.increment_op),
+        ),
+      ),
+
+    decrement: ($) => choice($.prefix_decrement, $.postfix_decrement),
+    decrement_op: ($) => "--",
+    prefix_decrement: ($) =>
+      prec.right(
+        PREC.UNARY,
+        seq(
+          field("operator", $.decrement_op),
+          field("argument", $._expression),
+        ),
+      ),
+    postfix_decrement: ($) =>
+      prec.left(
+        PREC.POSTFIX,
+        seq(
+          field("argument", $._expression),
+          field("operator", $.decrement_op),
+        ),
+      ),
 
     bitnot: ($) =>
       prec.right(
@@ -1307,27 +1356,12 @@ module.exports = grammar({
      */
     unary_expression: ($) =>
       choice(
-        // Prefix operators (e.g., `!a`,  `++a`) are right-associative.
+        // Prefix operators (e.g., `!a`) are right-associative.
         prec.right(
           PREC.UNARY,
           seq(
             field("operator", choice("!", "delete")),
             field("argument", $._expression),
-          ),
-        ),
-        prec.right(
-          PREC.UNARY,
-          seq(
-            field("operator", choice("++", "--")),
-            field("argument", $._expression),
-          ),
-        ),
-        // Suffix operators (e.g., `a++`) are left-associative.
-        prec.left(
-          PREC.POSTFIX,
-          seq(
-            field("argument", $._expression),
-            field("operator", choice("++", "--")),
           ),
         ),
       ),
@@ -1573,7 +1607,16 @@ module.exports = grammar({
      * A tuple expression.
      * e.g., `(1, true)` or `(a, b)`
      */
-    tuple_expression: ($) => seq("(", optional(commaSep($._expression)), ")"),
+    tuple_expression: ($) =>
+      seq(
+        "(",
+        optional(
+          // A tuple must have zero elements, or at least two elements.
+          // This structure avoids matching a single-element parenthesized expression.
+          seq($._expression, ",", commaSep($._expression)),
+        ),
+        ")",
+      ),
 
     /**
      * A `payable` conversion expression.

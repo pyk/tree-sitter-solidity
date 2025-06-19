@@ -326,8 +326,8 @@ contract C {
           value: (logical_and_expression
             left: (literal
               (boolean))
-            right: (tuple_expression
-              (logical_or_expression
+            right: (group
+              expression: (logical_or_expression
                 left: (literal
                   (boolean))
                 right: (literal

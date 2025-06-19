@@ -125,8 +125,8 @@ uint constant WITH_PARENS = (1 + 2);
     mutability: (mutability)
     name: (symbol
       name: (identifier))
-    value: (tuple_expression
-      (arithmetic
+    value: (group
+      expression: (arithmetic
         (add
           left: (literal
             (number))
@@ -151,8 +151,8 @@ uint constant SECONDS_PER_DAY = (60 + 60) * 12;
       name: (identifier))
     value: (arithmetic
       (mul
-        left: (tuple_expression
-          (arithmetic
+        left: (group
+          expression: (arithmetic
             (add
               left: (literal
                 (number))
