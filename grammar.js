@@ -533,6 +533,9 @@ module.exports = grammar({
         // Arithmetic expressions
         $.arithmetic,
 
+        // Bitwise expressions
+        $.bitwise,
+
         // Comparison expressions
         $.comparison,
 
@@ -557,9 +560,6 @@ module.exports = grammar({
         $.assignment_expression,
         $.shift_expression,
         $.tuple_expression,
-        $.bitwise_and_expression,
-        $.bitwise_xor_expression,
-        $.bitwise_or_expression,
         $.inline_array_expression,
       ),
 
@@ -643,7 +643,6 @@ module.exports = grammar({
       choice(
         // Unary
         $.negation, // -a
-        $.bitnot, // ~a
         $.increment, // ++a or a++
         $.decrement, // --a or a--
         // Binary
@@ -697,13 +696,6 @@ module.exports = grammar({
         ),
       ),
 
-    bitnot: ($) =>
-      prec.right(
-        PREC.UNARY,
-        seq(field("operator", $.bitnot_op), field("argument", $._expression)),
-      ),
-    bitnot_op: ($) => "~",
-
     exp: ($) =>
       prec.right(
         PREC.EXP,
@@ -736,6 +728,52 @@ module.exports = grammar({
         ),
       ),
     mul_op: ($) => choice("*", "/", "%"),
+
+    //############################################################//
+    //                     Bitwise expression                     //
+    //############################################################//
+
+    bitwise: ($) => choice($.bitand, $.bitor, $.bitxor, $.bitnot),
+
+    bitand: ($) =>
+      prec.left(
+        PREC.BIT_AND,
+        seq(
+          field("left", $._expression),
+          field("operator", $.bitand_op),
+          field("right", $._expression),
+        ),
+      ),
+    bitand_op: ($) => "&",
+
+    bitor: ($) =>
+      prec.left(
+        PREC.BIT_OR,
+        seq(
+          field("left", $._expression),
+          field("operator", $.bitor_op),
+          field("right", $._expression),
+        ),
+      ),
+    bitor_op: ($) => "|",
+
+    bitxor: ($) =>
+      prec.left(
+        PREC.BIT_XOR,
+        seq(
+          field("left", $._expression),
+          field("operator", $.bitxor_op),
+          field("right", $._expression),
+        ),
+      ),
+    bitxor_op: ($) => "^",
+
+    bitnot: ($) =>
+      prec.right(
+        PREC.UNARY,
+        seq(field("operator", $.bitnot_op), field("argument", $._expression)),
+      ),
+    bitnot_op: ($) => "~",
 
     //############################################################//
     //                          Variable                          //
@@ -1565,56 +1603,6 @@ module.exports = grammar({
         seq(
           field("left", $._expression),
           field("operator", $.shift_operator),
-          field("right", $._expression),
-        ),
-      ),
-
-    bitwise_and_expression: ($) =>
-      prec.left(
-        PREC.BIT_AND,
-        seq(
-          field("left", $._expression),
-          field("operator", "&"),
-          field("right", $._expression),
-        ),
-      ),
-
-    bitwise_xor_expression: ($) =>
-      prec.left(
-        PREC.BIT_XOR,
-        seq(
-          field("left", $._expression),
-          field("operator", "^"),
-          field("right", $._expression),
-        ),
-      ),
-
-    bitwise_or_expression: ($) =>
-      prec.left(
-        PREC.BIT_OR,
-        seq(
-          field("left", $._expression),
-          field("operator", "|"),
-          field("right", $._expression),
-        ),
-      ),
-
-    and_expression: ($) =>
-      prec.left(
-        PREC.AND,
-        seq(
-          field("left", $._expression),
-          field("operator", "&&"),
-          field("right", $._expression),
-        ),
-      ),
-
-    or_expression: ($) =>
-      prec.left(
-        PREC.OR,
-        seq(
-          field("left", $._expression),
-          field("operator", "||"),
           field("right", $._expression),
         ),
       ),

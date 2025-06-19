@@ -36,15 +36,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -152,15 +144,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -285,15 +269,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -401,15 +377,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -513,15 +481,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -617,10 +577,6 @@
           "named": true
         },
         {
-          "type": "bitnot",
-          "named": true
-        },
-        {
           "type": "decrement",
           "named": true
         },
@@ -690,15 +646,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -802,15 +750,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -922,15 +862,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -1014,6 +946,223 @@
     }
   },
   {
+    "type": "bitand",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bitand_op",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "bitand_op",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "bitnot",
     "named": true,
     "fields": {
@@ -1034,15 +1183,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -1141,7 +1282,7 @@
     "fields": {}
   },
   {
-    "type": "bitwise_and_expression",
+    "type": "bitor",
     "named": true,
     "fields": {
       "left": {
@@ -1161,15 +1302,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -1255,8 +1388,8 @@
         "required": true,
         "types": [
           {
-            "type": "&",
-            "named": false
+            "type": "bitor_op",
+            "named": true
           }
         ]
       },
@@ -1277,15 +1410,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -1369,7 +1494,39 @@
     }
   },
   {
-    "type": "bitwise_or_expression",
+    "type": "bitor_op",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bitwise",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bitand",
+          "named": true
+        },
+        {
+          "type": "bitnot",
+          "named": true
+        },
+        {
+          "type": "bitor",
+          "named": true
+        },
+        {
+          "type": "bitxor",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bitxor",
     "named": true,
     "fields": {
       "left": {
@@ -1389,15 +1546,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -1483,8 +1632,8 @@
         "required": true,
         "types": [
           {
-            "type": "|",
-            "named": false
+            "type": "bitxor_op",
+            "named": true
           }
         ]
       },
@@ -1505,15 +1654,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -1597,232 +1738,9 @@
     }
   },
   {
-    "type": "bitwise_xor_expression",
+    "type": "bitxor_op",
     "named": true,
-    "fields": {
-      "left": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "and",
-            "named": true
-          },
-          {
-            "type": "arithmetic",
-            "named": true
-          },
-          {
-            "type": "assignment_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
-            "named": true
-          },
-          {
-            "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "cast",
-            "named": true
-          },
-          {
-            "type": "comparison",
-            "named": true
-          },
-          {
-            "type": "conditional_expression",
-            "named": true
-          },
-          {
-            "type": "equality",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
-            "type": "inline_array_expression",
-            "named": true
-          },
-          {
-            "type": "literal",
-            "named": true
-          },
-          {
-            "type": "member_access_expression",
-            "named": true
-          },
-          {
-            "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "new_expression",
-            "named": true
-          },
-          {
-            "type": "or",
-            "named": true
-          },
-          {
-            "type": "payable_conversion_expression",
-            "named": true
-          },
-          {
-            "type": "primary_expression",
-            "named": true
-          },
-          {
-            "type": "shift_expression",
-            "named": true
-          },
-          {
-            "type": "tuple_expression",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
-            "named": true
-          }
-        ]
-      },
-      "operator": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "^",
-            "named": false
-          }
-        ]
-      },
-      "right": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "and",
-            "named": true
-          },
-          {
-            "type": "arithmetic",
-            "named": true
-          },
-          {
-            "type": "assignment_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
-            "named": true
-          },
-          {
-            "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "cast",
-            "named": true
-          },
-          {
-            "type": "comparison",
-            "named": true
-          },
-          {
-            "type": "conditional_expression",
-            "named": true
-          },
-          {
-            "type": "equality",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
-            "type": "inline_array_expression",
-            "named": true
-          },
-          {
-            "type": "literal",
-            "named": true
-          },
-          {
-            "type": "member_access_expression",
-            "named": true
-          },
-          {
-            "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "new_expression",
-            "named": true
-          },
-          {
-            "type": "or",
-            "named": true
-          },
-          {
-            "type": "payable_conversion_expression",
-            "named": true
-          },
-          {
-            "type": "primary_expression",
-            "named": true
-          },
-          {
-            "type": "shift_expression",
-            "named": true
-          },
-          {
-            "type": "tuple_expression",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
-            "named": true
-          }
-        ]
-      }
-    }
+    "fields": {}
   },
   {
     "type": "block",
@@ -1933,15 +1851,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -2070,15 +1980,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -2208,15 +2110,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -2324,15 +2218,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -2446,15 +2332,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -2552,15 +2430,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -2658,15 +2528,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -3085,15 +2947,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -3238,15 +3092,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -3354,15 +3200,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -3609,15 +3447,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -3725,15 +3555,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -3853,15 +3675,7 @@
           "named": true
         },
         {
-          "type": "bitwise_and_expression",
-          "named": true
-        },
-        {
-          "type": "bitwise_or_expression",
-          "named": true
-        },
-        {
-          "type": "bitwise_xor_expression",
+          "type": "bitwise",
           "named": true
         },
         {
@@ -4114,15 +3928,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -4238,15 +4044,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -4492,15 +4290,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -4662,15 +4452,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -4900,15 +4682,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -5006,15 +4780,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -5118,15 +4884,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -5224,15 +4982,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -5330,15 +5080,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -5484,15 +5226,7 @@
           "named": true
         },
         {
-          "type": "bitwise_and_expression",
-          "named": true
-        },
-        {
-          "type": "bitwise_or_expression",
-          "named": true
-        },
-        {
-          "type": "bitwise_xor_expression",
+          "type": "bitwise",
           "named": true
         },
         {
@@ -5910,15 +5644,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -6136,15 +5862,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -6252,15 +5970,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -6384,15 +6094,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -6496,15 +6198,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -6655,15 +6349,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -6771,15 +6457,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -7056,15 +6734,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -7178,15 +6848,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -7323,15 +6985,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -7445,15 +7099,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -7675,15 +7321,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -7813,15 +7451,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -7929,15 +7559,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -8219,15 +7841,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -8471,15 +8085,7 @@
           "named": true
         },
         {
-          "type": "bitwise_and_expression",
-          "named": true
-        },
-        {
-          "type": "bitwise_or_expression",
-          "named": true
-        },
-        {
-          "type": "bitwise_xor_expression",
+          "type": "bitwise",
           "named": true
         },
         {
@@ -8613,15 +8219,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -9009,15 +8607,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -9197,15 +8787,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {
@@ -9423,15 +9005,7 @@
             "named": true
           },
           {
-            "type": "bitwise_and_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_or_expression",
-            "named": true
-          },
-          {
-            "type": "bitwise_xor_expression",
+            "type": "bitwise",
             "named": true
           },
           {

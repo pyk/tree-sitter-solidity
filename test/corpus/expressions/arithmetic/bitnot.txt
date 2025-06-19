@@ -1,0 +1,285 @@
+==================
+Simple bitwise NOT on a number literal
+==================
+
+uint x = ~123;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitnot
+        operator: (bitnot_op)
+        argument: (literal
+          (number))))))
+
+==================
+Bitwise NOT on a hex literal
+==================
+
+bytes32 x = ~0x111122223333444455556666777788889999AAAABBBBCCCCDDDDEEEEFFFF;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bytes_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitnot
+        operator: (bitnot_op)
+        argument: (literal
+          (hex))))))
+
+==================
+Bitwise NOT on a variable
+==================
+
+contract C {
+    function f(uint a) public pure returns (uint) {
+        return ~a;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (bitwise
+            (bitnot
+              operator: (bitnot_op)
+              argument: (primary_expression
+                (identifier)))))))))
+
+==================
+Bitwise NOT precedence with exponentiation
+==================
+
+// Should parse as ~(a ** b) because exponentiation has higher precedence
+uint x = ~a ** b;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitnot
+        operator: (bitnot_op)
+        argument: (arithmetic
+          (exp
+            left: (primary_expression
+              (identifier))
+            operator: (exp_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Parentheses to force bitwise NOT first
+==================
+
+// Should parse as (~a) ** b
+uint x = (~a) ** b;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (arithmetic
+      (exp
+        left: (group
+          expression: (bitwise
+            (bitnot
+              operator: (bitnot_op)
+              argument: (primary_expression
+                (identifier)))))
+        operator: (exp_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Bitwise NOT precedence with bitwise AND
+==================
+
+// Should parse as (~a) & b
+uint x = ~a & b;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitand
+        left: (bitwise
+          (bitnot
+            operator: (bitnot_op)
+            argument: (primary_expression
+              (identifier))))
+        operator: (bitand_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Bitwise NOT on a parenthesized expression
+==================
+
+// Should apply NOT to the result of (a | b)
+uint x = ~(a | b);
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitnot
+        operator: (bitnot_op)
+        argument: (group
+          expression: (bitwise
+            (bitor
+              left: (primary_expression
+                (identifier))
+              operator: (bitor_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Double bitwise NOT
+==================
+
+uint x = ~~a;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitnot
+        operator: (bitnot_op)
+        argument: (bitwise
+          (bitnot
+            operator: (bitnot_op)
+            argument: (primary_expression
+              (identifier))))))))
+
+==================
+Bitwise NOT on a cast expression
+==================
+
+// A very common pattern: ~uint(0) to get all bits set
+uint constant ALL_BITS = ~uint256(0);
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    mutability: (mutability)
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitnot
+        operator: (bitnot_op)
+        argument: (cast
+          type: (primitive_type
+            (uint_type))
+          argument: (literal
+            (number)))))))
+
+==================
+Bitwise NOT in a function argument
+==================
+
+contract C {
+    function log(uint val) public pure {}
+    function f(uint a) public pure {
+        log(~a);
+    }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (bitwise
+                (bitnot
+                  operator: (bitnot_op)
+                  argument: (primary_expression
+                    (identifier)))))))))))

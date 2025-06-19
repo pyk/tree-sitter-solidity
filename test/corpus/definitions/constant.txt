@@ -324,7 +324,7 @@ uint constant BITWISE_NOT = ~uint(0);
     mutability: (mutability)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
+    value: (bitwise
       (bitnot
         operator: (bitnot_op)
         argument: (cast
