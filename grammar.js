@@ -574,7 +574,30 @@ module.exports = grammar({
     //                   Arithmetic expression                    //
     //############################################################//
 
-    arithmetic: ($) => choice($.exp, $.mul, $.add, $.bitnot),
+    arithmetic: ($) =>
+      choice(
+        // Unary
+        $.negation, // -a
+        $.bitnot, // ~a
+        // Binary
+        $.exp,
+        $.mul,
+        $.add,
+      ),
+
+    negation: ($) =>
+      prec.right(
+        PREC.UNARY,
+        seq(field("operator", $.negation_op), field("argument", $._expression)),
+      ),
+    negation_op: ($) => "-",
+
+    bitnot: ($) =>
+      prec.right(
+        PREC.UNARY,
+        seq(field("operator", $.bitnot_op), field("argument", $._expression)),
+      ),
+    bitnot_op: ($) => "~",
 
     exp: ($) =>
       prec.right(
@@ -585,6 +608,7 @@ module.exports = grammar({
           field("right", $._expression),
         ),
       ),
+    exp_op: ($) => "**",
 
     add: ($) =>
       prec.left(
@@ -595,6 +619,7 @@ module.exports = grammar({
           field("right", $._expression),
         ),
       ),
+    add_op: ($) => choice("+", "-"),
 
     mul: ($) =>
       prec.left(
@@ -605,18 +630,7 @@ module.exports = grammar({
           field("right", $._expression),
         ),
       ),
-
-    bitnot: ($) =>
-      prec.right(
-        PREC.UNARY,
-        seq(field("operator", $.bitnot_op), field("argument", $._expression)),
-      ),
-
-    // Operators
-    add_op: ($) => choice("+", "-"),
     mul_op: ($) => choice("*", "/", "%"),
-    exp_op: ($) => "**",
-    bitnot_op: ($) => "~",
 
     //############################################################//
     //                          Variable                          //
@@ -1293,11 +1307,11 @@ module.exports = grammar({
      */
     unary_expression: ($) =>
       choice(
-        // Prefix operators (e.g., `!a`, `-a`, `++a`) are right-associative.
+        // Prefix operators (e.g., `!a`,  `++a`) are right-associative.
         prec.right(
           PREC.UNARY,
           seq(
-            field("operator", choice("!", "-", "delete")),
+            field("operator", choice("!", "delete")),
             field("argument", $._expression),
           ),
         ),

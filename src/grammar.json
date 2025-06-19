@@ -1834,6 +1834,14 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "negation"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "bitnot"
+        },
+        {
+          "type": "SYMBOL",
           "name": "exp"
         },
         {
@@ -1843,12 +1851,66 @@
         {
           "type": "SYMBOL",
           "name": "add"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "bitnot"
         }
       ]
+    },
+    "negation": {
+      "type": "PREC_RIGHT",
+      "value": 13,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "SYMBOL",
+              "name": "negation_op"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "argument",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "negation_op": {
+      "type": "STRING",
+      "value": "-"
+    },
+    "bitnot": {
+      "type": "PREC_RIGHT",
+      "value": 13,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "SYMBOL",
+              "name": "bitnot_op"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "argument",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "bitnot_op": {
+      "type": "STRING",
+      "value": "~"
     },
     "exp": {
       "type": "PREC_RIGHT",
@@ -1883,6 +1945,10 @@
         ]
       }
     },
+    "exp_op": {
+      "type": "STRING",
+      "value": "**"
+    },
     "add": {
       "type": "PREC_LEFT",
       "value": 10,
@@ -1915,6 +1981,19 @@
           }
         ]
       }
+    },
+    "add_op": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "+"
+        },
+        {
+          "type": "STRING",
+          "value": "-"
+        }
+      ]
     },
     "mul": {
       "type": "PREC_LEFT",
@@ -1949,44 +2028,6 @@
         ]
       }
     },
-    "bitnot": {
-      "type": "PREC_RIGHT",
-      "value": 13,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "operator",
-            "content": {
-              "type": "SYMBOL",
-              "name": "bitnot_op"
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "argument",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          }
-        ]
-      }
-    },
-    "add_op": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "+"
-        },
-        {
-          "type": "STRING",
-          "value": "-"
-        }
-      ]
-    },
     "mul_op": {
       "type": "CHOICE",
       "members": [
@@ -2003,14 +2044,6 @@
           "value": "%"
         }
       ]
-    },
-    "exp_op": {
-      "type": "STRING",
-      "value": "**"
-    },
-    "bitnot_op": {
-      "type": "STRING",
-      "value": "~"
     },
     "variable": {
       "type": "SEQ",
@@ -4760,10 +4793,6 @@
                     {
                       "type": "STRING",
                       "value": "!"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "-"
                     },
                     {
                       "type": "STRING",

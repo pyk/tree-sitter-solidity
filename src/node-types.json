@@ -387,6 +387,10 @@
         {
           "type": "mul",
           "named": true
+        },
+        {
+          "type": "negation",
+          "named": true
         }
       ]
     }
@@ -6370,6 +6374,129 @@
     }
   },
   {
+    "type": "negation",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_and_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_or_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise_xor_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison_expression",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality_expression",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "logical_and_expression",
+            "named": true
+          },
+          {
+            "type": "logical_or_expression",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "primary_expression",
+            "named": true
+          },
+          {
+            "type": "shift_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "negation_op",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "negation_op",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "new_expression",
     "named": true,
     "fields": {
@@ -7739,10 +7866,6 @@
           },
           {
             "type": "++",
-            "named": false
-          },
-          {
-            "type": "-",
             "named": false
           },
           {

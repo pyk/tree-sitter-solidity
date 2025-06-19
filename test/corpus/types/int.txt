@@ -97,9 +97,11 @@ contract C {
               (int_type))
             name: (symbol
               name: (identifier)))
-          value: (unary_expression
-            argument: (literal
-              (number))))))))
+          value: (arithmetic
+            (negation
+              operator: (negation_op)
+              argument: (literal
+                (number)))))))))
 
 ==================
 Int in a type cast
@@ -266,9 +268,11 @@ contract C {
       mutability: (mutability)
       name: (symbol
         name: (identifier))
-      value: (unary_expression
-        argument: (literal
-          (number))))
+      value: (arithmetic
+        (negation
+          operator: (negation_op)
+          argument: (literal
+            (number)))))
     variable: (variable
       type: (primitive_type
         (int_type))
@@ -276,9 +280,11 @@ contract C {
       mutability: (mutability)
       name: (symbol
         name: (identifier))
-      value: (unary_expression
-        argument: (literal
-          (number))))))
+      value: (arithmetic
+        (negation
+          operator: (negation_op)
+          argument: (literal
+            (number)))))))
 
 ==================
 Int in an event parameter

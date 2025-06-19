@@ -31,9 +31,11 @@ int256 constant MY_NEGATIVE_CONSTANT = -100;
     mutability: (mutability)
     name: (symbol
       name: (identifier))
-    value: (unary_expression
-      argument: (literal
-        (number)))))
+    value: (arithmetic
+      (negation
+        operator: (negation_op)
+        argument: (literal
+          (number))))))
 
 ==================
 Top-level constant (string)
