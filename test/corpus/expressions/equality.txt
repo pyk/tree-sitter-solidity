@@ -1,0 +1,283 @@
+==================
+Simple equality with number literals
+==================
+
+bool x = 1 == 1;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (equality
+      left: (literal
+        (number))
+      operator: (equality_op)
+      right: (literal
+        (number)))))
+
+==================
+Inequality with variables
+==================
+
+contract C {
+    function f(uint a, uint b) public pure returns (bool) {
+        return a != b;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        (return_statement
+          value: (equality
+            left: (primary_expression
+              (identifier))
+            operator: (equality_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Equality with boolean literals
+==================
+
+bool x = true == false;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (equality
+      left: (literal
+        (boolean))
+      operator: (equality_op)
+      right: (literal
+        (boolean)))))
+
+==================
+Equality with address literals
+==================
+
+bool x = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF == address(0);
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (equality
+      left: (literal
+        (hex))
+      operator: (equality_op)
+      right: (cast
+        type: (primitive_type
+          (address_type))
+        argument: (literal
+          (number))))))
+
+==================
+Equality precedence with addition
+==================
+
+// Should parse as (a + 5) == b
+bool x = a + 5 == b;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (equality
+      left: (arithmetic
+        (add
+          left: (primary_expression
+            (identifier))
+          operator: (add_op)
+          right: (literal
+            (number))))
+      operator: (equality_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+Equality precedence vs. comparison (left-associative)
+==================
+
+// Should parse as (a < b) == (c > d).
+// This is invalid Solidity but must be parsed correctly to be linted.
+bool x = a < b == c > d;
+
+---
+
+(source_file
+  (comment)
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (equality
+      left: (comparison
+        left: (primary_expression
+          (identifier))
+        operator: (comparison_op)
+        right: (primary_expression
+          (identifier)))
+      operator: (equality_op)
+      right: (comparison
+        left: (primary_expression
+          (identifier))
+        operator: (comparison_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Equality used in a logical OR expression
+==================
+
+// Should parse as (a == b) || (c != d)
+bool x = a == b || c != d;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (logical_or
+      left: (equality
+        left: (primary_expression
+          (identifier))
+        operator: (equality_op)
+        right: (primary_expression
+          (identifier)))
+      operator: (logical_or_op)
+      right: (equality
+        left: (primary_expression
+          (identifier))
+        operator: (equality_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Equality in an if statement condition
+==================
+
+contract C {
+    function f(address a) public view {
+        if (a == msg.sender) {
+            // ...
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (if_statement
+          condition: (equality
+            left: (primary_expression
+              (identifier))
+            operator: (equality_op)
+            right: (member_access_expression
+              object: (primary_expression
+                (identifier))
+              member: (identifier)))
+          consequence: (block
+            (comment)))))))
+
+==================
+Equality vs. Assignment (common bug)
+==================
+
+// This is a common bug where a developer uses `=` instead of `==`.
+// The parser should correctly identify this as an assignment, not an equality check.
+contract C {
+    function f(uint a) public {
+        if (a = 5) {
+            // Linter should flag this.
+        }
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (if_statement
+          condition: (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (simple_assignment_operator)
+            right: (literal
+              (number)))
+          consequence: (block
+            (comment)))))))
