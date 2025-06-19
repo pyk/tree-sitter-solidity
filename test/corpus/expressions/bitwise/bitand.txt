@@ -1,0 +1,248 @@
+==================
+Simple bitwise AND with hex literals
+==================
+
+uint x = 0x0F & 0xF0;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitand
+        left: (literal
+          (hex))
+        operator: (bitand_op)
+        right: (literal
+          (hex))))))
+
+==================
+Bitwise AND with variables
+==================
+
+contract C {
+    function f(bytes32 a, bytes32 b) public pure returns (bytes32) {
+        return a & b;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))))
+      body: (block
+        (return_statement
+          value: (bitwise
+            (bitand
+              left: (primary_expression
+                (identifier))
+              operator: (bitand_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Chained bitwise AND expressions (left-associative)
+==================
+
+// Should parse as (a & b) & c
+uint x = a & b & c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitand
+        left: (bitwise
+          (bitand
+            left: (primary_expression
+              (identifier))
+            operator: (bitand_op)
+            right: (primary_expression
+              (identifier))))
+        operator: (bitand_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Bitwise AND precedence with bitwise XOR and OR
+==================
+
+// Should parse as (a & b) ^ (c | d) is wrong, should be ((a&b)^c)|d
+// Correct parsing should be ((a & b) ^ c) | d
+uint x = a & b ^ c | d;
+
+---
+
+(source_file
+  (comment)
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitor
+        left: (bitwise
+          (bitxor
+            left: (bitwise
+              (bitand
+                left: (primary_expression
+                  (identifier))
+                operator: (bitand_op)
+                right: (primary_expression
+                  (identifier))))
+            operator: (bitxor_op)
+            right: (primary_expression
+              (identifier))))
+        operator: (bitor_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Bitwise AND precedence with shift and arithmetic operators
+==================
+
+// Should parse as (a << 1) & (b + 1)
+uint x = a << 1 & b + 1;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitand
+        left: (shift_expression
+          left: (primary_expression
+            (identifier))
+          operator: (shift_operator)
+          right: (literal
+            (number)))
+        operator: (bitand_op)
+        right: (arithmetic
+          (add
+            left: (primary_expression
+              (identifier))
+            operator: (add_op)
+            right: (literal
+              (number))))))))
+
+==================
+Bitwise AND with parenthesized OR expression
+==================
+
+// Should parse as a & (b | c)
+uint x = a & (b | c);
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitand
+        left: (primary_expression
+          (identifier))
+        operator: (bitand_op)
+        right: (group
+          expression: (bitwise
+            (bitor
+              left: (primary_expression
+                (identifier))
+              operator: (bitor_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Bitwise AND in a require statement
+==================
+
+contract C {
+    uint constant FLAG = 0x01;
+    function f(uint flags) public pure {
+        require(flags & FLAG == FLAG, "Flag not set");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    variable: (variable
+      type: (primitive_type
+        (uint_type))
+      mutability: (mutability)
+      name: (symbol
+        name: (identifier))
+      value: (literal
+        (hex)))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (bitwise
+                (bitand
+                  left: (primary_expression
+                    (identifier))
+                  operator: (bitand_op)
+                  right: (equality
+                    left: (primary_expression
+                      (identifier))
+                    operator: (equality_op)
+                    right: (primary_expression
+                      (identifier)))))
+              argument: (literal
+                (string)))))))))
