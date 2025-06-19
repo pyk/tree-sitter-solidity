@@ -57,10 +57,10 @@ contract C {
       body: (block
         (return_statement
           value: (arithmetic
-            (add
+            (sub
               left: (primary_expression
                 (identifier))
-              operator: (add_op)
+              operator: (sub_op)
               right: (primary_expression
                 (identifier)))))))))
 
@@ -83,7 +83,7 @@ uint x = a + b - c + d;
     value: (arithmetic
       (add
         left: (arithmetic
-          (add
+          (sub
             left: (arithmetic
               (add
                 left: (primary_expression
@@ -91,7 +91,7 @@ uint x = a + b - c + d;
                 operator: (add_op)
                 right: (primary_expression
                   (identifier))))
-            operator: (add_op)
+            operator: (sub_op)
             right: (primary_expression
               (identifier))))
         operator: (add_op)
@@ -280,10 +280,10 @@ contract C {
             arguments: (argument_list
               argument: (comparison
                 left: (arithmetic
-                  (add
+                  (sub
                     left: (primary_expression
                       (identifier))
-                    operator: (add_op)
+                    operator: (sub_op)
                     right: (primary_expression
                       (identifier))))
                 operator: (comparison_op)

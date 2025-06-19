@@ -651,6 +651,7 @@ module.exports = grammar({
         $.exp,
         $.mul,
         $.add,
+        $.sub,
         $.div,
         $.mod,
       ),
@@ -720,7 +721,18 @@ module.exports = grammar({
           field("right", $._expression),
         ),
       ),
-    add_op: ($) => choice("+", "-"),
+    add_op: ($) => "+",
+
+    sub: ($) =>
+      prec.left(
+        PREC.ADD,
+        seq(
+          field("left", $._expression),
+          field("operator", $.sub_op),
+          field("right", $._expression),
+        ),
+      ),
+    sub_op: ($) => "-",
 
     mul: ($) =>
       prec.left(
