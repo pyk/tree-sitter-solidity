@@ -1142,6 +1142,32 @@ module.exports = grammar({
     event_parameter_list: ($) =>
       commaSep(field("parameter", $.event_parameter)),
 
+    // Rule for the `anonymous` keyword
+    anonymous: ($) => "anonymous",
+
+    //############################################################//
+    //                      Error definition                      //
+    //############################################################//
+
+    error: ($) =>
+      seq(
+        "error",
+        field("name", alias($._simple_symbol, $.symbol)),
+        "(",
+        optional(field("parameters", $.error_parameter_list)),
+        ")",
+        ";",
+      ),
+
+    error_parameter_list: ($) =>
+      field("parameter", commaSep($.error_parameter)),
+
+    error_parameter: ($) =>
+      seq(
+        field("type", $._type),
+        optional(field("name", alias($._simple_symbol, $.symbol))),
+      ),
+
     //############################################################//
     //                        Constructor                         //
     //############################################################//
@@ -1248,27 +1274,6 @@ module.exports = grammar({
      * A block of statements enclosed in curly braces.
      */
     block: ($) => seq("{", repeat($._statement), "}"),
-
-    error_parameter_list: ($) => commaSep($.error_parameter),
-
-    error: ($) =>
-      seq(
-        "error",
-        field("name", alias($._simple_symbol, $.symbol)),
-        "(",
-        optional(field("parameters", $.error_parameter_list)),
-        ")",
-        ";",
-      ),
-
-    // Rule for the `anonymous` keyword
-    anonymous: ($) => "anonymous",
-
-    error_parameter: ($) =>
-      seq(
-        field("type", $._type),
-        optional(field("name", alias($._simple_symbol, $.symbol))),
-      ),
 
     modifier_invocation: ($) =>
       seq(

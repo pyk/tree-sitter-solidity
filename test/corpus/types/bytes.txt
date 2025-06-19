@@ -338,7 +338,7 @@ contract C {
       name: (symbol
         name: (identifier))
       parameters: (error_parameter_list
-        (error_parameter
+        parameter: (error_parameter
           type: (primitive_type
             (bytes_type))
           name: (symbol

@@ -334,12 +334,12 @@ contract C {
       name: (symbol
         name: (identifier))
       parameters: (error_parameter_list
-        (error_parameter
+        parameter: (error_parameter
           type: (primitive_type
             (int_type))
           name: (symbol
             name: (identifier)))
-        (error_parameter
+        parameter: (error_parameter
           type: (primitive_type
             (int_type))
           name: (symbol

@@ -4076,16 +4076,21 @@
   {
     "type": "error_parameter_list",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "error_parameter",
-          "named": true
-        }
-      ]
+    "fields": {
+      "parameter": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "error_parameter",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {

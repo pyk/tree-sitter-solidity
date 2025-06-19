@@ -1,0 +1,210 @@
+==================
+Simple error with no parameters
+==================
+
+error Unauthorized();
+
+---
+
+(source_file
+  definition: (error
+    name: (symbol
+      name: (identifier))))
+
+==================
+Error with named parameters
+==================
+
+error InsufficientBalance(uint256 requested, uint256 available);
+
+---
+
+(source_file
+  definition: (error
+    name: (symbol
+      name: (identifier))
+    parameters: (error_parameter_list
+      parameter: (error_parameter
+        type: (primitive_type
+          (uint_type))
+        name: (symbol
+          name: (identifier)))
+      parameter: (error_parameter
+        type: (primitive_type
+          (uint_type))
+        name: (symbol
+          name: (identifier))))))
+
+==================
+Error with unnamed parameters
+==================
+
+error InvalidSignature(bytes32, bytes32);
+
+---
+
+(source_file
+  definition: (error
+    name: (symbol
+      name: (identifier))
+    parameters: (error_parameter_list
+      parameter: (error_parameter
+        type: (primitive_type
+          (bytes_type)))
+      parameter: (error_parameter
+        type: (primitive_type
+          (bytes_type))))))
+
+==================
+Error defined inside a contract
+==================
+
+contract Token {
+    error ApprovalToZeroAddress();
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    error: (error
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Error defined inside an interface
+==================
+
+interface IERC721 {
+    error OwnerNotfound(address owner);
+}
+
+---
+
+(source_file
+  definition: (interface
+    name: (symbol
+      name: (identifier))
+    error: (error
+      name: (symbol
+        name: (identifier))
+      parameters: (error_parameter_list
+        parameter: (error_parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier)))))))
+
+==================
+Error defined inside a library
+==================
+
+library SafeMath {
+    error DivisionByZero();
+}
+---
+
+(source_file
+  definition: (library
+    name: (symbol
+      name: (identifier))
+    error: (error
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Error with an array parameter
+==================
+
+error BatchFailed(uint256[] batchIds);
+
+---
+
+(source_file
+  definition: (error
+    name: (symbol
+      name: (identifier))
+    parameters: (error_parameter_list
+      parameter: (error_parameter
+        type: (array_type
+          base: (primitive_type
+            (uint_type)))
+        name: (symbol
+          name: (identifier))))))
+
+==================
+Error with a struct parameter
+==================
+
+struct Order {
+    address maker;
+    uint256 amount;
+}
+error InvalidOrder(Order order);
+
+---
+
+(source_file
+  definition: (struct
+    name: (symbol
+      name: (identifier))
+    member: (struct_member
+      type: (primitive_type
+        (address_type))
+      name: (symbol
+        name: (identifier)))
+    member: (struct_member
+      type: (primitive_type
+        (uint_type))
+      name: (symbol
+        name: (identifier))))
+  definition: (error
+    name: (symbol
+      name: (identifier))
+    parameters: (error_parameter_list
+      parameter: (error_parameter
+        type: (custom_type
+          symbol: (symbol
+            name: (identifier)))
+        name: (symbol
+          name: (identifier))))))
+
+==================
+Multiple error definitions
+==================
+
+error ErrorA();
+error ErrorB(string message);
+
+contract C {
+    error ErrorC(address user);
+}
+---
+
+(source_file
+  definition: (error
+    name: (symbol
+      name: (identifier)))
+  definition: (error
+    name: (symbol
+      name: (identifier))
+    parameters: (error_parameter_list
+      parameter: (error_parameter
+        type: (primitive_type
+          (string_type))
+        name: (symbol
+          name: (identifier)))))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    error: (error
+      name: (symbol
+        name: (identifier))
+      parameters: (error_parameter_list
+        parameter: (error_parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier)))))))
