@@ -1,0 +1,316 @@
+==================
+Simple OR with boolean literals
+==================
+
+bool x = true || false;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (or
+      left: (literal
+        (boolean))
+      operator: (or_op)
+      right: (literal
+        (boolean)))))
+
+==================
+OR with variables
+==================
+
+contract C {
+    function f(bool a, bool b) public pure returns (bool) {
+        return a || b;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        (return_statement
+          value: (or
+            left: (primary_expression
+              (identifier))
+            operator: (or_op)
+            right: (primary_expression
+              (identifier))))))))
+
+==================
+Chained OR expressions (left-associative)
+==================
+
+// Should parse as (a || b) || c
+bool x = a || b || c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (or
+      left: (or
+        left: (primary_expression
+          (identifier))
+        operator: (or_op)
+        right: (primary_expression
+          (identifier)))
+      operator: (or_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+OR precedence with AND (critical test)
+==================
+
+// Should parse as a || (b && c) due to OR's lower precedence
+bool x = a || b && c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (or
+      left: (primary_expression
+        (identifier))
+      operator: (or_op)
+      right: (and
+        left: (primary_expression
+          (identifier))
+        operator: (and_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+OR with equality and comparison expressions
+==================
+
+// Should parse as (a == b) || (c < d)
+bool x = a == b || c < d;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (or
+      left: (equality
+        left: (primary_expression
+          (identifier))
+        operator: (equality_op)
+        right: (primary_expression
+          (identifier)))
+      operator: (or_op)
+      right: (comparison
+        left: (primary_expression
+          (identifier))
+        operator: (comparison_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+OR with a parenthesized AND expression
+==================
+
+// Should parse as (a || b) && c
+bool x = (a || b) && c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (and
+      left: (group
+        expression: (or
+          left: (primary_expression
+            (identifier))
+          operator: (or_op)
+          right: (primary_expression
+            (identifier))))
+      operator: (and_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+OR in an if statement condition
+==================
+
+contract C {
+    function f(bool a, bool b) public {
+        if (a || b) {
+            // ...
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (if_statement
+          condition: (or
+            left: (primary_expression
+              (identifier))
+            operator: (or_op)
+            right: (primary_expression
+              (identifier)))
+          consequence: (block
+            (comment)))))))
+
+==================
+OR in a require statement
+==================
+
+contract C {
+    function f(uint a) public pure {
+        require(a == 0 || a > 100, "Value out of range");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (expression_statement
+          (call_expression
+            function: (primary_expression
+              (identifier))
+            arguments: (argument_list
+              argument: (or
+                left: (equality
+                  left: (primary_expression
+                    (identifier))
+                  operator: (equality_op)
+                  right: (literal
+                    (number)))
+                operator: (or_op)
+                right: (comparison
+                  left: (primary_expression
+                    (identifier))
+                  operator: (comparison_op)
+                  right: (literal
+                    (number))))
+              argument: (literal
+                (string)))))))))
+
+==================
+OR in a ternary expression
+==================
+
+contract C {
+    function f(bool a, bool b) public pure returns (string memory) {
+        return a || b ? "true" : "false";
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (string_type))
+          location: (data_location)))
+      body: (block
+        (return_statement
+          value: (conditional_expression
+            condition: (or
+              left: (primary_expression
+                (identifier))
+              operator: (or_op)
+              right: (primary_expression
+                (identifier)))
+            consequence: (literal
+              (string))
+            alternative: (literal
+              (string))))))))
