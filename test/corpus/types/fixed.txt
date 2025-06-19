@@ -309,5 +309,5 @@ type Price is fixed128x18;
 (source_file
   definition: (udvt
     name: (identifier)
-    underlying_type: (primitive_type
+    underlying: (primitive_type
       (fixed_type))))

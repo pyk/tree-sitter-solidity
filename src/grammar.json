@@ -1029,7 +1029,7 @@
         },
         {
           "type": "FIELD",
-          "name": "underlying_type",
+          "name": "underlying",
           "content": {
             "type": "SYMBOL",
             "name": "primitive_type"

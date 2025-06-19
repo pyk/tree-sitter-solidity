@@ -375,5 +375,5 @@ type Wallet is address;
 (source_file
   definition: (udvt
     name: (identifier)
-    underlying_type: (primitive_type
+    underlying: (primitive_type
       (address_type))))

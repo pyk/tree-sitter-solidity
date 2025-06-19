@@ -190,8 +190,6 @@ module.exports = grammar({
     // Visible wrapper for user-defined types.
     custom_type: ($) => field("symbol", $.symbol),
 
-    // --- Primitive Type Definitions ---
-
     address_type: ($) =>
       prec.right(seq("address", optional(field("mutability", "payable")))),
 
@@ -317,8 +315,6 @@ module.exports = grammar({
         "uint256",
       ),
 
-    // --- Complex Type Definitions ---
-
     array_type: ($) =>
       seq(
         field("base", $._type),
@@ -361,14 +357,12 @@ module.exports = grammar({
         ),
       ),
 
-    // --- User-Defined Value Type ---
-
     udvt: ($) =>
       seq(
         "type",
         field("name", $.identifier),
         "is",
-        field("underlying_type", $.primitive_type),
+        field("underlying", $.primitive_type),
         ";",
       ),
 

@@ -355,5 +355,5 @@ type MyInt is int128;
 (source_file
   definition: (udvt
     name: (identifier)
-    underlying_type: (primitive_type
+    underlying: (primitive_type
       (int_type))))

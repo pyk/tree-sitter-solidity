@@ -342,5 +342,5 @@ type MyUint is uint128;
 (source_file
   definition: (udvt
     name: (identifier)
-    underlying_type: (primitive_type
+    underlying: (primitive_type
       (uint_type))))

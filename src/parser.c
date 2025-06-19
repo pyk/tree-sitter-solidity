@@ -2875,7 +2875,7 @@ enum ts_field_identifiers {
   field_transient = 56,
   field_type = 57,
   field_udvt = 58,
-  field_underlying_type = 59,
+  field_underlying = 59,
   field_update = 60,
   field_using = 61,
   field_value = 62,
@@ -2945,7 +2945,7 @@ static const char * const ts_field_names[] = {
   [field_transient] = "transient",
   [field_type] = "type",
   [field_udvt] = "udvt",
-  [field_underlying_type] = "underlying_type",
+  [field_underlying] = "underlying",
   [field_update] = "update",
   [field_using] = "using",
   [field_value] = "value",
@@ -3337,7 +3337,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_name, 1, .inherited = true},
   [120] =
     {field_name, 1},
-    {field_underlying_type, 3},
+    {field_underlying, 3},
   [122] =
     {field_alias, 2},
     {field_name, 0},
