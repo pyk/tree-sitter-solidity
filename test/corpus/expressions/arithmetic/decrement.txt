@@ -1,0 +1,343 @@
+==================
+Prefix decrement as a statement
+==================
+
+contract C {
+    function f(int a) public {
+        --a;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (expression_statement
+          (arithmetic
+            (decrement
+              (prefix_decrement
+                operator: (decrement_op)
+                argument: (primary_expression
+                  (identifier))))))))))
+
+==================
+Postfix decrement as a statement
+==================
+
+contract C {
+    function f(int a) public {
+        a--;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (expression_statement
+          (arithmetic
+            (decrement
+              (postfix_decrement
+                argument: (primary_expression
+                  (identifier))
+                operator: (decrement_op)))))))))
+
+==================
+Prefix decrement in an assignment
+==================
+
+// b should be assigned the value of a AFTER it is decremented
+contract C {
+    function f(int a) public returns (int b) {
+        b = --a;
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      visibility: (visibility)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      body: (block
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (simple_assignment_operator)
+            right: (arithmetic
+              (decrement
+                (prefix_decrement
+                  operator: (decrement_op)
+                  argument: (primary_expression
+                    (identifier)))))))))))
+
+==================
+Postfix decrement in an assignment
+==================
+
+// b should be assigned the value of a BEFORE it is decremented
+contract C {
+    function f(int a) public returns (int b) {
+        b = a--;
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      visibility: (visibility)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      body: (block
+        (expression_statement
+          (assignment_expression
+            left: (primary_expression
+              (identifier))
+            operator: (simple_assignment_operator)
+            right: (arithmetic
+              (decrement
+                (postfix_decrement
+                  argument: (primary_expression
+                    (identifier))
+                  operator: (decrement_op))))))))))
+
+==================
+Postfix decrement of an array element
+==================
+
+contract C {
+    function f(uint[] memory arr) public {
+        arr[0]--;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (array_type
+            base: (primitive_type
+              (uint_type)))
+          location: (data_location)
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (expression_statement
+          (arithmetic
+            (decrement
+              (postfix_decrement
+                argument: (index_access_expression
+                  base: (primary_expression
+                    (identifier))
+                  index: (literal
+                    (number)))
+                operator: (decrement_op)))))))))
+
+==================
+Prefix decrement precedence vs multiplication
+==================
+
+// Should parse as (--a) * b because prefix unary has high precedence
+contract C {
+    function f(int a, int b) public pure returns (int) {
+        return --a * b;
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (int_type))))
+      body: (block
+        (return_statement
+          value: (arithmetic
+            (mul
+              left: (arithmetic
+                (decrement
+                  (prefix_decrement
+                    operator: (decrement_op)
+                    argument: (primary_expression
+                      (identifier)))))
+              operator: (mul_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Postfix decrement precedence vs member access (critical test)
+==================
+
+// Should parse as (a.value)-- because member access has higher precedence
+contract C {
+    struct S { int value; }
+    function f(S storage s) public {
+        s.value--;
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    struct: (struct
+      name: (symbol
+        name: (identifier))
+      (struct_member
+        type: (primitive_type
+          (int_type))
+        name: (symbol
+          name: (identifier))))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          location: (data_location)
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (expression_statement
+          (arithmetic
+            (decrement
+              (postfix_decrement
+                argument: (member_access_expression
+                  object: (primary_expression
+                    (identifier))
+                  member: (identifier))
+                operator: (decrement_op)))))))))
+
+==================
+Decrement in a for loop
+==================
+
+contract C {
+    function f() public pure {
+        for (uint i = 10; i > 0; i--) {
+            // loop
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (for_statement
+          initializer: (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (primitive_type
+                (uint_type))
+              name: (symbol
+                name: (identifier)))
+            value: (literal
+              (number)))
+          condition: (comparison
+            left: (primary_expression
+              (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          update: (arithmetic
+            (decrement
+              (postfix_decrement
+                argument: (primary_expression
+                  (identifier))
+                operator: (decrement_op))))
+          body: (block
+            (comment)))))))
