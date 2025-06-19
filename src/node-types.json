@@ -52,7 +52,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -60,7 +60,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -84,11 +84,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -168,7 +168,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -176,7 +176,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -200,11 +200,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -301,7 +301,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -309,7 +309,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -333,11 +333,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -478,7 +478,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -486,7 +486,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -510,11 +510,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -590,7 +590,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -598,7 +598,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -622,11 +622,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -710,7 +710,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -718,7 +718,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -742,11 +742,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -822,7 +822,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -830,7 +830,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -854,11 +854,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -949,7 +949,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -957,7 +957,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -981,11 +981,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -1065,7 +1065,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -1073,7 +1073,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -1097,11 +1097,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -1177,7 +1177,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -1185,7 +1185,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -1209,11 +1209,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -1293,7 +1293,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -1301,7 +1301,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -1325,11 +1325,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -1405,7 +1405,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -1413,7 +1413,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -1437,11 +1437,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -1521,7 +1521,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -1529,7 +1529,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -1553,11 +1553,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -1721,7 +1721,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -1729,7 +1729,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -1753,11 +1753,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -1858,7 +1858,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -1866,7 +1866,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -1890,11 +1890,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -1960,7 +1960,7 @@
     }
   },
   {
-    "type": "comparison_expression",
+    "type": "comparison",
     "named": true,
     "fields": {
       "left": {
@@ -1996,7 +1996,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -2004,7 +2004,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -2028,11 +2028,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -2074,7 +2074,7 @@
         "required": true,
         "types": [
           {
-            "type": "comparison_operator",
+            "type": "comparison_op",
             "named": true
           }
         ]
@@ -2112,7 +2112,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -2120,7 +2120,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -2144,11 +2144,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -2188,7 +2188,7 @@
     }
   },
   {
-    "type": "comparison_operator",
+    "type": "comparison_op",
     "named": true,
     "fields": {}
   },
@@ -2234,7 +2234,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -2242,7 +2242,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -2266,11 +2266,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -2340,7 +2340,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -2348,7 +2348,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -2372,11 +2372,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -2446,7 +2446,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -2454,7 +2454,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -2478,11 +2478,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -2873,7 +2873,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -2881,7 +2881,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -2905,11 +2905,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -2990,7 +2990,7 @@
     }
   },
   {
-    "type": "equality_expression",
+    "type": "equality",
     "named": true,
     "fields": {
       "left": {
@@ -3026,7 +3026,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -3034,7 +3034,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -3058,11 +3058,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -3104,7 +3104,7 @@
         "required": true,
         "types": [
           {
-            "type": "equality_operator",
+            "type": "equality_op",
             "named": true
           }
         ]
@@ -3142,7 +3142,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -3150,7 +3150,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -3174,11 +3174,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -3218,7 +3218,7 @@
     }
   },
   {
-    "type": "equality_operator",
+    "type": "equality_op",
     "named": true,
     "fields": {}
   },
@@ -3397,7 +3397,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -3405,7 +3405,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -3429,11 +3429,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -3513,7 +3513,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -3521,7 +3521,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -3545,11 +3545,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -3641,7 +3641,7 @@
           "named": true
         },
         {
-          "type": "comparison_expression",
+          "type": "comparison",
           "named": true
         },
         {
@@ -3649,7 +3649,7 @@
           "named": true
         },
         {
-          "type": "equality_expression",
+          "type": "equality",
           "named": true
         },
         {
@@ -3673,11 +3673,11 @@
           "named": true
         },
         {
-          "type": "logical_and_expression",
+          "type": "logical_and",
           "named": true
         },
         {
-          "type": "logical_or_expression",
+          "type": "logical_or",
           "named": true
         },
         {
@@ -3902,7 +3902,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -3910,7 +3910,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -3934,11 +3934,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -4026,7 +4026,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -4034,7 +4034,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -4058,11 +4058,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -4280,7 +4280,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -4288,7 +4288,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -4312,11 +4312,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -4450,7 +4450,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -4458,7 +4458,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -4482,11 +4482,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -4688,7 +4688,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -4696,7 +4696,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -4720,11 +4720,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -4794,7 +4794,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -4802,7 +4802,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -4826,11 +4826,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -4906,7 +4906,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -4914,7 +4914,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -4938,11 +4938,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -5012,7 +5012,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -5020,7 +5020,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -5044,11 +5044,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -5118,7 +5118,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -5126,7 +5126,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -5150,11 +5150,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -5272,7 +5272,7 @@
           "named": true
         },
         {
-          "type": "comparison_expression",
+          "type": "comparison",
           "named": true
         },
         {
@@ -5280,7 +5280,7 @@
           "named": true
         },
         {
-          "type": "equality_expression",
+          "type": "equality",
           "named": true
         },
         {
@@ -5304,11 +5304,11 @@
           "named": true
         },
         {
-          "type": "logical_and_expression",
+          "type": "logical_and",
           "named": true
         },
         {
-          "type": "logical_or_expression",
+          "type": "logical_or",
           "named": true
         },
         {
@@ -5594,7 +5594,7 @@
     }
   },
   {
-    "type": "logical_and_expression",
+    "type": "logical_and",
     "named": true,
     "fields": {
       "left": {
@@ -5630,7 +5630,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -5638,7 +5638,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -5662,11 +5662,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -5708,8 +5708,8 @@
         "required": true,
         "types": [
           {
-            "type": "&&",
-            "named": false
+            "type": "logical_and_op",
+            "named": true
           }
         ]
       },
@@ -5746,7 +5746,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -5754,7 +5754,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -5778,11 +5778,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -5822,7 +5822,7 @@
     }
   },
   {
-    "type": "logical_or_expression",
+    "type": "logical_or",
     "named": true,
     "fields": {
       "left": {
@@ -5858,7 +5858,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -5866,7 +5866,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -5890,11 +5890,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -5936,8 +5936,8 @@
         "required": true,
         "types": [
           {
-            "type": "||",
-            "named": false
+            "type": "logical_or_op",
+            "named": true
           }
         ]
       },
@@ -5974,7 +5974,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -5982,7 +5982,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -6006,11 +6006,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -6154,7 +6154,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -6162,7 +6162,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -6186,11 +6186,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -6380,7 +6380,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -6388,7 +6388,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -6412,11 +6412,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -6496,7 +6496,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -6504,7 +6504,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -6528,11 +6528,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -6628,7 +6628,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -6636,7 +6636,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -6660,11 +6660,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -6740,7 +6740,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -6748,7 +6748,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -6772,11 +6772,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -7072,7 +7072,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -7080,7 +7080,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -7104,11 +7104,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -7194,7 +7194,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -7202,7 +7202,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -7226,11 +7226,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -7339,7 +7339,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -7347,7 +7347,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -7371,11 +7371,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -7461,7 +7461,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -7469,7 +7469,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -7493,11 +7493,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -7691,7 +7691,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -7699,7 +7699,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -7723,11 +7723,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -7829,7 +7829,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -7837,7 +7837,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -7861,11 +7861,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -7945,7 +7945,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -7953,7 +7953,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -7977,11 +7977,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -8235,7 +8235,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -8243,7 +8243,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -8267,11 +8267,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -8487,7 +8487,7 @@
           "named": true
         },
         {
-          "type": "comparison_expression",
+          "type": "comparison",
           "named": true
         },
         {
@@ -8495,7 +8495,7 @@
           "named": true
         },
         {
-          "type": "equality_expression",
+          "type": "equality",
           "named": true
         },
         {
@@ -8519,11 +8519,11 @@
           "named": true
         },
         {
-          "type": "logical_and_expression",
+          "type": "logical_and",
           "named": true
         },
         {
-          "type": "logical_or_expression",
+          "type": "logical_or",
           "named": true
         },
         {
@@ -8629,7 +8629,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -8637,7 +8637,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -8661,11 +8661,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -9025,7 +9025,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -9033,7 +9033,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -9057,11 +9057,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -9213,7 +9213,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -9221,7 +9221,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -9245,11 +9245,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -9439,7 +9439,7 @@
             "named": true
           },
           {
-            "type": "comparison_expression",
+            "type": "comparison",
             "named": true
           },
           {
@@ -9447,7 +9447,7 @@
             "named": true
           },
           {
-            "type": "equality_expression",
+            "type": "equality",
             "named": true
           },
           {
@@ -9471,11 +9471,11 @@
             "named": true
           },
           {
-            "type": "logical_and_expression",
+            "type": "logical_and",
             "named": true
           },
           {
-            "type": "logical_or_expression",
+            "type": "logical_or",
             "named": true
           },
           {
@@ -9563,10 +9563,6 @@
   },
   {
     "type": "&",
-    "named": false
-  },
-  {
-    "type": "&&",
     "named": false
   },
   {
@@ -10159,6 +10155,14 @@
     "named": true
   },
   {
+    "type": "logical_and_op",
+    "named": true
+  },
+  {
+    "type": "logical_or_op",
+    "named": true
+  },
+  {
     "type": "mapping",
     "named": false
   },
@@ -10441,10 +10445,6 @@
   },
   {
     "type": "|=",
-    "named": false
-  },
-  {
-    "type": "||",
     "named": false
   },
   {

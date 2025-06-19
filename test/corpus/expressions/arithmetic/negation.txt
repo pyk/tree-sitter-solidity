@@ -230,13 +230,13 @@ bool b = -5 < -2;
       (bool_type))
     name: (symbol
       name: (identifier))
-    value: (comparison_expression
+    value: (comparison
       left: (arithmetic
         (negation
           operator: (negation_op)
           argument: (literal
             (number))))
-      operator: (comparison_operator)
+      operator: (comparison_op)
       right: (arithmetic
         (negation
           operator: (negation_op)
@@ -278,23 +278,24 @@ contract C {
             (bool_type))))
       body: (block
         (return_statement
-          value: (logical_and_expression
-            left: (comparison_expression
+          value: (logical_and
+            left: (comparison
               left: (arithmetic
                 (negation
                   operator: (negation_op)
                   argument: (primary_expression
                     (identifier))))
-              operator: (comparison_operator)
+              operator: (comparison_op)
               right: (literal
                 (number)))
-            right: (comparison_expression
+            operator: (logical_and_op)
+            right: (comparison
               left: (arithmetic
                 (negation
                   operator: (negation_op)
                   argument: (primary_expression
                     (identifier))))
-              operator: (comparison_operator)
+              operator: (comparison_op)
               right: (literal
                 (number)))))))))
 
@@ -329,13 +330,13 @@ contract C {
             function: (primary_expression
               (identifier))
             arguments: (argument_list
-              argument: (comparison_expression
+              argument: (comparison
                 left: (arithmetic
                   (negation
                     operator: (negation_op)
                     argument: (primary_expression
                       (identifier))))
-                operator: (comparison_operator)
+                operator: (comparison_op)
                 right: (literal
                   (number)))
               argument: (literal

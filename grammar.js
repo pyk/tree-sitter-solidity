@@ -530,8 +530,18 @@ module.exports = grammar({
         // Group (a)
         $.group,
 
-        // Arithmetic expression
+        // Arithmetic expressions
         $.arithmetic,
+
+        // Comparison expressions
+        $.comparison,
+
+        // Equality expressions
+        $.equality,
+
+        // Logical expressions
+        $.logical_and,
+        $.logical_or,
 
         // Others
         $.primary_expression,
@@ -550,10 +560,6 @@ module.exports = grammar({
         $.bitwise_and_expression,
         $.bitwise_xor_expression,
         $.bitwise_or_expression,
-        $.comparison_expression,
-        $.equality_expression,
-        $.logical_and_expression,
-        $.logical_or_expression,
         $.inline_array_expression,
       ),
 
@@ -572,6 +578,62 @@ module.exports = grammar({
     //############################################################//
 
     group: ($) => prec(1, seq("(", field("expression", $._expression), ")")),
+
+    //############################################################//
+    //                   Comparison expression                    //
+    //############################################################//
+
+    comparison: ($) =>
+      prec.left(
+        PREC.COMPARE,
+        seq(
+          field("left", $._expression),
+          field("operator", $.comparison_op),
+          field("right", $._expression),
+        ),
+      ),
+    comparison_op: ($) => choice("<", ">", "<=", ">="),
+
+    //############################################################//
+    //                    Equality expression                     //
+    //############################################################//
+
+    equality: ($) =>
+      prec.left(
+        PREC.EQUALITY,
+        seq(
+          field("left", $._expression),
+          field("operator", $.equality_op),
+          field("right", $._expression),
+        ),
+      ),
+    equality_op: ($) => choice("==", "!="),
+
+    //############################################################//
+    //                     Logical expression                     //
+    //############################################################//
+
+    logical_and: ($) =>
+      prec.left(
+        PREC.AND,
+        seq(
+          field("left", $._expression),
+          field("operator", $.logical_and_op),
+          field("right", $._expression),
+        ),
+      ),
+    logical_and_op: ($) => "&&",
+
+    logical_or: ($) =>
+      prec.left(
+        PREC.OR,
+        seq(
+          field("left", $._expression),
+          field("operator", $.logical_or_op),
+          field("right", $._expression),
+        ),
+      ),
+    logical_or_op: ($) => "||",
 
     //############################################################//
     //                   Arithmetic expression                    //
@@ -1533,26 +1595,6 @@ module.exports = grammar({
         seq(
           field("left", $._expression),
           field("operator", "|"),
-          field("right", $._expression),
-        ),
-      ),
-
-    comparison_expression: ($) =>
-      prec.left(
-        PREC.COMPARE,
-        seq(
-          field("left", $._expression),
-          field("operator", $.comparison_operator),
-          field("right", $._expression),
-        ),
-      ),
-
-    equality_expression: ($) =>
-      prec.left(
-        PREC.EQUALITY,
-        seq(
-          field("left", $._expression),
-          field("operator", $.equality_operator),
           field("right", $._expression),
         ),
       ),
