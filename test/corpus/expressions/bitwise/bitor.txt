@@ -1,0 +1,242 @@
+==================
+Simple bitwise OR with hex literals
+==================
+
+uint x = 0xF0 | 0x0F;
+
+---
+
+(source_file
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitor
+        left: (literal
+          (hex))
+        operator: (bitor_op)
+        right: (literal
+          (hex))))))
+
+==================
+Bitwise OR with variables
+==================
+
+contract C {
+    function f(uint a, uint b) public pure returns (uint) {
+        return a | b;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (bitwise
+            (bitor
+              left: (primary_expression
+                (identifier))
+              operator: (bitor_op)
+              right: (primary_expression
+                (identifier)))))))))
+
+==================
+Chained bitwise OR expressions (left-associative)
+==================
+
+// Should parse as (a | b) | c
+uint x = a | b | c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitor
+        left: (bitwise
+          (bitor
+            left: (primary_expression
+              (identifier))
+            operator: (bitor_op)
+            right: (primary_expression
+              (identifier))))
+        operator: (bitor_op)
+        right: (primary_expression
+          (identifier))))))
+
+==================
+Bitwise OR precedence with XOR and AND (critical test)
+==================
+
+// Should parse as a | (b ^ (c & d)) due to precedence
+uint x = a | b ^ c & d;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (uint_type))
+    name: (symbol
+      name: (identifier))
+    value: (bitwise
+      (bitor
+        left: (primary_expression
+          (identifier))
+        operator: (bitor_op)
+        right: (bitwise
+          (bitxor
+            left: (primary_expression
+              (identifier))
+            operator: (bitxor_op)
+            right: (bitwise
+              (bitand
+                left: (primary_expression
+                  (identifier))
+                operator: (bitand_op)
+                right: (primary_expression
+                  (identifier))))))))))
+
+==================
+Bitwise OR precedence with logical AND
+==================
+
+// Should parse as (a | b) && (c | d)
+// Note: This is invalid Solidity as bitwise ops don't produce booleans,
+// but the parser should handle the structure correctly for linting.
+bool x = a | b && c | d;
+
+---
+
+(source_file
+  (comment)
+  (comment)
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (and
+      left: (bitwise
+        (bitor
+          left: (primary_expression
+            (identifier))
+          operator: (bitor_op)
+          right: (primary_expression
+            (identifier))))
+      operator: (and_op)
+      right: (bitwise
+        (bitor
+          left: (primary_expression
+            (identifier))
+          operator: (bitor_op)
+          right: (primary_expression
+            (identifier)))))))
+
+==================
+Bitwise OR with parenthesized logical AND expression
+==================
+
+// Should parse as (a | b) && c. Invalid, but should parse.
+bool x = (a | b) && c;
+
+---
+
+(source_file
+  (comment)
+  definition: (variable
+    type: (primitive_type
+      (bool_type))
+    name: (symbol
+      name: (identifier))
+    value: (and
+      left: (group
+        expression: (bitwise
+          (bitor
+            left: (primary_expression
+              (identifier))
+            operator: (bitor_op)
+            right: (primary_expression
+              (identifier)))))
+      operator: (and_op)
+      right: (primary_expression
+        (identifier)))))
+
+==================
+Bitwise OR in an if statement condition
+==================
+
+contract C {
+    function f(uint a, uint b) public {
+        if (a | b > 0) { // Should be parsed as (a | b) > 0
+            // ...
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    function: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (identifier)))
+      visibility: (visibility)
+      body: (block
+        (if_statement
+          condition: (comparison
+            left: (bitwise
+              (bitor
+                left: (primary_expression
+                  (identifier))
+                operator: (bitor_op)
+                right: (primary_expression
+                  (identifier))))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          consequence: (block
+            (comment)
+            (comment)))))))
