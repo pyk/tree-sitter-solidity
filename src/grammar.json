@@ -3291,110 +3291,70 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "variable",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "variable"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "function",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "function"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "modifier",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "modifier_definition"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "struct",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "struct"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "enum",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "enum"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "event",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "event"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "error",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "error"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "using",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "using"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "udvt",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "udvt"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "constructor",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "constructor"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "fallback",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "fallback_function_definition"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "receive",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "receive_function_definition"
-                }
-              }
-            ]
+            "type": "FIELD",
+            "name": "definition",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_contract_level_definitions"
+            }
           }
         },
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "_contract_level_definitions": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "variable"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "function"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "struct"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "error"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "using"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "udvt"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "constructor"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "fallback_function_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "receive_function_definition"
         }
       ]
     },
@@ -3521,62 +3481,46 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "function",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "function"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "struct",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "struct"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "enum",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "enum"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "event",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "event"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "error",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "error"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "udvt",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "udvt"
-                }
-              }
-            ]
+            "type": "FIELD",
+            "name": "definition",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_interface_level_definitions"
+            }
           }
         },
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "_interface_level_definitions": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "function"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "struct"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "error"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "udvt"
         }
       ]
     },
@@ -3607,70 +3551,50 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "FIELD",
-                "name": "function",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "function"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "struct",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "struct"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "enum",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "enum"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "event",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "event"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "error",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "error"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "using",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "using"
-                }
-              },
-              {
-                "type": "FIELD",
-                "name": "variable",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "variable"
-                }
-              }
-            ]
+            "type": "FIELD",
+            "name": "definition",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_library_level_definitions"
+            }
           }
         },
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "_library_level_definitions": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "function"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "struct"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "enum"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "error"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "using"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "variable"
         }
       ]
     },

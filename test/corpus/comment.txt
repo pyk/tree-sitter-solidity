@@ -14,7 +14,7 @@ contract C {
     name: (symbol
       name: (identifier))
     (comment)
-    variable: (variable
+    definition: (variable
       type: (primitive_type
         (uint_type))
       name: (symbol
@@ -38,7 +38,7 @@ contract C {
     name: (symbol
       name: (identifier))
     (comment)
-    variable: (variable
+    definition: (variable
       type: (primitive_type
         (uint_type))
       name: (symbol
@@ -60,7 +60,7 @@ contract C {
     name: (symbol
       name: (identifier))
     (comment)
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)
@@ -85,7 +85,7 @@ contract C {
     name: (symbol
       name: (identifier))
     (comment)
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)

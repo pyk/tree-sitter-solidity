@@ -35,7 +35,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -193,7 +193,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -233,7 +233,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -282,7 +282,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list

@@ -14,13 +14,13 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    variable: (variable
+    definition: (variable
       type: (array_type
         base: (primitive_type
           (uint_type)))
       name: (symbol
         name: (identifier)))
-    variable: (variable
+    definition: (variable
       type: (array_type
         base: (primitive_type
           (bool_type))
@@ -28,7 +28,7 @@ contract C {
           (number)))
       name: (symbol
         name: (identifier)))
-    variable: (variable
+    definition: (variable
       type: (array_type
         base: (array_type
           base: (primitive_type
@@ -54,7 +54,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -93,7 +93,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    struct: (struct
+    definition: (struct
       name: (symbol
         name: (identifier))
       member: (struct_member
@@ -125,7 +125,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    variable: (variable
+    definition: (variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -150,10 +150,10 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    struct: (struct
+    definition: (struct
       name: (symbol
         name: (identifier)))
-    variable: (variable
+    definition: (variable
       type: (array_type
         base: (array_type
           base: (array_type
@@ -179,7 +179,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    variable: (variable
+    definition: (variable
       type: (array_type
         base: (mapping_type
           key: (primitive_type
@@ -235,7 +235,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    event: (event
+    definition: (event
       name: (symbol
         name: (identifier))
       parameters: (event_parameter_list
@@ -268,7 +268,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    error: (error
+    definition: (error
       name: (symbol
         name: (identifier))
       parameters: (error_parameter_list

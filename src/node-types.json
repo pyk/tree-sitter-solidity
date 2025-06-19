@@ -3106,72 +3106,56 @@
           }
         ]
       },
-      "constructor": {
+      "definition": {
         "multiple": true,
         "required": false,
         "types": [
           {
             "type": "constructor",
             "named": true
-          }
-        ]
-      },
-      "enum": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "enum",
             "named": true
-          }
-        ]
-      },
-      "error": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "error",
             "named": true
-          }
-        ]
-      },
-      "event": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "event",
             "named": true
-          }
-        ]
-      },
-      "fallback": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "fallback_function_definition",
             "named": true
-          }
-        ]
-      },
-      "function": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "function",
             "named": true
-          }
-        ]
-      },
-      "modifier": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "modifier_definition",
+            "named": true
+          },
+          {
+            "type": "receive_function_definition",
+            "named": true
+          },
+          {
+            "type": "struct",
+            "named": true
+          },
+          {
+            "type": "udvt",
+            "named": true
+          },
+          {
+            "type": "using",
+            "named": true
+          },
+          {
+            "type": "variable",
             "named": true
           }
         ]
@@ -3192,56 +3176,6 @@
         "types": [
           {
             "type": "parent_list",
-            "named": true
-          }
-        ]
-      },
-      "receive": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "receive_function_definition",
-            "named": true
-          }
-        ]
-      },
-      "struct": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "struct",
-            "named": true
-          }
-        ]
-      },
-      "udvt": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "udvt",
-            "named": true
-          }
-        ]
-      },
-      "using": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "using",
-            "named": true
-          }
-        ]
-      },
-      "variable": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "variable",
             "named": true
           }
         ]
@@ -6288,42 +6222,32 @@
     "type": "interface",
     "named": true,
     "fields": {
-      "enum": {
+      "definition": {
         "multiple": true,
         "required": false,
         "types": [
           {
             "type": "enum",
             "named": true
-          }
-        ]
-      },
-      "error": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "error",
             "named": true
-          }
-        ]
-      },
-      "event": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "event",
             "named": true
-          }
-        ]
-      },
-      "function": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "function",
+            "named": true
+          },
+          {
+            "type": "struct",
+            "named": true
+          },
+          {
+            "type": "udvt",
             "named": true
           }
         ]
@@ -6347,26 +6271,6 @@
             "named": true
           }
         ]
-      },
-      "struct": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "struct",
-            "named": true
-          }
-        ]
-      },
-      "udvt": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "udvt",
-            "named": true
-          }
-        ]
       }
     }
   },
@@ -6374,42 +6278,36 @@
     "type": "library",
     "named": true,
     "fields": {
-      "enum": {
+      "definition": {
         "multiple": true,
         "required": false,
         "types": [
           {
             "type": "enum",
             "named": true
-          }
-        ]
-      },
-      "error": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "error",
             "named": true
-          }
-        ]
-      },
-      "event": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "event",
             "named": true
-          }
-        ]
-      },
-      "function": {
-        "multiple": true,
-        "required": false,
-        "types": [
+          },
           {
             "type": "function",
+            "named": true
+          },
+          {
+            "type": "struct",
+            "named": true
+          },
+          {
+            "type": "using",
+            "named": true
+          },
+          {
+            "type": "variable",
             "named": true
           }
         ]
@@ -6420,36 +6318,6 @@
         "types": [
           {
             "type": "symbol",
-            "named": true
-          }
-        ]
-      },
-      "struct": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "struct",
-            "named": true
-          }
-        ]
-      },
-      "using": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "using",
-            "named": true
-          }
-        ]
-      },
-      "variable": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "variable",
             "named": true
           }
         ]

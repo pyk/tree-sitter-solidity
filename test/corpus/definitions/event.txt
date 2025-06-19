@@ -210,7 +210,7 @@ contract MyContract {
   definition: (contract
     name: (symbol
       name: (identifier))
-    event: (event
+    definition: (event
       name: (symbol
         name: (identifier))
       parameters: (event_parameter_list
@@ -241,7 +241,7 @@ interface IMyContract {
   definition: (interface
     name: (symbol
       name: (identifier))
-    event: (event
+    definition: (event
       name: (symbol
         name: (identifier))
       parameters: (event_parameter_list
@@ -270,7 +270,7 @@ library MyLibrary {
   definition: (library
     name: (symbol
       name: (identifier))
-    event: (event
+    definition: (event
       name: (symbol
         name: (identifier))
       parameters: (event_parameter_list

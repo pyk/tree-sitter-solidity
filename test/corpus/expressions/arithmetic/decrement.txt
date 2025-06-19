@@ -14,7 +14,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -48,7 +48,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -84,7 +84,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -129,7 +129,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -172,7 +172,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -213,7 +213,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -264,7 +264,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    struct: (struct
+    definition: (struct
       name: (symbol
         name: (identifier))
       member: (struct_member
@@ -272,7 +272,7 @@ contract C {
           (int_type))
         name: (symbol
           name: (identifier))))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -312,7 +312,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)

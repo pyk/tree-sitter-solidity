@@ -14,7 +14,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       body: (block
@@ -44,7 +44,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       body: (block
@@ -70,7 +70,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       body: (block
@@ -98,7 +98,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       body: (block
@@ -138,7 +138,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       body: (block
@@ -171,7 +171,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)
@@ -181,7 +181,7 @@ contract C {
           type: (primitive_type
             (uint_type))))
       body: (block))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)
@@ -213,7 +213,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       body: (block
@@ -246,7 +246,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       body: (block
@@ -280,7 +280,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       body: (block
@@ -313,14 +313,14 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    error: (error
+    definition: (error
       name: (symbol
         name: (identifier))
       parameters: (error_parameter_list
         parameter: (error_parameter
           type: (primitive_type
             (uint_type)))))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       body: (block
@@ -350,7 +350,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)
@@ -358,7 +358,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -399,7 +399,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       body: (block

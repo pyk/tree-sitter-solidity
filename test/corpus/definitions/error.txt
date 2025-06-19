@@ -69,7 +69,7 @@ contract Token {
   definition: (contract
     name: (symbol
       name: (identifier))
-    error: (error
+    definition: (error
       name: (symbol
         name: (identifier)))))
 
@@ -87,7 +87,7 @@ interface IERC721 {
   definition: (interface
     name: (symbol
       name: (identifier))
-    error: (error
+    definition: (error
       name: (symbol
         name: (identifier))
       parameters: (error_parameter_list
@@ -110,7 +110,7 @@ library SafeMath {
   definition: (library
     name: (symbol
       name: (identifier))
-    error: (error
+    definition: (error
       name: (symbol
         name: (identifier)))))
 
@@ -199,7 +199,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    error: (error
+    definition: (error
       name: (symbol
         name: (identifier))
       parameters: (error_parameter_list

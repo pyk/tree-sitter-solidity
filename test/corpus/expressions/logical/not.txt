@@ -33,7 +33,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -141,7 +141,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)
@@ -154,7 +154,7 @@ contract C {
         (return_statement
           value: (literal
             (boolean)))))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)
@@ -219,7 +219,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -254,7 +254,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -268,7 +268,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list

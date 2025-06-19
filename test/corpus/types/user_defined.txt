@@ -22,13 +22,13 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    variable: (variable
+    definition: (variable
       type: (custom_type
         symbol: (symbol
           name: (identifier)))
       name: (symbol
         name: (identifier)))
-    variable: (variable
+    definition: (variable
       type: (custom_type
         symbol: (symbol
           name: (identifier)))
@@ -54,7 +54,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    variable: (variable
+    definition: (variable
       type: (custom_type
         symbol: (symbol
           scope: (symbol
@@ -84,7 +84,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -122,10 +122,10 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    struct: (struct
+    definition: (struct
       name: (symbol
         name: (identifier)))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)
@@ -159,7 +159,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -199,17 +199,17 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    enum: (enum
+    definition: (enum
       name: (symbol
         name: (identifier))
       value: (symbol
         name: (identifier))
       value: (symbol
         name: (identifier)))
-    struct: (struct
+    definition: (struct
       name: (symbol
         name: (identifier)))
-    variable: (variable
+    definition: (variable
       type: (mapping_type
         key: (custom_type
           symbol: (symbol
@@ -236,10 +236,10 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    struct: (struct
+    definition: (struct
       name: (symbol
         name: (identifier)))
-    variable: (variable
+    definition: (variable
       type: (array_type
         base: (custom_type
           symbol: (symbol
@@ -290,10 +290,10 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    struct: (struct
+    definition: (struct
       name: (symbol
         name: (identifier)))
-    error: (error
+    definition: (error
       name: (symbol
         name: (identifier))
       parameters: (error_parameter_list
@@ -303,7 +303,7 @@ contract C {
               name: (identifier)))
           name: (symbol
             name: (identifier)))))
-    event: (event
+    definition: (event
       name: (symbol
         name: (identifier))
       parameters: (event_parameter_list
@@ -336,7 +336,7 @@ contract Factory {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)

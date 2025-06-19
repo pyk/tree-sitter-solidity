@@ -1006,23 +1006,24 @@ module.exports = grammar({
         field("name", alias($._simple_symbol, $.symbol)),
         optional(field("parents", $.parent_list)),
         "{", // The body starts here
-        repeat(
-          choice(
-            field("variable", $.variable),
-            field("function", $.function),
-            field("modifier", $.modifier_definition),
-            field("struct", $.struct),
-            field("enum", $.enum),
-            field("event", $.event),
-            field("error", $.error),
-            field("using", $.using),
-            field("udvt", $.udvt),
-            field("constructor", $.constructor),
-            field("fallback", $.fallback_function_definition),
-            field("receive", $.receive_function_definition),
-          ),
-        ),
+        repeat(field("definition", $._contract_level_definitions)),
         "}", // The body ends here
+      ),
+
+    _contract_level_definitions: ($) =>
+      choice(
+        $.variable,
+        $.function,
+        $.modifier_definition,
+        $.struct,
+        $.enum,
+        $.event,
+        $.error,
+        $.using,
+        $.udvt,
+        $.constructor,
+        $.fallback_function_definition,
+        $.receive_function_definition,
       ),
 
     abstract: ($) => "abstract",
@@ -1043,19 +1044,12 @@ module.exports = grammar({
         field("name", alias($._simple_symbol, $.symbol)),
         optional(field("parents", $.parent_list)),
         "{", // The body starts here
-        repeat(
-          choice(
-            // Interfaces can contain: functions (unimplemented), structs, enums, events, errors
-            field("function", $.function),
-            field("struct", $.struct),
-            field("enum", $.enum),
-            field("event", $.event),
-            field("error", $.error),
-            field("udvt", $.udvt),
-          ),
-        ),
+        repeat(field("definition", $._interface_level_definitions)),
         "}", // The body ends here
       ),
+
+    _interface_level_definitions: ($) =>
+      choice($.function, $.struct, $.enum, $.event, $.error, $.udvt),
 
     //############################################################//
     //                     Library definition                     //
@@ -1066,19 +1060,19 @@ module.exports = grammar({
         "library",
         field("name", alias($._simple_symbol, $.symbol)),
         "{", // The body starts here
-        repeat(
-          choice(
-            // Libraries can contain: functions, structs, enums, events, errors, using directives, state variables (constants only)
-            field("function", $.function),
-            field("struct", $.struct),
-            field("enum", $.enum),
-            field("event", $.event),
-            field("error", $.error),
-            field("using", $.using),
-            field("variable", $.variable), // The parser doesn't enforce constant here; that's a job for a semantic checker or linter.
-          ),
-        ),
+        repeat(field("definition", $._library_level_definitions)),
         "}", // The body ends here
+      ),
+
+    _library_level_definitions: ($) =>
+      choice(
+        $.function,
+        $.struct,
+        $.enum,
+        $.event,
+        $.error,
+        $.using,
+        $.variable,
       ),
 
     //############################################################//

@@ -182,7 +182,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)
@@ -221,7 +221,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)
@@ -260,7 +260,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -270,7 +270,7 @@ contract C {
           name: (identifier)))
       visibility: (visibility)
       body: (block))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       visibility: (visibility)

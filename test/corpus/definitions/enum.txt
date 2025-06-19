@@ -40,7 +40,7 @@ contract Process {
   definition: (contract
     name: (symbol
       name: (identifier))
-    enum: (enum
+    definition: (enum
       name: (symbol
         name: (identifier))
       value: (symbol
@@ -91,7 +91,7 @@ contract TrafficLight {
   definition: (contract
     name: (symbol
       name: (identifier))
-    variable: (variable
+    definition: (variable
       type: (custom_type
         symbol: (symbol
           name: (identifier)))
@@ -127,7 +127,7 @@ contract Navigator {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -168,7 +168,7 @@ contract Registry {
   definition: (contract
     name: (symbol
       name: (identifier))
-    variable: (variable
+    definition: (variable
       type: (mapping_type
         key: (custom_type
           symbol: (symbol
@@ -201,7 +201,7 @@ contract Logger {
   definition: (contract
     name: (symbol
       name: (identifier))
-    event: (event
+    definition: (event
       name: (symbol
         name: (identifier))
       parameters: (event_parameter_list
@@ -240,7 +240,7 @@ contract AccessControl {
   definition: (contract
     name: (symbol
       name: (identifier))
-    error: (error
+    definition: (error
       name: (symbol
         name: (identifier))
       parameters: (error_parameter_list
@@ -269,7 +269,7 @@ library Utilities {
   definition: (library
     name: (symbol
       name: (identifier))
-    enum: (enum
+    definition: (enum
       name: (symbol
         name: (identifier))
       value: (symbol

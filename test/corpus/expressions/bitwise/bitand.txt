@@ -36,7 +36,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list
@@ -209,7 +209,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    variable: (variable
+    definition: (variable
       type: (primitive_type
         (uint_type))
       mutability: (mutability)
@@ -217,7 +217,7 @@ contract C {
         name: (identifier))
       value: (literal
         (hex)))
-    function: (function
+    definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameter_list

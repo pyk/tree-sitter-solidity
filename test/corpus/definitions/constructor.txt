@@ -12,7 +12,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    constructor: (constructor
+    definition: (constructor
       body: (block))))
 
 ==================
@@ -29,7 +29,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    constructor: (constructor
+    definition: (constructor
       parameters: (parameter_list
         parameter: (parameter
           type: (primitive_type
@@ -56,7 +56,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    constructor: (constructor
+    definition: (constructor
       mutability: (state_mutability)
       body: (block))))
 
@@ -75,7 +75,7 @@ abstract contract C {
     abstract: (abstract)
     name: (symbol
       name: (identifier))
-    constructor: (constructor
+    definition: (constructor
       visibility: (visibility)
       body: (block))))
 
@@ -96,7 +96,7 @@ abstract contract C {
     abstract: (abstract)
     name: (symbol
       name: (identifier))
-    constructor: (constructor
+    definition: (constructor
       parameters: (parameter_list
         parameter: (parameter
           type: (primitive_type
@@ -125,7 +125,7 @@ contract MyToken is ERC20 {
       parent: (parent
         name: (symbol
           name: (identifier))))
-    constructor: (constructor
+    definition: (constructor
       parameters: (parameter_list
         parameter: (parameter
           type: (primitive_type
@@ -176,7 +176,7 @@ contract C is A, B {
       parent: (parent
         name: (symbol
           name: (identifier))))
-    constructor: (constructor
+    definition: (constructor
       parent_constructor: (parent_constructor
         name: (symbol
           name: (identifier))
@@ -211,7 +211,7 @@ abstract contract D is A, B {
       parent: (parent
         name: (symbol
           name: (identifier))))
-    constructor: (constructor
+    definition: (constructor
       parameters: (parameter_list
         parameter: (parameter
           type: (primitive_type

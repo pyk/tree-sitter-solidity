@@ -42,7 +42,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    struct: (struct
+    definition: (struct
       name: (symbol
         name: (identifier))
       member: (struct_member
@@ -246,7 +246,7 @@ library MyLib {
   definition: (library
     name: (symbol
       name: (identifier))
-    struct: (struct
+    definition: (struct
       name: (symbol
         name: (identifier))
       member: (struct_member
