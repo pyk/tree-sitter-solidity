@@ -39,7 +39,7 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (symbol
               name: (identifier))
@@ -67,7 +67,7 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        (variable_declaration_statement
+        statement: (variable_declaration_statement
           declaration: (variable_declaration
             type: (primitive_type
               (uint_type))
@@ -107,7 +107,7 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        (if_statement
+        statement: (if_statement
           condition: (symbol
             name: (identifier))
           consequence: (block
@@ -138,7 +138,7 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        (for_statement
+        statement: (for_statement
           initializer: (variable_declaration_statement
             declaration: (variable_declaration
               type: (primitive_type
@@ -190,7 +190,7 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        (while_statement
+        statement: (while_statement
           condition: (comparison
             left: (symbol
               name: (identifier))
@@ -198,16 +198,16 @@ contract C {
             right: (literal
               (number)))
           body: (block
-            (expression_statement
+            statement: (expression_statement
               (arithmetic
                 (decrement
                   (postfix_decrement
                     argument: (symbol
                       name: (identifier))
                     operator: (decrement_op)))))))
-        (do_while_statement
+        statement: (do_while_statement
           body: (block
-            (expression_statement
+            statement: (expression_statement
               (arithmetic
                 (increment
                   (postfix_increment
@@ -245,10 +245,10 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        (for_statement
+        statement: (for_statement
           body: (block
-            (break_statement)
-            (continue_statement)))))))
+            statement: (break_statement)
+            statement: (continue_statement)))))))
 
 ==================
 Function body with return statements
@@ -279,7 +279,7 @@ contract C {
           type: (primitive_type
             (uint_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (literal
             (number)))))
     definition: (function
@@ -287,7 +287,7 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        (return_statement)))))
+        statement: (return_statement)))))
 
 ==================
 Function body with emit statement
@@ -318,7 +318,7 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        (emit_statement
+        statement: (emit_statement
           (call
             function: (symbol
               name: (identifier))
@@ -352,7 +352,7 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        (revert_statement
+        statement: (revert_statement
           error: (symbol
             name: (identifier))
           arguments: (arguments))))))
@@ -382,9 +382,9 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        (unchecked
+        statement: (unchecked
           body: (block
-            (variable_declaration_statement
+            statement: (variable_declaration_statement
               declaration: (variable_declaration
                 type: (primitive_type
                   (uint_type))
@@ -392,7 +392,7 @@ contract C {
                   name: (identifier)))
               value: (literal
                 (number)))
-            (expression_statement
+            statement: (expression_statement
               (arithmetic
                 (decrement
                   (postfix_decrement

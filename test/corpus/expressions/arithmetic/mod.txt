@@ -57,7 +57,7 @@ contract C {
           type: (primitive_type
             (uint_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (arithmetic
             (mod
               left: (symbol
@@ -218,7 +218,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        (if_statement
+        statement: (if_statement
           condition: (equality
             left: (arithmetic
               (mod
@@ -231,10 +231,10 @@ contract C {
             right: (literal
               (number)))
           consequence: (block
-            (return_statement
+            statement: (return_statement
               value: (literal
                 (boolean)))))
-        (return_statement
+        statement: (return_statement
           value: (literal
             (boolean)))))))
 
@@ -264,7 +264,7 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (assignment_expression
             left: (symbol
               name: (identifier))

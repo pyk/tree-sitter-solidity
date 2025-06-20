@@ -57,7 +57,7 @@ contract C {
           type: (primitive_type
             (int_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (arithmetic
             (sub
               left: (symbol
@@ -277,7 +277,7 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (builtin_function
               name: (require))

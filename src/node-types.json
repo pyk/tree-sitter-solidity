@@ -1997,68 +1997,69 @@
   {
     "type": "block",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "break_statement",
-          "named": true
-        },
-        {
-          "type": "continue_statement",
-          "named": true
-        },
-        {
-          "type": "do_while_statement",
-          "named": true
-        },
-        {
-          "type": "emit_statement",
-          "named": true
-        },
-        {
-          "type": "expression_statement",
-          "named": true
-        },
-        {
-          "type": "for_statement",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "placeholder_statement",
-          "named": true
-        },
-        {
-          "type": "return_statement",
-          "named": true
-        },
-        {
-          "type": "revert_statement",
-          "named": true
-        },
-        {
-          "type": "unchecked",
-          "named": true
-        },
-        {
-          "type": "variable_declaration_statement",
-          "named": true
-        },
-        {
-          "type": "while_statement",
-          "named": true
-        }
-      ]
+    "fields": {
+      "statement": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break_statement",
+            "named": true
+          },
+          {
+            "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "do_while_statement",
+            "named": true
+          },
+          {
+            "type": "emit_statement",
+            "named": true
+          },
+          {
+            "type": "expression_statement",
+            "named": true
+          },
+          {
+            "type": "for_statement",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "placeholder",
+            "named": true
+          },
+          {
+            "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "revert_statement",
+            "named": true
+          },
+          {
+            "type": "unchecked",
+            "named": true
+          },
+          {
+            "type": "variable_declaration_statement",
+            "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -3531,7 +3532,7 @@
             "named": true
           },
           {
-            "type": "placeholder_statement",
+            "type": "placeholder",
             "named": true
           },
           {
@@ -4740,7 +4741,7 @@
             "named": true
           },
           {
-            "type": "placeholder_statement",
+            "type": "placeholder",
             "named": true
           },
           {
@@ -5382,7 +5383,7 @@
             "named": true
           },
           {
-            "type": "placeholder_statement",
+            "type": "placeholder",
             "named": true
           },
           {
@@ -5558,7 +5559,7 @@
             "named": true
           },
           {
-            "type": "placeholder_statement",
+            "type": "placeholder",
             "named": true
           },
           {
@@ -8151,7 +8152,7 @@
     }
   },
   {
-    "type": "placeholder_statement",
+    "type": "placeholder",
     "named": true,
     "fields": {}
   },
@@ -10691,7 +10692,7 @@
             "named": true
           },
           {
-            "type": "placeholder_statement",
+            "type": "placeholder",
             "named": true
           },
           {

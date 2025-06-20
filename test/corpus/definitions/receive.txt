@@ -52,7 +52,7 @@ contract C {
       visibility: (external)
       mutability: (payable)
       body: (block
-        (emit_statement
+        statement: (emit_statement
           (call
             function: (symbol
               name: (identifier))
@@ -85,7 +85,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (placeholder_statement)))
+        statement: (placeholder)))
     definition: (receive
       visibility: (external)
       mutability: (payable)

@@ -55,7 +55,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (placeholder_statement)))))
+        statement: (placeholder)))))
 
 ==================
 Modifier with parameters
@@ -83,7 +83,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       body: (block
-        (placeholder_statement)))))
+        statement: (placeholder)))))
 
 ==================
 Modifier with multiple parameters
@@ -116,7 +116,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       body: (block
-        (placeholder_statement)))))
+        statement: (placeholder)))))
 
 ==================
 Virtual modifier (unimplemented)
@@ -158,7 +158,7 @@ contract C {
         name: (identifier))
       virtual: (virtual)
       body: (block
-        (placeholder_statement)))))
+        statement: (placeholder)))))
 
 ==================
 Overriding modifier (unimplemented)
@@ -215,7 +215,7 @@ contract Derived is Base {
         name: (identifier))
       virtual: (virtual)
       body: (block
-        (placeholder_statement))))
+        statement: (placeholder))))
   definition: (contract
     name: (symbol
       name: (identifier))
@@ -228,7 +228,7 @@ contract Derived is Base {
         name: (identifier))
       override: (overrides)
       body: (block
-        (placeholder_statement)))))
+        statement: (placeholder)))))
 
 ==================
 Overriding modifier with multiple bases (unimplemented)
@@ -324,7 +324,7 @@ contract C is Base {
         target: (symbol
           name: (identifier)))
       body: (block
-        (placeholder_statement)))))
+        statement: (placeholder)))))
 
 ==================
 Modifier inside a Library
@@ -345,7 +345,7 @@ library ModLib {
       name: (symbol
         name: (identifier))
       body: (block
-        (placeholder_statement)))
+        statement: (placeholder)))
     definition: (function
       name: (symbol
         name: (identifier))

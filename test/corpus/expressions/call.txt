@@ -18,7 +18,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (symbol
               name: (identifier))
@@ -48,7 +48,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (symbol
               name: (identifier))
@@ -74,7 +74,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (symbol
               scope: (symbol
@@ -102,7 +102,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (symbol
               scope: (symbol
@@ -142,7 +142,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (symbol
               name: (identifier))
@@ -191,7 +191,7 @@ contract C {
           type: (primitive_type
             (uint_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (call
             function: (symbol
               name: (identifier))
@@ -217,7 +217,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (variable_declaration_statement
+        statement: (variable_declaration_statement
           declaration: (variable_declaration
             type: (primitive_type
               (bytes_type))
@@ -250,7 +250,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (builtin_function
               name: (require))
@@ -284,7 +284,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (builtin_function
               name: (assert))
@@ -324,7 +324,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (revert_statement
+        statement: (revert_statement
           error: (symbol
             name: (identifier))
           arguments: (arguments
@@ -368,7 +368,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (member_access_expression
               object: (call
@@ -404,7 +404,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (variable_declaration_statement
+        statement: (variable_declaration_statement
           declaration: (variable_declaration
             type: (custom_type
               symbol: (symbol

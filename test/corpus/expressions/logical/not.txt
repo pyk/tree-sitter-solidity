@@ -49,7 +49,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (not
             operator: (not_op)
             argument: (symbol
@@ -152,7 +152,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (literal
             (boolean)))))
     definition: (function
@@ -165,7 +165,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (not
             operator: (not_op)
             argument: (call
@@ -231,7 +231,7 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        (if_statement
+        statement: (if_statement
           condition: (not
             operator: (not_op)
             argument: (symbol
@@ -282,7 +282,7 @@ contract C {
       visibility: (public)
       mutability: (view)
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (builtin_function
               name: (require))

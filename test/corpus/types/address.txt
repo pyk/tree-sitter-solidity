@@ -61,7 +61,7 @@ contract C {
           type: (primitive_type
             (address_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (symbol
             name: (identifier)))))))
 
@@ -87,7 +87,7 @@ contract C {
       visibility: (public)
       mutability: (view)
       body: (block
-        (variable_declaration_statement
+        statement: (variable_declaration_statement
           declaration: (variable_declaration
             type: (primitive_type
               (address_type))
@@ -130,7 +130,7 @@ contract C {
           type: (primitive_type
             (address_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (cast
             type: (primitive_type
               (address_type))
@@ -169,7 +169,7 @@ contract C {
           type: (primitive_type
             (address_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (payable_conversion_expression
             arguments: (arguments
               argument: (symbol

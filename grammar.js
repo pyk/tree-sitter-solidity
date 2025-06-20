@@ -1271,7 +1271,7 @@ module.exports = grammar({
     /**
      * A block of statements enclosed in curly braces.
      */
-    block: ($) => seq("{", repeat($._statement), "}"),
+    block: ($) => seq("{", repeat(field("statement", $._statement)), "}"),
 
     //############################################################//
     //                        Constructor                         //
@@ -1340,21 +1340,22 @@ module.exports = grammar({
     _statement: ($) =>
       choice(
         $.block,
-        $.unchecked,
-        //
-        $.variable_declaration_statement,
-        $.expression_statement,
-        $.return_statement,
-        $.if_statement,
-        $.for_statement,
-        $.emit_statement,
-        $.while_statement,
-        $.do_while_statement,
-        $.continue_statement,
-        $.placeholder_statement,
         $.break_statement,
+        $.continue_statement,
+        $.do_while_statement,
+        $.emit_statement,
+        $.expression_statement,
+        $.for_statement,
+        $.if_statement,
+        $.placeholder,
+        $.return_statement,
         $.revert_statement,
+        $.unchecked,
+        $.variable_declaration_statement,
+        $.while_statement,
       ),
+
+    placeholder: ($) => prec(1, seq("_", ";")), // modifier
 
     //############################################################//
     //                         Unchecked                          //
@@ -1510,8 +1511,6 @@ module.exports = grammar({
         ";",
       ),
     continue_statement: ($) => seq("continue", ";"),
-
-    placeholder_statement: ($) => prec(1, seq("_", ";")),
 
     break_statement: ($) => seq("break", ";"),
 

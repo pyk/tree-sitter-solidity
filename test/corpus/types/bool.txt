@@ -59,7 +59,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (not
             operator: (not_op)
             argument: (symbol
@@ -87,7 +87,7 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        (variable_declaration_statement
+        statement: (variable_declaration_statement
           declaration: (variable_declaration
             type: (primitive_type
               (bool_type))
@@ -326,7 +326,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (and
             left: (literal
               (boolean))

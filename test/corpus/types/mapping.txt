@@ -142,7 +142,7 @@ contract C {
               (uint_type)))
           location: (storage)))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (symbol
             name: (identifier)))))))
 
@@ -177,7 +177,7 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        (variable_declaration_statement
+        statement: (variable_declaration_statement
           declaration: (variable_declaration
             type: (mapping_type
               key: (primitive_type

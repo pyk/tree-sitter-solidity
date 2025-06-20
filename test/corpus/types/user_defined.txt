@@ -102,7 +102,7 @@ contract C {
             symbol: (symbol
               name: (identifier)))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (symbol
             name: (identifier)))))))
 
@@ -131,7 +131,7 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        (variable_declaration_statement
+        statement: (variable_declaration_statement
           declaration: (variable_declaration
             type: (custom_type
               symbol: (symbol
@@ -177,7 +177,7 @@ contract C {
             symbol: (symbol
               name: (identifier)))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (call
             function: (symbol
               name: (identifier))
@@ -343,7 +343,7 @@ contract Factory {
         name: (identifier))
       visibility: (public)
       body: (block
-        (variable_declaration_statement
+        statement: (variable_declaration_statement
           declaration: (variable_declaration
             type: (custom_type
               symbol: (symbol

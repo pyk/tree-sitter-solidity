@@ -94,7 +94,7 @@ contract C {
     definition: (fallback
       visibility: (external)
       body: (block
-        (emit_statement
+        statement: (emit_statement
           (call
             function: (symbol
               name: (identifier))
@@ -123,7 +123,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        (placeholder_statement)))
+        statement: (placeholder)))
     definition: (fallback
       visibility: (external)
       mutability: (payable)

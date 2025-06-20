@@ -56,7 +56,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (and
             left: (symbol
               name: (identifier))
@@ -211,7 +211,7 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        (if_statement
+        statement: (if_statement
           condition: (and
             left: (symbol
               name: (identifier))
@@ -254,7 +254,7 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (builtin_function
               name: (require))
@@ -313,7 +313,7 @@ contract C {
           type: (primitive_type
             (uint_type))))
       body: (block
-        (return_statement
+        statement: (return_statement
           value: (conditional_expression
             condition: (and
               left: (symbol

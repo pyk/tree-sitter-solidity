@@ -188,7 +188,7 @@ contract C {
       visibility: (public)
       mutability: (view)
       body: (block
-        (if_statement
+        statement: (if_statement
           condition: (comparison
             left: (arithmetic
               (add
@@ -227,7 +227,7 @@ contract C {
       visibility: (public)
       mutability: (payable)
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (builtin_function
               name: (require))
@@ -276,7 +276,7 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        (expression_statement
+        statement: (expression_statement
           (call
             function: (symbol
               name: (identifier))
