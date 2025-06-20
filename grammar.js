@@ -1037,7 +1037,7 @@ module.exports = grammar({
         optional(field("abstract", $.abstract)),
         "contract",
         field("name", alias($._simple_symbol, $.symbol)),
-        optional(field("parents", $.parent_list)),
+        optional(field("parents", $.parents)),
         "{", // The body starts here
         repeat(field("definition", $._contract_level_definitions)),
         "}", // The body ends here
@@ -1060,7 +1060,7 @@ module.exports = grammar({
       ),
 
     abstract: ($) => "abstract",
-    parent_list: ($) => seq("is", commaSep(field("parent", $.parent))),
+    parents: ($) => seq("is", commaSep(field("parent", $.parent))),
     parent: ($) =>
       seq(
         field("name", alias($._simple_symbol, $.symbol)),
@@ -1075,7 +1075,7 @@ module.exports = grammar({
       seq(
         "interface",
         field("name", alias($._simple_symbol, $.symbol)),
-        optional(field("parents", $.parent_list)),
+        optional(field("parents", $.parents)),
         "{", // The body starts here
         repeat(field("definition", $._interface_level_definitions)),
         "}", // The body ends here

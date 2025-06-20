@@ -124,7 +124,7 @@ contract MyToken is ERC20 {
   definition: (contract
     name: (symbol
       name: (identifier))
-    parents: (parent_list
+    parents: (parents
       parent: (parent
         name: (symbol
           name: (identifier))))
@@ -174,7 +174,7 @@ contract C is A, B {
   definition: (contract
     name: (symbol
       name: (identifier))
-    parents: (parent_list
+    parents: (parents
       parent: (parent
         name: (symbol
           name: (identifier)))
@@ -209,7 +209,7 @@ abstract contract D is A, B {
     abstract: (abstract)
     name: (symbol
       name: (identifier))
-    parents: (parent_list
+    parents: (parents
       parent: (parent
         name: (symbol
           name: (identifier)))

@@ -138,7 +138,7 @@ contract Derived is Base {
   definition: (contract
     name: (symbol
       name: (identifier))
-    parents: (parent_list
+    parents: (parents
       parent: (parent
         name: (symbol
           name: (identifier))))

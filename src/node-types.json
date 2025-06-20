@@ -3199,7 +3199,7 @@
         "required": false,
         "types": [
           {
-            "type": "parent_list",
+            "type": "parents",
             "named": true
           }
         ]
@@ -6408,7 +6408,7 @@
         "required": false,
         "types": [
           {
-            "type": "parent_list",
+            "type": "parents",
             "named": true
           }
         ]
@@ -8110,7 +8110,7 @@
     }
   },
   {
-    "type": "parent_list",
+    "type": "parents",
     "named": true,
     "fields": {
       "parent": {

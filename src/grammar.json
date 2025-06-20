@@ -3454,7 +3454,7 @@
               "name": "parents",
               "content": {
                 "type": "SYMBOL",
-                "name": "parent_list"
+                "name": "parents"
               }
             },
             {
@@ -3540,7 +3540,7 @@
       "type": "STRING",
       "value": "abstract"
     },
-    "parent_list": {
+    "parents": {
       "type": "SEQ",
       "members": [
         {
@@ -3644,7 +3644,7 @@
               "name": "parents",
               "content": {
                 "type": "SYMBOL",
-                "name": "parent_list"
+                "name": "parents"
               }
             },
             {

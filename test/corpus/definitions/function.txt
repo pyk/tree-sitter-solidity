@@ -180,7 +180,7 @@ contract B is A {
   definition: (contract
     name: (symbol
       name: (identifier))
-    parents: (parent_list
+    parents: (parents
       parent: (parent
         name: (symbol
           name: (identifier))))
@@ -220,7 +220,7 @@ contract C is A, B {
   definition: (contract
     name: (symbol
       name: (identifier))
-    parents: (parent_list
+    parents: (parents
       parent: (parent
         name: (symbol
           name: (identifier)))

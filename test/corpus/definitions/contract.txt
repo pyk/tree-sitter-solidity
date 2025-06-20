@@ -37,7 +37,7 @@ contract MyContract is Ownable, ReentrancyGuard {}
   definition: (contract
     name: (symbol
       name: (identifier))
-    parents: (parent_list
+    parents: (parents
       parent: (parent
         name: (symbol
           name: (identifier)))
@@ -57,7 +57,7 @@ contract MyToken is ERC20("My Token", "MTK") {}
   definition: (contract
     name: (symbol
       name: (identifier))
-    parents: (parent_list
+    parents: (parents
       parent: (parent
         name: (symbol
           name: (identifier))
@@ -79,7 +79,7 @@ contract MyContract is ReentrancyGuard() {}
   definition: (contract
     name: (symbol
       name: (identifier))
-    parents: (parent_list
+    parents: (parents
       parent: (parent
         name: (symbol
           name: (identifier))
@@ -97,7 +97,7 @@ contract MegaContract is Ownable, ERC20("Mega", "MGA"), Lockable() {}
   definition: (contract
     name: (symbol
       name: (identifier))
-    parents: (parent_list
+    parents: (parents
       parent: (parent
         name: (symbol
           name: (identifier)))
