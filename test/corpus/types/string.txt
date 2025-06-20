@@ -50,7 +50,7 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (string_type))
-          location: (data_location)
+          location: (calldata)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -59,7 +59,7 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (string_type))
-          location: (data_location)))
+          location: (memory)))
       body: (block
         (return_statement
           value: (symbol
@@ -91,7 +91,7 @@ contract C {
           declaration: (variable_declaration
             type: (primitive_type
               (string_type))
-            location: (data_location)
+            location: (memory)
             name: (symbol
               name: (identifier)))
           value: (literal
@@ -120,7 +120,7 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (bytes_type))
-          location: (data_location)
+          location: (memory)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -129,7 +129,7 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (string_type))
-          location: (data_location)))
+          location: (memory)))
       body: (block
         (return_statement
           value: (cast
@@ -347,7 +347,7 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (string_type))
-          location: (data_location)))
+          location: (memory)))
       body: (block
         (return_statement
           value: (literal

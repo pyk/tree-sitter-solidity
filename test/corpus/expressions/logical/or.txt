@@ -307,7 +307,7 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (string_type))
-          location: (data_location)))
+          location: (memory)))
       body: (block
         (return_statement
           value: (conditional_expression

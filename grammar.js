@@ -169,7 +169,6 @@ module.exports = grammar({
     // This will be aliased for declaration names.
     _simple_symbol: ($) => field("name", $.identifier),
 
-    data_location: ($) => choice("memory", "storage", "calldata"),
     global: ($) => "global",
     wildcard: ($) => "*",
     transient: ($) => "transient",
@@ -367,11 +366,32 @@ module.exports = grammar({
         ),
       ),
 
+    _visibility: ($) => choice($.public, $.private, $.internal, $.external),
     public: ($) => "public",
     private: ($) => "private",
     internal: ($) => "internal",
     external: ($) => "external",
-    _visibility: ($) => choice($.public, $.private, $.internal, $.external),
+
+    /**
+     * A list of parameters, used for function arguments and return values.
+     */
+    parameters: ($) => commaSep(field("parameter", $.parameter)),
+
+    /**
+     * A single parameter declaration.
+     * e.g., `uint256 _myVar` or `string memory _name`
+     */
+    parameter: ($) =>
+      seq(
+        field("type", $._type),
+        optional(field("location", $._data_location)),
+        optional(field("name", alias($._simple_symbol, $.symbol))),
+      ),
+
+    _data_location: ($) => choice($.memory, $.storage, $.calldata),
+    memory: ($) => "memory",
+    storage: ($) => "storage",
+    calldata: ($) => "calldata",
 
     //############################################################//
     //                          License                           //
@@ -1166,26 +1186,6 @@ module.exports = grammar({
       ),
 
     //############################################################//
-    //                         Parameters                         //
-    //############################################################//
-
-    /**
-     * A list of parameters, used for function arguments and return values.
-     */
-    parameters: ($) => commaSep(field("parameter", $.parameter)),
-
-    /**
-     * A single parameter declaration.
-     * e.g., `uint256 _myVar` or `string memory _name`
-     */
-    parameter: ($) =>
-      seq(
-        field("type", $._type),
-        optional(field("location", $.data_location)),
-        optional(field("name", alias($._simple_symbol, $.symbol))),
-      ),
-
-    //############################################################//
     //                    Function definition                     //
     //############################################################//
 
@@ -1353,7 +1353,7 @@ module.exports = grammar({
     variable_declaration: ($) =>
       seq(
         field("type", $._type),
-        optional(field("location", $.data_location)),
+        optional(field("location", $._data_location)),
         optional(field("name", alias($._simple_symbol, $.symbol))),
       ),
 

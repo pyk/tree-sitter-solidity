@@ -89,14 +89,14 @@ contract C {
           parameter: (parameter
             type: (primitive_type
               (string_type))
-            location: (data_location)))
+            location: (memory)))
         visibility: (external)
         mutability: (view)
         returns: (parameters
           parameter: (parameter
             type: (primitive_type
               (bytes_type))
-            location: (data_location))))
+            location: (memory))))
       name: (symbol
         name: (identifier)))))
 
@@ -171,7 +171,7 @@ contract C {
             type: (array_type
               base: (primitive_type
                 (uint_type)))
-            location: (data_location)))
+            location: (memory)))
         visibility: (external))
       name: (symbol
         name: (identifier)))))

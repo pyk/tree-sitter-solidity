@@ -3219,11 +3219,6 @@
     }
   },
   {
-    "type": "data_location",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "decrement",
     "named": true,
     "fields": {},
@@ -7955,7 +7950,15 @@
         "required": false,
         "types": [
           {
-            "type": "data_location",
+            "type": "calldata",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "storage",
             "named": true
           }
         ]
@@ -10336,7 +10339,15 @@
         "required": false,
         "types": [
           {
-            "type": "data_location",
+            "type": "calldata",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "storage",
             "named": true
           }
         ]
@@ -11095,7 +11106,7 @@
   },
   {
     "type": "calldata",
-    "named": false
+    "named": true
   },
   {
     "type": "comment",
@@ -11408,7 +11419,7 @@
   },
   {
     "type": "memory",
-    "named": false
+    "named": true
   },
   {
     "type": "minutes",
@@ -11509,7 +11520,7 @@
   },
   {
     "type": "storage",
-    "named": false
+    "named": true
   },
   {
     "type": "string",

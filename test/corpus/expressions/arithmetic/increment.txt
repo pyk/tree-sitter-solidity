@@ -186,7 +186,7 @@ contract C {
           type: (array_type
             base: (primitive_type
               (uint_type)))
-          location: (data_location)
+          location: (memory)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -289,7 +289,7 @@ contract C {
           type: (custom_type
             symbol: (symbol
               name: (identifier)))
-          location: (data_location)
+          location: (storage)
           name: (symbol
             name: (identifier))))
       visibility: (public)

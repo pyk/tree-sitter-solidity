@@ -39,7 +39,7 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (string_type))
-          location: (data_location)
+          location: (memory)
           name: (symbol
             name: (identifier))))
       body: (block))))
@@ -133,13 +133,13 @@ contract MyToken is ERC20 {
         parameter: (parameter
           type: (primitive_type
             (string_type))
-          location: (data_location)
+          location: (memory)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
           type: (primitive_type
             (string_type))
-          location: (data_location)
+          location: (memory)
           name: (symbol
             name: (identifier))))
       parent_constructor: (parent_constructor

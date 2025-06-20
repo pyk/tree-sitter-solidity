@@ -63,7 +63,7 @@ contract C {
             base: (array_type
               base: (primitive_type
                 (string_type))))
-          location: (data_location)
+          location: (calldata)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -73,7 +73,7 @@ contract C {
           type: (array_type
             base: (primitive_type
               (bytes_type)))
-          location: (data_location)))
+          location: (memory)))
       body: (block
         (comment)))))
 

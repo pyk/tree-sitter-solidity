@@ -136,7 +136,7 @@ contract C {
             type: (custom_type
               symbol: (symbol
                 name: (identifier)))
-            location: (data_location)
+            location: (memory)
             name: (symbol
               name: (identifier))))))))
 

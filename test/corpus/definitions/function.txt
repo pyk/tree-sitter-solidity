@@ -368,14 +368,14 @@ function processData(uint[] memory data, MyStruct calldata s) internal {}
         type: (array_type
           base: (primitive_type
             (uint_type)))
-        location: (data_location)
+        location: (memory)
         name: (symbol
           name: (identifier)))
       parameter: (parameter
         type: (custom_type
           symbol: (symbol
             name: (identifier)))
-        location: (data_location)
+        location: (calldata)
         name: (symbol
           name: (identifier))))
     visibility: (internal)
@@ -436,7 +436,7 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (bytes_type))
-          location: (data_location)
+          location: (calldata)
           name: (symbol
             name: (identifier))))
       visibility: (external)
@@ -445,5 +445,5 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (bytes_type))
-          location: (data_location)))
+          location: (memory)))
       body: (block))))
