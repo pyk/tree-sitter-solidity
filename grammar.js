@@ -1174,7 +1174,7 @@ module.exports = grammar({
       seq(
         field("type", $._type),
         optional(field("location", $.data_location)),
-        optional(field("name", $.identifier)),
+        optional(field("name", alias($._simple_symbol, $.symbol))),
       ),
 
     //############################################################//

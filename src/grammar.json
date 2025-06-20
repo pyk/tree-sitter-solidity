@@ -4038,8 +4038,13 @@
               "type": "FIELD",
               "name": "name",
               "content": {
-                "type": "SYMBOL",
-                "name": "identifier"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_simple_symbol"
+                },
+                "named": true,
+                "value": "symbol"
               }
             },
             {

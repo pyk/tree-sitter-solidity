@@ -365,7 +365,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (address_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       body: (block
         (expression_statement
           (call

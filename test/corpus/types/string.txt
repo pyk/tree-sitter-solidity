@@ -51,7 +51,8 @@ contract C {
           type: (primitive_type
             (string_type))
           location: (data_location)
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters
@@ -120,7 +121,8 @@ contract C {
           type: (primitive_type
             (bytes_type))
           location: (data_location)
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters

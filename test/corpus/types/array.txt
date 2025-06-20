@@ -64,7 +64,8 @@ contract C {
               base: (primitive_type
                 (string_type))))
           location: (data_location)
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters

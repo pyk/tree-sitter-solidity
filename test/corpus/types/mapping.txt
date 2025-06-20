@@ -96,7 +96,8 @@ contract C {
             value: (primitive_type
               (uint_type)))
           location: (data_location)
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       body: (block
         (comment)))))

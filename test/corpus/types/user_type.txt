@@ -72,7 +72,8 @@ contract C {
           type: (custom_type
             symbol: (symbol
               name: (identifier)))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters

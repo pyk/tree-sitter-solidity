@@ -50,7 +50,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (bool_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters

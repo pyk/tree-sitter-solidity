@@ -21,7 +21,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       body: (block
         (expression_statement
@@ -55,7 +56,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       body: (block
         (expression_statement
@@ -91,13 +93,15 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       body: (block
         (expression_statement
           (assignment_expression
@@ -136,13 +140,15 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       body: (block
         (expression_statement
           (assignment_expression
@@ -181,7 +187,8 @@ contract C {
             base: (primitive_type
               (uint_type)))
           location: (data_location)
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       body: (block
         (expression_statement
@@ -220,11 +227,13 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier))
+          name: (symbol
+            name: (identifier)))
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters
@@ -281,7 +290,8 @@ contract C {
             symbol: (symbol
               name: (identifier)))
           location: (data_location)
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       body: (block
         (expression_statement

@@ -5,6 +5,7 @@ Simple function with no parameters or returns
 function myFunction() {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -18,6 +19,7 @@ Function with parameters
 function set(uint256 _x, address _y) {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -26,11 +28,13 @@ function set(uint256 _x, address _y) {}
       parameter: (parameter
         type: (primitive_type
           (uint_type))
-        name: (identifier))
+        name: (symbol
+          name: (identifier)))
       parameter: (parameter
         type: (primitive_type
           (address_type))
-        name: (identifier)))
+        name: (symbol
+          name: (identifier))))
     body: (block)))
 
 ==================
@@ -40,6 +44,7 @@ Function with a single return value
 function getValue() returns (uint) {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -57,6 +62,7 @@ Function with multiple named return values
 function getValues() returns (uint a, bool b) {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -65,11 +71,13 @@ function getValues() returns (uint a, bool b) {}
       parameter: (parameter
         type: (primitive_type
           (uint_type))
-        name: (identifier))
+        name: (symbol
+          name: (identifier)))
       parameter: (parameter
         type: (primitive_type
           (bool_type))
-        name: (identifier)))
+        name: (symbol
+          name: (identifier))))
     body: (block)))
 
 ==================
@@ -79,6 +87,7 @@ Public function
 function doSomething() public {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -93,6 +102,7 @@ Internal pure function
 function calculate() internal pure {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -108,6 +118,7 @@ External view function
 function readData() external view {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -123,6 +134,7 @@ Private payable function
 function deposit() private payable {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -138,6 +150,7 @@ Virtual function
 function myVirtualFunc() public virtual {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -155,6 +168,7 @@ contract B is A {
     function f() public override {}
 }
 ---
+
 (source_file
   definition: (contract
     name: (symbol
@@ -187,6 +201,7 @@ contract C is A, B {
     function f() public override(A, B) {}
 }
 ---
+
 (source_file
   definition: (contract
     name: (symbol
@@ -230,6 +245,7 @@ Function with a single modifier
 function restricted() public onlyOwner {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -247,6 +263,7 @@ Function with multiple modifiers
 function complexAction() external payable requiresAuth whenNotPaused {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -268,6 +285,7 @@ Function with modifier and arguments
 function timedAction() public costs(1 ether) {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -289,6 +307,7 @@ Function with all attributes
 function superComplex() external payable virtual override(Base) onlyAdmin returns (bool) {}
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -315,6 +334,7 @@ Unimplemented function (in an interface or abstract contract)
 function requiredFunction(uint) external returns (bool);
 
 ---
+
 (source_file
   definition: (function
     name: (symbol
@@ -335,6 +355,7 @@ Function with complex parameters (arrays and structs)
 struct MyStruct {}
 function processData(uint[] memory data, MyStruct calldata s) internal {}
 ---
+
 (source_file
   definition: (struct
     name: (symbol
@@ -348,13 +369,15 @@ function processData(uint[] memory data, MyStruct calldata s) internal {}
           base: (primitive_type
             (uint_type)))
         location: (data_location)
-        name: (identifier))
+        name: (symbol
+          name: (identifier)))
       parameter: (parameter
         type: (custom_type
           symbol: (symbol
             name: (identifier)))
         location: (data_location)
-        name: (identifier)))
+        name: (symbol
+          name: (identifier))))
     visibility: (visibility)
     body: (block)))
 
@@ -367,6 +390,7 @@ contract C {
 }
 
 ---
+
 (source_file
   definition: (contract
     name: (symbol
@@ -385,6 +409,7 @@ contract C {
 }
 
 ---
+
 (source_file
   definition: (contract
     name: (symbol
@@ -401,6 +426,7 @@ contract C {
     fallback(bytes calldata input) external payable returns (bytes memory) {}
 }
 ---
+
 (source_file
   definition: (contract
     name: (symbol
@@ -411,7 +437,8 @@ contract C {
           type: (primitive_type
             (bytes_type))
           location: (data_location)
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters

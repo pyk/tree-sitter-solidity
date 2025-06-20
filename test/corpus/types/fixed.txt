@@ -59,7 +59,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (fixed_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters
@@ -121,7 +122,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (int_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters

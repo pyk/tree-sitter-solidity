@@ -47,7 +47,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters
@@ -85,7 +86,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (bytes_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters
@@ -127,7 +129,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (address_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters

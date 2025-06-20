@@ -53,14 +53,16 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (int_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type
             (int_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       body: (block
         (return_statement
           value: (cast
@@ -126,7 +128,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       mutability: (state_mutability)
       returns: (parameters

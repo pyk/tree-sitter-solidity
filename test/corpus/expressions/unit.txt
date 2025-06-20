@@ -267,7 +267,8 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (uint_type))
-          name: (identifier)))
+          name: (symbol
+            name: (identifier))))
       visibility: (visibility)
       body: (block))
     definition: (function
