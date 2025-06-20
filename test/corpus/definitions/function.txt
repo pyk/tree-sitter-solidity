@@ -188,7 +188,7 @@ contract B is A {
       name: (symbol
         name: (identifier))
       visibility: (public)
-      override: (override_specifier)
+      override: (overrides)
       body: (block))))
 
 ==================
@@ -231,10 +231,10 @@ contract C is A, B {
       name: (symbol
         name: (identifier))
       visibility: (public)
-      override: (override_specifier
-        from: (symbol
+      override: (overrides
+        target: (symbol
           name: (identifier))
-        from: (symbol
+        target: (symbol
           name: (identifier)))
       body: (block))))
 
@@ -315,8 +315,8 @@ function superComplex() external payable virtual override(Base) onlyAdmin return
     visibility: (external)
     mutability: (payable)
     virtual: (virtual)
-    override: (override_specifier
-      from: (symbol
+    override: (overrides
+      target: (symbol
         name: (identifier)))
     modifier: (modifier_invocation
       name: (symbol

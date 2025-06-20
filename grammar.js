@@ -999,12 +999,18 @@ module.exports = grammar({
       choice(
         field("visibility", $._visibility),
         field("mutability", choice($.constant, $.immutable)),
-        field("override", $.override_specifier),
+        field("override", $.overrides),
         field("transient", $.transient),
       ),
 
     constant: ($) => "constant",
     immutable: ($) => "immutable",
+
+    overrides: ($) =>
+      seq(
+        "override",
+        optional(seq("(", commaSep(field("target", $.symbol)), ")")),
+      ),
 
     //############################################################//
     //                    Contract definition                     //
@@ -1211,7 +1217,7 @@ module.exports = grammar({
         prec(2, field("visibility", $._visibility)),
         prec(2, field("mutability", $._function_mutability)),
         prec(2, field("virtual", $.virtual)),
-        prec(2, field("override", $.override_specifier)),
+        prec(2, field("override", $.overrides)),
         // Give the generic modifier invocation lower precedence (1)
         prec(1, field("modifier", $.modifier_invocation)),
       ),
@@ -1233,10 +1239,7 @@ module.exports = grammar({
       ),
 
     _modifier_attribute: ($) =>
-      choice(
-        field("virtual", $.virtual),
-        field("override", $.override_specifier),
-      ),
+      choice(field("virtual", $.virtual), field("override", $.overrides)),
 
     modifier_definition: ($) =>
       prec(
@@ -1250,12 +1253,6 @@ module.exports = grammar({
           repeat($._modifier_attribute),
           choice(field("body", $.block), ";"),
         ),
-      ),
-
-    override_specifier: ($) =>
-      seq(
-        "override",
-        optional(seq("(", commaSep(field("from", $.symbol)), ")")),
       ),
 
     //############################################################//

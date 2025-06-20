@@ -5038,7 +5038,7 @@
         "required": false,
         "types": [
           {
-            "type": "override_specifier",
+            "type": "overrides",
             "named": true
           }
         ]
@@ -6952,7 +6952,7 @@
         "required": false,
         "types": [
           {
-            "type": "override_specifier",
+            "type": "overrides",
             "named": true
           }
         ]
@@ -7926,10 +7926,10 @@
     }
   },
   {
-    "type": "override_specifier",
+    "type": "overrides",
     "named": true,
     "fields": {
-      "from": {
+      "target": {
         "multiple": true,
         "required": false,
         "types": [
@@ -10151,7 +10151,7 @@
         "required": false,
         "types": [
           {
-            "type": "override_specifier",
+            "type": "overrides",
             "named": true
           }
         ]
