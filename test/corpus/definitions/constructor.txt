@@ -78,7 +78,7 @@ abstract contract C {
     name: (symbol
       name: (identifier))
     definition: (constructor
-      visibility: (visibility)
+      visibility: (internal)
       body: (block))))
 
 ==================
@@ -105,7 +105,7 @@ abstract contract C {
             (uint_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (internal)
       mutability: (payable)
       body: (block
         (comment)))))
@@ -223,7 +223,7 @@ abstract contract D is A, B {
             (uint_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (internal)
       mutability: (payable)
       parent_constructor: (parent_constructor
         name: (symbol

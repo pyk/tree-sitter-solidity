@@ -61,7 +61,7 @@ contract C {
             (fixed_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -89,7 +89,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       body: (block
         (variable_declaration_statement
@@ -124,7 +124,7 @@ contract C {
             (int_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -189,7 +189,7 @@ contract C {
           (uint_type))
         value: (primitive_type
           (fixed_type)))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))))
 
@@ -212,7 +212,7 @@ contract C {
       type: (array_type
         base: (primitive_type
           (ufixed_type)))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))
     definition: (variable
@@ -221,7 +221,7 @@ contract C {
           (fixed_type))
         size: (literal
           (number)))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))))
 

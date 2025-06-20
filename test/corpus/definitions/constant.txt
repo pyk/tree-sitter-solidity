@@ -247,7 +247,7 @@ contract MyContract {
     definition: (variable
       type: (primitive_type
         (uint_type))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (constant)
       name: (symbol
         name: (identifier))
@@ -303,7 +303,7 @@ library Math {
     definition: (variable
       type: (primitive_type
         (uint_type))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (constant)
       name: (symbol
         name: (identifier))

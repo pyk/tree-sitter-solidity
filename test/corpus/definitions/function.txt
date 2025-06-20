@@ -92,7 +92,7 @@ function doSomething() public {}
   definition: (function
     name: (symbol
       name: (identifier))
-    visibility: (visibility)
+    visibility: (public)
     body: (block)))
 
 ==================
@@ -107,7 +107,7 @@ function calculate() internal pure {}
   definition: (function
     name: (symbol
       name: (identifier))
-    visibility: (visibility)
+    visibility: (internal)
     mutability: (pure)
     body: (block)))
 
@@ -123,7 +123,7 @@ function readData() external view {}
   definition: (function
     name: (symbol
       name: (identifier))
-    visibility: (visibility)
+    visibility: (external)
     mutability: (view)
     body: (block)))
 
@@ -139,7 +139,7 @@ function deposit() private payable {}
   definition: (function
     name: (symbol
       name: (identifier))
-    visibility: (visibility)
+    visibility: (private)
     mutability: (payable)
     body: (block)))
 
@@ -155,7 +155,7 @@ function myVirtualFunc() public virtual {}
   definition: (function
     name: (symbol
       name: (identifier))
-    visibility: (visibility)
+    visibility: (public)
     virtual: (virtual)
     body: (block)))
 
@@ -187,7 +187,7 @@ contract B is A {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       override: (override_specifier)
       body: (block))))
 
@@ -230,7 +230,7 @@ contract C is A, B {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       override: (override_specifier
         from: (symbol
           name: (identifier))
@@ -250,7 +250,7 @@ function restricted() public onlyOwner {}
   definition: (function
     name: (symbol
       name: (identifier))
-    visibility: (visibility)
+    visibility: (public)
     modifier: (modifier_invocation
       name: (symbol
         name: (identifier)))
@@ -268,7 +268,7 @@ function complexAction() external payable requiresAuth whenNotPaused {}
   definition: (function
     name: (symbol
       name: (identifier))
-    visibility: (visibility)
+    visibility: (external)
     mutability: (payable)
     modifier: (modifier_invocation
       name: (symbol
@@ -290,7 +290,7 @@ function timedAction() public costs(1 ether) {}
   definition: (function
     name: (symbol
       name: (identifier))
-    visibility: (visibility)
+    visibility: (public)
     modifier: (modifier_invocation
       name: (symbol
         name: (identifier))
@@ -312,7 +312,7 @@ function superComplex() external payable virtual override(Base) onlyAdmin return
   definition: (function
     name: (symbol
       name: (identifier))
-    visibility: (visibility)
+    visibility: (external)
     mutability: (payable)
     virtual: (virtual)
     override: (override_specifier
@@ -343,7 +343,7 @@ function requiredFunction(uint) external returns (bool);
       parameter: (parameter
         type: (primitive_type
           (uint_type))))
-    visibility: (visibility)
+    visibility: (external)
     returns: (parameters
       parameter: (parameter
         type: (primitive_type
@@ -378,7 +378,7 @@ function processData(uint[] memory data, MyStruct calldata s) internal {}
         location: (data_location)
         name: (symbol
           name: (identifier))))
-    visibility: (visibility)
+    visibility: (internal)
     body: (block)))
 
 ==================
@@ -396,7 +396,7 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (receive_function_definition
-      visibility: (visibility)
+      visibility: (external)
       mutability: (payable)
       body: (block))))
 
@@ -415,7 +415,7 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (fallback_function_definition
-      visibility: (visibility)
+      visibility: (external)
       body: (block))))
 
 ==================
@@ -439,7 +439,7 @@ contract C {
           location: (data_location)
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (external)
       mutability: (payable)
       returns: (parameters
         parameter: (parameter

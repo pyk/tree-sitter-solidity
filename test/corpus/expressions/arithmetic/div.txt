@@ -50,7 +50,7 @@ contract C {
             (uint_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -215,7 +215,7 @@ contract C {
             (uint_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       body: (block
         (if_statement
@@ -257,7 +257,7 @@ contract C {
             (uint_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       body: (block
         (expression_statement
           (assignment_expression

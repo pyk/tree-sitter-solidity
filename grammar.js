@@ -173,7 +173,6 @@ module.exports = grammar({
     global: ($) => "global",
     wildcard: ($) => "*",
     transient: ($) => "transient",
-    visibility: ($) => choice("public", "private", "internal", "external"),
 
     //############################################################//
     //                           Types                            //
@@ -358,7 +357,7 @@ module.exports = grammar({
           ")",
           repeat(
             choice(
-              field("visibility", $.visibility),
+              field("visibility", $._visibility),
               field("mutability", $._function_mutability),
             ),
           ),
@@ -367,6 +366,12 @@ module.exports = grammar({
           ),
         ),
       ),
+
+    public: ($) => "public",
+    private: ($) => "private",
+    internal: ($) => "internal",
+    external: ($) => "external",
+    _visibility: ($) => choice($.public, $.private, $.internal, $.external),
 
     //############################################################//
     //                          License                           //
@@ -972,7 +977,7 @@ module.exports = grammar({
 
     _variable_attribute: ($) =>
       choice(
-        field("visibility", $.visibility),
+        field("visibility", $._visibility),
         field("mutability", choice($.constant, $.immutable)),
         field("override", $.override_specifier),
         field("transient", $.transient),
@@ -1203,7 +1208,7 @@ module.exports = grammar({
     _function_attribute: ($) =>
       choice(
         // Give specific keywords higher precedence (2)
-        prec(2, field("visibility", $.visibility)),
+        prec(2, field("visibility", $._visibility)),
         prec(2, field("mutability", $._function_mutability)),
         prec(2, field("virtual", $.virtual)),
         prec(2, field("override", $.override_specifier)),
@@ -1270,7 +1275,7 @@ module.exports = grammar({
     _constructor_attribute: ($) =>
       choice(
         // Give specific keywords higher precedence (2)
-        prec(2, field("visibility", $.visibility)),
+        prec(2, field("visibility", $._visibility)),
         prec(2, field("mutability", $._function_mutability)),
         // Give the generic parent constructor invocation lower precedence (1)
         prec(1, field("parent_constructor", $.parent_constructor)),
@@ -1306,7 +1311,7 @@ module.exports = grammar({
     // Add a helper rule for receive/fallback attributes
     _function_like_attribute: ($) =>
       choice(
-        field("visibility", $.visibility),
+        field("visibility", $._visibility),
         field("mutability", $._function_mutability),
         field("modifier", $.modifier_invocation),
         "virtual",

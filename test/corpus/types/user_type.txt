@@ -74,7 +74,7 @@ contract C {
               name: (identifier)))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -112,7 +112,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       body: (block
         (variable_declaration_statement
@@ -194,7 +194,7 @@ contract Ledger {
         value: (custom_type
           symbol: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))))
 
@@ -224,7 +224,7 @@ contract Oracle {
         base: (custom_type
           symbol: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))))
 

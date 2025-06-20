@@ -42,7 +42,7 @@ contract C {
             (bool_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -145,7 +145,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -158,7 +158,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -229,7 +229,7 @@ contract C {
             (bool_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       body: (block
         (if_statement
           condition: (not
@@ -263,7 +263,7 @@ contract C {
         parameter: (parameter
           type: (primitive_type
             (address_type))))
-      visibility: (visibility)
+      visibility: (internal)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -279,7 +279,7 @@ contract C {
             (address_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (view)
       body: (block
         (expression_statement

@@ -67,7 +67,7 @@ contract C {
             (int_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -273,7 +273,7 @@ contract C {
             (int_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -326,7 +326,7 @@ contract C {
             (int_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       body: (block
         (expression_statement

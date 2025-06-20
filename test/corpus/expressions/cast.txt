@@ -49,7 +49,7 @@ contract C {
             (uint_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -88,7 +88,7 @@ contract C {
             (bytes_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -131,7 +131,7 @@ contract C {
             (address_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -166,7 +166,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (view)
       returns: (parameters
         parameter: (parameter
@@ -199,7 +199,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter

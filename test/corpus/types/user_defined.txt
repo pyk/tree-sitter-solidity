@@ -94,7 +94,7 @@ contract C {
               name: (identifier)))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -129,7 +129,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration
@@ -169,7 +169,7 @@ contract C {
             (address_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -219,7 +219,7 @@ contract C {
         value: (custom_type
           symbol: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))))
 
@@ -246,7 +246,7 @@ contract C {
         base: (custom_type
           symbol: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))))
 
@@ -341,7 +341,7 @@ contract Factory {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration

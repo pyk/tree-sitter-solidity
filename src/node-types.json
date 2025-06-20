@@ -3088,7 +3088,19 @@
         "required": false,
         "types": [
           {
-            "type": "visibility",
+            "type": "external",
+            "named": true
+          },
+          {
+            "type": "internal",
+            "named": true
+          },
+          {
+            "type": "private",
+            "named": true
+          },
+          {
+            "type": "public",
             "named": true
           }
         ]
@@ -4619,7 +4631,19 @@
         "required": false,
         "types": [
           {
-            "type": "visibility",
+            "type": "external",
+            "named": true
+          },
+          {
+            "type": "internal",
+            "named": true
+          },
+          {
+            "type": "private",
+            "named": true
+          },
+          {
+            "type": "public",
             "named": true
           }
         ]
@@ -5059,7 +5083,19 @@
         "required": false,
         "types": [
           {
-            "type": "visibility",
+            "type": "external",
+            "named": true
+          },
+          {
+            "type": "internal",
+            "named": true
+          },
+          {
+            "type": "private",
+            "named": true
+          },
+          {
+            "type": "public",
             "named": true
           }
         ]
@@ -5113,7 +5149,19 @@
         "required": false,
         "types": [
           {
-            "type": "visibility",
+            "type": "external",
+            "named": true
+          },
+          {
+            "type": "internal",
+            "named": true
+          },
+          {
+            "type": "private",
+            "named": true
+          },
+          {
+            "type": "public",
             "named": true
           }
         ]
@@ -8693,7 +8741,19 @@
         "required": false,
         "types": [
           {
-            "type": "visibility",
+            "type": "external",
+            "named": true
+          },
+          {
+            "type": "internal",
+            "named": true
+          },
+          {
+            "type": "private",
+            "named": true
+          },
+          {
+            "type": "public",
             "named": true
           }
         ]
@@ -10248,7 +10308,19 @@
         "required": false,
         "types": [
           {
-            "type": "visibility",
+            "type": "external",
+            "named": true
+          },
+          {
+            "type": "internal",
+            "named": true
+          },
+          {
+            "type": "private",
+            "named": true
+          },
+          {
+            "type": "public",
             "named": true
           }
         ]
@@ -10489,11 +10561,6 @@
   },
   {
     "type": "virtual",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "visibility",
     "named": true,
     "fields": {}
   },
@@ -11105,7 +11172,7 @@
   },
   {
     "type": "external",
-    "named": false
+    "named": true
   },
   {
     "type": "fallback",
@@ -11317,7 +11384,7 @@
   },
   {
     "type": "internal",
-    "named": false
+    "named": true
   },
   {
     "type": "is",
@@ -11390,11 +11457,11 @@
   },
   {
     "type": "private",
-    "named": false
+    "named": true
   },
   {
     "type": "public",
-    "named": false
+    "named": true
   },
   {
     "type": "pure",

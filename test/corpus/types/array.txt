@@ -66,7 +66,7 @@ contract C {
           location: (data_location)
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -133,7 +133,7 @@ contract C {
         value: (array_type
           base: (primitive_type
             (int_type))))
-      visibility: (visibility)
+      visibility: (private)
       name: (symbol
         name: (identifier)))))
 
@@ -163,7 +163,7 @@ contract C {
                 name: (identifier))))
           size: (literal
             (number))))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))))
 
@@ -187,7 +187,7 @@ contract C {
             (address_type))
           value: (primitive_type
             (uint_type))))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))))
 

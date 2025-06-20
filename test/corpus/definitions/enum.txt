@@ -95,7 +95,7 @@ contract TrafficLight {
       type: (custom_type
         symbol: (symbol
           name: (identifier)))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))))
 
@@ -137,7 +137,7 @@ contract Navigator {
               name: (identifier)))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -176,7 +176,7 @@ contract Registry {
             name: (identifier)))
         value: (primitive_type
           (address_type)))
-      visibility: (visibility)
+      visibility: (public)
       name: (symbol
         name: (identifier)))))
 

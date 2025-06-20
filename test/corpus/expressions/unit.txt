@@ -185,7 +185,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (view)
       body: (block
         (if_statement
@@ -224,7 +224,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (payable)
       body: (block
         (expression_statement
@@ -269,12 +269,12 @@ contract C {
             (uint_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       body: (block))
     definition: (function
       name: (symbol
         name: (identifier))
-      visibility: (visibility)
+      visibility: (public)
       body: (block
         (expression_statement
           (call

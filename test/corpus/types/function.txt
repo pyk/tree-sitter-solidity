@@ -14,7 +14,7 @@ contract C {
       name: (identifier))
     definition: (variable
       type: (function_type
-        visibility: (visibility))
+        visibility: (internal))
       name: (symbol
         name: (identifier)))))
 
@@ -41,7 +41,7 @@ contract C {
           parameter: (parameter
             type: (primitive_type
               (address_type))))
-        visibility: (visibility))
+        visibility: (internal))
       name: (symbol
         name: (identifier)))))
 
@@ -61,7 +61,7 @@ contract C {
       name: (identifier))
     definition: (variable
       type: (function_type
-        visibility: (visibility)
+        visibility: (internal)
         returns: (parameters
           parameter: (parameter
             type: (primitive_type
@@ -90,7 +90,7 @@ contract C {
             type: (primitive_type
               (string_type))
             location: (data_location)))
-        visibility: (visibility)
+        visibility: (external)
         mutability: (view)
         returns: (parameters
           parameter: (parameter
@@ -120,7 +120,7 @@ contract C {
           parameter: (parameter
             type: (primitive_type
               (address_type))))
-        visibility: (visibility)
+        visibility: (external)
         mutability: (payable))
       name: (symbol
         name: (identifier)))))
@@ -141,7 +141,7 @@ contract C {
       name: (identifier))
     definition: (variable
       type: (function_type
-        visibility: (visibility)
+        visibility: (internal)
         mutability: (pure)
         returns: (parameters
           parameter: (parameter
@@ -172,7 +172,7 @@ contract C {
               base: (primitive_type
                 (uint_type)))
             location: (data_location)))
-        visibility: (visibility))
+        visibility: (external))
       name: (symbol
         name: (identifier)))))
 
@@ -192,7 +192,7 @@ contract C {
       name: (identifier))
     definition: (variable
       type: (function_type
-        visibility: (visibility)
+        visibility: (internal)
         returns: (parameters
           parameter: (parameter
             type: (primitive_type
@@ -231,7 +231,7 @@ contract C {
               parameter: (parameter
                 type: (primitive_type
                   (uint_type))))
-            visibility: (visibility)
+            visibility: (internal)
             mutability: (pure)
             returns: (parameters
               parameter: (parameter
@@ -239,7 +239,7 @@ contract C {
                   (uint_type)))))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       body: (block))))
 
 ==================
@@ -262,6 +262,6 @@ contract C {
           parameter: (parameter
             type: (primitive_type
               (uint_type))))
-        visibility: (visibility))
+        visibility: (internal))
       name: (symbol
         name: (identifier)))))

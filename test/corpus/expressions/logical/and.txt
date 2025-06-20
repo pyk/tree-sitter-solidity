@@ -49,7 +49,7 @@ contract C {
             (bool_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
@@ -209,7 +209,7 @@ contract C {
             (bool_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       body: (block
         (if_statement
           condition: (and
@@ -251,7 +251,7 @@ contract C {
             (uint_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       body: (block
         (expression_statement
@@ -306,7 +306,7 @@ contract C {
             (bool_type))
           name: (symbol
             name: (identifier))))
-      visibility: (visibility)
+      visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
