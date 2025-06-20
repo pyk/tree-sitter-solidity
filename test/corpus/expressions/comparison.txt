@@ -50,7 +50,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type
@@ -208,7 +208,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       body: (block
         (if_statement
           condition: (comparison
@@ -246,7 +246,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       body: (block
         (expression_statement
           (call
@@ -283,7 +283,7 @@ contract C {
       name: (symbol
         name: (identifier))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type
@@ -302,7 +302,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type

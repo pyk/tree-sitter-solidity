@@ -3050,7 +3050,7 @@
         "required": false,
         "types": [
           {
-            "type": "state_mutability",
+            "type": "function_mutability",
             "named": true
           }
         ]
@@ -4573,7 +4573,7 @@
         "required": false,
         "types": [
           {
-            "type": "state_mutability",
+            "type": "function_mutability",
             "named": true
           }
         ]
@@ -4975,7 +4975,7 @@
         "required": false,
         "types": [
           {
-            "type": "state_mutability",
+            "type": "function_mutability",
             "named": true
           }
         ]
@@ -5043,6 +5043,11 @@
     }
   },
   {
+    "type": "function_mutability",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "function_type",
     "named": true,
     "fields": {
@@ -5051,7 +5056,7 @@
         "required": false,
         "types": [
           {
-            "type": "state_mutability",
+            "type": "function_mutability",
             "named": true
           }
         ]
@@ -7180,11 +7185,6 @@
     "fields": {}
   },
   {
-    "type": "mutability",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "named_argument",
     "named": true,
     "fields": {
@@ -8643,7 +8643,7 @@
         "required": false,
         "types": [
           {
-            "type": "state_mutability",
+            "type": "function_mutability",
             "named": true
           }
         ]
@@ -9161,11 +9161,6 @@
         ]
       }
     }
-  },
-  {
-    "type": "state_mutability",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "struct",
@@ -10029,7 +10024,7 @@
         "required": false,
         "types": [
           {
-            "type": "mutability",
+            "type": "variable_mutability",
             "named": true
           }
         ]
@@ -10416,6 +10411,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "variable_mutability",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "version_constraint",

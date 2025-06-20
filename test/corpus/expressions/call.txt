@@ -175,7 +175,7 @@ contract C {
       name: (symbol
         name: (identifier))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type
@@ -185,7 +185,7 @@ contract C {
       name: (symbol
         name: (identifier))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type

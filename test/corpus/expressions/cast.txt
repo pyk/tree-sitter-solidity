@@ -15,7 +15,7 @@ contract C {
     definition: (variable
       type: (primitive_type
         (address_type))
-      mutability: (mutability)
+      mutability: (variable_mutability)
       name: (symbol
         name: (identifier))
       value: (cast
@@ -50,7 +50,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type
@@ -89,7 +89,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type
@@ -132,7 +132,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (custom_type
@@ -167,7 +167,7 @@ contract C {
       name: (symbol
         name: (identifier))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type
@@ -200,7 +200,7 @@ contract C {
       name: (symbol
         name: (identifier))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type

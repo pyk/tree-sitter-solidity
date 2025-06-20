@@ -75,7 +75,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (custom_type
@@ -113,7 +113,7 @@ contract C {
       name: (symbol
         name: (identifier))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       body: (block
         (variable_declaration_statement
           declaration: (variable_declaration
@@ -342,7 +342,7 @@ function f() pure returns (MyUint) {
   definition: (function
     name: (symbol
       name: (identifier))
-    mutability: (state_mutability)
+    mutability: (function_mutability)
     returns: (parameters
       parameter: (parameter
         type: (custom_type

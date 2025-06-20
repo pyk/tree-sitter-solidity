@@ -108,7 +108,7 @@ function calculate() internal pure {}
     name: (symbol
       name: (identifier))
     visibility: (visibility)
-    mutability: (state_mutability)
+    mutability: (function_mutability)
     body: (block)))
 
 ==================
@@ -124,7 +124,7 @@ function readData() external view {}
     name: (symbol
       name: (identifier))
     visibility: (visibility)
-    mutability: (state_mutability)
+    mutability: (function_mutability)
     body: (block)))
 
 ==================
@@ -140,7 +140,7 @@ function deposit() private payable {}
     name: (symbol
       name: (identifier))
     visibility: (visibility)
-    mutability: (state_mutability)
+    mutability: (function_mutability)
     body: (block)))
 
 ==================
@@ -269,7 +269,7 @@ function complexAction() external payable requiresAuth whenNotPaused {}
     name: (symbol
       name: (identifier))
     visibility: (visibility)
-    mutability: (state_mutability)
+    mutability: (function_mutability)
     modifier: (modifier_invocation
       name: (symbol
         name: (identifier)))
@@ -313,7 +313,7 @@ function superComplex() external payable virtual override(Base) onlyAdmin return
     name: (symbol
       name: (identifier))
     visibility: (visibility)
-    mutability: (state_mutability)
+    mutability: (function_mutability)
     virtual: (virtual)
     override: (override_specifier
       from: (symbol
@@ -397,7 +397,7 @@ contract C {
       name: (identifier))
     definition: (receive_function_definition
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       body: (block))))
 
 ==================
@@ -440,7 +440,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       visibility: (visibility)
-      mutability: (state_mutability)
+      mutability: (function_mutability)
       returns: (parameters
         parameter: (parameter
           type: (primitive_type

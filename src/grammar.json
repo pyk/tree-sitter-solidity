@@ -297,19 +297,6 @@
       "type": "STRING",
       "value": "global"
     },
-    "mutability": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "constant"
-        },
-        {
-          "type": "STRING",
-          "value": "immutable"
-        }
-      ]
-    },
     "wildcard": {
       "type": "STRING",
       "value": "*"
@@ -317,6 +304,27 @@
     "transient": {
       "type": "STRING",
       "value": "transient"
+    },
+    "visibility": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "public"
+        },
+        {
+          "type": "STRING",
+          "value": "private"
+        },
+        {
+          "type": "STRING",
+          "value": "internal"
+        },
+        {
+          "type": "STRING",
+          "value": "external"
+        }
+      ]
     },
     "_type": {
       "type": "CHOICE",
@@ -988,7 +996,7 @@
                   "name": "mutability",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "state_mutability"
+                    "name": "function_mutability"
                   }
                 }
               ]
@@ -3132,7 +3140,7 @@
           "name": "mutability",
           "content": {
             "type": "SYMBOL",
-            "name": "mutability"
+            "name": "variable_mutability"
           }
         },
         {
@@ -3150,6 +3158,19 @@
             "type": "SYMBOL",
             "name": "transient"
           }
+        }
+      ]
+    },
+    "variable_mutability": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "constant"
+        },
+        {
+          "type": "STRING",
+          "value": "immutable"
         }
       ]
     },
@@ -4054,7 +4075,7 @@
         }
       ]
     },
-    "state_mutability": {
+    "function_mutability": {
       "type": "CHOICE",
       "members": [
         {
@@ -4078,27 +4099,6 @@
     "virtual": {
       "type": "STRING",
       "value": "virtual"
-    },
-    "visibility": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "public"
-        },
-        {
-          "type": "STRING",
-          "value": "private"
-        },
-        {
-          "type": "STRING",
-          "value": "internal"
-        },
-        {
-          "type": "STRING",
-          "value": "external"
-        }
-      ]
     },
     "function": {
       "type": "SEQ",
@@ -4234,7 +4234,7 @@
             "name": "mutability",
             "content": {
               "type": "SYMBOL",
-              "name": "state_mutability"
+              "name": "function_mutability"
             }
           }
         },
@@ -4554,7 +4554,7 @@
             "name": "mutability",
             "content": {
               "type": "SYMBOL",
-              "name": "state_mutability"
+              "name": "function_mutability"
             }
           }
         },
@@ -4667,7 +4667,7 @@
           "name": "mutability",
           "content": {
             "type": "SYMBOL",
-            "name": "state_mutability"
+            "name": "function_mutability"
           }
         },
         {
