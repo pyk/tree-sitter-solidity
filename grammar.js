@@ -1052,7 +1052,7 @@ module.exports = grammar({
         $.fallback_function_definition,
         $.function,
         $.modifier_definition,
-        $.receive_function_definition,
+        $.receive,
         $.struct,
         $.type,
         $.using,
@@ -1295,28 +1295,22 @@ module.exports = grammar({
       seq(field("name", $.symbol), field("arguments", $.arguments)),
 
     //############################################################//
-    //                           Others                           //
+    //                Receive function definition                 //
     //############################################################//
 
-    // Add a helper rule for receive/fallback attributes
-    _function_like_attribute: ($) =>
-      choice(
-        field("visibility", $._visibility),
-        field("mutability", $._function_mutability),
-        field("modifier", $.function_modifier),
-        "virtual",
-        // TODO: add override_specifier here later
-      ),
-
     // The receive function definition
-    receive_function_definition: ($) =>
+    receive: ($) =>
       seq(
         "receive",
         "(",
         ")",
-        repeat($._function_like_attribute),
+        repeat($._function_attribute),
         choice(field("body", $.block), ";"),
       ),
+
+    //############################################################//
+    //                           Others                           //
+    //############################################################//
 
     // The fallback function definition
     fallback_function_definition: ($) =>
@@ -1325,7 +1319,7 @@ module.exports = grammar({
         "(",
         optional(field("parameters", $.parameters)),
         ")",
-        repeat($._function_like_attribute),
+        repeat($._function_attribute),
         optional(
           seq("returns", "(", optional(field("returns", $.parameters)), ")"),
         ),

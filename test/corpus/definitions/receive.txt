@@ -1,0 +1,169 @@
+==================
+Basic receive function
+==================
+
+contract C {
+    receive() external payable {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (receive
+      visibility: (external)
+      mutability: (payable)
+      body: (block))))
+
+==================
+Receive function with a body
+==================
+
+contract C {
+    event Received(address sender, uint amount);
+    receive() external payable {
+        emit Received(msg.sender, msg.value);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameters
+        parameter: (event_parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (event_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))))
+    definition: (receive
+      visibility: (external)
+      mutability: (payable)
+      body: (block
+        (emit_statement
+          (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments
+              argument: (symbol
+                scope: (symbol
+                  name: (identifier))
+                name: (identifier))
+              argument: (symbol
+                scope: (symbol
+                  name: (identifier))
+                name: (identifier)))))))))
+
+==================
+Receive function with a modifier
+==================
+
+contract C {
+    modifier onlyWhenOpen() { _; }
+    receive() external payable onlyWhenOpen {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier_definition
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (placeholder_statement)))
+    definition: (receive
+      visibility: (external)
+      mutability: (payable)
+      modifier: (function_modifier
+        name: (symbol
+          name: (identifier)))
+      body: (block))))
+
+==================
+Virtual receive function
+==================
+
+contract Base {
+    receive() external payable virtual {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (receive
+      visibility: (external)
+      mutability: (payable)
+      virtual: (virtual)
+      body: (block))))
+
+==================
+Overriding receive function
+==================
+
+contract Base {
+    receive() external payable virtual;
+}
+contract Derived is Base {
+    receive() external payable override {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (receive
+      visibility: (external)
+      mutability: (payable)
+      virtual: (virtual)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    parents: (parent_list
+      parent: (parent
+        name: (symbol
+          name: (identifier))))
+    definition: (receive
+      visibility: (external)
+      mutability: (payable)
+      override: (overrides)
+      body: (block))))
+
+==================
+Unimplemented receive function (in abstract contract)
+==================
+
+abstract contract C {
+    receive() external payable virtual;
+}
+
+---
+
+(source_file
+  definition: (contract
+    abstract: (abstract)
+    name: (symbol
+      name: (identifier))
+    definition: (receive
+      visibility: (external)
+      mutability: (payable)
+      virtual: (virtual))))

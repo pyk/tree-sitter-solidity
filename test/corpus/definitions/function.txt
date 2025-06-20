@@ -395,7 +395,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (receive_function_definition
+    definition: (receive
       visibility: (external)
       mutability: (payable)
       body: (block))))

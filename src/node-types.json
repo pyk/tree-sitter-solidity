@@ -3159,7 +3159,7 @@
             "named": true
           },
           {
-            "type": "receive_function_definition",
+            "type": "receive",
             "named": true
           },
           {
@@ -4601,6 +4601,16 @@
           }
         ]
       },
+      "override": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "overrides",
+            "named": true
+          }
+        ]
+      },
       "parameters": {
         "multiple": false,
         "required": false,
@@ -4617,6 +4627,16 @@
         "types": [
           {
             "type": "parameters",
+            "named": true
+          }
+        ]
+      },
+      "virtual": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "virtual",
             "named": true
           }
         ]
@@ -8698,7 +8718,7 @@
     }
   },
   {
-    "type": "receive_function_definition",
+    "type": "receive",
     "named": true,
     "fields": {
       "body": {
@@ -8735,6 +8755,26 @@
           },
           {
             "type": "view",
+            "named": true
+          }
+        ]
+      },
+      "override": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "overrides",
+            "named": true
+          }
+        ]
+      },
+      "virtual": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "virtual",
             "named": true
           }
         ]
@@ -10571,11 +10611,6 @@
     "fields": {}
   },
   {
-    "type": "virtual",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "while_statement",
     "named": true,
     "fields": {
@@ -11700,7 +11735,7 @@
   },
   {
     "type": "virtual",
-    "named": false
+    "named": true
   },
   {
     "type": "weeks",
