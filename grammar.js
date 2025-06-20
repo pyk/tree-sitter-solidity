@@ -1049,7 +1049,7 @@ module.exports = grammar({
         $.enum,
         $.error,
         $.event,
-        $.fallback_function_definition,
+        $.fallback,
         $.function,
         $.modifier_definition,
         $.receive,
@@ -1309,11 +1309,10 @@ module.exports = grammar({
       ),
 
     //############################################################//
-    //                           Others                           //
+    //                Fallback function definition                //
     //############################################################//
 
-    // The fallback function definition
-    fallback_function_definition: ($) =>
+    fallback: ($) =>
       seq(
         "fallback",
         "(",
@@ -1325,6 +1324,10 @@ module.exports = grammar({
         ),
         choice(field("body", $.block), ";"),
       ),
+
+    //############################################################//
+    //                           Others                           //
+    //############################################################//
 
     //************************************************************//
     //                        Declarations                        //

@@ -414,7 +414,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (fallback_function_definition
+    definition: (fallback
       visibility: (external)
       body: (block))))
 
@@ -431,7 +431,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (fallback_function_definition
+    definition: (fallback
       parameters: (parameters
         parameter: (parameter
           type: (primitive_type

@@ -3504,7 +3504,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "fallback_function_definition"
+          "name": "fallback"
         },
         {
           "type": "SYMBOL",
@@ -4732,7 +4732,7 @@
         }
       ]
     },
-    "fallback_function_definition": {
+    "fallback": {
       "type": "SEQ",
       "members": [
         {

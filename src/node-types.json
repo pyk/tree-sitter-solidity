@@ -3147,7 +3147,7 @@
             "named": true
           },
           {
-            "type": "fallback_function_definition",
+            "type": "fallback",
             "named": true
           },
           {
@@ -4560,7 +4560,7 @@
     }
   },
   {
-    "type": "fallback_function_definition",
+    "type": "fallback",
     "named": true,
     "fields": {
       "body": {

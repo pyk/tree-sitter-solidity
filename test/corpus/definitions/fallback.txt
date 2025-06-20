@@ -1,0 +1,205 @@
+==================
+Basic fallback function (no parameters)
+==================
+
+contract C {
+    fallback() external {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (fallback
+      visibility: (external)
+      body: (block))))
+
+==================
+Payable fallback function
+==================
+
+contract C {
+    fallback() external payable {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (fallback
+      visibility: (external)
+      mutability: (payable)
+      body: (block))))
+
+==================
+Fallback function with parameters and returns
+==================
+
+contract C {
+    fallback(bytes calldata input) external payable returns (bytes memory) {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (fallback
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          location: (calldata)
+          name: (symbol
+            name: (identifier))))
+      visibility: (external)
+      mutability: (payable)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)))
+      body: (block))))
+
+==================
+Fallback function with a body
+==================
+
+contract C {
+    event FallbackCalled(bytes data);
+    fallback() external {
+        emit FallbackCalled(msg.data);
+    }
+}
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameters
+        parameter: (event_parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier)))))
+    definition: (fallback
+      visibility: (external)
+      body: (block
+        (emit_statement
+          (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments
+              argument: (symbol
+                scope: (symbol
+                  name: (identifier))
+                name: (identifier)))))))))
+
+==================
+Fallback with modifier
+==================
+
+contract C {
+    modifier onlyAdmin() { _; }
+    fallback() external payable onlyAdmin {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier_definition
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (placeholder_statement)))
+    definition: (fallback
+      visibility: (external)
+      mutability: (payable)
+      modifier: (function_modifier
+        name: (symbol
+          name: (identifier)))
+      body: (block))))
+
+==================
+Virtual fallback function
+==================
+
+contract Base {
+    fallback() external virtual {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (fallback
+      visibility: (external)
+      virtual: (virtual)
+      body: (block))))
+
+==================
+Overriding fallback function
+==================
+
+contract Base {
+    fallback() external payable virtual;
+}
+contract Derived is Base {
+    fallback() external payable override {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (fallback
+      visibility: (external)
+      mutability: (payable)
+      virtual: (virtual)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    parents: (parent_list
+      parent: (parent
+        name: (symbol
+          name: (identifier))))
+    definition: (fallback
+      visibility: (external)
+      mutability: (payable)
+      override: (overrides)
+      body: (block))))
+
+==================
+Unimplemented fallback function
+==================
+
+abstract contract C {
+    fallback() external payable virtual;
+}
+---
+
+(source_file
+  definition: (contract
+    abstract: (abstract)
+    name: (symbol
+      name: (identifier))
+    definition: (fallback
+      visibility: (external)
+      mutability: (payable)
+      virtual: (virtual))))
