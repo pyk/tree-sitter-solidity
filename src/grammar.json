@@ -3139,8 +3139,17 @@
           "type": "FIELD",
           "name": "mutability",
           "content": {
-            "type": "SYMBOL",
-            "name": "variable_mutability"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "constant"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "immutable"
+              }
+            ]
           }
         },
         {
@@ -3161,18 +3170,13 @@
         }
       ]
     },
-    "variable_mutability": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "constant"
-        },
-        {
-          "type": "STRING",
-          "value": "immutable"
-        }
-      ]
+    "constant": {
+      "type": "STRING",
+      "value": "constant"
+    },
+    "immutable": {
+      "type": "STRING",
+      "value": "immutable"
     },
     "contract": {
       "type": "SEQ",

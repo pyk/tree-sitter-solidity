@@ -10024,7 +10024,11 @@
         "required": false,
         "types": [
           {
-            "type": "variable_mutability",
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "immutable",
             "named": true
           }
         ]
@@ -10411,11 +10415,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "variable_mutability",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "version_constraint",
@@ -10998,7 +10997,7 @@
   },
   {
     "type": "constant",
-    "named": false
+    "named": true
   },
   {
     "type": "constructor",
@@ -11126,7 +11125,7 @@
   },
   {
     "type": "immutable",
-    "named": false
+    "named": true
   },
   {
     "type": "import",

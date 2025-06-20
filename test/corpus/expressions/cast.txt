@@ -15,7 +15,7 @@ contract C {
     definition: (variable
       type: (primitive_type
         (address_type))
-      mutability: (variable_mutability)
+      mutability: (constant)
       name: (symbol
         name: (identifier))
       value: (cast

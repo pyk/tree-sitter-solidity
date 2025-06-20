@@ -261,7 +261,7 @@ contract C {
     definition: (variable
       type: (primitive_type
         (uint_type))
-      mutability: (variable_mutability)
+      mutability: (constant)
       name: (symbol
         name: (identifier))
       value: (literal
@@ -270,7 +270,7 @@ contract C {
       type: (primitive_type
         (uint_type))
       visibility: (visibility)
-      mutability: (variable_mutability)
+      mutability: (immutable)
       name: (symbol
         name: (identifier))
       value: (literal

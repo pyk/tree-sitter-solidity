@@ -973,12 +973,12 @@ module.exports = grammar({
     _variable_attribute: ($) =>
       choice(
         field("visibility", $.visibility),
-        field("mutability", $.variable_mutability),
+        field("mutability", choice($.constant, $.immutable)),
         field("override", $.override_specifier),
         field("transient", $.transient),
       ),
-
-    variable_mutability: ($) => choice("constant", "immutable"),
+    constant: ($) => "constant",
+    immutable: ($) => "immutable",
 
     //############################################################//
     //                    Contract definition                     //

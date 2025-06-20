@@ -268,7 +268,7 @@ contract C {
     definition: (variable
       type: (primitive_type
         (int_type))
-      mutability: (variable_mutability)
+      mutability: (constant)
       name: (symbol
         name: (identifier))
       value: (arithmetic
@@ -280,7 +280,7 @@ contract C {
       type: (primitive_type
         (int_type))
       visibility: (visibility)
-      mutability: (variable_mutability)
+      mutability: (immutable)
       name: (symbol
         name: (identifier))
       value: (arithmetic
