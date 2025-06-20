@@ -1,0 +1,401 @@
+==================
+Empty function body
+==================
+
+contract C {
+    function emptyBody() public {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block))))
+
+==================
+Function body with an expression statement
+==================
+
+contract C {
+    function callAnother() public {
+        anotherFunction();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        (expression_statement
+          (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments)))))))
+
+==================
+Function body with a variable declaration statement
+==================
+
+contract C {
+    function declareVar() public pure {
+        uint256 myVar = 42;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (primitive_type
+              (uint_type))
+            name: (symbol
+              name: (identifier)))
+          value: (literal
+            (number)))))))
+
+==================
+Function body with an if-else statement
+==================
+
+contract C {
+    function check(bool cond) public {
+        if (cond) {
+            // true
+        } else {
+            // false
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        (if_statement
+          condition: (symbol
+            name: (identifier))
+          consequence: (block
+            (comment))
+          alternative: (block
+            (comment)))))))
+
+==================
+Function body with a for loop
+==================
+
+contract C {
+    function loop() public {
+        for (uint i = 0; i < 10; i++) {
+            // body
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        (for_statement
+          initializer: (variable_declaration_statement
+            declaration: (variable_declaration
+              type: (primitive_type
+                (uint_type))
+              name: (symbol
+                name: (identifier)))
+            value: (literal
+              (number)))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          update: (arithmetic
+            (increment
+              (postfix_increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))))
+          body: (block
+            (comment)))))))
+
+==================
+Function body with while and do-while loops
+==================
+
+contract C {
+    function loops(uint x) public {
+        while (x > 0) { x--; }
+        do { x++; } while (x < 10);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        (while_statement
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          body: (block
+            (expression_statement
+              (arithmetic
+                (decrement
+                  (postfix_decrement
+                    argument: (symbol
+                      name: (identifier))
+                    operator: (decrement_op)))))))
+        (do_while_statement
+          body: (block
+            (expression_statement
+              (arithmetic
+                (increment
+                  (postfix_increment
+                    argument: (symbol
+                      name: (identifier))
+                    operator: (increment_op))))))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number))))))))
+
+==================
+Function body with break and continue
+==================
+
+contract C {
+    function loopControl() public {
+        for (;;) {
+            break;
+            continue;
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        (for_statement
+          body: (block
+            (break_statement)
+            (continue_statement)))))))
+
+==================
+Function body with return statements
+==================
+
+contract C {
+    function withReturn() public pure returns (uint) {
+        return 42;
+    }
+    function earlyReturn() public {
+        return;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        (return_statement
+          value: (literal
+            (number)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        (return_statement)))))
+
+==================
+Function body with emit statement
+==================
+
+contract C {
+    event MyEvent(uint);
+    function triggerEvent() public {
+        emit MyEvent(123);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameters
+        parameter: (event_parameter
+          type: (primitive_type
+            (uint_type)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        (emit_statement
+          (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments
+              argument: (literal
+                (number)))))))))
+
+==================
+Function body with revert statement
+==================
+
+contract C {
+    error MyError();
+    function alwaysRevert() public pure {
+        revert MyError();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (error
+      name: (symbol
+        name: (identifier)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        (revert_statement
+          error: (symbol
+            name: (identifier))
+          arguments: (arguments))))))
+
+==================
+Function body with unchecked block
+==================
+
+contract C {
+    function uncheckedMath() public pure {
+        unchecked {
+            uint x = 0;
+            x--;
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        (unchecked
+          body: (block
+            (variable_declaration_statement
+              declaration: (variable_declaration
+                type: (primitive_type
+                  (uint_type))
+                name: (symbol
+                  name: (identifier)))
+              value: (literal
+                (number)))
+            (expression_statement
+              (arithmetic
+                (decrement
+                  (postfix_decrement
+                    argument: (symbol
+                      name: (identifier))
+                    operator: (decrement_op)))))))))))

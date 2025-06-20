@@ -2047,6 +2047,10 @@
           "named": true
         },
         {
+          "type": "unchecked",
+          "named": true
+        },
+        {
           "type": "variable_declaration_statement",
           "named": true
         },
@@ -3539,6 +3543,10 @@
             "named": true
           },
           {
+            "type": "unchecked",
+            "named": true
+          },
+          {
             "type": "variable_declaration_statement",
             "named": true
           },
@@ -4744,6 +4752,10 @@
             "named": true
           },
           {
+            "type": "unchecked",
+            "named": true
+          },
+          {
             "type": "variable_declaration_statement",
             "named": true
           },
@@ -5382,6 +5394,10 @@
             "named": true
           },
           {
+            "type": "unchecked",
+            "named": true
+          },
+          {
             "type": "variable_declaration_statement",
             "named": true
           },
@@ -5551,6 +5567,10 @@
           },
           {
             "type": "revert_statement",
+            "named": true
+          },
+          {
+            "type": "unchecked",
             "named": true
           },
           {
@@ -9997,6 +10017,22 @@
     }
   },
   {
+    "type": "unchecked",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "using",
     "named": true,
     "fields": {},
@@ -10660,6 +10696,10 @@
           },
           {
             "type": "revert_statement",
+            "named": true
+          },
+          {
+            "type": "unchecked",
             "named": true
           },
           {
@@ -11715,6 +11755,10 @@
   },
   {
     "type": "uint96",
+    "named": false
+  },
+  {
+    "type": "unchecked",
     "named": false
   },
   {

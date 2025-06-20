@@ -1243,11 +1243,6 @@ module.exports = grammar({
     view: ($) => "view",
     payable: ($) => "payable",
 
-    /**
-     * A block of statements enclosed in curly braces.
-     */
-    block: ($) => seq("{", repeat($._statement), "}"),
-
     function_modifier: ($) =>
       seq(field("name", $.symbol), optional(field("arguments", $.arguments))),
 
@@ -1267,6 +1262,11 @@ module.exports = grammar({
           choice(field("body", $.block), ";"),
         ),
       ),
+
+    /**
+     * A block of statements enclosed in curly braces.
+     */
+    block: ($) => seq("{", repeat($._statement), "}"),
 
     //############################################################//
     //                        Constructor                         //
@@ -1326,6 +1326,38 @@ module.exports = grammar({
       ),
 
     //############################################################//
+    //                         Statements                         //
+    //############################################################//
+
+    /**
+     * A placeholder for any statement.
+     */
+    _statement: ($) =>
+      choice(
+        $.block,
+        $.unchecked,
+        //
+        $.variable_declaration_statement,
+        $.expression_statement,
+        $.return_statement,
+        $.if_statement,
+        $.for_statement,
+        $.emit_statement,
+        $.while_statement,
+        $.do_while_statement,
+        $.continue_statement,
+        $.placeholder_statement,
+        $.break_statement,
+        $.revert_statement,
+      ),
+
+    //############################################################//
+    //                         Unchecked                          //
+    //############################################################//
+
+    unchecked: ($) => seq("unchecked", field("body", $.block)),
+
+    //############################################################//
     //                           Others                           //
     //############################################################//
 
@@ -1351,30 +1383,6 @@ module.exports = grammar({
     variable_declaration_tuple: ($) =>
       // Give this rule a higher precedence than tuple_expression to resolve ambiguity.
       prec(1, seq("(", commaSep(optional($.variable_declaration)), ")")),
-
-    //************************************************************//
-    //                         Statements                         //
-    //************************************************************//
-
-    /**
-     * A placeholder for any statement.
-     */
-    _statement: ($) =>
-      choice(
-        $.block,
-        $.variable_declaration_statement,
-        $.expression_statement,
-        $.return_statement,
-        $.if_statement,
-        $.for_statement,
-        $.emit_statement,
-        $.while_statement,
-        $.do_while_statement,
-        $.continue_statement,
-        $.placeholder_statement,
-        $.break_statement,
-        $.revert_statement,
-      ),
 
     /**
      * An expression statement, which is an expression followed by a semicolon.
@@ -1513,33 +1521,6 @@ module.exports = grammar({
           ";",
         ),
       ),
-
-    //************************************************************//
-    //                      Expression Rules                      //
-    //************************************************************//
-
-    // _expression
-    // ├── primary_expression
-    // │   ├── literal
-    // │   │   ├── number
-    // │   │   ├── string
-    // │   │   ├── boolean_literal
-    // │   │   └── hex_literal
-    // │   └── identifier
-    // ├── add
-    // │   ├── left: _expression
-    // │   ├── operator: add_op
-    // │   └── right: _expression
-    // ├── mul
-    // │   ├── left: _expression
-    // │   ├── operator: mul_op
-    // │   └── right: _expression
-    // ├── assignment_expression
-    // │   ├── left: _expression
-    // │   ├── operator: assignment_operator
-    // │   └── right: _expression
-    // └── tuple_expression
-    //     └── _expression (repeated)
 
     /**
      * A unary expression, handling both prefix and suffix operators.
