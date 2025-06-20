@@ -1,0 +1,357 @@
+==================
+User-defined value type declaration
+==================
+
+type MyUint is uint256;
+
+---
+
+(source_file
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (uint_type))))
+
+==================
+UDVT as a state variable
+==================
+
+type MyAddress is address;
+
+contract C {
+    MyAddress owner;
+}
+
+---
+
+(source_file
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (address_type)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (variable
+      type: (custom_type
+        symbol: (symbol
+          name: (identifier)))
+      name: (symbol
+        name: (identifier)))))
+
+==================
+UDVT as a function parameter and return type
+==================
+
+type Id is uint;
+
+contract C {
+    function processId(Id _id) public pure returns (Id) {
+        return _id;
+    }
+}
+
+---
+
+(source_file
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (uint_type)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameter_list
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameter_list
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))))
+      body: (block
+        (return_statement
+          value: (symbol
+            name: (identifier)))))))
+
+==================
+UDVT as a local variable
+==================
+
+type MyFlag is bool;
+
+contract C {
+    function f() public pure {
+        MyFlag a = MyFlag.wrap(true);
+    }
+}
+
+---
+
+(source_file
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (bool_type)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block
+        (variable_declaration_statement
+          declaration: (variable_declaration
+            type: (custom_type
+              symbol: (symbol
+                name: (identifier)))
+            name: (symbol
+              name: (identifier)))
+          value: (call
+            function: (symbol
+              scope: (symbol
+                name: (identifier))
+              name: (identifier))
+            arguments: (argument_list
+              argument: (literal
+                (boolean)))))))))
+
+==================
+UDVT as a struct member
+==================
+
+type Timestamp is uint64;
+
+struct Event {
+    Timestamp time;
+}
+
+---
+
+(source_file
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (uint_type)))
+  definition: (struct
+    name: (symbol
+      name: (identifier))
+    member: (struct_member
+      type: (custom_type
+        symbol: (symbol
+          name: (identifier)))
+      name: (symbol
+        name: (identifier)))))
+
+==================
+UDVT as a mapping key and value
+==================
+
+type UserId is uint;
+type Balance is uint;
+
+contract Ledger {
+    mapping(UserId => Balance) public balances;
+}
+
+---
+
+(source_file
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (uint_type)))
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (uint_type)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (variable
+      type: (mapping_type
+        key: (custom_type
+          symbol: (symbol
+            name: (identifier)))
+        value: (custom_type
+          symbol: (symbol
+            name: (identifier))))
+      visibility: (visibility)
+      name: (symbol
+        name: (identifier)))))
+
+==================
+UDVT as an array base type
+==================
+
+type Price is ufixed128x18;
+
+contract Oracle {
+    Price[] public priceHistory;
+}
+
+---
+
+(source_file
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (ufixed_type)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (variable
+      type: (array_type
+        base: (custom_type
+          symbol: (symbol
+            name: (identifier))))
+      visibility: (visibility)
+      name: (symbol
+        name: (identifier)))))
+
+==================
+UDVT in a 'using for' directive
+==================
+
+library SafeMath {}
+type SafeUint is uint256;
+
+using SafeMath for SafeUint;
+
+---
+
+(source_file
+  definition: (library
+    name: (symbol
+      name: (identifier)))
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (uint_type)))
+  directive: (using
+    (using_library
+      library: (symbol
+        name: (identifier))
+      target: (custom_type
+        symbol: (symbol
+          name: (identifier))))))
+
+==================
+UDVT in an event parameter
+==================
+
+type ItemId is uint;
+
+event ItemPurchased(ItemId indexed id, address buyer);
+
+---
+
+(source_file
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (uint_type)))
+  definition: (event
+    name: (symbol
+      name: (identifier))
+    parameters: (event_parameter_list
+      parameter: (event_parameter
+        type: (custom_type
+          symbol: (symbol
+            name: (identifier)))
+        indexed: (indexed)
+        name: (symbol
+          name: (identifier)))
+      parameter: (event_parameter
+        type: (primitive_type
+          (address_type))
+        name: (symbol
+          name: (identifier))))))
+
+==================
+UDVT in an error parameter
+==================
+
+type ErrorCode is uint8;
+
+error CustomError(ErrorCode code, string message);
+
+---
+
+(source_file
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (uint_type)))
+  definition: (error
+    name: (symbol
+      name: (identifier))
+    parameters: (error_parameter_list
+      parameter: (error_parameter
+        type: (custom_type
+          symbol: (symbol
+            name: (identifier)))
+        name: (symbol
+          name: (identifier)))
+      parameter: (error_parameter
+        type: (primitive_type
+          (string_type))
+        name: (symbol
+          name: (identifier))))))
+
+==================
+UDVT in a type cast expression
+==================
+
+type MyUint is uint;
+
+function f() pure returns (MyUint) {
+    return MyUint(42);
+}
+
+---
+
+(source_file
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
+    underlying: (primitive_type
+      (uint_type)))
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    mutability: (state_mutability)
+    returns: (parameter_list
+      parameter: (parameter
+        type: (custom_type
+          symbol: (symbol
+            name: (identifier)))))
+    body: (block
+      (return_statement
+        value: (call
+          function: (symbol
+            name: (identifier))
+          arguments: (argument_list
+            argument: (literal
+              (number))))))))
