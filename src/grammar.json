@@ -3512,7 +3512,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "modifier_definition"
+          "name": "modifier"
         },
         {
           "type": "SYMBOL",
@@ -3761,6 +3761,10 @@
         {
           "type": "SYMBOL",
           "name": "function"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modifier"
         },
         {
           "type": "SYMBOL",
@@ -4487,7 +4491,7 @@
         }
       ]
     },
-    "modifier_definition": {
+    "modifier": {
       "type": "PREC",
       "value": 1,
       "content": {

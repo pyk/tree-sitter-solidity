@@ -119,7 +119,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (modifier_definition
+    definition: (modifier
       name: (symbol
         name: (identifier))
       body: (block

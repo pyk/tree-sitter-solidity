@@ -1051,7 +1051,7 @@ module.exports = grammar({
         $.event,
         $.fallback,
         $.function,
-        $.modifier_definition,
+        $.modifier,
         $.receive,
         $.struct,
         $.type,
@@ -1103,6 +1103,7 @@ module.exports = grammar({
         $.error,
         $.event,
         $.function,
+        $.modifier,
         $.struct,
         $.type,
         $.using,
@@ -1249,7 +1250,11 @@ module.exports = grammar({
     _modifier_attribute: ($) =>
       choice(field("virtual", $.virtual), field("override", $.overrides)),
 
-    modifier_definition: ($) =>
+    //############################################################//
+    //                          Modifier                          //
+    //############################################################//
+
+    modifier: ($) =>
       prec(
         1,
         seq(

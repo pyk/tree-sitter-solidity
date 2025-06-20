@@ -1,0 +1,356 @@
+==================
+Basic modifier (unimplemented)
+==================
+
+contract C {
+    modifier simple();
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier)))))
+
+==================
+Modifier with empty body
+==================
+
+contract C {
+    modifier emptyBody() {}
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      body: (block))))
+
+==================
+Modifier with placeholder statement
+==================
+
+contract C {
+    modifier withPlaceholder() {
+        _;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (placeholder_statement)))))
+
+==================
+Modifier with parameters
+==================
+
+contract C {
+    modifier costs(uint amount) {
+        _;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      body: (block
+        (placeholder_statement)))))
+
+==================
+Modifier with multiple parameters
+==================
+
+contract C {
+    modifier check(address user, bool approved) {
+        _;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))))
+      body: (block
+        (placeholder_statement)))))
+
+==================
+Virtual modifier (unimplemented)
+==================
+
+contract C {
+    modifier onlyAdmin() virtual;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      virtual: (virtual))))
+
+==================
+Virtual modifier with body
+==================
+
+contract C {
+    modifier onlyAdmin() virtual {
+        _;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      virtual: (virtual)
+      body: (block
+        (placeholder_statement)))))
+
+==================
+Overriding modifier (unimplemented)
+==================
+
+contract Base {
+    modifier baseMod() virtual;
+}
+contract Derived is Base {
+    modifier baseMod() override;
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      virtual: (virtual)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    parents: (parents
+      parent: (parent
+        name: (symbol
+          name: (identifier))))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      override: (overrides))))
+
+==================
+Overriding modifier with body
+==================
+
+contract Base {
+    modifier baseMod() virtual { _; }
+}
+contract Derived is Base {
+    modifier baseMod() override { _; }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      virtual: (virtual)
+      body: (block
+        (placeholder_statement))))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    parents: (parents
+      parent: (parent
+        name: (symbol
+          name: (identifier))))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      override: (overrides)
+      body: (block
+        (placeholder_statement)))))
+
+==================
+Overriding modifier with multiple bases (unimplemented)
+==================
+
+contract Base1 { modifier m() virtual; }
+contract Base2 { modifier m() virtual; }
+contract Derived is Base1, Base2 {
+    modifier m() override(Base1, Base2);
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      virtual: (virtual)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      virtual: (virtual)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    parents: (parents
+      parent: (parent
+        name: (symbol
+          name: (identifier)))
+      parent: (parent
+        name: (symbol
+          name: (identifier))))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      override: (overrides
+        target: (symbol
+          name: (identifier))
+        target: (symbol
+          name: (identifier))))))
+
+==================
+Modifier with parameters, virtual and override
+==================
+
+contract Base { modifier myMod(uint x) virtual; }
+contract C is Base {
+    modifier myMod(uint x) virtual override(Base) {
+        _;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      virtual: (virtual)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    parents: (parents
+      parent: (parent
+        name: (symbol
+          name: (identifier))))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      virtual: (virtual)
+      override: (overrides
+        target: (symbol
+          name: (identifier)))
+      body: (block
+        (placeholder_statement)))))
+
+==================
+Modifier inside a Library
+==================
+
+library ModLib {
+    modifier libMod() { _; }
+    function doWithMod() internal libMod {}
+}
+
+---
+
+(source_file
+  definition: (library
+    name: (symbol
+      name: (identifier))
+    definition: (modifier
+      name: (symbol
+        name: (identifier))
+      body: (block
+        (placeholder_statement)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (internal)
+      modifier: (function_modifier
+        name: (symbol
+          name: (identifier)))
+      body: (block))))

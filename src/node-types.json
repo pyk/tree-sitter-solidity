@@ -3159,7 +3159,7 @@
             "named": true
           },
           {
-            "type": "modifier_definition",
+            "type": "modifier",
             "named": true
           },
           {
@@ -6440,6 +6440,10 @@
             "named": true
           },
           {
+            "type": "modifier",
+            "named": true
+          },
+          {
             "type": "struct",
             "named": true
           },
@@ -6990,7 +6994,7 @@
     "fields": {}
   },
   {
-    "type": "modifier_definition",
+    "type": "modifier",
     "named": true,
     "fields": {
       "body": {
