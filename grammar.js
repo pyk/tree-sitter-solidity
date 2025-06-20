@@ -1343,7 +1343,7 @@ module.exports = grammar({
         $.break_statement,
         $.continue_statement,
         $.do_while_statement,
-        $.emit_statement,
+        $.emit,
         $.expression_statement,
         $.for_statement,
         $.if_statement,
@@ -1355,7 +1355,14 @@ module.exports = grammar({
         $.while_statement,
       ),
 
-    placeholder: ($) => prec(1, seq("_", ";")), // modifier
+    placeholder: ($) => prec(1, seq("_", ";")),
+    emit: ($) =>
+      seq(
+        "emit",
+        field("event", $.symbol),
+        field("arguments", $.arguments),
+        ";",
+      ),
 
     //############################################################//
     //                         Unchecked                          //
@@ -1484,12 +1491,6 @@ module.exports = grammar({
         ")",
         field("body", $._statement),
       ),
-
-    /**
-     * An emit statement.
-     * e.g., `emit MyEvent(arg1, arg2);`
-     */
-    emit_statement: ($) => seq("emit", $.call, ";"),
 
     while_statement: ($) =>
       seq(

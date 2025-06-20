@@ -318,13 +318,12 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        statement: (emit_statement
-          (call
-            function: (symbol
-              name: (identifier))
-            arguments: (arguments
-              argument: (literal
-                (number)))))))))
+        statement: (emit
+          event: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (literal
+              (number))))))))
 
 ==================
 Function body with revert statement

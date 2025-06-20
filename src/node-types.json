@@ -2019,7 +2019,7 @@
             "named": true
           },
           {
-            "type": "emit_statement",
+            "type": "emit",
             "named": true
           },
           {
@@ -3516,7 +3516,7 @@
             "named": true
           },
           {
-            "type": "emit_statement",
+            "type": "emit",
             "named": true
           },
           {
@@ -3674,18 +3674,29 @@
     }
   },
   {
-    "type": "emit_statement",
+    "type": "emit",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "call",
-          "named": true
-        }
-      ]
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      },
+      "event": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -4725,7 +4736,7 @@
             "named": true
           },
           {
-            "type": "emit_statement",
+            "type": "emit",
             "named": true
           },
           {
@@ -5367,7 +5378,7 @@
             "named": true
           },
           {
-            "type": "emit_statement",
+            "type": "emit",
             "named": true
           },
           {
@@ -5543,7 +5554,7 @@
             "named": true
           },
           {
-            "type": "emit_statement",
+            "type": "emit",
             "named": true
           },
           {
@@ -10676,7 +10687,7 @@
             "named": true
           },
           {
-            "type": "emit_statement",
+            "type": "emit",
             "named": true
           },
           {

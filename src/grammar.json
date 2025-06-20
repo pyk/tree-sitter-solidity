@@ -4863,7 +4863,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "emit_statement"
+          "name": "emit"
         },
         {
           "type": "SYMBOL",
@@ -4919,6 +4919,35 @@
           }
         ]
       }
+    },
+    "emit": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "emit"
+        },
+        {
+          "type": "FIELD",
+          "name": "event",
+          "content": {
+            "type": "SYMBOL",
+            "name": "symbol"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "arguments",
+          "content": {
+            "type": "SYMBOL",
+            "name": "arguments"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
     },
     "unchecked": {
       "type": "SEQ",
@@ -5330,23 +5359,6 @@
             "type": "SYMBOL",
             "name": "_statement"
           }
-        }
-      ]
-    },
-    "emit_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "emit"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "call"
-        },
-        {
-          "type": "STRING",
-          "value": ";"
         }
       ]
     },

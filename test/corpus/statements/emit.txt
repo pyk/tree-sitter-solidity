@@ -1,0 +1,345 @@
+==================
+Emit simple event with no arguments
+==================
+
+contract C {
+    event SimpleEvent();
+    function f() public {
+        emit SimpleEvent();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (emit
+          event: (symbol
+            name: (identifier))
+          arguments: (arguments))))))
+
+==================
+Emit event with one argument
+==================
+
+contract C {
+    event ValueSet(uint256 newValue);
+    function set(uint256 val) public {
+        emit ValueSet(val);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameters
+        parameter: (event_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (emit
+          event: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (symbol
+              name: (identifier))))))))
+
+==================
+Emit event with multiple arguments
+==================
+
+contract C {
+    event Transfer(address from, address to, uint256 amount);
+    function transfer(address _to, uint256 _amount) public {
+        emit Transfer(msg.sender, _to, _amount);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameters
+        parameter: (event_parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (event_parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (event_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (emit
+          event: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (symbol
+              scope: (symbol
+                name: (identifier))
+              name: (identifier))
+            argument: (symbol
+              name: (identifier))
+            argument: (symbol
+              name: (identifier))))))))
+
+==================
+Emit event with literal arguments
+==================
+
+contract C {
+    event ConfigChanged(uint256 id, bool enabled);
+    function configure() public {
+        emit ConfigChanged(1, true);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameters
+        parameter: (event_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (event_parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (emit
+          event: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (literal
+              (number))
+            argument: (literal
+              (boolean))))))))
+
+==================
+Emit event with function call as argument
+==================
+
+contract C {
+    event Calculated(uint256 result);
+    function getVal() internal pure returns (uint256) { return 42; }
+    function f() public {
+        emit Calculated(getVal());
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameters
+        parameter: (event_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (internal)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        statement: (return_statement
+          value: (literal
+            (number)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (emit
+          event: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (call
+              function: (symbol
+                name: (identifier))
+              arguments: (arguments))))))))
+
+==================
+Emit event with complex expression as argument
+==================
+
+contract C {
+    event Result(uint256 res);
+    function f(uint a, uint b) public {
+        emit Result(a + b * 2);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameters
+        parameter: (event_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (emit
+          event: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (arithmetic
+              (add
+                left: (symbol
+                  name: (identifier))
+                operator: (add_op)
+                right: (arithmetic
+                  (mul
+                    left: (symbol
+                      name: (identifier))
+                    operator: (mul_op)
+                    right: (literal
+                      (number))))))))))))
+
+==================
+Emit event: event name is a qualified symbol (not standard but should parse)
+==================
+// Note: Emitting an event via a qualified name like MyContract.MyEvent()
+// is not standard Solidity syntax for `emit`. However, if `$.symbol` in your
+// `emit_statement` rule can parse qualified names (e.g., `MyContract.MyEvent`),
+// this test ensures it's handled. If `$.symbol` only parses simple identifiers
+// for event names, this test might need adjustment or is invalid.
+// Assuming $.symbol can parse `MyContract.MyEvent` for this test case.
+
+contract MyContract {
+    event MyEvent();
+}
+contract C {
+    function f() public {
+        emit MyContract.MyEvent();
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier))))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (emit
+          event: (symbol
+            scope: (symbol
+              name: (identifier))
+            name: (identifier))
+          arguments: (arguments))))))

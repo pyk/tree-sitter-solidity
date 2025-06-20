@@ -52,19 +52,18 @@ contract C {
       visibility: (external)
       mutability: (payable)
       body: (block
-        statement: (emit_statement
-          (call
-            function: (symbol
-              name: (identifier))
-            arguments: (arguments
-              argument: (symbol
-                scope: (symbol
-                  name: (identifier))
+        statement: (emit
+          event: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (symbol
+              scope: (symbol
                 name: (identifier))
-              argument: (symbol
-                scope: (symbol
-                  name: (identifier))
-                name: (identifier)))))))))
+              name: (identifier))
+            argument: (symbol
+              scope: (symbol
+                name: (identifier))
+              name: (identifier))))))))
 
 ==================
 Receive function with a modifier

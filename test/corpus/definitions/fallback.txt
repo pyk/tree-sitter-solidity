@@ -94,15 +94,14 @@ contract C {
     definition: (fallback
       visibility: (external)
       body: (block
-        statement: (emit_statement
-          (call
-            function: (symbol
-              name: (identifier))
-            arguments: (arguments
-              argument: (symbol
-                scope: (symbol
-                  name: (identifier))
-                name: (identifier)))))))))
+        statement: (emit
+          event: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (symbol
+              scope: (symbol
+                name: (identifier))
+              name: (identifier))))))))
 
 ==================
 Fallback with modifier
