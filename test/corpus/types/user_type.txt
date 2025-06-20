@@ -10,7 +10,7 @@ type MyUint is uint256;
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (uint_type))))
 
 ==================
@@ -29,7 +29,7 @@ contract C {
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (address_type)))
   definition: (contract
     name: (symbol
@@ -59,7 +59,7 @@ contract C {
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (uint_type)))
   definition: (contract
     name: (symbol
@@ -103,7 +103,7 @@ contract C {
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (bool_type)))
   definition: (contract
     name: (symbol
@@ -146,7 +146,7 @@ struct Event {
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (uint_type)))
   definition: (struct
     name: (symbol
@@ -175,12 +175,12 @@ contract Ledger {
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (uint_type)))
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (uint_type)))
   definition: (contract
     name: (symbol
@@ -213,7 +213,7 @@ contract Oracle {
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (ufixed_type)))
   definition: (contract
     name: (symbol
@@ -245,7 +245,7 @@ using SafeMath for SafeUint;
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (uint_type)))
   directive: (using
     (using_library
@@ -269,7 +269,7 @@ event ItemPurchased(ItemId indexed id, address buyer);
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (uint_type)))
   definition: (event
     name: (symbol
@@ -302,7 +302,7 @@ error CustomError(ErrorCode code, string message);
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (uint_type)))
   definition: (error
     name: (symbol
@@ -336,7 +336,7 @@ function f() pure returns (MyUint) {
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (uint_type)))
   definition: (function
     name: (symbol

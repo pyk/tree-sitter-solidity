@@ -13,7 +13,7 @@
 #define ALIAS_COUNT 0
 #define TOKEN_COUNT 241
 #define EXTERNAL_TOKEN_COUNT 0
-#define FIELD_COUNT 58
+#define FIELD_COUNT 57
 #define MAX_ALIAS_SEQUENCE_LENGTH 11
 #define MAX_RESERVED_WORD_SET_SIZE 0
 #define PRODUCTION_ID_COUNT 178
@@ -3015,13 +3015,12 @@ enum ts_field_identifiers {
   field_target = 49,
   field_transient = 50,
   field_type = 51,
-  field_underlying = 52,
-  field_unit = 53,
-  field_update = 54,
-  field_value = 55,
-  field_version = 56,
-  field_virtual = 57,
-  field_visibility = 58,
+  field_unit = 52,
+  field_update = 53,
+  field_value = 54,
+  field_version = 55,
+  field_virtual = 56,
+  field_visibility = 57,
 };
 
 static const char * const ts_field_names[] = {
@@ -3077,7 +3076,6 @@ static const char * const ts_field_names[] = {
   [field_target] = "target",
   [field_transient] = "transient",
   [field_type] = "type",
-  [field_underlying] = "underlying",
   [field_unit] = "unit",
   [field_update] = "update",
   [field_value] = "value",
@@ -3434,9 +3432,9 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
   [109] =
     {field_modifier, 0},
   [110] =
+    {field_base, 3},
     {field_name, 1},
     {field_name, 1, .inherited = true},
-    {field_underlying, 3},
   [113] =
     {field_alias, 2},
     {field_name, 0},

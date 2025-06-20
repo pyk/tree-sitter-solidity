@@ -9836,22 +9836,22 @@
     "type": "user_type",
     "named": true,
     "fields": {
+      "base": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "primitive_type",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
         "types": [
           {
             "type": "symbol",
-            "named": true
-          }
-        ]
-      },
-      "underlying": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "primitive_type",
             "named": true
           }
         ]

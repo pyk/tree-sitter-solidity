@@ -381,7 +381,7 @@ module.exports = grammar({
         "type",
         field("name", alias($._simple_symbol, $.symbol)),
         "is",
-        field("underlying", $.primitive_type),
+        field("base", $.primitive_type),
         ";",
       ),
 

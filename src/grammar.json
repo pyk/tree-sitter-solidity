@@ -1110,7 +1110,7 @@
         },
         {
           "type": "FIELD",
-          "name": "underlying",
+          "name": "base",
           "content": {
             "type": "SYMBOL",
             "name": "primitive_type"

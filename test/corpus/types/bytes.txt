@@ -356,5 +356,5 @@ type Hash is bytes32;
   definition: (user_type
     name: (symbol
       name: (identifier))
-    underlying: (primitive_type
+    base: (primitive_type
       (bytes_type))))
