@@ -7,7 +7,7 @@ type MyUint is uint256;
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
@@ -26,7 +26,7 @@ contract C {
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
@@ -56,7 +56,7 @@ contract C {
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
@@ -100,7 +100,7 @@ contract C {
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
@@ -143,7 +143,7 @@ struct Event {
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
@@ -172,12 +172,12 @@ contract Ledger {
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
       (uint_type)))
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
@@ -210,7 +210,7 @@ contract Oracle {
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
@@ -242,7 +242,7 @@ using SafeMath for SafeUint;
   definition: (library
     name: (symbol
       name: (identifier)))
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
@@ -266,7 +266,7 @@ event ItemPurchased(ItemId indexed id, address buyer);
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
@@ -299,7 +299,7 @@ error CustomError(ErrorCode code, string message);
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type
@@ -333,7 +333,7 @@ function f() pure returns (MyUint) {
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type

@@ -104,7 +104,7 @@ module.exports = grammar({
         prec(1, $.enum),
         prec(1, $.event),
         prec(1, $.error),
-        prec(1, $.user_type),
+        prec(1, $.type),
         prec(1, $.function),
         //
         prec(1, $.contract),
@@ -374,15 +374,6 @@ module.exports = grammar({
             ),
           ),
         ),
-      ),
-
-    user_type: ($) =>
-      seq(
-        "type",
-        field("name", alias($._simple_symbol, $.symbol)),
-        "is",
-        field("base", $.primitive_type),
-        ";",
       ),
 
     //############################################################//
@@ -1021,7 +1012,7 @@ module.exports = grammar({
         $.modifier_definition,
         $.receive_function_definition,
         $.struct,
-        $.user_type,
+        $.type,
         $.using,
         $.variable,
       ),
@@ -1049,7 +1040,7 @@ module.exports = grammar({
       ),
 
     _interface_level_definitions: ($) =>
-      choice($.enum, $.error, $.event, $.function, $.struct, $.user_type),
+      choice($.enum, $.error, $.event, $.function, $.struct, $.type),
 
     //############################################################//
     //                     Library definition                     //
@@ -1071,7 +1062,7 @@ module.exports = grammar({
         $.event,
         $.function,
         $.struct,
-        $.user_type,
+        $.type,
         $.using,
         $.variable,
       ),
@@ -1161,6 +1152,19 @@ module.exports = grammar({
       seq(
         field("type", $._type),
         optional(field("name", alias($._simple_symbol, $.symbol))),
+      ),
+
+    //############################################################//
+    //                      Type definition                       //
+    //############################################################//
+
+    type: ($) =>
+      seq(
+        "type",
+        field("name", alias($._simple_symbol, $.symbol)),
+        "is",
+        field("base", $.primitive_type),
+        ";",
       ),
 
     //############################################################//

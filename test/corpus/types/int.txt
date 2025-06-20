@@ -354,7 +354,7 @@ type MyInt is int128;
 ---
 
 (source_file
-  definition: (user_type
+  definition: (type
     name: (symbol
       name: (identifier))
     base: (primitive_type

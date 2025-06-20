@@ -3147,7 +3147,7 @@
             "named": true
           },
           {
-            "type": "user_type",
+            "type": "type",
             "named": true
           },
           {
@@ -6247,7 +6247,7 @@
             "named": true
           },
           {
-            "type": "user_type",
+            "type": "type",
             "named": true
           }
         ]
@@ -6303,7 +6303,7 @@
             "named": true
           },
           {
-            "type": "user_type",
+            "type": "type",
             "named": true
           },
           {
@@ -9123,7 +9123,7 @@
             "named": true
           },
           {
-            "type": "user_type",
+            "type": "type",
             "named": true
           },
           {
@@ -9698,6 +9698,32 @@
     }
   },
   {
+    "type": "type",
+    "named": true,
+    "fields": {
+      "base": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "primitive_type",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "uint_type",
     "named": true,
     "fields": {}
@@ -9827,32 +9853,6 @@
           {
             "type": "delete",
             "named": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "user_type",
-    "named": true,
-    "fields": {
-      "base": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "primitive_type",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "symbol",
-            "named": true
           }
         ]
       }

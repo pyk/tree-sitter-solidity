@@ -109,7 +109,7 @@
           "value": 1,
           "content": {
             "type": "SYMBOL",
-            "name": "user_type"
+            "name": "type"
           }
         },
         {
@@ -1083,44 +1083,6 @@
           }
         ]
       }
-    },
-    "user_type": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "type"
-        },
-        {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "ALIAS",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_simple_symbol"
-            },
-            "named": true,
-            "value": "symbol"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "is"
-        },
-        {
-          "type": "FIELD",
-          "name": "base",
-          "content": {
-            "type": "SYMBOL",
-            "name": "primitive_type"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ";"
-        }
-      ]
     },
     "license": {
       "type": "SEQ",
@@ -3351,7 +3313,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "user_type"
+          "name": "type"
         },
         {
           "type": "SYMBOL",
@@ -3525,7 +3487,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "user_type"
+          "name": "type"
         }
       ]
     },
@@ -3595,7 +3557,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "user_type"
+          "name": "type"
         },
         {
           "type": "SYMBOL",
@@ -4014,6 +3976,44 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "type"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "is"
+        },
+        {
+          "type": "FIELD",
+          "name": "base",
+          "content": {
+            "type": "SYMBOL",
+            "name": "primitive_type"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     },
