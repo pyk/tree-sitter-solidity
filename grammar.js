@@ -1297,7 +1297,7 @@ module.exports = grammar({
       ),
 
     parent_constructor: ($) =>
-      seq(field("name", $.symbol), field("arguments", $.arguments)),
+      seq(field("parent", $.symbol), field("arguments", $.arguments)),
 
     //############################################################//
     //                Receive function definition                 //

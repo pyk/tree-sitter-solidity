@@ -4683,7 +4683,7 @@
       "members": [
         {
           "type": "FIELD",
-          "name": "name",
+          "name": "parent",
           "content": {
             "type": "SYMBOL",
             "name": "symbol"
