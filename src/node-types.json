@@ -3147,7 +3147,7 @@
             "named": true
           },
           {
-            "type": "udvt",
+            "type": "user_type",
             "named": true
           },
           {
@@ -6247,7 +6247,7 @@
             "named": true
           },
           {
-            "type": "udvt",
+            "type": "user_type",
             "named": true
           }
         ]
@@ -6300,6 +6300,10 @@
           },
           {
             "type": "struct",
+            "named": true
+          },
+          {
+            "type": "user_type",
             "named": true
           },
           {
@@ -9119,7 +9123,7 @@
             "named": true
           },
           {
-            "type": "udvt",
+            "type": "user_type",
             "named": true
           },
           {
@@ -9694,32 +9698,6 @@
     }
   },
   {
-    "type": "udvt",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "underlying": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "primitive_type",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "uint_type",
     "named": true,
     "fields": {}
@@ -9849,6 +9827,32 @@
           {
             "type": "delete",
             "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "user_type",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      },
+      "underlying": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "primitive_type",
+            "named": true
           }
         ]
       }

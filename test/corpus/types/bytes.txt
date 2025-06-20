@@ -353,7 +353,8 @@ type Hash is bytes32;
 ---
 
 (source_file
-  definition: (udvt
-    name: (identifier)
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
     underlying: (primitive_type
       (bytes_type))))

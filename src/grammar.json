@@ -109,7 +109,7 @@
           "value": 1,
           "content": {
             "type": "SYMBOL",
-            "name": "function"
+            "name": "user_type"
           }
         },
         {
@@ -117,7 +117,7 @@
           "value": 1,
           "content": {
             "type": "SYMBOL",
-            "name": "udvt"
+            "name": "function"
           }
         },
         {
@@ -1084,7 +1084,7 @@
         ]
       }
     },
-    "udvt": {
+    "user_type": {
       "type": "SEQ",
       "members": [
         {
@@ -1095,8 +1095,13 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -3346,7 +3351,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "udvt"
+          "name": "user_type"
         },
         {
           "type": "SYMBOL",
@@ -3520,7 +3525,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "udvt"
+          "name": "user_type"
         }
       ]
     },
@@ -3587,6 +3592,10 @@
         {
           "type": "SYMBOL",
           "name": "struct"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "user_type"
         },
         {
           "type": "SYMBOL",

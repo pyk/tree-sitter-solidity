@@ -293,8 +293,9 @@ type Flag is bool;
 ---
 
 (source_file
-  definition: (udvt
-    name: (identifier)
+  definition: (user_type
+    name: (symbol
+      name: (identifier))
     underlying: (primitive_type
       (bool_type))))
 
