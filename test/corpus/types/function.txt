@@ -91,7 +91,7 @@ contract C {
               (string_type))
             location: (data_location)))
         visibility: (visibility)
-        mutability: (function_mutability)
+        mutability: (view)
         returns: (parameters
           parameter: (parameter
             type: (primitive_type
@@ -121,7 +121,7 @@ contract C {
             type: (primitive_type
               (address_type))))
         visibility: (visibility)
-        mutability: (function_mutability))
+        mutability: (payable))
       name: (symbol
         name: (identifier)))))
 
@@ -142,7 +142,7 @@ contract C {
     definition: (variable
       type: (function_type
         visibility: (visibility)
-        mutability: (function_mutability)
+        mutability: (pure)
         returns: (parameters
           parameter: (parameter
             type: (primitive_type
@@ -232,7 +232,7 @@ contract C {
                 type: (primitive_type
                   (uint_type))))
             visibility: (visibility)
-            mutability: (function_mutability)
+            mutability: (pure)
             returns: (parameters
               parameter: (parameter
                 type: (primitive_type

@@ -186,7 +186,7 @@ contract C {
       name: (symbol
         name: (identifier))
       visibility: (visibility)
-      mutability: (function_mutability)
+      mutability: (view)
       body: (block
         (if_statement
           condition: (comparison
@@ -225,7 +225,7 @@ contract C {
       name: (symbol
         name: (identifier))
       visibility: (visibility)
-      mutability: (function_mutability)
+      mutability: (payable)
       body: (block
         (expression_statement
           (call

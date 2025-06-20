@@ -3050,7 +3050,15 @@
         "required": false,
         "types": [
           {
-            "type": "function_mutability",
+            "type": "payable",
+            "named": true
+          },
+          {
+            "type": "pure",
+            "named": true
+          },
+          {
+            "type": "view",
             "named": true
           }
         ]
@@ -4573,7 +4581,15 @@
         "required": false,
         "types": [
           {
-            "type": "function_mutability",
+            "type": "payable",
+            "named": true
+          },
+          {
+            "type": "pure",
+            "named": true
+          },
+          {
+            "type": "view",
             "named": true
           }
         ]
@@ -4975,7 +4991,15 @@
         "required": false,
         "types": [
           {
-            "type": "function_mutability",
+            "type": "payable",
+            "named": true
+          },
+          {
+            "type": "pure",
+            "named": true
+          },
+          {
+            "type": "view",
             "named": true
           }
         ]
@@ -5043,11 +5067,6 @@
     }
   },
   {
-    "type": "function_mutability",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "function_type",
     "named": true,
     "fields": {
@@ -5056,7 +5075,15 @@
         "required": false,
         "types": [
           {
-            "type": "function_mutability",
+            "type": "payable",
+            "named": true
+          },
+          {
+            "type": "pure",
+            "named": true
+          },
+          {
+            "type": "view",
             "named": true
           }
         ]
@@ -8008,6 +8035,11 @@
     }
   },
   {
+    "type": "payable",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "payable_conversion_expression",
     "named": true,
     "fields": {
@@ -8643,7 +8675,15 @@
         "required": false,
         "types": [
           {
-            "type": "function_mutability",
+            "type": "payable",
+            "named": true
+          },
+          {
+            "type": "pure",
+            "named": true
+          },
+          {
+            "type": "view",
             "named": true
           }
         ]
@@ -11325,10 +11365,6 @@
     "named": false
   },
   {
-    "type": "nonpayable",
-    "named": false
-  },
-  {
     "type": "not_op",
     "named": true
   },
@@ -11362,7 +11398,7 @@
   },
   {
     "type": "pure",
-    "named": false
+    "named": true
   },
   {
     "type": "receive",
@@ -11582,7 +11618,7 @@
   },
   {
     "type": "view",
-    "named": false
+    "named": true
   },
   {
     "type": "virtual",

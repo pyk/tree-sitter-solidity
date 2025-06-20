@@ -996,7 +996,7 @@
                   "name": "mutability",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "function_mutability"
+                    "name": "_function_mutability"
                   }
                 }
               ]
@@ -4079,27 +4079,6 @@
         }
       ]
     },
-    "function_mutability": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "pure"
-        },
-        {
-          "type": "STRING",
-          "value": "view"
-        },
-        {
-          "type": "STRING",
-          "value": "payable"
-        },
-        {
-          "type": "STRING",
-          "value": "nonpayable"
-        }
-      ]
-    },
     "virtual": {
       "type": "STRING",
       "value": "virtual"
@@ -4238,7 +4217,7 @@
             "name": "mutability",
             "content": {
               "type": "SYMBOL",
-              "name": "function_mutability"
+              "name": "_function_mutability"
             }
           }
         },
@@ -4279,6 +4258,35 @@
           }
         }
       ]
+    },
+    "_function_mutability": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "pure"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "view"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "payable"
+        }
+      ]
+    },
+    "pure": {
+      "type": "STRING",
+      "value": "pure"
+    },
+    "view": {
+      "type": "STRING",
+      "value": "view"
+    },
+    "payable": {
+      "type": "STRING",
+      "value": "payable"
     },
     "block": {
       "type": "SEQ",
@@ -4558,7 +4566,7 @@
             "name": "mutability",
             "content": {
               "type": "SYMBOL",
-              "name": "function_mutability"
+              "name": "_function_mutability"
             }
           }
         },
@@ -4671,7 +4679,7 @@
           "name": "mutability",
           "content": {
             "type": "SYMBOL",
-            "name": "function_mutability"
+            "name": "_function_mutability"
           }
         },
         {

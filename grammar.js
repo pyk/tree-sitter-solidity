@@ -359,7 +359,7 @@ module.exports = grammar({
           repeat(
             choice(
               field("visibility", $.visibility),
-              field("mutability", $.function_mutability),
+              field("mutability", $._function_mutability),
             ),
           ),
           optional(
@@ -977,6 +977,7 @@ module.exports = grammar({
         field("override", $.override_specifier),
         field("transient", $.transient),
       ),
+
     constant: ($) => "constant",
     immutable: ($) => "immutable",
 
@@ -1183,7 +1184,6 @@ module.exports = grammar({
     //                    Function definition                     //
     //############################################################//
 
-    function_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
     virtual: ($) => "virtual",
 
     function: ($) =>
@@ -1204,12 +1204,17 @@ module.exports = grammar({
       choice(
         // Give specific keywords higher precedence (2)
         prec(2, field("visibility", $.visibility)),
-        prec(2, field("mutability", $.function_mutability)),
+        prec(2, field("mutability", $._function_mutability)),
         prec(2, field("virtual", $.virtual)),
         prec(2, field("override", $.override_specifier)),
         // Give the generic modifier invocation lower precedence (1)
         prec(1, field("modifier", $.modifier_invocation)),
       ),
+
+    _function_mutability: ($) => choice($.pure, $.view, $.payable),
+    pure: ($) => "pure",
+    view: ($) => "view",
+    payable: ($) => "payable",
 
     /**
      * A block of statements enclosed in curly braces.
@@ -1266,7 +1271,7 @@ module.exports = grammar({
       choice(
         // Give specific keywords higher precedence (2)
         prec(2, field("visibility", $.visibility)),
-        prec(2, field("mutability", $.function_mutability)),
+        prec(2, field("mutability", $._function_mutability)),
         // Give the generic parent constructor invocation lower precedence (1)
         prec(1, field("parent_constructor", $.parent_constructor)),
       ),
@@ -1302,7 +1307,7 @@ module.exports = grammar({
     _function_like_attribute: ($) =>
       choice(
         field("visibility", $.visibility),
-        field("mutability", $.function_mutability),
+        field("mutability", $._function_mutability),
         field("modifier", $.modifier_invocation),
         "virtual",
         // TODO: add override_specifier here later
