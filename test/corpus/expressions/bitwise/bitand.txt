@@ -231,21 +231,20 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (expression_statement
-          (call
-            function: (builtin_function
-              name: (require))
-            arguments: (arguments
-              argument: (equality
-                left: (bitwise
-                  (bitand
-                    left: (symbol
-                      name: (identifier))
-                    operator: (bitand_op)
-                    right: (symbol
-                      name: (identifier))))
-                operator: (equality_op)
-                right: (symbol
-                  name: (identifier)))
-              argument: (literal
-                (string)))))))))
+        statement: (call
+          function: (builtin_function
+            name: (require))
+          arguments: (arguments
+            argument: (equality
+              left: (bitwise
+                (bitand
+                  left: (symbol
+                    name: (identifier))
+                  operator: (bitand_op)
+                  right: (symbol
+                    name: (identifier))))
+              operator: (equality_op)
+              right: (symbol
+                name: (identifier)))
+            argument: (literal
+              (string))))))))

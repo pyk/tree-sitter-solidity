@@ -4867,7 +4867,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "expression_statement"
+          "name": "_expression_statement"
         },
         {
           "type": "SYMBOL",
@@ -4942,6 +4942,19 @@
             "type": "SYMBOL",
             "name": "arguments"
           }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "_expression_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
         },
         {
           "type": "STRING",
@@ -5073,19 +5086,6 @@
           }
         ]
       }
-    },
-    "expression_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_expression"
-        },
-        {
-          "type": "STRING",
-          "value": ";"
-        }
-      ]
     },
     "variable_declaration_statement": {
       "type": "SEQ",
@@ -5303,7 +5303,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "expression_statement"
+                "name": "_expression_statement"
               },
               {
                 "type": "STRING",

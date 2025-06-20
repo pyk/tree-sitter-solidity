@@ -278,13 +278,12 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (expression_statement
-          (call
-            function: (symbol
-              name: (identifier))
-            arguments: (arguments
-              argument: (bitwise
-                (bitnot
-                  operator: (bitnot_op)
-                  argument: (symbol
-                    name: (identifier)))))))))))
+        statement: (call
+          function: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (bitwise
+              (bitnot
+                operator: (bitnot_op)
+                argument: (symbol
+                  name: (identifier))))))))))

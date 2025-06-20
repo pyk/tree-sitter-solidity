@@ -2003,11 +2003,51 @@
         "required": false,
         "types": [
           {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
           {
             "type": "break_statement",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -2023,7 +2063,11 @@
             "named": true
           },
           {
-            "type": "expression_statement",
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
             "named": true
           },
           {
@@ -2031,7 +2075,51 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
             "named": true
           },
           {
@@ -2044,6 +2132,26 @@
           },
           {
             "type": "revert_statement",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {
@@ -3496,15 +3604,55 @@
     "named": true,
     "fields": {
       "body": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
           {
             "type": "block",
             "named": true
           },
           {
             "type": "break_statement",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -3520,7 +3668,11 @@
             "named": true
           },
           {
-            "type": "expression_statement",
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
             "named": true
           },
           {
@@ -3528,7 +3680,51 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
             "named": true
           },
           {
@@ -3541,6 +3737,26 @@
           },
           {
             "type": "revert_statement",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {
@@ -4461,125 +4677,6 @@
     }
   },
   {
-    "type": "expression_statement",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "and",
-          "named": true
-        },
-        {
-          "type": "arithmetic",
-          "named": true
-        },
-        {
-          "type": "assignment_expression",
-          "named": true
-        },
-        {
-          "type": "bitwise",
-          "named": true
-        },
-        {
-          "type": "builtin_function",
-          "named": true
-        },
-        {
-          "type": "call",
-          "named": true
-        },
-        {
-          "type": "cast",
-          "named": true
-        },
-        {
-          "type": "comparison",
-          "named": true
-        },
-        {
-          "type": "conditional_expression",
-          "named": true
-        },
-        {
-          "type": "equality",
-          "named": true
-        },
-        {
-          "type": "ether_literal",
-          "named": true
-        },
-        {
-          "type": "group",
-          "named": true
-        },
-        {
-          "type": "index_access_expression",
-          "named": true
-        },
-        {
-          "type": "index_range_access_expression",
-          "named": true
-        },
-        {
-          "type": "inline_array_expression",
-          "named": true
-        },
-        {
-          "type": "literal",
-          "named": true
-        },
-        {
-          "type": "member_access_expression",
-          "named": true
-        },
-        {
-          "type": "meta_type_expression",
-          "named": true
-        },
-        {
-          "type": "new_expression",
-          "named": true
-        },
-        {
-          "type": "not",
-          "named": true
-        },
-        {
-          "type": "or",
-          "named": true
-        },
-        {
-          "type": "payable_conversion_expression",
-          "named": true
-        },
-        {
-          "type": "shift",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "time_literal",
-          "named": true
-        },
-        {
-          "type": "tuple_expression",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "fallback",
     "named": true,
     "fields": {
@@ -4716,15 +4813,55 @@
     "named": true,
     "fields": {
       "body": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
           {
             "type": "block",
             "named": true
           },
           {
             "type": "break_statement",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -4740,7 +4877,11 @@
             "named": true
           },
           {
-            "type": "expression_statement",
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
             "named": true
           },
           {
@@ -4748,7 +4889,51 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
             "named": true
           },
           {
@@ -4761,6 +4946,26 @@
           },
           {
             "type": "revert_statement",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {
@@ -4892,7 +5097,7 @@
         ]
       },
       "initializer": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
@@ -4900,7 +5105,111 @@
             "named": false
           },
           {
-            "type": "expression_statement",
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {
@@ -5358,15 +5667,55 @@
     "named": true,
     "fields": {
       "alternative": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
           {
             "type": "block",
             "named": true
           },
           {
             "type": "break_statement",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -5382,7 +5731,11 @@
             "named": true
           },
           {
-            "type": "expression_statement",
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
             "named": true
           },
           {
@@ -5390,7 +5743,51 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
             "named": true
           },
           {
@@ -5403,6 +5800,26 @@
           },
           {
             "type": "revert_statement",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {
@@ -5534,15 +5951,55 @@
         ]
       },
       "consequence": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
           {
             "type": "block",
             "named": true
           },
           {
             "type": "break_statement",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -5558,7 +6015,11 @@
             "named": true
           },
           {
-            "type": "expression_statement",
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
             "named": true
           },
           {
@@ -5566,7 +6027,51 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
             "named": true
           },
           {
@@ -5579,6 +6084,26 @@
           },
           {
             "type": "revert_statement",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {
@@ -10667,15 +11192,55 @@
     "named": true,
     "fields": {
       "body": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
           {
             "type": "block",
             "named": true
           },
           {
             "type": "break_statement",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
             "named": true
           },
           {
@@ -10691,7 +11256,11 @@
             "named": true
           },
           {
-            "type": "expression_statement",
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
             "named": true
           },
           {
@@ -10699,7 +11268,51 @@
             "named": true
           },
           {
+            "type": "group",
+            "named": true
+          },
+          {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
             "named": true
           },
           {
@@ -10712,6 +11325,26 @@
           },
           {
             "type": "revert_statement",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {

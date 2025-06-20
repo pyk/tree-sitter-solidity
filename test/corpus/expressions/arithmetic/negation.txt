@@ -329,19 +329,18 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (expression_statement
-          (call
-            function: (builtin_function
-              name: (require))
-            arguments: (arguments
-              argument: (comparison
-                left: (arithmetic
-                  (negation
-                    operator: (negation_op)
-                    argument: (symbol
-                      name: (identifier))))
-                operator: (comparison_op)
-                right: (literal
-                  (number)))
-              argument: (literal
-                (string)))))))))
+        statement: (call
+          function: (builtin_function
+            name: (require))
+          arguments: (arguments
+            argument: (comparison
+              left: (arithmetic
+                (negation
+                  operator: (negation_op)
+                  argument: (symbol
+                    name: (identifier))))
+              operator: (comparison_op)
+              right: (literal
+                (number)))
+            argument: (literal
+              (string))))))))

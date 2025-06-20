@@ -1344,7 +1344,7 @@ module.exports = grammar({
         $.continue_statement,
         $.do_while_statement,
         $.emit,
-        $.expression_statement,
+        $._expression_statement,
         $.for_statement,
         $.if_statement,
         $.placeholder,
@@ -1363,6 +1363,7 @@ module.exports = grammar({
         field("arguments", $.arguments),
         ";",
       ),
+    _expression_statement: ($) => seq($._expression, ";"),
 
     //############################################################//
     //                         Unchecked                          //
@@ -1396,12 +1397,6 @@ module.exports = grammar({
     variable_declaration_tuple: ($) =>
       // Give this rule a higher precedence than tuple_expression to resolve ambiguity.
       prec(1, seq("(", commaSep(optional($.variable_declaration)), ")")),
-
-    /**
-     * An expression statement, which is an expression followed by a semicolon.
-     * e.g., `x = 1;` or `foo();`
-     */
-    expression_statement: ($) => seq($._expression, ";"),
 
     /**
      * A local variable declaration statement.
@@ -1478,7 +1473,11 @@ module.exports = grammar({
         // and consumes the first semicolon.
         field(
           "initializer",
-          choice($.variable_declaration_statement, $.expression_statement, ";"),
+          choice(
+            $.variable_declaration_statement,
+            $._expression_statement,
+            ";",
+          ),
         ),
 
         // The condition is an optional expression, followed by a mandatory semicolon.

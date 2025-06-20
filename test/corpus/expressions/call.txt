@@ -18,15 +18,14 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        statement: (expression_statement
-          (call
-            function: (symbol
+        statement: (call
+          function: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (symbol
               name: (identifier))
-            arguments: (arguments
-              argument: (symbol
-                name: (identifier))
-              argument: (symbol
-                name: (identifier)))))))))
+            argument: (symbol
+              name: (identifier))))))))
 
 ==================
 Call with no arguments
@@ -48,11 +47,10 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        statement: (expression_statement
-          (call
-            function: (symbol
-              name: (identifier))
-            arguments: (arguments)))))))
+        statement: (call
+          function: (symbol
+            name: (identifier))
+          arguments: (arguments))))))
 
 ==================
 Call as part of a member access
@@ -74,13 +72,12 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        statement: (expression_statement
-          (call
-            function: (symbol
-              scope: (symbol
-                name: (identifier))
+        statement: (call
+          function: (symbol
+            scope: (symbol
               name: (identifier))
-            arguments: (arguments)))))))
+            name: (identifier))
+          arguments: (arguments))))))
 
 ==================
 Call with value and gas options
@@ -102,25 +99,24 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        statement: (expression_statement
-          (call
-            function: (symbol
-              scope: (symbol
-                name: (identifier))
+        statement: (call
+          function: (symbol
+            scope: (symbol
               name: (identifier))
-            options: (call_options_block
-              (named_argument
-                name: (symbol
-                  name: (identifier))
-                value: (ether_literal
-                  value: (number)
-                  unit: (ether)))
-              (named_argument
-                name: (symbol
-                  name: (identifier))
-                value: (literal
-                  (number))))
-            arguments: (arguments)))))))
+            name: (identifier))
+          options: (call_options_block
+            (named_argument
+              name: (symbol
+                name: (identifier))
+              value: (ether_literal
+                value: (number)
+                unit: (ether)))
+            (named_argument
+              name: (symbol
+                name: (identifier))
+              value: (literal
+                (number))))
+          arguments: (arguments))))))
 
 ==================
 Nested function calls
@@ -142,17 +138,16 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        statement: (expression_statement
-          (call
-            function: (symbol
-              name: (identifier))
-            arguments: (arguments
-              argument: (call
-                function: (symbol
-                  name: (identifier))
-                arguments: (arguments
-                  argument: (symbol
-                    name: (identifier)))))))))))
+        statement: (call
+          function: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (call
+              function: (symbol
+                name: (identifier))
+              arguments: (arguments
+                argument: (symbol
+                  name: (identifier))))))))))
 
 ==================
 Call as return value
@@ -250,19 +245,18 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        statement: (expression_statement
-          (call
-            function: (builtin_function
-              name: (require))
-            arguments: (arguments
-              argument: (comparison
-                left: (symbol
-                  name: (identifier))
-                operator: (comparison_op)
-                right: (symbol
-                  name: (identifier)))
-              argument: (literal
-                (string)))))))))
+        statement: (call
+          function: (builtin_function
+            name: (require))
+          arguments: (arguments
+            argument: (comparison
+              left: (symbol
+                name: (identifier))
+              operator: (comparison_op)
+              right: (symbol
+                name: (identifier)))
+            argument: (literal
+              (string))))))))
 
 ==================
 Built-in function call: assert
@@ -284,17 +278,16 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        statement: (expression_statement
-          (call
-            function: (builtin_function
-              name: (assert))
-            arguments: (arguments
-              argument: (equality
-                left: (symbol
-                  name: (identifier))
-                operator: (equality_op)
-                right: (literal
-                  (number))))))))))
+        statement: (call
+          function: (builtin_function
+            name: (assert))
+          arguments: (arguments
+            argument: (equality
+              left: (symbol
+                name: (identifier))
+              operator: (equality_op)
+              right: (literal
+                (number)))))))))
 
 ==================
 Built-in function call: revert with a custom error
@@ -368,17 +361,16 @@ contract C {
           name: (symbol
             name: (identifier))))
       body: (block
-        statement: (expression_statement
-          (call
-            function: (member_access_expression
-              object: (call
-                function: (symbol
-                  name: (identifier))
-                arguments: (arguments
-                  argument: (symbol
-                    name: (identifier))))
-              member: (identifier))
-            arguments: (arguments)))))))
+        statement: (call
+          function: (member_access_expression
+            object: (call
+              function: (symbol
+                name: (identifier))
+              arguments: (arguments
+                argument: (symbol
+                  name: (identifier))))
+            member: (identifier))
+          arguments: (arguments))))))
 
 ==================
 New expression call (contract creation)

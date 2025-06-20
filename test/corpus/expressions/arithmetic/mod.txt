@@ -264,10 +264,9 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        statement: (expression_statement
-          (assignment_expression
-            left: (symbol
-              name: (identifier))
-            operator: (compound_assignment_operator)
-            right: (literal
-              (number))))))))
+        statement: (assignment_expression
+          left: (symbol
+            name: (identifier))
+          operator: (compound_assignment_operator)
+          right: (literal
+            (number)))))))

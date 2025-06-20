@@ -39,11 +39,10 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        statement: (expression_statement
-          (call
-            function: (symbol
-              name: (identifier))
-            arguments: (arguments)))))))
+        statement: (call
+          function: (symbol
+            name: (identifier))
+          arguments: (arguments))))))
 
 ==================
 Function body with a variable declaration statement
@@ -198,22 +197,20 @@ contract C {
             right: (literal
               (number)))
           body: (block
-            statement: (expression_statement
-              (arithmetic
-                (decrement
-                  (postfix_decrement
-                    argument: (symbol
-                      name: (identifier))
-                    operator: (decrement_op)))))))
+            statement: (arithmetic
+              (decrement
+                (postfix_decrement
+                  argument: (symbol
+                    name: (identifier))
+                  operator: (decrement_op))))))
         statement: (do_while_statement
           body: (block
-            statement: (expression_statement
-              (arithmetic
-                (increment
-                  (postfix_increment
-                    argument: (symbol
-                      name: (identifier))
-                    operator: (increment_op))))))
+            statement: (arithmetic
+              (increment
+                (postfix_increment
+                  argument: (symbol
+                    name: (identifier))
+                  operator: (increment_op)))))
           condition: (comparison
             left: (symbol
               name: (identifier))
@@ -391,10 +388,9 @@ contract C {
                   name: (identifier)))
               value: (literal
                 (number)))
-            statement: (expression_statement
-              (arithmetic
-                (decrement
-                  (postfix_decrement
-                    argument: (symbol
-                      name: (identifier))
-                    operator: (decrement_op)))))))))))
+            statement: (arithmetic
+              (decrement
+                (postfix_decrement
+                  argument: (symbol
+                    name: (identifier))
+                  operator: (decrement_op))))))))))

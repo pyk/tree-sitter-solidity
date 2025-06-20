@@ -227,22 +227,21 @@ contract C {
       visibility: (public)
       mutability: (payable)
       body: (block
-        statement: (expression_statement
-          (call
-            function: (builtin_function
-              name: (require))
-            arguments: (arguments
-              argument: (comparison
-                left: (symbol
-                  scope: (symbol
-                    name: (identifier))
+        statement: (call
+          function: (builtin_function
+            name: (require))
+          arguments: (arguments
+            argument: (comparison
+              left: (symbol
+                scope: (symbol
                   name: (identifier))
-                operator: (comparison_op)
-                right: (ether_literal
-                  value: (number)
-                  unit: (ether)))
-              argument: (literal
-                (string)))))))))
+                name: (identifier))
+              operator: (comparison_op)
+              right: (ether_literal
+                value: (number)
+                unit: (ether)))
+            argument: (literal
+              (string))))))))
 
 ==================
 Units in a function call argument
@@ -276,11 +275,10 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        statement: (expression_statement
-          (call
-            function: (symbol
-              name: (identifier))
-            arguments: (arguments
-              argument: (time_literal
-                value: (number)
-                unit: (minutes)))))))))
+        statement: (call
+          function: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (time_literal
+              value: (number)
+              unit: (minutes))))))))

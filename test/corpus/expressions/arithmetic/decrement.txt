@@ -25,13 +25,12 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        statement: (expression_statement
-          (arithmetic
-            (decrement
-              (prefix_decrement
-                operator: (decrement_op)
-                argument: (symbol
-                  name: (identifier))))))))))
+        statement: (arithmetic
+          (decrement
+            (prefix_decrement
+              operator: (decrement_op)
+              argument: (symbol
+                name: (identifier)))))))))
 
 ==================
 Postfix decrement as a statement
@@ -60,13 +59,12 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        statement: (expression_statement
-          (arithmetic
-            (decrement
-              (postfix_decrement
-                argument: (symbol
-                  name: (identifier))
-                operator: (decrement_op)))))))))
+        statement: (arithmetic
+          (decrement
+            (postfix_decrement
+              argument: (symbol
+                name: (identifier))
+              operator: (decrement_op))))))))
 
 ==================
 Prefix decrement in an assignment
@@ -103,17 +101,16 @@ contract C {
           name: (symbol
             name: (identifier))))
       body: (block
-        statement: (expression_statement
-          (assignment_expression
-            left: (symbol
-              name: (identifier))
-            operator: (simple_assignment_operator)
-            right: (arithmetic
-              (decrement
-                (prefix_decrement
-                  operator: (decrement_op)
-                  argument: (symbol
-                    name: (identifier)))))))))))
+        statement: (assignment_expression
+          left: (symbol
+            name: (identifier))
+          operator: (simple_assignment_operator)
+          right: (arithmetic
+            (decrement
+              (prefix_decrement
+                operator: (decrement_op)
+                argument: (symbol
+                  name: (identifier))))))))))
 
 ==================
 Postfix decrement in an assignment
@@ -150,17 +147,16 @@ contract C {
           name: (symbol
             name: (identifier))))
       body: (block
-        statement: (expression_statement
-          (assignment_expression
-            left: (symbol
-              name: (identifier))
-            operator: (simple_assignment_operator)
-            right: (arithmetic
-              (decrement
-                (postfix_decrement
-                  argument: (symbol
-                    name: (identifier))
-                  operator: (decrement_op))))))))))
+        statement: (assignment_expression
+          left: (symbol
+            name: (identifier))
+          operator: (simple_assignment_operator)
+          right: (arithmetic
+            (decrement
+              (postfix_decrement
+                argument: (symbol
+                  name: (identifier))
+                operator: (decrement_op)))))))))
 
 ==================
 Postfix decrement of an array element
@@ -191,16 +187,15 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        statement: (expression_statement
-          (arithmetic
-            (decrement
-              (postfix_decrement
-                argument: (index_access_expression
-                  base: (symbol
-                    name: (identifier))
-                  index: (literal
-                    (number)))
-                operator: (decrement_op)))))))))
+        statement: (arithmetic
+          (decrement
+            (postfix_decrement
+              argument: (index_access_expression
+                base: (symbol
+                  name: (identifier))
+                index: (literal
+                  (number)))
+              operator: (decrement_op))))))))
 
 ==================
 Prefix decrement precedence vs multiplication
@@ -294,15 +289,14 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        statement: (expression_statement
-          (arithmetic
-            (decrement
-              (postfix_decrement
-                argument: (symbol
-                  scope: (symbol
-                    name: (identifier))
+        statement: (arithmetic
+          (decrement
+            (postfix_decrement
+              argument: (symbol
+                scope: (symbol
                   name: (identifier))
-                operator: (decrement_op)))))))))
+                name: (identifier))
+              operator: (decrement_op))))))))
 
 ==================
 Decrement in a for loop
