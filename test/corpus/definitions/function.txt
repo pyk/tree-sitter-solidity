@@ -251,7 +251,7 @@ function restricted() public onlyOwner {}
     name: (symbol
       name: (identifier))
     visibility: (public)
-    modifier: (modifier_invocation
+    modifier: (function_modifier
       name: (symbol
         name: (identifier)))
     body: (block)))
@@ -270,10 +270,10 @@ function complexAction() external payable requiresAuth whenNotPaused {}
       name: (identifier))
     visibility: (external)
     mutability: (payable)
-    modifier: (modifier_invocation
+    modifier: (function_modifier
       name: (symbol
         name: (identifier)))
-    modifier: (modifier_invocation
+    modifier: (function_modifier
       name: (symbol
         name: (identifier)))
     body: (block)))
@@ -291,7 +291,7 @@ function timedAction() public costs(1 ether) {}
     name: (symbol
       name: (identifier))
     visibility: (public)
-    modifier: (modifier_invocation
+    modifier: (function_modifier
       name: (symbol
         name: (identifier))
       arguments: (argument_list
@@ -318,7 +318,7 @@ function superComplex() external payable virtual override(Base) onlyAdmin return
     override: (overrides
       target: (symbol
         name: (identifier)))
-    modifier: (modifier_invocation
+    modifier: (function_modifier
       name: (symbol
         name: (identifier)))
     returns: (parameters

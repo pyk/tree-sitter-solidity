@@ -4578,7 +4578,7 @@
         "required": false,
         "types": [
           {
-            "type": "modifier_invocation",
+            "type": "function_modifier",
             "named": true
           }
         ]
@@ -5000,7 +5000,7 @@
         "required": false,
         "types": [
           {
-            "type": "modifier_invocation",
+            "type": "function_modifier",
             "named": true
           }
         ]
@@ -5091,6 +5091,32 @@
           },
           {
             "type": "public",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "function_modifier",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "argument_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
             "named": true
           }
         ]
@@ -6980,32 +7006,6 @@
     }
   },
   {
-    "type": "modifier_invocation",
-    "named": true,
-    "fields": {
-      "arguments": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "argument_list",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "symbol",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "mul",
     "named": true,
     "fields": {
@@ -8716,7 +8716,7 @@
         "required": false,
         "types": [
           {
-            "type": "modifier_invocation",
+            "type": "function_modifier",
             "named": true
           }
         ]

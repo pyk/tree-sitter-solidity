@@ -1219,7 +1219,7 @@ module.exports = grammar({
         prec(2, field("virtual", $.virtual)),
         prec(2, field("override", $.overrides)),
         // Give the generic modifier invocation lower precedence (1)
-        prec(1, field("modifier", $.modifier_invocation)),
+        prec(1, field("modifier", $.function_modifier)),
       ),
 
     _function_mutability: ($) => choice($.pure, $.view, $.payable),
@@ -1232,7 +1232,7 @@ module.exports = grammar({
      */
     block: ($) => seq("{", repeat($._statement), "}"),
 
-    modifier_invocation: ($) =>
+    function_modifier: ($) =>
       seq(
         field("name", $.symbol),
         optional(field("arguments", $.argument_list)),
@@ -1310,7 +1310,7 @@ module.exports = grammar({
       choice(
         field("visibility", $._visibility),
         field("mutability", $._function_mutability),
-        field("modifier", $.modifier_invocation),
+        field("modifier", $.function_modifier),
         "virtual",
         // TODO: add override_specifier here later
       ),

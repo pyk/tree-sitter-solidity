@@ -4344,7 +4344,7 @@
             "name": "modifier",
             "content": {
               "type": "SYMBOL",
-              "name": "modifier_invocation"
+              "name": "function_modifier"
             }
           }
         }
@@ -4399,7 +4399,7 @@
         }
       ]
     },
-    "modifier_invocation": {
+    "function_modifier": {
       "type": "SEQ",
       "members": [
         {
@@ -4715,7 +4715,7 @@
           "name": "modifier",
           "content": {
             "type": "SYMBOL",
-            "name": "modifier_invocation"
+            "name": "function_modifier"
           }
         },
         {
