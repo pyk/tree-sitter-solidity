@@ -49,7 +49,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (primitive_type
             (bytes_type))
@@ -61,7 +61,7 @@ contract C {
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
-      returns: (parameter_list
+      returns: (parameters
         parameter: (parameter
           type: (primitive_type
             (bytes_type))
@@ -140,7 +140,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (primitive_type
             (string_type))
@@ -148,7 +148,7 @@ contract C {
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
-      returns: (parameter_list
+      returns: (parameters
         parameter: (parameter
           type: (primitive_type
             (bytes_type))
@@ -307,7 +307,7 @@ contract C {
     definition: (event
       name: (symbol
         name: (identifier))
-      parameters: (event_parameter_list
+      parameters: (event_parameters
         parameter: (event_parameter
           type: (primitive_type
             (bytes_type))
@@ -337,7 +337,7 @@ contract C {
     definition: (error
       name: (symbol
         name: (identifier))
-      parameters: (error_parameter_list
+      parameters: (error_parameters
         parameter: (error_parameter
           type: (primitive_type
             (bytes_type))

@@ -23,7 +23,7 @@ error InsufficientBalance(uint256 requested, uint256 available);
   definition: (error
     name: (symbol
       name: (identifier))
-    parameters: (error_parameter_list
+    parameters: (error_parameters
       parameter: (error_parameter
         type: (primitive_type
           (uint_type))
@@ -47,7 +47,7 @@ error InvalidSignature(bytes32, bytes32);
   definition: (error
     name: (symbol
       name: (identifier))
-    parameters: (error_parameter_list
+    parameters: (error_parameters
       parameter: (error_parameter
         type: (primitive_type
           (bytes_type)))
@@ -90,7 +90,7 @@ interface IERC721 {
     definition: (error
       name: (symbol
         name: (identifier))
-      parameters: (error_parameter_list
+      parameters: (error_parameters
         parameter: (error_parameter
           type: (primitive_type
             (address_type))
@@ -126,7 +126,7 @@ error BatchFailed(uint256[] batchIds);
   definition: (error
     name: (symbol
       name: (identifier))
-    parameters: (error_parameter_list
+    parameters: (error_parameters
       parameter: (error_parameter
         type: (array_type
           base: (primitive_type
@@ -163,7 +163,7 @@ error InvalidOrder(Order order);
   definition: (error
     name: (symbol
       name: (identifier))
-    parameters: (error_parameter_list
+    parameters: (error_parameters
       parameter: (error_parameter
         type: (custom_type
           symbol: (symbol
@@ -190,7 +190,7 @@ contract C {
   definition: (error
     name: (symbol
       name: (identifier))
-    parameters: (error_parameter_list
+    parameters: (error_parameters
       parameter: (error_parameter
         type: (primitive_type
           (string_type))
@@ -202,7 +202,7 @@ contract C {
     definition: (error
       name: (symbol
         name: (identifier))
-      parameters: (error_parameter_list
+      parameters: (error_parameters
         parameter: (error_parameter
           type: (primitive_type
             (address_type))

@@ -23,7 +23,7 @@ event Transfer(address from, uint256 amount);
   definition: (event
     name: (symbol
       name: (identifier))
-    parameters: (event_parameter_list
+    parameters: (event_parameters
       parameter: (event_parameter
         type: (primitive_type
           (address_type))
@@ -47,7 +47,7 @@ event Approval(address indexed owner, address indexed spender);
   definition: (event
     name: (symbol
       name: (identifier))
-    parameters: (event_parameter_list
+    parameters: (event_parameters
       parameter: (event_parameter
         type: (primitive_type
           (address_type))
@@ -73,7 +73,7 @@ event Sent(address indexed from, address indexed to, uint256 value);
   definition: (event
     name: (symbol
       name: (identifier))
-    parameters: (event_parameter_list
+    parameters: (event_parameters
       parameter: (event_parameter
         type: (primitive_type
           (address_type))
@@ -104,7 +104,7 @@ event DataPoint(uint256, bool, bytes32 indexed);
   definition: (event
     name: (symbol
       name: (identifier))
-    parameters: (event_parameter_list
+    parameters: (event_parameters
       parameter: (event_parameter
         type: (primitive_type
           (uint_type)))
@@ -128,7 +128,7 @@ event AnonymizedLog(address indexed sender, string message) anonymous;
   definition: (event
     name: (symbol
       name: (identifier))
-    parameters: (event_parameter_list
+    parameters: (event_parameters
       parameter: (event_parameter
         type: (primitive_type
           (address_type))
@@ -168,7 +168,7 @@ event DataStored(MyData data);
   definition: (event
     name: (symbol
       name: (identifier))
-    parameters: (event_parameter_list
+    parameters: (event_parameters
       parameter: (event_parameter
         type: (custom_type
           symbol: (symbol
@@ -188,7 +188,7 @@ event BatchProcessed(uint[] ids);
   definition: (event
     name: (symbol
       name: (identifier))
-    parameters: (event_parameter_list
+    parameters: (event_parameters
       parameter: (event_parameter
         type: (array_type
           base: (primitive_type
@@ -213,7 +213,7 @@ contract MyContract {
     definition: (event
       name: (symbol
         name: (identifier))
-      parameters: (event_parameter_list
+      parameters: (event_parameters
         parameter: (event_parameter
           type: (primitive_type
             (address_type))
@@ -244,7 +244,7 @@ interface IMyContract {
     definition: (event
       name: (symbol
         name: (identifier))
-      parameters: (event_parameter_list
+      parameters: (event_parameters
         parameter: (event_parameter
           type: (primitive_type
             (uint_type))
@@ -273,7 +273,7 @@ library MyLibrary {
     definition: (event
       name: (symbol
         name: (identifier))
-      parameters: (event_parameter_list
+      parameters: (event_parameters
         parameter: (event_parameter
           type: (primitive_type
             (string_type))

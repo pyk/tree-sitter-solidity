@@ -36,14 +36,14 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (primitive_type
             (bool_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
-      returns: (parameter_list
+      returns: (parameters
         parameter: (parameter
           type: (primitive_type
             (bool_type))))
@@ -146,7 +146,7 @@ contract C {
         name: (identifier))
       visibility: (visibility)
       mutability: (state_mutability)
-      returns: (parameter_list
+      returns: (parameters
         parameter: (parameter
           type: (primitive_type
             (bool_type))))
@@ -159,7 +159,7 @@ contract C {
         name: (identifier))
       visibility: (visibility)
       mutability: (state_mutability)
-      returns: (parameter_list
+      returns: (parameters
         parameter: (parameter
           type: (primitive_type
             (bool_type))))
@@ -222,7 +222,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (primitive_type
             (bool_type))
@@ -257,13 +257,13 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (primitive_type
             (address_type))))
       visibility: (visibility)
       mutability: (state_mutability)
-      returns: (parameter_list
+      returns: (parameters
         parameter: (parameter
           type: (primitive_type
             (bool_type))))
@@ -271,7 +271,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (primitive_type
             (address_type))

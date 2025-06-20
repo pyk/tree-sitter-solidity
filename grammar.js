@@ -357,7 +357,7 @@ module.exports = grammar({
         seq(
           "function",
           "(",
-          optional(field("parameters", $.parameter_list)),
+          optional(field("parameters", $.parameters)),
           ")",
           repeat(
             choice(
@@ -366,12 +366,7 @@ module.exports = grammar({
             ),
           ),
           optional(
-            seq(
-              "returns",
-              "(",
-              optional(field("returns", $.parameter_list)),
-              ")",
-            ),
+            seq("returns", "(", optional(field("returns", $.parameters)), ")"),
           ),
         ),
       ),
@@ -1110,7 +1105,7 @@ module.exports = grammar({
         "event",
         field("name", alias($._simple_symbol, $.symbol)),
         "(",
-        optional(field("parameters", $.event_parameter_list)),
+        optional(field("parameters", $.event_parameters)),
         ")",
         optional($.anonymous),
         ";",
@@ -1125,8 +1120,7 @@ module.exports = grammar({
 
     indexed: ($) => "indexed",
 
-    event_parameter_list: ($) =>
-      commaSep(field("parameter", $.event_parameter)),
+    event_parameters: ($) => commaSep(field("parameter", $.event_parameter)),
 
     // Rule for the `anonymous` keyword
     anonymous: ($) => "anonymous",
@@ -1140,13 +1134,12 @@ module.exports = grammar({
         "error",
         field("name", alias($._simple_symbol, $.symbol)),
         "(",
-        optional(field("parameters", $.error_parameter_list)),
+        optional(field("parameters", $.error_parameters)),
         ")",
         ";",
       ),
 
-    error_parameter_list: ($) =>
-      field("parameter", commaSep($.error_parameter)),
+    error_parameters: ($) => field("parameter", commaSep($.error_parameter)),
 
     error_parameter: ($) =>
       seq(
@@ -1175,7 +1168,7 @@ module.exports = grammar({
       seq(
         "constructor",
         "(",
-        optional(field("parameters", $.parameter_list)),
+        optional(field("parameters", $.parameters)),
         ")",
         repeat($._constructor_attribute),
         field("body", $.block),
@@ -1200,7 +1193,7 @@ module.exports = grammar({
     /**
      * A list of parameters, used for function arguments and return values.
      */
-    parameter_list: ($) => commaSep(field("parameter", $.parameter)),
+    parameters: ($) => commaSep(field("parameter", $.parameter)),
 
     /**
      * A single parameter declaration.
@@ -1242,16 +1235,11 @@ module.exports = grammar({
         "function",
         field("name", alias($._simple_symbol, $.symbol)),
         "(",
-        optional(field("parameters", $.parameter_list)),
+        optional(field("parameters", $.parameters)),
         ")",
         repeat($._function_attribute),
         optional(
-          seq(
-            "returns",
-            "(",
-            optional(field("returns", $.parameter_list)),
-            ")",
-          ),
+          seq("returns", "(", optional(field("returns", $.parameters)), ")"),
         ),
         choice(field("body", $.block), ";"),
       ),
@@ -1293,7 +1281,7 @@ module.exports = grammar({
           "modifier",
           field("name", alias($._simple_symbol, $.symbol)),
           "(",
-          optional(field("parameters", $.parameter_list)),
+          optional(field("parameters", $.parameters)),
           ")",
           repeat($._modifier_attribute),
           choice(field("body", $.block), ";"),
@@ -1331,16 +1319,11 @@ module.exports = grammar({
       seq(
         "fallback",
         "(",
-        optional(field("parameters", $.parameter_list)),
+        optional(field("parameters", $.parameters)),
         ")",
         repeat($._function_like_attribute),
         optional(
-          seq(
-            "returns",
-            "(",
-            optional(field("returns", $.parameter_list)),
-            ")",
-          ),
+          seq("returns", "(", optional(field("returns", $.parameters)), ")"),
         ),
         choice(field("body", $.block), ";"),
       ),

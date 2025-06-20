@@ -67,7 +67,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (custom_type
             symbol: (symbol
@@ -75,7 +75,7 @@ contract C {
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
-      returns: (parameter_list
+      returns: (parameters
         parameter: (parameter
           type: (custom_type
             symbol: (symbol
@@ -274,7 +274,7 @@ event ItemPurchased(ItemId indexed id, address buyer);
   definition: (event
     name: (symbol
       name: (identifier))
-    parameters: (event_parameter_list
+    parameters: (event_parameters
       parameter: (event_parameter
         type: (custom_type
           symbol: (symbol
@@ -307,7 +307,7 @@ error CustomError(ErrorCode code, string message);
   definition: (error
     name: (symbol
       name: (identifier))
-    parameters: (error_parameter_list
+    parameters: (error_parameters
       parameter: (error_parameter
         type: (custom_type
           symbol: (symbol
@@ -342,7 +342,7 @@ function f() pure returns (MyUint) {
     name: (symbol
       name: (identifier))
     mutability: (state_mutability)
-    returns: (parameter_list
+    returns: (parameters
       parameter: (parameter
         type: (custom_type
           symbol: (symbol

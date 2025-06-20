@@ -34,7 +34,7 @@ contract C {
       name: (identifier))
     definition: (variable
       type: (function_type
-        parameters: (parameter_list
+        parameters: (parameters
           parameter: (parameter
             type: (primitive_type
               (uint_type)))
@@ -62,7 +62,7 @@ contract C {
     definition: (variable
       type: (function_type
         visibility: (visibility)
-        returns: (parameter_list
+        returns: (parameters
           parameter: (parameter
             type: (primitive_type
               (bool_type)))))
@@ -85,14 +85,14 @@ contract C {
       name: (identifier))
     definition: (variable
       type: (function_type
-        parameters: (parameter_list
+        parameters: (parameters
           parameter: (parameter
             type: (primitive_type
               (string_type))
             location: (data_location)))
         visibility: (visibility)
         mutability: (state_mutability)
-        returns: (parameter_list
+        returns: (parameters
           parameter: (parameter
             type: (primitive_type
               (bytes_type))
@@ -116,7 +116,7 @@ contract C {
       name: (identifier))
     definition: (variable
       type: (function_type
-        parameters: (parameter_list
+        parameters: (parameters
           parameter: (parameter
             type: (primitive_type
               (address_type))))
@@ -143,7 +143,7 @@ contract C {
       type: (function_type
         visibility: (visibility)
         mutability: (state_mutability)
-        returns: (parameter_list
+        returns: (parameters
           parameter: (parameter
             type: (primitive_type
               (uint_type)))))
@@ -166,7 +166,7 @@ contract C {
       name: (identifier))
     definition: (variable
       type: (function_type
-        parameters: (parameter_list
+        parameters: (parameters
           parameter: (parameter
             type: (array_type
               base: (primitive_type
@@ -193,7 +193,7 @@ contract C {
     definition: (variable
       type: (function_type
         visibility: (visibility)
-        returns: (parameter_list
+        returns: (parameters
           parameter: (parameter
             type: (primitive_type
               (uint_type))
@@ -222,16 +222,16 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (function_type
-            parameters: (parameter_list
+            parameters: (parameters
               parameter: (parameter
                 type: (primitive_type
                   (uint_type))))
             visibility: (visibility)
             mutability: (state_mutability)
-            returns: (parameter_list
+            returns: (parameters
               parameter: (parameter
                 type: (primitive_type
                   (uint_type)))))
@@ -255,7 +255,7 @@ contract C {
       name: (identifier))
     definition: (variable
       type: (function_type
-        parameters: (parameter_list
+        parameters: (parameters
           parameter: (parameter
             type: (primitive_type
               (uint_type))))

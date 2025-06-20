@@ -57,14 +57,14 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (primitive_type
             (uint_type))
           name: (identifier)))
       visibility: (visibility)
       mutability: (state_mutability)
-      returns: (parameter_list
+      returns: (parameters
         parameter: (parameter
           type: (primitive_type
             (uint_type))))
@@ -256,7 +256,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (primitive_type
             (uint_type))
@@ -267,7 +267,7 @@ contract C {
     definition: (function
       name: (symbol
         name: (identifier))
-      parameters: (parameter_list
+      parameters: (parameters
         parameter: (parameter
           type: (primitive_type
             (uint_type))

@@ -3060,7 +3060,7 @@
         "required": false,
         "types": [
           {
-            "type": "parameter_list",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -3958,7 +3958,7 @@
         "required": false,
         "types": [
           {
-            "type": "error_parameter_list",
+            "type": "error_parameters",
             "named": true
           }
         ]
@@ -4008,7 +4008,7 @@
     }
   },
   {
-    "type": "error_parameter_list",
+    "type": "error_parameters",
     "named": true,
     "fields": {
       "parameter": {
@@ -4080,7 +4080,7 @@
         "required": false,
         "types": [
           {
-            "type": "event_parameter_list",
+            "type": "event_parameters",
             "named": true
           }
         ]
@@ -4150,7 +4150,7 @@
     }
   },
   {
-    "type": "event_parameter_list",
+    "type": "event_parameters",
     "named": true,
     "fields": {
       "parameter": {
@@ -4583,7 +4583,7 @@
         "required": false,
         "types": [
           {
-            "type": "parameter_list",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -4593,7 +4593,7 @@
         "required": false,
         "types": [
           {
-            "type": "parameter_list",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -5005,7 +5005,7 @@
         "required": false,
         "types": [
           {
-            "type": "parameter_list",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -5015,7 +5015,7 @@
         "required": false,
         "types": [
           {
-            "type": "parameter_list",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -5061,7 +5061,7 @@
         "required": false,
         "types": [
           {
-            "type": "parameter_list",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -5071,7 +5071,7 @@
         "required": false,
         "types": [
           {
-            "type": "parameter_list",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -6887,7 +6887,7 @@
         "required": false,
         "types": [
           {
-            "type": "parameter_list",
+            "type": "parameters",
             "named": true
           }
         ]
@@ -7924,7 +7924,7 @@
     }
   },
   {
-    "type": "parameter_list",
+    "type": "parameters",
     "named": true,
     "fields": {
       "parameter": {
