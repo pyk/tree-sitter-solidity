@@ -231,7 +231,7 @@ contract C {
           (call
             function: (builtin_function
               name: (require))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (comparison
                 left: (symbol
                   scope: (symbol
@@ -280,7 +280,7 @@ contract C {
           (call
             function: (symbol
               name: (identifier))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (time_literal
                 value: (number)
                 unit: (minutes)))))))))

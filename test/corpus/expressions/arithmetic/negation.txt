@@ -333,7 +333,7 @@ contract C {
           (call
             function: (builtin_function
               name: (require))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (comparison
                 left: (arithmetic
                   (negation

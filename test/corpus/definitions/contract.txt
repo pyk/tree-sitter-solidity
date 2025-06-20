@@ -61,7 +61,7 @@ contract MyToken is ERC20("My Token", "MTK") {}
       parent: (parent
         name: (symbol
           name: (identifier))
-        arguments: (argument_list
+        arguments: (arguments
           argument: (literal
             (string))
           argument: (literal
@@ -83,7 +83,7 @@ contract MyContract is ReentrancyGuard() {}
       parent: (parent
         name: (symbol
           name: (identifier))
-        arguments: (argument_list)))))
+        arguments: (arguments)))))
 
 ==================
 Contract with mixed inheritance styles
@@ -104,7 +104,7 @@ contract MegaContract is Ownable, ERC20("Mega", "MGA"), Lockable() {}
       parent: (parent
         name: (symbol
           name: (identifier))
-        arguments: (argument_list
+        arguments: (arguments
           argument: (literal
             (string))
           argument: (literal
@@ -112,4 +112,4 @@ contract MegaContract is Ownable, ERC20("Mega", "MGA"), Lockable() {}
       parent: (parent
         name: (symbol
           name: (identifier))
-        arguments: (argument_list)))))
+        arguments: (arguments)))))

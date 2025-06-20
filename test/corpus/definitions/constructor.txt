@@ -145,7 +145,7 @@ contract MyToken is ERC20 {
       parent_constructor: (parent_constructor
         name: (symbol
           name: (identifier))
-        arguments: (argument_list
+        arguments: (arguments
           argument: (symbol
             name: (identifier))
           argument: (symbol
@@ -185,11 +185,11 @@ contract C is A, B {
       parent_constructor: (parent_constructor
         name: (symbol
           name: (identifier))
-        arguments: (argument_list))
+        arguments: (arguments))
       parent_constructor: (parent_constructor
         name: (symbol
           name: (identifier))
-        arguments: (argument_list))
+        arguments: (arguments))
       body: (block))))
 
 ==================
@@ -228,10 +228,10 @@ abstract contract D is A, B {
       parent_constructor: (parent_constructor
         name: (symbol
           name: (identifier))
-        arguments: (argument_list))
+        arguments: (arguments))
       parent_constructor: (parent_constructor
         name: (symbol
           name: (identifier))
-        arguments: (argument_list))
+        arguments: (arguments))
       body: (block
         (comment)))))

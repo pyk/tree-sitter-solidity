@@ -127,7 +127,7 @@ contract C {
               scope: (symbol
                 name: (identifier))
               name: (identifier))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (literal
                 (boolean)))))))))
 
@@ -353,6 +353,6 @@ function f() pure returns (MyUint) {
         value: (call
           function: (symbol
             name: (identifier))
-          arguments: (argument_list
+          arguments: (arguments
             argument: (literal
               (number))))))))

@@ -143,7 +143,7 @@ contract C {
           value: (call
             function: (symbol
               name: (identifier))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (symbol
                 name: (identifier)))))))))
 

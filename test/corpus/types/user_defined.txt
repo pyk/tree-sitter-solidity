@@ -181,7 +181,7 @@ contract C {
           value: (call
             function: (symbol
               name: (identifier))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (symbol
                 name: (identifier)))))))))
 
@@ -355,4 +355,4 @@ contract Factory {
               type: (custom_type
                 symbol: (symbol
                   name: (identifier))))
-            arguments: (argument_list)))))))
+            arguments: (arguments)))))))

@@ -294,7 +294,7 @@ function timedAction() public costs(1 ether) {}
     modifier: (function_modifier
       name: (symbol
         name: (identifier))
-      arguments: (argument_list
+      arguments: (arguments
         argument: (ether_literal
           value: (number)
           unit: (ether))))

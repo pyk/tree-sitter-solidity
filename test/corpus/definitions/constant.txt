@@ -205,7 +205,7 @@ bytes32 constant EMPTY_STRING_HASH = keccak256("");
     value: (call
       function: (builtin_function
         name: (keccak256))
-      arguments: (argument_list
+      arguments: (arguments
         argument: (literal
           (string))))))
 

@@ -22,7 +22,7 @@ contract C {
           (call
             function: (symbol
               name: (identifier))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (symbol
                 name: (identifier))
               argument: (symbol
@@ -52,7 +52,7 @@ contract C {
           (call
             function: (symbol
               name: (identifier))
-            arguments: (argument_list)))))))
+            arguments: (arguments)))))))
 
 ==================
 Call as part of a member access
@@ -80,7 +80,7 @@ contract C {
               scope: (symbol
                 name: (identifier))
               name: (identifier))
-            arguments: (argument_list)))))))
+            arguments: (arguments)))))))
 
 ==================
 Call with value and gas options
@@ -120,7 +120,7 @@ contract C {
                   name: (identifier))
                 value: (literal
                   (number))))
-            arguments: (argument_list)))))))
+            arguments: (arguments)))))))
 
 ==================
 Nested function calls
@@ -146,11 +146,11 @@ contract C {
           (call
             function: (symbol
               name: (identifier))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (call
                 function: (symbol
                   name: (identifier))
-                arguments: (argument_list
+                arguments: (arguments
                   argument: (symbol
                     name: (identifier)))))))))))
 
@@ -195,7 +195,7 @@ contract C {
           value: (call
             function: (symbol
               name: (identifier))
-            arguments: (argument_list)))))))
+            arguments: (arguments)))))))
 
 ==================
 Built-in function call: keccak256
@@ -226,7 +226,7 @@ contract C {
           value: (call
             function: (builtin_function
               name: (keccak256))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (literal
                 (string)))))))))
 
@@ -254,7 +254,7 @@ contract C {
           (call
             function: (builtin_function
               name: (require))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (comparison
                 left: (symbol
                   name: (identifier))
@@ -288,7 +288,7 @@ contract C {
           (call
             function: (builtin_function
               name: (assert))
-            arguments: (argument_list
+            arguments: (arguments
               argument: (equality
                 left: (symbol
                   name: (identifier))
@@ -327,7 +327,7 @@ contract C {
         (revert_statement
           error: (symbol
             name: (identifier))
-          arguments: (argument_list
+          arguments: (arguments
             argument: (symbol
               name: (identifier))))))))
 
@@ -374,11 +374,11 @@ contract C {
               object: (call
                 function: (symbol
                   name: (identifier))
-                arguments: (argument_list
+                arguments: (arguments
                   argument: (symbol
                     name: (identifier))))
               member: (identifier))
-            arguments: (argument_list)))))))
+            arguments: (arguments)))))))
 
 ==================
 New expression call (contract creation)
@@ -416,4 +416,4 @@ contract C {
               type: (custom_type
                 symbol: (symbol
                   name: (identifier))))
-            arguments: (argument_list)))))))
+            arguments: (arguments)))))))

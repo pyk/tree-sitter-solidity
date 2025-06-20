@@ -525,7 +525,7 @@
     }
   },
   {
-    "type": "argument_list",
+    "type": "arguments",
     "named": true,
     "fields": {
       "argument": {
@@ -2137,7 +2137,7 @@
         "required": true,
         "types": [
           {
-            "type": "argument_list",
+            "type": "arguments",
             "named": true
           }
         ]
@@ -5106,7 +5106,7 @@
         "required": false,
         "types": [
           {
-            "type": "argument_list",
+            "type": "arguments",
             "named": true
           }
         ]
@@ -8026,7 +8026,7 @@
         "required": false,
         "types": [
           {
-            "type": "argument_list",
+            "type": "arguments",
             "named": true
           }
         ]
@@ -8052,7 +8052,7 @@
         "required": true,
         "types": [
           {
-            "type": "argument_list",
+            "type": "arguments",
             "named": true
           }
         ]
@@ -8099,7 +8099,7 @@
         "required": true,
         "types": [
           {
-            "type": "argument_list",
+            "type": "arguments",
             "named": true
           }
         ]
@@ -8897,7 +8897,7 @@
         "required": true,
         "types": [
           {
-            "type": "argument_list",
+            "type": "arguments",
             "named": true
           }
         ]
