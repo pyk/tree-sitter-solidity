@@ -2,12 +2,12 @@
 Negation of a positive integer literal
 ==================
 
-int x = -1;
+int constant x = -1;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (int_type))
     name: (symbol
@@ -22,12 +22,12 @@ int x = -1;
 Negation of a negative integer literal (double negative)
 ==================
 
-int x = -(-1);
+int constant x = -(-1);
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (int_type))
     name: (symbol
@@ -86,13 +86,13 @@ Negation precedence over exponentiation (right-associative)
 ==================
 
 // Should parse as (-2)**3
-int x = -2**3;
+int constant x = -2**3;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (int_type))
     name: (symbol
@@ -113,13 +113,13 @@ Negation precedence with multiplication
 ==================
 
 // Should parse as (-2) * 3
-int x = -2 * 3;
+int constant x = -2 * 3;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (int_type))
     name: (symbol
@@ -140,13 +140,13 @@ Negation precedence with addition
 ==================
 
 // Should parse as (-2) + 3
-int x = -2 + 3;
+int constant x = -2 + 3;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (int_type))
     name: (symbol
@@ -167,13 +167,13 @@ Addition with a negated right-hand side
 ==================
 
 // Should parse as 2 + (-3)
-int x = 2 + -3;
+int constant x = 2 + -3;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (int_type))
     name: (symbol
@@ -194,13 +194,13 @@ Negation of a parenthesized arithmetic expression
 ==================
 
 // Should apply negation to the result of (2 * 3)
-int x = -(2 * 3);
+int constant x = -(2 * 3);
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (int_type))
     name: (symbol
@@ -221,12 +221,12 @@ int x = -(2 * 3);
 Negation inside a comparison expression
 ==================
 
-bool b = -5 < -2;
+bool constant b = -5 < -2;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol

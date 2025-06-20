@@ -2,12 +2,12 @@
 Simple bitwise AND with hex literals
 ==================
 
-uint x = 0x0F & 0xF0;
+uint constant x = 0x0F & 0xF0;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -71,13 +71,13 @@ Chained bitwise AND expressions (left-associative)
 ==================
 
 // Should parse as (a & b) & c
-uint x = a & b & c;
+uint constant x = a & b & c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -101,14 +101,14 @@ Bitwise AND precedence with bitwise XOR and OR
 
 // Should parse as (a & b) ^ (c | d) is wrong, should be ((a&b)^c)|d
 // Correct parsing should be ((a & b) ^ c) | d
-uint x = a & b ^ c | d;
+uint constant x = a & b ^ c | d;
 
 ---
 
 (source_file
   (comment)
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -136,13 +136,13 @@ Bitwise AND precedence with shift and arithmetic operators
 ==================
 
 // Should parse as (a << 1) & (b + 1)
-uint x = a << 1 & b + 1;
+uint constant x = a << 1 & b + 1;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -169,13 +169,13 @@ Bitwise AND with parenthesized OR expression
 ==================
 
 // Should parse as a & (b | c)
-uint x = a & (b | c);
+uint constant x = a & (b | c);
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -211,7 +211,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (primitive_type
         (uint_type))
       mutability: (constant)

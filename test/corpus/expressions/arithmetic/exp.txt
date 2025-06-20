@@ -2,12 +2,12 @@
 Simple exponentiation with number literals
 ==================
 
-uint x = 2 ** 8;
+uint constant x = 2 ** 8;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -71,13 +71,13 @@ Chained exponentiation (right-associative)
 ==================
 
 // Should parse as a ** (b ** c)
-uint x = a ** b ** c;
+uint constant x = a ** b ** c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -100,13 +100,13 @@ Exponentiation precedence with multiplication
 ==================
 
 // Should parse as (a ** b) * c
-uint x = a ** b * c;
+uint constant x = a ** b * c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -129,13 +129,13 @@ Exponentiation precedence with addition
 ==================
 
 // Should parse as a + (b ** c)
-uint x = a + b ** c;
+uint constant x = a + b ** c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -158,13 +158,13 @@ Exponentiation with a unary minus (critical test)
 ==================
 
 // Should parse as (-a) ** b because unary minus has higher precedence
-int x = -a ** b;
+int constant x = -a ** b;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (int_type))
     name: (symbol
@@ -185,13 +185,13 @@ Exponentiation with a parenthesized expression as base
 ==================
 
 // Should parse as (a + b) ** c
-uint x = (a + b) ** c;
+uint constant x = (a + b) ** c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol

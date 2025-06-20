@@ -13,12 +13,12 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (primitive_type
         (address_type))
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (primitive_type
         (address_type))
       name: (symbol
@@ -87,12 +87,11 @@ contract C {
       visibility: (public)
       mutability: (view)
       body: (block
-        statement: (variable_declaration_statement
-          declaration: (variable_declaration
-            type: (primitive_type
-              (address_type))
-            name: (symbol
-              name: (identifier)))
+        statement: (local_variable
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier))
           value: (symbol
             scope: (symbol
               name: (identifier))
@@ -220,7 +219,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -245,14 +244,14 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (primitive_type
           (address_type)))
       visibility: (public)
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (primitive_type
           (address_type))
@@ -303,7 +302,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (primitive_type
         (address_type))
       mutability: (constant)

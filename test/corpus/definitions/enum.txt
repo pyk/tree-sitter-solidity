@@ -91,7 +91,7 @@ contract TrafficLight {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (custom_type
         symbol: (symbol
           name: (identifier)))
@@ -169,7 +169,7 @@ contract Registry {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (custom_type
           symbol: (symbol

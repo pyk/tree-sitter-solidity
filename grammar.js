@@ -98,7 +98,7 @@ module.exports = grammar({
 
     _top_level_definitions: ($) =>
       choice(
-        $.variable,
+        $.constant_variable,
         //
         prec(1, $.struct),
         prec(1, $.enum),
@@ -171,7 +171,6 @@ module.exports = grammar({
 
     global: ($) => "global",
     wildcard: ($) => "*",
-    transient: ($) => "transient",
 
     //############################################################//
     //                           Types                            //
@@ -1002,16 +1001,29 @@ module.exports = grammar({
     //                          Variable                          //
     //############################################################//
 
-    variable: ($) =>
+    // For Top-Level Constants
+    constant_variable: ($) =>
       seq(
         field("type", $._type),
-        repeat($._variable_attribute),
+        "constant",
+        field("name", alias($._simple_symbol, $.symbol)),
+        "=",
+        field("value", $._expression),
+        ";",
+      ),
+
+    // For State Variables (Contract/Library/Interface level)
+    state_variable: ($) =>
+      seq(
+        field("type", $._type),
+        repeat(field("attribute", $._state_variable_attribute)),
         field("name", alias($._simple_symbol, $.symbol)),
         optional(seq("=", field("value", $._expression))),
         ";",
       ),
 
-    _variable_attribute: ($) =>
+    // Helper for state_variable attributes
+    _state_variable_attribute: ($) =>
       choice(
         field("visibility", $._visibility),
         field("mutability", choice($.constant, $.immutable)),
@@ -1021,11 +1033,57 @@ module.exports = grammar({
 
     constant: ($) => "constant",
     immutable: ($) => "immutable",
+    transient: ($) => "transient",
 
     overrides: ($) =>
       seq(
         "override",
         optional(seq("(", commaSep(field("target", $.symbol)), ")")),
+      ),
+
+    // For Single Local Variables (Statement level)
+    local_variable: ($) =>
+      seq(
+        field("type", $._type),
+        optional(field("location", $._data_location)),
+        field("name", alias($._simple_symbol, $.symbol)),
+        optional(seq("=", field("value", $._expression))),
+        ";",
+      ),
+
+    tuple_variable: ($) =>
+      seq(
+        "(",
+        field(
+          "elements",
+          choice(
+            // Handles cases with at least one declaration element, e.g., (uint a) or (uint a, )
+            seq(
+              $._tuple_variable_element,
+              repeat(
+                seq(",", optional(field("element", $._tuple_variable_element))),
+              ),
+            ),
+            // Handles cases that start with a comma, e.g., (,uint b) or (,)
+            seq(
+              ",",
+              commaSep(optional(field("element", $._tuple_variable_element))),
+            ),
+          ),
+        ),
+        ")",
+        "=",
+        field("value", $._expression),
+        ";",
+      ),
+
+    // For Tuple Local Variables (Statement level)
+    // Helper for individual elements in a tuple
+    _tuple_variable_element: ($) =>
+      seq(
+        field("type", $._type),
+        optional(field("location", $._data_location)),
+        optional(field("name", alias($._simple_symbol, $.symbol))),
       ),
 
     //############################################################//
@@ -1053,10 +1111,10 @@ module.exports = grammar({
         $.function,
         $.modifier,
         $.receive,
+        $.state_variable,
         $.struct,
         $.type,
         $.using,
-        $.variable,
       ),
 
     abstract: ($) => "abstract",
@@ -1104,10 +1162,10 @@ module.exports = grammar({
         $.event,
         $.function,
         $.modifier,
+        $.state_variable,
         $.struct,
         $.type,
         $.using,
-        $.variable,
       ),
 
     //############################################################//
@@ -1339,19 +1397,20 @@ module.exports = grammar({
      */
     _statement: ($) =>
       choice(
+        $._expression_statement,
         $.block,
         $.break_statement,
         $.continue_statement,
         $.do_while_statement,
         $.emit,
-        $._expression_statement,
         $.for_statement,
         $.if_statement,
+        $.local_variable,
         $.placeholder,
         $.return_statement,
         $.revert_statement,
+        $.tuple_variable,
         $.unchecked,
-        $.variable_declaration_statement,
         $.while_statement,
       ),
 
@@ -1378,49 +1437,6 @@ module.exports = grammar({
     //************************************************************//
     //                        Declarations                        //
     //************************************************************//
-
-    /**
-     * A single variable declaration, used in statements and tuples.
-     * e.g., `uint256 myVar` or `string memory name`
-     */
-    variable_declaration: ($) =>
-      seq(
-        field("type", $._type),
-        optional(field("location", $._data_location)),
-        optional(field("name", alias($._simple_symbol, $.symbol))),
-      ),
-
-    /**
-     * A tuple of variable declarations. Can contain empty slots.
-     * e.g., `(uint a, , uint c)`
-     */
-    variable_declaration_tuple: ($) =>
-      // Give this rule a higher precedence than tuple_expression to resolve ambiguity.
-      prec(1, seq("(", commaSep(optional($.variable_declaration)), ")")),
-
-    /**
-     * A local variable declaration statement.
-     * e.g., `uint i = 0;` or `(a,b) = (1,2);`
-     */
-    variable_declaration_statement: ($) =>
-      seq(
-        choice(
-          // For single variable declarations, e.g., `uint myVar = 1;`
-          seq(
-            // We are adding the `field()` wrapper here
-            field("declaration", $.variable_declaration),
-            optional(seq("=", field("value", $._expression))),
-          ),
-          // For tuple declarations, e.g., `(uint a, bool b) = (1, true);`
-          seq(
-            // We also add the `field()` wrapper here for consistency
-            field("declaration", $.variable_declaration_tuple),
-            "=",
-            field("value", $._expression),
-          ),
-        ),
-        ";",
-      ),
 
     /**
      * A return statement.
@@ -1461,10 +1477,6 @@ module.exports = grammar({
      * A for loop.
      * e.g., `for (uint i = 0; i < 10; i++) { ... }`
      */
-    /**
-     * A for loop.
-     * e.g., `for (uint i = 0; i < 10; i++) { ... }`
-     */
     for_statement: ($) =>
       seq(
         "for",
@@ -1473,11 +1485,7 @@ module.exports = grammar({
         // and consumes the first semicolon.
         field(
           "initializer",
-          choice(
-            $.variable_declaration_statement,
-            $._expression_statement,
-            ";",
-          ),
+          choice($.local_variable, $._expression_statement, ";"),
         ),
 
         // The condition is an optional expression, followed by a mandatory semicolon.

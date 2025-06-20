@@ -2,12 +2,12 @@
 Simple bitwise NOT on a number literal
 ==================
 
-uint x = ~123;
+uint constant x = ~123;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -22,12 +22,12 @@ uint x = ~123;
 Bitwise NOT on a hex literal
 ==================
 
-bytes32 x = ~0x111122223333444455556666777788889999AAAABBBBCCCCDDDDEEEEFFFF;
+bytes32 constant x = ~0x111122223333444455556666777788889999AAAABBBBCCCCDDDDEEEEFFFF;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bytes_type))
     name: (symbol
@@ -83,14 +83,14 @@ Bitwise NOT precedence with exponentiation
 
 // Unary bitwise NOT has higher precedence than exponentiation.
 // This should parse as (~a) ** b.
-uint x = ~a ** b;
+uint constant x = ~a ** b;
 
 ---
 
 (source_file
   (comment)
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -111,13 +111,13 @@ Parentheses to force bitwise NOT first
 ==================
 
 // Should parse as (~a) ** b
-uint x = (~a) ** b;
+uint constant x = (~a) ** b;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -139,13 +139,13 @@ Bitwise NOT precedence with bitwise AND
 ==================
 
 // Should parse as (~a) & b
-uint x = ~a & b;
+uint constant x = ~a & b;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -166,13 +166,13 @@ Bitwise NOT on a parenthesized expression
 ==================
 
 // Should apply NOT to the result of (a | b)
-uint x = ~(a | b);
+uint constant x = ~(a | b);
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -193,12 +193,12 @@ uint x = ~(a | b);
 Double bitwise NOT
 ==================
 
-uint x = ~~a;
+uint constant x = ~~a;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -223,10 +223,9 @@ uint constant ALL_BITS = ~uint256(0);
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
-    mutability: (constant)
     name: (symbol
       name: (identifier))
     value: (bitwise

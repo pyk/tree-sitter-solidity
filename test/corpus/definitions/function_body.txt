@@ -66,12 +66,11 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (variable_declaration_statement
-          declaration: (variable_declaration
-            type: (primitive_type
-              (uint_type))
-            name: (symbol
-              name: (identifier)))
+        statement: (local_variable
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))
           value: (literal
             (number)))))))
 
@@ -138,12 +137,11 @@ contract C {
       visibility: (public)
       body: (block
         statement: (for_statement
-          initializer: (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (primitive_type
-                (uint_type))
-              name: (symbol
-                name: (identifier)))
+          initializer: (local_variable
+            type: (primitive_type
+              (uint_type))
+            name: (symbol
+              name: (identifier))
             value: (literal
               (number)))
           condition: (comparison
@@ -380,12 +378,11 @@ contract C {
       body: (block
         statement: (unchecked
           body: (block
-            statement: (variable_declaration_statement
-              declaration: (variable_declaration
-                type: (primitive_type
-                  (uint_type))
-                name: (symbol
-                  name: (identifier)))
+            statement: (local_variable
+              type: (primitive_type
+                (uint_type))
+              name: (symbol
+                name: (identifier))
               value: (literal
                 (number)))
             statement: (arithmetic

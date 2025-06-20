@@ -2,12 +2,12 @@
 Simple modulo with number literals
 ==================
 
-uint x = 27 % 5;
+uint constant x = 27 % 5;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -71,13 +71,13 @@ Chained multiplication and modulo (left-associative)
 ==================
 
 // Should parse as ((a * b) % c)
-uint x = a * b % c;
+uint constant x = a * b % c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -100,13 +100,13 @@ Modulo precedence with exponentiation (critical test)
 ==================
 
 // Should parse as a % (b ** c)
-uint x = a % b ** c;
+uint constant x = a % b ** c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -129,13 +129,13 @@ Modulo precedence with addition (critical test)
 ==================
 
 // Should parse as (a % b) + c
-uint x = a % b + c;
+uint constant x = a % b + c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -158,13 +158,13 @@ Modulo with a parenthesized expression
 ==================
 
 // Should parse as a % (b + c)
-uint x = a % (b + c);
+uint constant x = a % (b + c);
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol

@@ -323,12 +323,11 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (for_statement
-          initializer: (variable_declaration_statement
-            declaration: (variable_declaration
-              type: (primitive_type
-                (uint_type))
-              name: (symbol
-                name: (identifier)))
+          initializer: (local_variable
+            type: (primitive_type
+              (uint_type))
+            name: (symbol
+              name: (identifier))
             value: (literal
               (number)))
           condition: (comparison

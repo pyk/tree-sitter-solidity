@@ -12,7 +12,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (function_type
         visibility: (internal))
       name: (symbol
@@ -32,7 +32,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (function_type
         parameters: (parameters
           parameter: (parameter
@@ -59,7 +59,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (function_type
         visibility: (internal)
         returns: (parameters
@@ -83,7 +83,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (function_type
         parameters: (parameters
           parameter: (parameter
@@ -114,7 +114,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (function_type
         parameters: (parameters
           parameter: (parameter
@@ -139,7 +139,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (function_type
         visibility: (internal)
         mutability: (pure)
@@ -164,7 +164,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (function_type
         parameters: (parameters
           parameter: (parameter
@@ -190,7 +190,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (function_type
         visibility: (internal)
         returns: (parameters
@@ -256,7 +256,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (function_type
         parameters: (parameters
           parameter: (parameter

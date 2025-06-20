@@ -14,13 +14,13 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (primitive_type
           (uint_type)))
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (primitive_type
           (bool_type))
@@ -28,7 +28,7 @@ contract C {
           (number)))
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (array_type
           base: (primitive_type
@@ -126,7 +126,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -154,7 +154,7 @@ contract C {
     definition: (struct
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (array_type
           base: (array_type
@@ -180,7 +180,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (mapping_type
           key: (primitive_type

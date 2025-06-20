@@ -14,17 +14,17 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (primitive_type
         (int_type))
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (primitive_type
         (int_type))
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (primitive_type
         (int_type))
       name: (symbol
@@ -93,12 +93,11 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (variable_declaration_statement
-          declaration: (variable_declaration
-            type: (primitive_type
-              (int_type))
-            name: (symbol
-              name: (identifier)))
+        statement: (local_variable
+          type: (primitive_type
+            (int_type))
+          name: (symbol
+            name: (identifier))
           value: (arithmetic
             (negation
               operator: (negation_op)
@@ -189,7 +188,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (int_type))
@@ -213,14 +212,14 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (primitive_type
           (int_type)))
       visibility: (public)
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (primitive_type
           (int_type))
@@ -265,7 +264,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (primitive_type
         (int_type))
       mutability: (constant)
@@ -276,7 +275,7 @@ contract C {
           operator: (negation_op)
           argument: (literal
             (number)))))
-    definition: (variable
+    definition: (state_variable
       type: (primitive_type
         (int_type))
       visibility: (public)

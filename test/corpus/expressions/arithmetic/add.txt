@@ -2,12 +2,12 @@
 Simple addition with number literals
 ==================
 
-uint x = 10 + 20;
+uint constant x = 10 + 20;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -71,13 +71,13 @@ Chained addition and subtraction (left-associative)
 ==================
 
 // Should parse as ((a + b) - c) + d
-uint x = a + b - c + d;
+uint constant x = a + b - c + d;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -105,13 +105,13 @@ Addition precedence with multiplication (critical test)
 ==================
 
 // Should parse as a + (b * c)
-uint x = a + b * c;
+uint constant x = a + b * c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -134,13 +134,13 @@ Addition precedence with exponentiation
 ==================
 
 // Should parse as a + (b ** c)
-uint x = a + b ** c;
+uint constant x = a + b ** c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -163,13 +163,13 @@ Addition precedence with shift operators
 ==================
 
 // Should parse as (a + b) << c
-uint x = a + b << c;
+uint constant x = a + b << c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -191,13 +191,13 @@ Addition precedence with comparison operators
 ==================
 
 // Should parse as (a + b) > c
-bool x = a + b > c;
+bool constant x = a + b > c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -219,13 +219,13 @@ Addition with a parenthesized expression
 ==================
 
 // Should parse as a * (b + c)
-uint x = a * (b + c);
+uint constant x = a * (b + c);
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol

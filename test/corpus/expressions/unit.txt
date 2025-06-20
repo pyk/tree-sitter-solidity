@@ -2,12 +2,12 @@
 Ether unit: wei
 ==================
 
-uint value = 1 wei;
+uint constant value = 1 wei;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -20,12 +20,12 @@ uint value = 1 wei;
 Ether unit: gwei
 ==================
 
-uint value = 10 gwei;
+uint constant value = 10 gwei;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -38,12 +38,12 @@ uint value = 10 gwei;
 Ether unit: ether with decimal
 ==================
 
-uint value = 0.5 ether;
+uint constant value = 0.5 ether;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -56,12 +56,12 @@ uint value = 0.5 ether;
 Time unit: seconds
 ==================
 
-uint duration = 30 seconds;
+uint constant duration = 30 seconds;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -74,12 +74,12 @@ uint duration = 30 seconds;
 Time unit: minutes
 ==================
 
-uint duration = 5 minutes;
+uint constant duration = 5 minutes;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -92,12 +92,12 @@ uint duration = 5 minutes;
 Time unit: hours
 ==================
 
-uint duration = 2 hours;
+uint constant duration = 2 hours;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -110,12 +110,12 @@ uint duration = 2 hours;
 Time unit: days
 ==================
 
-uint duration = 7 days;
+uint constant duration = 7 days;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -128,12 +128,12 @@ uint duration = 7 days;
 Time unit: weeks
 ==================
 
-uint duration = 4 weeks;
+uint constant duration = 4 weeks;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -146,12 +146,12 @@ uint duration = 4 weeks;
 Units in arithmetic expressions
 ==================
 
-uint total = 1 ether + 500 gwei;
+uint constant total = 1 ether + 500 gwei;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol

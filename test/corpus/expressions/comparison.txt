@@ -2,12 +2,12 @@
 Simple less-than comparison with literals
 ==================
 
-bool x = 1 < 2;
+bool constant x = 1 < 2;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -69,13 +69,13 @@ Comparison precedence with addition
 ==================
 
 // Should parse as (a + b) > c
-bool x = a + b > c;
+bool constant x = a + b > c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -97,13 +97,13 @@ Comparison precedence with multiplication
 ==================
 
 // Should parse as a < (b * c)
-bool x = a < b * c;
+bool constant x = a < b * c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -125,13 +125,13 @@ Comparison used in a logical AND expression
 ==================
 
 // Should parse as (a < b) && (c > d)
-bool x = a < b && c > d;
+bool constant x = a < b && c > d;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -157,14 +157,14 @@ Chained comparisons (invalid Solidity, but should parse)
 
 // Solidity does not support chained comparisons, but the parser should handle it gracefully.
 // The linter would then flag this as an error. Parsed as (a < b) < c.
-bool x = a < b < c;
+bool constant x = a < b < c;
 
 ---
 
 (source_file
   (comment)
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol

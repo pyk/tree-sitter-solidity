@@ -2,12 +2,12 @@
 Simple multiplication with number literals
 ==================
 
-uint x = 10 * 20;
+uint constant x = 10 * 20;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -25,13 +25,13 @@ Chained multiplication and division (left-associative)
 ==================
 
 // Should parse as ((a * b) / c)
-uint x = a * b / c;
+uint constant x = a * b / c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -54,13 +54,13 @@ Multiplication precedence with exponentiation
 ==================
 
 // Should parse as a * (b ** c)
-uint x = a * b ** c;
+uint constant x = a * b ** c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -83,13 +83,13 @@ Multiplication precedence with addition
 ==================
 
 // Should parse as (a * b) + c
-uint x = a * b + c;
+uint constant x = a * b + c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -112,13 +112,13 @@ Multiplication with a parenthesized expression
 ==================
 
 // Should parse as (a + b) * c
-uint x = (a + b) * c;
+uint constant x = (a + b) * c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol

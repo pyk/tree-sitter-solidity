@@ -2,12 +2,12 @@
 Simple bitwise XOR with hex literals
 ==================
 
-uint x = 0xC ^ 0xA;
+uint constant x = 0xC ^ 0xA;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -71,13 +71,13 @@ Chained bitwise XOR expressions (left-associative)
 ==================
 
 // Should parse as (a ^ b) ^ c
-uint x = a ^ b ^ c;
+uint constant x = a ^ b ^ c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -100,13 +100,13 @@ Bitwise XOR precedence with bitwise AND (critical test)
 ==================
 
 // Should parse as a ^ (b & c) because AND is higher precedence
-uint x = a ^ b & c;
+uint constant x = a ^ b & c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -129,13 +129,13 @@ Bitwise XOR precedence with bitwise OR (critical test)
 ==================
 
 // Should parse as (a ^ b) | c because OR is lower precedence
-uint x = a ^ b | c;
+uint constant x = a ^ b | c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -158,13 +158,13 @@ Bitwise XOR precedence with comparison operators
 ==================
 
 // Should parse as (a ^ b) > c
-bool x = a ^ b > c;
+bool constant x = a ^ b > c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -186,13 +186,13 @@ Bitwise XOR with parenthesized expression
 ==================
 
 // Should parse as a ^ (b + c)
-uint x = a ^ (b + c);
+uint constant x = a ^ (b + c);
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol

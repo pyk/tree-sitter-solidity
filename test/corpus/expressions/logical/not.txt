@@ -2,12 +2,12 @@
 Simple logical NOT on a boolean literal
 ==================
 
-bool x = !true;
+bool constant x = !true;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -59,12 +59,12 @@ contract C {
 Double logical NOT
 ==================
 
-bool x = !!a;
+bool constant x = !!a;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -81,13 +81,13 @@ Logical NOT precedence with equality (critical test)
 ==================
 
 // Should parse as (!a) == b
-bool x = !a == b;
+bool constant x = !a == b;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -105,12 +105,12 @@ bool x = !a == b;
 Logical NOT on a parenthesized expression
 ==================
 
-bool x = !(a && b);
+bool constant x = !(a && b);
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -178,13 +178,13 @@ Complex logical expression with NOT
 ==================
 
 // Should parse as (a && !b) || c
-bool x = a && !b || c;
+bool constant x = a && !b || c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol

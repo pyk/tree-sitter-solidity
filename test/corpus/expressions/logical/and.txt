@@ -2,12 +2,12 @@
 Simple AND with boolean literals
 ==================
 
-bool x = true && false;
+bool constant x = true && false;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -69,13 +69,13 @@ Chained AND expressions (left-associative)
 ==================
 
 // Should parse as (a && b) && c
-bool x = a && b && c;
+bool constant x = a && b && c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -96,13 +96,13 @@ AND precedence over OR
 ==================
 
 // Should parse as (a && b) || c
-bool x = a && b || c;
+bool constant x = a && b || c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -123,13 +123,13 @@ AND with comparison and equality expressions
 ==================
 
 // Should parse as (a > b) && (c == d)
-bool x = a > b && c == d;
+bool constant x = a > b && c == d;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -154,13 +154,13 @@ AND with a parenthesized OR expression
 ==================
 
 // Should parse as a && (b || c)
-bool x = a && (b || c);
+bool constant x = a && (b || c);
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol

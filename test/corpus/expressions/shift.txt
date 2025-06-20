@@ -2,12 +2,12 @@
 Simple left shift with literals
 ==================
 
-uint x = 1 << 8;
+uint constant x = 1 << 8;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -68,12 +68,12 @@ contract C {
 Unsigned right shift
 ==================
 
-uint x = 256 >>> 2;
+uint constant x = 256 >>> 2;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -90,13 +90,13 @@ Chained shift expressions (left-associative)
 ==================
 
 // Should parse as (a << b) << c
-uint x = a << b << c;
+uint constant x = a << b << c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -117,13 +117,13 @@ Shift precedence with arithmetic operators (add/mul)
 ==================
 
 // Should parse as (a * 2) << (b + 1)
-uint x = a * 2 << b + 1;
+uint constant x = a * 2 << b + 1;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -150,13 +150,13 @@ Shift precedence with bitwise AND
 ==================
 
 // Should parse as (a << b) & c
-uint x = a << b & c;
+uint constant x = a << b & c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -178,13 +178,13 @@ Shift precedence with comparison operators
 ==================
 
 // Should parse as (a >> b) < c
-bool x = a >> b < c;
+bool constant x = a >> b < c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -205,13 +205,13 @@ Shift with parenthesized bitwise AND
 ==================
 
 // Should parse as a << (b & MASK)
-uint x = a << (b & MASK);
+uint constant x = a << (b & MASK);
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol

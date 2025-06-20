@@ -13,7 +13,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (uint_type))
@@ -21,7 +21,7 @@ contract C {
           (address_type)))
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -45,7 +45,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -76,7 +76,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (bytes_type))
@@ -120,7 +120,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -164,7 +164,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (uint_type))
@@ -177,16 +177,15 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        statement: (variable_declaration_statement
-          declaration: (variable_declaration
-            type: (mapping_type
-              key: (primitive_type
-                (uint_type))
-              value: (primitive_type
-                (address_type)))
-            location: (storage)
-            name: (symbol
-              name: (identifier)))
+        statement: (local_variable
+          type: (mapping_type
+            key: (primitive_type
+              (uint_type))
+            value: (primitive_type
+              (address_type)))
+          location: (storage)
+          name: (symbol
+            name: (identifier))
           value: (symbol
             name: (identifier)))))))
 
@@ -251,7 +250,7 @@ contract C {
     definition: (struct
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (custom_type
           symbol: (symbol
@@ -276,7 +275,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (address_type))
@@ -309,7 +308,7 @@ contract C {
           (bool_type))
         name: (symbol
           name: (identifier))))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (primitive_type
           (uint_type))

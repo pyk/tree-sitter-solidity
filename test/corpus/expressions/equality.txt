@@ -2,12 +2,12 @@
 Simple equality with number literals
 ==================
 
-bool x = 1 == 1;
+bool constant x = 1 == 1;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -68,12 +68,12 @@ contract C {
 Equality with boolean literals
 ==================
 
-bool x = true == false;
+bool constant x = true == false;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -89,12 +89,12 @@ bool x = true == false;
 Equality with address literals
 ==================
 
-bool x = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF == address(0);
+bool constant x = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF == address(0);
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -114,13 +114,13 @@ Equality precedence with addition
 ==================
 
 // Should parse as (a + 5) == b
-bool x = a + 5 == b;
+bool constant x = a + 5 == b;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -143,14 +143,14 @@ Equality precedence vs. comparison (left-associative)
 
 // Should parse as (a < b) == (c > d).
 // This is invalid Solidity but must be parsed correctly to be linted.
-bool x = a < b == c > d;
+bool constant x = a < b == c > d;
 
 ---
 
 (source_file
   (comment)
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -175,13 +175,13 @@ Equality used in a logical OR expression
 ==================
 
 // Should parse as (a == b) || (c != d)
-bool x = a == b || c != d;
+bool constant x = a == b || c != d;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol

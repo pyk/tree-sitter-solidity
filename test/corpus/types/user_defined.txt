@@ -22,13 +22,13 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (custom_type
         symbol: (symbol
           name: (identifier)))
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (custom_type
         symbol: (symbol
           name: (identifier)))
@@ -54,7 +54,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (custom_type
         symbol: (symbol
           scope: (symbol
@@ -131,14 +131,13 @@ contract C {
         name: (identifier))
       visibility: (public)
       body: (block
-        statement: (variable_declaration_statement
-          declaration: (variable_declaration
-            type: (custom_type
-              symbol: (symbol
-                name: (identifier)))
-            location: (memory)
-            name: (symbol
-              name: (identifier))))))))
+        statement: (local_variable
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          location: (memory)
+          name: (symbol
+            name: (identifier)))))))
 
 ==================
 Custom type in a type cast
@@ -211,7 +210,7 @@ contract C {
     definition: (struct
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (custom_type
           symbol: (symbol
@@ -241,7 +240,7 @@ contract C {
     definition: (struct
       name: (symbol
         name: (identifier)))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (custom_type
           symbol: (symbol
@@ -343,13 +342,12 @@ contract Factory {
         name: (identifier))
       visibility: (public)
       body: (block
-        statement: (variable_declaration_statement
-          declaration: (variable_declaration
-            type: (custom_type
-              symbol: (symbol
-                name: (identifier)))
-            name: (symbol
+        statement: (local_variable
+          type: (custom_type
+            symbol: (symbol
               name: (identifier)))
+          name: (symbol
+            name: (identifier))
           value: (call
             function: (new_expression
               type: (custom_type

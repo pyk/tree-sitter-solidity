@@ -34,7 +34,7 @@ contract C {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (custom_type
         symbol: (symbol
           name: (identifier)))
@@ -115,13 +115,12 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (variable_declaration_statement
-          declaration: (variable_declaration
-            type: (custom_type
-              symbol: (symbol
-                name: (identifier)))
-            name: (symbol
+        statement: (local_variable
+          type: (custom_type
+            symbol: (symbol
               name: (identifier)))
+          name: (symbol
+            name: (identifier))
           value: (call
             function: (symbol
               scope: (symbol
@@ -186,7 +185,7 @@ contract Ledger {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (mapping_type
         key: (custom_type
           symbol: (symbol
@@ -219,7 +218,7 @@ contract Oracle {
   definition: (contract
     name: (symbol
       name: (identifier))
-    definition: (variable
+    definition: (state_variable
       type: (array_type
         base: (custom_type
           symbol: (symbol

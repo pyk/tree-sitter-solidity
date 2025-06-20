@@ -2,12 +2,12 @@
 Simple OR with boolean literals
 ==================
 
-bool x = true || false;
+bool constant x = true || false;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -69,13 +69,13 @@ Chained OR expressions (left-associative)
 ==================
 
 // Should parse as (a || b) || c
-bool x = a || b || c;
+bool constant x = a || b || c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -96,13 +96,13 @@ OR precedence with AND (critical test)
 ==================
 
 // Should parse as a || (b && c) due to OR's lower precedence
-bool x = a || b && c;
+bool constant x = a || b && c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -123,13 +123,13 @@ OR with equality and comparison expressions
 ==================
 
 // Should parse as (a == b) || (c < d)
-bool x = a == b || c < d;
+bool constant x = a == b || c < d;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -154,13 +154,13 @@ OR with a parenthesized AND expression
 ==================
 
 // Should parse as (a || b) && c
-bool x = (a || b) && c;
+bool constant x = (a || b) && c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol

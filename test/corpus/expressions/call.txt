@@ -212,12 +212,11 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        statement: (variable_declaration_statement
-          declaration: (variable_declaration
-            type: (primitive_type
-              (bytes_type))
-            name: (symbol
-              name: (identifier)))
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier))
           value: (call
             function: (builtin_function
               name: (keccak256))
@@ -396,13 +395,12 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        statement: (variable_declaration_statement
-          declaration: (variable_declaration
-            type: (custom_type
-              symbol: (symbol
-                name: (identifier)))
-            name: (symbol
+        statement: (local_variable
+          type: (custom_type
+            symbol: (symbol
               name: (identifier)))
+          name: (symbol
+            name: (identifier))
           value: (call
             function: (new_expression
               type: (custom_type

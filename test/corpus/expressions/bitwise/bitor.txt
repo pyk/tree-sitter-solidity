@@ -2,12 +2,12 @@
 Simple bitwise OR with hex literals
 ==================
 
-uint x = 0xF0 | 0x0F;
+uint constant x = 0xF0 | 0x0F;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -71,13 +71,13 @@ Chained bitwise OR expressions (left-associative)
 ==================
 
 // Should parse as (a | b) | c
-uint x = a | b | c;
+uint constant x = a | b | c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -100,13 +100,13 @@ Bitwise OR precedence with XOR and AND (critical test)
 ==================
 
 // Should parse as a | (b ^ (c & d)) due to precedence
-uint x = a | b ^ c & d;
+uint constant x = a | b ^ c & d;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -136,7 +136,7 @@ Bitwise OR precedence with logical AND
 // Should parse as (a | b) && (c | d)
 // Note: This is invalid Solidity as bitwise ops don't produce booleans,
 // but the parser should handle the structure correctly for linting.
-bool x = a | b && c | d;
+bool constant x = a | b && c | d;
 
 ---
 
@@ -144,7 +144,7 @@ bool x = a | b && c | d;
   (comment)
   (comment)
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol
@@ -171,13 +171,13 @@ Bitwise OR with parenthesized logical AND expression
 ==================
 
 // Should parse as (a | b) && c. Invalid, but should parse.
-bool x = (a | b) && c;
+bool constant x = (a | b) && c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (bool_type))
     name: (symbol

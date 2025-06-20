@@ -2,12 +2,12 @@
 Simple division with number literals
 ==================
 
-uint x = 100 / 5;
+uint constant x = 100 / 5;
 
 ---
 
 (source_file
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -71,13 +71,13 @@ Chained division and multiplication (left-associative)
 ==================
 
 // Should parse as ((100 / 5) * 2)
-uint x = 100 / 5 * 2;
+uint constant x = 100 / 5 * 2;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -100,13 +100,13 @@ Division precedence with exponentiation (critical test)
 ==================
 
 // Should parse as a / (b ** c)
-uint x = a / b ** c;
+uint constant x = a / b ** c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -129,13 +129,13 @@ Division precedence with subtraction (critical test)
 ==================
 
 // Should parse as (a / b) - c
-uint x = a / b - c;
+uint constant x = a / b - c;
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
@@ -158,13 +158,13 @@ Division with a parenthesized expression
 ==================
 
 // Should parse as a / (b - c)
-uint x = a / (b - c);
+uint constant x = a / (b - c);
 
 ---
 
 (source_file
   (comment)
-  definition: (variable
+  definition: (constant_variable
     type: (primitive_type
       (uint_type))
     name: (symbol
