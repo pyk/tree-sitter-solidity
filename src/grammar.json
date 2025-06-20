@@ -3976,8 +3976,12 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "anonymous"
+              "type": "FIELD",
+              "name": "anonymous",
+              "content": {
+                "type": "SYMBOL",
+                "name": "anonymous"
+              }
             },
             {
               "type": "BLANK"

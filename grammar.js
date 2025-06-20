@@ -1155,7 +1155,7 @@ module.exports = grammar({
         "(",
         optional(field("parameters", $.event_parameters)),
         ")",
-        optional($.anonymous),
+        optional(field("anonymous", $.anonymous)),
         ";",
       ),
 

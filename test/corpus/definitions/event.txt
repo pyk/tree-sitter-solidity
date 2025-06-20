@@ -140,7 +140,7 @@ event AnonymizedLog(address indexed sender, string message) anonymous;
           (string_type))
         name: (symbol
           name: (identifier))))
-    (anonymous)))
+    anonymous: (anonymous)))
 
 ==================
 Event with a struct parameter

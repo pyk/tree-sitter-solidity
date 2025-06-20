@@ -4089,6 +4089,16 @@
     "type": "event",
     "named": true,
     "fields": {
+      "anonymous": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "anonymous",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -4109,16 +4119,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "anonymous",
-          "named": true
-        }
-      ]
     }
   },
   {
