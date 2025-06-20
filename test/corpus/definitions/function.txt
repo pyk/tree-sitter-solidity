@@ -1,0 +1,422 @@
+==================
+Simple function with no parameters or returns
+==================
+
+function myFunction() {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    body: (block)))
+
+==================
+Function with parameters
+==================
+
+function set(uint256 _x, address _y) {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    parameters: (parameters
+      parameter: (parameter
+        type: (primitive_type
+          (uint_type))
+        name: (identifier))
+      parameter: (parameter
+        type: (primitive_type
+          (address_type))
+        name: (identifier)))
+    body: (block)))
+
+==================
+Function with a single return value
+==================
+
+function getValue() returns (uint) {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    returns: (parameters
+      parameter: (parameter
+        type: (primitive_type
+          (uint_type))))
+    body: (block)))
+
+==================
+Function with multiple named return values
+==================
+
+function getValues() returns (uint a, bool b) {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    returns: (parameters
+      parameter: (parameter
+        type: (primitive_type
+          (uint_type))
+        name: (identifier))
+      parameter: (parameter
+        type: (primitive_type
+          (bool_type))
+        name: (identifier)))
+    body: (block)))
+
+==================
+Public function
+==================
+
+function doSomething() public {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    visibility: (visibility)
+    body: (block)))
+
+==================
+Internal pure function
+==================
+
+function calculate() internal pure {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    visibility: (visibility)
+    mutability: (state_mutability)
+    body: (block)))
+
+==================
+External view function
+==================
+
+function readData() external view {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    visibility: (visibility)
+    mutability: (state_mutability)
+    body: (block)))
+
+==================
+Private payable function
+==================
+
+function deposit() private payable {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    visibility: (visibility)
+    mutability: (state_mutability)
+    body: (block)))
+
+==================
+Virtual function
+==================
+
+function myVirtualFunc() public virtual {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    visibility: (visibility)
+    virtual: (virtual)
+    body: (block)))
+
+==================
+Override function
+==================
+
+contract A { function f() virtual; }
+contract B is A {
+    function f() public override {}
+}
+---
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      virtual: (virtual)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    parents: (parent_list
+      parent: (parent
+        name: (symbol
+          name: (identifier))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      override: (override_specifier)
+      body: (block))))
+
+==================
+Override function with multiple bases
+==================
+
+contract A { function f() virtual; }
+contract B { function f() virtual; }
+contract C is A, B {
+    function f() public override(A, B) {}
+}
+---
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      virtual: (virtual)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      virtual: (virtual)))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    parents: (parent_list
+      parent: (parent
+        name: (symbol
+          name: (identifier)))
+      parent: (parent
+        name: (symbol
+          name: (identifier))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (visibility)
+      override: (override_specifier
+        from: (symbol
+          name: (identifier))
+        from: (symbol
+          name: (identifier)))
+      body: (block))))
+
+==================
+Function with a single modifier
+==================
+
+function restricted() public onlyOwner {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    visibility: (visibility)
+    modifier: (modifier_invocation
+      name: (symbol
+        name: (identifier)))
+    body: (block)))
+
+==================
+Function with multiple modifiers
+==================
+
+function complexAction() external payable requiresAuth whenNotPaused {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    visibility: (visibility)
+    mutability: (state_mutability)
+    modifier: (modifier_invocation
+      name: (symbol
+        name: (identifier)))
+    modifier: (modifier_invocation
+      name: (symbol
+        name: (identifier)))
+    body: (block)))
+
+==================
+Function with modifier and arguments
+==================
+
+function timedAction() public costs(1 ether) {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    visibility: (visibility)
+    modifier: (modifier_invocation
+      name: (symbol
+        name: (identifier))
+      arguments: (argument_list
+        argument: (ether_literal
+          value: (number)
+          unit: (ether))))
+    body: (block)))
+
+==================
+Function with all attributes
+==================
+
+function superComplex() external payable virtual override(Base) onlyAdmin returns (bool) {}
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    visibility: (visibility)
+    mutability: (state_mutability)
+    virtual: (virtual)
+    override: (override_specifier
+      from: (symbol
+        name: (identifier)))
+    modifier: (modifier_invocation
+      name: (symbol
+        name: (identifier)))
+    returns: (parameters
+      parameter: (parameter
+        type: (primitive_type
+          (bool_type))))
+    body: (block)))
+
+==================
+Unimplemented function (in an interface or abstract contract)
+==================
+
+function requiredFunction(uint) external returns (bool);
+
+---
+(source_file
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    parameters: (parameters
+      parameter: (parameter
+        type: (primitive_type
+          (uint_type))))
+    visibility: (visibility)
+    returns: (parameters
+      parameter: (parameter
+        type: (primitive_type
+          (bool_type))))))
+
+==================
+Function with complex parameters (arrays and structs)
+==================
+struct MyStruct {}
+function processData(uint[] memory data, MyStruct calldata s) internal {}
+---
+(source_file
+  definition: (struct
+    name: (symbol
+      name: (identifier)))
+  definition: (function
+    name: (symbol
+      name: (identifier))
+    parameters: (parameters
+      parameter: (parameter
+        type: (array_type
+          base: (primitive_type
+            (uint_type)))
+        location: (data_location)
+        name: (identifier))
+      parameter: (parameter
+        type: (custom_type
+          symbol: (symbol
+            name: (identifier)))
+        location: (data_location)
+        name: (identifier)))
+    visibility: (visibility)
+    body: (block)))
+
+==================
+Receive Ether function
+==================
+
+contract C {
+    receive() external payable {}
+}
+
+---
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (receive_function_definition
+      visibility: (visibility)
+      mutability: (state_mutability)
+      body: (block))))
+
+==================
+Fallback function (no parameters)
+==================
+
+contract C {
+    fallback() external {}
+}
+
+---
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (fallback_function_definition
+      visibility: (visibility)
+      body: (block))))
+
+==================
+Fallback function (with parameters)
+==================
+
+contract C {
+    fallback(bytes calldata input) external payable returns (bytes memory) {}
+}
+---
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (fallback_function_definition
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          location: (data_location)
+          name: (identifier)))
+      visibility: (visibility)
+      mutability: (state_mutability)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          location: (data_location)))
+      body: (block))))

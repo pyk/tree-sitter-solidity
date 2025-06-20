@@ -172,9 +172,6 @@ module.exports = grammar({
     data_location: ($) => choice("memory", "storage", "calldata"),
     global: ($) => "global",
     mutability: ($) => choice("constant", "immutable"),
-    state_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
-    virtual: ($) => "virtual",
-    visibility: ($) => choice("public", "private", "internal", "external"),
     wildcard: ($) => "*",
     transient: ($) => "transient",
 
@@ -1161,32 +1158,6 @@ module.exports = grammar({
       ),
 
     //############################################################//
-    //                        Constructor                         //
-    //############################################################//
-
-    constructor: ($) =>
-      seq(
-        "constructor",
-        "(",
-        optional(field("parameters", $.parameters)),
-        ")",
-        repeat($._constructor_attribute),
-        field("body", $.block),
-      ),
-
-    _constructor_attribute: ($) =>
-      choice(
-        // Give specific keywords higher precedence (2)
-        prec(2, field("visibility", $.visibility)),
-        prec(2, field("mutability", $.state_mutability)),
-        // Give the generic parent constructor invocation lower precedence (1)
-        prec(1, field("parent_constructor", $.parent_constructor)),
-      ),
-
-    parent_constructor: ($) =>
-      seq(field("name", $.symbol), field("arguments", $.argument_list)),
-
-    //############################################################//
     //                         Parameters                         //
     //############################################################//
 
@@ -1207,28 +1178,12 @@ module.exports = grammar({
       ),
 
     //############################################################//
-    //                         Arguments                          //
+    //                    Function definition                     //
     //############################################################//
 
-    /**
-     * An argument list for a function call.
-     * e.g., `(arg1, arg2)` or `()`
-     */
-    argument_list: ($) =>
-      prec(
-        1, // Add precedence here to resolve ambiguity
-        seq(
-          "(",
-          // Make the comma-separated list of expressions optional
-          // to correctly handle calls with no arguments.
-          optional(commaSep(field("argument", $._expression))),
-          ")",
-        ),
-      ),
-
-    //############################################################//
-    //                           Others                           //
-    //############################################################//
+    state_mutability: ($) => choice("pure", "view", "payable", "nonpayable"),
+    virtual: ($) => "virtual",
+    visibility: ($) => choice("public", "private", "internal", "external"),
 
     function: ($) =>
       seq(
@@ -1243,9 +1198,7 @@ module.exports = grammar({
         ),
         choice(field("body", $.block), ";"),
       ),
-    /**
-     * An attribute of a function, such as visibility or state mutability.
-     */
+
     _function_attribute: ($) =>
       choice(
         // Give specific keywords higher precedence (2)
@@ -1288,6 +1241,62 @@ module.exports = grammar({
         ),
       ),
 
+    override_specifier: ($) =>
+      seq(
+        "override",
+        optional(seq("(", commaSep(field("from", $.symbol)), ")")),
+      ),
+
+    //############################################################//
+    //                        Constructor                         //
+    //############################################################//
+
+    constructor: ($) =>
+      seq(
+        "constructor",
+        "(",
+        optional(field("parameters", $.parameters)),
+        ")",
+        repeat($._constructor_attribute),
+        field("body", $.block),
+      ),
+
+    _constructor_attribute: ($) =>
+      choice(
+        // Give specific keywords higher precedence (2)
+        prec(2, field("visibility", $.visibility)),
+        prec(2, field("mutability", $.state_mutability)),
+        // Give the generic parent constructor invocation lower precedence (1)
+        prec(1, field("parent_constructor", $.parent_constructor)),
+      ),
+
+    parent_constructor: ($) =>
+      seq(field("name", $.symbol), field("arguments", $.argument_list)),
+
+    //############################################################//
+    //                         Arguments                          //
+    //############################################################//
+
+    /**
+     * An argument list for a function call.
+     * e.g., `(arg1, arg2)` or `()`
+     */
+    argument_list: ($) =>
+      prec(
+        1, // Add precedence here to resolve ambiguity
+        seq(
+          "(",
+          // Make the comma-separated list of expressions optional
+          // to correctly handle calls with no arguments.
+          optional(commaSep(field("argument", $._expression))),
+          ")",
+        ),
+      ),
+
+    //############################################################//
+    //                           Others                           //
+    //############################################################//
+
     // Add a helper rule for receive/fallback attributes
     _function_like_attribute: ($) =>
       choice(
@@ -1296,12 +1305,6 @@ module.exports = grammar({
         field("modifier", $.modifier_invocation),
         "virtual",
         // TODO: add override_specifier here later
-      ),
-
-    override_specifier: ($) =>
-      seq(
-        "override",
-        optional(seq("(", commaSep(field("from", $.symbol)), ")")),
       ),
 
     // The receive function definition
