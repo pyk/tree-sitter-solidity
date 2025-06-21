@@ -2056,6 +2056,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "gasleft"
+        },
+        {
+          "type": "SYMBOL",
           "name": "group"
         },
         {
@@ -3180,10 +3184,6 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "gasleft"
-          },
-          {
-            "type": "SYMBOL",
             "name": "selfdestruct"
           }
         ]
@@ -3192,10 +3192,6 @@
     "selfdestruct": {
       "type": "STRING",
       "value": "selfdestruct"
-    },
-    "gasleft": {
-      "type": "STRING",
-      "value": "gasleft"
     },
     "assignment": {
       "type": "PREC_RIGHT",
@@ -3550,6 +3546,23 @@
             "type": "SYMBOL",
             "name": "_expression"
           }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "gasleft": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "gasleft"
+        },
+        {
+          "type": "STRING",
+          "value": "("
         },
         {
           "type": "STRING",

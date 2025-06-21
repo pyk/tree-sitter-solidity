@@ -610,6 +610,7 @@ module.exports = grammar({
         $.conditional_expression,
         $.ecrecover,
         $.equality,
+        $.gasleft,
         $.group,
         $.index_access_expression,
         $.index_range_access_expression,
@@ -955,11 +956,10 @@ module.exports = grammar({
         ),
       ),
 
-    builtin_function: ($) => field("name", choice($.gasleft, $.selfdestruct)),
+    builtin_function: ($) => field("name", choice($.selfdestruct)),
 
     // Contract & Transaction
     selfdestruct: ($) => "selfdestruct",
-    gasleft: ($) => "gasleft",
 
     //############################################################//
     //                   Assignment expression                    //
@@ -1050,6 +1050,9 @@ module.exports = grammar({
         field("k", $._expression),
         ")",
       ),
+
+    // Others
+    gasleft: ($) => seq("gasleft", "(", ")"),
 
     //############################################################//
     //                          Variable                          //

@@ -76,6 +76,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -221,6 +225,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -373,6 +381,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -511,6 +523,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -646,6 +662,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -809,6 +829,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -957,6 +981,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -1098,6 +1126,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -1318,6 +1350,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -1459,6 +1495,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -1608,6 +1648,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -1799,6 +1843,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -1940,6 +1988,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -2091,6 +2143,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -2237,6 +2293,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -2399,6 +2459,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -2544,6 +2608,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -2723,6 +2791,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -2868,6 +2940,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -3052,6 +3128,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -3190,10 +3270,6 @@
         "required": true,
         "types": [
           {
-            "type": "gasleft",
-            "named": true
-          },
-          {
             "type": "selfdestruct",
             "named": true
           }
@@ -3274,6 +3350,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -3443,6 +3523,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -3616,6 +3700,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -3776,6 +3864,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -3920,6 +4012,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -4058,6 +4154,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -4193,6 +4293,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -4378,6 +4482,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -4738,6 +4846,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -4892,6 +5004,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -5037,6 +5153,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -5221,6 +5341,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -5395,6 +5519,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -5539,6 +5667,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -5674,6 +5806,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -5815,6 +5951,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -5950,6 +6090,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -6149,6 +6293,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -6294,6 +6442,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -6672,6 +6824,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -6817,6 +6973,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -7144,6 +7304,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -7318,6 +7482,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -7460,6 +7628,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -7599,6 +7771,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -7894,6 +8070,11 @@
     }
   },
   {
+    "type": "gasleft",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "group",
     "named": true,
     "fields": {
@@ -7951,6 +8132,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -8140,6 +8325,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -8314,6 +8503,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -8481,6 +8674,10 @@
           },
           {
             "type": "for_statement",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -8713,6 +8910,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -8867,6 +9068,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -9002,6 +9207,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -9149,6 +9358,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -9287,6 +9500,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -9422,6 +9639,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -9566,6 +9787,10 @@
         },
         {
           "type": "ether_literal",
+          "named": true
+        },
+        {
+          "type": "gasleft",
           "named": true
         },
         {
@@ -9770,6 +9995,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -10080,6 +10309,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -10302,6 +10535,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -10478,6 +10715,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -10623,6 +10864,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -10831,6 +11076,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -10976,6 +11225,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -11128,6 +11381,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -11266,6 +11523,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -11401,6 +11662,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -11558,6 +11823,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -11699,6 +11968,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -11893,6 +12166,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -12047,6 +12324,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -12192,6 +12473,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -12677,6 +12962,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -12841,6 +13130,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -12995,6 +13288,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -13136,6 +13433,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -13283,6 +13584,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -13424,6 +13729,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -13572,6 +13881,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -13929,6 +14242,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -14163,6 +14480,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -14308,6 +14629,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -14551,6 +14876,10 @@
         },
         {
           "type": "ether_literal",
+          "named": true
+        },
+        {
+          "type": "gasleft",
           "named": true
         },
         {
@@ -14839,6 +15168,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -15011,6 +15344,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -15409,6 +15746,10 @@
             "named": true
           },
           {
+            "type": "gasleft",
+            "named": true
+          },
+          {
             "type": "group",
             "named": true
           },
@@ -15580,6 +15921,10 @@
           },
           {
             "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "gasleft",
             "named": true
           },
           {
@@ -16100,7 +16445,7 @@
   },
   {
     "type": "gasleft",
-    "named": true
+    "named": false
   },
   {
     "type": "global",

@@ -1,0 +1,172 @@
+==================
+gasleft in a variable assignment
+==================
+
+contract C {
+    function f() public view {
+        uint remaining = gasleft();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))
+          value: (gasleft))))))
+
+==================
+gasleft in a return statement
+==================
+
+contract C {
+    function f() public view returns (uint) {
+        return gasleft();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        statement: (return
+          value: (gasleft))))))
+
+==================
+gasleft in a require statement
+==================
+
+contract C {
+    function f() public view {
+        require(gasleft() > 21000, "Not enough gas to proceed");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      body: (block
+        statement: (require
+          condition: (comparison
+            left: (gasleft)
+            operator: (gt)
+            right: (literal
+              (number)))
+          reason: (string))))))
+
+==================
+gasleft in an arithmetic expression
+==================
+
+contract C {
+    function f(uint startGas) public view returns (uint) {
+        uint gasUsed = startGas - gasleft();
+        return gasUsed;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))
+          value: (arithmetic
+            (sub
+              left: (symbol
+                name: (identifier))
+              operator: (sub_op)
+              right: (gasleft))))
+        statement: (return
+          value: (symbol
+            name: (identifier)))))))
+
+==================
+gasleft as a function argument
+==================
+
+contract C {
+    event GasLog(uint remaining);
+    function f() public {
+        emit GasLog(gasleft());
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (event
+      name: (symbol
+        name: (identifier))
+      parameters: (event_parameters
+        parameter: (event_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (emit
+          event: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (gasleft)))))))
