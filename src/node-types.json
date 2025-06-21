@@ -22862,24 +22862,37 @@
   {
     "type": "pragma",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "abicoder",
-          "named": true
-        },
-        {
-          "type": "experimental",
-          "named": true
-        },
-        {
-          "type": "solidity",
-          "named": true
-        }
-      ]
+    "fields": {
+      "abicoder": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "abicoder",
+            "named": true
+          }
+        ]
+      },
+      "experimental": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "experimental",
+            "named": true
+          }
+        ]
+      },
+      "solidity": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "solidity",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {

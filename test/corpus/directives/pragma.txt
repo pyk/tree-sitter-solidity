@@ -8,7 +8,7 @@ pragma solidity ^0.8.0;
 
 (source_file
   directive: (pragma
-    (solidity
+    solidity: (solidity
       version: (version_constraint
         operator: (version_operator)
         number: (version)))))
@@ -23,7 +23,7 @@ pragma solidity >=0.8.0 <0.9.0;
 
 (source_file
   directive: (pragma
-    (solidity
+    solidity: (solidity
       version: (version_constraint
         operator: (version_operator)
         number: (version))
@@ -41,7 +41,7 @@ pragma solidity 0.8.4;
 
 (source_file
   directive: (pragma
-    (solidity
+    solidity: (solidity
       version: (version_constraint
         number: (version)))))
 
@@ -55,7 +55,7 @@ pragma abicoder v2;
 
 (source_file
   directive: (pragma
-    (abicoder
+    abicoder: (abicoder
       version: (identifier))))
 
 ==================
@@ -68,5 +68,5 @@ pragma experimental SMTChecker;
 
 (source_file
   directive: (pragma
-    (experimental
+    experimental: (experimental
       feature: (identifier))))

@@ -1192,16 +1192,28 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "solidity"
+              "type": "FIELD",
+              "name": "solidity",
+              "content": {
+                "type": "SYMBOL",
+                "name": "solidity"
+              }
             },
             {
-              "type": "SYMBOL",
-              "name": "abicoder"
+              "type": "FIELD",
+              "name": "abicoder",
+              "content": {
+                "type": "SYMBOL",
+                "name": "abicoder"
+              }
             },
             {
-              "type": "SYMBOL",
-              "name": "experimental"
+              "type": "FIELD",
+              "name": "experimental",
+              "content": {
+                "type": "SYMBOL",
+                "name": "experimental"
+              }
             }
           ]
         },

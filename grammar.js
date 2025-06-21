@@ -419,10 +419,9 @@ module.exports = grammar({
       seq(
         "pragma",
         choice(
-          $.solidity,
-          $.abicoder,
-          $.experimental,
-          // Other pragma
+          field("solidity", $.solidity),
+          field("abicoder", $.abicoder),
+          field("experimental", $.experimental),
         ),
         ";",
       ),
