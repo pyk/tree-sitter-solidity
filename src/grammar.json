@@ -2092,6 +2092,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "sha256"
+        },
+        {
+          "type": "SYMBOL",
           "name": "shift"
         },
         {
@@ -3181,17 +3185,9 @@
           {
             "type": "SYMBOL",
             "name": "selfdestruct"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "sha256"
           }
         ]
       }
-    },
-    "sha256": {
-      "type": "STRING",
-      "value": "sha256"
     },
     "ripemd160": {
       "type": "STRING",
@@ -3349,6 +3345,31 @@
         {
           "type": "STRING",
           "value": "keccak256"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "argument",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "sha256": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "sha256"
         },
         {
           "type": "STRING",

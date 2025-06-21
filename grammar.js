@@ -619,6 +619,7 @@ module.exports = grammar({
         $.not,
         $.or,
         $.payable_conversion_expression,
+        $.sha256,
         $.shift,
         $.tuple_expression,
         $.unary_expression,
@@ -960,12 +961,10 @@ module.exports = grammar({
           $.mulmod,
           $.ripemd160,
           $.selfdestruct,
-          $.sha256,
         ),
       ),
 
     // Cryptography
-    sha256: ($) => "sha256",
     ripemd160: ($) => "ripemd160",
     ecrecover: ($) => "ecrecover",
 
@@ -1025,6 +1024,7 @@ module.exports = grammar({
 
     keccak256: ($) =>
       seq("keccak256", "(", field("argument", $._expression), ")"),
+    sha256: ($) => seq("sha256", "(", field("argument", $._expression), ")"),
 
     //############################################################//
     //                          Variable                          //

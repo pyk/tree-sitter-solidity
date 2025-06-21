@@ -1,0 +1,154 @@
+==================
+sha256 with a string literal
+==================
+
+contract C {
+    function f() public pure {
+        bytes32 hash = sha256("hello");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier))
+          value: (sha256
+            argument: (literal
+              (string))))))))
+
+==================
+sha256 with a variable
+==================
+
+contract C {
+    function f(bytes memory data) public pure returns (bytes32) {
+        return sha256(data);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))))
+      body: (block
+        statement: (return
+          value: (sha256
+            argument: (symbol
+              name: (identifier))))))))
+
+==================
+sha256 with abi.encode
+==================
+
+contract C {
+    function f(uint x) public pure returns (bytes32) {
+        return sha256(abi.encode(x));
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))))
+      body: (block
+        statement: (return
+          value: (sha256
+            argument: (call
+              function: (symbol
+                scope: (symbol
+                  name: (identifier))
+                name: (identifier))
+              arguments: (arguments
+                argument: (symbol
+                  name: (identifier))))))))))
+
+==================
+sha256 in an assignment expression
+==================
+
+contract C {
+    function f(bytes memory data) public pure {
+        bytes32 myHash;
+        myHash = sha256(data);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier)))
+        statement: (assignment
+          left: (symbol
+            name: (identifier))
+          operator: (assign_op)
+          right: (sha256
+            argument: (symbol
+              name: (identifier))))))))
