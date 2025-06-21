@@ -73,10 +73,11 @@ contract C {
         name: (identifier))
       body: (block
         statement: (call
-          function: (symbol
-            scope: (symbol
+          function: (member
+            object: (symbol
               name: (identifier))
-            name: (identifier))
+            member: (symbol
+              name: (identifier)))
           arguments: (arguments))))))
 
 ==================
@@ -100,10 +101,11 @@ contract C {
         name: (identifier))
       body: (block
         statement: (call
-          function: (symbol
-            scope: (symbol
+          function: (member
+            object: (symbol
               name: (identifier))
-            name: (identifier))
+            member: (symbol
+              name: (identifier)))
           options: (call_options_block
             (named_argument
               name: (symbol
@@ -347,14 +349,15 @@ contract C {
             name: (identifier))))
       body: (block
         statement: (call
-          function: (member_access_expression
+          function: (member
             object: (call
               function: (symbol
                 name: (identifier))
               arguments: (arguments
                 argument: (symbol
                   name: (identifier))))
-            member: (identifier))
+            member: (symbol
+              name: (identifier)))
           arguments: (arguments))))))
 
 ==================

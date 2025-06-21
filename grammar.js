@@ -151,17 +151,11 @@ module.exports = grammar({
      */
     symbol: ($) =>
       choice(
-        // The base case: a symbol that is just a simple identifier.
-        field("name", $.identifier),
-
-        // The recursive case: a symbol with a scope and a name.
+        $._simple_symbol, // Base case: a simple symbol
         prec.left(
-          PREC.MEMBER, // Use member access precedence to handle associativity correctly
-          seq(
-            field("scope", $.symbol), // The scope is another symbol
-            ".",
-            field("name", $.identifier),
-          ),
+          // Recursive case: a qualified symbol
+          PREC.MEMBER,
+          seq(field("scope", $.symbol), ".", field("name", $.identifier)),
         ),
       ),
 
@@ -602,7 +596,7 @@ module.exports = grammar({
         $.eq,
         $.group,
         $.inline_array_expression,
-        $.member_access_expression,
+        $.member,
         $.meta_type_expression,
         $.neq,
         $.new_expression,
@@ -625,7 +619,7 @@ module.exports = grammar({
         $.ether_literal,
         $.time_literal,
         $.literal,
-        prec(1, $.symbol),
+        prec(1, alias($._simple_symbol, $.symbol)),
         $._primitive_type,
         $.this,
         $.super,
@@ -956,6 +950,28 @@ module.exports = grammar({
           // to correctly handle calls with no arguments.
           optional(commaSep(field("argument", $._expression))),
           ")",
+        ),
+      ),
+
+    /**
+     * A member access expression.
+     * e.g., `myVariable.property`
+     *
+     * This rule is made left-associative using `prec.left` to ensure that
+     * chained member access is parsed correctly. For example, an expression
+     * like `a.b.c` is grouped from left to right as `(a.b).c`.
+     *
+     * It shares the same high precedence level as `call` (`PREC.MEMBER`)
+     * to correctly handle interactions between them, such as accessing a property
+     * on the result of a function call: `myFunc().property`.
+     */
+    member: ($) =>
+      prec.left(
+        PREC.MEMBER,
+        seq(
+          field("object", $._expression),
+          ".",
+          field("member", alias($._simple_symbol, $.symbol)),
         ),
       ),
 
@@ -1771,24 +1787,6 @@ module.exports = grammar({
         field("name", alias($._simple_symbol, $.symbol)),
         ":",
         field("value", $._expression),
-      ),
-
-    /**
-     * A member access expression.
-     * e.g., `myVariable.property`
-     *
-     * This rule is made left-associative using `prec.left` to ensure that
-     * chained member access is parsed correctly. For example, an expression
-     * like `a.b.c` is grouped from left to right as `(a.b).c`.
-     *
-     * It shares the same high precedence level as `call` (`PREC.MEMBER`)
-     * to correctly handle interactions between them, such as accessing a property
-     * on the result of a function call: `myFunc().property`.
-     */
-    member_access_expression: ($) =>
-      prec.left(
-        PREC.MEMBER,
-        seq(field("object", $._expression), ".", field("member", $.identifier)),
       ),
 
     /**

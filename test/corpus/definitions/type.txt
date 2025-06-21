@@ -118,10 +118,11 @@ contract C {
           name: (symbol
             name: (identifier))
           value: (call
-            function: (symbol
-              scope: (symbol
+            function: (member
+              object: (symbol
                 name: (identifier))
-              name: (identifier))
+              member: (symbol
+                name: (identifier)))
             arguments: (arguments
               argument: (literal
                 (boolean)))))))))

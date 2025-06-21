@@ -37,9 +37,10 @@ contract Derived is Base {
       override: (overrides)
       body: (block
         statement: (call
-          function: (member_access_expression
+          function: (member
             object: (super)
-            member: (identifier))
+            member: (symbol
+              name: (identifier)))
           arguments: (arguments))))))
 
 ==================
@@ -89,9 +90,10 @@ contract Derived is Base {
       override: (overrides)
       body: (block
         statement: (call
-          function: (member_access_expression
+          function: (member
             object: (super)
-            member: (identifier))
+            member: (symbol
+              name: (identifier)))
           arguments: (arguments
             argument: (symbol
               name: (identifier))))))))

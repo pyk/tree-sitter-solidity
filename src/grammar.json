@@ -230,12 +230,8 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "identifier"
-          }
+          "type": "SYMBOL",
+          "name": "_simple_symbol"
         },
         {
           "type": "PREC_LEFT",
@@ -2022,7 +2018,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "member_access_expression"
+          "name": "member"
         },
         {
           "type": "SYMBOL",
@@ -2089,8 +2085,13 @@
           "type": "PREC",
           "value": 1,
           "content": {
-            "type": "SYMBOL",
-            "name": "symbol"
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_simple_symbol"
+            },
+            "named": true,
+            "value": "symbol"
           }
         },
         {
@@ -3154,6 +3155,40 @@
           {
             "type": "STRING",
             "value": ")"
+          }
+        ]
+      }
+    },
+    "member": {
+      "type": "PREC_LEFT",
+      "value": 15,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "object",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "."
+          },
+          {
+            "type": "FIELD",
+            "name": "member",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_simple_symbol"
+              },
+              "named": true,
+              "value": "symbol"
+            }
           }
         ]
       }
@@ -6945,35 +6980,6 @@
           }
         }
       ]
-    },
-    "member_access_expression": {
-      "type": "PREC_LEFT",
-      "value": 15,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "object",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          },
-          {
-            "type": "STRING",
-            "value": "."
-          },
-          {
-            "type": "FIELD",
-            "name": "member",
-            "content": {
-              "type": "SYMBOL",
-              "name": "identifier"
-            }
-          }
-        ]
-      }
     },
     "new_expression": {
       "type": "PREC_RIGHT",

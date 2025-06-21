@@ -1,0 +1,401 @@
+==================
+Simple member access on a variable
+==================
+
+contract C {
+    struct S { uint x; }
+    function f(S storage s) public view returns (uint) {
+        return s.x;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (struct
+      name: (symbol
+        name: (identifier))
+      member: (struct_member
+        type: (uint_type)
+        name: (symbol
+          name: (identifier))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          location: (storage)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (uint_type)))
+      body: (block
+        statement: (return
+          value: (member
+            object: (symbol
+              name: (identifier))
+            member: (symbol
+              name: (identifier))))))))
+
+==================
+Chained member access
+==================
+
+contract C {
+    struct S2 { uint y; }
+    struct S1 { S2 s2; }
+    function f(S1 storage s1) public view returns (uint) {
+        return s1.s2.y;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (struct
+      name: (symbol
+        name: (identifier))
+      member: (struct_member
+        type: (uint_type)
+        name: (symbol
+          name: (identifier))))
+    definition: (struct
+      name: (symbol
+        name: (identifier))
+      member: (struct_member
+        type: (custom_type
+          symbol: (symbol
+            name: (identifier)))
+        name: (symbol
+          name: (identifier))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          location: (storage)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (uint_type)))
+      body: (block
+        statement: (return
+          value: (member
+            object: (member
+              object: (symbol
+                name: (identifier))
+              member: (symbol
+                name: (identifier)))
+            member: (symbol
+              name: (identifier))))))))
+
+==================
+Member access on a function call result
+==================
+
+contract C {
+    struct S { uint x; }
+    function getS() public pure returns (S memory) {}
+    function f() public pure returns (uint) {
+        return getS().x;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (struct
+      name: (symbol
+        name: (identifier))
+      member: (struct_member
+        type: (uint_type)
+        name: (symbol
+          name: (identifier))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          location: (memory)))
+      body: (block))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (uint_type)))
+      body: (block
+        statement: (return
+          value: (member
+            object: (call
+              function: (symbol
+                name: (identifier))
+              arguments: (arguments))
+            member: (symbol
+              name: (identifier))))))))
+
+==================
+Member access on an array element
+==================
+
+contract C {
+    struct S { uint x; }
+    function f(S[] memory arr) public view returns (uint) {
+        return arr[0].x;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (struct
+      name: (symbol
+        name: (identifier))
+      member: (struct_member
+        type: (uint_type)
+        name: (symbol
+          name: (identifier))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (array_type
+            base: (custom_type
+              symbol: (symbol
+                name: (identifier))))
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (uint_type)))
+      body: (block
+        statement: (return
+          value: (member
+            object: (subsript
+              base: (symbol
+                name: (identifier))
+              index: (literal
+                (number)))
+            member: (symbol
+              name: (identifier))))))))
+
+==================
+Member access on `this`
+==================
+
+contract C {
+    function getSelf() public view returns (C) {
+        return this;
+    }
+    function f() public view {
+        this.getSelf();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))))
+      body: (block
+        statement: (return
+          value: (this))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      body: (block
+        statement: (call
+          function: (member
+            object: (this)
+            member: (symbol
+              name: (identifier)))
+          arguments: (arguments))))))
+
+==================
+Address members: balance and codehash
+==================
+
+contract C {
+    function f(address a) public view returns (uint, bytes32) {
+        return (a.balance, a.codehash);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (address_type)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (uint_type))
+        parameter: (parameter
+          type: (bytes_type)))
+      body: (block
+        statement: (return
+          value: (tuple_expression
+            (member
+              object: (symbol
+                name: (identifier))
+              member: (symbol
+                name: (identifier)))
+            (member
+              object: (symbol
+                name: (identifier))
+              member: (symbol
+                name: (identifier)))))))))
+
+==================
+Member access in an assignment
+==================
+
+contract C {
+    struct S { uint x; }
+    function f(S storage s) public {
+        s.x = 42;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (struct
+      name: (symbol
+        name: (identifier))
+      member: (struct_member
+        type: (uint_type)
+        name: (symbol
+          name: (identifier))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          location: (storage)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (assignment
+          left: (member
+            object: (symbol
+              name: (identifier))
+            member: (symbol
+              name: (identifier)))
+          operator: (assign_op)
+          right: (literal
+            (number)))))))
+
+==================
+Member access on a parenthesized expression
+==================
+
+contract C {
+    struct S { uint x; }
+    function f(S storage s) public view returns(uint) {
+        return (s).x;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (struct
+      name: (symbol
+        name: (identifier))
+      member: (struct_member
+        type: (uint_type)
+        name: (symbol
+          name: (identifier))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          location: (storage)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (uint_type)))
+      body: (block
+        statement: (return
+          value: (member
+            object: (group
+              expression: (symbol
+                name: (identifier)))
+            member: (symbol
+              name: (identifier))))))))

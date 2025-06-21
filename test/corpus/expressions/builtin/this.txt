@@ -26,9 +26,10 @@ contract C {
       visibility: (public)
       body: (block
         statement: (call
-          function: (member_access_expression
+          function: (member
             object: (this)
-            member: (identifier))
+            member: (symbol
+              name: (identifier)))
           arguments: (arguments))))))
 
 ==================
@@ -128,11 +129,13 @@ contract C {
       mutability: (view)
       body: (block
         statement: (call
-          function: (member_access_expression
+          function: (member
             object: (call
-              function: (member_access_expression
+              function: (member
                 object: (this)
-                member: (identifier))
+                member: (symbol
+                  name: (identifier)))
               arguments: (arguments))
-            member: (identifier))
+            member: (symbol
+              name: (identifier)))
           arguments: (arguments))))))

@@ -266,10 +266,11 @@ contract C {
       visibility: (public)
       body: (block
         statement: (increment
-          argument: (symbol
-            scope: (symbol
+          argument: (member
+            object: (symbol
               name: (identifier))
-            name: (identifier))
+            member: (symbol
+              name: (identifier)))
           operator: (increment_op))))))
 
 ==================

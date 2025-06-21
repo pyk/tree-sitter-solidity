@@ -206,10 +206,11 @@ contract C {
       visibility: (public)
       body: (block
         statement: (assignment
-          left: (symbol
-            scope: (symbol
+          left: (member
+            object: (symbol
               name: (identifier))
-            name: (identifier))
+            member: (symbol
+              name: (identifier)))
           operator: (assign_op)
           right: (literal
             (number)))))))
