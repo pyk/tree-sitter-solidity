@@ -451,31 +451,29 @@ module.exports = grammar({
       seq(
         "import",
         choice(
-          // e.g. import "./MyFile.sol"
-          // e.g. import "./MyLib.sol" as MyLib;
-          $.file_import,
-          // e.g. import {symbol1, symbol2 as alias2} from "./MyFile.sol"
-          $.symbol_import,
-          // e.g. import * as MyLib from "./MyLib.sol";
-          $.wildcard_import,
+          // Case 1: `import "path" as Alias;` or `import "path";`
+          seq(
+            field("path", $.string),
+            optional(seq("as", field("alias", $.symbol))),
+          ),
+          // Case 2: `import {a as b, c} from "path";`
+          seq(
+            "{",
+            commaSep(field("symbol", $.imported_symbol)),
+            "}",
+            "from",
+            field("path", $.string),
+          ),
+          // Case 3: `import * as Alias from "path";`
+          seq(
+            field("wildcard", $.wildcard),
+            "as",
+            field("alias", $.symbol),
+            "from",
+            field("path", $.string),
+          ),
         ),
         ";",
-      ),
-
-    file_import: ($) =>
-      seq(
-        field("path", $.string),
-        optional(seq("as", field("alias", $.symbol))),
-      ),
-
-    symbol_import: ($) =>
-      seq(
-        "{",
-        // The list of specifiers is now directly here, as repeated fields.
-        commaSep(field("symbol", $.imported_symbol)),
-        "}",
-        "from",
-        field("path", $.string),
       ),
 
     imported_symbol: ($) =>
@@ -483,9 +481,6 @@ module.exports = grammar({
         field("name", $.symbol),
         optional(seq("as", field("alias", $.symbol))),
       ),
-
-    wildcard_import: ($) =>
-      seq("*", "as", field("alias", $.symbol), "from", field("path", $.string)),
 
     //############################################################//
     //                      Using directive                       //

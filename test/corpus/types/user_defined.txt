@@ -49,8 +49,7 @@ contract C {
 
 (source_file
   directive: (import
-    (file_import
-      path: (string)))
+    path: (string))
   definition: (contract
     name: (symbol
       name: (identifier))

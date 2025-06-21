@@ -8,8 +8,7 @@ import "./MyFile.sol";
 
 (source_file
   directive: (import
-    (file_import
-      path: (string))))
+    path: (string)))
 
 ==================
 File Import with File Alias
@@ -21,10 +20,9 @@ import "./MyLib.sol" as MyLib;
 
 (source_file
   directive: (import
-    (file_import
-      path: (string)
-      alias: (symbol
-        name: (identifier)))))
+    path: (string)
+    alias: (symbol
+      name: (identifier))))
 
 ==================
 Wildcard Alias Import
@@ -36,10 +34,10 @@ import * as MyLib from "./MyLib.sol";
 
 (source_file
   directive: (import
-    (wildcard_import
-      alias: (symbol
-        name: (identifier))
-      path: (string))))
+    wildcard: (wildcard)
+    alias: (symbol
+      name: (identifier))
+    path: (string)))
 
 ==================
 Symbol Import
@@ -51,16 +49,15 @@ import {symbol1, symbol2 as alias2} from "./MyFile.sol";
 
 (source_file
   directive: (import
-    (symbol_import
-      symbol: (imported_symbol
-        name: (symbol
-          name: (identifier)))
-      symbol: (imported_symbol
-        name: (symbol
-          name: (identifier))
-        alias: (symbol
-          name: (identifier)))
-      path: (string))))
+    symbol: (imported_symbol
+      name: (symbol
+        name: (identifier)))
+    symbol: (imported_symbol
+      name: (symbol
+        name: (identifier))
+      alias: (symbol
+        name: (identifier)))
+    path: (string)))
 
 ==================
 Multiple Imports
@@ -74,21 +71,19 @@ import * as Utils from "./Utils.sol";
 
 (source_file
   directive: (import
-    (file_import
-      path: (string)))
+    path: (string))
   directive: (import
-    (symbol_import
-      symbol: (imported_symbol
-        name: (symbol
-          name: (identifier)))
-      symbol: (imported_symbol
-        name: (symbol
-          name: (identifier))
-        alias: (symbol
-          name: (identifier)))
-      path: (string)))
-  directive: (import
-    (wildcard_import
-      alias: (symbol
+    symbol: (imported_symbol
+      name: (symbol
+        name: (identifier)))
+    symbol: (imported_symbol
+      name: (symbol
         name: (identifier))
-      path: (string))))
+      alias: (symbol
+        name: (identifier)))
+    path: (string))
+  directive: (import
+    wildcard: (wildcard)
+    alias: (symbol
+      name: (identifier))
+    path: (string)))
