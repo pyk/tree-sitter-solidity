@@ -3138,15 +3138,11 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "keccak256"
+            "name": "addmod"
           },
           {
             "type": "SYMBOL",
-            "name": "sha256"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "ripemd160"
+            "name": "assert"
           },
           {
             "type": "SYMBOL",
@@ -3154,7 +3150,11 @@
           },
           {
             "type": "SYMBOL",
-            "name": "addmod"
+            "name": "gasleft"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "keccak256"
           },
           {
             "type": "SYMBOL",
@@ -3166,11 +3166,11 @@
           },
           {
             "type": "SYMBOL",
-            "name": "assert"
+            "name": "revert"
           },
           {
             "type": "SYMBOL",
-            "name": "revert"
+            "name": "ripemd160"
           },
           {
             "type": "SYMBOL",
@@ -3178,7 +3178,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "gasleft"
+            "name": "sha256"
           }
         ]
       }

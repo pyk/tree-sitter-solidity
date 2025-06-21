@@ -1,0 +1,317 @@
+==================
+Simple if statement with a block
+==================
+
+contract C {
+    function f(bool a) public {
+        if (a) {
+            // body
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (if_statement
+          condition: (symbol
+            name: (identifier))
+          consequence: (block
+            (comment)))))))
+
+==================
+If statement with a single-line statement
+==================
+
+contract C {
+    function f(bool a) public {
+        if (a) doSomething();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (if_statement
+          condition: (symbol
+            name: (identifier))
+          consequence: (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments)))))))
+
+==================
+If-else statement with blocks
+==================
+
+contract C {
+    function f(uint a) public {
+        if (a > 10) {
+            // consequence
+        } else {
+            // alternative
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (if_statement
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          consequence: (block
+            (comment))
+          alternative: (block
+            (comment)))))))
+
+==================
+If-else with single-line statements
+==================
+
+contract C {
+    function f(bool a) public {
+        if (a) doA(); else doB();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (if_statement
+          condition: (symbol
+            name: (identifier))
+          consequence: (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments))
+          alternative: (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments)))))))
+
+==================
+If-else if-else chain
+==================
+
+contract C {
+    function f(uint a) public {
+        if (a == 1) {
+            // one
+        } else if (a == 2) {
+            // two
+        } else {
+            // other
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (if_statement
+          condition: (equality
+            left: (symbol
+              name: (identifier))
+            operator: (equality_op)
+            right: (literal
+              (number)))
+          consequence: (block
+            (comment))
+          alternative: (if_statement
+            condition: (equality
+              left: (symbol
+                name: (identifier))
+              operator: (equality_op)
+              right: (literal
+                (number)))
+            consequence: (block
+              (comment))
+            alternative: (block
+              (comment))))))))
+
+==================
+Nested if statements
+==================
+
+contract C {
+    function f(bool a, bool b) public {
+        if (a) {
+            if (b) {
+                // both true
+            }
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (if_statement
+          condition: (symbol
+            name: (identifier))
+          consequence: (block
+            statement: (if_statement
+              condition: (symbol
+                name: (identifier))
+              consequence: (block
+                (comment)))))))))
+
+==================
+If statement with complex condition
+==================
+
+contract C {
+    function f(uint a, uint b, uint c) public {
+        if (a > b && (b > c || c > a)) {
+            // complex logic
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (if_statement
+          condition: (and
+            left: (comparison
+              left: (symbol
+                name: (identifier))
+              operator: (comparison_op)
+              right: (symbol
+                name: (identifier)))
+            operator: (and_op)
+            right: (group
+              expression: (or
+                left: (comparison
+                  left: (symbol
+                    name: (identifier))
+                  operator: (comparison_op)
+                  right: (symbol
+                    name: (identifier)))
+                operator: (or_op)
+                right: (comparison
+                  left: (symbol
+                    name: (identifier))
+                  operator: (comparison_op)
+                  right: (symbol
+                    name: (identifier))))))
+          consequence: (block
+            (comment)))))))

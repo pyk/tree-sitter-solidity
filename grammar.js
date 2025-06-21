@@ -964,17 +964,17 @@ module.exports = grammar({
       field(
         "name",
         choice(
-          $.keccak256,
-          $.sha256,
-          $.ripemd160,
-          $.ecrecover,
           $.addmod,
+          $.assert,
+          $.ecrecover,
+          $.gasleft,
+          $.keccak256,
           $.mulmod,
           $.require,
-          $.assert,
           $.revert,
+          $.ripemd160,
           $.selfdestruct,
-          $.gasleft,
+          $.sha256,
         ),
       ),
 
