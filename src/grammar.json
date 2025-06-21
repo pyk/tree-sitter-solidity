@@ -2210,7 +2210,7 @@
             "name": "operator",
             "content": {
               "type": "SYMBOL",
-              "name": "comparison_op"
+              "name": "_comparison_op"
             }
           },
           {
@@ -2224,26 +2224,42 @@
         ]
       }
     },
-    "comparison_op": {
+    "_comparison_op": {
       "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "<"
+          "type": "SYMBOL",
+          "name": "lt"
         },
         {
-          "type": "STRING",
-          "value": ">"
+          "type": "SYMBOL",
+          "name": "gt"
         },
         {
-          "type": "STRING",
-          "value": "<="
+          "type": "SYMBOL",
+          "name": "lte"
         },
         {
-          "type": "STRING",
-          "value": ">="
+          "type": "SYMBOL",
+          "name": "gte"
         }
       ]
+    },
+    "lt": {
+      "type": "STRING",
+      "value": "<"
+    },
+    "gt": {
+      "type": "STRING",
+      "value": ">"
+    },
+    "lte": {
+      "type": "STRING",
+      "value": "<="
+    },
+    "gte": {
+      "type": "STRING",
+      "value": ">="
     },
     "equality": {
       "type": "PREC_LEFT",
@@ -5989,40 +6005,6 @@
         {
           "type": "STRING",
           "value": "%="
-        }
-      ]
-    },
-    "comparison_operator": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "<"
-        },
-        {
-          "type": "STRING",
-          "value": ">"
-        },
-        {
-          "type": "STRING",
-          "value": "<="
-        },
-        {
-          "type": "STRING",
-          "value": ">="
-        }
-      ]
-    },
-    "equality_operator": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "=="
-        },
-        {
-          "type": "STRING",
-          "value": "!="
         }
       ]
     },

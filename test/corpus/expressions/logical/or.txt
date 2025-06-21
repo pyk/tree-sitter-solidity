@@ -145,7 +145,7 @@ bool constant x = a == b || c < d;
       right: (comparison
         left: (symbol
           name: (identifier))
-        operator: (comparison_op)
+        operator: (lt)
         right: (symbol
           name: (identifier))))))
 
@@ -264,7 +264,7 @@ contract C {
               right: (comparison
                 left: (symbol
                   name: (identifier))
-                operator: (comparison_op)
+                operator: (gt)
                 right: (literal
                   (number))))
             argument: (literal

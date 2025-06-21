@@ -196,7 +196,7 @@ bool constant x = a >> b < c;
         operator: (shift_op)
         right: (symbol
           name: (identifier)))
-      operator: (comparison_op)
+      operator: (lt)
       right: (symbol
         name: (identifier)))))
 
@@ -268,7 +268,7 @@ contract C {
                 operator: (shift_op)
                 right: (literal
                   (number)))
-              operator: (comparison_op)
+              operator: (gt)
               right: (literal
                 (number)))
             argument: (literal

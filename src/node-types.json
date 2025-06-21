@@ -2669,7 +2669,19 @@
         "required": true,
         "types": [
           {
-            "type": "comparison_op",
+            "type": "gt",
+            "named": true
+          },
+          {
+            "type": "gte",
+            "named": true
+          },
+          {
+            "type": "lt",
+            "named": true
+          },
+          {
+            "type": "lte",
             "named": true
           }
         ]
@@ -2789,11 +2801,6 @@
         ]
       }
     }
-  },
-  {
-    "type": "comparison_op",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "compound_assignment_operator",
@@ -5836,6 +5843,16 @@
     }
   },
   {
+    "type": "gt",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "gte",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "if_statement",
     "named": true,
     "fields": {
@@ -7415,6 +7432,16 @@
         ]
       }
     }
+  },
+  {
+    "type": "lt",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "lte",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "mapping_type",

@@ -200,7 +200,7 @@ contract C {
                 right: (time_literal
                   value: (number)
                   unit: (minutes))))
-            operator: (comparison_op)
+            operator: (gt)
             right: (symbol
               name: (identifier)))
           consequence: (block))))))
@@ -236,7 +236,7 @@ contract C {
                 scope: (symbol
                   name: (identifier))
                 name: (identifier))
-              operator: (comparison_op)
+              operator: (gte)
               right: (ether_literal
                 value: (number)
                 unit: (ether)))

@@ -147,7 +147,7 @@ contract C {
           condition: (comparison
             left: (symbol
               name: (identifier))
-            operator: (comparison_op)
+            operator: (lt)
             right: (literal
               (number)))
           update: (arithmetic
@@ -191,7 +191,7 @@ contract C {
           condition: (comparison
             left: (symbol
               name: (identifier))
-            operator: (comparison_op)
+            operator: (gt)
             right: (literal
               (number)))
           body: (block
@@ -212,7 +212,7 @@ contract C {
           condition: (comparison
             left: (symbol
               name: (identifier))
-            operator: (comparison_op)
+            operator: (lt)
             right: (literal
               (number))))))))
 

@@ -15,7 +15,7 @@ bool constant x = 1 < 2;
     value: (comparison
       left: (literal
         (number))
-      operator: (comparison_op)
+      operator: (lt)
       right: (literal
         (number)))))
 
@@ -60,7 +60,7 @@ contract C {
           value: (comparison
             left: (symbol
               name: (identifier))
-            operator: (comparison_op)
+            operator: (gte)
             right: (symbol
               name: (identifier))))))))
 
@@ -88,7 +88,7 @@ bool constant x = a + b > c;
           operator: (add_op)
           right: (symbol
             name: (identifier))))
-      operator: (comparison_op)
+      operator: (gt)
       right: (symbol
         name: (identifier)))))
 
@@ -111,7 +111,7 @@ bool constant x = a < b * c;
     value: (comparison
       left: (symbol
         name: (identifier))
-      operator: (comparison_op)
+      operator: (lt)
       right: (arithmetic
         (mul
           left: (symbol
@@ -140,14 +140,14 @@ bool constant x = a < b && c > d;
       left: (comparison
         left: (symbol
           name: (identifier))
-        operator: (comparison_op)
+        operator: (lt)
         right: (symbol
           name: (identifier)))
       operator: (and_op)
       right: (comparison
         left: (symbol
           name: (identifier))
-        operator: (comparison_op)
+        operator: (gt)
         right: (symbol
           name: (identifier))))))
 
@@ -173,10 +173,10 @@ bool constant x = a < b < c;
       left: (comparison
         left: (symbol
           name: (identifier))
-        operator: (comparison_op)
+        operator: (lt)
         right: (symbol
           name: (identifier)))
-      operator: (comparison_op)
+      operator: (lt)
       right: (symbol
         name: (identifier)))))
 
@@ -214,7 +214,7 @@ contract C {
           condition: (comparison
             left: (symbol
               name: (identifier))
-            operator: (comparison_op)
+            operator: (gt)
             right: (literal
               (number)))
           consequence: (block
@@ -255,7 +255,7 @@ contract C {
             argument: (comparison
               left: (symbol
                 name: (identifier))
-              operator: (comparison_op)
+              operator: (lte)
               right: (literal
                 (number)))
             argument: (literal
@@ -311,7 +311,7 @@ contract C {
           value: (comparison
             left: (symbol
               name: (identifier))
-            operator: (comparison_op)
+            operator: (lt)
             right: (call
               function: (symbol
                 name: (identifier))

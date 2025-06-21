@@ -680,11 +680,15 @@ module.exports = grammar({
         PREC.COMPARE,
         seq(
           field("left", $._expression),
-          field("operator", $.comparison_op),
+          field("operator", $._comparison_op),
           field("right", $._expression),
         ),
       ),
-    comparison_op: ($) => choice("<", ">", "<=", ">="),
+    _comparison_op: ($) => choice($.lt, $.gt, $.lte, $.gte),
+    lt: ($) => "<",
+    gt: ($) => ">",
+    lte: ($) => "<=",
+    gte: ($) => ">=",
 
     //############################################################//
     //                    Equality expression                     //
@@ -1688,9 +1692,6 @@ module.exports = grammar({
      */
     compound_assignment_operator: ($) =>
       choice("|=", "^=", "&=", "<<=", ">>=", "+=", "-=", "*=", "/=", "%="),
-
-    comparison_operator: ($) => choice("<", ">", "<=", ">="),
-    equality_operator: ($) => choice("==", "!="),
 
     /**
      * A tuple expression.

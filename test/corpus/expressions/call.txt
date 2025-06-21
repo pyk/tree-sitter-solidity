@@ -251,7 +251,7 @@ contract C {
             argument: (comparison
               left: (symbol
                 name: (identifier))
-              operator: (comparison_op)
+              operator: (gt)
               right: (symbol
                 name: (identifier)))
             argument: (literal

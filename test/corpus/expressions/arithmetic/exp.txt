@@ -250,7 +250,7 @@ contract C {
                   operator: (exp_op)
                   right: (symbol
                     name: (identifier))))
-              operator: (comparison_op)
+              operator: (lt)
               right: (literal
                 (number)))
             argument: (literal

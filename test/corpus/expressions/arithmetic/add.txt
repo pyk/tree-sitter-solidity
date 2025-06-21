@@ -210,7 +210,7 @@ bool constant x = a + b > c;
           operator: (add_op)
           right: (symbol
             name: (identifier))))
-      operator: (comparison_op)
+      operator: (gt)
       right: (symbol
         name: (identifier)))))
 
@@ -289,7 +289,7 @@ contract C {
                   operator: (sub_op)
                   right: (symbol
                     name: (identifier))))
-              operator: (comparison_op)
+              operator: (gt)
               right: (literal
                 (number)))
             argument: (literal

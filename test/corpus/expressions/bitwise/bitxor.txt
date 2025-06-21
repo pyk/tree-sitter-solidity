@@ -177,7 +177,7 @@ bool constant x = a ^ b > c;
           operator: (bitxor_op)
           right: (symbol
             name: (identifier))))
-      operator: (comparison_op)
+      operator: (gt)
       right: (symbol
         name: (identifier)))))
 

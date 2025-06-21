@@ -238,7 +238,7 @@ contract C {
                 operator: (bitor_op)
                 right: (symbol
                   name: (identifier))))
-            operator: (comparison_op)
+            operator: (gt)
             right: (literal
               (number)))
           consequence: (block

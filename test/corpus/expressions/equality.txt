@@ -159,14 +159,14 @@ bool constant x = a < b == c > d;
       left: (comparison
         left: (symbol
           name: (identifier))
-        operator: (comparison_op)
+        operator: (lt)
         right: (symbol
           name: (identifier)))
       operator: (equality_op)
       right: (comparison
         left: (symbol
           name: (identifier))
-        operator: (comparison_op)
+        operator: (gt)
         right: (symbol
           name: (identifier))))))
 
