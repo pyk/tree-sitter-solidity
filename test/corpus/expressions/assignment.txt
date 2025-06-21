@@ -1,0 +1,327 @@
+==================
+Simple assignment
+==================
+
+contract C {
+    function f(uint a) public {
+        a = 1;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (assignment
+          left: (symbol
+            name: (identifier))
+          operator: (assign_op)
+          right: (literal
+            (number)))))))
+
+==================
+Compound assignment: addition
+==================
+
+contract C {
+    function f(uint a) public {
+        a += 1;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (assignment
+          left: (symbol
+            name: (identifier))
+          operator: (add_assign_op)
+          right: (literal
+            (number)))))))
+
+==================
+Compound assignment: bitwise OR
+==================
+
+contract C {
+    function f(uint a) public {
+        a |= 0x0F;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (assignment
+          left: (symbol
+            name: (identifier))
+          operator: (or_assign_op)
+          right: (literal
+            (hex)))))))
+
+==================
+Compound assignment: left shift
+==================
+
+contract C {
+    function f(uint a) public {
+        a <<= 2;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (assignment
+          left: (symbol
+            name: (identifier))
+          operator: (shl_assign_op)
+          right: (literal
+            (number)))))))
+
+==================
+Assignment to an array element
+==================
+
+contract C {
+    function f(uint[] memory arr) public {
+        arr[0] = 42;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (array_type
+            base: (primitive_type
+              (uint_type)))
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (assignment
+          left: (index_access_expression
+            base: (symbol
+              name: (identifier))
+            index: (literal
+              (number)))
+          operator: (assign_op)
+          right: (literal
+            (number)))))))
+
+==================
+Assignment to a struct member
+==================
+
+contract C {
+    struct MyStruct { uint x; }
+    function f(MyStruct storage s) public {
+        s.x = 99;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (struct
+      name: (symbol
+        name: (identifier))
+      member: (struct_member
+        type: (primitive_type
+          (uint_type))
+        name: (symbol
+          name: (identifier))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))
+          location: (storage)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (assignment
+          left: (symbol
+            scope: (symbol
+              name: (identifier))
+            name: (identifier))
+          operator: (assign_op)
+          right: (literal
+            (number)))))))
+
+==================
+Right-associativity of assignment
+==================
+
+// Should parse as a = (b = c)
+contract C {
+    function f(uint a, uint b, uint c) public {
+        a = b = c;
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (assignment
+          left: (symbol
+            name: (identifier))
+          operator: (assign_op)
+          right: (assignment
+            left: (symbol
+              name: (identifier))
+            operator: (assign_op)
+            right: (symbol
+              name: (identifier))))))))
+
+==================
+Assignment precedence with ternary conditional
+==================
+
+// Assignment has lower precedence, should parse as a = (b ? c : d)
+contract C {
+    function f(uint a, bool b, uint c, uint d) public {
+        a = b ? c : d;
+    }
+}
+
+---
+
+(source_file
+  (comment)
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (assignment
+          left: (symbol
+            name: (identifier))
+          operator: (assign_op)
+          right: (conditional_expression
+            condition: (symbol
+              name: (identifier))
+            consequence: (symbol
+              name: (identifier))
+            alternative: (symbol
+              name: (identifier))))))))

@@ -277,10 +277,10 @@ contract C {
       visibility: (public)
       body: (block
         statement: (if_statement
-          condition: (assignment_expression
+          condition: (assignment
             left: (symbol
               name: (identifier))
-            operator: (simple_assignment_operator)
+            operator: (assign_op)
             right: (literal
               (number)))
           consequence: (block

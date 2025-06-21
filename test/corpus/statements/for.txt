@@ -274,10 +274,10 @@ contract C {
       visibility: (public)
       body: (block
         statement: (for_statement
-          initializer: (assignment_expression
+          initializer: (assignment
             left: (symbol
               name: (identifier))
-            operator: (simple_assignment_operator)
+            operator: (assign_op)
             right: (literal
               (number)))
           condition: (comparison
@@ -353,10 +353,10 @@ contract C {
             operator: (lt)
             right: (literal
               (number)))
-          update: (assignment_expression
+          update: (assignment
             left: (symbol
               name: (identifier))
-            operator: (simple_assignment_operator)
+            operator: (assign_op)
             right: (call
               function: (symbol
                 name: (identifier))

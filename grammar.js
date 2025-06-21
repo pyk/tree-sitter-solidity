@@ -598,48 +598,29 @@ module.exports = grammar({
      */
     _expression: ($) =>
       choice(
-        // Type cast
-        $.cast,
-
-        // Group (a)
-        $.group,
-
-        // Arithmetic expressions
-        $.arithmetic,
-
-        // Bitwise expressions
-        $.bitwise,
-
-        // Comparison expressions
-        $.comparison,
-
-        // Equality expressions
-        $.equality,
-
-        // Logical expressions
-        $.and,
-        $.or,
-        $.not,
-
-        // Shift expression
-        $.shift,
-
-        // Primary expression
         $._primary_expression,
-
-        // Others
-        $.unary_expression,
-        $.conditional_expression,
-        $.payable_conversion_expression,
-        $.meta_type_expression,
+        $.and,
+        $.arithmetic,
+        $.assignment,
+        $.bitwise,
         $.call,
-        $.member_access_expression,
+        $.cast,
+        $.comparison,
+        $.conditional_expression,
+        $.equality,
+        $.group,
         $.index_access_expression,
         $.index_range_access_expression,
-        $.new_expression,
-        $.assignment_expression,
-        $.tuple_expression,
         $.inline_array_expression,
+        $.member_access_expression,
+        $.meta_type_expression,
+        $.new_expression,
+        $.not,
+        $.or,
+        $.payable_conversion_expression,
+        $.shift,
+        $.tuple_expression,
+        $.unary_expression,
       ),
 
     //############################################################//
@@ -1004,6 +985,48 @@ module.exports = grammar({
     // Contract & Transaction
     selfdestruct: ($) => "selfdestruct",
     gasleft: ($) => "gasleft",
+
+    //############################################################//
+    //                   Assignment expression                    //
+    //############################################################//
+
+    assignment: ($) =>
+      prec.right(
+        PREC.ASSIGN,
+        seq(
+          field("left", $._expression),
+          field("operator", $._assignment_operator),
+          field("right", $._expression),
+        ),
+      ),
+
+    _assignment_operator: ($) =>
+      choice(
+        $.assign_op,
+        $.add_assign_op,
+        $.sub_assign_op,
+        $.mul_assign_op,
+        $.div_assign_op,
+        $.mod_assign_op,
+        $.shl_assign_op,
+        $.shr_assign_op,
+        $.or_assign_op,
+        $.xor_assign_op,
+        $.and_assign_op,
+      ),
+
+    // Define each operator as a named rule
+    assign_op: ($) => "=",
+    add_assign_op: ($) => "+=",
+    sub_assign_op: ($) => "-=",
+    mul_assign_op: ($) => "*=",
+    div_assign_op: ($) => "/=",
+    mod_assign_op: ($) => "%=",
+    shl_assign_op: ($) => "<<=",
+    shr_assign_op: ($) => ">>=",
+    or_assign_op: ($) => "|=",
+    xor_assign_op: ($) => "^=",
+    and_assign_op: ($) => "&=",
 
     //############################################################//
     //                          Variable                          //
@@ -1662,39 +1685,6 @@ module.exports = grammar({
      */
     new_expression: ($) =>
       prec.right(PREC.NEW, seq("new", field("type", $._type))),
-
-    assignment_expression: ($) =>
-      prec.right(
-        PREC.ASSIGN,
-        seq(
-          field("left", $._expression),
-          field(
-            "operator",
-            choice(
-              $.simple_assignment_operator,
-              $.compound_assignment_operator,
-            ),
-          ),
-          field("right", $._expression),
-        ),
-      ),
-
-    /**
-     * Named operator rules. Because these are named, they will appear
-     * in the final syntax tree.
-     */
-
-    /**
-     * The simple assignment operator.
-     */
-    simple_assignment_operator: ($) => "=",
-
-    /**
-     * A compound assignment operator.
-     * e.g., `+=`, `*=`
-     */
-    compound_assignment_operator: ($) =>
-      choice("|=", "^=", "&=", "<<=", ">>=", "+=", "-=", "*=", "/=", "%="),
 
     /**
      * A tuple expression.

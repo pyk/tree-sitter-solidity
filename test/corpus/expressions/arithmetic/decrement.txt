@@ -99,10 +99,10 @@ contract C {
           name: (symbol
             name: (identifier))))
       body: (block
-        statement: (assignment_expression
+        statement: (assignment
           left: (symbol
             name: (identifier))
-          operator: (simple_assignment_operator)
+          operator: (assign_op)
           right: (arithmetic
             (decrement
               operator: (decrement_op)
@@ -144,10 +144,10 @@ contract C {
           name: (symbol
             name: (identifier))))
       body: (block
-        statement: (assignment_expression
+        statement: (assignment
           left: (symbol
             name: (identifier))
-          operator: (simple_assignment_operator)
+          operator: (assign_op)
           right: (arithmetic
             (decrement
               argument: (symbol
