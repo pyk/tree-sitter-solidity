@@ -244,10 +244,9 @@ using BytesUtils for bytes;
     name: (symbol
       name: (identifier)))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (bytes_type))))
+    library: (symbol
+      name: (identifier))
+    target: (bytes_type)))
 
 ==================
 Bytes as a constant variable

@@ -491,27 +491,22 @@ module.exports = grammar({
     //                      Using directive                       //
     //############################################################//
 
-    using: ($) => seq("using", choice($.using_library, $.using_function), ";"),
-
-    using_library: ($) =>
+    using: ($) =>
       seq(
-        field("library", $.symbol),
+        "using",
+        choice(
+          // For library style: `using SafeMath for uint;`
+          field("library", $.symbol),
+          // For function style: `using {add, sub} for uint;`
+          seq("{", commaSep(field("function", $.using_function)), "}"),
+        ),
         "for",
         field("target", choice($._type, $.wildcard)),
         optional(field("global", $.global)),
+        ";",
       ),
 
     using_function: ($) =>
-      seq(
-        "{",
-        commaSep(field("declaration", $.using_declaration)),
-        "}",
-        "for",
-        field("target", choice($._type, $.wildcard)),
-        optional(field("global", $.global)),
-      ),
-
-    using_declaration: ($) =>
       seq(
         field("name", $.symbol),
         optional(seq("as", field("operator", $.using_op))),

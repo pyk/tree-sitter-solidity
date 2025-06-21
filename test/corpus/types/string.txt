@@ -224,10 +224,9 @@ using StringUtils for string;
     name: (symbol
       name: (identifier)))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (string_type))))
+    library: (symbol
+      name: (identifier))
+    target: (string_type)))
 
 ==================
 String as a constant variable

@@ -195,19 +195,17 @@ using ArrayLib for uint[2];
     name: (symbol
       name: (identifier)))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (array_type
-        base: (uint_type))))
+    library: (symbol
+      name: (identifier))
+    target: (array_type
+      base: (uint_type)))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (array_type
-        base: (uint_type)
-        size: (literal
-          (number))))))
+    library: (symbol
+      name: (identifier))
+    target: (array_type
+      base: (uint_type)
+      size: (literal
+        (number)))))
 
 ==================
 Array in an event parameter

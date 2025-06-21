@@ -267,12 +267,11 @@ using MyLib for MyData;
     name: (symbol
       name: (identifier)))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (custom_type
-        symbol: (symbol
-          name: (identifier))))))
+    library: (symbol
+      name: (identifier))
+    target: (custom_type
+      symbol: (symbol
+        name: (identifier)))))
 
 ==================
 Custom type in an event or error parameter

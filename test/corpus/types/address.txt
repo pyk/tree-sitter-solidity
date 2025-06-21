@@ -256,15 +256,13 @@ using AddressUtils for address payable;
     name: (symbol
       name: (identifier)))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (address_type)))
+    library: (symbol
+      name: (identifier))
+    target: (address_type))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (address_type))))
+    library: (symbol
+      name: (identifier))
+    target: (address_type)))
 
 ==================
 Address as a constant variable

@@ -8,10 +8,9 @@ using SafeMath for uint256;
 
 (source_file
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (uint_type))))
+    library: (symbol
+      name: (identifier))
+    target: (uint_type)))
 
 ==================
 Using directive for all types (wildcard)
@@ -23,10 +22,9 @@ using SafeMath for *;
 
 (source_file
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (wildcard))))
+    library: (symbol
+      name: (identifier))
+    target: (wildcard)))
 
 ==================
 Using directive with destructuring
@@ -38,14 +36,13 @@ using {add, sub} for uint256;
 
 (source_file
   directive: (using
-    (using_function
-      declaration: (using_declaration
-        name: (symbol
-          name: (identifier)))
-      declaration: (using_declaration
-        name: (symbol
-          name: (identifier)))
-      target: (uint_type))))
+    function: (using_function
+      name: (symbol
+        name: (identifier)))
+    function: (using_function
+      name: (symbol
+        name: (identifier)))
+    target: (uint_type)))
 
 ==================
 Using directive with operator aliasing
@@ -57,16 +54,15 @@ using {add as +, sub as -} for uint256;
 
 (source_file
   directive: (using
-    (using_function
-      declaration: (using_declaration
-        name: (symbol
-          name: (identifier))
-        operator: (using_op))
-      declaration: (using_declaration
-        name: (symbol
-          name: (identifier))
-        operator: (using_op))
-      target: (uint_type))))
+    function: (using_function
+      name: (symbol
+        name: (identifier))
+      operator: (using_op))
+    function: (using_function
+      name: (symbol
+        name: (identifier))
+      operator: (using_op))
+    target: (uint_type)))
 
 ==================
 Using directive with global keyword
@@ -78,11 +74,10 @@ using SafeMath for uint256 global;
 
 (source_file
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (uint_type)
-      global: (global))))
+    library: (symbol
+      name: (identifier))
+    target: (uint_type)
+    global: (global)))
 
 ==================
 Complex using directive
@@ -94,19 +89,18 @@ using {MyLib.add, MyLib.sub as -} for MyStruct global;
 
 (source_file
   directive: (using
-    (using_function
-      declaration: (using_declaration
-        name: (symbol
-          scope: (symbol
-            name: (identifier))
-          name: (identifier)))
-      declaration: (using_declaration
-        name: (symbol
-          scope: (symbol
-            name: (identifier))
+    function: (using_function
+      name: (symbol
+        scope: (symbol
           name: (identifier))
-        operator: (using_op))
-      target: (custom_type
-        symbol: (symbol
-          name: (identifier)))
-      global: (global))))
+        name: (identifier)))
+    function: (using_function
+      name: (symbol
+        scope: (symbol
+          name: (identifier))
+        name: (identifier))
+      operator: (using_op))
+    target: (custom_type
+      symbol: (symbol
+        name: (identifier)))
+    global: (global)))

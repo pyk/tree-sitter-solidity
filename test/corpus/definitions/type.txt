@@ -239,12 +239,11 @@ using SafeMath for SafeUint;
       name: (identifier))
     base: (uint_type))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (custom_type
-        symbol: (symbol
-          name: (identifier))))))
+    library: (symbol
+      name: (identifier))
+    target: (custom_type
+      symbol: (symbol
+        name: (identifier)))))
 
 ==================
 UDVT in an event parameter

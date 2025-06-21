@@ -227,10 +227,9 @@ using MathUtils for int;
     name: (symbol
       name: (identifier)))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (int_type))))
+    library: (symbol
+      name: (identifier))
+    target: (int_type)))
 
 ==================
 Int as a constant and immutable variable

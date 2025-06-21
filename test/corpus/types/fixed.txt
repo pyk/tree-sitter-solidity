@@ -223,15 +223,13 @@ using FixedMath for ufixed256x18;
     name: (symbol
       name: (identifier)))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (fixed_type)))
+    library: (symbol
+      name: (identifier))
+    target: (fixed_type))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (ufixed_type))))
+    library: (symbol
+      name: (identifier))
+    target: (ufixed_type)))
 
 ==================
 Fixed-point in an event parameter

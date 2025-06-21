@@ -220,10 +220,9 @@ using SafeMath for uint256;
 
 (source_file
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (uint_type))))
+    library: (symbol
+      name: (identifier))
+    target: (uint_type)))
 
 ==================
 Uint in a constant variable

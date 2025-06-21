@@ -185,10 +185,9 @@ using BoolUtils for bool;
     name: (symbol
       name: (identifier)))
   directive: (using
-    (using_library
-      library: (symbol
-        name: (identifier))
-      target: (bool_type))))
+    library: (symbol
+      name: (identifier))
+    target: (bool_type)))
 
 ==================
 Bool as a constant variable
