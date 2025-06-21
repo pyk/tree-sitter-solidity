@@ -1970,6 +1970,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "_bitwise"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_builtin_expression"
         },
         {
@@ -1987,10 +1991,6 @@
         {
           "type": "SYMBOL",
           "name": "assignment"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "bitwise"
         },
         {
           "type": "SYMBOL",
@@ -2848,7 +2848,7 @@
       "type": "STRING",
       "value": "%"
     },
-    "bitwise": {
+    "_bitwise": {
       "type": "CHOICE",
       "members": [
         {

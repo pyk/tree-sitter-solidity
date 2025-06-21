@@ -11,13 +11,12 @@ uint constant x = 0x0F & 0xF0;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitand
-        left: (literal
-          (hex))
-        operator: (bitand_op)
-        right: (literal
-          (hex))))))
+    value: (bitand
+      left: (literal
+        (hex))
+      operator: (bitand_op)
+      right: (literal
+        (hex)))))
 
 ==================
 Bitwise AND with variables
@@ -54,13 +53,12 @@ contract C {
           type: (bytes_type)))
       body: (block
         statement: (return
-          value: (bitwise
-            (bitand
-              left: (symbol
-                name: (identifier))
-              operator: (bitand_op)
-              right: (symbol
-                name: (identifier)))))))))
+          value: (bitand
+            left: (symbol
+              name: (identifier))
+            operator: (bitand_op)
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Chained bitwise AND expressions (left-associative)
@@ -77,18 +75,16 @@ uint constant x = a & b & c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitand
-        left: (bitwise
-          (bitand
-            left: (symbol
-              name: (identifier))
-            operator: (bitand_op)
-            right: (symbol
-              name: (identifier))))
+    value: (bitand
+      left: (bitand
+        left: (symbol
+          name: (identifier))
         operator: (bitand_op)
         right: (symbol
-          name: (identifier))))))
+          name: (identifier)))
+      operator: (bitand_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Bitwise AND precedence with bitwise XOR and OR
@@ -107,23 +103,20 @@ uint constant x = a & b ^ c | d;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitor
-        left: (bitwise
-          (bitxor
-            left: (bitwise
-              (bitand
-                left: (symbol
-                  name: (identifier))
-                operator: (bitand_op)
-                right: (symbol
-                  name: (identifier))))
-            operator: (bitxor_op)
-            right: (symbol
-              name: (identifier))))
-        operator: (bitor_op)
+    value: (bitor
+      left: (bitxor
+        left: (bitand
+          left: (symbol
+            name: (identifier))
+          operator: (bitand_op)
+          right: (symbol
+            name: (identifier)))
+        operator: (bitxor_op)
         right: (symbol
-          name: (identifier))))))
+          name: (identifier)))
+      operator: (bitor_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Bitwise AND precedence with shift and arithmetic operators
@@ -140,21 +133,20 @@ uint constant x = a << 1 & b + 1;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitand
-        left: (shift
-          left: (symbol
-            name: (identifier))
-          operator: (shift_op)
-          right: (literal
-            (number)))
-        operator: (bitand_op)
-        right: (add
-          left: (symbol
-            name: (identifier))
-          operator: (add_op)
-          right: (literal
-            (number)))))))
+    value: (bitand
+      left: (shift
+        left: (symbol
+          name: (identifier))
+        operator: (shift_op)
+        right: (literal
+          (number)))
+      operator: (bitand_op)
+      right: (add
+        left: (symbol
+          name: (identifier))
+        operator: (add_op)
+        right: (literal
+          (number))))))
 
 ==================
 Bitwise AND with parenthesized OR expression
@@ -171,19 +163,17 @@ uint constant x = a & (b | c);
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitand
-        left: (symbol
-          name: (identifier))
-        operator: (bitand_op)
-        right: (group
-          expression: (bitwise
-            (bitor
-              left: (symbol
-                name: (identifier))
-              operator: (bitor_op)
-              right: (symbol
-                name: (identifier)))))))))
+    value: (bitand
+      left: (symbol
+        name: (identifier))
+      operator: (bitand_op)
+      right: (group
+        expression: (bitor
+          left: (symbol
+            name: (identifier))
+          operator: (bitor_op)
+          right: (symbol
+            name: (identifier)))))))
 
 ==================
 Bitwise AND in a require statement
@@ -222,13 +212,12 @@ contract C {
       body: (block
         statement: (require
           condition: (eq
-            left: (bitwise
-              (bitand
-                left: (symbol
-                  name: (identifier))
-                operator: (bitand_op)
-                right: (symbol
-                  name: (identifier))))
+            left: (bitand
+              left: (symbol
+                name: (identifier))
+              operator: (bitand_op)
+              right: (symbol
+                name: (identifier)))
             operator: (eq_op)
             right: (symbol
               name: (identifier)))

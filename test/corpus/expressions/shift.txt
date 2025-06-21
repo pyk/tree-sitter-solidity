@@ -151,17 +151,16 @@ uint constant x = a << b & c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitand
-        left: (shift
-          left: (symbol
-            name: (identifier))
-          operator: (shift_op)
-          right: (symbol
-            name: (identifier)))
-        operator: (bitand_op)
+    value: (bitand
+      left: (shift
+        left: (symbol
+          name: (identifier))
+        operator: (shift_op)
         right: (symbol
-          name: (identifier))))))
+          name: (identifier)))
+      operator: (bitand_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Shift precedence with comparison operators
@@ -209,13 +208,12 @@ uint constant x = a << (b & MASK);
         name: (identifier))
       operator: (shift_op)
       right: (group
-        expression: (bitwise
-          (bitand
-            left: (symbol
-              name: (identifier))
-            operator: (bitand_op)
-            right: (symbol
-              name: (identifier))))))))
+        expression: (bitand
+          left: (symbol
+            name: (identifier))
+          operator: (bitand_op)
+          right: (symbol
+            name: (identifier)))))))
 
 ==================
 Shift in a require statement

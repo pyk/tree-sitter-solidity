@@ -11,13 +11,12 @@ uint constant x = 0xF0 | 0x0F;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitor
-        left: (literal
-          (hex))
-        operator: (bitor_op)
-        right: (literal
-          (hex))))))
+    value: (bitor
+      left: (literal
+        (hex))
+      operator: (bitor_op)
+      right: (literal
+        (hex)))))
 
 ==================
 Bitwise OR with variables
@@ -54,13 +53,12 @@ contract C {
           type: (uint_type)))
       body: (block
         statement: (return
-          value: (bitwise
-            (bitor
-              left: (symbol
-                name: (identifier))
-              operator: (bitor_op)
-              right: (symbol
-                name: (identifier)))))))))
+          value: (bitor
+            left: (symbol
+              name: (identifier))
+            operator: (bitor_op)
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Chained bitwise OR expressions (left-associative)
@@ -77,18 +75,16 @@ uint constant x = a | b | c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitor
-        left: (bitwise
-          (bitor
-            left: (symbol
-              name: (identifier))
-            operator: (bitor_op)
-            right: (symbol
-              name: (identifier))))
+    value: (bitor
+      left: (bitor
+        left: (symbol
+          name: (identifier))
         operator: (bitor_op)
         right: (symbol
-          name: (identifier))))))
+          name: (identifier)))
+      operator: (bitor_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Bitwise OR precedence with XOR and AND (critical test)
@@ -105,23 +101,20 @@ uint constant x = a | b ^ c & d;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitor
+    value: (bitor
+      left: (symbol
+        name: (identifier))
+      operator: (bitor_op)
+      right: (bitxor
         left: (symbol
           name: (identifier))
-        operator: (bitor_op)
-        right: (bitwise
-          (bitxor
-            left: (symbol
-              name: (identifier))
-            operator: (bitxor_op)
-            right: (bitwise
-              (bitand
-                left: (symbol
-                  name: (identifier))
-                operator: (bitand_op)
-                right: (symbol
-                  name: (identifier))))))))))
+        operator: (bitxor_op)
+        right: (bitand
+          left: (symbol
+            name: (identifier))
+          operator: (bitand_op)
+          right: (symbol
+            name: (identifier)))))))
 
 ==================
 Bitwise OR precedence with logical AND
@@ -143,21 +136,19 @@ bool constant x = a | b && c | d;
     name: (symbol
       name: (identifier))
     value: (and
-      left: (bitwise
-        (bitor
-          left: (symbol
-            name: (identifier))
-          operator: (bitor_op)
-          right: (symbol
-            name: (identifier))))
+      left: (bitor
+        left: (symbol
+          name: (identifier))
+        operator: (bitor_op)
+        right: (symbol
+          name: (identifier)))
       operator: (and_op)
-      right: (bitwise
-        (bitor
-          left: (symbol
-            name: (identifier))
-          operator: (bitor_op)
-          right: (symbol
-            name: (identifier)))))))
+      right: (bitor
+        left: (symbol
+          name: (identifier))
+        operator: (bitor_op)
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Bitwise OR with parenthesized logical AND expression
@@ -176,13 +167,12 @@ bool constant x = (a | b) && c;
       name: (identifier))
     value: (and
       left: (group
-        expression: (bitwise
-          (bitor
-            left: (symbol
-              name: (identifier))
-            operator: (bitor_op)
-            right: (symbol
-              name: (identifier)))))
+        expression: (bitor
+          left: (symbol
+            name: (identifier))
+          operator: (bitor_op)
+          right: (symbol
+            name: (identifier))))
       operator: (and_op)
       right: (symbol
         name: (identifier)))))
@@ -221,13 +211,12 @@ contract C {
       body: (block
         statement: (if_statement
           condition: (comparison
-            left: (bitwise
-              (bitor
-                left: (symbol
-                  name: (identifier))
-                operator: (bitor_op)
-                right: (symbol
-                  name: (identifier))))
+            left: (bitor
+              left: (symbol
+                name: (identifier))
+              operator: (bitor_op)
+              right: (symbol
+                name: (identifier)))
             operator: (gt)
             right: (literal
               (number)))

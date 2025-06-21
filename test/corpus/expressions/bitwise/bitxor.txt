@@ -11,13 +11,12 @@ uint constant x = 0xC ^ 0xA;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitxor
-        left: (literal
-          (hex))
-        operator: (bitxor_op)
-        right: (literal
-          (hex))))))
+    value: (bitxor
+      left: (literal
+        (hex))
+      operator: (bitxor_op)
+      right: (literal
+        (hex)))))
 
 ==================
 Bitwise XOR with variables
@@ -54,13 +53,12 @@ contract C {
           type: (uint_type)))
       body: (block
         statement: (return
-          value: (bitwise
-            (bitxor
-              left: (symbol
-                name: (identifier))
-              operator: (bitxor_op)
-              right: (symbol
-                name: (identifier)))))))))
+          value: (bitxor
+            left: (symbol
+              name: (identifier))
+            operator: (bitxor_op)
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Chained bitwise XOR expressions (left-associative)
@@ -77,18 +75,16 @@ uint constant x = a ^ b ^ c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitxor
-        left: (bitwise
-          (bitxor
-            left: (symbol
-              name: (identifier))
-            operator: (bitxor_op)
-            right: (symbol
-              name: (identifier))))
+    value: (bitxor
+      left: (bitxor
+        left: (symbol
+          name: (identifier))
         operator: (bitxor_op)
         right: (symbol
-          name: (identifier))))))
+          name: (identifier)))
+      operator: (bitxor_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Bitwise XOR precedence with bitwise AND (critical test)
@@ -105,18 +101,16 @@ uint constant x = a ^ b & c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitxor
+    value: (bitxor
+      left: (symbol
+        name: (identifier))
+      operator: (bitxor_op)
+      right: (bitand
         left: (symbol
           name: (identifier))
-        operator: (bitxor_op)
-        right: (bitwise
-          (bitand
-            left: (symbol
-              name: (identifier))
-            operator: (bitand_op)
-            right: (symbol
-              name: (identifier))))))))
+        operator: (bitand_op)
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Bitwise XOR precedence with bitwise OR (critical test)
@@ -133,18 +127,16 @@ uint constant x = a ^ b | c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitor
-        left: (bitwise
-          (bitxor
-            left: (symbol
-              name: (identifier))
-            operator: (bitxor_op)
-            right: (symbol
-              name: (identifier))))
-        operator: (bitor_op)
+    value: (bitor
+      left: (bitxor
+        left: (symbol
+          name: (identifier))
+        operator: (bitxor_op)
         right: (symbol
-          name: (identifier))))))
+          name: (identifier)))
+      operator: (bitor_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Bitwise XOR precedence with comparison operators
@@ -162,13 +154,12 @@ bool constant x = a ^ b > c;
     name: (symbol
       name: (identifier))
     value: (comparison
-      left: (bitwise
-        (bitxor
-          left: (symbol
-            name: (identifier))
-          operator: (bitxor_op)
-          right: (symbol
-            name: (identifier))))
+      left: (bitxor
+        left: (symbol
+          name: (identifier))
+        operator: (bitxor_op)
+        right: (symbol
+          name: (identifier)))
       operator: (gt)
       right: (symbol
         name: (identifier)))))
@@ -188,18 +179,17 @@ uint constant x = a ^ (b + c);
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitxor
-        left: (symbol
-          name: (identifier))
-        operator: (bitxor_op)
-        right: (group
-          expression: (add
-            left: (symbol
-              name: (identifier))
-            operator: (add_op)
-            right: (symbol
-              name: (identifier))))))))
+    value: (bitxor
+      left: (symbol
+        name: (identifier))
+      operator: (bitxor_op)
+      right: (group
+        expression: (add
+          left: (symbol
+            name: (identifier))
+          operator: (add_op)
+          right: (symbol
+            name: (identifier)))))))
 
 ==================
 Bitwise XOR in an assignment expression

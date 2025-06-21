@@ -11,11 +11,10 @@ uint constant x = ~123;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitnot
-        operator: (bitnot_op)
-        argument: (literal
-          (number))))))
+    value: (bitnot
+      operator: (bitnot_op)
+      argument: (literal
+        (number)))))
 
 ==================
 Bitwise NOT on a hex literal
@@ -30,11 +29,10 @@ bytes32 constant x = ~0x111122223333444455556666777788889999AAAABBBBCCCCDDDDEEEE
     type: (bytes_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitnot
-        operator: (bitnot_op)
-        argument: (literal
-          (hex))))))
+    value: (bitnot
+      operator: (bitnot_op)
+      argument: (literal
+        (hex)))))
 
 ==================
 Bitwise NOT on a variable
@@ -67,11 +65,10 @@ contract C {
           type: (uint_type)))
       body: (block
         statement: (return
-          value: (bitwise
-            (bitnot
-              operator: (bitnot_op)
-              argument: (symbol
-                name: (identifier)))))))))
+          value: (bitnot
+            operator: (bitnot_op)
+            argument: (symbol
+              name: (identifier))))))))
 
 ==================
 Bitwise NOT precedence with exponentiation
@@ -91,11 +88,10 @@ uint constant x = ~a ** b;
     name: (symbol
       name: (identifier))
     value: (exp
-      left: (bitwise
-        (bitnot
-          operator: (bitnot_op)
-          argument: (symbol
-            name: (identifier))))
+      left: (bitnot
+        operator: (bitnot_op)
+        argument: (symbol
+          name: (identifier)))
       operator: (exp_op)
       right: (symbol
         name: (identifier)))))
@@ -117,11 +113,10 @@ uint constant x = (~a) ** b;
       name: (identifier))
     value: (exp
       left: (group
-        expression: (bitwise
-          (bitnot
-            operator: (bitnot_op)
-            argument: (symbol
-              name: (identifier)))))
+        expression: (bitnot
+          operator: (bitnot_op)
+          argument: (symbol
+            name: (identifier))))
       operator: (exp_op)
       right: (symbol
         name: (identifier)))))
@@ -141,16 +136,14 @@ uint constant x = ~a & b;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitand
-        left: (bitwise
-          (bitnot
-            operator: (bitnot_op)
-            argument: (symbol
-              name: (identifier))))
-        operator: (bitand_op)
-        right: (symbol
-          name: (identifier))))))
+    value: (bitand
+      left: (bitnot
+        operator: (bitnot_op)
+        argument: (symbol
+          name: (identifier)))
+      operator: (bitand_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Bitwise NOT on a parenthesized expression
@@ -167,17 +160,15 @@ uint constant x = ~(a | b);
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitnot
-        operator: (bitnot_op)
-        argument: (group
-          expression: (bitwise
-            (bitor
-              left: (symbol
-                name: (identifier))
-              operator: (bitor_op)
-              right: (symbol
-                name: (identifier)))))))))
+    value: (bitnot
+      operator: (bitnot_op)
+      argument: (group
+        expression: (bitor
+          left: (symbol
+            name: (identifier))
+          operator: (bitor_op)
+          right: (symbol
+            name: (identifier)))))))
 
 ==================
 Double bitwise NOT
@@ -192,14 +183,12 @@ uint constant x = ~~a;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitnot
+    value: (bitnot
+      operator: (bitnot_op)
+      argument: (bitnot
         operator: (bitnot_op)
-        argument: (bitwise
-          (bitnot
-            operator: (bitnot_op)
-            argument: (symbol
-              name: (identifier))))))))
+        argument: (symbol
+          name: (identifier))))))
 
 ==================
 Bitwise NOT on a cast expression
@@ -216,13 +205,12 @@ uint constant ALL_BITS = ~uint256(0);
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (bitwise
-      (bitnot
-        operator: (bitnot_op)
-        argument: (cast
-          type: (uint_type)
-          argument: (literal
-            (number)))))))
+    value: (bitnot
+      operator: (bitnot_op)
+      argument: (cast
+        type: (uint_type)
+        argument: (literal
+          (number))))))
 
 ==================
 Bitwise NOT in a function argument
@@ -266,8 +254,7 @@ contract C {
           function: (symbol
             name: (identifier))
           arguments: (arguments
-            argument: (bitwise
-              (bitnot
-                operator: (bitnot_op)
-                argument: (symbol
-                  name: (identifier))))))))))
+            argument: (bitnot
+              operator: (bitnot_op)
+              argument: (symbol
+                name: (identifier)))))))))

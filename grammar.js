@@ -589,12 +589,12 @@ module.exports = grammar({
       choice(
         $._abi_call,
         $._arithmetic,
+        $._bitwise,
         $._builtin_expression,
         $._global_variable,
         $._primary_expression,
         $.and,
         $.assignment,
-        $.bitwise,
         $.call,
         $.cast,
         $.comparison,
@@ -868,7 +868,7 @@ module.exports = grammar({
     //                     Bitwise expression                     //
     //############################################################//
 
-    bitwise: ($) => choice($.bitand, $.bitor, $.bitxor, $.bitnot),
+    _bitwise: ($) => choice($.bitand, $.bitor, $.bitxor, $.bitnot),
 
     bitand: ($) =>
       prec.left(
