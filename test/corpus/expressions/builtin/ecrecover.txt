@@ -144,7 +144,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (require
-          condition: (equality
+          condition: (eq
             left: (ecrecover
               hash: (symbol
                 name: (identifier))
@@ -154,7 +154,7 @@ contract C {
                 name: (identifier))
               s: (symbol
                 name: (identifier)))
-            operator: (equality_op)
+            operator: (eq_op)
             right: (symbol
               name: (identifier)))
           reason: (string))))))

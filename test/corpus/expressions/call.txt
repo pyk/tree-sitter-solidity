@@ -268,10 +268,10 @@ contract C {
         name: (identifier))
       body: (block
         statement: (assert
-          condition: (equality
+          condition: (eq
             left: (symbol
               name: (identifier))
-            operator: (equality_op)
+            operator: (eq_op)
             right: (literal
               (number))))))))
 

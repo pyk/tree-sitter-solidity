@@ -43,10 +43,10 @@ contract C {
             operator: (increment_op))
           body: (block
             statement: (if_statement
-              condition: (equality
+              condition: (eq
                 left: (symbol
                   name: (identifier))
-                operator: (equality_op)
+                operator: (eq_op)
                 right: (literal
                   (number)))
               consequence: (block

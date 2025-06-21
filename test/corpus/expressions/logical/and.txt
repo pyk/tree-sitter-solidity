@@ -135,10 +135,10 @@ bool constant x = a > b && c == d;
         right: (symbol
           name: (identifier)))
       operator: (and_op)
-      right: (equality
+      right: (eq
         left: (symbol
           name: (identifier))
-        operator: (equality_op)
+        operator: (eq_op)
         right: (symbol
           name: (identifier))))))
 

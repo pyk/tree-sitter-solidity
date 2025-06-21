@@ -11,10 +11,10 @@ bool constant x = 1 == 1;
     type: (bool_type)
     name: (symbol
       name: (identifier))
-    value: (equality
+    value: (eq
       left: (literal
         (number))
-      operator: (equality_op)
+      operator: (eq_op)
       right: (literal
         (number)))))
 
@@ -53,10 +53,10 @@ contract C {
           type: (bool_type)))
       body: (block
         statement: (return
-          value: (equality
+          value: (neq
             left: (symbol
               name: (identifier))
-            operator: (equality_op)
+            operator: (neq_op)
             right: (symbol
               name: (identifier))))))))
 
@@ -73,10 +73,10 @@ bool constant x = true == false;
     type: (bool_type)
     name: (symbol
       name: (identifier))
-    value: (equality
+    value: (eq
       left: (literal
         (boolean))
-      operator: (equality_op)
+      operator: (eq_op)
       right: (literal
         (boolean)))))
 
@@ -93,10 +93,10 @@ bool constant x = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF == address(0);
     type: (bool_type)
     name: (symbol
       name: (identifier))
-    value: (equality
+    value: (eq
       left: (literal
         (hex))
-      operator: (equality_op)
+      operator: (eq_op)
       right: (cast
         type: (address_type)
         argument: (literal
@@ -117,14 +117,14 @@ bool constant x = a + 5 == b;
     type: (bool_type)
     name: (symbol
       name: (identifier))
-    value: (equality
+    value: (eq
       left: (add
         left: (symbol
           name: (identifier))
         operator: (add_op)
         right: (literal
           (number)))
-      operator: (equality_op)
+      operator: (eq_op)
       right: (symbol
         name: (identifier)))))
 
@@ -145,14 +145,14 @@ bool constant x = a < b == c > d;
     type: (bool_type)
     name: (symbol
       name: (identifier))
-    value: (equality
+    value: (eq
       left: (comparison
         left: (symbol
           name: (identifier))
         operator: (lt)
         right: (symbol
           name: (identifier)))
-      operator: (equality_op)
+      operator: (eq_op)
       right: (comparison
         left: (symbol
           name: (identifier))
@@ -176,17 +176,17 @@ bool constant x = a == b || c != d;
     name: (symbol
       name: (identifier))
     value: (or
-      left: (equality
+      left: (eq
         left: (symbol
           name: (identifier))
-        operator: (equality_op)
+        operator: (eq_op)
         right: (symbol
           name: (identifier)))
       operator: (or_op)
-      right: (equality
+      right: (neq
         left: (symbol
           name: (identifier))
-        operator: (equality_op)
+        operator: (neq_op)
         right: (symbol
           name: (identifier))))))
 
@@ -220,10 +220,10 @@ contract C {
       mutability: (view)
       body: (block
         statement: (if_statement
-          condition: (equality
+          condition: (eq
             left: (symbol
               name: (identifier))
-            operator: (equality_op)
+            operator: (eq_op)
             right: (msg_sender))
           consequence: (block
             (comment)))))))

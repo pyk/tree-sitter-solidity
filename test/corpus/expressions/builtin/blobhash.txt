@@ -136,11 +136,11 @@ contract C {
       mutability: (view)
       body: (block
         statement: (if_statement
-          condition: (equality
+          condition: (eq
             left: (blobhash
               index: (symbol
                 name: (identifier)))
-            operator: (equality_op)
+            operator: (eq_op)
             right: (symbol
               name: (identifier)))
           consequence: (block

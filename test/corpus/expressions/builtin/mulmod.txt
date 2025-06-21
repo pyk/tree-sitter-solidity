@@ -166,7 +166,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (require
-          condition: (equality
+          condition: (eq
             left: (mulmod
               x: (symbol
                 name: (identifier))
@@ -174,7 +174,7 @@ contract C {
                 name: (identifier))
               k: (symbol
                 name: (identifier)))
-            operator: (equality_op)
+            operator: (eq_op)
             right: (literal
               (number)))
           reason: (string))))))

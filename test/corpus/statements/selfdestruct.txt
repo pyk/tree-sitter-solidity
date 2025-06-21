@@ -89,9 +89,9 @@ contract C {
       visibility: (public)
       body: (block
         statement: (if_statement
-          condition: (equality
+          condition: (eq
             left: (msg_sender)
-            operator: (equality_op)
+            operator: (eq_op)
             right: (symbol
               name: (identifier)))
           consequence: (block

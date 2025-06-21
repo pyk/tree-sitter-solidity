@@ -199,14 +199,14 @@ contract C {
           type: (bool_type)))
       body: (block
         statement: (if_statement
-          condition: (equality
+          condition: (eq
             left: (mod
               left: (symbol
                 name: (identifier))
               operator: (mod_op)
               right: (literal
                 (number)))
-            operator: (equality_op)
+            operator: (eq_op)
             right: (literal
               (number)))
           consequence: (block

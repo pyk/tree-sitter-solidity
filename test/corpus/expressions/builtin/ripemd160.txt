@@ -143,10 +143,10 @@ contract C {
           type: (bool_type)))
       body: (block
         statement: (return
-          value: (equality
+          value: (eq
             left: (ripemd160
               argument: (symbol
                 name: (identifier)))
-            operator: (equality_op)
+            operator: (eq_op)
             right: (symbol
               name: (identifier))))))))

@@ -599,11 +599,12 @@ module.exports = grammar({
         $.cast,
         $.comparison,
         $.conditional_expression,
-        $.equality,
+        $.eq,
         $.group,
         $.inline_array_expression,
         $.member_access_expression,
         $.meta_type_expression,
+        $.neq,
         $.new_expression,
         $.not,
         $.or,
@@ -672,16 +673,28 @@ module.exports = grammar({
     //                    Equality expression                     //
     //############################################################//
 
-    equality: ($) =>
+    // From line 665 to 679
+    eq: ($) =>
       prec.left(
         PREC.EQUALITY,
         seq(
           field("left", $._expression),
-          field("operator", $.equality_op),
+          field("operator", $.eq_op),
           field("right", $._expression),
         ),
       ),
-    equality_op: ($) => choice("==", "!="),
+    eq_op: ($) => "==",
+
+    neq: ($) =>
+      prec.left(
+        PREC.EQUALITY,
+        seq(
+          field("left", $._expression),
+          field("operator", $.neq_op),
+          field("right", $._expression),
+        ),
+      ),
+    neq_op: ($) => "!=",
 
     //############################################################//
     //                     Logical expression                     //

@@ -172,13 +172,13 @@ contract C {
       mutability: (view)
       body: (block
         statement: (require
-          condition: (equality
+          condition: (eq
             left: (keccak256
               argument: (cast
                 type: (bytes_type)
                 argument: (symbol
                   name: (identifier))))
-            operator: (equality_op)
+            operator: (eq_op)
             right: (symbol
               name: (identifier)))
           reason: (string))))))

@@ -2010,7 +2010,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "equality"
+          "name": "eq"
         },
         {
           "type": "SYMBOL",
@@ -2027,6 +2027,10 @@
         {
           "type": "SYMBOL",
           "name": "meta_type_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "neq"
         },
         {
           "type": "SYMBOL",
@@ -2239,7 +2243,7 @@
       "type": "STRING",
       "value": ">="
     },
-    "equality": {
+    "eq": {
       "type": "PREC_LEFT",
       "value": 4,
       "content": {
@@ -2258,7 +2262,7 @@
             "name": "operator",
             "content": {
               "type": "SYMBOL",
-              "name": "equality_op"
+              "name": "eq_op"
             }
           },
           {
@@ -2272,18 +2276,46 @@
         ]
       }
     },
-    "equality_op": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "=="
-        },
-        {
-          "type": "STRING",
-          "value": "!="
-        }
-      ]
+    "eq_op": {
+      "type": "STRING",
+      "value": "=="
+    },
+    "neq": {
+      "type": "PREC_LEFT",
+      "value": 4,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "SYMBOL",
+              "name": "neq_op"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "neq_op": {
+      "type": "STRING",
+      "value": "!="
     },
     "and": {
       "type": "PREC_LEFT",

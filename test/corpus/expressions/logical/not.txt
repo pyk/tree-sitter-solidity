@@ -87,12 +87,12 @@ bool constant x = !a == b;
     type: (bool_type)
     name: (symbol
       name: (identifier))
-    value: (equality
+    value: (eq
       left: (not
         operator: (not_op)
         argument: (symbol
           name: (identifier)))
-      operator: (equality_op)
+      operator: (eq_op)
       right: (symbol
         name: (identifier)))))
 
