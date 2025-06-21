@@ -236,10 +236,7 @@ contract C {
             left: (symbol
               name: (identifier))
             operator: (equality_op)
-            right: (symbol
-              scope: (symbol
-                name: (identifier))
-              name: (identifier)))
+            right: (msg_sender))
           consequence: (block
             (comment)))))))
 

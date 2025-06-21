@@ -128,10 +128,7 @@ contract C {
           event: (symbol
             name: (identifier))
           arguments: (arguments
-            argument: (symbol
-              scope: (symbol
-                name: (identifier))
-              name: (identifier))
+            argument: (msg_sender)
             argument: (symbol
               name: (identifier))
             argument: (symbol

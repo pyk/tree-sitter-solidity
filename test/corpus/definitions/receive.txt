@@ -56,14 +56,8 @@ contract C {
           event: (symbol
             name: (identifier))
           arguments: (arguments
-            argument: (symbol
-              scope: (symbol
-                name: (identifier))
-              name: (identifier))
-            argument: (symbol
-              scope: (symbol
-                name: (identifier))
-              name: (identifier))))))))
+            argument: (msg_sender)
+            argument: (msg_value)))))))
 
 ==================
 Receive function with a modifier

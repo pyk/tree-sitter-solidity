@@ -96,10 +96,7 @@ contract C {
           value: (blockhash
             block_number: (arithmetic
               (sub
-                left: (symbol
-                  scope: (symbol
-                    name: (identifier))
-                  name: (identifier))
+                left: (block_number)
                 operator: (sub_op)
                 right: (literal
                   (number))))))))))

@@ -2008,11 +2008,15 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_primary_expression"
+          "name": "_builtin_expression"
         },
         {
           "type": "SYMBOL",
-          "name": "_builtin_expression"
+          "name": "_global_variable"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_primary_expression"
         },
         {
           "type": "SYMBOL",
@@ -3580,6 +3584,326 @@
         {
           "type": "STRING",
           "value": ")"
+        }
+      ]
+    },
+    "_global_variable": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "block_timestamp"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_number"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_coinbase"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_chainid"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_basefee"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_difficulty"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_gaslimit"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_prevrandao"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_blobbasefee"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "msg_data"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "msg_sender"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "msg_sig"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "msg_value"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tx_gasprice"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tx_origin"
+        }
+      ]
+    },
+    "block_timestamp": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "block"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "timestamp"
+        }
+      ]
+    },
+    "block_number": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "block"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "number"
+        }
+      ]
+    },
+    "block_coinbase": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "block"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "coinbase"
+        }
+      ]
+    },
+    "block_chainid": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "block"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "chainid"
+        }
+      ]
+    },
+    "block_basefee": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "block"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "basefee"
+        }
+      ]
+    },
+    "block_difficulty": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "block"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "difficulty"
+        }
+      ]
+    },
+    "block_gaslimit": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "block"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "gaslimit"
+        }
+      ]
+    },
+    "block_prevrandao": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "block"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "prevrandao"
+        }
+      ]
+    },
+    "block_blobbasefee": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "block"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "blobbasefee"
+        }
+      ]
+    },
+    "msg_data": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "msg"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "data"
+        }
+      ]
+    },
+    "msg_sender": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "msg"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "sender"
+        }
+      ]
+    },
+    "msg_sig": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "msg"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "sig"
+        }
+      ]
+    },
+    "msg_value": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "msg"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "value"
+        }
+      ]
+    },
+    "tx_gasprice": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "tx"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "gasprice"
+        }
+      ]
+    },
+    "tx_origin": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "tx"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "STRING",
+          "value": "origin"
         }
       ]
     },

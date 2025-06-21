@@ -192,10 +192,7 @@ contract C {
           condition: (comparison
             left: (arithmetic
               (add
-                left: (symbol
-                  scope: (symbol
-                    name: (identifier))
-                  name: (identifier))
+                left: (block_timestamp)
                 operator: (add_op)
                 right: (time_literal
                   value: (number)
@@ -229,10 +226,7 @@ contract C {
       body: (block
         statement: (require
           condition: (comparison
-            left: (symbol
-              scope: (symbol
-                name: (identifier))
-              name: (identifier))
+            left: (msg_value)
             operator: (gte)
             right: (ether_literal
               value: (number)

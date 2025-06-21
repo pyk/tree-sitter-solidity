@@ -1,0 +1,137 @@
+==================
+msg.sender in a require statement
+==================
+
+contract C {
+    address owner;
+    function f() public view {
+        require(msg.sender == owner, "Not owner");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (state_variable
+      type: (primitive_type
+        (address_type))
+      name: (symbol
+        name: (identifier)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      body: (block
+        statement: (require
+          condition: (equality
+            left: (msg_sender)
+            operator: (equality_op)
+            right: (symbol
+              name: (identifier)))
+          reason: (string))))))
+
+==================
+msg.value in an if statement
+==================
+
+contract C {
+    function f() public payable {
+        if (msg.value > 1 ether) {
+            // logic
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (payable)
+      body: (block
+        statement: (if_statement
+          condition: (comparison
+            left: (msg_value)
+            operator: (gt)
+            right: (ether_literal
+              value: (number)
+              unit: (ether)))
+          consequence: (block
+            (comment)))))))
+
+==================
+block.timestamp and block.number
+==================
+
+contract C {
+    function f() public view returns (uint, uint) {
+        return (block.timestamp, block.number);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        statement: (return
+          value: (tuple_expression
+            (block_timestamp)
+            (block_number)))))))
+
+==================
+tx.origin used in an assignment
+==================
+
+contract C {
+    address public originalSender;
+    function f() public {
+        originalSender = tx.origin;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (state_variable
+      type: (primitive_type
+        (address_type))
+      visibility: (public)
+      name: (symbol
+        name: (identifier)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (assignment
+          left: (symbol
+            name: (identifier))
+          operator: (assign_op)
+          right: (tx_origin))))))

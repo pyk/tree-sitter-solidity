@@ -93,10 +93,7 @@ contract C {
       body: (block
         statement: (if_statement
           condition: (equality
-            left: (symbol
-              scope: (symbol
-                name: (identifier))
-              name: (identifier))
+            left: (msg_sender)
             operator: (equality_op)
             right: (symbol
               name: (identifier)))
@@ -131,7 +128,4 @@ contract C {
         statement: (selfdestruct
           recipient: (payable_conversion_expression
             arguments: (arguments
-              argument: (symbol
-                scope: (symbol
-                  name: (identifier))
-                name: (identifier)))))))))
+              argument: (msg_sender))))))))

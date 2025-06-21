@@ -598,8 +598,9 @@ module.exports = grammar({
      */
     _expression: ($) =>
       choice(
-        $._primary_expression,
         $._builtin_expression,
+        $._global_variable,
+        $._primary_expression,
         $.and,
         $.arithmetic,
         $.assignment,
@@ -1050,6 +1051,54 @@ module.exports = grammar({
     gasleft: ($) => seq("gasleft", "(", ")"),
     blockhash: ($) =>
       seq("blockhash", "(", field("block_number", $._expression), ")"),
+
+    //############################################################//
+    //                 Global variable expression                 //
+    //############################################################//
+
+    // A grouping rule for all global variables, to keep the `_expression` rule clean.
+    _global_variable: ($) =>
+      choice(
+        // block members
+        $.block_timestamp,
+        $.block_number,
+        $.block_coinbase,
+        $.block_chainid,
+        $.block_basefee,
+        $.block_difficulty,
+        $.block_gaslimit,
+        $.block_prevrandao,
+        $.block_blobbasefee,
+        // msg members
+        $.msg_data,
+        $.msg_sender,
+        $.msg_sig,
+        $.msg_value,
+        // tx members
+        $.tx_gasprice,
+        $.tx_origin,
+      ),
+
+    // Block Properties
+    block_timestamp: ($) => seq("block", ".", "timestamp"),
+    block_number: ($) => seq("block", ".", "number"),
+    block_coinbase: ($) => seq("block", ".", "coinbase"),
+    block_chainid: ($) => seq("block", ".", "chainid"),
+    block_basefee: ($) => seq("block", ".", "basefee"),
+    block_difficulty: ($) => seq("block", ".", "difficulty"),
+    block_gaslimit: ($) => seq("block", ".", "gaslimit"),
+    block_prevrandao: ($) => seq("block", ".", "prevrandao"),
+    block_blobbasefee: ($) => seq("block", ".", "blobbasefee"),
+
+    // Message Properties
+    msg_data: ($) => seq("msg", ".", "data"),
+    msg_sender: ($) => seq("msg", ".", "sender"),
+    msg_sig: ($) => seq("msg", ".", "sig"),
+    msg_value: ($) => seq("msg", ".", "value"),
+
+    // Transaction Properties
+    tx_gasprice: ($) => seq("tx", ".", "gasprice"),
+    tx_origin: ($) => seq("tx", ".", "origin"),
 
     //############################################################//
     //                          Variable                          //

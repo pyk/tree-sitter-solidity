@@ -92,10 +92,7 @@ contract C {
             (address_type))
           name: (symbol
             name: (identifier))
-          value: (symbol
-            scope: (symbol
-              name: (identifier))
-            name: (identifier)))))))
+          value: (msg_sender))))))
 
 ==================
 Address in a type cast
