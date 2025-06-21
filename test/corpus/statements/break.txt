@@ -1,0 +1,242 @@
+==================
+Break statement in a for loop
+==================
+
+contract C {
+    function f() public pure {
+        for (uint i = 0; i < 10; i++) {
+            if (i == 5) {
+                break;
+            }
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (for_statement
+          initializer: (local_variable
+            type: (primitive_type
+              (uint_type))
+            name: (symbol
+              name: (identifier))
+            value: (literal
+              (number)))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (lt)
+            right: (literal
+              (number)))
+          update: (arithmetic
+            (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op)))
+          body: (block
+            statement: (if_statement
+              condition: (equality
+                left: (symbol
+                  name: (identifier))
+                operator: (equality_op)
+                right: (literal
+                  (number)))
+              consequence: (block
+                statement: (break)))))))))
+
+==================
+Break statement in a while loop
+==================
+
+contract C {
+    function f() public pure {
+        uint i = 0;
+        while (i < 10) {
+            break;
+            i++;
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))
+          value: (literal
+            (number)))
+        statement: (while_statement
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (lt)
+            right: (literal
+              (number)))
+          body: (block
+            statement: (break)
+            statement: (arithmetic
+              (increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op)))))))))
+
+==================
+Break statement in a do-while loop
+==================
+
+contract C {
+    function f() public pure {
+        uint i = 0;
+        do {
+            break;
+        } while (i < 10);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))
+          value: (literal
+            (number)))
+        statement: (do_while_statement
+          body: (block
+            statement: (break))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (lt)
+            right: (literal
+              (number))))))))
+
+==================
+Break statement in a nested loop
+==================
+
+contract C {
+    function f() public pure {
+        for (uint i = 0; i < 3; i++) {
+            for (uint j = 0; j < 3; j++) {
+                break; // Breaks inner loop only
+            }
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (for_statement
+          initializer: (local_variable
+            type: (primitive_type
+              (uint_type))
+            name: (symbol
+              name: (identifier))
+            value: (literal
+              (number)))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (lt)
+            right: (literal
+              (number)))
+          update: (arithmetic
+            (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op)))
+          body: (block
+            statement: (for_statement
+              initializer: (local_variable
+                type: (primitive_type
+                  (uint_type))
+                name: (symbol
+                  name: (identifier))
+                value: (literal
+                  (number)))
+              condition: (comparison
+                left: (symbol
+                  name: (identifier))
+                operator: (lt)
+                right: (literal
+                  (number)))
+              update: (arithmetic
+                (increment
+                  argument: (symbol
+                    name: (identifier))
+                  operator: (increment_op)))
+              body: (block
+                statement: (break)
+                (comment)))))))))
+
+==================
+Break statement in an infinite for loop
+==================
+
+contract C {
+    function f() public pure {
+        for (;;) {
+            break;
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (for_statement
+          body: (block
+            statement: (break)))))))
