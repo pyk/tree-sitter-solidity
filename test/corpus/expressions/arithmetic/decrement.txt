@@ -27,10 +27,9 @@ contract C {
       body: (block
         statement: (arithmetic
           (decrement
-            (prefix_decrement
-              operator: (decrement_op)
-              argument: (symbol
-                name: (identifier)))))))))
+            operator: (decrement_op)
+            argument: (symbol
+              name: (identifier))))))))
 
 ==================
 Postfix decrement as a statement
@@ -61,10 +60,9 @@ contract C {
       body: (block
         statement: (arithmetic
           (decrement
-            (postfix_decrement
-              argument: (symbol
-                name: (identifier))
-              operator: (decrement_op))))))))
+            argument: (symbol
+              name: (identifier))
+            operator: (decrement_op)))))))
 
 ==================
 Prefix decrement in an assignment
@@ -107,10 +105,9 @@ contract C {
           operator: (simple_assignment_operator)
           right: (arithmetic
             (decrement
-              (prefix_decrement
-                operator: (decrement_op)
-                argument: (symbol
-                  name: (identifier))))))))))
+              operator: (decrement_op)
+              argument: (symbol
+                name: (identifier)))))))))
 
 ==================
 Postfix decrement in an assignment
@@ -153,10 +150,9 @@ contract C {
           operator: (simple_assignment_operator)
           right: (arithmetic
             (decrement
-              (postfix_decrement
-                argument: (symbol
-                  name: (identifier))
-                operator: (decrement_op)))))))))
+              argument: (symbol
+                name: (identifier))
+              operator: (decrement_op))))))))
 
 ==================
 Postfix decrement of an array element
@@ -189,13 +185,12 @@ contract C {
       body: (block
         statement: (arithmetic
           (decrement
-            (postfix_decrement
-              argument: (index_access_expression
-                base: (symbol
-                  name: (identifier))
-                index: (literal
-                  (number)))
-              operator: (decrement_op))))))))
+            argument: (index_access_expression
+              base: (symbol
+                name: (identifier))
+              index: (literal
+                (number)))
+            operator: (decrement_op)))))))
 
 ==================
 Prefix decrement precedence vs multiplication
@@ -241,10 +236,9 @@ contract C {
             (mul
               left: (arithmetic
                 (decrement
-                  (prefix_decrement
-                    operator: (decrement_op)
-                    argument: (symbol
-                      name: (identifier)))))
+                  operator: (decrement_op)
+                  argument: (symbol
+                    name: (identifier))))
               operator: (mul_op)
               right: (symbol
                 name: (identifier)))))))))
@@ -291,12 +285,11 @@ contract C {
       body: (block
         statement: (arithmetic
           (decrement
-            (postfix_decrement
-              argument: (symbol
-                scope: (symbol
-                  name: (identifier))
+            argument: (symbol
+              scope: (symbol
                 name: (identifier))
-              operator: (decrement_op))))))))
+              name: (identifier))
+            operator: (decrement_op)))))))
 
 ==================
 Decrement in a for loop
@@ -338,9 +331,8 @@ contract C {
               (number)))
           update: (arithmetic
             (decrement
-              (postfix_decrement
-                argument: (symbol
-                  name: (identifier))
-                operator: (decrement_op))))
+              argument: (symbol
+                name: (identifier))
+              operator: (decrement_op)))
           body: (block
             (comment)))))))

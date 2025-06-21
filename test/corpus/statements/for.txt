@@ -37,10 +37,9 @@ contract C {
               (number)))
           update: (arithmetic
             (increment
-              (postfix_increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op))))
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op)))
           body: (block
             (comment)))))))
 
@@ -80,10 +79,9 @@ contract C {
               (number)))
           update: (arithmetic
             (increment
-              (postfix_increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op))))
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op)))
           body: (block))))))
 
 ==================
@@ -119,10 +117,9 @@ contract C {
               (number)))
           update: (arithmetic
             (increment
-              (postfix_increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op))))
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op)))
           body: (block
             statement: (if_statement
               condition: (comparison
@@ -173,10 +170,9 @@ contract C {
           body: (block
             statement: (arithmetic
               (increment
-                (postfix_increment
-                  argument: (symbol
-                    name: (identifier))
-                  operator: (increment_op))))))))))
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op)))))))))
 
 ==================
 Infinite for loop
@@ -242,10 +238,9 @@ contract C {
               (number)))
           update: (arithmetic
             (increment
-              (postfix_increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op))))
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op)))
           body: (call
             function: (symbol
               name: (identifier))
@@ -293,10 +288,9 @@ contract C {
               (number)))
           update: (arithmetic
             (increment
-              (postfix_increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op))))
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op)))
           body: (block))))))
 
 ==================

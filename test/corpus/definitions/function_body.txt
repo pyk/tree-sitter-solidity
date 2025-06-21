@@ -152,10 +152,9 @@ contract C {
               (number)))
           update: (arithmetic
             (increment
-              (postfix_increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op))))
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op)))
           body: (block
             (comment)))))))
 
@@ -197,18 +196,16 @@ contract C {
           body: (block
             statement: (arithmetic
               (decrement
-                (postfix_decrement
-                  argument: (symbol
-                    name: (identifier))
-                  operator: (decrement_op))))))
+                argument: (symbol
+                  name: (identifier))
+                operator: (decrement_op)))))
         statement: (do_while_statement
           body: (block
             statement: (arithmetic
               (increment
-                (postfix_increment
-                  argument: (symbol
-                    name: (identifier))
-                  operator: (increment_op)))))
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))))
           condition: (comparison
             left: (symbol
               name: (identifier))
@@ -387,7 +384,6 @@ contract C {
                 (number)))
             statement: (arithmetic
               (decrement
-                (postfix_decrement
-                  argument: (symbol
-                    name: (identifier))
-                  operator: (decrement_op))))))))))
+                argument: (symbol
+                  name: (identifier))
+                operator: (decrement_op)))))))))

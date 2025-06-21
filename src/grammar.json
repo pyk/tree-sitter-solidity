@@ -2418,12 +2418,40 @@
           "name": "negation"
         },
         {
-          "type": "SYMBOL",
-          "name": "increment"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_prefix_increment"
+          },
+          "named": true,
+          "value": "increment"
         },
         {
-          "type": "SYMBOL",
-          "name": "decrement"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_postfix_increment"
+          },
+          "named": true,
+          "value": "increment"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_prefix_decrement"
+          },
+          "named": true,
+          "value": "decrement"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_postfix_decrement"
+          },
+          "named": true,
+          "value": "decrement"
         },
         {
           "type": "SYMBOL",
@@ -2480,24 +2508,61 @@
       "type": "STRING",
       "value": "-"
     },
-    "increment": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "prefix_increment"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "postfix_increment"
-        }
-      ]
+    "_prefix_increment": {
+      "type": "PREC_RIGHT",
+      "value": 13,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "SYMBOL",
+              "name": "increment_op"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "argument",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "_postfix_increment": {
+      "type": "PREC_LEFT",
+      "value": 14,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "argument",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "SYMBOL",
+              "name": "increment_op"
+            }
+          }
+        ]
+      }
     },
     "increment_op": {
       "type": "STRING",
       "value": "++"
     },
-    "prefix_increment": {
+    "_prefix_decrement": {
       "type": "PREC_RIGHT",
       "value": 13,
       "content": {
@@ -2508,7 +2573,7 @@
             "name": "operator",
             "content": {
               "type": "SYMBOL",
-              "name": "increment_op"
+              "name": "decrement_op"
             }
           },
           {
@@ -2522,7 +2587,7 @@
         ]
       }
     },
-    "postfix_increment": {
+    "_postfix_decrement": {
       "type": "PREC_LEFT",
       "value": 14,
       "content": {
@@ -2541,78 +2606,15 @@
             "name": "operator",
             "content": {
               "type": "SYMBOL",
-              "name": "increment_op"
+              "name": "decrement_op"
             }
           }
         ]
       }
-    },
-    "decrement": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "prefix_decrement"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "postfix_decrement"
-        }
-      ]
     },
     "decrement_op": {
       "type": "STRING",
       "value": "--"
-    },
-    "prefix_decrement": {
-      "type": "PREC_RIGHT",
-      "value": 13,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "operator",
-            "content": {
-              "type": "SYMBOL",
-              "name": "decrement_op"
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "argument",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          }
-        ]
-      }
-    },
-    "postfix_decrement": {
-      "type": "PREC_LEFT",
-      "value": 14,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "argument",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "operator",
-            "content": {
-              "type": "SYMBOL",
-              "name": "decrement_op"
-            }
-          }
-        ]
-      }
     },
     "exp": {
       "type": "PREC_RIGHT",

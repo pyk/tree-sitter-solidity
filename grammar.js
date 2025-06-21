@@ -747,8 +747,12 @@ module.exports = grammar({
       choice(
         // Unary
         $.negation, // -a
-        $.increment, // ++a or a++
-        $.decrement, // --a or a--
+        // $.increment, // ++a or a++
+        alias($._prefix_increment, $.increment),
+        alias($._postfix_increment, $.increment),
+        // $.decrement, // --a or a--
+        alias($._prefix_decrement, $.decrement),
+        alias($._postfix_decrement, $.decrement),
         // Binary
         $.exp,
         $.mul,
@@ -765,9 +769,7 @@ module.exports = grammar({
       ),
     negation_op: ($) => "-",
 
-    increment: ($) => choice($.prefix_increment, $.postfix_increment),
-    increment_op: ($) => "++",
-    prefix_increment: ($) =>
+    _prefix_increment: ($) =>
       prec.right(
         PREC.UNARY,
         seq(
@@ -775,7 +777,8 @@ module.exports = grammar({
           field("argument", $._expression),
         ),
       ),
-    postfix_increment: ($) =>
+
+    _postfix_increment: ($) =>
       prec.left(
         PREC.POSTFIX,
         seq(
@@ -784,9 +787,9 @@ module.exports = grammar({
         ),
       ),
 
-    decrement: ($) => choice($.prefix_decrement, $.postfix_decrement),
-    decrement_op: ($) => "--",
-    prefix_decrement: ($) =>
+    increment_op: ($) => "++",
+
+    _prefix_decrement: ($) =>
       prec.right(
         PREC.UNARY,
         seq(
@@ -794,7 +797,7 @@ module.exports = grammar({
           field("argument", $._expression),
         ),
       ),
-    postfix_decrement: ($) =>
+    _postfix_decrement: ($) =>
       prec.left(
         PREC.POSTFIX,
         seq(
@@ -802,6 +805,7 @@ module.exports = grammar({
           field("operator", $.decrement_op),
         ),
       ),
+    decrement_op: ($) => "--",
 
     exp: ($) =>
       prec.right(
