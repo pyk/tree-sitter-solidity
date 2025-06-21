@@ -599,7 +599,7 @@ module.exports = grammar({
     _expression: ($) =>
       choice(
         $._primary_expression,
-        $.addmod,
+        $._builtin_expression,
         $.and,
         $.arithmetic,
         $.assignment,
@@ -608,23 +608,17 @@ module.exports = grammar({
         $.cast,
         $.comparison,
         $.conditional_expression,
-        $.ecrecover,
         $.equality,
-        $.gasleft,
         $.group,
         $.index_access_expression,
         $.index_range_access_expression,
         $.inline_array_expression,
-        $.keccak256,
         $.member_access_expression,
         $.meta_type_expression,
-        $.mulmod,
         $.new_expression,
         $.not,
         $.or,
         $.payable_conversion_expression,
-        $.ripemd160,
-        $.sha256,
         $.shift,
         $.tuple_expression,
         $.unary_expression,
@@ -996,6 +990,18 @@ module.exports = grammar({
     //                    Built-in expression                     //
     //############################################################//
 
+    _builtin_expression: ($) =>
+      choice(
+        $.keccak256,
+        $.sha256,
+        $.ripemd160,
+        $.ecrecover,
+        $.addmod,
+        $.mulmod,
+        $.gasleft,
+        $.blockhash,
+      ),
+
     // Cryptography
     keccak256: ($) =>
       seq("keccak256", "(", field("argument", $._expression), ")"),
@@ -1042,6 +1048,8 @@ module.exports = grammar({
 
     // Contract & Transaction
     gasleft: ($) => seq("gasleft", "(", ")"),
+    blockhash: ($) =>
+      seq("blockhash", "(", field("block_number", $._expression), ")"),
 
     //############################################################//
     //                          Variable                          //

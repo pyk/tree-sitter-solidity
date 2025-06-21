@@ -1,0 +1,151 @@
+==================
+blockhash with a literal argument
+==================
+
+contract C {
+    function f() public view {
+        bytes32 hash = blockhash(12345);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier))
+          value: (blockhash
+            block_number: (literal
+              (number))))))))
+
+==================
+blockhash with a variable argument
+==================
+
+contract C {
+    function getHash(uint blockNum) public view returns (bytes32) {
+        return blockhash(blockNum);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))))
+      body: (block
+        statement: (return
+          value: (blockhash
+            block_number: (symbol
+              name: (identifier))))))))
+
+==================
+blockhash with an expression argument
+==================
+
+contract C {
+    function f() public view returns (bytes32) {
+        return blockhash(block.number - 1);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))))
+      body: (block
+        statement: (return
+          value: (blockhash
+            block_number: (arithmetic
+              (sub
+                left: (symbol
+                  scope: (symbol
+                    name: (identifier))
+                  name: (identifier))
+                operator: (sub_op)
+                right: (literal
+                  (number))))))))))
+
+==================
+blockhash in a comparison
+==================
+
+contract C {
+    function checkHash(uint num, bytes32 h) public view {
+        if (blockhash(num) == h) {
+            // ...
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (view)
+      body: (block
+        statement: (if_statement
+          condition: (equality
+            left: (blockhash
+              block_number: (symbol
+                name: (identifier)))
+            operator: (equality_op)
+            right: (symbol
+              name: (identifier)))
+          consequence: (block
+            (comment)))))))

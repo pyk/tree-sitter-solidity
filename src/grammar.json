@@ -2012,7 +2012,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "addmod"
+          "name": "_builtin_expression"
         },
         {
           "type": "SYMBOL",
@@ -2048,15 +2048,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "ecrecover"
-        },
-        {
-          "type": "SYMBOL",
           "name": "equality"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "gasleft"
         },
         {
           "type": "SYMBOL",
@@ -2076,19 +2068,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "keccak256"
-        },
-        {
-          "type": "SYMBOL",
           "name": "member_access_expression"
         },
         {
           "type": "SYMBOL",
           "name": "meta_type_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "mulmod"
         },
         {
           "type": "SYMBOL",
@@ -2105,14 +2089,6 @@
         {
           "type": "SYMBOL",
           "name": "payable_conversion_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "ripemd160"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "sha256"
         },
         {
           "type": "SYMBOL",
@@ -3294,6 +3270,43 @@
       "type": "STRING",
       "value": "&="
     },
+    "_builtin_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "keccak256"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "sha256"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ripemd160"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ecrecover"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "addmod"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "mulmod"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gasleft"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "blockhash"
+        }
+      ]
+    },
     "keccak256": {
       "type": "SEQ",
       "members": [
@@ -3538,6 +3551,31 @@
         {
           "type": "STRING",
           "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "blockhash": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "blockhash"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "block_number",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
         },
         {
           "type": "STRING",
