@@ -1,0 +1,372 @@
+==================
+Classic for loop with block body
+==================
+
+contract C {
+    function loop() public {
+        for (uint i = 0; i < 10; i++) {
+            // loop body
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (for_statement
+          initializer: (local_variable
+            type: (primitive_type
+              (uint_type))
+            name: (symbol
+              name: (identifier))
+            value: (literal
+              (number)))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          update: (arithmetic
+            (increment
+              (postfix_increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))))
+          body: (block
+            (comment)))))))
+
+==================
+For loop with no initializer
+==================
+
+contract C {
+    function loop() public {
+        uint i;
+        for (; i < 10; i++) {}
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        statement: (for_statement
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          update: (arithmetic
+            (increment
+              (postfix_increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))))
+          body: (block))))))
+
+==================
+For loop with no condition
+==================
+
+contract C {
+    function loop() public {
+        for (uint i = 0; ; i++) {
+            if (i >= 10) break;
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (for_statement
+          initializer: (local_variable
+            type: (primitive_type
+              (uint_type))
+            name: (symbol
+              name: (identifier))
+            value: (literal
+              (number)))
+          update: (arithmetic
+            (increment
+              (postfix_increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))))
+          body: (block
+            statement: (if_statement
+              condition: (comparison
+                left: (symbol
+                  name: (identifier))
+                operator: (comparison_op)
+                right: (literal
+                  (number)))
+              consequence: (break_statement))))))))
+
+==================
+For loop with no update expression
+==================
+
+contract C {
+    function loop() public {
+        for (uint i = 0; i < 10;) {
+            i++;
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (for_statement
+          initializer: (local_variable
+            type: (primitive_type
+              (uint_type))
+            name: (symbol
+              name: (identifier))
+            value: (literal
+              (number)))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          body: (block
+            statement: (arithmetic
+              (increment
+                (postfix_increment
+                  argument: (symbol
+                    name: (identifier))
+                  operator: (increment_op))))))))))
+
+==================
+Infinite for loop
+==================
+
+contract C {
+    function loop() public {
+        for (;;) {
+            // infinite
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (for_statement
+          body: (block
+            (comment)))))))
+
+==================
+For loop with single-line statement body
+==================
+
+contract C {
+    function f() public {
+        for (uint i = 0; i < 5; i++) doSomething();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (for_statement
+          initializer: (local_variable
+            type: (primitive_type
+              (uint_type))
+            name: (symbol
+              name: (identifier))
+            value: (literal
+              (number)))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          update: (arithmetic
+            (increment
+              (postfix_increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))))
+          body: (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments)))))))
+
+==================
+For loop with an expression as initializer
+==================
+
+contract C {
+    uint i;
+    function loop() public {
+        for (i = 0; i < 10; i++) {}
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (state_variable
+      type: (primitive_type
+        (uint_type))
+      name: (symbol
+        name: (identifier)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (for_statement
+          initializer: (assignment_expression
+            left: (symbol
+              name: (identifier))
+            operator: (simple_assignment_operator)
+            right: (literal
+              (number)))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          update: (arithmetic
+            (increment
+              (postfix_increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))))
+          body: (block))))))
+
+==================
+For loop with complex update expression
+==================
+
+contract C {
+    function update(uint i) internal pure returns (uint) { return i+1; }
+    function loop() public {
+        for (uint i = 0; i < 10; i = update(i)) {}
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (internal)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        statement: (return_statement
+          value: (arithmetic
+            (add
+              left: (symbol
+                name: (identifier))
+              operator: (add_op)
+              right: (literal
+                (number)))))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (for_statement
+          initializer: (local_variable
+            type: (primitive_type
+              (uint_type))
+            name: (symbol
+              name: (identifier))
+            value: (literal
+              (number)))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (comparison_op)
+            right: (literal
+              (number)))
+          update: (assignment_expression
+            left: (symbol
+              name: (identifier))
+            operator: (simple_assignment_operator)
+            right: (call
+              function: (symbol
+                name: (identifier))
+              arguments: (arguments
+                argument: (symbol
+                  name: (identifier)))))
+          body: (block))))))
