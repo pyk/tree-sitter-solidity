@@ -617,6 +617,7 @@ module.exports = grammar({
         $.keccak256,
         $.member_access_expression,
         $.meta_type_expression,
+        $.mulmod,
         $.new_expression,
         $.not,
         $.or,
@@ -954,11 +955,7 @@ module.exports = grammar({
         ),
       ),
 
-    builtin_function: ($) =>
-      field("name", choice($.gasleft, $.mulmod, $.selfdestruct)),
-
-    // Mathematical
-    mulmod: ($) => "mulmod",
+    builtin_function: ($) => field("name", choice($.gasleft, $.selfdestruct)),
 
     // Contract & Transaction
     selfdestruct: ($) => "selfdestruct",
@@ -1010,6 +1007,7 @@ module.exports = grammar({
     //                    Built-in expression                     //
     //############################################################//
 
+    // Cryptography
     keccak256: ($) =>
       seq("keccak256", "(", field("argument", $._expression), ")"),
     sha256: ($) => seq("sha256", "(", field("argument", $._expression), ")"),
@@ -1028,9 +1026,22 @@ module.exports = grammar({
         field("s", $._expression),
         ")",
       ),
+
+    // Math
     addmod: ($) =>
       seq(
         "addmod",
+        "(",
+        field("x", $._expression),
+        ",",
+        field("y", $._expression),
+        ",",
+        field("k", $._expression),
+        ")",
+      ),
+    mulmod: ($) =>
+      seq(
+        "mulmod",
         "(",
         field("x", $._expression),
         ",",

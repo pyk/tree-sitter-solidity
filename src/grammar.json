@@ -2084,6 +2084,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "mulmod"
+        },
+        {
+          "type": "SYMBOL",
           "name": "new_expression"
         },
         {
@@ -3180,18 +3184,10 @@
           },
           {
             "type": "SYMBOL",
-            "name": "mulmod"
-          },
-          {
-            "type": "SYMBOL",
             "name": "selfdestruct"
           }
         ]
       }
-    },
-    "mulmod": {
-      "type": "STRING",
-      "value": "mulmod"
     },
     "selfdestruct": {
       "type": "STRING",
@@ -3469,6 +3465,55 @@
         {
           "type": "STRING",
           "value": "addmod"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "x",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "FIELD",
+          "name": "y",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "FIELD",
+          "name": "k",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "mulmod": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "mulmod"
         },
         {
           "type": "STRING",
