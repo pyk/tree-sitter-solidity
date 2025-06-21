@@ -1431,7 +1431,7 @@ module.exports = grammar({
         $._expression_statement,
         $.block,
         $.break,
-        $.continue_statement,
+        $.continue,
         $.do_while_statement,
         $.emit,
         $.for_statement,
@@ -1447,6 +1447,7 @@ module.exports = grammar({
 
     _expression_statement: ($) => seq($._expression, ";"),
     break: ($) => seq("break", ";"),
+    continue: ($) => seq("continue", ";"),
     emit: ($) =>
       seq(
         "emit",
@@ -1454,27 +1455,27 @@ module.exports = grammar({
         field("arguments", $.arguments),
         ";",
       ),
-    placeholder: ($) => prec(1, seq("_", ";")),
-    return: ($) => seq("return", optional(field("value", $._expression)), ";"),
-    unchecked: ($) => seq("unchecked", field("body", $.block)),
+    for_statement: ($) =>
+      seq(
+        "for",
+        "(",
+        // This part correctly handles the three cases for the initializer
+        // and consumes the first semicolon.
+        field(
+          "initializer",
+          choice($.local_variable, $._expression_statement, ";"),
+        ),
 
-    //############################################################//
-    //                           Others                           //
-    //############################################################//
+        // The condition is an optional expression, followed by a mandatory semicolon.
+        field("condition", optional($._expression)),
+        ";",
 
-    //************************************************************//
-    //                        Declarations                        //
-    //************************************************************//
+        // The update is an optional expression.
+        field("update", optional($._expression)),
 
-    /**
-     * A return statement.
-     * e.g., `return;` or `return myValue;`
-     */
-
-    /**
-     * An if statement, with an optional else branch.
-     * e.g., `if (condition) { ... } else { ... }`
-     */
+        ")",
+        field("body", $._statement),
+      ),
     if_statement: ($) =>
       prec.right(
         choice(
@@ -1499,31 +1500,9 @@ module.exports = grammar({
         ),
       ),
 
-    /**
-     * A for loop.
-     * e.g., `for (uint i = 0; i < 10; i++) { ... }`
-     */
-    for_statement: ($) =>
-      seq(
-        "for",
-        "(",
-        // This part correctly handles the three cases for the initializer
-        // and consumes the first semicolon.
-        field(
-          "initializer",
-          choice($.local_variable, $._expression_statement, ";"),
-        ),
-
-        // The condition is an optional expression, followed by a mandatory semicolon.
-        field("condition", optional($._expression)),
-        ";",
-
-        // The update is an optional expression.
-        field("update", optional($._expression)),
-
-        ")",
-        field("body", $._statement),
-      ),
+    placeholder: ($) => prec(1, seq("_", ";")),
+    return: ($) => seq("return", optional(field("value", $._expression)), ";"),
+    unchecked: ($) => seq("unchecked", field("body", $.block)),
 
     while_statement: ($) =>
       seq(
@@ -1533,6 +1512,10 @@ module.exports = grammar({
         ")",
         field("body", $._statement),
       ),
+
+    //############################################################//
+    //                           Others                           //
+    //############################################################//
 
     do_while_statement: ($) =>
       seq(
@@ -1544,7 +1527,6 @@ module.exports = grammar({
         ")",
         ";",
       ),
-    continue_statement: ($) => seq("continue", ";"),
 
     revert_statement: ($) =>
       prec(

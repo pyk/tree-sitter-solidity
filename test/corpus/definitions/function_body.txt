@@ -240,7 +240,7 @@ contract C {
         statement: (for_statement
           body: (block
             statement: (break)
-            statement: (continue_statement)))))))
+            statement: (continue)))))))
 
 ==================
 Function body with return statements

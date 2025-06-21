@@ -232,7 +232,7 @@ contract C {
                 argument: (symbol
                   name: (identifier))
                 operator: (increment_op)))
-            statement: (continue_statement)))))))
+            statement: (continue)))))))
 
 ==================
 Nested while loop

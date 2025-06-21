@@ -2092,7 +2092,7 @@
             "named": true
           },
           {
-            "type": "continue_statement",
+            "type": "continue",
             "named": true
           },
           {
@@ -3429,7 +3429,7 @@
     }
   },
   {
-    "type": "continue_statement",
+    "type": "continue",
     "named": true,
     "fields": {}
   },
@@ -3975,7 +3975,7 @@
             "named": true
           },
           {
-            "type": "continue_statement",
+            "type": "continue",
             "named": true
           },
           {
@@ -5188,7 +5188,7 @@
             "named": true
           },
           {
-            "type": "continue_statement",
+            "type": "continue",
             "named": true
           },
           {
@@ -6056,7 +6056,7 @@
             "named": true
           },
           {
-            "type": "continue_statement",
+            "type": "continue",
             "named": true
           },
           {
@@ -6344,7 +6344,7 @@
             "named": true
           },
           {
-            "type": "continue_statement",
+            "type": "continue",
             "named": true
           },
           {
@@ -11450,7 +11450,7 @@
             "named": true
           },
           {
-            "type": "continue_statement",
+            "type": "continue",
             "named": true
           },
           {
