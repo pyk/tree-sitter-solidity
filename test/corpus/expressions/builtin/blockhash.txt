@@ -21,8 +21,7 @@ contract C {
       mutability: (view)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier))
           value: (blockhash
@@ -50,16 +49,14 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (view)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))))
+          type: (bytes_type)))
       body: (block
         statement: (return
           value: (blockhash
@@ -89,8 +86,7 @@ contract C {
       mutability: (view)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))))
+          type: (bytes_type)))
       body: (block
         statement: (return
           value: (blockhash
@@ -124,13 +120,11 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)

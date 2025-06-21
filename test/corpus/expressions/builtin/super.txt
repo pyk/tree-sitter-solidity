@@ -66,8 +66,7 @@ contract Derived is Base {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       virtual: (virtual)
       visibility: (public)
       body: (block)))
@@ -83,8 +82,7 @@ contract Derived is Base {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)

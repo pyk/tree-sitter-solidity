@@ -8,8 +8,7 @@ uint constant x = 0x0F & 0xF0;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -41,21 +40,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))))
+          type: (bytes_type)))
       body: (block
         statement: (return
           value: (bitwise
@@ -78,8 +74,7 @@ uint constant x = a & b & c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -109,8 +104,7 @@ uint constant x = a & b ^ c | d;
   (comment)
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -143,8 +137,7 @@ uint constant x = a << 1 & b + 1;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -176,8 +169,7 @@ uint constant x = a & (b | c);
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -212,8 +204,7 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       mutability: (constant)
       name: (symbol
         name: (identifier))
@@ -224,8 +215,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)

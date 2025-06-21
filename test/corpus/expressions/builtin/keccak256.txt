@@ -21,8 +21,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier))
           value: (keccak256
@@ -52,8 +51,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier))
           value: (keccak256
@@ -81,8 +79,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)
           name: (symbol
             name: (identifier))))
@@ -90,8 +87,7 @@ contract C {
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))))
+          type: (bytes_type)))
       body: (block
         statement: (return
           value: (keccak256
@@ -119,21 +115,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))))
+          type: (bytes_type)))
       body: (block
         statement: (return
           value: (keccak256
@@ -162,8 +155,7 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (bytes_type))
+      type: (bytes_type)
       visibility: (public)
       name: (symbol
         name: (identifier)))
@@ -172,8 +164,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (string_type))
+          type: (string_type)
           location: (memory)
           name: (symbol
             name: (identifier))))
@@ -184,8 +175,7 @@ contract C {
           condition: (equality
             left: (keccak256
               argument: (cast
-                type: (primitive_type
-                  (bytes_type))
+                type: (bytes_type)
                 argument: (symbol
                   name: (identifier))))
             operator: (equality_op)

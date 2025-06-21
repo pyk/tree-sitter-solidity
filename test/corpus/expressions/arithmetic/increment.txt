@@ -19,8 +19,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -52,8 +51,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -87,15 +85,13 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       body: (block
@@ -132,15 +128,13 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       body: (block
@@ -176,8 +170,7 @@ contract C {
       parameters: (parameters
         parameter: (parameter
           type: (array_type
-            base: (primitive_type
-              (uint_type)))
+            base: (uint_type))
           location: (memory)
           name: (symbol
             name: (identifier))))
@@ -215,21 +208,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (arithmetic
@@ -266,8 +256,7 @@ contract C {
       name: (symbol
         name: (identifier))
       member: (struct_member
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier))))
     definition: (function
@@ -317,8 +306,7 @@ contract C {
       body: (block
         statement: (for_statement
           initializer: (local_variable
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             name: (symbol
               name: (identifier))
             value: (literal

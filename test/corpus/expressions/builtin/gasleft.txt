@@ -21,8 +21,7 @@ contract C {
       mutability: (view)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))
           value: (gasleft))))))
@@ -50,8 +49,7 @@ contract C {
       mutability: (view)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (gasleft))))))
@@ -108,20 +106,17 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (view)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))
           value: (arithmetic
@@ -156,8 +151,7 @@ contract C {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))))
     definition: (function

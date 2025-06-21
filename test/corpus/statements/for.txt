@@ -23,8 +23,7 @@ contract C {
       body: (block
         statement: (for_statement
           initializer: (local_variable
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             name: (symbol
               name: (identifier))
             value: (literal
@@ -66,8 +65,7 @@ contract C {
       visibility: (public)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))
         statement: (for_statement
@@ -109,8 +107,7 @@ contract C {
       body: (block
         statement: (for_statement
           initializer: (local_variable
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             name: (symbol
               name: (identifier))
             value: (literal
@@ -155,8 +152,7 @@ contract C {
       body: (block
         statement: (for_statement
           initializer: (local_variable
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             name: (symbol
               name: (identifier))
             value: (literal
@@ -224,8 +220,7 @@ contract C {
       body: (block
         statement: (for_statement
           initializer: (local_variable
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             name: (symbol
               name: (identifier))
             value: (literal
@@ -264,8 +259,7 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier)))
     definition: (function
@@ -315,16 +309,14 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (internal)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (arithmetic
@@ -341,8 +333,7 @@ contract C {
       body: (block
         statement: (for_statement
           initializer: (local_variable
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             name: (symbol
               name: (identifier))
             value: (literal

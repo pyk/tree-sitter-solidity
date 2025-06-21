@@ -10,8 +10,7 @@ type MyUint is uint256;
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (uint_type))))
+    base: (uint_type)))
 
 ==================
 UDVT as a state variable
@@ -29,8 +28,7 @@ contract C {
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (address_type)))
+    base: (address_type))
   definition: (contract
     name: (symbol
       name: (identifier))
@@ -59,8 +57,7 @@ contract C {
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (uint_type)))
+    base: (uint_type))
   definition: (contract
     name: (symbol
       name: (identifier))
@@ -104,8 +101,7 @@ contract C {
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (bool_type)))
+    base: (bool_type))
   definition: (contract
     name: (symbol
       name: (identifier))
@@ -146,8 +142,7 @@ struct Event {
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (uint_type)))
+    base: (uint_type))
   definition: (struct
     name: (symbol
       name: (identifier))
@@ -175,13 +170,11 @@ contract Ledger {
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (uint_type)))
+    base: (uint_type))
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (uint_type)))
+    base: (uint_type))
   definition: (contract
     name: (symbol
       name: (identifier))
@@ -213,8 +206,7 @@ contract Oracle {
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (ufixed_type)))
+    base: (ufixed_type))
   definition: (contract
     name: (symbol
       name: (identifier))
@@ -245,8 +237,7 @@ using SafeMath for SafeUint;
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (uint_type)))
+    base: (uint_type))
   directive: (using
     (using_library
       library: (symbol
@@ -269,8 +260,7 @@ event ItemPurchased(ItemId indexed id, address buyer);
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (uint_type)))
+    base: (uint_type))
   definition: (event
     name: (symbol
       name: (identifier))
@@ -283,8 +273,7 @@ event ItemPurchased(ItemId indexed id, address buyer);
         name: (symbol
           name: (identifier)))
       parameter: (event_parameter
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         name: (symbol
           name: (identifier))))))
 
@@ -302,8 +291,7 @@ error CustomError(ErrorCode code, string message);
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (uint_type)))
+    base: (uint_type))
   definition: (error
     name: (symbol
       name: (identifier))
@@ -315,8 +303,7 @@ error CustomError(ErrorCode code, string message);
         name: (symbol
           name: (identifier)))
       parameter: (error_parameter
-        type: (primitive_type
-          (string_type))
+        type: (string_type)
         name: (symbol
           name: (identifier))))))
 
@@ -336,8 +323,7 @@ function f() pure returns (MyUint) {
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (uint_type)))
+    base: (uint_type))
   definition: (function
     name: (symbol
       name: (identifier))

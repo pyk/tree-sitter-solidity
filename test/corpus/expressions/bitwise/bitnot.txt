@@ -8,8 +8,7 @@ uint constant x = ~123;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -28,8 +27,7 @@ bytes32 constant x = ~0x111122223333444455556666777788889999AAAABBBBCCCCDDDDEEEE
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (bytes_type))
+    type: (bytes_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -59,16 +57,14 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (bitwise
@@ -91,8 +87,7 @@ uint constant x = ~a ** b;
   (comment)
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -118,8 +113,7 @@ uint constant x = (~a) ** b;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -146,8 +140,7 @@ uint constant x = ~a & b;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -173,8 +166,7 @@ uint constant x = ~(a | b);
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -199,8 +191,7 @@ uint constant x = ~~a;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -224,16 +215,14 @@ uint constant ALL_BITS = ~uint256(0);
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
       (bitnot
         operator: (bitnot_op)
         argument: (cast
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           argument: (literal
             (number)))))))
 
@@ -258,8 +247,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -270,8 +258,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)

@@ -15,18 +15,15 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier)))))
 
@@ -51,23 +48,20 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       body: (block
         statement: (return
           value: (cast
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             argument: (symbol
               name: (identifier))))))))
 
@@ -94,8 +88,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))
           value: (literal
@@ -122,21 +115,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (cast
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             argument: (symbol
               name: (identifier))))))))
 
@@ -161,13 +151,11 @@ contract C {
       name: (symbol
         name: (identifier))
       member: (struct_member
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier)))
       member: (struct_member
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier))))))
 
@@ -187,10 +175,8 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (mapping_type
-        key: (primitive_type
-          (uint_type))
-        value: (primitive_type
-          (uint_type)))
+        key: (uint_type)
+        value: (uint_type))
       name: (symbol
         name: (identifier)))))
 
@@ -211,15 +197,13 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (uint_type)))
+        base: (uint_type))
       visibility: (public)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (uint_type))
+        base: (uint_type)
         size: (literal
           (number)))
       visibility: (public)
@@ -239,8 +223,7 @@ using SafeMath for uint256;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (primitive_type
-        (uint_type)))))
+      target: (uint_type))))
 
 ==================
 Uint in a constant variable
@@ -258,16 +241,14 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       mutability: (constant)
       name: (symbol
         name: (identifier))
       value: (literal
         (number)))
     definition: (state_variable
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       visibility: (public)
       mutability: (immutable)
       name: (symbol
@@ -294,14 +275,12 @@ contract C {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           indexed: (indexed)
           name: (symbol
             name: (identifier)))
         parameter: (event_parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -324,13 +303,11 @@ contract C {
         name: (identifier))
       parameters: (error_parameters
         parameter: (error_parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))
         parameter: (error_parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -346,5 +323,4 @@ type MyUint is uint128;
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (uint_type))))
+    base: (uint_type)))

@@ -8,8 +8,7 @@ uint constant x = 10 * 20;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -32,8 +31,7 @@ uint constant x = a * b / c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -61,8 +59,7 @@ uint constant x = a * b ** c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -90,8 +87,7 @@ uint constant x = a * b + c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -119,8 +115,7 @@ uint constant x = (a + b) * c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic

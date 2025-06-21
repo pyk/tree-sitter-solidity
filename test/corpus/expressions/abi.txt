@@ -21,8 +21,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)
           name: (symbol
             name: (identifier))
@@ -58,16 +57,14 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)
           name: (symbol
             name: (identifier))
           value: (abi_encode_packed
             arguments: (arguments
               argument: (cast
-                type: (primitive_type
-                  (uint_type))
+                type: (uint_type)
                 argument: (literal
                   (number)))
               argument: (literal
@@ -94,8 +91,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)
           name: (symbol
             name: (identifier))))
@@ -103,12 +99,10 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (tuple_variable
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier))
           value: (abi_decode
@@ -116,10 +110,8 @@ contract C {
               argument: (symbol
                 name: (identifier))
               argument: (tuple_expression
-                (primitive_type
-                  (uint_type))
-                (primitive_type
-                  (bool_type))))))))))
+                (uint_type)
+                (bool_type)))))))))
 
 ==================
 abi.encodeWithSelector call
@@ -144,8 +136,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)
           name: (symbol
             name: (identifier))
@@ -179,8 +170,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)
           name: (symbol
             name: (identifier))
@@ -213,12 +203,10 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (string_type))
+          type: (string_type)
           location: (memory))
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))))
+          type: (bool_type)))
       visibility: (public)
       mutability: (pure)
       body: (block))
@@ -229,8 +217,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)
           name: (symbol
             name: (identifier))

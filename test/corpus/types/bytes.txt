@@ -15,18 +15,15 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (bytes_type))
+      type: (bytes_type)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
-      type: (primitive_type
-        (bytes_type))
+      type: (bytes_type)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
-      type: (primitive_type
-        (bytes_type))
+      type: (bytes_type)
       name: (symbol
         name: (identifier)))))
 
@@ -51,26 +48,22 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (calldata)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory))
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))))
+          type: (bytes_type)))
       body: (block
         statement: (return
           value: (tuple_expression
@@ -106,16 +99,14 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)
           name: (symbol
             name: (identifier))
           value: (literal
             (hex_string)))
         statement: (local_variable
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier))
           value: (literal
@@ -142,8 +133,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (string_type))
+          type: (string_type)
           location: (memory)
           name: (symbol
             name: (identifier))))
@@ -151,14 +141,12 @@ contract C {
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)))
       body: (block
         statement: (return
           value: (cast
-            type: (primitive_type
-              (bytes_type))
+            type: (bytes_type)
             argument: (symbol
               name: (identifier))))))))
 
@@ -183,13 +171,11 @@ contract C {
       name: (symbol
         name: (identifier))
       member: (struct_member
-        type: (primitive_type
-          (bytes_type))
+        type: (bytes_type)
         name: (symbol
           name: (identifier)))
       member: (struct_member
-        type: (primitive_type
-          (bytes_type))
+        type: (bytes_type)
         name: (symbol
           name: (identifier))))))
 
@@ -209,10 +195,8 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (mapping_type
-        key: (primitive_type
-          (bytes_type))
-        value: (primitive_type
-          (bytes_type)))
+        key: (bytes_type)
+        value: (bytes_type))
       name: (symbol
         name: (identifier)))))
 
@@ -233,15 +217,13 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (bytes_type)))
+        base: (bytes_type))
       visibility: (public)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (bytes_type))
+        base: (bytes_type)
         size: (literal
           (number)))
       visibility: (public)
@@ -265,8 +247,7 @@ using BytesUtils for bytes;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (primitive_type
-        (bytes_type)))))
+      target: (bytes_type))))
 
 ==================
 Bytes as a constant variable
@@ -283,8 +264,7 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (bytes_type))
+      type: (bytes_type)
       mutability: (constant)
       name: (symbol
         name: (identifier))
@@ -310,14 +290,12 @@ contract C {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           indexed: (indexed)
           name: (symbol
             name: (identifier)))
         parameter: (event_parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -340,8 +318,7 @@ contract C {
         name: (identifier))
       parameters: (error_parameters
         parameter: (error_parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -357,5 +334,4 @@ type Hash is bytes32;
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (bytes_type))))
+    base: (bytes_type)))

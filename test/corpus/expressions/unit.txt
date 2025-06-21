@@ -8,8 +8,7 @@ uint constant value = 1 wei;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (ether_literal
@@ -26,8 +25,7 @@ uint constant value = 10 gwei;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (ether_literal
@@ -44,8 +42,7 @@ uint constant value = 0.5 ether;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (ether_literal
@@ -62,8 +59,7 @@ uint constant duration = 30 seconds;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (time_literal
@@ -80,8 +76,7 @@ uint constant duration = 5 minutes;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (time_literal
@@ -98,8 +93,7 @@ uint constant duration = 2 hours;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (time_literal
@@ -116,8 +110,7 @@ uint constant duration = 7 days;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (time_literal
@@ -134,8 +127,7 @@ uint constant duration = 4 weeks;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (time_literal
@@ -152,8 +144,7 @@ uint constant total = 1 ether + 500 gwei;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -254,8 +245,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)

@@ -16,14 +16,12 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (uint_type)))
+        base: (uint_type))
       name: (symbol
         name: (identifier)))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (bool_type))
+        base: (bool_type)
         size: (literal
           (number)))
       name: (symbol
@@ -31,8 +29,7 @@ contract C {
     definition: (state_variable
       type: (array_type
         base: (array_type
-          base: (primitive_type
-            (address_type)))
+          base: (address_type))
         size: (literal
           (number)))
       name: (symbol
@@ -61,8 +58,7 @@ contract C {
         parameter: (parameter
           type: (array_type
             base: (array_type
-              base: (primitive_type
-                (string_type))))
+              base: (string_type)))
           location: (calldata)
           name: (symbol
             name: (identifier))))
@@ -71,8 +67,7 @@ contract C {
       returns: (parameters
         parameter: (parameter
           type: (array_type
-            base: (primitive_type
-              (bytes_type)))
+            base: (bytes_type))
           location: (memory)))
       body: (block
         (comment)))))
@@ -99,14 +94,12 @@ contract C {
         name: (identifier))
       member: (struct_member
         type: (array_type
-          base: (primitive_type
-            (uint_type)))
+          base: (uint_type))
         name: (symbol
           name: (identifier)))
       member: (struct_member
         type: (array_type
-          base: (primitive_type
-            (bytes_type))
+          base: (bytes_type)
           size: (literal
             (number)))
         name: (symbol
@@ -128,11 +121,9 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (mapping_type
-        key: (primitive_type
-          (address_type))
+        key: (address_type)
         value: (array_type
-          base: (primitive_type
-            (int_type))))
+          base: (int_type)))
       visibility: (private)
       name: (symbol
         name: (identifier)))))
@@ -183,10 +174,8 @@ contract C {
     definition: (state_variable
       type: (array_type
         base: (mapping_type
-          key: (primitive_type
-            (address_type))
-          value: (primitive_type
-            (uint_type))))
+          key: (address_type)
+          value: (uint_type)))
       visibility: (public)
       name: (symbol
         name: (identifier)))))
@@ -210,15 +199,13 @@ using ArrayLib for uint[2];
       library: (symbol
         name: (identifier))
       target: (array_type
-        base: (primitive_type
-          (uint_type)))))
+        base: (uint_type))))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
       target: (array_type
-        base: (primitive_type
-          (uint_type))
+        base: (uint_type)
         size: (literal
           (number))))))
 
@@ -242,14 +229,12 @@ contract C {
       parameters: (event_parameters
         parameter: (event_parameter
           type: (array_type
-            base: (primitive_type
-              (uint_type)))
+            base: (uint_type))
           name: (symbol
             name: (identifier)))
         parameter: (event_parameter
           type: (array_type
-            base: (primitive_type
-              (bool_type))
+            base: (bool_type)
             size: (literal
               (number)))
           name: (symbol
@@ -275,7 +260,6 @@ contract C {
       parameters: (error_parameters
         parameter: (error_parameter
           type: (array_type
-            base: (primitive_type
-              (bytes_type)))
+            base: (bytes_type))
           name: (symbol
             name: (identifier)))))))

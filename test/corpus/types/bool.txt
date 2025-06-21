@@ -14,13 +14,11 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (bool_type))
+      type: (bool_type)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
-      type: (primitive_type
-        (bool_type))
+      type: (bool_type)
       visibility: (public)
       name: (symbol
         name: (identifier))
@@ -48,16 +46,14 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))))
+          type: (bool_type)))
       body: (block
         statement: (return
           value: (not
@@ -88,8 +84,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier))
           value: (literal
@@ -116,13 +111,11 @@ contract C {
       name: (symbol
         name: (identifier))
       member: (struct_member
-        type: (primitive_type
-          (bool_type))
+        type: (bool_type)
         name: (symbol
           name: (identifier)))
       member: (struct_member
-        type: (primitive_type
-          (bool_type))
+        type: (bool_type)
         name: (symbol
           name: (identifier))))))
 
@@ -142,10 +135,8 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (mapping_type
-        key: (primitive_type
-          (address_type))
-        value: (primitive_type
-          (bool_type)))
+        key: (address_type)
+        value: (bool_type))
       visibility: (public)
       name: (symbol
         name: (identifier)))))
@@ -167,15 +158,13 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (bool_type)))
+        base: (bool_type))
       visibility: (public)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (bool_type))
+        base: (bool_type)
         size: (literal
           (number)))
       visibility: (public)
@@ -199,8 +188,7 @@ using BoolUtils for bool;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (primitive_type
-        (bool_type)))))
+      target: (bool_type))))
 
 ==================
 Bool as a constant variable
@@ -217,8 +205,7 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (bool_type))
+      type: (bool_type)
       mutability: (constant)
       name: (symbol
         name: (identifier))
@@ -244,14 +231,12 @@ contract C {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           indexed: (indexed)
           name: (symbol
             name: (identifier)))
         parameter: (event_parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -274,13 +259,11 @@ contract C {
         name: (identifier))
       parameters: (error_parameters
         parameter: (error_parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier)))
         parameter: (error_parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -296,8 +279,7 @@ type Flag is bool;
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (bool_type))))
+    base: (bool_type)))
 
 ==================
 Boolean literals in an expression
@@ -322,8 +304,7 @@ contract C {
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))))
+          type: (bool_type)))
       body: (block
         statement: (return
           value: (and

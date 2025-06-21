@@ -25,13 +25,11 @@ event Transfer(address from, uint256 amount);
       name: (identifier))
     parameters: (event_parameters
       parameter: (event_parameter
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         name: (symbol
           name: (identifier)))
       parameter: (event_parameter
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier))))))
 
@@ -49,14 +47,12 @@ event Approval(address indexed owner, address indexed spender);
       name: (identifier))
     parameters: (event_parameters
       parameter: (event_parameter
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         indexed: (indexed)
         name: (symbol
           name: (identifier)))
       parameter: (event_parameter
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         indexed: (indexed)
         name: (symbol
           name: (identifier))))))
@@ -75,20 +71,17 @@ event Sent(address indexed from, address indexed to, uint256 value);
       name: (identifier))
     parameters: (event_parameters
       parameter: (event_parameter
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         indexed: (indexed)
         name: (symbol
           name: (identifier)))
       parameter: (event_parameter
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         indexed: (indexed)
         name: (symbol
           name: (identifier)))
       parameter: (event_parameter
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier))))))
 
@@ -106,14 +99,11 @@ event DataPoint(uint256, bool, bytes32 indexed);
       name: (identifier))
     parameters: (event_parameters
       parameter: (event_parameter
-        type: (primitive_type
-          (uint_type)))
+        type: (uint_type))
       parameter: (event_parameter
-        type: (primitive_type
-          (bool_type)))
+        type: (bool_type))
       parameter: (event_parameter
-        type: (primitive_type
-          (bytes_type))
+        type: (bytes_type)
         indexed: (indexed)))))
 
 ==================
@@ -130,14 +120,12 @@ event AnonymizedLog(address indexed sender, string message) anonymous;
       name: (identifier))
     parameters: (event_parameters
       parameter: (event_parameter
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         indexed: (indexed)
         name: (symbol
           name: (identifier)))
       parameter: (event_parameter
-        type: (primitive_type
-          (string_type))
+        type: (string_type)
         name: (symbol
           name: (identifier))))
     anonymous: (anonymous)))
@@ -156,13 +144,11 @@ event DataStored(MyData data);
     name: (symbol
       name: (identifier))
     member: (struct_member
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier)))
     member: (struct_member
-      type: (primitive_type
-        (string_type))
+      type: (string_type)
       name: (symbol
         name: (identifier))))
   definition: (event
@@ -191,8 +177,7 @@ event BatchProcessed(uint[] ids);
     parameters: (event_parameters
       parameter: (event_parameter
         type: (array_type
-          base: (primitive_type
-            (uint_type)))
+          base: (uint_type))
         name: (symbol
           name: (identifier))))))
 
@@ -215,14 +200,12 @@ contract MyContract {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           indexed: (indexed)
           name: (symbol
             name: (identifier)))
         parameter: (event_parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           indexed: (indexed)
           name: (symbol
             name: (identifier)))))))
@@ -246,14 +229,12 @@ interface IMyContract {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           indexed: (indexed)
           name: (symbol
             name: (identifier)))
         parameter: (event_parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -275,12 +256,10 @@ library MyLibrary {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (string_type))
+          type: (string_type)
           name: (symbol
             name: (identifier)))
         parameter: (event_parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier)))))))

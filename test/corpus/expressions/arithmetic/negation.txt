@@ -8,8 +8,7 @@ int constant x = -1;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (int_type))
+    type: (int_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -28,8 +27,7 @@ int constant x = -(-1);
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (int_type))
+    type: (int_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -63,16 +61,14 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (int_type))
+          type: (int_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (int_type))))
+          type: (int_type)))
       body: (block
         statement: (return
           value: (arithmetic
@@ -93,8 +89,7 @@ int constant x = -2**3;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (int_type))
+    type: (int_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -120,8 +115,7 @@ int constant x = -2 * 3;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (int_type))
+    type: (int_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -147,8 +141,7 @@ int constant x = -2 + 3;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (int_type))
+    type: (int_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -174,8 +167,7 @@ int constant x = 2 + -3;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (int_type))
+    type: (int_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -201,8 +193,7 @@ int constant x = -(2 * 3);
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (int_type))
+    type: (int_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -227,8 +218,7 @@ bool constant b = -5 < -2;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (comparison
@@ -264,21 +254,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (int_type))
+          type: (int_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (int_type))
+          type: (int_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))))
+          type: (bool_type)))
       body: (block
         statement: (return
           value: (and
@@ -322,8 +309,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (int_type))
+          type: (int_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)

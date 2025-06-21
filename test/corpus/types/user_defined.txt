@@ -164,8 +164,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)

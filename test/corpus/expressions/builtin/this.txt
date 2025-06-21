@@ -54,13 +54,11 @@ contract C {
       mutability: (view)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))))
+          type: (address_type)))
       body: (block
         statement: (return
           value: (cast
-            type: (primitive_type
-              (address_type))
+            type: (address_type)
             argument: (this)))))))
 
 ==================

@@ -8,8 +8,7 @@ bool constant x = 1 == 1;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (equality
@@ -40,21 +39,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))))
+          type: (bool_type)))
       body: (block
         statement: (return
           value: (equality
@@ -74,8 +70,7 @@ bool constant x = true == false;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (equality
@@ -95,8 +90,7 @@ bool constant x = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF == address(0);
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (equality
@@ -104,8 +98,7 @@ bool constant x = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF == address(0);
         (hex))
       operator: (equality_op)
       right: (cast
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         argument: (literal
           (number))))))
 
@@ -121,8 +114,7 @@ bool constant x = a + 5 == b;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (equality
@@ -151,8 +143,7 @@ bool constant x = a < b == c > d;
   (comment)
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (equality
@@ -182,8 +173,7 @@ bool constant x = a == b || c != d;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (or
@@ -224,8 +214,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -267,8 +256,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)

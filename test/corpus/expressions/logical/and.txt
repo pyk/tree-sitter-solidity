@@ -8,8 +8,7 @@ bool constant x = true && false;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (and
@@ -40,21 +39,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))))
+          type: (bool_type)))
       body: (block
         statement: (return
           value: (and
@@ -76,8 +72,7 @@ bool constant x = a && b && c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (and
@@ -103,8 +98,7 @@ bool constant x = a && b || c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (or
@@ -130,8 +124,7 @@ bool constant x = a > b && c == d;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (and
@@ -161,8 +154,7 @@ bool constant x = a && (b || c);
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (and
@@ -200,13 +192,11 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -242,13 +232,11 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -292,21 +280,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (conditional_expression

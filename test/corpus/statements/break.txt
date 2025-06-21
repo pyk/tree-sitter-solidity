@@ -26,8 +26,7 @@ contract C {
       body: (block
         statement: (for_statement
           initializer: (local_variable
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             name: (symbol
               name: (identifier))
             value: (literal
@@ -81,8 +80,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))
           value: (literal
@@ -128,8 +126,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))
           value: (literal
@@ -172,8 +169,7 @@ contract C {
       body: (block
         statement: (for_statement
           initializer: (local_variable
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             name: (symbol
               name: (identifier))
             value: (literal
@@ -192,8 +188,7 @@ contract C {
           body: (block
             statement: (for_statement
               initializer: (local_variable
-                type: (primitive_type
-                  (uint_type))
+                type: (uint_type)
                 name: (symbol
                   name: (identifier))
                 value: (literal

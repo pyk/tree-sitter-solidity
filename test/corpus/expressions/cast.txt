@@ -13,14 +13,12 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (address_type))
+      type: (address_type)
       mutability: (constant)
       name: (symbol
         name: (identifier))
       value: (cast
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         argument: (literal
           (number))))))
 
@@ -45,21 +43,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (cast
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             argument: (symbol
               name: (identifier))))))))
 
@@ -84,21 +79,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (cast
-            type: (primitive_type
-              (uint_type))
+            type: (uint_type)
             argument: (symbol
               name: (identifier))))))))
 
@@ -127,8 +119,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -170,13 +161,11 @@ contract C {
       mutability: (view)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))))
+          type: (address_type)))
       body: (block
         statement: (return
           value: (cast
-            type: (primitive_type
-              (address_type))
+            type: (address_type)
             argument: (this)))))))
 
 ==================
@@ -202,8 +191,7 @@ contract C {
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (arithmetic
@@ -212,7 +200,6 @@ contract C {
                 (number))
               operator: (add_op)
               right: (cast
-                type: (primitive_type
-                  (uint_type))
+                type: (uint_type)
                 argument: (literal
                   (number))))))))))

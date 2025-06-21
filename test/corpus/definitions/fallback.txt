@@ -52,8 +52,7 @@ contract C {
     definition: (fallback
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (calldata)
           name: (symbol
             name: (identifier))))
@@ -61,8 +60,7 @@ contract C {
       mutability: (payable)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)))
       body: (block))))
 
@@ -87,8 +85,7 @@ contract C {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier)))))
     definition: (fallback

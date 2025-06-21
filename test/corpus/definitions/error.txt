@@ -25,13 +25,11 @@ error InsufficientBalance(uint256 requested, uint256 available);
       name: (identifier))
     parameters: (error_parameters
       parameter: (error_parameter
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier)))
       parameter: (error_parameter
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier))))))
 
@@ -49,11 +47,9 @@ error InvalidSignature(bytes32, bytes32);
       name: (identifier))
     parameters: (error_parameters
       parameter: (error_parameter
-        type: (primitive_type
-          (bytes_type)))
+        type: (bytes_type))
       parameter: (error_parameter
-        type: (primitive_type
-          (bytes_type))))))
+        type: (bytes_type)))))
 
 ==================
 Error defined inside a contract
@@ -92,8 +88,7 @@ interface IERC721 {
         name: (identifier))
       parameters: (error_parameters
         parameter: (error_parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -129,8 +124,7 @@ error BatchFailed(uint256[] batchIds);
     parameters: (error_parameters
       parameter: (error_parameter
         type: (array_type
-          base: (primitive_type
-            (uint_type)))
+          base: (uint_type))
         name: (symbol
           name: (identifier))))))
 
@@ -151,13 +145,11 @@ error InvalidOrder(Order order);
     name: (symbol
       name: (identifier))
     member: (struct_member
-      type: (primitive_type
-        (address_type))
+      type: (address_type)
       name: (symbol
         name: (identifier)))
     member: (struct_member
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier))))
   definition: (error
@@ -192,8 +184,7 @@ contract C {
       name: (identifier))
     parameters: (error_parameters
       parameter: (error_parameter
-        type: (primitive_type
-          (string_type))
+        type: (string_type)
         name: (symbol
           name: (identifier)))))
   definition: (contract
@@ -204,7 +195,6 @@ contract C {
         name: (identifier))
       parameters: (error_parameters
         parameter: (error_parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier)))))))

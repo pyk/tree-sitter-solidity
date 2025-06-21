@@ -15,8 +15,7 @@ contract C {
       name: (identifier))
     (comment)
     definition: (state_variable
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier)))))
 
@@ -39,8 +38,7 @@ contract C {
       name: (identifier))
     (comment)
     definition: (state_variable
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier)))))
 

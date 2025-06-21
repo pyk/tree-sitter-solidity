@@ -148,6 +148,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -208,6 +212,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -236,6 +248,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -253,6 +269,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -308,10 +328,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -321,6 +337,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -349,6 +369,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -400,6 +428,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -460,6 +492,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -488,6 +528,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -505,6 +549,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -560,10 +608,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -573,6 +617,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -601,6 +649,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -653,6 +709,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -713,6 +773,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -741,6 +809,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -758,6 +830,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -813,10 +889,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -826,6 +898,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -854,6 +930,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -895,6 +979,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -955,6 +1043,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -983,6 +1079,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -1000,6 +1100,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -1055,10 +1159,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -1068,6 +1168,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -1096,6 +1200,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -1137,6 +1249,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -1197,6 +1313,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -1225,6 +1349,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -1242,6 +1370,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -1297,10 +1429,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -1310,6 +1438,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -1338,6 +1470,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -1401,6 +1541,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -1461,6 +1605,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -1489,6 +1641,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -1506,6 +1662,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -1561,10 +1721,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -1574,6 +1730,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -1602,6 +1762,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -1653,6 +1821,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -1713,6 +1885,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -1741,6 +1921,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -1758,6 +1942,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -1813,10 +2001,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -1826,6 +2010,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -1854,6 +2042,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -1901,6 +2097,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -1961,6 +2161,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -1989,6 +2197,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -2006,6 +2218,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -2061,10 +2277,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -2074,6 +2286,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -2102,6 +2318,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -2168,7 +2392,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -2176,7 +2412,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -2184,7 +2428,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -2219,6 +2471,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -2282,6 +2538,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -2310,6 +2574,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -2327,6 +2595,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -2382,10 +2654,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -2395,6 +2663,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -2423,6 +2695,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -2470,6 +2750,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -2530,6 +2814,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -2558,6 +2850,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -2575,6 +2871,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -2630,10 +2930,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -2643,6 +2939,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -2671,6 +2971,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -2723,6 +3031,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -2783,6 +3095,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -2811,6 +3131,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -2828,6 +3152,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -2883,10 +3211,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -2896,6 +3220,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -2924,6 +3252,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -3015,6 +3351,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -3075,6 +3415,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -3103,6 +3451,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -3120,6 +3472,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -3175,10 +3531,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -3188,6 +3540,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -3216,6 +3572,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -3263,6 +3627,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -3323,6 +3691,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -3351,6 +3727,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -3368,6 +3748,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -3423,10 +3807,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -3436,6 +3816,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -3464,6 +3848,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -3515,6 +3907,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -3575,6 +3971,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -3603,6 +4007,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -3620,6 +4028,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -3675,10 +4087,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -3688,6 +4096,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -3716,6 +4128,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -3768,6 +4188,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -3828,6 +4252,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -3856,6 +4288,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -3873,6 +4309,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -3928,10 +4368,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -3941,6 +4377,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -3969,6 +4409,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -4031,6 +4479,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -4091,6 +4543,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -4119,6 +4579,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -4136,6 +4600,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -4191,10 +4659,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -4204,6 +4668,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -4232,6 +4700,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -4283,6 +4759,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -4343,6 +4823,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -4371,6 +4859,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -4388,6 +4880,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -4443,10 +4939,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -4456,6 +4948,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -4484,6 +4980,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -4563,6 +5067,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -4623,6 +5131,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -4651,6 +5167,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -4668,6 +5188,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -4723,10 +5247,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -4736,6 +5256,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -4764,6 +5288,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -4815,6 +5347,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -4875,6 +5411,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -4903,6 +5447,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -4920,6 +5468,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -4975,10 +5527,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -4988,6 +5536,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -5016,6 +5568,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -5068,6 +5628,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -5128,6 +5692,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -5156,6 +5728,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -5173,6 +5749,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -5228,10 +5808,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -5241,6 +5817,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -5269,6 +5849,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -5317,6 +5905,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -5388,7 +5980,15 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -5432,6 +6032,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "for_statement",
             "named": true
           },
@@ -5457,6 +6061,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -5520,10 +6128,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "require",
             "named": true
           },
@@ -5549,6 +6153,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -5581,6 +6189,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -5681,6 +6297,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -5741,6 +6361,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -5769,6 +6397,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -5786,6 +6418,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -5841,10 +6477,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -5854,6 +6486,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -5882,6 +6518,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -5954,6 +6598,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -6014,6 +6662,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -6042,6 +6698,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -6059,6 +6719,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -6114,10 +6778,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -6127,6 +6787,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -6155,6 +6819,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -6227,6 +6899,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -6287,6 +6963,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -6315,6 +6999,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -6332,6 +7020,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -6387,10 +7079,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -6400,6 +7088,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -6431,6 +7123,14 @@
             "named": true
           },
           {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
             "type": "unary_expression",
             "named": true
           }
@@ -6441,7 +7141,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -6449,7 +7161,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -6457,7 +7177,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -6501,6 +7229,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -6561,6 +7293,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -6589,6 +7329,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -6606,6 +7350,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -6661,10 +7409,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -6674,6 +7418,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -6702,6 +7450,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -6765,6 +7521,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -6825,6 +7585,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -6853,6 +7621,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -6870,6 +7642,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -6925,10 +7701,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -6938,6 +7710,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -6966,6 +7742,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -7013,6 +7797,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -7073,6 +7861,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -7101,6 +7897,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -7118,6 +7918,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -7173,10 +7977,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -7186,6 +7986,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -7214,6 +8018,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -7255,6 +8067,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -7315,6 +8131,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -7343,6 +8167,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -7360,6 +8188,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -7415,10 +8247,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -7428,6 +8256,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -7456,6 +8288,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -7497,6 +8337,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -7557,6 +8401,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -7585,6 +8437,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -7602,6 +8458,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -7657,10 +8517,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -7670,6 +8526,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -7698,6 +8558,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -7732,7 +8600,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -7740,7 +8620,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -7748,7 +8636,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -7786,6 +8682,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -7846,6 +8746,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -7874,6 +8782,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -7891,6 +8803,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -7946,10 +8862,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -7959,6 +8871,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -7987,6 +8903,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -8247,6 +9171,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -8307,6 +9235,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -8335,6 +9271,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -8352,6 +9292,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -8407,10 +9351,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -8420,6 +9360,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -8448,6 +9392,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -8505,6 +9457,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -8565,6 +9521,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -8593,6 +9557,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -8610,6 +9578,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -8665,10 +9637,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -8678,6 +9646,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -8706,6 +9678,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -8757,6 +9737,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -8817,6 +9801,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -8845,6 +9837,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -8862,6 +9858,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -8917,10 +9917,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -8930,6 +9926,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -8958,6 +9958,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -9011,6 +10019,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -9082,7 +10094,15 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -9126,6 +10146,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "for_statement",
             "named": true
           },
@@ -9151,6 +10175,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -9214,10 +10242,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "require",
             "named": true
           },
@@ -9243,6 +10267,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -9275,6 +10303,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -9324,6 +10360,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -9384,6 +10424,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -9412,6 +10460,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -9429,6 +10481,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -9484,10 +10540,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -9497,6 +10549,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -9525,6 +10581,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -9572,6 +10636,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -9632,6 +10700,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -9660,6 +10736,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -9677,6 +10757,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -9732,10 +10816,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -9745,6 +10825,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -9773,6 +10857,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -9814,6 +10906,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -9874,6 +10970,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -9902,6 +11006,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -9919,6 +11027,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -9974,10 +11086,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -9987,6 +11095,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -10015,6 +11127,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -10056,6 +11176,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -10116,6 +11240,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -10144,6 +11276,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -10161,6 +11297,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -10216,10 +11356,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -10229,6 +11365,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -10257,6 +11397,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -10298,6 +11446,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -10358,6 +11510,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -10386,6 +11546,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -10403,6 +11567,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -10458,10 +11626,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -10471,6 +11635,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -10499,6 +11667,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -10598,6 +11774,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -10658,6 +11838,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -10686,6 +11874,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -10703,6 +11895,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -10758,10 +11954,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -10771,6 +11963,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -10799,6 +11995,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -10850,6 +12054,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -10910,6 +12118,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -10938,6 +12154,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -10955,6 +12175,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -11010,10 +12234,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -11023,6 +12243,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -11051,6 +12275,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -11111,7 +12343,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -11119,7 +12363,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -11127,7 +12379,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -11253,7 +12513,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -11261,7 +12533,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -11269,7 +12549,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -11329,6 +12617,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -11389,6 +12681,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -11417,6 +12717,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -11434,6 +12738,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -11489,10 +12797,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -11502,6 +12806,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -11530,6 +12838,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -11581,6 +12897,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -11641,6 +12961,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -11669,6 +12997,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -11686,6 +13018,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -11741,10 +13077,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -11754,6 +13086,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -11782,6 +13118,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -11981,6 +13325,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -12049,7 +13397,15 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -12093,6 +13449,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "for_statement",
             "named": true
           },
@@ -12118,6 +13478,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -12181,10 +13545,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "require",
             "named": true
           },
@@ -12210,6 +13570,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -12242,6 +13606,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -12288,6 +13660,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -12351,6 +13727,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -12379,6 +13763,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -12396,6 +13784,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -12451,10 +13843,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -12464,6 +13852,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -12492,6 +13884,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -12534,6 +13934,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -12597,6 +14001,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -12625,6 +14037,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -12642,6 +14058,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -12701,10 +14121,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -12714,6 +14130,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -12742,6 +14162,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -12780,6 +14208,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -12843,6 +14275,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -12871,6 +14311,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -12888,6 +14332,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -12943,10 +14391,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -12956,6 +14400,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -12984,6 +14432,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -13244,6 +14700,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -13304,6 +14764,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -13332,6 +14800,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -13349,6 +14821,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -13404,10 +14880,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -13417,6 +14889,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -13445,6 +14921,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -13506,6 +14990,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -13574,7 +15062,15 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -13618,6 +15114,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "for_statement",
             "named": true
           },
@@ -13643,6 +15143,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -13706,10 +15210,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "require",
             "named": true
           },
@@ -13735,6 +15235,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -13767,6 +15271,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -13816,6 +15328,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -13876,6 +15392,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -13904,6 +15428,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -13921,6 +15449,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -13976,10 +15508,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -13989,6 +15517,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -14017,6 +15549,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -14059,6 +15599,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -14130,7 +15674,15 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -14174,6 +15726,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "for_statement",
             "named": true
           },
@@ -14199,6 +15755,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -14262,10 +15822,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "require",
             "named": true
           },
@@ -14291,6 +15847,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -14323,6 +15883,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -14427,6 +15995,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -14487,6 +16059,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -14515,6 +16095,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -14532,6 +16116,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -14587,10 +16175,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -14600,6 +16184,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -14628,6 +16216,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -14685,6 +16281,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -14745,6 +16345,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -14773,6 +16381,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -14790,6 +16402,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -14845,10 +16461,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -14858,6 +16470,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -14886,6 +16502,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -14927,6 +16551,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -14987,6 +16615,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -15015,6 +16651,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -15032,6 +16672,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -15087,10 +16731,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -15100,6 +16740,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -15128,6 +16772,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -15175,6 +16827,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -15235,6 +16891,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -15263,6 +16927,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -15280,6 +16948,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -15335,10 +17007,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -15348,6 +17016,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -15376,6 +17048,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -15417,6 +17097,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -15477,6 +17161,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -15505,6 +17197,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -15522,6 +17218,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -15577,10 +17277,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -15590,6 +17286,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -15618,6 +17318,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -15659,6 +17367,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -15719,6 +17431,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -15747,6 +17467,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -15764,6 +17488,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -15819,10 +17547,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -15832,6 +17556,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -15860,6 +17588,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -15904,6 +17640,10 @@
         },
         {
           "type": "addmod",
+          "named": true
+        },
+        {
+          "type": "address_type",
           "named": true
         },
         {
@@ -15967,6 +17707,14 @@
           "named": true
         },
         {
+          "type": "bool_type",
+          "named": true
+        },
+        {
+          "type": "bytes_type",
+          "named": true
+        },
+        {
           "type": "call",
           "named": true
         },
@@ -15995,6 +17743,10 @@
           "named": true
         },
         {
+          "type": "fixed_type",
+          "named": true
+        },
+        {
           "type": "gasleft",
           "named": true
         },
@@ -16012,6 +17764,10 @@
         },
         {
           "type": "inline_array_expression",
+          "named": true
+        },
+        {
+          "type": "int_type",
           "named": true
         },
         {
@@ -16067,10 +17823,6 @@
           "named": true
         },
         {
-          "type": "primitive_type",
-          "named": true
-        },
-        {
           "type": "ripemd160",
           "named": true
         },
@@ -16080,6 +17832,10 @@
         },
         {
           "type": "shift",
+          "named": true
+        },
+        {
+          "type": "string_type",
           "named": true
         },
         {
@@ -16108,6 +17864,14 @@
         },
         {
           "type": "tx_origin",
+          "named": true
+        },
+        {
+          "type": "ufixed_type",
+          "named": true
+        },
+        {
+          "type": "uint_type",
           "named": true
         },
         {
@@ -16215,6 +17979,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -16275,6 +18043,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -16303,6 +18079,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -16320,6 +18100,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -16375,10 +18159,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -16388,6 +18168,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -16416,6 +18200,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -16572,7 +18364,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -16580,7 +18384,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -16588,7 +18400,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -16623,6 +18443,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -16686,6 +18510,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -16714,6 +18546,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -16731,6 +18567,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -16786,10 +18626,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -16799,6 +18635,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -16830,6 +18670,14 @@
             "named": true
           },
           {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
             "type": "unary_expression",
             "named": true
           }
@@ -16856,7 +18704,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -16864,7 +18724,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -16872,7 +18740,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -16882,7 +18758,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -16890,7 +18778,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -16898,7 +18794,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -16952,6 +18856,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -17012,6 +18920,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -17040,6 +18956,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -17057,6 +18977,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -17112,10 +19036,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -17125,6 +19045,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -17156,6 +19080,14 @@
             "named": true
           },
           {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
             "type": "unary_expression",
             "named": true
           }
@@ -17172,7 +19104,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -17180,7 +19124,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -17188,7 +19140,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -17232,6 +19192,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -17292,6 +19256,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -17320,6 +19292,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -17337,6 +19313,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -17392,10 +19372,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -17405,6 +19381,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -17433,6 +19413,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -17484,6 +19472,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -17544,6 +19536,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -17572,6 +19572,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -17589,6 +19593,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -17644,10 +19652,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -17657,6 +19661,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -17685,6 +19693,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -17813,6 +19829,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -17873,6 +19893,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -17901,6 +19929,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -17918,6 +19950,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -17973,10 +20009,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -17986,6 +20018,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -18014,6 +20050,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -18065,6 +20109,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -18125,6 +20173,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -18153,6 +20209,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -18170,6 +20230,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -18225,10 +20289,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -18238,6 +20298,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -18266,6 +20330,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -18318,6 +20390,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -18378,6 +20454,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -18406,6 +20490,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -18423,6 +20511,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -18478,10 +20570,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -18491,6 +20579,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -18519,6 +20611,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -18560,6 +20660,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -18620,6 +20724,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -18648,6 +20760,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -18665,6 +20781,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -18720,10 +20840,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -18733,6 +20849,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -18761,6 +20881,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -18802,6 +20930,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -18862,6 +20994,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -18890,6 +21030,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -18907,6 +21051,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -18962,10 +21110,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -18975,6 +21119,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -19003,6 +21151,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -19060,6 +21216,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -19120,6 +21280,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -19148,6 +21316,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -19165,6 +21337,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -19220,10 +21396,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -19233,6 +21405,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -19261,6 +21437,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -19308,6 +21492,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -19368,6 +21556,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -19396,6 +21592,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -19413,6 +21613,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -19468,10 +21672,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -19481,6 +21681,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -19509,6 +21713,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -19543,7 +21755,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -19551,7 +21775,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -19559,7 +21791,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -19603,6 +21843,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -19663,6 +21907,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -19691,6 +21943,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -19708,6 +21964,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -19763,10 +22023,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -19776,6 +22032,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -19804,6 +22064,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -19861,6 +22129,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -19921,6 +22193,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -19949,6 +22229,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -19966,6 +22250,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -20021,10 +22309,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -20034,6 +22318,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -20062,6 +22350,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -20113,6 +22409,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -20173,6 +22473,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -20201,6 +22509,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -20218,6 +22530,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -20273,10 +22589,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -20286,6 +22598,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -20314,6 +22630,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -20377,7 +22701,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -20385,7 +22721,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -20393,7 +22737,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -20534,49 +22886,6 @@
     }
   },
   {
-    "type": "primitive_type",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "address_type",
-          "named": true
-        },
-        {
-          "type": "bool_type",
-          "named": true
-        },
-        {
-          "type": "bytes_type",
-          "named": true
-        },
-        {
-          "type": "fixed_type",
-          "named": true
-        },
-        {
-          "type": "int_type",
-          "named": true
-        },
-        {
-          "type": "string_type",
-          "named": true
-        },
-        {
-          "type": "ufixed_type",
-          "named": true
-        },
-        {
-          "type": "uint_type",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "receive",
     "named": true,
     "fields": {
@@ -20699,6 +23008,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -20759,6 +23072,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -20787,6 +23108,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -20804,6 +23129,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -20859,10 +23188,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -20872,6 +23197,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -20900,6 +23229,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -20967,6 +23304,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -21027,6 +23368,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -21055,6 +23404,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -21072,6 +23425,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -21127,10 +23484,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -21140,6 +23493,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -21168,6 +23525,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -21225,6 +23590,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -21285,6 +23654,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -21313,6 +23690,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -21330,6 +23711,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -21385,10 +23770,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -21398,6 +23779,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -21426,6 +23811,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -21473,6 +23866,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -21533,6 +23930,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -21561,6 +23966,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -21578,6 +23987,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -21633,10 +24046,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -21646,6 +24055,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -21674,6 +24087,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -21721,6 +24142,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -21781,6 +24206,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -21809,6 +24242,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -21826,6 +24263,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -21881,10 +24322,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -21894,6 +24331,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -21922,6 +24363,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -21969,6 +24418,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -22029,6 +24482,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -22057,6 +24518,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -22074,6 +24539,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -22129,10 +24598,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -22142,6 +24607,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -22170,6 +24639,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -22217,6 +24694,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -22277,6 +24758,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -22305,6 +24794,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -22322,6 +24815,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -22377,10 +24874,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -22390,6 +24883,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -22418,6 +24915,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -22469,6 +24974,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -22529,6 +25038,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -22557,6 +25074,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -22574,6 +25095,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -22629,10 +25154,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -22642,6 +25163,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -22670,6 +25195,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -22873,7 +25406,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -22881,7 +25426,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -22889,7 +25442,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -22924,6 +25485,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -22987,6 +25552,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -23015,6 +25588,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -23032,6 +25609,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -23087,10 +25668,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -23100,6 +25677,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -23128,6 +25709,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -23205,7 +25794,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -23213,7 +25814,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -23221,7 +25830,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -23262,6 +25879,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -23325,6 +25946,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -23353,6 +25982,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -23370,6 +26003,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -23425,10 +26062,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -23438,6 +26071,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -23466,6 +26103,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -23517,6 +26162,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -23577,6 +26226,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -23605,6 +26262,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -23622,6 +26283,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -23677,10 +26342,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -23690,6 +26351,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -23718,6 +26383,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -23864,6 +26537,10 @@
           "named": true
         },
         {
+          "type": "address_type",
+          "named": true
+        },
+        {
           "type": "and",
           "named": true
         },
@@ -23924,6 +26601,14 @@
           "named": true
         },
         {
+          "type": "bool_type",
+          "named": true
+        },
+        {
+          "type": "bytes_type",
+          "named": true
+        },
+        {
           "type": "call",
           "named": true
         },
@@ -23952,6 +26637,10 @@
           "named": true
         },
         {
+          "type": "fixed_type",
+          "named": true
+        },
+        {
           "type": "gasleft",
           "named": true
         },
@@ -23969,6 +26658,10 @@
         },
         {
           "type": "inline_array_expression",
+          "named": true
+        },
+        {
+          "type": "int_type",
           "named": true
         },
         {
@@ -24024,10 +26717,6 @@
           "named": true
         },
         {
-          "type": "primitive_type",
-          "named": true
-        },
-        {
           "type": "ripemd160",
           "named": true
         },
@@ -24037,6 +26726,10 @@
         },
         {
           "type": "shift",
+          "named": true
+        },
+        {
+          "type": "string_type",
           "named": true
         },
         {
@@ -24068,6 +26761,14 @@
           "named": true
         },
         {
+          "type": "ufixed_type",
+          "named": true
+        },
+        {
+          "type": "uint_type",
+          "named": true
+        },
+        {
           "type": "unary_expression",
           "named": true
         }
@@ -24083,7 +26784,19 @@
         "required": false,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -24095,7 +26808,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -24107,15 +26828,23 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "storage",
             "named": true
           },
           {
+            "type": "string_type",
+            "named": true
+          },
+          {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -24129,7 +26858,19 @@
             "named": false
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -24141,7 +26882,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -24153,15 +26902,23 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "storage",
             "named": true
           },
           {
+            "type": "string_type",
+            "named": true
+          },
+          {
             "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -24199,7 +26956,19 @@
         "required": false,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -24207,7 +26976,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -24215,7 +26992,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -24250,6 +27035,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -24313,6 +27102,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -24341,6 +27138,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -24358,6 +27159,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -24413,10 +27218,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -24426,6 +27227,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -24457,6 +27262,14 @@
             "named": true
           },
           {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
             "type": "unary_expression",
             "named": true
           }
@@ -24483,7 +27296,35 @@
         "required": true,
         "types": [
           {
-            "type": "primitive_type",
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           }
         ]
@@ -24542,6 +27383,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -24602,6 +27447,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -24630,6 +27483,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -24647,6 +27504,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -24702,10 +27563,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -24715,6 +27572,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -24743,6 +27604,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -24853,7 +27722,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -24861,7 +27742,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -24869,7 +27758,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -24909,7 +27806,19 @@
         "required": true,
         "types": [
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -24917,7 +27826,15 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -24925,7 +27842,15 @@
             "named": true
           },
           {
-            "type": "primitive_type",
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -25013,6 +27938,10 @@
             "named": true
           },
           {
+            "type": "address_type",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -25081,7 +28010,15 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
             "named": true
           },
           {
@@ -25125,6 +28062,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "for_statement",
             "named": true
           },
@@ -25150,6 +28091,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -25213,10 +28158,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "require",
             "named": true
           },
@@ -25242,6 +28183,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -25274,6 +28219,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -25320,6 +28273,10 @@
           },
           {
             "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
             "named": true
           },
           {
@@ -25383,6 +28340,14 @@
             "named": true
           },
           {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
             "type": "call",
             "named": true
           },
@@ -25411,6 +28376,10 @@
             "named": true
           },
           {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
             "type": "gasleft",
             "named": true
           },
@@ -25428,6 +28397,10 @@
           },
           {
             "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
             "named": true
           },
           {
@@ -25483,10 +28456,6 @@
             "named": true
           },
           {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
             "type": "ripemd160",
             "named": true
           },
@@ -25496,6 +28465,10 @@
           },
           {
             "type": "shift",
+            "named": true
+          },
+          {
+            "type": "string_type",
             "named": true
           },
           {
@@ -25524,6 +28497,14 @@
           },
           {
             "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
             "named": true
           },
           {
@@ -26289,11 +29270,11 @@
   },
   {
     "type": "number",
-    "named": true
+    "named": false
   },
   {
     "type": "number",
-    "named": false
+    "named": true
   },
   {
     "type": "or_assign_op",

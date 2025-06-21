@@ -292,7 +292,7 @@
           "value": 1,
           "content": {
             "type": "SYMBOL",
-            "name": "primitive_type"
+            "name": "_primitive_type"
           }
         },
         {
@@ -313,7 +313,7 @@
         }
       ]
     },
-    "primitive_type": {
+    "_primitive_type": {
       "type": "CHOICE",
       "members": [
         {
@@ -2137,7 +2137,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "primitive_type"
+          "name": "_primitive_type"
         },
         {
           "type": "SYMBOL",
@@ -5443,7 +5443,7 @@
           "name": "base",
           "content": {
             "type": "SYMBOL",
-            "name": "primitive_type"
+            "name": "_primitive_type"
           }
         },
         {

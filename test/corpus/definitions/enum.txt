@@ -174,8 +174,7 @@ contract Registry {
         key: (custom_type
           symbol: (symbol
             name: (identifier)))
-        value: (primitive_type
-          (address_type)))
+        value: (address_type))
       visibility: (public)
       name: (symbol
         name: (identifier)))))
@@ -207,8 +206,7 @@ contract Logger {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier)))
         parameter: (event_parameter
@@ -246,8 +244,7 @@ contract AccessControl {
         name: (identifier))
       parameters: (error_parameters
         parameter: (error_parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier)))
         parameter: (error_parameter

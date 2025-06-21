@@ -14,13 +14,11 @@ struct Point {
     name: (symbol
       name: (identifier))
     member: (struct_member
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier)))
     member: (struct_member
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier)))))
 
@@ -46,18 +44,15 @@ contract C {
       name: (symbol
         name: (identifier))
       member: (struct_member
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier)))
       member: (struct_member
-        type: (primitive_type
-          (bool_type))
+        type: (bool_type)
         name: (symbol
           name: (identifier)))
       member: (struct_member
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         name: (symbol
           name: (identifier))))))
 
@@ -79,23 +74,19 @@ struct MyData {
     name: (symbol
       name: (identifier))
     member: (struct_member
-      type: (primitive_type
-        (int_type))
+      type: (int_type)
       name: (symbol
         name: (identifier)))
     member: (struct_member
-      type: (primitive_type
-        (bytes_type))
+      type: (bytes_type)
       name: (symbol
         name: (identifier)))
     member: (struct_member
-      type: (primitive_type
-        (string_type))
+      type: (string_type)
       name: (symbol
         name: (identifier)))
     member: (struct_member
-      type: (primitive_type
-        (address_type))
+      type: (address_type)
       name: (symbol
         name: (identifier)))))
 
@@ -115,14 +106,12 @@ struct Portfolio {
     name: (symbol
       name: (identifier))
     member: (struct_member
-      type: (primitive_type
-        (address_type))
+      type: (address_type)
       name: (symbol
         name: (identifier)))
     member: (struct_member
       type: (array_type
-        base: (primitive_type
-          (uint_type)))
+        base: (uint_type))
       name: (symbol
         name: (identifier)))))
 
@@ -142,8 +131,7 @@ struct FixedData {
       name: (identifier))
     member: (struct_member
       type: (array_type
-        base: (primitive_type
-          (bytes_type))
+        base: (bytes_type)
         size: (literal
           (number)))
       name: (symbol
@@ -165,10 +153,8 @@ struct Balances {
       name: (identifier))
     member: (struct_member
       type: (mapping_type
-        key: (primitive_type
-          (address_type))
-        value: (primitive_type
-          (uint_type)))
+        key: (address_type)
+        value: (uint_type))
       name: (symbol
         name: (identifier)))))
 
@@ -192,13 +178,11 @@ struct Line {
     name: (symbol
       name: (identifier))
     member: (struct_member
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier)))
     member: (struct_member
-      type: (primitive_type
-        (uint_type))
+      type: (uint_type)
       name: (symbol
         name: (identifier))))
   definition: (struct
@@ -250,12 +234,10 @@ library MyLib {
       name: (symbol
         name: (identifier))
       member: (struct_member
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         name: (symbol
           name: (identifier)))
       member: (struct_member
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier))))))

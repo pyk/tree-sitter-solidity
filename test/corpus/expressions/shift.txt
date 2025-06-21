@@ -8,8 +8,7 @@ uint constant x = 1 << 8;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (shift
@@ -40,21 +39,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (shift
@@ -74,8 +70,7 @@ uint constant x = 256 >>> 2;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (shift
@@ -97,8 +92,7 @@ uint constant x = a << b << c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (shift
@@ -124,8 +118,7 @@ uint constant x = a * 2 << b + 1;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (shift
@@ -157,8 +150,7 @@ uint constant x = a << b & c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (bitwise
@@ -185,8 +177,7 @@ bool constant x = a >> b < c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (comparison
@@ -212,8 +203,7 @@ uint constant x = a << (b & MASK);
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (shift
@@ -250,8 +240,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)

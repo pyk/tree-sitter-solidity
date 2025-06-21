@@ -26,13 +26,11 @@ function set(uint256 _x, address _y) {}
       name: (identifier))
     parameters: (parameters
       parameter: (parameter
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier)))
       parameter: (parameter
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         name: (symbol
           name: (identifier))))
     body: (block)))
@@ -51,8 +49,7 @@ function getValue() returns (uint) {}
       name: (identifier))
     returns: (parameters
       parameter: (parameter
-        type: (primitive_type
-          (uint_type))))
+        type: (uint_type)))
     body: (block)))
 
 ==================
@@ -69,13 +66,11 @@ function getValues() returns (uint a, bool b) {}
       name: (identifier))
     returns: (parameters
       parameter: (parameter
-        type: (primitive_type
-          (uint_type))
+        type: (uint_type)
         name: (symbol
           name: (identifier)))
       parameter: (parameter
-        type: (primitive_type
-          (bool_type))
+        type: (bool_type)
         name: (symbol
           name: (identifier))))
     body: (block)))
@@ -323,8 +318,7 @@ function superComplex() external payable virtual override(Base) onlyAdmin return
         name: (identifier)))
     returns: (parameters
       parameter: (parameter
-        type: (primitive_type
-          (bool_type))))
+        type: (bool_type)))
     body: (block)))
 
 ==================
@@ -341,13 +335,11 @@ function requiredFunction(uint) external returns (bool);
       name: (identifier))
     parameters: (parameters
       parameter: (parameter
-        type: (primitive_type
-          (uint_type))))
+        type: (uint_type)))
     visibility: (external)
     returns: (parameters
       parameter: (parameter
-        type: (primitive_type
-          (bool_type))))))
+        type: (bool_type)))))
 
 ==================
 Function with complex parameters (arrays and structs)
@@ -366,8 +358,7 @@ function processData(uint[] memory data, MyStruct calldata s) internal {}
     parameters: (parameters
       parameter: (parameter
         type: (array_type
-          base: (primitive_type
-            (uint_type)))
+          base: (uint_type))
         location: (memory)
         name: (symbol
           name: (identifier)))
@@ -434,8 +425,7 @@ contract C {
     definition: (fallback
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (calldata)
           name: (symbol
             name: (identifier))))
@@ -443,7 +433,6 @@ contract C {
       mutability: (payable)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           location: (memory)))
       body: (block))))

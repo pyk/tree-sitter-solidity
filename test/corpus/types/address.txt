@@ -14,13 +14,11 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (address_type))
+      type: (address_type)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
-      type: (primitive_type
-        (address_type))
+      type: (address_type)
       name: (symbol
         name: (identifier)))))
 
@@ -45,21 +43,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))))
+          type: (address_type)))
       body: (block
         statement: (return
           value: (symbol
@@ -88,8 +83,7 @@ contract C {
       mutability: (view)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier))
           value: (msg_sender))))))
@@ -115,21 +109,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bytes_type))
+          type: (bytes_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))))
+          type: (address_type)))
       body: (block
         statement: (return
           value: (cast
-            type: (primitive_type
-              (address_type))
+            type: (address_type)
             argument: (symbol
               name: (identifier))))))))
 
@@ -154,16 +145,14 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))))
+          type: (address_type)))
       body: (block
         statement: (return
           value: (payable_conversion_expression
@@ -192,13 +181,11 @@ contract C {
       name: (symbol
         name: (identifier))
       member: (struct_member
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         name: (symbol
           name: (identifier)))
       member: (struct_member
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         name: (symbol
           name: (identifier))))))
 
@@ -218,10 +205,8 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (mapping_type
-        key: (primitive_type
-          (address_type))
-        value: (primitive_type
-          (address_type)))
+        key: (address_type)
+        value: (address_type))
       visibility: (public)
       name: (symbol
         name: (identifier)))))
@@ -243,15 +228,13 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (address_type)))
+        base: (address_type))
       visibility: (public)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (address_type))
+        base: (address_type)
         size: (literal
           (number)))
       visibility: (public)
@@ -276,14 +259,12 @@ using AddressUtils for address payable;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (primitive_type
-        (address_type))))
+      target: (address_type)))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
-      target: (primitive_type
-        (address_type)))))
+      target: (address_type))))
 
 ==================
 Address as a constant variable
@@ -300,14 +281,12 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (address_type))
+      type: (address_type)
       mutability: (constant)
       name: (symbol
         name: (identifier))
       value: (cast
-        type: (primitive_type
-          (address_type))
+        type: (address_type)
         argument: (literal
           (number))))))
 
@@ -330,14 +309,12 @@ contract C {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           indexed: (indexed)
           name: (symbol
             name: (identifier)))
         parameter: (event_parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           indexed: (indexed)
           name: (symbol
             name: (identifier)))))))
@@ -361,8 +338,7 @@ contract C {
         name: (identifier))
       parameters: (error_parameters
         parameter: (error_parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -378,5 +354,4 @@ type Wallet is address;
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (address_type))))
+    base: (address_type)))

@@ -8,8 +8,7 @@ uint constant x = 2 ** 8;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -41,21 +40,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))))
+          type: (uint_type)))
       body: (block
         statement: (return
           value: (arithmetic
@@ -78,8 +74,7 @@ uint constant x = a ** b ** c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -107,8 +102,7 @@ uint constant x = a ** b * c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -136,8 +130,7 @@ uint constant x = a + b ** c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -165,8 +158,7 @@ int constant x = -a ** b;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (int_type))
+    type: (int_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -192,8 +184,7 @@ uint constant x = (a + b) ** c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (uint_type))
+    type: (uint_type)
     name: (symbol
       name: (identifier))
     value: (arithmetic
@@ -231,8 +222,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)

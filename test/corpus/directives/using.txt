@@ -11,8 +11,7 @@ using SafeMath for uint256;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (primitive_type
-        (uint_type)))))
+      target: (uint_type))))
 
 ==================
 Using directive for all types (wildcard)
@@ -46,8 +45,7 @@ using {add, sub} for uint256;
       declaration: (using_declaration
         name: (symbol
           name: (identifier)))
-      target: (primitive_type
-        (uint_type)))))
+      target: (uint_type))))
 
 ==================
 Using directive with operator aliasing
@@ -68,8 +66,7 @@ using {add as +, sub as -} for uint256;
         name: (symbol
           name: (identifier))
         operator: (using_op))
-      target: (primitive_type
-        (uint_type)))))
+      target: (uint_type))))
 
 ==================
 Using directive with global keyword
@@ -84,8 +81,7 @@ using SafeMath for uint256 global;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (primitive_type
-        (uint_type))
+      target: (uint_type)
       global: (global))))
 
 ==================

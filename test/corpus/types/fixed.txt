@@ -16,23 +16,19 @@ contract C {
     name: (symbol
       name: (identifier))
     definition: (state_variable
-      type: (primitive_type
-        (fixed_type))
+      type: (fixed_type)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
-      type: (primitive_type
-        (ufixed_type))
+      type: (ufixed_type)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
-      type: (primitive_type
-        (fixed_type))
+      type: (fixed_type)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
-      type: (primitive_type
-        (ufixed_type))
+      type: (ufixed_type)
       name: (symbol
         name: (identifier)))))
 
@@ -57,16 +53,14 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (fixed_type))
+          type: (fixed_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (ufixed_type))))
+          type: (ufixed_type)))
       body: (block
         (comment)))))
 
@@ -93,8 +87,7 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (local_variable
-          type: (primitive_type
-            (fixed_type))
+          type: (fixed_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -119,21 +112,18 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (int_type))
+          type: (int_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (fixed_type))))
+          type: (fixed_type)))
       body: (block
         statement: (return
           value: (cast
-            type: (primitive_type
-              (fixed_type))
+            type: (fixed_type)
             argument: (symbol
               name: (identifier))))))))
 
@@ -158,13 +148,11 @@ contract C {
       name: (symbol
         name: (identifier))
       member: (struct_member
-        type: (primitive_type
-          (fixed_type))
+        type: (fixed_type)
         name: (symbol
           name: (identifier)))
       member: (struct_member
-        type: (primitive_type
-          (ufixed_type))
+        type: (ufixed_type)
         name: (symbol
           name: (identifier))))))
 
@@ -184,10 +172,8 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (mapping_type
-        key: (primitive_type
-          (uint_type))
-        value: (primitive_type
-          (fixed_type)))
+        key: (uint_type)
+        value: (fixed_type))
       visibility: (public)
       name: (symbol
         name: (identifier)))))
@@ -209,15 +195,13 @@ contract C {
       name: (identifier))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (ufixed_type)))
+        base: (ufixed_type))
       visibility: (public)
       name: (symbol
         name: (identifier)))
     definition: (state_variable
       type: (array_type
-        base: (primitive_type
-          (fixed_type))
+        base: (fixed_type)
         size: (literal
           (number)))
       visibility: (public)
@@ -242,14 +226,12 @@ using FixedMath for ufixed256x18;
     (using_library
       library: (symbol
         name: (identifier))
-      target: (primitive_type
-        (fixed_type))))
+      target: (fixed_type)))
   directive: (using
     (using_library
       library: (symbol
         name: (identifier))
-      target: (primitive_type
-        (ufixed_type)))))
+      target: (ufixed_type))))
 
 ==================
 Fixed-point in an event parameter
@@ -270,8 +252,7 @@ contract C {
         name: (identifier))
       parameters: (event_parameters
         parameter: (event_parameter
-          type: (primitive_type
-            (fixed_type))
+          type: (fixed_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -294,8 +275,7 @@ contract C {
         name: (identifier))
       parameters: (error_parameters
         parameter: (error_parameter
-          type: (primitive_type
-            (ufixed_type))
+          type: (ufixed_type)
           name: (symbol
             name: (identifier)))))))
 
@@ -311,5 +291,4 @@ type Price is fixed128x18;
   definition: (type
     name: (symbol
       name: (identifier))
-    base: (primitive_type
-      (fixed_type))))
+    base: (fixed_type)))

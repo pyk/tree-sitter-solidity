@@ -179,16 +179,16 @@ module.exports = grammar({
     // The visible root for all types.
     _type: ($) =>
       choice(
-        // Give primitive_type higher precedence to resolve ambiguity
+        // Give _primitive_type higher precedence to resolve ambiguity
         // with identifiers that look like primitives (e.g., `uint`).
-        prec(1, $.primitive_type),
+        prec(1, $._primitive_type),
         $.custom_type,
         $.array_type,
         $.mapping_type,
         $.function_type,
       ),
 
-    primitive_type: ($) =>
+    _primitive_type: ($) =>
       choice(
         $.address_type,
         $.bool_type,
@@ -636,7 +636,7 @@ module.exports = grammar({
         $.time_literal,
         $.literal,
         prec(1, $.symbol),
-        $.primitive_type,
+        $._primitive_type,
         $.this,
         $.super,
       ),
@@ -1411,7 +1411,7 @@ module.exports = grammar({
         "type",
         field("name", alias($._simple_symbol, $.symbol)),
         "is",
-        field("base", $.primitive_type),
+        field("base", $._primitive_type),
         ";",
       ),
 

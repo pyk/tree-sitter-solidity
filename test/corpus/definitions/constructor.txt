@@ -32,13 +32,11 @@ contract C {
     definition: (constructor
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (string_type))
+          type: (string_type)
           location: (memory)
           name: (symbol
             name: (identifier))))
@@ -101,8 +99,7 @@ abstract contract C {
     definition: (constructor
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (internal)
@@ -131,14 +128,12 @@ contract MyToken is ERC20 {
     definition: (constructor
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (string_type))
+          type: (string_type)
           location: (memory)
           name: (symbol
             name: (identifier)))
         parameter: (parameter
-          type: (primitive_type
-            (string_type))
+          type: (string_type)
           location: (memory)
           name: (symbol
             name: (identifier))))
@@ -219,8 +214,7 @@ abstract contract D is A, B {
     definition: (constructor
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (uint_type))
+          type: (uint_type)
           name: (symbol
             name: (identifier))))
       visibility: (internal)

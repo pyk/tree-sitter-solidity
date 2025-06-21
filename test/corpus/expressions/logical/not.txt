@@ -8,8 +8,7 @@ bool constant x = !true;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (not
@@ -38,16 +37,14 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))))
+          type: (bool_type)))
       body: (block
         statement: (return
           value: (not
@@ -65,8 +62,7 @@ bool constant x = !!a;
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (not
@@ -88,8 +84,7 @@ bool constant x = !a == b;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (equality
@@ -111,8 +106,7 @@ bool constant x = !(a && b);
 
 (source_file
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (not
@@ -149,8 +143,7 @@ contract C {
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))))
+          type: (bool_type)))
       body: (block
         statement: (return
           value: (literal
@@ -162,8 +155,7 @@ contract C {
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))))
+          type: (bool_type)))
       body: (block
         statement: (return
           value: (not
@@ -185,8 +177,7 @@ bool constant x = a && !b || c;
 (source_file
   (comment)
   definition: (constant_variable
-    type: (primitive_type
-      (bool_type))
+    type: (bool_type)
     name: (symbol
       name: (identifier))
     value: (or
@@ -225,8 +216,7 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))
+          type: (bool_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
@@ -261,22 +251,19 @@ contract C {
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))))
+          type: (address_type)))
       visibility: (internal)
       mutability: (pure)
       returns: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (bool_type))))
+          type: (bool_type)))
       body: (block))
     definition: (function
       name: (symbol
         name: (identifier))
       parameters: (parameters
         parameter: (parameter
-          type: (primitive_type
-            (address_type))
+          type: (address_type)
           name: (symbol
             name: (identifier))))
       visibility: (public)
