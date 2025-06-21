@@ -2134,6 +2134,10 @@
             "type": "SYMBOL",
             "name": "symbol"
           }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "primitive_type"
         }
       ]
     },

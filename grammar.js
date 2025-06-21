@@ -631,7 +631,13 @@ module.exports = grammar({
     //############################################################//
 
     _primary_expression: ($) =>
-      choice($.ether_literal, $.time_literal, $.literal, prec(1, $.symbol)),
+      choice(
+        $.ether_literal,
+        $.time_literal,
+        $.literal,
+        prec(1, $.symbol),
+        $.primitive_type,
+      ),
 
     //############################################################//
     //                      Cast expression                       //

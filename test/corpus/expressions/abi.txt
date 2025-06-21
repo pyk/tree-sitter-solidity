@@ -103,17 +103,14 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (tuple_variable
-          elements: (
-            (local_variable
-              type: (primitive_type
-                (uint_type))
-              name: (symbol
-                name: (identifier)))
-            (local_variable
-              type: (primitive_type
-                (bool_type))
-              name: (symbol
-                name: (identifier))))
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))
           value: (abi_decode
             arguments: (arguments
               argument: (symbol
