@@ -1,0 +1,175 @@
+==================
+Revert with a custom error and no arguments
+==================
+
+contract C {
+    error Unauthorized();
+    function f() public pure {
+        revert Unauthorized();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (error
+      name: (symbol
+        name: (identifier)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (revert_error
+          error: (symbol
+            name: (identifier))
+          arguments: (arguments))))))
+
+==================
+Revert with a custom error and arguments
+==================
+
+contract C {
+    error InsufficientBalance(uint required, uint available);
+    function f(uint amount) public pure {
+        revert InsufficientBalance(amount, 0);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (error
+      name: (symbol
+        name: (identifier))
+      parameters: (error_parameters
+        parameter: (error_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (error_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (revert_error
+          error: (symbol
+            name: (identifier))
+          arguments: (arguments
+            argument: (symbol
+              name: (identifier))
+            argument: (literal
+              (number))))))))
+
+==================
+Revert with a qualified custom error name
+==================
+contract Errors {
+    error MyError();
+}
+contract C {
+    function f() public pure {
+        revert Errors.MyError();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (error
+      name: (symbol
+        name: (identifier))))
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (revert_error
+          error: (symbol
+            scope: (symbol
+              name: (identifier))
+            name: (identifier))
+          arguments: (arguments))))))
+
+==================
+Built-in revert() with no arguments
+==================
+
+contract C {
+    function f() public pure {
+        revert();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (call
+          function: (builtin_function
+            name: (revert))
+          arguments: (arguments))))))
+
+==================
+Built-in revert() with a string message
+==================
+
+contract C {
+    function f() public pure {
+        revert("Something went wrong");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (call
+          function: (builtin_function
+            name: (revert))
+          arguments: (arguments
+            argument: (literal
+              (string))))))))

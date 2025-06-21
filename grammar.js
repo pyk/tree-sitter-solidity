@@ -1439,7 +1439,7 @@ module.exports = grammar({
         $.local_variable,
         $.placeholder,
         $.return,
-        $.revert_statement,
+        $.revert_error,
         $.tuple_variable,
         $.unchecked,
         $.while_statement,
@@ -1448,6 +1448,16 @@ module.exports = grammar({
     _expression_statement: ($) => seq($._expression, ";"),
     break: ($) => seq("break", ";"),
     continue: ($) => seq("continue", ";"),
+    do_while_statement: ($) =>
+      seq(
+        "do",
+        field("body", $._statement),
+        "while",
+        "(",
+        field("condition", $._expression),
+        ")",
+        ";",
+      ),
     emit: ($) =>
       seq(
         "emit",
@@ -1502,6 +1512,18 @@ module.exports = grammar({
 
     placeholder: ($) => prec(1, seq("_", ";")),
     return: ($) => seq("return", optional(field("value", $._expression)), ";"),
+    revert_error: ($) =>
+      prec(
+        1,
+        seq(
+          "revert",
+          // We can also be more specific about what an error can be
+          field("error", $.symbol),
+          field("arguments", $.arguments),
+          ";",
+        ),
+      ),
+
     unchecked: ($) => seq("unchecked", field("body", $.block)),
 
     while_statement: ($) =>
@@ -1516,29 +1538,6 @@ module.exports = grammar({
     //############################################################//
     //                           Others                           //
     //############################################################//
-
-    do_while_statement: ($) =>
-      seq(
-        "do",
-        field("body", $._statement),
-        "while",
-        "(",
-        field("condition", $._expression),
-        ")",
-        ";",
-      ),
-
-    revert_statement: ($) =>
-      prec(
-        1,
-        seq(
-          "revert",
-          // We can also be more specific about what an error can be
-          field("error", $.symbol),
-          field("arguments", $.arguments),
-          ";",
-        ),
-      ),
 
     /**
      * A unary expression, handling both prefix and suffix operators.

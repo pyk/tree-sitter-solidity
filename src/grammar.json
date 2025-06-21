@@ -5339,7 +5339,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "revert_statement"
+          "name": "revert_error"
         },
         {
           "type": "SYMBOL",
@@ -5387,6 +5387,47 @@
         {
           "type": "STRING",
           "value": "continue"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "do_while_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "do"
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_statement"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "while"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "condition",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         },
         {
           "type": "STRING",
@@ -5638,6 +5679,39 @@
         }
       ]
     },
+    "revert_error": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "revert"
+          },
+          {
+            "type": "FIELD",
+            "name": "error",
+            "content": {
+              "type": "SYMBOL",
+              "name": "symbol"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "arguments",
+            "content": {
+              "type": "SYMBOL",
+              "name": "arguments"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": ";"
+          }
+        ]
+      }
+    },
     "unchecked": {
       "type": "SEQ",
       "members": [
@@ -5687,80 +5761,6 @@
           }
         }
       ]
-    },
-    "do_while_statement": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "do"
-        },
-        {
-          "type": "FIELD",
-          "name": "body",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_statement"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": "while"
-        },
-        {
-          "type": "STRING",
-          "value": "("
-        },
-        {
-          "type": "FIELD",
-          "name": "condition",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_expression"
-          }
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        },
-        {
-          "type": "STRING",
-          "value": ";"
-        }
-      ]
-    },
-    "revert_statement": {
-      "type": "PREC",
-      "value": 1,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "revert"
-          },
-          {
-            "type": "FIELD",
-            "name": "error",
-            "content": {
-              "type": "SYMBOL",
-              "name": "symbol"
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "arguments",
-            "content": {
-              "type": "SYMBOL",
-              "name": "arguments"
-            }
-          },
-          {
-            "type": "STRING",
-            "value": ";"
-          }
-        ]
-      }
     },
     "unary_expression": {
       "type": "CHOICE",

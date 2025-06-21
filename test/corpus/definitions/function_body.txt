@@ -343,7 +343,7 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (revert_statement
+        statement: (revert_error
           error: (symbol
             name: (identifier))
           arguments: (arguments))))))

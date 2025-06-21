@@ -2176,7 +2176,7 @@
             "named": true
           },
           {
-            "type": "revert_statement",
+            "type": "revert_error",
             "named": true
           },
           {
@@ -4059,7 +4059,7 @@
             "named": true
           },
           {
-            "type": "revert_statement",
+            "type": "revert_error",
             "named": true
           },
           {
@@ -5272,7 +5272,7 @@
             "named": true
           },
           {
-            "type": "revert_statement",
+            "type": "revert_error",
             "named": true
           },
           {
@@ -6140,7 +6140,7 @@
             "named": true
           },
           {
-            "type": "revert_statement",
+            "type": "revert_error",
             "named": true
           },
           {
@@ -6428,7 +6428,7 @@
             "named": true
           },
           {
-            "type": "revert_statement",
+            "type": "revert_error",
             "named": true
           },
           {
@@ -9610,7 +9610,7 @@
     "fields": {}
   },
   {
-    "type": "revert_statement",
+    "type": "revert_error",
     "named": true,
     "fields": {
       "arguments": {
@@ -11534,7 +11534,7 @@
             "named": true
           },
           {
-            "type": "revert_statement",
+            "type": "revert_error",
             "named": true
           },
           {
