@@ -1,0 +1,180 @@
+==================
+Assert with a simple boolean condition
+==================
+
+contract C {
+    function f(bool condition) public pure {
+        assert(condition);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (assert
+          condition: (symbol
+            name: (identifier)))))))
+
+==================
+Assert with a comparison expression
+==================
+
+contract C {
+    function f(uint a, uint b) public pure {
+        assert(a >= b);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (assert
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (gte)
+            right: (symbol
+              name: (identifier))))))))
+
+==================
+Assert with a logical expression
+==================
+
+contract C {
+    function f(bool a, bool b) public pure {
+        assert(a || !b);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (assert
+          condition: (or
+            left: (symbol
+              name: (identifier))
+            operator: (or_op)
+            right: (not
+              operator: (not_op)
+              argument: (symbol
+                name: (identifier)))))))))
+
+==================
+Assert with a function call as condition
+==================
+
+contract C {
+    function isInvariant(uint x) internal pure returns (bool) { return x % 2 == 0; }
+    function f(uint a) public pure {
+        assert(isInvariant(a));
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (internal)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        statement: (return
+          value: (equality
+            left: (arithmetic
+              (mod
+                left: (symbol
+                  name: (identifier))
+                operator: (mod_op)
+                right: (literal
+                  (number))))
+            operator: (equality_op)
+            right: (literal
+              (number))))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (assert
+          condition: (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments
+              argument: (symbol
+                name: (identifier)))))))))

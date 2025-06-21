@@ -3160,10 +3160,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "assert"
-          },
-          {
-            "type": "SYMBOL",
             "name": "ecrecover"
           },
           {
@@ -3216,10 +3212,6 @@
     "mulmod": {
       "type": "STRING",
       "value": "mulmod"
-    },
-    "assert": {
-      "type": "STRING",
-      "value": "assert"
     },
     "selfdestruct": {
       "type": "STRING",
@@ -5283,6 +5275,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "assert"
+        },
+        {
+          "type": "SYMBOL",
           "name": "block"
         },
         {
@@ -5363,6 +5359,35 @@
         {
           "type": "SYMBOL",
           "name": "_expression"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "assert": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "assert"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "condition",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         },
         {
           "type": "STRING",

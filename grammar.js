@@ -954,7 +954,6 @@ module.exports = grammar({
         "name",
         choice(
           $.addmod,
-          $.assert,
           $.ecrecover,
           $.gasleft,
           $.keccak256,
@@ -974,9 +973,6 @@ module.exports = grammar({
     // Mathematical
     addmod: ($) => "addmod",
     mulmod: ($) => "mulmod",
-
-    // Error Handling
-    assert: ($) => "assert",
 
     // Contract & Transaction
     selfdestruct: ($) => "selfdestruct",
@@ -1425,6 +1421,7 @@ module.exports = grammar({
     _statement: ($) =>
       choice(
         $._expression_statement,
+        $.assert,
         $.block,
         $.break,
         $.continue,
@@ -1447,6 +1444,8 @@ module.exports = grammar({
       ),
 
     _expression_statement: ($) => seq($._expression, ";"),
+    assert: ($) =>
+      seq("assert", "(", field("condition", $._expression), ")", ";"),
     break: ($) => seq("break", ";"),
     continue: ($) => seq("continue", ";"),
     do_while_statement: ($) =>
