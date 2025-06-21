@@ -24,6 +24,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -164,6 +168,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -297,6 +305,414 @@
     "fields": {}
   },
   {
+    "type": "addmod",
+    "named": true,
+    "fields": {
+      "k": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "ecrecover",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "keccak256",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "ripemd160",
+            "named": true
+          },
+          {
+            "type": "sha256",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "x": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "ecrecover",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "keccak256",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "ripemd160",
+            "named": true
+          },
+          {
+            "type": "sha256",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "y": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "arithmetic",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "builtin_function",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "ecrecover",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "index_access_expression",
+            "named": true
+          },
+          {
+            "type": "index_range_access_expression",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "keccak256",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "ripemd160",
+            "named": true
+          },
+          {
+            "type": "sha256",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "address_type",
     "named": true,
     "fields": {
@@ -320,6 +736,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -461,6 +881,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -596,6 +1020,10 @@
         "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -806,6 +1234,10 @@
         "required": false,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -941,6 +1373,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -1082,6 +1518,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -1263,6 +1703,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -1398,6 +1842,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -1539,6 +1987,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -1679,6 +2131,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -1831,6 +2287,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -1970,6 +2430,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -2139,6 +2603,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -2278,6 +2746,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -2422,6 +2894,10 @@
           {
             "type": ";",
             "named": false
+          },
+          {
+            "type": "addmod",
+            "named": true
           },
           {
             "type": "and",
@@ -2634,10 +3110,6 @@
         "required": true,
         "types": [
           {
-            "type": "addmod",
-            "named": true
-          },
-          {
             "type": "gasleft",
             "named": true
           },
@@ -2676,6 +3148,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -2837,6 +3313,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -3000,6 +3480,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -3152,6 +3636,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -3288,6 +3776,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -3418,6 +3910,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -3547,6 +4043,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -3724,6 +4224,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -4074,6 +4578,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -4220,6 +4728,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -4359,6 +4871,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -4503,6 +5019,10 @@
           {
             "type": ";",
             "named": false
+          },
+          {
+            "type": "addmod",
+            "named": true
           },
           {
             "type": "and",
@@ -4699,6 +5219,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -4835,6 +5359,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -4964,6 +5492,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -5095,6 +5627,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -5224,6 +5760,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -5413,6 +5953,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -5552,6 +6096,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -5920,6 +6468,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -6059,6 +6611,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -6348,6 +6904,10 @@
             "named": false
           },
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -6542,6 +7102,10 @@
         "required": false,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -6674,6 +7238,10 @@
           {
             "type": ";",
             "named": false
+          },
+          {
+            "type": "addmod",
+            "named": true
           },
           {
             "type": "and",
@@ -6809,6 +7377,10 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -7154,6 +7726,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -7302,6 +7878,10 @@
           {
             "type": ";",
             "named": false
+          },
+          {
+            "type": "addmod",
+            "named": true
           },
           {
             "type": "and",
@@ -7498,6 +8078,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -7630,6 +8214,10 @@
           {
             "type": ";",
             "named": false
+          },
+          {
+            "type": "addmod",
+            "named": true
           },
           {
             "type": "and",
@@ -7881,6 +8469,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -8027,6 +8619,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -8156,6 +8752,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -8293,6 +8893,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -8423,6 +9027,10 @@
         "required": false,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -8552,6 +9160,10 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -8688,6 +9300,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "addmod",
+          "named": true
+        },
         {
           "type": "and",
           "named": true
@@ -8884,6 +9500,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -9184,6 +9804,10 @@
         "required": false,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -9398,6 +10022,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -9566,6 +10194,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -9705,6 +10337,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -9903,6 +10539,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -10042,6 +10682,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -10194,6 +10838,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -10329,6 +10977,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -10513,6 +11165,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -10659,6 +11315,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -10798,6 +11458,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -11273,6 +11937,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -11429,6 +12097,10 @@
         "required": false,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -11575,6 +12247,10 @@
         "required": false,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -11710,6 +12386,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -11847,6 +12527,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -11982,6 +12666,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -12122,6 +12810,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -12469,6 +13161,10 @@
         "required": false,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -12695,6 +13391,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -12834,6 +13534,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -13069,6 +13773,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "addmod",
+          "named": true
+        },
         {
           "type": "and",
           "named": true
@@ -13347,6 +14055,10 @@
         "required": true,
         "types": [
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -13513,6 +14225,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -13873,6 +14589,10 @@
             "named": false
           },
           {
+            "type": "addmod",
+            "named": true
+          },
+          {
             "type": "and",
             "named": true
           },
@@ -14066,6 +14786,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "addmod",
+            "named": true
+          },
           {
             "type": "and",
             "named": true
@@ -14351,7 +15075,7 @@
   },
   {
     "type": "addmod",
-    "named": true
+    "named": false
   },
   {
     "type": "address",

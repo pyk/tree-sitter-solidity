@@ -2012,6 +2012,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "addmod"
+        },
+        {
+          "type": "SYMBOL",
           "name": "and"
         },
         {
@@ -3172,10 +3176,6 @@
         "members": [
           {
             "type": "SYMBOL",
-            "name": "addmod"
-          },
-          {
-            "type": "SYMBOL",
             "name": "gasleft"
           },
           {
@@ -3188,10 +3188,6 @@
           }
         ]
       }
-    },
-    "addmod": {
-      "type": "STRING",
-      "value": "addmod"
     },
     "mulmod": {
       "type": "STRING",
@@ -3456,6 +3452,55 @@
         {
           "type": "FIELD",
           "name": "s",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "addmod": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "addmod"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "x",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "FIELD",
+          "name": "y",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "FIELD",
+          "name": "k",
           "content": {
             "type": "SYMBOL",
             "name": "_expression"

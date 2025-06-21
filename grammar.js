@@ -599,6 +599,7 @@ module.exports = grammar({
     _expression: ($) =>
       choice(
         $._primary_expression,
+        $.addmod,
         $.and,
         $.arithmetic,
         $.assignment,
@@ -954,10 +955,9 @@ module.exports = grammar({
       ),
 
     builtin_function: ($) =>
-      field("name", choice($.addmod, $.gasleft, $.mulmod, $.selfdestruct)),
+      field("name", choice($.gasleft, $.mulmod, $.selfdestruct)),
 
     // Mathematical
-    addmod: ($) => "addmod",
     mulmod: ($) => "mulmod",
 
     // Contract & Transaction
@@ -1026,6 +1026,17 @@ module.exports = grammar({
         field("r", $._expression),
         ",",
         field("s", $._expression),
+        ")",
+      ),
+    addmod: ($) =>
+      seq(
+        "addmod",
+        "(",
+        field("x", $._expression),
+        ",",
+        field("y", $._expression),
+        ",",
+        field("k", $._expression),
         ")",
       ),
 
