@@ -2064,6 +2064,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "keccak256"
+        },
+        {
+          "type": "SYMBOL",
           "name": "member_access_expression"
         },
         {
@@ -3168,10 +3172,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "keccak256"
-          },
-          {
-            "type": "SYMBOL",
             "name": "mulmod"
           },
           {
@@ -3188,10 +3188,6 @@
           }
         ]
       }
-    },
-    "keccak256": {
-      "type": "STRING",
-      "value": "keccak256"
     },
     "sha256": {
       "type": "STRING",
@@ -3346,6 +3342,31 @@
     "and_assign_op": {
       "type": "STRING",
       "value": "&="
+    },
+    "keccak256": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "keccak256"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "argument",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
     },
     "constant_variable": {
       "type": "SEQ",

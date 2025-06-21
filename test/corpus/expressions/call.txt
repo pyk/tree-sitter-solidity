@@ -217,12 +217,9 @@ contract C {
             (bytes_type))
           name: (symbol
             name: (identifier))
-          value: (call
-            function: (builtin_function
-              name: (keccak256))
-            arguments: (arguments
-              argument: (literal
-                (string)))))))))
+          value: (keccak256
+            argument: (literal
+              (string))))))))
 
 ==================
 Built-in function call: require

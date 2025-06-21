@@ -612,6 +612,7 @@ module.exports = grammar({
         $.index_access_expression,
         $.index_range_access_expression,
         $.inline_array_expression,
+        $.keccak256,
         $.member_access_expression,
         $.meta_type_expression,
         $.new_expression,
@@ -956,7 +957,6 @@ module.exports = grammar({
           $.addmod,
           $.ecrecover,
           $.gasleft,
-          $.keccak256,
           $.mulmod,
           $.ripemd160,
           $.selfdestruct,
@@ -965,7 +965,6 @@ module.exports = grammar({
       ),
 
     // Cryptography
-    keccak256: ($) => "keccak256",
     sha256: ($) => "sha256",
     ripemd160: ($) => "ripemd160",
     ecrecover: ($) => "ecrecover",
@@ -1019,6 +1018,13 @@ module.exports = grammar({
     or_assign_op: ($) => "|=",
     xor_assign_op: ($) => "^=",
     and_assign_op: ($) => "&=",
+
+    //############################################################//
+    //                    Built-in expression                     //
+    //############################################################//
+
+    keccak256: ($) =>
+      seq("keccak256", "(", field("argument", $._expression), ")"),
 
     //############################################################//
     //                          Variable                          //

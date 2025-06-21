@@ -1,0 +1,198 @@
+==================
+keccak256 with a string literal
+==================
+
+contract C {
+    function f() public pure {
+        bytes32 hash = keccak256("hello");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier))
+          value: (keccak256
+            argument: (literal
+              (string))))))))
+
+==================
+keccak256 with an empty string literal
+==================
+
+contract C {
+    function f() public pure {
+        bytes32 hash = keccak256("");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier))
+          value: (keccak256
+            argument: (literal
+              (string))))))))
+
+==================
+keccak256 with a variable
+==================
+
+contract C {
+    function f(bytes memory data) public pure returns (bytes32) {
+        return keccak256(data);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))))
+      body: (block
+        statement: (return
+          value: (keccak256
+            argument: (symbol
+              name: (identifier))))))))
+
+==================
+keccak256 with abi.encodePacked
+==================
+
+contract C {
+    function f(uint a, address b) public pure returns (bytes32) {
+        return keccak256(abi.encodePacked(a, b));
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))))
+      body: (block
+        statement: (return
+          value: (keccak256
+            argument: (call
+              function: (symbol
+                scope: (symbol
+                  name: (identifier))
+                name: (identifier))
+              arguments: (arguments
+                argument: (symbol
+                  name: (identifier))
+                argument: (symbol
+                  name: (identifier))))))))))
+
+==================
+keccak256 in a require statement
+==================
+
+contract C {
+    bytes32 public expectedHash;
+    function f(string memory s) public view {
+        require(keccak256(bytes(s)) == expectedHash, "Hash mismatch");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (state_variable
+      type: (primitive_type
+        (bytes_type))
+      visibility: (public)
+      name: (symbol
+        name: (identifier)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (string_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (view)
+      body: (block
+        statement: (require
+          condition: (equality
+            left: (keccak256
+              argument: (cast
+                type: (primitive_type
+                  (bytes_type))
+                argument: (symbol
+                  name: (identifier))))
+            operator: (equality_op)
+            right: (symbol
+              name: (identifier)))
+          reason: (string))))))
