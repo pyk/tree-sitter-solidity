@@ -128,7 +128,7 @@ contract C {
                 operator: (gte)
                 right: (literal
                   (number)))
-              consequence: (break_statement))))))))
+              consequence: (break))))))))
 
 ==================
 For loop with no update expression

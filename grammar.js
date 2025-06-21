@@ -1407,7 +1407,7 @@ module.exports = grammar({
       choice(
         $._expression_statement,
         $.block,
-        $.break_statement,
+        $.break,
         $.continue_statement,
         $.do_while_statement,
         $.emit,
@@ -1422,6 +1422,7 @@ module.exports = grammar({
         $.while_statement,
       ),
 
+    break: ($) => seq("break", ";"),
     placeholder: ($) => prec(1, seq("_", ";")),
     emit: ($) =>
       seq(
@@ -1527,8 +1528,6 @@ module.exports = grammar({
         ";",
       ),
     continue_statement: ($) => seq("continue", ";"),
-
-    break_statement: ($) => seq("break", ";"),
 
     revert_statement: ($) =>
       prec(

@@ -239,7 +239,7 @@ contract C {
       body: (block
         statement: (for_statement
           body: (block
-            statement: (break_statement)
+            statement: (break)
             statement: (continue_statement)))))))
 
 ==================

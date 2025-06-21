@@ -2027,7 +2027,7 @@
             "named": true
           },
           {
-            "type": "break_statement",
+            "type": "break",
             "named": true
           },
           {
@@ -2180,7 +2180,7 @@
     "fields": {}
   },
   {
-    "type": "break_statement",
+    "type": "break",
     "named": true,
     "fields": {}
   },
@@ -3915,7 +3915,7 @@
             "named": true
           },
           {
-            "type": "break_statement",
+            "type": "break",
             "named": true
           },
           {
@@ -5128,7 +5128,7 @@
             "named": true
           },
           {
-            "type": "break_statement",
+            "type": "break",
             "named": true
           },
           {
@@ -5996,7 +5996,7 @@
             "named": true
           },
           {
-            "type": "break_statement",
+            "type": "break",
             "named": true
           },
           {
@@ -6284,7 +6284,7 @@
             "named": true
           },
           {
-            "type": "break_statement",
+            "type": "break",
             "named": true
           },
           {
@@ -11395,7 +11395,7 @@
             "named": true
           },
           {
-            "type": "break_statement",
+            "type": "break",
             "named": true
           },
           {
