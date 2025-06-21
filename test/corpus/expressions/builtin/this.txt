@@ -1,0 +1,140 @@
+==================
+'this' used in a member access function call
+==================
+
+contract C {
+    function g() public {}
+    function f() public {
+        this.g();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (call
+          function: (member_access_expression
+            object: (this)
+            member: (identifier))
+          arguments: (arguments))))))
+
+==================
+'this' used in a type cast
+==================
+
+contract C {
+    function getAddress() public view returns (address) {
+        return address(this);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))))
+      body: (block
+        statement: (return
+          value: (cast
+            type: (primitive_type
+              (address_type))
+            argument: (this)))))))
+
+==================
+'this' used as a return value
+==================
+
+contract C {
+    function getSelf() public view returns (C) {
+        return this;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))))
+      body: (block
+        statement: (return
+          value: (this))))))
+
+==================
+Chained call starting with 'this'
+==================
+
+contract C {
+    function f() public view returns (C) { return this; }
+    function g() public view {
+        this.f().f();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      returns: (parameters
+        parameter: (parameter
+          type: (custom_type
+            symbol: (symbol
+              name: (identifier)))))
+      body: (block
+        statement: (return
+          value: (this))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (view)
+      body: (block
+        statement: (call
+          function: (member_access_expression
+            object: (call
+              function: (member_access_expression
+                object: (this)
+                member: (identifier))
+              arguments: (arguments))
+            member: (identifier))
+          arguments: (arguments))))))

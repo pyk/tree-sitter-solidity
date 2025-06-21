@@ -637,7 +637,12 @@ module.exports = grammar({
         $.literal,
         prec(1, $.symbol),
         $.primitive_type,
+        $.this,
+        $.super,
       ),
+
+    this: ($) => "this",
+    super: ($) => "super",
 
     //############################################################//
     //                      Cast expression                       //
