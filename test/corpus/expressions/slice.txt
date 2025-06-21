@@ -1,0 +1,169 @@
+==================
+Simple slice with start and end
+==================
+
+contract C {
+    function f(bytes memory b) public pure returns (bytes memory) {
+        return b[1:3];
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (bytes_type)
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (bytes_type)
+          location: (memory)))
+      body: (block
+        statement: (return
+          value: (slice
+            base: (symbol
+              name: (identifier))
+            start: (literal
+              (number))
+            end: (literal
+              (number))))))))
+
+==================
+Slice with only start
+==================
+
+contract C {
+    function f(bytes memory b) public pure returns (bytes memory) {
+        return b[1:];
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (bytes_type)
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (bytes_type)
+          location: (memory)))
+      body: (block
+        statement: (return
+          value: (slice
+            base: (symbol
+              name: (identifier))
+            start: (literal
+              (number))))))))
+
+==================
+Slice with only end
+==================
+
+contract C {
+    function f(bytes memory b) public pure returns (bytes memory) {
+        return b[:3];
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (bytes_type)
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (bytes_type)
+          location: (memory)))
+      body: (block
+        statement: (return
+          value: (slice
+            base: (symbol
+              name: (identifier))
+            end: (literal
+              (number))))))))
+
+==================
+Slice on a call result
+==================
+
+contract C {
+    function getBytes() public pure returns (bytes memory) { return "abcdef"; }
+    function f() public pure returns (bytes memory) {
+        return getBytes()[2:4];
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (bytes_type)
+          location: (memory)))
+      body: (block
+        statement: (return
+          value: (literal
+            (string)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (bytes_type)
+          location: (memory)))
+      body: (block
+        statement: (return
+          value: (slice
+            base: (call
+              function: (symbol
+                name: (identifier))
+              arguments: (arguments))
+            start: (literal
+              (number))
+            end: (literal
+              (number))))))))

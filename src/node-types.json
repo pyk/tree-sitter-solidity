@@ -276,14 +276,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -368,11 +360,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -588,14 +588,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -680,11 +672,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -901,14 +901,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -993,11 +985,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -1203,14 +1203,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -1295,11 +1287,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -1505,14 +1505,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -1597,11 +1589,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -1829,14 +1829,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -1921,11 +1913,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -2141,14 +2141,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -2233,11 +2225,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -2449,14 +2449,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -2541,11 +2533,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -2811,14 +2811,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -2903,11 +2895,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -3119,14 +3119,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -3211,11 +3203,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -3432,14 +3432,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -3524,11 +3516,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -3784,14 +3784,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -3876,11 +3868,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -4092,14 +4092,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -4184,11 +4176,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -4404,14 +4404,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -4496,11 +4488,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -4717,14 +4717,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -4809,11 +4801,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -5040,14 +5040,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -5132,11 +5124,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -5352,14 +5352,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -5444,11 +5436,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -5692,14 +5692,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -5784,11 +5776,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -6004,14 +6004,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -6096,11 +6088,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -6317,14 +6317,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -6409,11 +6401,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -6661,14 +6661,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -6777,11 +6769,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -7050,14 +7050,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -7142,11 +7134,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -7383,14 +7383,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -7475,11 +7467,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -7716,14 +7716,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -7808,11 +7800,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -8078,14 +8078,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -8170,11 +8162,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -8402,14 +8402,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -8494,11 +8486,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -8710,14 +8710,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -8802,11 +8794,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -9012,14 +9012,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -9104,11 +9096,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -9314,14 +9314,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -9406,11 +9398,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -9691,14 +9691,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -9783,11 +9775,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -10212,14 +10212,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -10304,11 +10296,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -10530,14 +10530,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -10622,11 +10614,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -10842,14 +10842,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -10934,11 +10926,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -11191,14 +11191,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -11307,11 +11299,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -11529,14 +11529,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -11621,11 +11613,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -11837,14 +11837,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -11929,11 +11921,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -12139,14 +12139,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -12231,11 +12223,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -12441,14 +12441,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -12533,11 +12525,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -12743,14 +12743,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -12835,11 +12827,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -13103,14 +13103,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -13195,11 +13187,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -13415,14 +13415,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -13507,11 +13499,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -14010,14 +14010,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -14102,11 +14094,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -14322,14 +14322,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -14414,11 +14406,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -14788,14 +14788,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -14904,11 +14896,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -15126,14 +15126,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -15218,11 +15210,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -15432,14 +15432,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -15528,11 +15520,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -15738,14 +15738,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -15830,11 +15822,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -16259,14 +16259,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -16351,11 +16343,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -16613,14 +16613,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -16729,11 +16721,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -16951,14 +16951,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -17043,11 +17035,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -17289,14 +17289,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -17405,11 +17397,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -17705,14 +17705,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -17797,11 +17789,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -17852,1528 +17852,6 @@
         "types": [
           {
             "type": "increment_op",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "index_access_expression",
-    "named": true,
-    "fields": {
-      "base": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "abi_decode",
-            "named": true
-          },
-          {
-            "type": "abi_encode",
-            "named": true
-          },
-          {
-            "type": "abi_encode_call",
-            "named": true
-          },
-          {
-            "type": "abi_encode_packed",
-            "named": true
-          },
-          {
-            "type": "abi_encode_with_selector",
-            "named": true
-          },
-          {
-            "type": "abi_encode_with_signature",
-            "named": true
-          },
-          {
-            "type": "add",
-            "named": true
-          },
-          {
-            "type": "addmod",
-            "named": true
-          },
-          {
-            "type": "address_type",
-            "named": true
-          },
-          {
-            "type": "and",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "bitwise",
-            "named": true
-          },
-          {
-            "type": "blobhash",
-            "named": true
-          },
-          {
-            "type": "block_basefee",
-            "named": true
-          },
-          {
-            "type": "block_blobbasefee",
-            "named": true
-          },
-          {
-            "type": "block_chainid",
-            "named": true
-          },
-          {
-            "type": "block_coinbase",
-            "named": true
-          },
-          {
-            "type": "block_difficulty",
-            "named": true
-          },
-          {
-            "type": "block_gaslimit",
-            "named": true
-          },
-          {
-            "type": "block_number",
-            "named": true
-          },
-          {
-            "type": "block_prevrandao",
-            "named": true
-          },
-          {
-            "type": "block_timestamp",
-            "named": true
-          },
-          {
-            "type": "blockhash",
-            "named": true
-          },
-          {
-            "type": "bool_type",
-            "named": true
-          },
-          {
-            "type": "bytes_type",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "cast",
-            "named": true
-          },
-          {
-            "type": "comparison",
-            "named": true
-          },
-          {
-            "type": "conditional_expression",
-            "named": true
-          },
-          {
-            "type": "decrement",
-            "named": true
-          },
-          {
-            "type": "div",
-            "named": true
-          },
-          {
-            "type": "ecrecover",
-            "named": true
-          },
-          {
-            "type": "equality",
-            "named": true
-          },
-          {
-            "type": "ether_literal",
-            "named": true
-          },
-          {
-            "type": "exp",
-            "named": true
-          },
-          {
-            "type": "fixed_type",
-            "named": true
-          },
-          {
-            "type": "gasleft",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "increment",
-            "named": true
-          },
-          {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
-            "type": "inline_array_expression",
-            "named": true
-          },
-          {
-            "type": "int_type",
-            "named": true
-          },
-          {
-            "type": "keccak256",
-            "named": true
-          },
-          {
-            "type": "literal",
-            "named": true
-          },
-          {
-            "type": "member_access_expression",
-            "named": true
-          },
-          {
-            "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mod",
-            "named": true
-          },
-          {
-            "type": "msg_data",
-            "named": true
-          },
-          {
-            "type": "msg_sender",
-            "named": true
-          },
-          {
-            "type": "msg_sig",
-            "named": true
-          },
-          {
-            "type": "msg_value",
-            "named": true
-          },
-          {
-            "type": "mul",
-            "named": true
-          },
-          {
-            "type": "mulmod",
-            "named": true
-          },
-          {
-            "type": "negation",
-            "named": true
-          },
-          {
-            "type": "new_expression",
-            "named": true
-          },
-          {
-            "type": "not",
-            "named": true
-          },
-          {
-            "type": "or",
-            "named": true
-          },
-          {
-            "type": "payable_conversion_expression",
-            "named": true
-          },
-          {
-            "type": "ripemd160",
-            "named": true
-          },
-          {
-            "type": "sha256",
-            "named": true
-          },
-          {
-            "type": "shift",
-            "named": true
-          },
-          {
-            "type": "string_type",
-            "named": true
-          },
-          {
-            "type": "sub",
-            "named": true
-          },
-          {
-            "type": "super",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "this",
-            "named": true
-          },
-          {
-            "type": "time_literal",
-            "named": true
-          },
-          {
-            "type": "tuple_expression",
-            "named": true
-          },
-          {
-            "type": "tx_gasprice",
-            "named": true
-          },
-          {
-            "type": "tx_origin",
-            "named": true
-          },
-          {
-            "type": "ufixed_type",
-            "named": true
-          },
-          {
-            "type": "uint_type",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
-            "named": true
-          }
-        ]
-      },
-      "index": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "abi_decode",
-            "named": true
-          },
-          {
-            "type": "abi_encode",
-            "named": true
-          },
-          {
-            "type": "abi_encode_call",
-            "named": true
-          },
-          {
-            "type": "abi_encode_packed",
-            "named": true
-          },
-          {
-            "type": "abi_encode_with_selector",
-            "named": true
-          },
-          {
-            "type": "abi_encode_with_signature",
-            "named": true
-          },
-          {
-            "type": "add",
-            "named": true
-          },
-          {
-            "type": "addmod",
-            "named": true
-          },
-          {
-            "type": "address_type",
-            "named": true
-          },
-          {
-            "type": "and",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "bitwise",
-            "named": true
-          },
-          {
-            "type": "blobhash",
-            "named": true
-          },
-          {
-            "type": "block_basefee",
-            "named": true
-          },
-          {
-            "type": "block_blobbasefee",
-            "named": true
-          },
-          {
-            "type": "block_chainid",
-            "named": true
-          },
-          {
-            "type": "block_coinbase",
-            "named": true
-          },
-          {
-            "type": "block_difficulty",
-            "named": true
-          },
-          {
-            "type": "block_gaslimit",
-            "named": true
-          },
-          {
-            "type": "block_number",
-            "named": true
-          },
-          {
-            "type": "block_prevrandao",
-            "named": true
-          },
-          {
-            "type": "block_timestamp",
-            "named": true
-          },
-          {
-            "type": "blockhash",
-            "named": true
-          },
-          {
-            "type": "bool_type",
-            "named": true
-          },
-          {
-            "type": "bytes_type",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "cast",
-            "named": true
-          },
-          {
-            "type": "comparison",
-            "named": true
-          },
-          {
-            "type": "conditional_expression",
-            "named": true
-          },
-          {
-            "type": "decrement",
-            "named": true
-          },
-          {
-            "type": "div",
-            "named": true
-          },
-          {
-            "type": "ecrecover",
-            "named": true
-          },
-          {
-            "type": "equality",
-            "named": true
-          },
-          {
-            "type": "ether_literal",
-            "named": true
-          },
-          {
-            "type": "exp",
-            "named": true
-          },
-          {
-            "type": "fixed_type",
-            "named": true
-          },
-          {
-            "type": "gasleft",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "increment",
-            "named": true
-          },
-          {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
-            "type": "inline_array_expression",
-            "named": true
-          },
-          {
-            "type": "int_type",
-            "named": true
-          },
-          {
-            "type": "keccak256",
-            "named": true
-          },
-          {
-            "type": "literal",
-            "named": true
-          },
-          {
-            "type": "member_access_expression",
-            "named": true
-          },
-          {
-            "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mod",
-            "named": true
-          },
-          {
-            "type": "msg_data",
-            "named": true
-          },
-          {
-            "type": "msg_sender",
-            "named": true
-          },
-          {
-            "type": "msg_sig",
-            "named": true
-          },
-          {
-            "type": "msg_value",
-            "named": true
-          },
-          {
-            "type": "mul",
-            "named": true
-          },
-          {
-            "type": "mulmod",
-            "named": true
-          },
-          {
-            "type": "negation",
-            "named": true
-          },
-          {
-            "type": "new_expression",
-            "named": true
-          },
-          {
-            "type": "not",
-            "named": true
-          },
-          {
-            "type": "or",
-            "named": true
-          },
-          {
-            "type": "payable_conversion_expression",
-            "named": true
-          },
-          {
-            "type": "ripemd160",
-            "named": true
-          },
-          {
-            "type": "sha256",
-            "named": true
-          },
-          {
-            "type": "shift",
-            "named": true
-          },
-          {
-            "type": "string_type",
-            "named": true
-          },
-          {
-            "type": "sub",
-            "named": true
-          },
-          {
-            "type": "super",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "this",
-            "named": true
-          },
-          {
-            "type": "time_literal",
-            "named": true
-          },
-          {
-            "type": "tuple_expression",
-            "named": true
-          },
-          {
-            "type": "tx_gasprice",
-            "named": true
-          },
-          {
-            "type": "tx_origin",
-            "named": true
-          },
-          {
-            "type": "ufixed_type",
-            "named": true
-          },
-          {
-            "type": "uint_type",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "index_range_access_expression",
-    "named": true,
-    "fields": {
-      "base": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "abi_decode",
-            "named": true
-          },
-          {
-            "type": "abi_encode",
-            "named": true
-          },
-          {
-            "type": "abi_encode_call",
-            "named": true
-          },
-          {
-            "type": "abi_encode_packed",
-            "named": true
-          },
-          {
-            "type": "abi_encode_with_selector",
-            "named": true
-          },
-          {
-            "type": "abi_encode_with_signature",
-            "named": true
-          },
-          {
-            "type": "add",
-            "named": true
-          },
-          {
-            "type": "addmod",
-            "named": true
-          },
-          {
-            "type": "address_type",
-            "named": true
-          },
-          {
-            "type": "and",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "bitwise",
-            "named": true
-          },
-          {
-            "type": "blobhash",
-            "named": true
-          },
-          {
-            "type": "block_basefee",
-            "named": true
-          },
-          {
-            "type": "block_blobbasefee",
-            "named": true
-          },
-          {
-            "type": "block_chainid",
-            "named": true
-          },
-          {
-            "type": "block_coinbase",
-            "named": true
-          },
-          {
-            "type": "block_difficulty",
-            "named": true
-          },
-          {
-            "type": "block_gaslimit",
-            "named": true
-          },
-          {
-            "type": "block_number",
-            "named": true
-          },
-          {
-            "type": "block_prevrandao",
-            "named": true
-          },
-          {
-            "type": "block_timestamp",
-            "named": true
-          },
-          {
-            "type": "blockhash",
-            "named": true
-          },
-          {
-            "type": "bool_type",
-            "named": true
-          },
-          {
-            "type": "bytes_type",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "cast",
-            "named": true
-          },
-          {
-            "type": "comparison",
-            "named": true
-          },
-          {
-            "type": "conditional_expression",
-            "named": true
-          },
-          {
-            "type": "decrement",
-            "named": true
-          },
-          {
-            "type": "div",
-            "named": true
-          },
-          {
-            "type": "ecrecover",
-            "named": true
-          },
-          {
-            "type": "equality",
-            "named": true
-          },
-          {
-            "type": "ether_literal",
-            "named": true
-          },
-          {
-            "type": "exp",
-            "named": true
-          },
-          {
-            "type": "fixed_type",
-            "named": true
-          },
-          {
-            "type": "gasleft",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "increment",
-            "named": true
-          },
-          {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
-            "type": "inline_array_expression",
-            "named": true
-          },
-          {
-            "type": "int_type",
-            "named": true
-          },
-          {
-            "type": "keccak256",
-            "named": true
-          },
-          {
-            "type": "literal",
-            "named": true
-          },
-          {
-            "type": "member_access_expression",
-            "named": true
-          },
-          {
-            "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mod",
-            "named": true
-          },
-          {
-            "type": "msg_data",
-            "named": true
-          },
-          {
-            "type": "msg_sender",
-            "named": true
-          },
-          {
-            "type": "msg_sig",
-            "named": true
-          },
-          {
-            "type": "msg_value",
-            "named": true
-          },
-          {
-            "type": "mul",
-            "named": true
-          },
-          {
-            "type": "mulmod",
-            "named": true
-          },
-          {
-            "type": "negation",
-            "named": true
-          },
-          {
-            "type": "new_expression",
-            "named": true
-          },
-          {
-            "type": "not",
-            "named": true
-          },
-          {
-            "type": "or",
-            "named": true
-          },
-          {
-            "type": "payable_conversion_expression",
-            "named": true
-          },
-          {
-            "type": "ripemd160",
-            "named": true
-          },
-          {
-            "type": "sha256",
-            "named": true
-          },
-          {
-            "type": "shift",
-            "named": true
-          },
-          {
-            "type": "string_type",
-            "named": true
-          },
-          {
-            "type": "sub",
-            "named": true
-          },
-          {
-            "type": "super",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "this",
-            "named": true
-          },
-          {
-            "type": "time_literal",
-            "named": true
-          },
-          {
-            "type": "tuple_expression",
-            "named": true
-          },
-          {
-            "type": "tx_gasprice",
-            "named": true
-          },
-          {
-            "type": "tx_origin",
-            "named": true
-          },
-          {
-            "type": "ufixed_type",
-            "named": true
-          },
-          {
-            "type": "uint_type",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
-            "named": true
-          }
-        ]
-      },
-      "end": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "abi_decode",
-            "named": true
-          },
-          {
-            "type": "abi_encode",
-            "named": true
-          },
-          {
-            "type": "abi_encode_call",
-            "named": true
-          },
-          {
-            "type": "abi_encode_packed",
-            "named": true
-          },
-          {
-            "type": "abi_encode_with_selector",
-            "named": true
-          },
-          {
-            "type": "abi_encode_with_signature",
-            "named": true
-          },
-          {
-            "type": "add",
-            "named": true
-          },
-          {
-            "type": "addmod",
-            "named": true
-          },
-          {
-            "type": "address_type",
-            "named": true
-          },
-          {
-            "type": "and",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "bitwise",
-            "named": true
-          },
-          {
-            "type": "blobhash",
-            "named": true
-          },
-          {
-            "type": "block_basefee",
-            "named": true
-          },
-          {
-            "type": "block_blobbasefee",
-            "named": true
-          },
-          {
-            "type": "block_chainid",
-            "named": true
-          },
-          {
-            "type": "block_coinbase",
-            "named": true
-          },
-          {
-            "type": "block_difficulty",
-            "named": true
-          },
-          {
-            "type": "block_gaslimit",
-            "named": true
-          },
-          {
-            "type": "block_number",
-            "named": true
-          },
-          {
-            "type": "block_prevrandao",
-            "named": true
-          },
-          {
-            "type": "block_timestamp",
-            "named": true
-          },
-          {
-            "type": "blockhash",
-            "named": true
-          },
-          {
-            "type": "bool_type",
-            "named": true
-          },
-          {
-            "type": "bytes_type",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "cast",
-            "named": true
-          },
-          {
-            "type": "comparison",
-            "named": true
-          },
-          {
-            "type": "conditional_expression",
-            "named": true
-          },
-          {
-            "type": "decrement",
-            "named": true
-          },
-          {
-            "type": "div",
-            "named": true
-          },
-          {
-            "type": "ecrecover",
-            "named": true
-          },
-          {
-            "type": "equality",
-            "named": true
-          },
-          {
-            "type": "ether_literal",
-            "named": true
-          },
-          {
-            "type": "exp",
-            "named": true
-          },
-          {
-            "type": "fixed_type",
-            "named": true
-          },
-          {
-            "type": "gasleft",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "increment",
-            "named": true
-          },
-          {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
-            "type": "inline_array_expression",
-            "named": true
-          },
-          {
-            "type": "int_type",
-            "named": true
-          },
-          {
-            "type": "keccak256",
-            "named": true
-          },
-          {
-            "type": "literal",
-            "named": true
-          },
-          {
-            "type": "member_access_expression",
-            "named": true
-          },
-          {
-            "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mod",
-            "named": true
-          },
-          {
-            "type": "msg_data",
-            "named": true
-          },
-          {
-            "type": "msg_sender",
-            "named": true
-          },
-          {
-            "type": "msg_sig",
-            "named": true
-          },
-          {
-            "type": "msg_value",
-            "named": true
-          },
-          {
-            "type": "mul",
-            "named": true
-          },
-          {
-            "type": "mulmod",
-            "named": true
-          },
-          {
-            "type": "negation",
-            "named": true
-          },
-          {
-            "type": "new_expression",
-            "named": true
-          },
-          {
-            "type": "not",
-            "named": true
-          },
-          {
-            "type": "or",
-            "named": true
-          },
-          {
-            "type": "payable_conversion_expression",
-            "named": true
-          },
-          {
-            "type": "ripemd160",
-            "named": true
-          },
-          {
-            "type": "sha256",
-            "named": true
-          },
-          {
-            "type": "shift",
-            "named": true
-          },
-          {
-            "type": "string_type",
-            "named": true
-          },
-          {
-            "type": "sub",
-            "named": true
-          },
-          {
-            "type": "super",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "this",
-            "named": true
-          },
-          {
-            "type": "time_literal",
-            "named": true
-          },
-          {
-            "type": "tuple_expression",
-            "named": true
-          },
-          {
-            "type": "tx_gasprice",
-            "named": true
-          },
-          {
-            "type": "tx_origin",
-            "named": true
-          },
-          {
-            "type": "ufixed_type",
-            "named": true
-          },
-          {
-            "type": "uint_type",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
-            "named": true
-          }
-        ]
-      },
-      "start": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "abi_decode",
-            "named": true
-          },
-          {
-            "type": "abi_encode",
-            "named": true
-          },
-          {
-            "type": "abi_encode_call",
-            "named": true
-          },
-          {
-            "type": "abi_encode_packed",
-            "named": true
-          },
-          {
-            "type": "abi_encode_with_selector",
-            "named": true
-          },
-          {
-            "type": "abi_encode_with_signature",
-            "named": true
-          },
-          {
-            "type": "add",
-            "named": true
-          },
-          {
-            "type": "addmod",
-            "named": true
-          },
-          {
-            "type": "address_type",
-            "named": true
-          },
-          {
-            "type": "and",
-            "named": true
-          },
-          {
-            "type": "assignment",
-            "named": true
-          },
-          {
-            "type": "bitwise",
-            "named": true
-          },
-          {
-            "type": "blobhash",
-            "named": true
-          },
-          {
-            "type": "block_basefee",
-            "named": true
-          },
-          {
-            "type": "block_blobbasefee",
-            "named": true
-          },
-          {
-            "type": "block_chainid",
-            "named": true
-          },
-          {
-            "type": "block_coinbase",
-            "named": true
-          },
-          {
-            "type": "block_difficulty",
-            "named": true
-          },
-          {
-            "type": "block_gaslimit",
-            "named": true
-          },
-          {
-            "type": "block_number",
-            "named": true
-          },
-          {
-            "type": "block_prevrandao",
-            "named": true
-          },
-          {
-            "type": "block_timestamp",
-            "named": true
-          },
-          {
-            "type": "blockhash",
-            "named": true
-          },
-          {
-            "type": "bool_type",
-            "named": true
-          },
-          {
-            "type": "bytes_type",
-            "named": true
-          },
-          {
-            "type": "call",
-            "named": true
-          },
-          {
-            "type": "cast",
-            "named": true
-          },
-          {
-            "type": "comparison",
-            "named": true
-          },
-          {
-            "type": "conditional_expression",
-            "named": true
-          },
-          {
-            "type": "decrement",
-            "named": true
-          },
-          {
-            "type": "div",
-            "named": true
-          },
-          {
-            "type": "ecrecover",
-            "named": true
-          },
-          {
-            "type": "equality",
-            "named": true
-          },
-          {
-            "type": "ether_literal",
-            "named": true
-          },
-          {
-            "type": "exp",
-            "named": true
-          },
-          {
-            "type": "fixed_type",
-            "named": true
-          },
-          {
-            "type": "gasleft",
-            "named": true
-          },
-          {
-            "type": "group",
-            "named": true
-          },
-          {
-            "type": "increment",
-            "named": true
-          },
-          {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
-            "type": "inline_array_expression",
-            "named": true
-          },
-          {
-            "type": "int_type",
-            "named": true
-          },
-          {
-            "type": "keccak256",
-            "named": true
-          },
-          {
-            "type": "literal",
-            "named": true
-          },
-          {
-            "type": "member_access_expression",
-            "named": true
-          },
-          {
-            "type": "meta_type_expression",
-            "named": true
-          },
-          {
-            "type": "mod",
-            "named": true
-          },
-          {
-            "type": "msg_data",
-            "named": true
-          },
-          {
-            "type": "msg_sender",
-            "named": true
-          },
-          {
-            "type": "msg_sig",
-            "named": true
-          },
-          {
-            "type": "msg_value",
-            "named": true
-          },
-          {
-            "type": "mul",
-            "named": true
-          },
-          {
-            "type": "mulmod",
-            "named": true
-          },
-          {
-            "type": "negation",
-            "named": true
-          },
-          {
-            "type": "new_expression",
-            "named": true
-          },
-          {
-            "type": "not",
-            "named": true
-          },
-          {
-            "type": "or",
-            "named": true
-          },
-          {
-            "type": "payable_conversion_expression",
-            "named": true
-          },
-          {
-            "type": "ripemd160",
-            "named": true
-          },
-          {
-            "type": "sha256",
-            "named": true
-          },
-          {
-            "type": "shift",
-            "named": true
-          },
-          {
-            "type": "string_type",
-            "named": true
-          },
-          {
-            "type": "sub",
-            "named": true
-          },
-          {
-            "type": "super",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "this",
-            "named": true
-          },
-          {
-            "type": "time_literal",
-            "named": true
-          },
-          {
-            "type": "tuple_expression",
-            "named": true
-          },
-          {
-            "type": "tx_gasprice",
-            "named": true
-          },
-          {
-            "type": "tx_origin",
-            "named": true
-          },
-          {
-            "type": "ufixed_type",
-            "named": true
-          },
-          {
-            "type": "uint_type",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
             "named": true
           }
         ]
@@ -19545,14 +18023,6 @@
           "named": true
         },
         {
-          "type": "index_access_expression",
-          "named": true
-        },
-        {
-          "type": "index_range_access_expression",
-          "named": true
-        },
-        {
           "type": "inline_array_expression",
           "named": true
         },
@@ -19637,11 +18107,19 @@
           "named": true
         },
         {
+          "type": "slice",
+          "named": true
+        },
+        {
           "type": "string_type",
           "named": true
         },
         {
           "type": "sub",
+          "named": true
+        },
+        {
+          "type": "subsript",
           "named": true
         },
         {
@@ -19913,14 +18391,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -20005,11 +18475,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -20412,14 +18890,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -20504,11 +18974,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -20854,14 +19332,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -20946,11 +19416,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -21222,14 +19700,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -21314,11 +19784,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -21534,14 +20012,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -21626,11 +20096,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -21923,14 +20401,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -22015,11 +20485,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -22235,14 +20713,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -22327,11 +20797,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -22548,14 +21026,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -22640,11 +21110,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -22850,14 +21328,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -22942,11 +21412,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -23152,14 +21630,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -23244,11 +21714,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -23470,14 +21948,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -23562,11 +22032,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -23778,14 +22256,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -23870,11 +22340,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -24161,14 +22639,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -24253,11 +22723,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -24479,14 +22957,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -24571,11 +23041,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -24791,14 +23269,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -24883,11 +23353,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -25435,14 +23913,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -25527,11 +23997,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -25763,14 +24241,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -25855,11 +24325,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -26081,14 +24559,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -26173,11 +24643,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -26389,14 +24867,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -26481,11 +24951,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -26697,14 +25175,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -26789,11 +25259,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -27005,14 +25483,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -27097,11 +25567,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -27313,14 +25791,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -27405,11 +25875,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -27625,11 +26103,316 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
+            "type": "inline_array_expression",
             "named": true
           },
           {
-            "type": "index_range_access_expression",
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "keccak256",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "mod",
+            "named": true
+          },
+          {
+            "type": "msg_data",
+            "named": true
+          },
+          {
+            "type": "msg_sender",
+            "named": true
+          },
+          {
+            "type": "msg_sig",
+            "named": true
+          },
+          {
+            "type": "msg_value",
+            "named": true
+          },
+          {
+            "type": "mul",
+            "named": true
+          },
+          {
+            "type": "mulmod",
+            "named": true
+          },
+          {
+            "type": "negation",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "ripemd160",
+            "named": true
+          },
+          {
+            "type": "sha256",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "slice",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "tx_gasprice",
+            "named": true
+          },
+          {
+            "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "shift_op",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "slice",
+    "named": true,
+    "fields": {
+      "base": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "blobhash",
+            "named": true
+          },
+          {
+            "type": "block_basefee",
+            "named": true
+          },
+          {
+            "type": "block_blobbasefee",
+            "named": true
+          },
+          {
+            "type": "block_chainid",
+            "named": true
+          },
+          {
+            "type": "block_coinbase",
+            "named": true
+          },
+          {
+            "type": "block_difficulty",
+            "named": true
+          },
+          {
+            "type": "block_gaslimit",
+            "named": true
+          },
+          {
+            "type": "block_number",
+            "named": true
+          },
+          {
+            "type": "block_prevrandao",
+            "named": true
+          },
+          {
+            "type": "block_timestamp",
+            "named": true
+          },
+          {
+            "type": "blockhash",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "decrement",
+            "named": true
+          },
+          {
+            "type": "div",
+            "named": true
+          },
+          {
+            "type": "ecrecover",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "exp",
+            "named": true
+          },
+          {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
+            "type": "gasleft",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "increment",
             "named": true
           },
           {
@@ -27717,11 +26500,623 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "tx_gasprice",
+            "named": true
+          },
+          {
+            "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "end": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "blobhash",
+            "named": true
+          },
+          {
+            "type": "block_basefee",
+            "named": true
+          },
+          {
+            "type": "block_blobbasefee",
+            "named": true
+          },
+          {
+            "type": "block_chainid",
+            "named": true
+          },
+          {
+            "type": "block_coinbase",
+            "named": true
+          },
+          {
+            "type": "block_difficulty",
+            "named": true
+          },
+          {
+            "type": "block_gaslimit",
+            "named": true
+          },
+          {
+            "type": "block_number",
+            "named": true
+          },
+          {
+            "type": "block_prevrandao",
+            "named": true
+          },
+          {
+            "type": "block_timestamp",
+            "named": true
+          },
+          {
+            "type": "blockhash",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "decrement",
+            "named": true
+          },
+          {
+            "type": "div",
+            "named": true
+          },
+          {
+            "type": "ecrecover",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "exp",
+            "named": true
+          },
+          {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
+            "type": "gasleft",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "increment",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "keccak256",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "mod",
+            "named": true
+          },
+          {
+            "type": "msg_data",
+            "named": true
+          },
+          {
+            "type": "msg_sender",
+            "named": true
+          },
+          {
+            "type": "msg_sig",
+            "named": true
+          },
+          {
+            "type": "msg_value",
+            "named": true
+          },
+          {
+            "type": "mul",
+            "named": true
+          },
+          {
+            "type": "mulmod",
+            "named": true
+          },
+          {
+            "type": "negation",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "ripemd160",
+            "named": true
+          },
+          {
+            "type": "sha256",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "slice",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "tx_gasprice",
+            "named": true
+          },
+          {
+            "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "blobhash",
+            "named": true
+          },
+          {
+            "type": "block_basefee",
+            "named": true
+          },
+          {
+            "type": "block_blobbasefee",
+            "named": true
+          },
+          {
+            "type": "block_chainid",
+            "named": true
+          },
+          {
+            "type": "block_coinbase",
+            "named": true
+          },
+          {
+            "type": "block_difficulty",
+            "named": true
+          },
+          {
+            "type": "block_gaslimit",
+            "named": true
+          },
+          {
+            "type": "block_number",
+            "named": true
+          },
+          {
+            "type": "block_prevrandao",
+            "named": true
+          },
+          {
+            "type": "block_timestamp",
+            "named": true
+          },
+          {
+            "type": "blockhash",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "decrement",
+            "named": true
+          },
+          {
+            "type": "div",
+            "named": true
+          },
+          {
+            "type": "ecrecover",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "exp",
+            "named": true
+          },
+          {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
+            "type": "gasleft",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "increment",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "keccak256",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "mod",
+            "named": true
+          },
+          {
+            "type": "msg_data",
+            "named": true
+          },
+          {
+            "type": "msg_sender",
+            "named": true
+          },
+          {
+            "type": "msg_sig",
+            "named": true
+          },
+          {
+            "type": "msg_value",
+            "named": true
+          },
+          {
+            "type": "mul",
+            "named": true
+          },
+          {
+            "type": "mulmod",
+            "named": true
+          },
+          {
+            "type": "negation",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "ripemd160",
+            "named": true
+          },
+          {
+            "type": "sha256",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "slice",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -27767,11 +27162,6 @@
         ]
       }
     }
-  },
-  {
-    "type": "shift_op",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "solidity",
@@ -28171,14 +27561,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -28263,11 +27645,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -28597,14 +27987,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -28689,11 +28071,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -28909,11 +28299,316 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
+            "type": "inline_array_expression",
             "named": true
           },
           {
-            "type": "index_range_access_expression",
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "keccak256",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "mod",
+            "named": true
+          },
+          {
+            "type": "msg_data",
+            "named": true
+          },
+          {
+            "type": "msg_sender",
+            "named": true
+          },
+          {
+            "type": "msg_sig",
+            "named": true
+          },
+          {
+            "type": "msg_value",
+            "named": true
+          },
+          {
+            "type": "mul",
+            "named": true
+          },
+          {
+            "type": "mulmod",
+            "named": true
+          },
+          {
+            "type": "negation",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "ripemd160",
+            "named": true
+          },
+          {
+            "type": "sha256",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "slice",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "tx_gasprice",
+            "named": true
+          },
+          {
+            "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "sub_op",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "subsript",
+    "named": true,
+    "fields": {
+      "base": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "blobhash",
+            "named": true
+          },
+          {
+            "type": "block_basefee",
+            "named": true
+          },
+          {
+            "type": "block_blobbasefee",
+            "named": true
+          },
+          {
+            "type": "block_chainid",
+            "named": true
+          },
+          {
+            "type": "block_coinbase",
+            "named": true
+          },
+          {
+            "type": "block_difficulty",
+            "named": true
+          },
+          {
+            "type": "block_gaslimit",
+            "named": true
+          },
+          {
+            "type": "block_number",
+            "named": true
+          },
+          {
+            "type": "block_prevrandao",
+            "named": true
+          },
+          {
+            "type": "block_timestamp",
+            "named": true
+          },
+          {
+            "type": "blockhash",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "decrement",
+            "named": true
+          },
+          {
+            "type": "div",
+            "named": true
+          },
+          {
+            "type": "ecrecover",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "exp",
+            "named": true
+          },
+          {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
+            "type": "gasleft",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "increment",
             "named": true
           },
           {
@@ -29001,11 +28696,321 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
+            "named": true
+          },
+          {
+            "type": "super",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "this",
+            "named": true
+          },
+          {
+            "type": "time_literal",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "tx_gasprice",
+            "named": true
+          },
+          {
+            "type": "tx_origin",
+            "named": true
+          },
+          {
+            "type": "ufixed_type",
+            "named": true
+          },
+          {
+            "type": "uint_type",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
+            "type": "add",
+            "named": true
+          },
+          {
+            "type": "addmod",
+            "named": true
+          },
+          {
+            "type": "address_type",
+            "named": true
+          },
+          {
+            "type": "and",
+            "named": true
+          },
+          {
+            "type": "assignment",
+            "named": true
+          },
+          {
+            "type": "bitwise",
+            "named": true
+          },
+          {
+            "type": "blobhash",
+            "named": true
+          },
+          {
+            "type": "block_basefee",
+            "named": true
+          },
+          {
+            "type": "block_blobbasefee",
+            "named": true
+          },
+          {
+            "type": "block_chainid",
+            "named": true
+          },
+          {
+            "type": "block_coinbase",
+            "named": true
+          },
+          {
+            "type": "block_difficulty",
+            "named": true
+          },
+          {
+            "type": "block_gaslimit",
+            "named": true
+          },
+          {
+            "type": "block_number",
+            "named": true
+          },
+          {
+            "type": "block_prevrandao",
+            "named": true
+          },
+          {
+            "type": "block_timestamp",
+            "named": true
+          },
+          {
+            "type": "blockhash",
+            "named": true
+          },
+          {
+            "type": "bool_type",
+            "named": true
+          },
+          {
+            "type": "bytes_type",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "comparison",
+            "named": true
+          },
+          {
+            "type": "conditional_expression",
+            "named": true
+          },
+          {
+            "type": "decrement",
+            "named": true
+          },
+          {
+            "type": "div",
+            "named": true
+          },
+          {
+            "type": "ecrecover",
+            "named": true
+          },
+          {
+            "type": "equality",
+            "named": true
+          },
+          {
+            "type": "ether_literal",
+            "named": true
+          },
+          {
+            "type": "exp",
+            "named": true
+          },
+          {
+            "type": "fixed_type",
+            "named": true
+          },
+          {
+            "type": "gasleft",
+            "named": true
+          },
+          {
+            "type": "group",
+            "named": true
+          },
+          {
+            "type": "increment",
+            "named": true
+          },
+          {
+            "type": "inline_array_expression",
+            "named": true
+          },
+          {
+            "type": "int_type",
+            "named": true
+          },
+          {
+            "type": "keccak256",
+            "named": true
+          },
+          {
+            "type": "literal",
+            "named": true
+          },
+          {
+            "type": "member_access_expression",
+            "named": true
+          },
+          {
+            "type": "meta_type_expression",
+            "named": true
+          },
+          {
+            "type": "mod",
+            "named": true
+          },
+          {
+            "type": "msg_data",
+            "named": true
+          },
+          {
+            "type": "msg_sender",
+            "named": true
+          },
+          {
+            "type": "msg_sig",
+            "named": true
+          },
+          {
+            "type": "msg_value",
+            "named": true
+          },
+          {
+            "type": "mul",
+            "named": true
+          },
+          {
+            "type": "mulmod",
+            "named": true
+          },
+          {
+            "type": "negation",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "not",
+            "named": true
+          },
+          {
+            "type": "or",
+            "named": true
+          },
+          {
+            "type": "payable_conversion_expression",
+            "named": true
+          },
+          {
+            "type": "ripemd160",
+            "named": true
+          },
+          {
+            "type": "sha256",
+            "named": true
+          },
+          {
+            "type": "shift",
+            "named": true
+          },
+          {
+            "type": "slice",
+            "named": true
+          },
+          {
+            "type": "string_type",
+            "named": true
+          },
+          {
+            "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -29051,11 +29056,6 @@
         ]
       }
     }
-  },
-  {
-    "type": "sub_op",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "symbol",
@@ -29290,14 +29290,6 @@
           "named": true
         },
         {
-          "type": "index_access_expression",
-          "named": true
-        },
-        {
-          "type": "index_range_access_expression",
-          "named": true
-        },
-        {
           "type": "inline_array_expression",
           "named": true
         },
@@ -29382,11 +29374,19 @@
           "named": true
         },
         {
+          "type": "slice",
+          "named": true
+        },
+        {
           "type": "string_type",
           "named": true
         },
         {
           "type": "sub",
+          "named": true
+        },
+        {
+          "type": "subsript",
           "named": true
         },
         {
@@ -29823,14 +29823,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -29915,11 +29907,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -30200,14 +30200,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -30292,11 +30284,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -30726,14 +30726,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -30842,11 +30834,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -31064,14 +31064,6 @@
             "named": true
           },
           {
-            "type": "index_access_expression",
-            "named": true
-          },
-          {
-            "type": "index_range_access_expression",
-            "named": true
-          },
-          {
             "type": "inline_array_expression",
             "named": true
           },
@@ -31156,11 +31148,19 @@
             "named": true
           },
           {
+            "type": "slice",
+            "named": true
+          },
+          {
             "type": "string_type",
             "named": true
           },
           {
             "type": "sub",
+            "named": true
+          },
+          {
+            "type": "subsript",
             "named": true
           },
           {
@@ -31936,11 +31936,11 @@
   },
   {
     "type": "number",
-    "named": false
+    "named": true
   },
   {
     "type": "number",
-    "named": true
+    "named": false
   },
   {
     "type": "or_assign_op",

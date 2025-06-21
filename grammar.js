@@ -601,8 +601,6 @@ module.exports = grammar({
         $.conditional_expression,
         $.equality,
         $.group,
-        $.index_access_expression,
-        $.index_range_access_expression,
         $.inline_array_expression,
         $.member_access_expression,
         $.meta_type_expression,
@@ -611,6 +609,8 @@ module.exports = grammar({
         $.or,
         $.payable_conversion_expression,
         $.shift,
+        $.slice,
+        $.subsript,
         $.tuple_expression,
         $.unary_expression,
       ),
@@ -1134,6 +1134,34 @@ module.exports = grammar({
 
     abi_encode_call: ($) =>
       seq("abi", ".", "encodeCall", field("arguments", $.arguments)),
+
+    //############################################################//
+    //                      Array expression                      //
+    //############################################################//
+
+    subsript: ($) =>
+      prec.left(
+        PREC.MEMBER,
+        seq(
+          field("base", $._expression),
+          "[",
+          field("index", $._expression),
+          "]",
+        ),
+      ),
+
+    slice: ($) =>
+      prec.left(
+        PREC.MEMBER,
+        seq(
+          field("base", $._expression),
+          "[",
+          optional(field("start", $._expression)),
+          ":",
+          optional(field("end", $._expression)),
+          "]",
+        ),
+      ),
 
     //############################################################//
     //                          Variable                          //
@@ -1748,38 +1776,6 @@ module.exports = grammar({
       prec.left(
         PREC.MEMBER,
         seq(field("object", $._expression), ".", field("member", $.identifier)),
-      ),
-
-    /**
-     * An index access expression.
-     * e.g., `myArray[i]`
-     *
-     * This rule is left-associative and shares the same high precedence as
-     * member access and function calls to allow for correct chaining,
-     * such as `myArray[i][j]` or `myFunc()[i]`.
-     */
-    index_access_expression: ($) =>
-      prec.left(
-        PREC.MEMBER,
-        seq(
-          field("base", $._expression),
-          "[",
-          field("index", $._expression),
-          "]",
-        ),
-      ),
-
-    index_range_access_expression: ($) =>
-      prec.left(
-        PREC.MEMBER,
-        seq(
-          field("base", $._expression),
-          "[",
-          optional(field("start", $._expression)),
-          ":",
-          optional(field("end", $._expression)),
-          "]",
-        ),
       ),
 
     /**

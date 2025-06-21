@@ -159,7 +159,7 @@ contract C {
       visibility: (public)
       body: (block
         statement: (assignment
-          left: (index_access_expression
+          left: (subsript
             base: (symbol
               name: (identifier))
             index: (literal

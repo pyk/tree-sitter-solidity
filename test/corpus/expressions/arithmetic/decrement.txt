@@ -173,7 +173,7 @@ contract C {
       visibility: (public)
       body: (block
         statement: (decrement
-          argument: (index_access_expression
+          argument: (subsript
             base: (symbol
               name: (identifier))
             index: (literal
