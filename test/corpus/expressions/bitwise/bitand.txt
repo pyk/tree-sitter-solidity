@@ -57,7 +57,7 @@ contract C {
           type: (primitive_type
             (bytes_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (bitwise
             (bitand
               left: (symbol

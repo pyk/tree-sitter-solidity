@@ -57,7 +57,7 @@ contract C {
           type: (primitive_type
             (uint_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (arithmetic
             (mod
               left: (symbol
@@ -231,10 +231,10 @@ contract C {
             right: (literal
               (number)))
           consequence: (block
-            statement: (return_statement
+            statement: (return
               value: (literal
                 (boolean)))))
-        statement: (return_statement
+        statement: (return
           value: (literal
             (boolean)))))))
 

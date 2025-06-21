@@ -56,7 +56,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (comparison
             left: (symbol
               name: (identifier))
@@ -288,7 +288,7 @@ contract C {
           type: (primitive_type
             (uint_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (literal
             (number)))))
     definition: (function
@@ -307,7 +307,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (comparison
             left: (symbol
               name: (identifier))

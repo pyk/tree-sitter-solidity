@@ -61,7 +61,7 @@ contract C {
           type: (primitive_type
             (address_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (symbol
             name: (identifier)))))))
 
@@ -129,7 +129,7 @@ contract C {
           type: (primitive_type
             (address_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (cast
             type: (primitive_type
               (address_type))
@@ -168,7 +168,7 @@ contract C {
           type: (primitive_type
             (address_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (payable_conversion_expression
             arguments: (arguments
               argument: (symbol

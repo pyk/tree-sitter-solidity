@@ -72,7 +72,7 @@ contract C {
           type: (primitive_type
             (bytes_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (tuple_expression
             (symbol
               name: (identifier))
@@ -155,7 +155,7 @@ contract C {
             (bytes_type))
           location: (memory)))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (cast
             type: (primitive_type
               (bytes_type))

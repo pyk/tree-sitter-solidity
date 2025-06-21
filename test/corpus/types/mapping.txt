@@ -142,7 +142,7 @@ contract C {
               (uint_type)))
           location: (storage)))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (symbol
             name: (identifier)))))))
 

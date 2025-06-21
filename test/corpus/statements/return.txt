@@ -1,0 +1,267 @@
+==================
+Return statement with no value
+==================
+
+contract C {
+    function exit() public {
+        return;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (return)))))
+
+==================
+Return a literal value
+==================
+
+contract C {
+    function getNumber() public pure returns (uint) {
+        return 42;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        statement: (return
+          value: (literal
+            (number)))))))
+
+==================
+Return a variable
+==================
+
+contract C {
+    function identity(address addr) public pure returns (address) {
+        return addr;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))))
+      body: (block
+        statement: (return
+          value: (symbol
+            name: (identifier)))))))
+
+==================
+Return the result of an arithmetic expression
+==================
+
+contract C {
+    function add(uint a, uint b) public pure returns (uint) {
+        return a + b;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        statement: (return
+          value: (arithmetic
+            (add
+              left: (symbol
+                name: (identifier))
+              operator: (add_op)
+              right: (symbol
+                name: (identifier)))))))))
+
+==================
+Return the result of a function call
+==================
+
+contract C {
+    function getMagicNumber() internal pure returns (uint) { return 7; }
+    function forward() public pure returns (uint) {
+        return getMagicNumber();
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (internal)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        statement: (return
+          value: (literal
+            (number)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))))
+      body: (block
+        statement: (return
+          value: (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments)))))))
+
+==================
+Return a tuple expression
+==================
+
+contract C {
+    function getPair() public pure returns (uint, bool) {
+        return (1, true);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type)))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        statement: (return
+          value: (tuple_expression
+            (literal
+              (number))
+            (literal
+              (boolean))))))))
+
+==================
+Return inside an if statement
+==================
+
+contract C {
+    function check(uint val) public pure returns (string memory) {
+        if (val > 100) {
+            return "large";
+        }
+        return "small";
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (string_type))
+          location: (memory)))
+      body: (block
+        statement: (if_statement
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (gt)
+            right: (literal
+              (number)))
+          consequence: (block
+            statement: (return
+              value: (literal
+                (string)))))
+        statement: (return
+          value: (literal
+            (string)))))))

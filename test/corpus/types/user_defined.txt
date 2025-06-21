@@ -102,7 +102,7 @@ contract C {
             symbol: (symbol
               name: (identifier)))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (symbol
             name: (identifier)))))))
 
@@ -176,7 +176,7 @@ contract C {
             symbol: (symbol
               name: (identifier)))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (call
             function: (symbol
               name: (identifier))

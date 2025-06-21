@@ -64,7 +64,7 @@ contract C {
           name: (symbol
             name: (identifier))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (cast
             type: (primitive_type
               (int_type))
@@ -136,7 +136,7 @@ contract C {
           type: (primitive_type
             (int_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (cast
             type: (primitive_type
               (int_type))

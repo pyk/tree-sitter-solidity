@@ -56,7 +56,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (or
             left: (symbol
               name: (identifier))
@@ -308,7 +308,7 @@ contract C {
             (string_type))
           location: (memory)))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (conditional_expression
             condition: (or
               left: (symbol

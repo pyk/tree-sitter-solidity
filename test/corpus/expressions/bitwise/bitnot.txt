@@ -70,7 +70,7 @@ contract C {
           type: (primitive_type
             (uint_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (bitwise
             (bitnot
               operator: (bitnot_op)

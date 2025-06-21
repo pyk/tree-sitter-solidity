@@ -130,7 +130,7 @@ contract C {
           type: (primitive_type
             (fixed_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (cast
             type: (primitive_type
               (fixed_type))

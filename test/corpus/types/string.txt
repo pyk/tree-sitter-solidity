@@ -61,7 +61,7 @@ contract C {
             (string_type))
           location: (memory)))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (symbol
             name: (identifier)))))))
 
@@ -130,7 +130,7 @@ contract C {
             (string_type))
           location: (memory)))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (cast
             type: (primitive_type
               (string_type))
@@ -348,6 +348,6 @@ contract C {
             (string_type))
           location: (memory)))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (literal
             (string)))))))

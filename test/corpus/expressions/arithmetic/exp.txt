@@ -57,7 +57,7 @@ contract C {
           type: (primitive_type
             (uint_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (arithmetic
             (exp
               left: (symbol

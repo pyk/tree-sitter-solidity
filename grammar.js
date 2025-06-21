@@ -1438,15 +1438,15 @@ module.exports = grammar({
         $.if_statement,
         $.local_variable,
         $.placeholder,
-        $.return_statement,
+        $.return,
         $.revert_statement,
         $.tuple_variable,
         $.unchecked,
         $.while_statement,
       ),
 
+    _expression_statement: ($) => seq($._expression, ";"),
     break: ($) => seq("break", ";"),
-    placeholder: ($) => prec(1, seq("_", ";")),
     emit: ($) =>
       seq(
         "emit",
@@ -1454,12 +1454,8 @@ module.exports = grammar({
         field("arguments", $.arguments),
         ";",
       ),
-    _expression_statement: ($) => seq($._expression, ";"),
-
-    //############################################################//
-    //                         Unchecked                          //
-    //############################################################//
-
+    placeholder: ($) => prec(1, seq("_", ";")),
+    return: ($) => seq("return", optional(field("value", $._expression)), ";"),
     unchecked: ($) => seq("unchecked", field("body", $.block)),
 
     //############################################################//
@@ -1474,8 +1470,6 @@ module.exports = grammar({
      * A return statement.
      * e.g., `return;` or `return myValue;`
      */
-    return_statement: ($) =>
-      seq("return", optional(field("value", $._expression)), ";"),
 
     /**
      * An if statement, with an optional else branch.

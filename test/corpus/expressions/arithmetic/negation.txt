@@ -74,7 +74,7 @@ contract C {
           type: (primitive_type
             (int_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (arithmetic
             (negation
               operator: (negation_op)
@@ -280,7 +280,7 @@ contract C {
           type: (primitive_type
             (bool_type))))
       body: (block
-        statement: (return_statement
+        statement: (return
           value: (and
             left: (comparison
               left: (arithmetic
