@@ -3184,10 +3184,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "revert"
-          },
-          {
-            "type": "SYMBOL",
             "name": "ripemd160"
           },
           {
@@ -3232,10 +3228,6 @@
     "assert": {
       "type": "STRING",
       "value": "assert"
-    },
-    "revert": {
-      "type": "STRING",
-      "value": "revert"
     },
     "selfdestruct": {
       "type": "STRING",
@@ -5338,8 +5330,22 @@
           "name": "return"
         },
         {
-          "type": "SYMBOL",
-          "name": "revert_error"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_revert_builtin"
+          },
+          "named": true,
+          "value": "revert"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_revert_custom_error"
+          },
+          "named": true,
+          "value": "revert"
         },
         {
           "type": "SYMBOL",
@@ -5679,38 +5685,71 @@
         }
       ]
     },
-    "revert_error": {
-      "type": "PREC",
-      "value": 1,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "revert"
-          },
-          {
-            "type": "FIELD",
-            "name": "error",
-            "content": {
-              "type": "SYMBOL",
-              "name": "symbol"
+    "_revert_builtin": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "revert"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "reason",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_expression"
+              }
+            },
+            {
+              "type": "BLANK"
             }
-          },
-          {
-            "type": "FIELD",
-            "name": "arguments",
-            "content": {
-              "type": "SYMBOL",
-              "name": "arguments"
-            }
-          },
-          {
-            "type": "STRING",
-            "value": ";"
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "_revert_custom_error": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "revert"
+        },
+        {
+          "type": "FIELD",
+          "name": "error",
+          "content": {
+            "type": "SYMBOL",
+            "name": "symbol"
           }
-        ]
-      }
+        },
+        {
+          "type": "FIELD",
+          "name": "arguments",
+          "content": {
+            "type": "SYMBOL",
+            "name": "arguments"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
     },
     "unchecked": {
       "type": "SEQ",

@@ -24,7 +24,7 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (revert_error
+        statement: (revert
           error: (symbol
             name: (identifier))
           arguments: (arguments))))))
@@ -72,7 +72,7 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (revert_error
+        statement: (revert
           error: (symbol
             name: (identifier))
           arguments: (arguments
@@ -111,7 +111,7 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (revert_error
+        statement: (revert
           error: (symbol
             scope: (symbol
               name: (identifier))
@@ -140,10 +140,7 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (call
-          function: (builtin_function
-            name: (revert))
-          arguments: (arguments))))))
+        statement: (revert)))))
 
 ==================
 Built-in revert() with a string message
@@ -167,9 +164,6 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (call
-          function: (builtin_function
-            name: (revert))
-          arguments: (arguments
-            argument: (literal
-              (string))))))))
+        statement: (revert
+          reason: (literal
+            (string)))))))

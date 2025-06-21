@@ -316,7 +316,7 @@ contract C {
       name: (symbol
         name: (identifier))
       body: (block
-        statement: (revert_error
+        statement: (revert
           error: (symbol
             name: (identifier))
           arguments: (arguments

@@ -960,7 +960,6 @@ module.exports = grammar({
           $.keccak256,
           $.mulmod,
           $.require,
-          $.revert,
           $.ripemd160,
           $.selfdestruct,
           $.sha256,
@@ -980,7 +979,6 @@ module.exports = grammar({
     // Error Handling
     require: ($) => "require",
     assert: ($) => "assert",
-    revert: ($) => "revert",
 
     // Contract & Transaction
     selfdestruct: ($) => "selfdestruct",
@@ -1439,7 +1437,11 @@ module.exports = grammar({
         $.local_variable,
         $.placeholder,
         $.return,
-        $.revert_error,
+
+        // Revert
+        alias($._revert_builtin, $.revert),
+        alias($._revert_custom_error, $.revert),
+
         $.tuple_variable,
         $.unchecked,
         $.while_statement,
@@ -1512,16 +1514,17 @@ module.exports = grammar({
 
     placeholder: ($) => prec(1, seq("_", ";")),
     return: ($) => seq("return", optional(field("value", $._expression)), ";"),
-    revert_error: ($) =>
-      prec(
-        1,
-        seq(
-          "revert",
-          // We can also be more specific about what an error can be
-          field("error", $.symbol),
-          field("arguments", $.arguments),
-          ";",
-        ),
+
+    // Reverts
+    _revert_builtin: ($) =>
+      seq("revert", "(", optional(field("reason", $._expression)), ")", ";"),
+
+    _revert_custom_error: ($) =>
+      seq(
+        "revert",
+        field("error", $.symbol),
+        field("arguments", $.arguments),
+        ";",
       ),
 
     unchecked: ($) => seq("unchecked", field("body", $.block)),
