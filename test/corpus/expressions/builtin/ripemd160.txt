@@ -1,0 +1,165 @@
+==================
+ripemd160 with a string literal
+==================
+
+contract C {
+    function f() public pure {
+        bytes20 hash = ripemd160("hello");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier))
+          value: (ripemd160
+            argument: (literal
+              (string))))))))
+
+==================
+ripemd160 with a variable
+==================
+
+contract C {
+    function f(bytes memory data) public pure returns (bytes20) {
+        return ripemd160(data);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))))
+      body: (block
+        statement: (return
+          value: (ripemd160
+            argument: (symbol
+              name: (identifier))))))))
+
+==================
+ripemd160 with abi.encodePacked
+==================
+
+contract C {
+    function f(uint id, address owner) public pure returns (bytes20) {
+        return ripemd160(abi.encodePacked(id, owner));
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))))
+      body: (block
+        statement: (return
+          value: (ripemd160
+            argument: (call
+              function: (symbol
+                scope: (symbol
+                  name: (identifier))
+                name: (identifier))
+              arguments: (arguments
+                argument: (symbol
+                  name: (identifier))
+                argument: (symbol
+                  name: (identifier))))))))))
+
+==================
+ripemd160 used in a comparison
+==================
+
+contract C {
+    function f(bytes memory data, bytes20 expected) public pure returns (bool) {
+        return ripemd160(data) == expected;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      body: (block
+        statement: (return
+          value: (equality
+            left: (ripemd160
+              argument: (symbol
+                name: (identifier)))
+            operator: (equality_op)
+            right: (symbol
+              name: (identifier))))))))

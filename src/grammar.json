@@ -2092,6 +2092,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "ripemd160"
+        },
+        {
+          "type": "SYMBOL",
           "name": "sha256"
         },
         {
@@ -3180,18 +3184,10 @@
           },
           {
             "type": "SYMBOL",
-            "name": "ripemd160"
-          },
-          {
-            "type": "SYMBOL",
             "name": "selfdestruct"
           }
         ]
       }
-    },
-    "ripemd160": {
-      "type": "STRING",
-      "value": "ripemd160"
     },
     "ecrecover": {
       "type": "STRING",
@@ -3370,6 +3366,31 @@
         {
           "type": "STRING",
           "value": "sha256"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "argument",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "ripemd160": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ripemd160"
         },
         {
           "type": "STRING",
