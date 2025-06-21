@@ -1,0 +1,299 @@
+==================
+While loop with a block body
+==================
+
+contract C {
+    function f(uint i) public {
+        while (i < 10) {
+            i++;
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (while_statement
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (lt)
+            right: (literal
+              (number)))
+          body: (block
+            statement: (arithmetic
+              (increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op)))))))))
+
+==================
+While loop with a single-line statement body
+==================
+
+contract C {
+    function f(uint i) public {
+        while (i > 0) i--;
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (while_statement
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (gt)
+            right: (literal
+              (number)))
+          body: (arithmetic
+            (decrement
+              argument: (symbol
+                name: (identifier))
+              operator: (decrement_op))))))))
+
+==================
+While loop with a complex condition
+==================
+
+contract C {
+    function f(bool a, bool b) public {
+        while (a && !b) {
+            // body
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (while_statement
+          condition: (and
+            left: (symbol
+              name: (identifier))
+            operator: (and_op)
+            right: (not
+              operator: (not_op)
+              argument: (symbol
+                name: (identifier))))
+          body: (block
+            (comment)))))))
+
+==================
+While loop with an empty block body
+==================
+
+contract C {
+    function f(bool condition) public {
+        while (condition) {}
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (while_statement
+          condition: (symbol
+            name: (identifier))
+          body: (block))))))
+
+==================
+While loop with a break statement
+==================
+
+contract C {
+    function f() public pure {
+        while (true) {
+            break;
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (while_statement
+          condition: (literal
+            (boolean))
+          body: (block
+            statement: (break)))))))
+
+==================
+While loop with a continue statement
+==================
+
+contract C {
+    function f(uint i) public {
+        while (i < 5) {
+            i++;
+            continue;
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (while_statement
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (lt)
+            right: (literal
+              (number)))
+          body: (block
+            statement: (arithmetic
+              (increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op)))
+            statement: (continue_statement)))))))
+
+==================
+Nested while loop
+==================
+
+contract C {
+    function f(uint i, uint j) public {
+        while (i > 0) {
+            while (j > 0) {
+                j--;
+            }
+            i--;
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (while_statement
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (gt)
+            right: (literal
+              (number)))
+          body: (block
+            statement: (while_statement
+              condition: (comparison
+                left: (symbol
+                  name: (identifier))
+                operator: (gt)
+                right: (literal
+                  (number)))
+              body: (block
+                statement: (arithmetic
+                  (decrement
+                    argument: (symbol
+                      name: (identifier))
+                    operator: (decrement_op)))))
+            statement: (arithmetic
+              (decrement
+                argument: (symbol
+                  name: (identifier))
+                operator: (decrement_op)))))))))
