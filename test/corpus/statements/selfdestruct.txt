@@ -1,0 +1,137 @@
+==================
+selfdestruct with a variable
+==================
+
+contract C {
+    function destroy(address payable recipient) public {
+        selfdestruct(recipient);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (selfdestruct
+          recipient: (symbol
+            name: (identifier)))))))
+
+==================
+selfdestruct with a payable-casted address
+==================
+
+contract C {
+    address owner;
+    function destroy() public {
+        selfdestruct(payable(owner));
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (state_variable
+      type: (primitive_type
+        (address_type))
+      name: (symbol
+        name: (identifier)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (selfdestruct
+          recipient: (payable_conversion_expression
+            arguments: (arguments
+              argument: (symbol
+                name: (identifier)))))))))
+
+==================
+selfdestruct inside an if statement
+==================
+
+contract C {
+    address owner;
+    function destroy() public {
+        if (msg.sender == owner) {
+            selfdestruct(payable(owner));
+        }
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (state_variable
+      type: (primitive_type
+        (address_type))
+      name: (symbol
+        name: (identifier)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (if_statement
+          condition: (equality
+            left: (symbol
+              scope: (symbol
+                name: (identifier))
+              name: (identifier))
+            operator: (equality_op)
+            right: (symbol
+              name: (identifier)))
+          consequence: (block
+            statement: (selfdestruct
+              recipient: (payable_conversion_expression
+                arguments: (arguments
+                  argument: (symbol
+                    name: (identifier)))))))))))
+
+==================
+selfdestruct with msg.sender
+==================
+
+contract C {
+    function withdrawAndDestroy() public {
+        selfdestruct(payable(msg.sender));
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      body: (block
+        statement: (selfdestruct
+          recipient: (payable_conversion_expression
+            arguments: (arguments
+              argument: (symbol
+                scope: (symbol
+                  name: (identifier))
+                name: (identifier)))))))))

@@ -635,13 +635,7 @@ module.exports = grammar({
     //############################################################//
 
     _primary_expression: ($) =>
-      choice(
-        $.ether_literal,
-        $.time_literal,
-        $.literal,
-        prec(2, $.builtin_function),
-        prec(1, $.symbol),
-      ),
+      choice($.ether_literal, $.time_literal, $.literal, prec(1, $.symbol)),
 
     //############################################################//
     //                      Cast expression                       //
@@ -956,11 +950,6 @@ module.exports = grammar({
         ),
       ),
 
-    builtin_function: ($) => field("name", choice($.selfdestruct)),
-
-    // Contract & Transaction
-    selfdestruct: ($) => "selfdestruct",
-
     //############################################################//
     //                   Assignment expression                    //
     //############################################################//
@@ -1051,7 +1040,7 @@ module.exports = grammar({
         ")",
       ),
 
-    // Others
+    // Contract & Transaction
     gasleft: ($) => seq("gasleft", "(", ")"),
 
     //############################################################//
@@ -1475,7 +1464,12 @@ module.exports = grammar({
         $.tuple_variable,
         $.unchecked,
         $.while_statement,
+
+        $.selfdestruct,
       ),
+
+    selfdestruct: ($) =>
+      seq("selfdestruct", "(", field("recipient", $._expression), ")", ";"),
 
     _expression_statement: ($) => seq($._expression, ";"),
     assert: ($) =>
