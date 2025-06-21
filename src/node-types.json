@@ -3520,6 +3520,32 @@
     }
   },
   {
+    "type": "custom_error",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "custom_type",
     "named": true,
     "fields": {
@@ -9619,7 +9645,7 @@
         "required": false,
         "types": [
           {
-            "type": "call",
+            "type": "custom_error",
             "named": true
           }
         ]
@@ -9760,22 +9786,12 @@
     "type": "revert",
     "named": true,
     "fields": {
-      "arguments": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "arguments",
-            "named": true
-          }
-        ]
-      },
       "error": {
         "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "symbol",
+            "type": "custom_error",
             "named": true
           }
         ]

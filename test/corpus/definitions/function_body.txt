@@ -344,9 +344,10 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (revert
-          error: (symbol
-            name: (identifier))
-          arguments: (arguments))))))
+          error: (custom_error
+            name: (symbol
+              name: (identifier))
+            arguments: (arguments)))))))
 
 ==================
 Function body with unchecked block

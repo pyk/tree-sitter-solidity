@@ -25,9 +25,10 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (revert
-          error: (symbol
-            name: (identifier))
-          arguments: (arguments))))))
+          error: (custom_error
+            name: (symbol
+              name: (identifier))
+            arguments: (arguments)))))))
 
 ==================
 Revert with a custom error and arguments
@@ -73,13 +74,14 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (revert
-          error: (symbol
-            name: (identifier))
-          arguments: (arguments
-            argument: (symbol
+          error: (custom_error
+            name: (symbol
               name: (identifier))
-            argument: (literal
-              (number))))))))
+            arguments: (arguments
+              argument: (symbol
+                name: (identifier))
+              argument: (literal
+                (number)))))))))
 
 ==================
 Revert with a qualified custom error name
@@ -112,11 +114,12 @@ contract C {
       mutability: (pure)
       body: (block
         statement: (revert
-          error: (symbol
-            scope: (symbol
+          error: (custom_error
+            name: (symbol
+              scope: (symbol
+                name: (identifier))
               name: (identifier))
-            name: (identifier))
-          arguments: (arguments))))))
+            arguments: (arguments)))))))
 
 ==================
 Built-in revert() with no arguments

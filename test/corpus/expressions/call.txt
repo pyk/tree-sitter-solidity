@@ -313,11 +313,12 @@ contract C {
         name: (identifier))
       body: (block
         statement: (revert
-          error: (symbol
-            name: (identifier))
-          arguments: (arguments
-            argument: (symbol
-              name: (identifier))))))))
+          error: (custom_error
+            name: (symbol
+              name: (identifier))
+            arguments: (arguments
+              argument: (symbol
+                name: (identifier)))))))))
 
 ==================
 Call on a casted address

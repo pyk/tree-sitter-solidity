@@ -110,8 +110,8 @@ contract C {
             operator: (gt)
             right: (literal
               (number)))
-          error: (call
-            function: (symbol
+          error: (custom_error
+            name: (symbol
               name: (identifier))
             arguments: (arguments)))))))
 
@@ -160,8 +160,8 @@ contract C {
             operator: (gt)
             right: (literal
               (number)))
-          error: (call
-            function: (symbol
+          error: (custom_error
+            name: (symbol
               name: (identifier))
             arguments: (arguments
               argument: (symbol

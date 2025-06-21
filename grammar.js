@@ -1513,14 +1513,16 @@ module.exports = grammar({
 
     placeholder: ($) => prec(1, seq("_", ";")),
     return: ($) => seq("return", optional(field("value", $._expression)), ";"),
-    // ADD this new statement rule.
     require: ($) =>
       seq(
         "require",
         "(",
         field("condition", $._expression),
         optional(
-          seq(",", choice(field("reason", $.string), field("error", $.call))),
+          seq(
+            ",",
+            choice(field("reason", $.string), field("error", $.custom_error)),
+          ),
         ),
         ")",
         ";", // A statement ends with a semicolon
@@ -1530,12 +1532,11 @@ module.exports = grammar({
       seq("revert", "(", optional(field("reason", $._expression)), ")", ";"),
 
     _revert_custom_error: ($) =>
-      seq(
-        "revert",
-        field("error", $.symbol),
-        field("arguments", $.arguments),
-        ";",
-      ),
+      seq("revert", field("error", $.custom_error), ";"),
+
+    // This rule specifically parses a custom error instantiation
+    custom_error: ($) =>
+      seq(field("name", $.symbol), field("arguments", $.arguments)),
 
     unchecked: ($) => seq("unchecked", field("body", $.block)),
 

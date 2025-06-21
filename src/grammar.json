@@ -5726,7 +5726,7 @@
                       "name": "error",
                       "content": {
                         "type": "SYMBOL",
-                        "name": "call"
+                        "name": "custom_error"
                       }
                     }
                   ]
@@ -5797,6 +5797,23 @@
           "name": "error",
           "content": {
             "type": "SYMBOL",
+            "name": "custom_error"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "custom_error": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
             "name": "symbol"
           }
         },
@@ -5807,10 +5824,6 @@
             "type": "SYMBOL",
             "name": "arguments"
           }
-        },
-        {
-          "type": "STRING",
-          "value": ";"
         }
       ]
     },
