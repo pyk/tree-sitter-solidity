@@ -306,7 +306,7 @@ contract C {
           left: (symbol
             name: (identifier))
           operator: (assign_op)
-          right: (conditional_expression
+          right: (conditional
             condition: (symbol
               name: (identifier))
             consequence: (symbol

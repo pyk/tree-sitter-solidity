@@ -291,7 +291,7 @@ contract C {
           location: (memory)))
       body: (block
         statement: (return
-          value: (conditional_expression
+          value: (conditional
             condition: (or
               left: (symbol
                 name: (identifier))

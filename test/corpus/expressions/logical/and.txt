@@ -294,7 +294,7 @@ contract C {
           type: (uint_type)))
       body: (block
         statement: (return
-          value: (conditional_expression
+          value: (conditional
             condition: (and
               left: (symbol
                 name: (identifier))
