@@ -1,0 +1,223 @@
+==================
+Do-while loop with a block body
+==================
+
+contract C {
+    function f(uint i) public {
+        do {
+            i++;
+        } while (i < 10);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (do_while_statement
+          body: (block
+            statement: (arithmetic
+              (increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (lt)
+            right: (literal
+              (number))))))))
+
+==================
+Do-while loop with a single-line statement body
+==================
+
+contract C {
+    function f(uint i) public {
+        do i--; while (i > 0);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (do_while_statement
+          body: (arithmetic
+            (decrement
+              argument: (symbol
+                name: (identifier))
+              operator: (decrement_op)))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (gt)
+            right: (literal
+              (number))))))))
+
+==================
+Do-while loop with a complex condition
+==================
+
+contract C {
+    function f(uint i) public {
+        do {
+            i++;
+        } while (i < 10 && i % 2 != 0);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (do_while_statement
+          body: (block
+            statement: (arithmetic
+              (increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))))
+          condition: (and
+            left: (comparison
+              left: (symbol
+                name: (identifier))
+              operator: (lt)
+              right: (literal
+                (number)))
+            operator: (and_op)
+            right: (equality
+              left: (arithmetic
+                (mod
+                  left: (symbol
+                    name: (identifier))
+                  operator: (mod_op)
+                  right: (literal
+                    (number))))
+              operator: (equality_op)
+              right: (literal
+                (number)))))))))
+
+==================
+Do-while loop with a break statement
+==================
+
+contract C {
+    function f() public pure {
+        do {
+            break;
+        } while (true);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (do_while_statement
+          body: (block
+            statement: (break))
+          condition: (literal
+            (boolean)))))))
+
+==================
+Do-while loop with a continue statement
+==================
+
+contract C {
+    function f(uint i) public {
+        do {
+            i++;
+            if (i == 5) {
+                continue;
+            }
+        } while (i < 10);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      body: (block
+        statement: (do_while_statement
+          body: (block
+            statement: (arithmetic
+              (increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op)))
+            statement: (if_statement
+              condition: (equality
+                left: (symbol
+                  name: (identifier))
+                operator: (equality_op)
+                right: (literal
+                  (number)))
+              consequence: (block
+                statement: (continue))))
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (lt)
+            right: (literal
+              (number))))))))
