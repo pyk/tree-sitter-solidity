@@ -1000,14 +1000,15 @@ module.exports = grammar({
 
     _builtin_expression: ($) =>
       choice(
-        $.keccak256,
-        $.sha256,
-        $.ripemd160,
-        $.ecrecover,
         $.addmod,
-        $.mulmod,
-        $.gasleft,
+        $.blobhash,
         $.blockhash,
+        $.ecrecover,
+        $.gasleft,
+        $.keccak256,
+        $.mulmod,
+        $.ripemd160,
+        $.sha256,
       ),
 
     // Cryptography
@@ -1058,6 +1059,7 @@ module.exports = grammar({
     gasleft: ($) => seq("gasleft", "(", ")"),
     blockhash: ($) =>
       seq("blockhash", "(", field("block_number", $._expression), ")"),
+    blobhash: ($) => seq("blobhash", "(", field("index", $._expression), ")"),
 
     //############################################################//
     //                 Global variable expression                 //
