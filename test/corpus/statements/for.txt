@@ -34,11 +34,10 @@ contract C {
             operator: (lt)
             right: (literal
               (number)))
-          update: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op)))
+          update: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op))
           body: (block
             (comment)))))))
 
@@ -75,11 +74,10 @@ contract C {
             operator: (lt)
             right: (literal
               (number)))
-          update: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op)))
+          update: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op))
           body: (block))))))
 
 ==================
@@ -112,11 +110,10 @@ contract C {
               name: (identifier))
             value: (literal
               (number)))
-          update: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op)))
+          update: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op))
           body: (block
             statement: (if_statement
               condition: (comparison
@@ -164,11 +161,10 @@ contract C {
             right: (literal
               (number)))
           body: (block
-            statement: (arithmetic
-              (increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op)))))))))
+            statement: (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op))))))))
 
 ==================
 Infinite for loop
@@ -231,11 +227,10 @@ contract C {
             operator: (lt)
             right: (literal
               (number)))
-          update: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op)))
+          update: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op))
           body: (call
             function: (symbol
               name: (identifier))
@@ -280,11 +275,10 @@ contract C {
             operator: (lt)
             right: (literal
               (number)))
-          update: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op)))
+          update: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op))
           body: (block))))))
 
 ==================
@@ -319,13 +313,12 @@ contract C {
           type: (uint_type)))
       body: (block
         statement: (return
-          value: (arithmetic
-            (add
-              left: (symbol
-                name: (identifier))
-              operator: (add_op)
-              right: (literal
-                (number)))))))
+          value: (add
+            left: (symbol
+              name: (identifier))
+            operator: (add_op)
+            right: (literal
+              (number))))))
     definition: (function
       name: (symbol
         name: (identifier))

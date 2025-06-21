@@ -119,12 +119,11 @@ contract C {
           type: (uint_type)
           name: (symbol
             name: (identifier))
-          value: (arithmetic
-            (sub
-              left: (symbol
-                name: (identifier))
-              operator: (sub_op)
-              right: (gasleft))))
+          value: (sub
+            left: (symbol
+              name: (identifier))
+            operator: (sub_op)
+            right: (gasleft)))
         statement: (return
           value: (symbol
             name: (identifier)))))))

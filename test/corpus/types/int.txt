@@ -91,11 +91,10 @@ contract C {
           type: (int_type)
           name: (symbol
             name: (identifier))
-          value: (arithmetic
-            (negation
-              operator: (negation_op)
-              argument: (literal
-                (number)))))))))
+          value: (negation
+            operator: (negation_op)
+            argument: (literal
+              (number))))))))
 
 ==================
 Int in a type cast
@@ -251,22 +250,20 @@ contract C {
       mutability: (constant)
       name: (symbol
         name: (identifier))
-      value: (arithmetic
-        (negation
-          operator: (negation_op)
-          argument: (literal
-            (number)))))
+      value: (negation
+        operator: (negation_op)
+        argument: (literal
+          (number))))
     definition: (state_variable
       type: (int_type)
       visibility: (public)
       mutability: (immutable)
       name: (symbol
         name: (identifier))
-      value: (arithmetic
-        (negation
-          operator: (negation_op)
-          argument: (literal
-            (number)))))))
+      value: (negation
+        operator: (negation_op)
+        argument: (literal
+          (number))))))
 
 ==================
 Int in an event parameter

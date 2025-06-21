@@ -11,11 +11,10 @@ int constant x = -1;
     type: (int_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (negation
-        operator: (negation_op)
-        argument: (literal
-          (number))))))
+    value: (negation
+      operator: (negation_op)
+      argument: (literal
+        (number)))))
 
 ==================
 Negation of a negative integer literal (double negative)
@@ -30,15 +29,13 @@ int constant x = -(-1);
     type: (int_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (negation
-        operator: (negation_op)
-        argument: (group
-          expression: (arithmetic
-            (negation
-              operator: (negation_op)
-              argument: (literal
-                (number)))))))))
+    value: (negation
+      operator: (negation_op)
+      argument: (group
+        expression: (negation
+          operator: (negation_op)
+          argument: (literal
+            (number)))))))
 
 ==================
 Negation of a variable
@@ -71,11 +68,10 @@ contract C {
           type: (int_type)))
       body: (block
         statement: (return
-          value: (arithmetic
-            (negation
-              operator: (negation_op)
-              argument: (symbol
-                name: (identifier)))))))))
+          value: (negation
+            operator: (negation_op)
+            argument: (symbol
+              name: (identifier))))))))
 
 ==================
 Negation precedence over exponentiation (right-associative)
@@ -92,16 +88,14 @@ int constant x = -2**3;
     type: (int_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (exp
-        left: (arithmetic
-          (negation
-            operator: (negation_op)
-            argument: (literal
-              (number))))
-        operator: (exp_op)
-        right: (literal
-          (number))))))
+    value: (exp
+      left: (negation
+        operator: (negation_op)
+        argument: (literal
+          (number)))
+      operator: (exp_op)
+      right: (literal
+        (number)))))
 
 ==================
 Negation precedence with multiplication
@@ -118,16 +112,14 @@ int constant x = -2 * 3;
     type: (int_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (mul
-        left: (arithmetic
-          (negation
-            operator: (negation_op)
-            argument: (literal
-              (number))))
-        operator: (mul_op)
-        right: (literal
-          (number))))))
+    value: (mul
+      left: (negation
+        operator: (negation_op)
+        argument: (literal
+          (number)))
+      operator: (mul_op)
+      right: (literal
+        (number)))))
 
 ==================
 Negation precedence with addition
@@ -144,16 +136,14 @@ int constant x = -2 + 3;
     type: (int_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (add
-        left: (arithmetic
-          (negation
-            operator: (negation_op)
-            argument: (literal
-              (number))))
-        operator: (add_op)
-        right: (literal
-          (number))))))
+    value: (add
+      left: (negation
+        operator: (negation_op)
+        argument: (literal
+          (number)))
+      operator: (add_op)
+      right: (literal
+        (number)))))
 
 ==================
 Addition with a negated right-hand side
@@ -170,16 +160,14 @@ int constant x = 2 + -3;
     type: (int_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (add
-        left: (literal
-          (number))
-        operator: (add_op)
-        right: (arithmetic
-          (negation
-            operator: (negation_op)
-            argument: (literal
-              (number))))))))
+    value: (add
+      left: (literal
+        (number))
+      operator: (add_op)
+      right: (negation
+        operator: (negation_op)
+        argument: (literal
+          (number))))))
 
 ==================
 Negation of a parenthesized arithmetic expression
@@ -196,17 +184,15 @@ int constant x = -(2 * 3);
     type: (int_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (negation
-        operator: (negation_op)
-        argument: (group
-          expression: (arithmetic
-            (mul
-              left: (literal
-                (number))
-              operator: (mul_op)
-              right: (literal
-                (number)))))))))
+    value: (negation
+      operator: (negation_op)
+      argument: (group
+        expression: (mul
+          left: (literal
+            (number))
+          operator: (mul_op)
+          right: (literal
+            (number)))))))
 
 ==================
 Negation inside a comparison expression
@@ -222,17 +208,15 @@ bool constant b = -5 < -2;
     name: (symbol
       name: (identifier))
     value: (comparison
-      left: (arithmetic
-        (negation
-          operator: (negation_op)
-          argument: (literal
-            (number))))
+      left: (negation
+        operator: (negation_op)
+        argument: (literal
+          (number)))
       operator: (lt)
-      right: (arithmetic
-        (negation
-          operator: (negation_op)
-          argument: (literal
-            (number)))))))
+      right: (negation
+        operator: (negation_op)
+        argument: (literal
+          (number))))))
 
 ==================
 Negation inside a logical expression
@@ -270,21 +254,19 @@ contract C {
         statement: (return
           value: (and
             left: (comparison
-              left: (arithmetic
-                (negation
-                  operator: (negation_op)
-                  argument: (symbol
-                    name: (identifier))))
+              left: (negation
+                operator: (negation_op)
+                argument: (symbol
+                  name: (identifier)))
               operator: (gt)
               right: (literal
                 (number)))
             operator: (and_op)
             right: (comparison
-              left: (arithmetic
-                (negation
-                  operator: (negation_op)
-                  argument: (symbol
-                    name: (identifier))))
+              left: (negation
+                operator: (negation_op)
+                argument: (symbol
+                  name: (identifier)))
               operator: (lt)
               right: (literal
                 (number)))))))))
@@ -317,11 +299,10 @@ contract C {
       body: (block
         statement: (require
           condition: (comparison
-            left: (arithmetic
-              (negation
-                operator: (negation_op)
-                argument: (symbol
-                  name: (identifier))))
+            left: (negation
+              operator: (negation_op)
+              argument: (symbol
+                name: (identifier)))
             operator: (gt)
             right: (literal
               (number)))

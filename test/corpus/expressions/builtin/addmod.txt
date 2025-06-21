@@ -115,20 +115,18 @@ contract C {
       body: (block
         statement: (return
           value: (addmod
-            x: (arithmetic
-              (mul
-                left: (symbol
-                  name: (identifier))
-                operator: (mul_op)
-                right: (literal
-                  (number))))
-            y: (arithmetic
-              (add
-                left: (symbol
-                  name: (identifier))
-                operator: (add_op)
-                right: (literal
-                  (number))))
+            x: (mul
+              left: (symbol
+                name: (identifier))
+              operator: (mul_op)
+              right: (literal
+                (number)))
+            y: (add
+              left: (symbol
+                name: (identifier))
+              operator: (add_op)
+              right: (literal
+                (number)))
             k: (literal
               (number))))))))
 

@@ -28,11 +28,10 @@ contract C {
       body: (block
         statement: (do_while_statement
           body: (block
-            statement: (arithmetic
-              (increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op))))
+            statement: (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op)))
           condition: (comparison
             left: (symbol
               name: (identifier))
@@ -67,11 +66,10 @@ contract C {
       visibility: (public)
       body: (block
         statement: (do_while_statement
-          body: (arithmetic
-            (decrement
-              argument: (symbol
-                name: (identifier))
-              operator: (decrement_op)))
+          body: (decrement
+            argument: (symbol
+              name: (identifier))
+            operator: (decrement_op))
           condition: (comparison
             left: (symbol
               name: (identifier))
@@ -109,11 +107,10 @@ contract C {
       body: (block
         statement: (do_while_statement
           body: (block
-            statement: (arithmetic
-              (increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op))))
+            statement: (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op)))
           condition: (and
             left: (comparison
               left: (symbol
@@ -123,13 +120,12 @@ contract C {
                 (number)))
             operator: (and_op)
             right: (equality
-              left: (arithmetic
-                (mod
-                  left: (symbol
-                    name: (identifier))
-                  operator: (mod_op)
-                  right: (literal
-                    (number))))
+              left: (mod
+                left: (symbol
+                  name: (identifier))
+                operator: (mod_op)
+                right: (literal
+                  (number)))
               operator: (equality_op)
               right: (literal
                 (number)))))))))
@@ -197,11 +193,10 @@ contract C {
       body: (block
         statement: (do_while_statement
           body: (block
-            statement: (arithmetic
-              (increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op)))
+            statement: (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op))
             statement: (if_statement
               condition: (equality
                 left: (symbol

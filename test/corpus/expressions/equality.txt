@@ -118,13 +118,12 @@ bool constant x = a + 5 == b;
     name: (symbol
       name: (identifier))
     value: (equality
-      left: (arithmetic
-        (add
-          left: (symbol
-            name: (identifier))
-          operator: (add_op)
-          right: (literal
-            (number))))
+      left: (add
+        left: (symbol
+          name: (identifier))
+        operator: (add_op)
+        right: (literal
+          (number)))
       operator: (equality_op)
       right: (symbol
         name: (identifier)))))

@@ -11,13 +11,12 @@ uint constant x = 10 * 20;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (mul
-        left: (literal
-          (number))
-        operator: (mul_op)
-        right: (literal
-          (number))))))
+    value: (mul
+      left: (literal
+        (number))
+      operator: (mul_op)
+      right: (literal
+        (number)))))
 
 ==================
 Chained multiplication and division (left-associative)
@@ -34,18 +33,16 @@ uint constant x = a * b / c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (div
-        left: (arithmetic
-          (mul
-            left: (symbol
-              name: (identifier))
-            operator: (mul_op)
-            right: (symbol
-              name: (identifier))))
-        operator: (div_op)
+    value: (div
+      left: (mul
+        left: (symbol
+          name: (identifier))
+        operator: (mul_op)
         right: (symbol
-          name: (identifier))))))
+          name: (identifier)))
+      operator: (div_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Multiplication precedence with exponentiation
@@ -62,18 +59,16 @@ uint constant x = a * b ** c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (mul
+    value: (mul
+      left: (symbol
+        name: (identifier))
+      operator: (mul_op)
+      right: (exp
         left: (symbol
           name: (identifier))
-        operator: (mul_op)
-        right: (arithmetic
-          (exp
-            left: (symbol
-              name: (identifier))
-            operator: (exp_op)
-            right: (symbol
-              name: (identifier))))))))
+        operator: (exp_op)
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Multiplication precedence with addition
@@ -90,18 +85,16 @@ uint constant x = a * b + c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (add
-        left: (arithmetic
-          (mul
-            left: (symbol
-              name: (identifier))
-            operator: (mul_op)
-            right: (symbol
-              name: (identifier))))
-        operator: (add_op)
+    value: (add
+      left: (mul
+        left: (symbol
+          name: (identifier))
+        operator: (mul_op)
         right: (symbol
-          name: (identifier))))))
+          name: (identifier)))
+      operator: (add_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Multiplication with a parenthesized expression
@@ -118,16 +111,14 @@ uint constant x = (a + b) * c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (mul
-        left: (group
-          expression: (arithmetic
-            (add
-              left: (symbol
-                name: (identifier))
-              operator: (add_op)
-              right: (symbol
-                name: (identifier)))))
-        operator: (mul_op)
-        right: (symbol
-          name: (identifier))))))
+    value: (mul
+      left: (group
+        expression: (add
+          left: (symbol
+            name: (identifier))
+          operator: (add_op)
+          right: (symbol
+            name: (identifier))))
+      operator: (mul_op)
+      right: (symbol
+        name: (identifier)))))

@@ -119,13 +119,12 @@ contract C {
           type: (uint_type)))
       body: (block
         statement: (return
-          value: (arithmetic
-            (add
-              left: (symbol
-                name: (identifier))
-              operator: (add_op)
-              right: (symbol
-                name: (identifier)))))))))
+          value: (add
+            left: (symbol
+              name: (identifier))
+            operator: (add_op)
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Return the result of a function call

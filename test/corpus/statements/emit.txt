@@ -265,18 +265,16 @@ contract C {
           event: (symbol
             name: (identifier))
           arguments: (arguments
-            argument: (arithmetic
-              (add
+            argument: (add
+              left: (symbol
+                name: (identifier))
+              operator: (add_op)
+              right: (mul
                 left: (symbol
                   name: (identifier))
-                operator: (add_op)
-                right: (arithmetic
-                  (mul
-                    left: (symbol
-                      name: (identifier))
-                    operator: (mul_op)
-                    right: (literal
-                      (number))))))))))))
+                operator: (mul_op)
+                right: (literal
+                  (number))))))))))
 
 ==================
 Emit event: event name is a qualified symbol (not standard but should parse)

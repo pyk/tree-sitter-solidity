@@ -149,13 +149,12 @@ uint constant x = a << 1 & b + 1;
           right: (literal
             (number)))
         operator: (bitand_op)
-        right: (arithmetic
-          (add
-            left: (symbol
-              name: (identifier))
-            operator: (add_op)
-            right: (literal
-              (number))))))))
+        right: (add
+          left: (symbol
+            name: (identifier))
+          operator: (add_op)
+          right: (literal
+            (number)))))))
 
 ==================
 Bitwise AND with parenthesized OR expression

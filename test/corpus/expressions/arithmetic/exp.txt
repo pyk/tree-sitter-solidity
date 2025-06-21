@@ -11,13 +11,12 @@ uint constant x = 2 ** 8;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (exp
-        left: (literal
-          (number))
-        operator: (exp_op)
-        right: (literal
-          (number))))))
+    value: (exp
+      left: (literal
+        (number))
+      operator: (exp_op)
+      right: (literal
+        (number)))))
 
 ==================
 Exponentiation with variables
@@ -54,13 +53,12 @@ contract C {
           type: (uint_type)))
       body: (block
         statement: (return
-          value: (arithmetic
-            (exp
-              left: (symbol
-                name: (identifier))
-              operator: (exp_op)
-              right: (symbol
-                name: (identifier)))))))))
+          value: (exp
+            left: (symbol
+              name: (identifier))
+            operator: (exp_op)
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Chained exponentiation (right-associative)
@@ -77,18 +75,16 @@ uint constant x = a ** b ** c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (exp
+    value: (exp
+      left: (symbol
+        name: (identifier))
+      operator: (exp_op)
+      right: (exp
         left: (symbol
           name: (identifier))
         operator: (exp_op)
-        right: (arithmetic
-          (exp
-            left: (symbol
-              name: (identifier))
-            operator: (exp_op)
-            right: (symbol
-              name: (identifier))))))))
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Exponentiation precedence with multiplication
@@ -105,18 +101,16 @@ uint constant x = a ** b * c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (mul
-        left: (arithmetic
-          (exp
-            left: (symbol
-              name: (identifier))
-            operator: (exp_op)
-            right: (symbol
-              name: (identifier))))
-        operator: (mul_op)
+    value: (mul
+      left: (exp
+        left: (symbol
+          name: (identifier))
+        operator: (exp_op)
         right: (symbol
-          name: (identifier))))))
+          name: (identifier)))
+      operator: (mul_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Exponentiation precedence with addition
@@ -133,18 +127,16 @@ uint constant x = a + b ** c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (add
+    value: (add
+      left: (symbol
+        name: (identifier))
+      operator: (add_op)
+      right: (exp
         left: (symbol
           name: (identifier))
-        operator: (add_op)
-        right: (arithmetic
-          (exp
-            left: (symbol
-              name: (identifier))
-            operator: (exp_op)
-            right: (symbol
-              name: (identifier))))))))
+        operator: (exp_op)
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Exponentiation with a unary minus (critical test)
@@ -161,16 +153,14 @@ int constant x = -a ** b;
     type: (int_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (exp
-        left: (arithmetic
-          (negation
-            operator: (negation_op)
-            argument: (symbol
-              name: (identifier))))
-        operator: (exp_op)
-        right: (symbol
-          name: (identifier))))))
+    value: (exp
+      left: (negation
+        operator: (negation_op)
+        argument: (symbol
+          name: (identifier)))
+      operator: (exp_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Exponentiation with a parenthesized expression as base
@@ -187,19 +177,17 @@ uint constant x = (a + b) ** c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (exp
-        left: (group
-          expression: (arithmetic
-            (add
-              left: (symbol
-                name: (identifier))
-              operator: (add_op)
-              right: (symbol
-                name: (identifier)))))
-        operator: (exp_op)
-        right: (symbol
-          name: (identifier))))))
+    value: (exp
+      left: (group
+        expression: (add
+          left: (symbol
+            name: (identifier))
+          operator: (add_op)
+          right: (symbol
+            name: (identifier))))
+      operator: (exp_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Exponentiation in a require statement
@@ -230,13 +218,12 @@ contract C {
       body: (block
         statement: (require
           condition: (comparison
-            left: (arithmetic
-              (exp
-                left: (literal
-                  (number))
-                operator: (exp_op)
-                right: (symbol
-                  name: (identifier))))
+            left: (exp
+              left: (literal
+                (number))
+              operator: (exp_op)
+              right: (symbol
+                name: (identifier)))
             operator: (lt)
             right: (literal
               (number)))

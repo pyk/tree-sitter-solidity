@@ -37,11 +37,10 @@ contract C {
             operator: (lt)
             right: (literal
               (number)))
-          update: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op)))
+          update: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op))
           body: (block
             statement: (if_statement
               condition: (equality
@@ -94,11 +93,10 @@ contract C {
               (number)))
           body: (block
             statement: (break)
-            statement: (arithmetic
-              (increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op)))))))))
+            statement: (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op))))))))
 
 ==================
 Break statement in a do-while loop
@@ -180,11 +178,10 @@ contract C {
             operator: (lt)
             right: (literal
               (number)))
-          update: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op)))
+          update: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op))
           body: (block
             statement: (for_statement
               initializer: (local_variable
@@ -199,11 +196,10 @@ contract C {
                 operator: (lt)
                 right: (literal
                   (number)))
-              update: (arithmetic
-                (increment
-                  argument: (symbol
-                    name: (identifier))
-                  operator: (increment_op)))
+              update: (increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))
               body: (block
                 statement: (break)
                 (comment)))))))))

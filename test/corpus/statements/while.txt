@@ -34,11 +34,10 @@ contract C {
             right: (literal
               (number)))
           body: (block
-            statement: (arithmetic
-              (increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op)))))))))
+            statement: (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op))))))))
 
 ==================
 While loop with a single-line statement body
@@ -73,11 +72,10 @@ contract C {
             operator: (gt)
             right: (literal
               (number)))
-          body: (arithmetic
-            (decrement
-              argument: (symbol
-                name: (identifier))
-              operator: (decrement_op))))))))
+          body: (decrement
+            argument: (symbol
+              name: (identifier))
+            operator: (decrement_op)))))))
 
 ==================
 While loop with a complex condition
@@ -221,11 +219,10 @@ contract C {
             right: (literal
               (number)))
           body: (block
-            statement: (arithmetic
-              (increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op)))
+            statement: (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op))
             statement: (continue)))))))
 
 ==================
@@ -279,13 +276,11 @@ contract C {
                 right: (literal
                   (number)))
               body: (block
-                statement: (arithmetic
-                  (decrement
-                    argument: (symbol
-                      name: (identifier))
-                    operator: (decrement_op)))))
-            statement: (arithmetic
-              (decrement
-                argument: (symbol
-                  name: (identifier))
-                operator: (decrement_op)))))))))
+                statement: (decrement
+                  argument: (symbol
+                    name: (identifier))
+                  operator: (decrement_op))))
+            statement: (decrement
+              argument: (symbol
+                name: (identifier))
+              operator: (decrement_op))))))))

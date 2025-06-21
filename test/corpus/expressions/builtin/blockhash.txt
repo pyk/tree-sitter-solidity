@@ -90,12 +90,11 @@ contract C {
       body: (block
         statement: (return
           value: (blockhash
-            block_number: (arithmetic
-              (sub
-                left: (block_number)
-                operator: (sub_op)
-                right: (literal
-                  (number))))))))))
+            block_number: (sub
+              left: (block_number)
+              operator: (sub_op)
+              right: (literal
+                (number)))))))))
 
 ==================
 blockhash in a comparison

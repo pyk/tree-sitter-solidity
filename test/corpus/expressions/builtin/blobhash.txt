@@ -95,13 +95,12 @@ contract C {
       body: (block
         statement: (return
           value: (blobhash
-            index: (arithmetic
-              (add
-                left: (symbol
-                  name: (identifier))
-                operator: (add_op)
-                right: (literal
-                  (number))))))))))
+            index: (add
+              left: (symbol
+                name: (identifier))
+              operator: (add_op)
+              right: (literal
+                (number)))))))))
 
 ==================
 blobhash in a comparison

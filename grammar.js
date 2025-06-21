@@ -587,12 +587,12 @@ module.exports = grammar({
      */
     _expression: ($) =>
       choice(
+        $._abi_call,
+        $._arithmetic,
         $._builtin_expression,
         $._global_variable,
         $._primary_expression,
-        $._abi_call,
         $.and,
-        $.arithmetic,
         $.assignment,
         $.bitwise,
         $.call,
@@ -721,7 +721,7 @@ module.exports = grammar({
     //                   Arithmetic expression                    //
     //############################################################//
 
-    arithmetic: ($) =>
+    _arithmetic: ($) =>
       choice(
         // Unary
         $.negation, // -a

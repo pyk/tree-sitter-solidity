@@ -122,21 +122,19 @@ uint constant x = a * 2 << b + 1;
     name: (symbol
       name: (identifier))
     value: (shift
-      left: (arithmetic
-        (mul
-          left: (symbol
-            name: (identifier))
-          operator: (mul_op)
-          right: (literal
-            (number))))
+      left: (mul
+        left: (symbol
+          name: (identifier))
+        operator: (mul_op)
+        right: (literal
+          (number)))
       operator: (shift_op)
-      right: (arithmetic
-        (add
-          left: (symbol
-            name: (identifier))
-          operator: (add_op)
-          right: (literal
-            (number)))))))
+      right: (add
+        left: (symbol
+          name: (identifier))
+        operator: (add_op)
+        right: (literal
+          (number))))))
 
 ==================
 Shift precedence with bitwise AND

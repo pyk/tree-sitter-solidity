@@ -37,21 +37,19 @@ contract C {
             operator: (lt)
             right: (literal
               (number)))
-          update: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op)))
+          update: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op))
           body: (block
             statement: (if_statement
               condition: (equality
-                left: (arithmetic
-                  (mod
-                    left: (symbol
-                      name: (identifier))
-                    operator: (mod_op)
-                    right: (literal
-                      (number))))
+                left: (mod
+                  left: (symbol
+                    name: (identifier))
+                  operator: (mod_op)
+                  right: (literal
+                    (number)))
                 operator: (equality_op)
                 right: (literal
                   (number)))
@@ -97,11 +95,10 @@ contract C {
             right: (literal
               (number)))
           body: (block
-            statement: (arithmetic
-              (increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op)))
+            statement: (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op))
             statement: (if_statement
               condition: (equality
                 left: (symbol
@@ -146,11 +143,10 @@ contract C {
             (number)))
         statement: (do_while_statement
           body: (block
-            statement: (arithmetic
-              (increment
-                argument: (symbol
-                  name: (identifier))
-                operator: (increment_op)))
+            statement: (increment
+              argument: (symbol
+                name: (identifier))
+              operator: (increment_op))
             statement: (continue))
           condition: (comparison
             left: (symbol
@@ -198,11 +194,10 @@ contract C {
             operator: (lt)
             right: (literal
               (number)))
-          update: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op)))
+          update: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op))
           body: (block
             statement: (for_statement
               initializer: (local_variable
@@ -217,11 +212,10 @@ contract C {
                 operator: (lt)
                 right: (literal
                   (number)))
-              update: (arithmetic
-                (increment
-                  argument: (symbol
-                    name: (identifier))
-                  operator: (increment_op)))
+              update: (increment
+                argument: (symbol
+                  name: (identifier))
+                operator: (increment_op))
               body: (block
                 statement: (if_statement
                   condition: (equality

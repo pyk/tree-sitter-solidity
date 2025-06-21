@@ -24,11 +24,10 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        statement: (arithmetic
-          (increment
-            operator: (increment_op)
-            argument: (symbol
-              name: (identifier))))))))
+        statement: (increment
+          operator: (increment_op)
+          argument: (symbol
+            name: (identifier)))))))
 
 ==================
 Postfix increment as a statement
@@ -56,11 +55,10 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        statement: (arithmetic
-          (increment
-            argument: (symbol
-              name: (identifier))
-            operator: (increment_op)))))))
+        statement: (increment
+          argument: (symbol
+            name: (identifier))
+          operator: (increment_op))))))
 
 ==================
 Prefix increment in an assignment
@@ -99,11 +97,10 @@ contract C {
           left: (symbol
             name: (identifier))
           operator: (assign_op)
-          right: (arithmetic
-            (increment
-              operator: (increment_op)
-              argument: (symbol
-                name: (identifier)))))))))
+          right: (increment
+            operator: (increment_op)
+            argument: (symbol
+              name: (identifier))))))))
 
 ==================
 Postfix increment in an assignment
@@ -142,11 +139,10 @@ contract C {
           left: (symbol
             name: (identifier))
           operator: (assign_op)
-          right: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op))))))))
+          right: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op)))))))
 
 ==================
 Postfix increment of an array element
@@ -176,14 +172,13 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        statement: (arithmetic
-          (increment
-            argument: (index_access_expression
-              base: (symbol
-                name: (identifier))
-              index: (literal
-                (number)))
-            operator: (increment_op)))))))
+        statement: (increment
+          argument: (index_access_expression
+            base: (symbol
+              name: (identifier))
+            index: (literal
+              (number)))
+          operator: (increment_op))))))
 
 ==================
 Prefix increment precedence vs multiplication
@@ -222,16 +217,14 @@ contract C {
           type: (uint_type)))
       body: (block
         statement: (return
-          value: (arithmetic
-            (mul
-              left: (arithmetic
-                (increment
-                  operator: (increment_op)
-                  argument: (symbol
-                    name: (identifier))))
-              operator: (mul_op)
-              right: (symbol
-                name: (identifier)))))))))
+          value: (mul
+            left: (increment
+              operator: (increment_op)
+              argument: (symbol
+                name: (identifier)))
+            operator: (mul_op)
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Postfix increment precedence vs member access (critical test)
@@ -272,13 +265,12 @@ contract C {
             name: (identifier))))
       visibility: (public)
       body: (block
-        statement: (arithmetic
-          (increment
-            argument: (symbol
-              scope: (symbol
-                name: (identifier))
+        statement: (increment
+          argument: (symbol
+            scope: (symbol
               name: (identifier))
-            operator: (increment_op)))))))
+            name: (identifier))
+          operator: (increment_op))))))
 
 ==================
 Increment in a for loop
@@ -317,10 +309,9 @@ contract C {
             operator: (lt)
             right: (literal
               (number)))
-          update: (arithmetic
-            (increment
-              argument: (symbol
-                name: (identifier))
-              operator: (increment_op)))
+          update: (increment
+            argument: (symbol
+              name: (identifier))
+            operator: (increment_op))
           body: (block
             (comment)))))))

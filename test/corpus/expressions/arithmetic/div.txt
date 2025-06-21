@@ -11,13 +11,12 @@ uint constant x = 100 / 5;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (div
-        left: (literal
-          (number))
-        operator: (div_op)
-        right: (literal
-          (number))))))
+    value: (div
+      left: (literal
+        (number))
+      operator: (div_op)
+      right: (literal
+        (number)))))
 
 ==================
 Division with variables
@@ -54,13 +53,12 @@ contract C {
           type: (uint_type)))
       body: (block
         statement: (return
-          value: (arithmetic
-            (div
-              left: (symbol
-                name: (identifier))
-              operator: (div_op)
-              right: (symbol
-                name: (identifier)))))))))
+          value: (div
+            left: (symbol
+              name: (identifier))
+            operator: (div_op)
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Chained division and multiplication (left-associative)
@@ -77,18 +75,16 @@ uint constant x = 100 / 5 * 2;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (mul
-        left: (arithmetic
-          (div
-            left: (literal
-              (number))
-            operator: (div_op)
-            right: (literal
-              (number))))
-        operator: (mul_op)
+    value: (mul
+      left: (div
+        left: (literal
+          (number))
+        operator: (div_op)
         right: (literal
-          (number))))))
+          (number)))
+      operator: (mul_op)
+      right: (literal
+        (number)))))
 
 ==================
 Division precedence with exponentiation (critical test)
@@ -105,18 +101,16 @@ uint constant x = a / b ** c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (div
+    value: (div
+      left: (symbol
+        name: (identifier))
+      operator: (div_op)
+      right: (exp
         left: (symbol
           name: (identifier))
-        operator: (div_op)
-        right: (arithmetic
-          (exp
-            left: (symbol
-              name: (identifier))
-            operator: (exp_op)
-            right: (symbol
-              name: (identifier))))))))
+        operator: (exp_op)
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Division precedence with subtraction (critical test)
@@ -133,18 +127,16 @@ uint constant x = a / b - c;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (sub
-        left: (arithmetic
-          (div
-            left: (symbol
-              name: (identifier))
-            operator: (div_op)
-            right: (symbol
-              name: (identifier))))
-        operator: (sub_op)
+    value: (sub
+      left: (div
+        left: (symbol
+          name: (identifier))
+        operator: (div_op)
         right: (symbol
-          name: (identifier))))))
+          name: (identifier)))
+      operator: (sub_op)
+      right: (symbol
+        name: (identifier)))))
 
 ==================
 Division with a parenthesized expression
@@ -161,19 +153,17 @@ uint constant x = a / (b - c);
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (div
-        left: (symbol
-          name: (identifier))
-        operator: (div_op)
-        right: (group
-          expression: (arithmetic
-            (sub
-              left: (symbol
-                name: (identifier))
-              operator: (sub_op)
-              right: (symbol
-                name: (identifier)))))))))
+    value: (div
+      left: (symbol
+        name: (identifier))
+      operator: (div_op)
+      right: (group
+        expression: (sub
+          left: (symbol
+            name: (identifier))
+          operator: (sub_op)
+          right: (symbol
+            name: (identifier)))))))
 
 ==================
 Division in an if statement condition
@@ -210,13 +200,12 @@ contract C {
       body: (block
         statement: (if_statement
           condition: (equality
-            left: (arithmetic
-              (div
-                left: (symbol
-                  name: (identifier))
-                operator: (div_op)
-                right: (symbol
-                  name: (identifier))))
+            left: (div
+              left: (symbol
+                name: (identifier))
+              operator: (div_op)
+              right: (symbol
+                name: (identifier)))
             operator: (equality_op)
             right: (literal
               (number)))

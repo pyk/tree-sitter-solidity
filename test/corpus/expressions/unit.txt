@@ -147,15 +147,14 @@ uint constant total = 1 ether + 500 gwei;
     type: (uint_type)
     name: (symbol
       name: (identifier))
-    value: (arithmetic
-      (add
-        left: (ether_literal
-          value: (number)
-          unit: (ether))
-        operator: (add_op)
-        right: (ether_literal
-          value: (number)
-          unit: (gwei))))))
+    value: (add
+      left: (ether_literal
+        value: (number)
+        unit: (ether))
+      operator: (add_op)
+      right: (ether_literal
+        value: (number)
+        unit: (gwei)))))
 
 ==================
 Units in comparison expressions
@@ -181,13 +180,12 @@ contract C {
       body: (block
         statement: (if_statement
           condition: (comparison
-            left: (arithmetic
-              (add
-                left: (block_timestamp)
-                operator: (add_op)
-                right: (time_literal
-                  value: (number)
-                  unit: (minutes))))
+            left: (add
+              left: (block_timestamp)
+              operator: (add_op)
+              right: (time_literal
+                value: (number)
+                unit: (minutes)))
             operator: (gt)
             right: (symbol
               name: (identifier)))

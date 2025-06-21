@@ -194,12 +194,11 @@ contract C {
           type: (uint_type)))
       body: (block
         statement: (return
-          value: (arithmetic
-            (add
-              left: (literal
-                (number))
-              operator: (add_op)
-              right: (cast
-                type: (uint_type)
-                argument: (literal
-                  (number))))))))))
+          value: (add
+            left: (literal
+              (number))
+            operator: (add_op)
+            right: (cast
+              type: (uint_type)
+              argument: (literal
+                (number)))))))))

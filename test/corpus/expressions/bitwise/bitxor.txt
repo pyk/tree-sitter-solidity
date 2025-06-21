@@ -194,13 +194,12 @@ uint constant x = a ^ (b + c);
           name: (identifier))
         operator: (bitxor_op)
         right: (group
-          expression: (arithmetic
-            (add
-              left: (symbol
-                name: (identifier))
-              operator: (add_op)
-              right: (symbol
-                name: (identifier)))))))))
+          expression: (add
+            left: (symbol
+              name: (identifier))
+            operator: (add_op)
+            right: (symbol
+              name: (identifier))))))))
 
 ==================
 Bitwise XOR in an assignment expression

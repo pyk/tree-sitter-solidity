@@ -76,13 +76,12 @@ bool constant x = a + b > c;
     name: (symbol
       name: (identifier))
     value: (comparison
-      left: (arithmetic
-        (add
-          left: (symbol
-            name: (identifier))
-          operator: (add_op)
-          right: (symbol
-            name: (identifier))))
+      left: (add
+        left: (symbol
+          name: (identifier))
+        operator: (add_op)
+        right: (symbol
+          name: (identifier)))
       operator: (gt)
       right: (symbol
         name: (identifier)))))
@@ -106,13 +105,12 @@ bool constant x = a < b * c;
       left: (symbol
         name: (identifier))
       operator: (lt)
-      right: (arithmetic
-        (mul
-          left: (symbol
-            name: (identifier))
-          operator: (mul_op)
-          right: (symbol
-            name: (identifier)))))))
+      right: (mul
+        left: (symbol
+          name: (identifier))
+        operator: (mul_op)
+        right: (symbol
+          name: (identifier))))))
 
 ==================
 Comparison used in a logical AND expression
