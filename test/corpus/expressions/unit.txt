@@ -227,21 +227,17 @@ contract C {
       visibility: (public)
       mutability: (payable)
       body: (block
-        statement: (call
-          function: (builtin_function
-            name: (require))
-          arguments: (arguments
-            argument: (comparison
-              left: (symbol
-                scope: (symbol
-                  name: (identifier))
+        statement: (require
+          condition: (comparison
+            left: (symbol
+              scope: (symbol
                 name: (identifier))
-              operator: (gte)
-              right: (ether_literal
-                value: (number)
-                unit: (ether)))
-            argument: (literal
-              (string))))))))
+              name: (identifier))
+            operator: (gte)
+            right: (ether_literal
+              value: (number)
+              unit: (ether)))
+          reason: (string))))))
 
 ==================
 Units in a function call argument

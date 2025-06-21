@@ -959,7 +959,6 @@ module.exports = grammar({
           $.gasleft,
           $.keccak256,
           $.mulmod,
-          $.require,
           $.ripemd160,
           $.selfdestruct,
           $.sha256,
@@ -977,7 +976,6 @@ module.exports = grammar({
     mulmod: ($) => "mulmod",
 
     // Error Handling
-    require: ($) => "require",
     assert: ($) => "assert",
 
     // Contract & Transaction
@@ -1437,6 +1435,7 @@ module.exports = grammar({
         $.local_variable,
         $.placeholder,
         $.return,
+        $.require,
 
         // Revert
         alias($._revert_builtin, $.revert),
@@ -1514,7 +1513,18 @@ module.exports = grammar({
 
     placeholder: ($) => prec(1, seq("_", ";")),
     return: ($) => seq("return", optional(field("value", $._expression)), ";"),
-
+    // ADD this new statement rule.
+    require: ($) =>
+      seq(
+        "require",
+        "(",
+        field("condition", $._expression),
+        optional(
+          seq(",", choice(field("reason", $.string), field("error", $.call))),
+        ),
+        ")",
+        ";", // A statement ends with a semicolon
+      ),
     // Reverts
     _revert_builtin: ($) =>
       seq("revert", "(", optional(field("reason", $._expression)), ")", ";"),

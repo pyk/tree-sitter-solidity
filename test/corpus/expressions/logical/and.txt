@@ -254,26 +254,22 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (call
-          function: (builtin_function
-            name: (require))
-          arguments: (arguments
-            argument: (and
-              left: (comparison
-                left: (symbol
-                  name: (identifier))
-                operator: (gt)
-                right: (literal
-                  (number)))
-              operator: (and_op)
-              right: (comparison
-                left: (symbol
-                  name: (identifier))
-                operator: (gt)
-                right: (literal
-                  (number))))
-            argument: (literal
-              (string))))))))
+        statement: (require
+          condition: (and
+            left: (comparison
+              left: (symbol
+                name: (identifier))
+              operator: (gt)
+              right: (literal
+                (number)))
+            operator: (and_op)
+            right: (comparison
+              left: (symbol
+                name: (identifier))
+              operator: (gt)
+              right: (literal
+                (number))))
+          reason: (string))))))
 
 ==================
 AND in a ternary expression

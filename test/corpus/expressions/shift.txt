@@ -257,19 +257,15 @@ contract C {
       visibility: (public)
       mutability: (pure)
       body: (block
-        statement: (call
-          function: (builtin_function
-            name: (require))
-          arguments: (arguments
-            argument: (comparison
-              left: (shift
-                left: (symbol
-                  name: (identifier))
-                operator: (shift_op)
-                right: (literal
-                  (number)))
-              operator: (gt)
+        statement: (require
+          condition: (comparison
+            left: (shift
+              left: (symbol
+                name: (identifier))
+              operator: (shift_op)
               right: (literal
                 (number)))
-            argument: (literal
-              (string))))))))
+            operator: (gt)
+            right: (literal
+              (number)))
+          reason: (string))))))

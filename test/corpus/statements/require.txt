@@ -1,0 +1,168 @@
+==================
+Require with a single condition
+==================
+
+contract C {
+    function f(uint a) public pure {
+        require(a > 0);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (require
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (gt)
+            right: (literal
+              (number))))))))
+
+==================
+Require with a string reason
+==================
+
+contract C {
+    function f(uint a) public pure {
+        require(a > 0, "Input must be positive");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (require
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (gt)
+            right: (literal
+              (number)))
+          reason: (string))))))
+
+==================
+Require with a custom error
+==================
+
+contract C {
+    error InvalidInput();
+    function f(uint a) public pure {
+        require(a > 0, InvalidInput());
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (error
+      name: (symbol
+        name: (identifier)))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (require
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (gt)
+            right: (literal
+              (number)))
+          error: (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments)))))))
+
+==================
+Require with a custom error with arguments
+==================
+
+contract C {
+    error ValueTooLow(uint val);
+    function f(uint a) public pure {
+        require(a > 100, ValueTooLow(a));
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (error
+      name: (symbol
+        name: (identifier))
+      parameters: (error_parameters
+        parameter: (error_parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (require
+          condition: (comparison
+            left: (symbol
+              name: (identifier))
+            operator: (gt)
+            right: (literal
+              (number)))
+          error: (call
+            function: (symbol
+              name: (identifier))
+            arguments: (arguments
+              argument: (symbol
+                name: (identifier)))))))))

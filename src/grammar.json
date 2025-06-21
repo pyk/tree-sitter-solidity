@@ -3180,10 +3180,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "require"
-          },
-          {
-            "type": "SYMBOL",
             "name": "ripemd160"
           },
           {
@@ -3220,10 +3216,6 @@
     "mulmod": {
       "type": "STRING",
       "value": "mulmod"
-    },
-    "require": {
-      "type": "STRING",
-      "value": "require"
     },
     "assert": {
       "type": "STRING",
@@ -5330,6 +5322,10 @@
           "name": "return"
         },
         {
+          "type": "SYMBOL",
+          "name": "require"
+        },
+        {
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
@@ -5678,6 +5674,73 @@
               "type": "BLANK"
             }
           ]
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "require": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "require"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "condition",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": ","
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "FIELD",
+                      "name": "reason",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "string"
+                      }
+                    },
+                    {
+                      "type": "FIELD",
+                      "name": "error",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "call"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         },
         {
           "type": "STRING",

@@ -282,17 +282,13 @@ contract C {
       visibility: (public)
       mutability: (view)
       body: (block
-        statement: (call
-          function: (builtin_function
-            name: (require))
-          arguments: (arguments
-            argument: (not
-              operator: (not_op)
-              argument: (call
-                function: (symbol
-                  name: (identifier))
-                arguments: (arguments
-                  argument: (symbol
-                    name: (identifier)))))
-            argument: (literal
-              (string))))))))
+        statement: (require
+          condition: (not
+            operator: (not_op)
+            argument: (call
+              function: (symbol
+                name: (identifier))
+              arguments: (arguments
+                argument: (symbol
+                  name: (identifier)))))
+          reason: (string))))))
