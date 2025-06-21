@@ -101,11 +101,7 @@ contract C {
       body: (block
         statement: (return
           value: (sha256
-            argument: (call
-              function: (symbol
-                scope: (symbol
-                  name: (identifier))
-                name: (identifier))
+            argument: (abi_encode
               arguments: (arguments
                 argument: (symbol
                   name: (identifier))))))))))

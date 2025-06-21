@@ -601,6 +601,7 @@ module.exports = grammar({
         $._builtin_expression,
         $._global_variable,
         $._primary_expression,
+        $._abi_call,
         $.and,
         $.arithmetic,
         $.assignment,
@@ -1099,6 +1100,38 @@ module.exports = grammar({
     // Transaction Properties
     tx_gasprice: ($) => seq("tx", ".", "gasprice"),
     tx_origin: ($) => seq("tx", ".", "origin"),
+
+    //############################################################//
+    //                      ABI expressions                       //
+    //############################################################//
+
+    _abi_call: ($) =>
+      choice(
+        $.abi_decode,
+        $.abi_encode,
+        $.abi_encode_packed,
+        $.abi_encode_with_selector,
+        $.abi_encode_with_signature,
+        $.abi_encode_call,
+      ),
+
+    abi_decode: ($) =>
+      seq("abi", ".", "decode", field("arguments", $.arguments)),
+
+    abi_encode: ($) =>
+      seq("abi", ".", "encode", field("arguments", $.arguments)),
+
+    abi_encode_packed: ($) =>
+      seq("abi", ".", "encodePacked", field("arguments", $.arguments)),
+
+    abi_encode_with_selector: ($) =>
+      seq("abi", ".", "encodeWithSelector", field("arguments", $.arguments)),
+
+    abi_encode_with_signature: ($) =>
+      seq("abi", ".", "encodeWithSignature", field("arguments", $.arguments)),
+
+    abi_encode_call: ($) =>
+      seq("abi", ".", "encodeCall", field("arguments", $.arguments)),
 
     //############################################################//
     //                          Variable                          //

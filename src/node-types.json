@@ -1,5 +1,101 @@
 [
   {
+    "type": "abi_decode",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "abi_encode",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "abi_encode_call",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "abi_encode_packed",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "abi_encode_with_selector",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "abi_encode_with_signature",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "abicoder",
     "named": true,
     "fields": {
@@ -23,6 +119,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -235,6 +355,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -449,6 +593,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -651,6 +819,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -852,6 +1044,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -1077,6 +1293,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -1289,6 +1529,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -1496,6 +1760,30 @@
         "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -1778,6 +2066,30 @@
         "required": false,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -1985,6 +2297,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -2198,6 +2534,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -2451,6 +2811,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -2658,6 +3042,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -2871,6 +3279,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -3083,6 +3515,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -3307,6 +3763,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -3518,6 +3998,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -3759,6 +4263,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -3970,6 +4498,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -4186,6 +4738,30 @@
           {
             "type": ";",
             "named": false
+          },
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
           },
           {
             "type": "addmod",
@@ -4509,6 +5085,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -4742,6 +5342,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -4974,6 +5598,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -5209,6 +5857,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -5433,6 +6105,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -5641,6 +6337,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -5843,6 +6563,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -6044,6 +6788,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -6293,6 +7061,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -6715,6 +7507,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -6933,6 +7749,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -7144,6 +7984,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -7360,6 +8224,30 @@
           {
             "type": ";",
             "named": false
+          },
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
           },
           {
             "type": "addmod",
@@ -7632,6 +8520,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -7840,6 +8752,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -8041,6 +8977,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -8244,6 +9204,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -8445,6 +9429,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -8706,6 +9714,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -8917,6 +9949,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -9357,6 +10413,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -9568,6 +10648,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -9929,6 +11033,30 @@
             "named": false
           },
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -10199,6 +11327,30 @@
         "required": false,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -10403,6 +11555,30 @@
           {
             "type": ";",
             "named": false
+          },
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
           },
           {
             "type": "addmod",
@@ -10610,6 +11786,30 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -11032,6 +12232,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -11252,6 +12476,30 @@
           {
             "type": ";",
             "named": false
+          },
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
           },
           {
             "type": "addmod",
@@ -11524,6 +12772,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -11728,6 +13000,30 @@
           {
             "type": ";",
             "named": false
+          },
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
           },
           {
             "type": "addmod",
@@ -12055,6 +13351,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -12273,6 +13593,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -12474,6 +13818,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -12683,6 +14051,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -12885,6 +14277,30 @@
         "required": false,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -13086,6 +14502,30 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -13294,6 +14734,30 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "abi_decode",
+          "named": true
+        },
+        {
+          "type": "abi_encode",
+          "named": true
+        },
+        {
+          "type": "abi_encode_call",
+          "named": true
+        },
+        {
+          "type": "abi_encode_packed",
+          "named": true
+        },
+        {
+          "type": "abi_encode_with_selector",
+          "named": true
+        },
+        {
+          "type": "abi_encode_with_signature",
+          "named": true
+        },
         {
           "type": "addmod",
           "named": true
@@ -13562,6 +15026,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -13934,6 +15422,30 @@
         "required": false,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -14220,6 +15732,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -14460,6 +15996,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -14671,6 +16231,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -14961,6 +16545,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -15172,6 +16780,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -15386,6 +17018,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -15588,6 +17244,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -15789,6 +17469,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -16008,6 +17712,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -16215,6 +17943,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -16471,6 +18223,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -16689,6 +18465,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -16900,6 +18700,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -17447,6 +19271,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -17675,6 +19523,30 @@
         "required": false,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -17893,6 +19765,30 @@
         "required": false,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -18100,6 +19996,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -18309,6 +20229,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -18517,6 +20461,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -18724,6 +20692,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -18936,6 +20928,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -19355,6 +21371,30 @@
         "required": false,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -19653,6 +21693,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -19864,6 +21928,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -20171,6 +22259,30 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "abi_decode",
+          "named": true
+        },
+        {
+          "type": "abi_encode",
+          "named": true
+        },
+        {
+          "type": "abi_encode_call",
+          "named": true
+        },
+        {
+          "type": "abi_encode_packed",
+          "named": true
+        },
+        {
+          "type": "abi_encode_with_selector",
+          "named": true
+        },
+        {
+          "type": "abi_encode_with_signature",
+          "named": true
+        },
         {
           "type": "addmod",
           "named": true
@@ -20521,6 +22633,30 @@
         "required": true,
         "types": [
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -20769,6 +22905,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -21201,6 +23361,30 @@
             "named": false
           },
           {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
+          {
             "type": "addmod",
             "named": true
           },
@@ -21470,6 +23654,30 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "abi_decode",
+            "named": true
+          },
+          {
+            "type": "abi_encode",
+            "named": true
+          },
+          {
+            "type": "abi_encode_call",
+            "named": true
+          },
+          {
+            "type": "abi_encode_packed",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_selector",
+            "named": true
+          },
+          {
+            "type": "abi_encode_with_signature",
+            "named": true
+          },
           {
             "type": "addmod",
             "named": true
@@ -21814,6 +24022,10 @@
     "named": false
   },
   {
+    "type": "abi",
+    "named": false
+  },
+  {
     "type": "abicoder",
     "named": false
   },
@@ -22051,6 +24263,10 @@
     "named": true
   },
   {
+    "type": "decode",
+    "named": false
+  },
+  {
     "type": "decrement_op",
     "named": true
   },
@@ -22080,6 +24296,26 @@
   },
   {
     "type": "emit",
+    "named": false
+  },
+  {
+    "type": "encode",
+    "named": false
+  },
+  {
+    "type": "encodeCall",
+    "named": false
+  },
+  {
+    "type": "encodePacked",
+    "named": false
+  },
+  {
+    "type": "encodeWithSelector",
+    "named": false
+  },
+  {
+    "type": "encodeWithSignature",
     "named": false
   },
   {

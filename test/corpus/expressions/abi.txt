@@ -1,0 +1,248 @@
+==================
+abi.encode call
+==================
+
+contract C {
+    function f() public pure {
+        bytes memory data = abi.encode(1, true, "hello");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))
+          value: (abi_encode
+            arguments: (arguments
+              argument: (literal
+                (number))
+              argument: (literal
+                (boolean))
+              argument: (literal
+                (string)))))))))
+
+==================
+abi.encodePacked call
+==================
+
+contract C {
+    function f() public pure {
+        bytes memory packed = abi.encodePacked(uint8(1), "world");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))
+          value: (abi_encode_packed
+            arguments: (arguments
+              argument: (cast
+                type: (primitive_type
+                  (uint_type))
+                argument: (literal
+                  (number)))
+              argument: (literal
+                (string)))))))))
+
+==================
+abi.decode call
+==================
+
+contract C {
+    function f(bytes memory data) public pure {
+        (uint a, bool b) = abi.decode(data, (uint, bool));
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (tuple_variable
+          elements: (
+            (local_variable
+              type: (primitive_type
+                (uint_type))
+              name: (symbol
+                name: (identifier)))
+            (local_variable
+              type: (primitive_type
+                (bool_type))
+              name: (symbol
+                name: (identifier))))
+          value: (abi_decode
+            arguments: (arguments
+              argument: (symbol
+                name: (identifier))
+              argument: (tuple_expression
+                (primitive_type
+                  (uint_type))
+                (primitive_type
+                  (bool_type))))))))))
+
+==================
+abi.encodeWithSelector call
+==================
+
+contract C {
+    function f() public pure {
+        bytes memory data = abi.encodeWithSelector(0x12345678, "arg1");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))
+          value: (abi_encode_with_selector
+            arguments: (arguments
+              argument: (literal
+                (hex))
+              argument: (literal
+                (string)))))))))
+
+==================
+abi.encodeWithSignature call
+==================
+
+contract C {
+    function f() public pure {
+        bytes memory data = abi.encodeWithSignature("myFunction(string)", "arg1");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))
+          value: (abi_encode_with_signature
+            arguments: (arguments
+              argument: (literal
+                (string))
+              argument: (literal
+                (string)))))))))
+
+==================
+abi.encodeCall call
+==================
+
+contract C {
+    function myFunction(string memory, bool) public pure {}
+    function f() public pure {
+        bytes memory data = abi.encodeCall(myFunction, ("arg1", true));
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (string_type))
+          location: (memory))
+        parameter: (parameter
+          type: (primitive_type
+            (bool_type))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (local_variable
+          type: (primitive_type
+            (bytes_type))
+          location: (memory)
+          name: (symbol
+            name: (identifier))
+          value: (abi_encode_call
+            arguments: (arguments
+              argument: (symbol
+                name: (identifier))
+              argument: (tuple_expression
+                (literal
+                  (string))
+                (literal
+                  (boolean))))))))))
