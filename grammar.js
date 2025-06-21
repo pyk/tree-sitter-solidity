@@ -607,6 +607,7 @@ module.exports = grammar({
         $.cast,
         $.comparison,
         $.conditional_expression,
+        $.ecrecover,
         $.equality,
         $.group,
         $.index_access_expression,
@@ -953,13 +954,7 @@ module.exports = grammar({
       ),
 
     builtin_function: ($) =>
-      field(
-        "name",
-        choice($.addmod, $.ecrecover, $.gasleft, $.mulmod, $.selfdestruct),
-      ),
-
-    // Cryptography
-    ecrecover: ($) => "ecrecover",
+      field("name", choice($.addmod, $.gasleft, $.mulmod, $.selfdestruct)),
 
     // Mathematical
     addmod: ($) => "addmod",
@@ -1020,6 +1015,19 @@ module.exports = grammar({
     sha256: ($) => seq("sha256", "(", field("argument", $._expression), ")"),
     ripemd160: ($) =>
       seq("ripemd160", "(", field("argument", $._expression), ")"),
+    ecrecover: ($) =>
+      seq(
+        "ecrecover",
+        "(",
+        field("hash", $._expression),
+        ",",
+        field("v", $._expression),
+        ",",
+        field("r", $._expression),
+        ",",
+        field("s", $._expression),
+        ")",
+      ),
 
     //############################################################//
     //                          Variable                          //

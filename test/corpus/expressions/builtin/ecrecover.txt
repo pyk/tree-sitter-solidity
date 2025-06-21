@@ -1,0 +1,174 @@
+==================
+ecrecover with variables
+==================
+
+contract C {
+    function verify(bytes32 h, uint8 v, bytes32 r, bytes32 s) public pure returns (address) {
+        return ecrecover(h, v, r, s);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))))
+      body: (block
+        statement: (return
+          value: (ecrecover
+            hash: (symbol
+              name: (identifier))
+            v: (symbol
+              name: (identifier))
+            r: (symbol
+              name: (identifier))
+            s: (symbol
+              name: (identifier))))))))
+
+==================
+ecrecover with literals and expressions
+==================
+
+contract C {
+    function verify(bytes32 h, bytes32 r, bytes32 s) public pure returns (address) {
+        return ecrecover(h, 27, r, s);
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      returns: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))))
+      body: (block
+        statement: (return
+          value: (ecrecover
+            hash: (symbol
+              name: (identifier))
+            v: (literal
+              (number))
+            r: (symbol
+              name: (identifier))
+            s: (symbol
+              name: (identifier))))))))
+
+==================
+ecrecover used in a require statement for authentication
+==================
+
+contract C {
+    function f(bytes32 h, uint8 v, bytes32 r, bytes32 s, address signer) public pure {
+        require(ecrecover(h, v, r, s) == signer, "Invalid signature");
+    }
+}
+
+---
+
+(source_file
+  definition: (contract
+    name: (symbol
+      name: (identifier))
+    definition: (function
+      name: (symbol
+        name: (identifier))
+      parameters: (parameters
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (uint_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (bytes_type))
+          name: (symbol
+            name: (identifier)))
+        parameter: (parameter
+          type: (primitive_type
+            (address_type))
+          name: (symbol
+            name: (identifier))))
+      visibility: (public)
+      mutability: (pure)
+      body: (block
+        statement: (require
+          condition: (equality
+            left: (ecrecover
+              hash: (symbol
+                name: (identifier))
+              v: (symbol
+                name: (identifier))
+              r: (symbol
+                name: (identifier))
+              s: (symbol
+                name: (identifier)))
+            operator: (equality_op)
+            right: (symbol
+              name: (identifier)))
+          reason: (string))))))

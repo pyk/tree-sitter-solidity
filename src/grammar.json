@@ -2044,6 +2044,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "ecrecover"
+        },
+        {
+          "type": "SYMBOL",
           "name": "equality"
         },
         {
@@ -3172,10 +3176,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "ecrecover"
-          },
-          {
-            "type": "SYMBOL",
             "name": "gasleft"
           },
           {
@@ -3188,10 +3188,6 @@
           }
         ]
       }
-    },
-    "ecrecover": {
-      "type": "STRING",
-      "value": "ecrecover"
     },
     "addmod": {
       "type": "STRING",
@@ -3399,6 +3395,67 @@
         {
           "type": "FIELD",
           "name": "argument",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "ecrecover": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "ecrecover"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "hash",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "FIELD",
+          "name": "v",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "FIELD",
+          "name": "r",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "FIELD",
+          "name": "s",
           "content": {
             "type": "SYMBOL",
             "name": "_expression"
